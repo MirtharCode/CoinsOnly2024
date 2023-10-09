@@ -6,10 +6,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn;
+    [SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn, listOpen;
     [SerializeField] public GameObject luffy, dora, terry, france, duoling;
     [SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
-    [SerializeField] public TMP_Text initialConversationText;
+    [SerializeField] public TMP_Text initialConversationText, dropDownButtonText;
+    [SerializeField] public GameObject dropDownPanel, position1, position2;
+
 
 
     // Start is called before the first frame update
@@ -42,12 +44,19 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < boughtProducts.Length; i++)
             {
-                int randomProduct = Random.Range(1, 6);
+                int randomProduct = Random.Range(0, 6);
                 boughtProducts[i] = products[randomProduct];
-                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
-                clon.transform.parent = soldPlaces[i].transform;
-                //if (i == 0 || i == 2 || i == 4)
-                //    clon.transform.position.z = 3;
+
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], new Vector3(soldPlaces[i].transform.position.x, soldPlaces[i].transform.position.y, -9), soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
+                else
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
             }
 
         }
@@ -61,10 +70,19 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < boughtProducts.Length; i++)
             {
-                int randomProduct = Random.Range(1, 6);
+                int randomProduct = Random.Range(0, 6);
                 boughtProducts[i] = products[randomProduct];
-                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
-                clon.transform.parent = soldPlaces[i].transform;
+
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], new Vector3(soldPlaces[i].transform.position.x, soldPlaces[i].transform.position.y, -9), soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
+                else
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
             }
         }
         else if (random == 3)
@@ -77,10 +95,19 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < boughtProducts.Length; i++)
             {
-                int randomProduct = Random.Range(1, 6);
+                int randomProduct = Random.Range(0, 6);
                 boughtProducts[i] = products[randomProduct];
-                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
-                clon.transform.parent = soldPlaces[i].transform;
+
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], new Vector3(soldPlaces[i].transform.position.x, soldPlaces[i].transform.position.y, -9), soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
+                else
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
             }
         }
         else if (random == 4)
@@ -93,10 +120,19 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < boughtProducts.Length; i++)
             {
-                int randomProduct = Random.Range(1, 6);
+                int randomProduct = Random.Range(0, 6);
                 boughtProducts[i] = products[randomProduct];
-                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
-                clon.transform.parent = soldPlaces[i].transform;
+
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], new Vector3(soldPlaces[i].transform.position.x, soldPlaces[i].transform.position.y, -9), soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
+                else
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
             }
         }
         else if (random == 5)
@@ -109,11 +145,37 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < boughtProducts.Length; i++)
             {
-                int randomProduct = Random.Range(1, 6);
+                int randomProduct = Random.Range(0, 6);
                 boughtProducts[i] = products[randomProduct];
-                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
-                clon.transform.parent = soldPlaces[i].transform;
+
+                if (i == 0 || i == 2 || i == 4)
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], new Vector3(soldPlaces[i].transform.position.x, soldPlaces[i].transform.position.y, -9), soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
+                else
+                {
+                    GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
+                    clon.transform.parent = soldPlaces[i].transform;
+                }
             }
         }
+    }
+
+    public void OpenList()
+    {
+        if (listOpen)
+        {
+            dropDownPanel.transform.position = position2.transform.position;
+            dropDownButtonText.text = "<";
+            listOpen = false;
+        }
+        else
+        {
+            dropDownPanel.transform.position = position1.transform.position;
+            dropDownButtonText.text = ">";
+            listOpen = true;
+        }
+
     }
 }
