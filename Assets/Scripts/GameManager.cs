@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
     [SerializeField] public TMP_Text initialConversationText, dropDownButtonText;
     [SerializeField] public GameObject dropDownPanel, position1, position2;
+    [SerializeField] public char[] chars;
+    [SerializeField] public string[] words;
+    [SerializeField] public int[] wordsDuration;
+    [SerializeField] public AudioSource conversationSound;
+    [SerializeField] public AudioClip[] marianoSounds;
 
 
 
@@ -22,6 +27,7 @@ public class GameManager : MonoBehaviour
         int randomEntrance = Random.Range(1, 6);
         print(randomEntrance);
         firstEntrance(randomEntrance);
+        SoundCreator(initialConversationText.text);
 
     }
 
@@ -177,5 +183,95 @@ public class GameManager : MonoBehaviour
             listOpen = true;
         }
 
+    }
+
+    public void SoundCreator(string texto)
+    {
+        chars = new char[texto.Length];
+        string[] provisionalWords = new string[texto.Length];
+        int pauses = 0;
+        int huecoPalabra = 0;
+
+
+        for (int i = 0; i < texto.Length; i++)
+        {
+            if (texto[i] == ' ')
+            {
+                pauses++;
+                huecoPalabra++;
+            }
+
+            else if (texto[i] != ' ')
+                provisionalWords[huecoPalabra] += texto[i];
+
+            chars[i] = texto[i];
+        }
+
+        int palabrasTotales = huecoPalabra + 1;
+        print(palabrasTotales);
+        words = new string[palabrasTotales];
+
+        for (int i = 0; i < palabrasTotales; i++)
+        {
+            words[i] = provisionalWords[i];
+        }
+
+        wordsDuration = new int[words.Length];
+
+        for (int i = 0; i < wordsDuration.Length; i++)
+        {
+            for (int j = 0; j < words[i].Length; j++)
+            {
+                wordsDuration[i]++;
+            }
+        }
+
+        StartCoroutine(SoundMaker());
+    }
+
+    IEnumerator SoundMaker()
+    {
+
+        for (int i = 0; i < wordsDuration.Length; i++)
+        {
+            if (wordsDuration[i] < 3)
+            {
+                conversationSound.clip = marianoSounds[1];
+
+                //float duration = conversationSound.clip.length / 2f;
+                float randomPitch = Random.Range(0.9f, 1.1f);
+
+                conversationSound.pitch = randomPitch;
+                conversationSound.Play();
+
+                yield return new WaitWhile(() => conversationSound.isPlaying);
+            }
+
+            else if (wordsDuration[i] < 7)
+            {
+                conversationSound.clip = marianoSounds[4];
+
+                //float duration = conversationSound.clip.length / 2f;
+                float randomPitch = Random.Range(0.9f, 1.1f);
+
+                conversationSound.pitch = randomPitch;
+                conversationSound.Play();
+
+                yield return new WaitWhile(() => conversationSound.isPlaying);
+            }
+
+            else
+            {
+                conversationSound.clip = marianoSounds[7];
+
+                //float duration = conversationSound.clip.length / 32;
+                float randomPitch = Random.Range(0.9f, 1.1f);
+
+                conversationSound.pitch = randomPitch;
+                conversationSound.Play();
+
+                yield return new WaitWhile(() => conversationSound.isPlaying);
+            }
+        }
     }
 }
