@@ -284,8 +284,6 @@ public class GameManager : MonoBehaviour
     {
         // Activar el bool que dice que ese personaje está activo
         GameObject clon = Instantiate(character, showUpPoint);
-
-        character.SetActive(true);
         
         if (toyChiquito)
             stopPetit.gameObject.SetActive(true);
