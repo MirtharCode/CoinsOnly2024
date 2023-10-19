@@ -7,7 +7,9 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn, listOpen;
+    [SerializeField] public bool toyChiquito, toyGrandote;
     [SerializeField] public GameObject luffy, dora, terry, france, duoling;
+    [SerializeField] public GameObject stopPetit, stopGrangran;
     [SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
     [SerializeField] public TMP_Text initialConversationText, dropDownButtonText;
     [SerializeField] public GameObject dropDownPanel, position1, position2;
@@ -16,18 +18,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int[] wordsDuration;
     [SerializeField] public AudioSource conversationSound;
     [SerializeField] public AudioClip[] marianoSounds;
+    [SerializeField] public Transform showUpPoint, standUpPoint, exitPoint;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-        boughtProducts = new GameObject[5];
-        int randomEntrance = Random.Range(1, 6);
-        print(randomEntrance);
-        firstEntrance(randomEntrance);
-        SoundCreator(initialConversationText.text);
+        CharacterShowUp(luffy);
+        
+        
+        //boughtProducts = new GameObject[5];
+        //int randomEntrance = Random.Range(1, 6);
+        //print(randomEntrance);
+        //firstEntrance(randomEntrance);
+        //SoundCreator(initialConversationText.text);
 
     }
 
@@ -273,5 +278,19 @@ public class GameManager : MonoBehaviour
                 yield return new WaitWhile(() => conversationSound.isPlaying);
             }
         }
+    }
+
+    public void CharacterShowUp(GameObject character)
+    {
+        // Activar el bool que dice que ese personaje está activo
+        GameObject clon = Instantiate(character, showUpPoint);
+
+        character.SetActive(true);
+        
+        if (toyChiquito)
+            stopPetit.gameObject.SetActive(true);
+
+        else if (toyGrandote)
+            stopGrangran.gameObject.SetActive(true);
     }
 }
