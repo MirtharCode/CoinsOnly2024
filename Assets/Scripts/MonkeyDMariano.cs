@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonkeyDMariano : MonoBehaviour
 {
+    [SerializeField] public bool a;
+
     // Start is called before the first frame update
     void Start()
     {
