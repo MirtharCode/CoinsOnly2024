@@ -2572,11 +2572,11 @@ GameObject:
   - component: {fileID: 536717155}
   m_Layer: 0
   m_Name: StopLohGrandeh
-  m_TagString: Untagged
+  m_TagString: Trampilla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &536717155
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2906,6 +2906,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563678799}
+  m_CullTransparentMesh: 1
+--- !u!1 &605566211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605566212}
+  - component: {fileID: 605566214}
+  - component: {fileID: 605566213}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &605566212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605566211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755539550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.1, y: -26.801}
+  m_SizeDelta: {x: 104.5463, y: 53.602}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &605566213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605566211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 999
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4282730317
+  m_fontColor: {r: 0.3018868, g: 0.2800522, b: 0.26913494, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 41.99
+  m_fontSizeBase: 41.99
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &605566214
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605566211}
   m_CullTransparentMesh: 1
 --- !u!1 &651629662
 GameObject:
@@ -6955,54 +7090,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9854c8ef84e1234987b015b4794f22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  luffyOn: 0
-  doraOn: 0
-  terryOn: 0
-  franceOn: 0
-  duolingOn: 0
   listOpen: 0
   toyChiquito: 0
   toyGrandote: 0
+  dropDownButtonText: {fileID: 953917978}
+  leDineroText: {fileID: 605566213}
   luffy: {fileID: 3949543420785600357, guid: 85cf3181f6e242e4d84590e75967a2a0, type: 3}
   dora: {fileID: 1078258022}
   terry: {fileID: 77431201}
   france: {fileID: 1199018892}
   duoling: {fileID: 1535602747}
-  stopPetit: {fileID: 1847460655}
-  stopGrangran: {fileID: 536717154}
-  products:
-  - {fileID: 7907097835945584800, guid: f2f19ac02d401fd4cb5809186f86f858, type: 3}
-  - {fileID: 1640858499986718761, guid: 03347933ebd5b234280b172f4e16b7d8, type: 3}
-  - {fileID: 801151644551955911, guid: d4a80fd75a5866a4c99014789fd60d5b, type: 3}
-  - {fileID: 9066627973621405399, guid: c662a8a7dbab3bf419363a268f008b0b, type: 3}
-  - {fileID: 2670906344775292318, guid: 45cfa2a95b23b2c48af566ab93e1a377, type: 3}
-  - {fileID: 5137392354523140247, guid: b85fd46bc5e6b424f9b57ff186024fc0, type: 3}
-  boughtProducts: []
-  soldPlaces:
-  - {fileID: 461868971}
-  - {fileID: 1831064611}
-  - {fileID: 210069478}
-  - {fileID: 1574168419}
-  - {fileID: 1282888888}
-  initialConversationText: {fileID: 791290094}
-  dropDownButtonText: {fileID: 953917978}
   dropDownPanel: {fileID: 537900581}
   position1: {fileID: 453772223}
   position2: {fileID: 823273045}
-  chars: 
-  words: []
-  wordsDuration: 
-  conversationSound: {fileID: 1318056131}
-  marianoSounds:
-  - {fileID: 8300000, guid: 2eb495874c4d0b842911434635d3e881, type: 3}
-  - {fileID: 8300000, guid: 874ffd071247fe74dba37fb907651a0d, type: 3}
-  - {fileID: 8300000, guid: 972bcfdd605f8e646b9e5a18e0472a84, type: 3}
-  - {fileID: 8300000, guid: 2d6b78a5ee4c8be4983dc283632db2cb, type: 3}
-  - {fileID: 8300000, guid: b1f5e1c135f4686499ac872ebf57578e, type: 3}
-  - {fileID: 8300000, guid: edd43313c1114d44f8ef523fa1a816fa, type: 3}
-  - {fileID: 8300000, guid: 74eacd6b6c870094eb6a546c9e511b1e, type: 3}
-  - {fileID: 8300000, guid: 2f189c2b328c51b429bb2a2d5f080b58, type: 3}
-  - {fileID: 8300000, guid: ee1555e08bbd807408e9b9c63b77de0b, type: 3}
+  stopPetit: {fileID: 1847460655}
+  stopGrangran: {fileID: 536717154}
+  leDinero: {fileID: 1755539549}
   showUpPoint: {fileID: 1337903466}
   standUpPoint: {fileID: 0}
   exitPoint: {fileID: 0}
@@ -7141,7 +7244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337903465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7701,6 +7804,7 @@ RectTransform:
   - {fileID: 453772224}
   - {fileID: 823273046}
   - {fileID: 651629663}
+  - {fileID: 1755539550}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10030,6 +10134,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718859179}
   m_CullTransparentMesh: 1
+--- !u!1 &1755539549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755539550}
+  - component: {fileID: 1755539552}
+  - component: {fileID: 1755539551}
+  m_Layer: 5
+  m_Name: LeGold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1755539550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755539549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 605566212}
+  m_Father: {fileID: 1397739552}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -302, y: -307}
+  m_SizeDelta: {x: 213.1816, y: 213.1816}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1755539551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755539549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5374716a4be5eea4598064e52debaff6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1755539552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755539549}
+  m_CullTransparentMesh: 1
 --- !u!1 &1761618297
 GameObject:
   m_ObjectHideFlags: 0
@@ -10474,11 +10655,11 @@ GameObject:
   - component: {fileID: 1847460656}
   m_Layer: 0
   m_Name: StopChiquitoh
-  m_TagString: Untagged
+  m_TagString: Trampilla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1847460656
 BoxCollider2D:
   m_ObjectHideFlags: 0

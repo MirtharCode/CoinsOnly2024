@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3949543420785600358}
   - component: {fileID: 3949543420785596569}
   - component: {fileID: 3949543420785596568}
+  - component: {fileID: 6517712462014157508}
   m_Layer: 0
   m_Name: MonkeyDMariano
   m_TagString: Untagged
@@ -132,4 +133,18 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 5
+--- !u!114 &6517712462014157508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949543420785600357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ee133ed25d6bd4b9fef1e83164502b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 0
+  gameManager: {fileID: 0}

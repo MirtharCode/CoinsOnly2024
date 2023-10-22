@@ -7,16 +7,23 @@ public class MonkeyDMariano : MonoBehaviour
     [SerializeField] public bool a;
     [SerializeField] public GameObject gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
         gameManager.GetComponent<GameManager>().toyGrandote = true;
+        gameManager.GetComponent<GameManager>().stopGrangran.gameObject.SetActive(true);
+
+        gameManager.GetComponent<GameManager>().toyChiquito = false;
+        gameManager.GetComponent<GameManager>().stopPetit.gameObject.SetActive(false);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.transform.tag == "Trampilla")
+        {
+            gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
+            gameManager.GetComponent<GameManager>().leDineroText.text = "65";
+        }
     }
 }
