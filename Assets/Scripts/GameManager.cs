@@ -1,16 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] public bool listOpen, toyChiquito, toyGrandote;
-    [SerializeField] public TMP_Text dropDownButtonText, leDineroText;
+    [Header("CHARACTER SIZES")]
+    [SerializeField] public bool toyChiquito;
+    [SerializeField] public GameObject stopPetit;
+    [SerializeField] public bool toyGrandote;
+    [SerializeField] public GameObject stopGrangran;
 
-    [SerializeField] public GameObject luffy, dora, terry, france, duoling, dropDownPanel, position1, position2, stopPetit, stopGrangran, leDinero;
-    [SerializeField] public Transform showUpPoint, standUpPoint, exitPoint;
+    [Header("CHARACTERS THAT CAN APPEAR")]
+    [SerializeField] public GameObject evilWizardGeraaaaard;
+    [SerializeField] public GameObject hybridElvog;
+    [SerializeField] public GameObject elementalTapicio;
+    [SerializeField] public GameObject limbasticAntonio;
+
+    [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
+    [SerializeField] public bool listOpen;
+    [SerializeField] public GameObject dropDownPanel;
+    [SerializeField] public TMP_Text dropDownButtonText;
+    [SerializeField] public GameObject position1;
+    [SerializeField] public GameObject position2;
+
+    [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
+    [SerializeField] public GameObject leDinero;
+    [SerializeField] public TMP_Text leDineroText;
+
+    [Header("PRODUCTS PLACES")]
+    [SerializeField] public Transform oneProduct;
+    [SerializeField] public Transform twoProducts1;
+    [SerializeField] public Transform twoProducts2;
+
+    [Header("PRODUCTS LIST")]
+    [SerializeField] public GameObject energeticDrink;
+    [SerializeField] public GameObject beer;
+    [SerializeField] public GameObject deadCat;
+    [SerializeField] public GameObject voodooDoll;
+    [SerializeField] public GameObject manaPotion;
+
+    [Header("CHARACTERS ENTRY/EXIT")]
+    [SerializeField] public Transform showUpPoint;
+    [SerializeField] public Transform exitPoint;
 
     #region Código Antiguo
     //[SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn;
@@ -25,16 +59,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        CharacterShowUp(luffy);
+        Scene currentScene = SceneManager.GetActiveScene();
 
-
-        #region Código Antiguo
-        //boughtProducts = new GameObject[5];
-        //int randomEntrance = Random.Range(1, 6);
-        //print(randomEntrance);
-        //firstEntrance(randomEntrance);
-        //SoundCreator(initialConversationText.text);
-        #endregion
+        if (currentScene.name == "Day1")
+            Day1();
     }
 
     void Update()
@@ -62,6 +90,11 @@ public class GameManager : MonoBehaviour
     public void CharacterShowUp(GameObject character)
     {
         GameObject clon = Instantiate(character, showUpPoint);
+    }
+
+    public void Day1()
+    {
+        CharacterShowUp(hybridElvog);
     }
 
     #region Código Antiguo
