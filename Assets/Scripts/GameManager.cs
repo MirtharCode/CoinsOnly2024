@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void Day1()
     {
-        CharacterShowUp(hybridElvog);
+        CharacterShowUp(elementalTapicio);
     }
 
     #region Código Antiguo
