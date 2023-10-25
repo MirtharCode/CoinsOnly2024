@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8287813183400857497}
   m_Layer: 0
   m_Name: SapopotamoSinFondo1.0
-  m_TagString: Untagged
+  m_TagString: CurrentCustomer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

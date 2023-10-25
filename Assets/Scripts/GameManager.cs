@@ -46,6 +46,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform showUpPoint;
     [SerializeField] public Transform exitPoint;
 
+    [Header("DIALOGUE")]
+    [SerializeField] public bool conversationOn;
+    [SerializeField] public bool optionsSet;
+    [SerializeField] public TMP_Text dialogueText;
+    [SerializeField] public GameObject dialoguePanel;
+    [SerializeField] public int internalCount = 0;
+
     #region Código Antiguo
     //[SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn;
     //[SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
@@ -94,8 +101,63 @@ public class GameManager : MonoBehaviour
 
     public void Day1()
     {
-        CharacterShowUp(elementalTapicio);
+        CharacterShowUp(hybridElvog);
     }
+
+    public void ShowText()
+    {
+        GameObject currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+
+
+        if (currentCustomer.name.Contains("Geraaaard"))
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+
+        else if (currentCustomer.name.Contains("Sapopotamo"))
+            DialogueTexts(currentCustomer.GetComponent<ElvogElSapopotamo>().dialogueElvog.Count, currentCustomer.GetComponent<ElvogElSapopotamo>().dialogueElvog);
+
+        else if (currentCustomer.name.Contains("Geraaaard"))
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+
+        else if (currentCustomer.name.Contains("Geraaaard"))
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+
+        else if (currentCustomer.name.Contains("Geraaaard"))
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+
+        else if (currentCustomer.name.Contains("Geraaaard"))
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+
+    }
+
+    public void DialogueTexts(int dialogueExtension, List<string> dialogueList)
+    {
+        if (internalCount < dialogueExtension)
+        {
+            conversationOn = true;
+            dialoguePanel.gameObject.SetActive(true);
+
+            dialogueText.text = dialogueList[internalCount];
+            internalCount++;
+        }
+
+        else
+            HideText();
+    }
+
+    public void HideText()
+    {
+        GameObject currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+
+        conversationOn = false;
+        dialoguePanel.gameObject.SetActive(false);
+
+        if (currentCustomer.name.Contains("Geraaaard"))
+            currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+        else if (currentCustomer.name.Contains("Sapopotamo"))
+            currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
+    }
+
+
 
     #region Código Antiguo
     //void firstEntrance(int random)
