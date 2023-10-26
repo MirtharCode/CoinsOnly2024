@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void Day1()
     {
-        CharacterShowUp(hybridElvog);
+        CharacterShowUp(elementalTapicio);
     }
 
     public void ShowText()
@@ -110,22 +110,22 @@ public class GameManager : MonoBehaviour
 
 
         if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
         else if (currentCustomer.name.Contains("Sapopotamo"))
-            DialogueTexts(currentCustomer.GetComponent<ElvogElSapopotamo>().dialogueElvog.Count, currentCustomer.GetComponent<ElvogElSapopotamo>().dialogueElvog);
+            DialogueTexts(currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count, currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue);
+
+        else if (currentCustomer.name.Contains("Antonio"))
+            DialogueTexts(currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count, currentCustomer.GetComponent<AntonioElProgramador>().dialogue);
+
+        else if (currentCustomer.name.Contains("Tapiz"))
+            DialogueTexts(currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count, currentCustomer.GetComponent<TapicioElEmo>().dialogue);
 
         else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
         else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
-
-        else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
-
-        else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogueGeeraard);
+            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
     }
 
@@ -155,6 +155,10 @@ public class GameManager : MonoBehaviour
             currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
         else if (currentCustomer.name.Contains("Sapopotamo"))
             currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
+        else if (currentCustomer.name.Contains("Sapopotamo"))
+            currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
+        else if (currentCustomer.name.Contains("Tapiz"))
+            currentCustomer.GetComponent<TapicioElEmo>().ShowProductsAndMoney();
     }
 
 
