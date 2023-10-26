@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void Day1()
     {
-        CharacterShowUp(elementalTapicio);
+        CharacterShowUp(evilWizardGeraaaaard);
     }
 
     public void ShowText()
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void DialogueTexts(int dialogueExtension, List<string> dialogueList)
     {
-        if (internalCount < dialogueExtension)
+        if (internalCount < dialogueExtension - 2)
         {
             conversationOn = true;
             dialoguePanel.gameObject.SetActive(true);
@@ -141,7 +141,26 @@ public class GameManager : MonoBehaviour
         }
 
         else
+        {
+            conversationOn = false;
             HideText();
+        }
+
+    }
+
+    public void CollectMoney(List<string> dialogueList)
+    {
+        conversationOn = true;
+        dialoguePanel.gameObject.SetActive(true);
+        dialogueText.text = dialogueList[internalCount];
+    }
+
+    public void IDontBelieveIt(List<string> dialogueList)
+    {
+        conversationOn = true;
+        dialoguePanel.gameObject.SetActive(true);
+        dialogueText.text = dialogueList[internalCount];
+
     }
 
     public void HideText()
@@ -151,8 +170,21 @@ public class GameManager : MonoBehaviour
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
 
+
         if (currentCustomer.name.Contains("Geraaaard"))
-            currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+            if (internalCount <= (currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2))
+            {
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
+            else
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().DestroyProduct();
+            }
+
+
         else if (currentCustomer.name.Contains("Sapopotamo"))
             currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
         else if (currentCustomer.name.Contains("Sapopotamo"))

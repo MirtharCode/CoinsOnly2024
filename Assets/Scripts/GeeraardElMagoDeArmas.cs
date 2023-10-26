@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GeeraardElMagoDeArmas : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
+    [SerializeField] public GameObject product;
     [SerializeField] public List<string> dialogue;
 
     void Start()
@@ -54,9 +55,17 @@ public class GeeraardElMagoDeArmas : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            GameObject clon = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
+            product = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
             gameManager.GetComponent<GameManager>().leDineroText.text = "6";
+
         }
+    }
+
+    public void DestroyProduct()
+    {
+        gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(false);
+        Destroy(product);
+        Destroy(gameObject, 2);
     }
 }
