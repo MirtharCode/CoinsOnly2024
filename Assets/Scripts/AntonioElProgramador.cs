@@ -55,7 +55,6 @@ public class AntonioElProgramador : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             GameObject clon = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, oneProduct.position, oneProduct.rotation);
-            gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
             gameManager.GetComponent<GameManager>().leDineroText.text = "8";
         }
     }

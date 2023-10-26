@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
     [SerializeField] public TMP_Text leDineroText;
+    [SerializeField] public bool estaToPagao = false;
 
     [Header("PRODUCTS PLACES")]
     [SerializeField] public Transform oneProduct;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-
+        estaToPagao = false;
         if (currentScene.name == "Day1")
             Day1();
     }
@@ -108,7 +109,6 @@ public class GameManager : MonoBehaviour
     {
         GameObject currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
 
-
         if (currentCustomer.name.Contains("Geraaaard"))
             DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
@@ -148,10 +148,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void CollectMoney(List<string> dialogueList)
+    public void CollectMoney(GameObject customer, List<string> dialogueList)
     {
         conversationOn = true;
+        estaToPagao = true;
         dialoguePanel.gameObject.SetActive(true);
+        leDinero.gameObject.SetActive(false);
         dialogueText.text = dialogueList[internalCount];
     }
 
@@ -169,28 +171,42 @@ public class GameManager : MonoBehaviour
 
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
+        leDinero.gameObject.SetActive(true);
+
+        if (!estaToPagao)
+        {
+            if (currentCustomer.name.Contains("Geraaaard"))
+                if (internalCount <= (currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2))
+                {
+                    currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+                    internalCount++;
+                }
+
+                else
+                    CollectMoney(currentCustomer, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
 
-        if (currentCustomer.name.Contains("Geraaaard"))
-            if (internalCount <= (currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2))
-            {
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
-                internalCount++;
-            }
+            else if (currentCustomer.name.Contains("Sapopotamo"))
+                currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
+            else if (currentCustomer.name.Contains("Antonio"))
+                currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
+            else if (currentCustomer.name.Contains("Tapiz"))
+                currentCustomer.GetComponent<TapicioElEmo>().ShowProductsAndMoney();
+        }
 
-            else
+        else
+        {
+            leDinero.gameObject.SetActive(false);
+
+            if (currentCustomer.name.Contains("Geraaaard"))
             {
                 stopGrangran.gameObject.SetActive(false); // El cliente se pira.
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().DestroyProduct();
+
+                if (currentCustomer.name.Contains("Geraaaard"))
+                    currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ByeBye();
             }
+        }
 
-
-        else if (currentCustomer.name.Contains("Sapopotamo"))
-            currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
-        else if (currentCustomer.name.Contains("Sapopotamo"))
-            currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
-        else if (currentCustomer.name.Contains("Tapiz"))
-            currentCustomer.GetComponent<TapicioElEmo>().ShowProductsAndMoney();
     }
 
 

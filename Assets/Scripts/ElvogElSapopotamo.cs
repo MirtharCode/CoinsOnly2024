@@ -52,7 +52,6 @@ public class ElvogElSapopotamo : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             GameObject clon = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
-            gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
             gameManager.GetComponent<GameManager>().leDineroText.text = "10";
         }
     }

@@ -56,7 +56,6 @@ public class TapicioElEmo : MonoBehaviour
         {
             GameObject clon1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
             GameObject clon2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts2.position, twoProducts2.rotation);
-            gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
             gameManager.GetComponent<GameManager>().leDineroText.text = "22";
         }
     }
