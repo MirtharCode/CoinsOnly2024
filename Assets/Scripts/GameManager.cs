@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject magicBattery;
     [SerializeField] public GameObject magicRamen;
     [SerializeField] public GameObject magicRune;
+    [SerializeField] public GameObject venomPotion;
 
     [Header("CHARACTERS ENTRY/EXIT")]
     [SerializeField] public Transform showUpPoint;

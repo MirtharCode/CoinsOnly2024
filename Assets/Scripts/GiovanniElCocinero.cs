@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class GiovanniElCocinero : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
-    [SerializeField] public GameObject product;
+    [SerializeField] public GameObject product1;
+    [SerializeField] public GameObject product2;
+    [SerializeField] public GameObject product3;
     [SerializeField] public List<string> dialogue;
 
     void Start()
@@ -30,16 +32,17 @@ public class GiovanniElCocinero : MonoBehaviour
         {
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Ey!… Hola amigo… ¿Qué tal tu día?");
-                dialogue.Add("...");
-                dialogue.Add("Ya veo… ja ja ja ja ¿No eres muy hablador eh?");
-                dialogue.Add("Te entiendo tio, yo también estoy tan cansado cuando curro, no se como sobreviví a esta jornada laboral, puede que...porque esté muerto.");
-                dialogue.Add("ja ja ja ja ja… Perdona, los chistes no son lo mío, mi... cabeza no funciona tras un día de trabajo tan duro.");
-                dialogue.Add("Estoy tan agotado del trabajo... mi cerebro ya no funciona, porque...ya sabes... estoy muerto.");
-                dialogue.Add("ja ja ja ja ja… perdón ya paro.");
-                dialogue.Add("Cóbrame y dejaré de incomodarte.");
-                dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero.");
-                dialogue.Add("¡Uy! Me faltaban 2 monedas ¿verdad?, Siempre se cometen estos errores cuando trabajas tanto, o cuando... pierdes la cabeza, ja ja ja ja… Perdón, nos vemos.");
+                dialogue.Add("¡Ahoy, amigo mío! No sabes lo que me encontré hoy.");
+                dialogue.Add("¡EL N-E-C-R-O-N-O-M-I-C-Ó-N!");
+                dialogue.Add("Es el libro de cocina definitivo... o eso creo…");
+                dialogue.Add("Bueno, solo con decirte la primera receta... te va a encantar.");
+                dialogue.Add("\"Cómo invocar a un Dios Antiguo de la Destrucción\" ¿Suena increíble no?");
+                dialogue.Add("Bueno sigo, \"Primer paso: rociar vino hecho de sangre de virgen\" (Bueno... creo que cerveza también serviría...)");
+                dialogue.Add("\"Segundo paso: cortar el muñeco voodoo por la mitad junto con el humano sacrificado\" (Ni idea de qué es un humano sacrificada, pero lo del muñeco tiene buena pinta...)");
+                dialogue.Add("\"Y tercer paso: beber el veneno para que el Dios se adueñe de tu cuerpo\" (Mmm el veneno siempre da un toque picante al plato, se lo echaré al muñeco seguro...)");
+                dialogue.Add("Tiene buena pinta ¿verdad? Para eso necesito estos ingredientes, así que si puedes cobrarme, que me muero por cocinarlo.");
+                dialogue.Add("Gracias, la próxima vez que vuelva te dejaré probar el plato para que me des tu opinión.");
+                dialogue.Add("Mamma mía, ahora no podré hacer la mayor delicatessen del mundo por tu culpa.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
             }
@@ -50,20 +53,24 @@ public class GiovanniElCocinero : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        Transform oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
-        Transform twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
-        Transform twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
+        Transform product1Place = gameManager.GetComponent<GameManager>().oneProduct.transform;
+        Transform product2Place = gameManager.GetComponent<GameManager>().twoProducts1.transform;
+        Transform product3Place = gameManager.GetComponent<GameManager>().twoProducts2.transform;
 
         if (currentScene.name == "Day1")
         {
-            product = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, oneProduct.position, oneProduct.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, product1Place.position, product1Place.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, product2Place.position, product1Place.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product3Place.position, product3Place.rotation);
             gameManager.GetComponent<GameManager>().leDineroText.text = "8";
         }
     }
 
     public void ByeBye()
     {
-        Destroy(product);
+        Destroy(product1);
+        Destroy(product2);
+        Destroy(product3);
 
         gameManager.GetComponent<GameManager>().estaToPagao = false;
         gameManager.GetComponent<GameManager>().internalCount = 0;

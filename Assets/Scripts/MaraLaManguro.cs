@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MaraLaManguro : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
-    [SerializeField] public GameObject product;
+    [SerializeField] public GameObject product1;
+    [SerializeField] public GameObject product2;
     [SerializeField] public List<string> dialogue;
 
     void Start()
@@ -30,16 +31,16 @@ public class MaraLaManguro : MonoBehaviour
         {
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Ey!… Hola amigo… ¿Qué tal tu día?");
-                dialogue.Add("...");
-                dialogue.Add("Ya veo… ja ja ja ja ¿No eres muy hablador eh?");
-                dialogue.Add("Te entiendo tio, yo también estoy tan cansado cuando curro, no se como sobreviví a esta jornada laboral, puede que...porque esté muerto.");
-                dialogue.Add("ja ja ja ja ja… Perdona, los chistes no son lo mío, mi... cabeza no funciona tras un día de trabajo tan duro.");
-                dialogue.Add("Estoy tan agotado del trabajo... mi cerebro ya no funciona, porque...ya sabes... estoy muerto.");
-                dialogue.Add("ja ja ja ja ja… perdón ya paro.");
-                dialogue.Add("Cóbrame y dejaré de incomodarte.");
-                dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero.");
-                dialogue.Add("¡Uy! Me faltaban 2 monedas ¿verdad?, Siempre se cometen estos errores cuando trabajas tanto, o cuando... pierdes la cabeza, ja ja ja ja… Perdón, nos vemos.");
+                dialogue.Add("¡Buenos días querido!");
+                dialogue.Add("¿Podrías luego ayudarme a cargar esto hasta fuera?");
+                dialogue.Add("Uy uy, qué digo... Creo que no puedes abandonar tu puesto ¿no?");
+                dialogue.Add("Desde que no está mi marido me cuesta más cargar la compra...");
+                dialogue.Add("Pero claro... no sé como quiero que esté mi marido si... me lo comí.");
+                dialogue.Add("Qué raro que estés inexpresivo, siempre que cuento esto se asustan... No sé porque no se normaliza que los manguros nos comamos a nuestra pareja.");
+                dialogue.Add("Pero sólo para reproducirnos, no somos unos monstruos");
+                dialogue.Add("Bueno... que nos liamos hablando y tienes que cobrarme, que en breve voy a tener que recoger a mi niño del Zoo.");
+                dialogue.Add("Pues muchas gracias joven, espero que tu pareja te coma pronto también ji ji ji.");
+                dialogue.Add("¿Perdona? Ahora por tu culpa mi hijo no tendrá su gato muerto ¡Él solo quería una mascota!");
 
                 gameManager.GetComponent<GameManager>().ShowText();
             }
@@ -56,14 +57,16 @@ public class MaraLaManguro : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            product = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, oneProduct.position, oneProduct.rotation);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "8";
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
+            gameManager.GetComponent<GameManager>().leDineroText.text = "18";
         }
     }
 
     public void ByeBye()
     {
-        Destroy(product);
+        Destroy(product1);
+        Destroy(product2);
 
         gameManager.GetComponent<GameManager>().estaToPagao = false;
         gameManager.GetComponent<GameManager>().internalCount = 0;
