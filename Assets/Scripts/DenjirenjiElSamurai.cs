@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TapicioElEmo : MonoBehaviour
+public class DenjirenjiElSamurai : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
+    [SerializeField] public GameObject product3;
     [SerializeField] public List<string> dialogue;
 
     void Start()
@@ -32,16 +32,15 @@ public class TapicioElEmo : MonoBehaviour
         {
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Saludos desde mi solitaria existencia. *Suspira*");
-                dialogue.Add("¿Qué pasa? ¿Nunca has visto alguien tan animado verdad? *Suspira*");
-                dialogue.Add("Que quieres que te diga, soy prisionero de mi propio destino, fui creado solo para trabajar, mis cadenas nunca se romperán.");
-                dialogue.Add("A veces deseo seguir siendo ser ese pequeño tapiz colgado en el cementerio de limbásticos, pero por desgracia, mi vida es como una canción emo.");
-                dialogue.Add("Larga, triste y que nunca termina.");
-                dialogue.Add("Al igual que esta conversación, perdón por hacerte perder el tiempo. *Suspira*");
-                dialogue.Add("Deberías de cobrarme ya, o si no, llegaré tarde a mi torneo de \"Lanzamiento de miradas melancólicas\". *Suspira*");
-                dialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");
-                dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero.");
-                dialogue.Add("Otra desgracia más para mi vida, ahora seguro gano el torneo por tu culpa.");
+                dialogue.Add("Buenas joven, no me creo que mi jefe me vaya a usar así.");
+                dialogue.Add("Perdón, el jefe me está poniendo la cabeza como un horno.");
+                dialogue.Add("He estado 10 años aprendiendo técnicas samurai infalibles, he sido el mejor de la promoción, incluso salvé el mundo junto a cuatro tortugas ninja, y ahora…");
+                dialogue.Add("Solo sirvo para calentar su maldita comida, y encima la tengo que comprar yo");
+                dialogue.Add("He perdido todo honor como samurai...");
+                dialogue.Add("Al final acabaré haciéndome un harakiri con cucharas.");
+                dialogue.Add("Disculpa que te haya robado un poco de tu tiempo, cóbrame esto antes de que mi jefe se planteé hacerme el harakiri él mismo");
+                dialogue.Add("Menos mal que tenía el dinero justo, o... eso creo.");
+                dialogue.Add("¡Por una moneda! Discúlpame, espero que el jefe no me mate...");
 
                 gameManager.GetComponent<GameManager>().ShowText();
             }
@@ -52,15 +51,16 @@ public class TapicioElEmo : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        Transform oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
-        Transform twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
-        Transform twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
+        Transform product1Place = gameManager.GetComponent<GameManager>().oneProduct.transform;
+        Transform product2Place = gameManager.GetComponent<GameManager>().twoProducts1.transform;
+        Transform product3Place = gameManager.GetComponent<GameManager>().twoProducts2.transform;
 
         if (currentScene.name == "Day1")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts2.position, twoProducts2.rotation);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "22";
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product1Place.position, product1Place.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product2Place.position, product1Place.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product3Place.position, product3Place.rotation);
+            gameManager.GetComponent<GameManager>().leDineroText.text = "9";
         }
     }
 
@@ -68,6 +68,7 @@ public class TapicioElEmo : MonoBehaviour
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
 
         gameManager.GetComponent<GameManager>().estaToPagao = false;
         gameManager.GetComponent<GameManager>().internalCount = 0;

@@ -61,7 +61,7 @@ public class ElvogElSapopotamo : MonoBehaviour
     public void ByeBye()
     {
         Destroy(product);
-        gameManager.GetComponent<GameManager>().customerNumber++;
+
         gameManager.GetComponent<GameManager>().estaToPagao = false;
         gameManager.GetComponent<GameManager>().internalCount = 0;
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
@@ -71,6 +71,17 @@ public class ElvogElSapopotamo : MonoBehaviour
 
     private void OnDestroy()
     {
-        gameManager.GetComponent<GameManager>().CharacterShowUp(gameManager.GetComponent<GameManager>().dailyCustomers[gameManager.GetComponent<GameManager>().customerNumber]);
+        List<GameObject> list = gameManager.GetComponent<GameManager>().dailyCustomers;
+
+        if (list.Count > 1)
+        {
+            gameManager.GetComponent<GameManager>().CharacterShowUp(list[gameManager.GetComponent<GameManager>().customerNumber + 1]);
+            list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+        }
+        else
+        {
+            list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            Debug.Log("Se acabó el día guachines.");
+        }
     }
 }

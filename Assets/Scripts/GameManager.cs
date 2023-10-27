@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject hybridElvog;
     [SerializeField] public GameObject elementalTapicio;
     [SerializeField] public GameObject limbasticAntonio;
+    [SerializeField] public GameObject electropedDenjirenji;
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(elementalTapicio);
+        dailyCustomers.Add(electropedDenjirenji);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -135,8 +137,8 @@ public class GameManager : MonoBehaviour
         else if (currentCustomer.name.Contains("Tapiz"))
             DialogueTexts(currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count, currentCustomer.GetComponent<TapicioElEmo>().dialogue);
 
-        else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
+        else if (currentCustomer.name.Contains("Denjirenji"))
+            DialogueTexts(currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count, currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue);
 
         else if (currentCustomer.name.Contains("Geraaaard"))
             DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
@@ -187,9 +189,23 @@ public class GameManager : MonoBehaviour
             }
 
             else if (currentCustomer.name.Contains("Antonio"))
+            {
                 currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
             else if (currentCustomer.name.Contains("Tapiz"))
+            {
                 currentCustomer.GetComponent<TapicioElEmo>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
+            else if (currentCustomer.name.Contains("Denjirenji"))
+            {
+                currentCustomer.GetComponent<DenjirenjiElSamurai>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
         }
 
         else
@@ -205,6 +221,26 @@ public class GameManager : MonoBehaviour
                 stopGrangran.gameObject.SetActive(false); // El cliente se pira.
                 currentCustomer.GetComponent<ElvogElSapopotamo>().ByeBye();
             }
+
+            else if (currentCustomer.name.Contains("Antonio"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<AntonioElProgramador>().ByeBye();
+            }
+
+            else if (currentCustomer.name.Contains("Tapiz"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<TapicioElEmo>().ByeBye();
+            }
+
+            else if (currentCustomer.name.Contains("Denjirenji"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<DenjirenjiElSamurai>().ByeBye();
+            }
+
+
         }
 
     }
@@ -220,14 +256,37 @@ public class GameManager : MonoBehaviour
 
         if (currentCustomer.name.Contains("Geraaaard"))
         {
-            dialogueText.text = currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2];
+            dialogueText.text =
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2];
             LaVoluntad(10);
         }
 
         else if (currentCustomer.name.Contains("Sapopotamo"))
         {
-            dialogueText.text = currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 2];
+            dialogueText.text =
+                currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 2];
             LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Antonio"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<AntonioElProgramador>().dialogue[currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count - 2];
+            LaVoluntad(-10);
+        }
+
+        else if (currentCustomer.name.Contains("Tapiz"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<TapicioElEmo>().dialogue[currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count - 2];
+            LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Denjirenji"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue[currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count - 2];
+            LaVoluntad(-10);
         }
 
     }
@@ -243,16 +302,38 @@ public class GameManager : MonoBehaviour
 
         if (currentCustomer.name.Contains("Geraaaard"))
         {
-            dialogueText.text = currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 1];
+            dialogueText.text =
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 1];
             LaVoluntad(-10);
         }
 
         else if (currentCustomer.name.Contains("Sapopotamo"))
         {
-            dialogueText.text = currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 1];
+            dialogueText.text =
+                currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 1];
             LaVoluntad(-10);
         }
 
+        else if (currentCustomer.name.Contains("Antonio"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<AntonioElProgramador>().dialogue[currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count - 1];
+            LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Tapiz"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<TapicioElEmo>().dialogue[currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count - 1];
+            LaVoluntad(-10);
+        }
+
+        else if (currentCustomer.name.Contains("Denjirenji"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue[currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count - 1];
+            LaVoluntad(10);
+        }
     }
 
     public void LaVoluntad(float cantidad)
