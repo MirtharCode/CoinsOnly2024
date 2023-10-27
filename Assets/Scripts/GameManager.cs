@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public List<GameObject> dailyCustomers;
     [SerializeField] public GameObject evilWizardGerard;
     [SerializeField] public GameObject hybridElvog;
-    [SerializeField] public GameObject elementalTapicio;
     [SerializeField] public GameObject limbasticAntonio;
+    [SerializeField] public GameObject elementalTapicio;
     [SerializeField] public GameObject electropedDenjirenji;
+    [SerializeField] public GameObject hybridMara;
+    [SerializeField] public GameObject limbasticGiovanni;
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
@@ -50,6 +52,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject deadCat;
     [SerializeField] public GameObject voodooDoll;
     [SerializeField] public GameObject manaPotion;
+    [SerializeField] public GameObject magicBattery;
+    [SerializeField] public GameObject magicRamen;
+    [SerializeField] public GameObject magicRune;
 
     [Header("CHARACTERS ENTRY/EXIT")]
     [SerializeField] public Transform showUpPoint;
@@ -140,8 +145,11 @@ public class GameManager : MonoBehaviour
         else if (currentCustomer.name.Contains("Denjirenji"))
             DialogueTexts(currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count, currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue);
 
-        else if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
+        else if (currentCustomer.name.Contains("Mara"))
+            DialogueTexts(currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count, currentCustomer.GetComponent<MaraLaManguro>().dialogue);
+
+        else if (currentCustomer.name.Contains("Giovanni"))
+            DialogueTexts(currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count, currentCustomer.GetComponent<GiovanniElCocinero>().dialogue);
 
     }
 
@@ -206,6 +214,18 @@ public class GameManager : MonoBehaviour
                 internalCount++;
             }
 
+            else if (currentCustomer.name.Contains("Mara"))
+            {
+                currentCustomer.GetComponent<MaraLaManguro>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
+            else if (currentCustomer.name.Contains("Giovanni"))
+            {
+                currentCustomer.GetComponent<GiovanniElCocinero>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
         }
 
         else
@@ -240,7 +260,17 @@ public class GameManager : MonoBehaviour
                 currentCustomer.GetComponent<DenjirenjiElSamurai>().ByeBye();
             }
 
+            else if (currentCustomer.name.Contains("Mara"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<MaraLaManguro>().ByeBye();
+            }
 
+            else if (currentCustomer.name.Contains("Giovanni"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<GiovanniElCocinero>().ByeBye();
+            }
         }
 
     }
@@ -289,6 +319,20 @@ public class GameManager : MonoBehaviour
             LaVoluntad(-10);
         }
 
+        else if (currentCustomer.name.Contains("Mara"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<MaraLaManguro>().dialogue[currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count - 2];
+            LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Giovanni"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<GiovanniElCocinero>().dialogue[currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count - 2];
+            LaVoluntad(10);
+        }
+
     }
 
     public void IDontBelieveIt()
@@ -333,6 +377,20 @@ public class GameManager : MonoBehaviour
             dialogueText.text =
                 currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue[currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count - 1];
             LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Mara"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<MaraLaManguro>().dialogue[currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count - 1];
+            LaVoluntad(-10);
+        }
+
+        else if (currentCustomer.name.Contains("Giovanni"))
+        {
+            dialogueText.text =
+                currentCustomer.GetComponent<GiovanniElCocinero>().dialogue[currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count - 1];
+            LaVoluntad(-10);
         }
     }
 
