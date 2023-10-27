@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ElvogElSapopotamo : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
+    [SerializeField] public GameObject product;
     [SerializeField] public List<string> dialogue;
 
     void Start()
@@ -51,8 +53,24 @@ public class ElvogElSapopotamo : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            GameObject clon = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
             gameManager.GetComponent<GameManager>().leDineroText.text = "10";
         }
+    }
+
+    public void ByeBye()
+    {
+        Destroy(product);
+        gameManager.GetComponent<GameManager>().customerNumber++;
+        gameManager.GetComponent<GameManager>().estaToPagao = false;
+        gameManager.GetComponent<GameManager>().internalCount = 0;
+        gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        Destroy(gameObject, 2);
+    }
+
+    private void OnDestroy()
+    {
+        gameManager.GetComponent<GameManager>().CharacterShowUp(gameManager.GetComponent<GameManager>().dailyCustomers[gameManager.GetComponent<GameManager>().customerNumber]);
     }
 }

@@ -14,7 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject stopGrangran;
 
     [Header("CHARACTERS THAT CAN APPEAR")]
-    [SerializeField] public GameObject evilWizardGeraaaaard;
+    [SerializeField] public GameObject currentCustomer;
+    [SerializeField] public int customerNumber = 0;
+    [SerializeField] public List<GameObject> dailyCustomers;
+    [SerializeField] public GameObject evilWizardGerard;
     [SerializeField] public GameObject hybridElvog;
     [SerializeField] public GameObject elementalTapicio;
     [SerializeField] public GameObject limbasticAntonio;
@@ -28,7 +31,11 @@ public class GameManager : MonoBehaviour
 
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
+    [SerializeField] public GameObject leCajaRegistradora;
+    [SerializeField] public GameObject lesPropinas;
     [SerializeField] public TMP_Text leDineroText;
+    [SerializeField] public TMP_Text lePropinasText;
+    [SerializeField] public float propinasNumber = 0;
     [SerializeField] public bool estaToPagao = false;
 
     [Header("PRODUCTS PLACES")]
@@ -75,7 +82,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
     }
 
     public void OpenList()
@@ -102,12 +108,20 @@ public class GameManager : MonoBehaviour
 
     public void Day1()
     {
-        CharacterShowUp(evilWizardGeraaaaard);
+        LaVoluntad(50);
+
+        dailyCustomers.Clear();
+        dailyCustomers.Add(evilWizardGerard);
+        dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(limbasticAntonio);
+        dailyCustomers.Add(elementalTapicio);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
     }
 
     public void ShowText()
     {
-        GameObject currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+        currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
 
         if (currentCustomer.name.Contains("Geraaaard"))
             DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
@@ -145,49 +159,33 @@ public class GameManager : MonoBehaviour
             conversationOn = false;
             HideText();
         }
-
-    }
-
-    public void CollectMoney(GameObject customer, List<string> dialogueList)
-    {
-        conversationOn = true;
-        estaToPagao = true;
-        dialoguePanel.gameObject.SetActive(true);
-        leDinero.gameObject.SetActive(false);
-        dialogueText.text = dialogueList[internalCount];
-    }
-
-    public void IDontBelieveIt(List<string> dialogueList)
-    {
-        conversationOn = true;
-        dialoguePanel.gameObject.SetActive(true);
-        dialogueText.text = dialogueList[internalCount];
-
     }
 
     public void HideText()
     {
-        GameObject currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+        currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
 
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
-        leDinero.gameObject.SetActive(true);
 
         if (!estaToPagao)
         {
+            leDinero.gameObject.SetActive(true);
+            leDinero.gameObject.GetComponent<Button>().enabled = true;
+            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+
             if (currentCustomer.name.Contains("Geraaaard"))
-                if (internalCount <= (currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2))
-                {
-                    currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
-                    internalCount++;
-                }
-
-                else
-                    CollectMoney(currentCustomer, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
-
+            {
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+                internalCount++;
+            }
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
+            {
                 currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
+                internalCount++;
+            }
+
             else if (currentCustomer.name.Contains("Antonio"))
                 currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
             else if (currentCustomer.name.Contains("Tapiz"))
@@ -196,20 +194,73 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            leDinero.gameObject.SetActive(false);
-
             if (currentCustomer.name.Contains("Geraaaard"))
             {
                 stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ByeBye();
+            }
 
-                if (currentCustomer.name.Contains("Geraaaard"))
-                    currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ByeBye();
+            else if (currentCustomer.name.Contains("Sapopotamo"))
+            {
+                stopGrangran.gameObject.SetActive(false); // El cliente se pira.
+                currentCustomer.GetComponent<ElvogElSapopotamo>().ByeBye();
             }
         }
 
     }
 
+    public void CollectMoney()
+    {
+        currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
 
+        conversationOn = true;
+        estaToPagao = true;
+        dialoguePanel.gameObject.SetActive(true);
+        leDinero.gameObject.SetActive(false);
+
+        if (currentCustomer.name.Contains("Geraaaard"))
+        {
+            dialogueText.text = currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2];
+            LaVoluntad(10);
+        }
+
+        else if (currentCustomer.name.Contains("Sapopotamo"))
+        {
+            dialogueText.text = currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 2];
+            LaVoluntad(10);
+        }
+
+    }
+
+    public void IDontBelieveIt()
+    {
+        currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+
+        conversationOn = true;
+        estaToPagao = true;
+        dialoguePanel.gameObject.SetActive(true);
+        leDinero.gameObject.SetActive(false);
+
+        if (currentCustomer.name.Contains("Geraaaard"))
+        {
+            dialogueText.text = currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 1];
+            LaVoluntad(-10);
+        }
+
+        else if (currentCustomer.name.Contains("Sapopotamo"))
+        {
+            dialogueText.text = currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 1];
+            LaVoluntad(-10);
+        }
+
+    }
+
+    public void LaVoluntad(float cantidad)
+    {
+        propinasNumber += cantidad;
+        lesPropinas.GetComponent<Image>().fillAmount = (propinasNumber) / 100;
+        lePropinasText.text = "" + propinasNumber;
+    }
 
     #region Código Antiguo
     //void firstEntrance(int random)
