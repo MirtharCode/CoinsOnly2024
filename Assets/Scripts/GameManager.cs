@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public int internalCount = 0;
 
+    [SerializeField] GameObject canvasPausa;
+
+
     #region Código Antiguo
     //[SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn;
     //[SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
@@ -89,6 +92,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (canvasPausa.activeSelf)
+            {
+                canvasPausa.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else
+            {
+                canvasPausa.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
     }
 
     public void OpenList()
@@ -400,6 +416,20 @@ public class GameManager : MonoBehaviour
         propinasNumber += cantidad;
         lesPropinas.GetComponent<Image>().fillAmount = (propinasNumber) / 100;
         lePropinasText.text = "" + propinasNumber;
+    }
+
+
+
+    public void Reanudar()
+    {
+        canvasPausa.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void Titulo()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     #region Código Antiguo
