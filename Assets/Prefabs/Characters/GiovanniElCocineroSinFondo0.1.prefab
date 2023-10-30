@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7336179541738107910}
   - component: {fileID: 7336179541738107909}
   - component: {fileID: 7336179541738107908}
-  - component: {fileID: 8287813183400857497}
+  - component: {fileID: 2543704542248000226}
   m_Layer: 0
   m_Name: GiovanniElCocineroSinFondo0.1
   m_TagString: CurrentCustomer
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -25
-  m_Sprite: {fileID: 21300000, guid: e567c224a03ccee49a8acaa28a578c96, type: 3}
-  m_Color: {r: 0.9528302, g: 0.71584624, b: 0.40899786, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e827729d0dcb1b04c9494feb96b61716, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,11 +100,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.91}
+  m_Offset: {x: 0, y: -2.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.1, y: 5.31}
+    oldSize: {x: 5.5, y: 6.5}
     newSize: {x: 4.1, y: 5.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &8287813183400857497
+--- !u!114 &2543704542248000226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7336179541738107905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0401b4d4d4e301144bf362a3d05e1544, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d3f107c412c12345be4fdef0cc92295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  product: {fileID: 0}
+  product1: {fileID: 0}
+  product2: {fileID: 0}
+  product3: {fileID: 0}
   dialogue: []

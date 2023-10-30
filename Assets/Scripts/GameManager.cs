@@ -72,8 +72,6 @@ public class GameManager : MonoBehaviour
 
 
     #region Código Antiguo
-    //[SerializeField] public bool luffyOn, doraOn, terryOn, franceOn, duolingOn;
-    //[SerializeField] public GameObject[] products, boughtProducts, soldPlaces;
     //[SerializeField] public TMP_Text initialConversationText;
     //[SerializeField] public char[] chars;
     //[SerializeField] public string[] words;
@@ -139,6 +137,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(electropedDenjirenji);
+        dailyCustomers.Add(limbasticGiovanni);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
