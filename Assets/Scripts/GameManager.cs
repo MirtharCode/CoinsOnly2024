@@ -146,6 +146,9 @@ public class GameManager : MonoBehaviour
     {
         currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
 
+        // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
+        // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.
+
         if (currentCustomer.name.Contains("Geraaaard"))
             DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
 
@@ -171,6 +174,7 @@ public class GameManager : MonoBehaviour
 
     public void DialogueTexts(int dialogueExtension, List<string> dialogueList)
     {
+        // Este método lo que hace es ver qué línea de diálogo está viéndose ahora y mientras que sean los diálogos "pre-compra" (todos menos los dos últimos)
         if (internalCount < dialogueExtension - 2)
         {
             conversationOn = true;
