@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1842405180829131085}
   - component: {fileID: 1842405180829131084}
   - component: {fileID: 3438261771396824225}
+  - component: {fileID: 4384575084317191728}
   m_Layer: 0
   m_Name: DenjirenjiElSamuraiSinFondo0.1
   m_TagString: CurrentCustomer
@@ -151,3 +152,24 @@ MonoBehaviour:
   product2: {fileID: 0}
   product3: {fileID: 0}
   dialogue: []
+--- !u!95 &4384575084317191728
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842405180829131057}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
