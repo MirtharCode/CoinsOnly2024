@@ -10,6 +10,8 @@ public class AntonioElProgramador : MonoBehaviour
     [SerializeField] public GameObject product;
     [SerializeField] public List<string> dialogue;
 
+    bool repetirunavez = false;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -26,8 +28,10 @@ public class AntonioElProgramador : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (collision.transform.tag == "Trampilla")
+        if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
+            repetirunavez = true;
+
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("Ey!… Hola amigo… ¿Qué tal tu día?");

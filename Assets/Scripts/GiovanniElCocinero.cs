@@ -12,6 +12,8 @@ public class GiovanniElCocinero : MonoBehaviour
     [SerializeField] public GameObject product3;
     [SerializeField] public List<string> dialogue;
 
+    bool repetirunavez = false;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -28,8 +30,10 @@ public class GiovanniElCocinero : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (collision.transform.tag == "Trampilla")
+        if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
+            repetirunavez = true;
+
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("¡Ahoy, amigo mío! No sabes lo que me encontré hoy.");
