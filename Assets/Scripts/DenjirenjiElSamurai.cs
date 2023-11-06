@@ -12,6 +12,8 @@ public class DenjirenjiElSamurai : MonoBehaviour
     [SerializeField] public GameObject product3;
     [SerializeField] public List<string> dialogue;
 
+    bool repetirunavez = false;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -28,8 +30,10 @@ public class DenjirenjiElSamurai : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (collision.transform.tag == "Trampilla")
+        if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
+            repetirunavez = true;
+
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("Buenas joven, no me creo que mi jefe me vaya a usar así.");

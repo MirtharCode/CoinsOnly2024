@@ -12,6 +12,8 @@ public class GeeraardElMagoDeArmas : MonoBehaviour
     [SerializeField] public GameObject product;
     [SerializeField] public List<string> dialogue;
 
+    bool repetirunavez = false;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -28,8 +30,11 @@ public class GeeraardElMagoDeArmas : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (collision.transform.tag == "Trampilla")
+
+        if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
+            repetirunavez = true;
+
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("Buenas ciudadano, ya llegó aquí, el inigualable Geeraard, gracias, gracias…");
