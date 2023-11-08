@@ -61,6 +61,7 @@ public class AntonioElProgramador : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             product = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, oneProduct.position, oneProduct.rotation);
+            product.transform.SetParent(oneProduct);
             gameManager.GetComponent<GameManager>().leDineroText.text = "8";
         }
     }

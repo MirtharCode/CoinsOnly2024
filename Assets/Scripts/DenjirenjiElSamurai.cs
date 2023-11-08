@@ -62,8 +62,11 @@ public class DenjirenjiElSamurai : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product1Place.position, product1Place.rotation);
+            product1.transform.SetParent(product1Place);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product2Place.position, product1Place.rotation);
+            product2.transform.SetParent(product2Place);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product3Place.position, product3Place.rotation);
+            product3.transform.SetParent(product3Place);
             gameManager.GetComponent<GameManager>().leDineroText.text = "9";
         }
     }
