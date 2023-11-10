@@ -57,7 +57,9 @@ public class MaraLaManguro : MonoBehaviour
 
         Transform oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         Transform twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
+        product1.transform.SetParent(twoProducts1);
         Transform twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
+        product2.transform.SetParent(twoProducts2);
 
         if (currentScene.name == "Day1")
         {

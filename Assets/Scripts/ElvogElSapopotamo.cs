@@ -58,6 +58,7 @@ public class ElvogElSapopotamo : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             product = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product.transform.SetParent(oneProduct);
             gameManager.GetComponent<GameManager>().leDineroText.text = "10";
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -62,7 +63,9 @@ public class TapicioElEmo : MonoBehaviour
         if (currentScene.name == "Day1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
+            product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts2.position, twoProducts2.rotation);
+            product2.transform.SetParent(twoProducts2);
             gameManager.GetComponent<GameManager>().leDineroText.text = "22";
         }
     }
