@@ -2299,7 +2299,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Al clickar sobre la flecha de la derecha, se te abrir\xE1 una lista con
     el valor de los productos que disponemos en la tienda, encargate y asegurate
-    de sumar bien el valor de los prductos."
+    de sumar bien el valor de los productos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
   m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
