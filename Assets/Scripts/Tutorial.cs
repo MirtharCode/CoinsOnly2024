@@ -57,4 +57,8 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+    public void volverMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
