@@ -7,7 +7,7 @@ public class MenuInicial : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     public void Salir()
@@ -18,6 +18,11 @@ public class MenuInicial : MonoBehaviour
 
     public void Creditos()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(2);
+    }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene(3);
     }
 }
