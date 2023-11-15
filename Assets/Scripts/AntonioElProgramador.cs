@@ -74,6 +74,7 @@ public class AntonioElProgramador : MonoBehaviour
         gameManager.GetComponent<GameManager>().internalCount = 0;
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
         Destroy(gameObject, 2);
     }
 
@@ -89,6 +90,7 @@ public class AntonioElProgramador : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
     }

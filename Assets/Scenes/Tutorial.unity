@@ -257,12 +257,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "El cliente vendr\xE1 con ciertos productos de la tienda, tendr\xE1s que
-    asegurarte de que traen el dinero suficiente para poder comprar los productos
-    que traigan al mostrador."
+  m_text: "Cuando acabe su di\xE1logo, te pondr\xE1n los productos que hayan\ncomprado
+    y junto a ellos habr\xE1 una bolsa con dinero con el n\xFAmero del\nimporte que
+    el cliente abona, tendr\xE1s que asegurarte de que sea exacto."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 737.36475, y: 476.31836}
+  m_AnchoredPosition: {x: 737.36475, y: 484}
   m_SizeDelta: {x: 391.2168, y: 73.3531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477939780
@@ -554,9 +554,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.6862745, g: 0.6431373, b: 0.47450984, a: 1}
+    m_HighlightedColor: {r: 0.87843144, g: 0.8352942, b: 0.6666667, a: 1}
+    m_PressedColor: {r: 0.5294118, g: 0.49803925, b: 0.37254903, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -981,12 +981,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Est\xE1 es tu tienda, ser\xE1s el encargado de atender a los clientes
-    y venderle los productos que te soliciten o no, dependiendo de si cumplen con
-    los requisitos o no."
+  m_text: "Esta es tu tienda. Ser\xE1s el encargado de atender a los clientes y\nvenderle
+    los productos que te soliciten, pudiendo cobrarles\ndirectamente o hacerles ver
+    que no contaron bien."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1010,8 +1010,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1274,8 +1274,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Men\xFA Principal"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86f683b82a8656740a44f34d3f13d09b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb854d9e33a800b4aa4f2a0e221a04fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1602,7 +1602,7 @@ RectTransform:
   m_Children:
   - {fileID: 1186871609}
   m_Father: {fileID: 1910498232}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1630,9 +1630,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.6862745, g: 0.6431373, b: 0.47450984, a: 1}
+    m_HighlightedColor: {r: 0.87843144, g: 0.8352942, b: 0.6666667, a: 1}
+    m_PressedColor: {r: 0.5294118, g: 0.49803925, b: 0.37254903, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 141bec5aa246c9740bbe319bc0f5d814, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d80600dc72a198041965ea5f0dcb43af, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1972,14 +1972,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sobre la bolsa de monedas se mostrar\xE1 la cantidad de dinero que trae
-    el cliente. Si crees que coincide el valor de los productos con el dinero que
-    trae, clicka sobre la bolsa de dinero que se pondr\xE1 de color verde tal y c\xF3mo
-    se puestra en la imagen de la derecha. Si no coincide, clicka sobre la caja registradora
-    que se pondr\xE1 de color rojo tal y c\xF3mo muestra la imagen de la izquierda."
+  m_text: "Si crees que el importe es exacto, haz click en la bolsa de dinero y si
+    no, haz click en la caja registradora. Si el cliente piensa que has hecho bien,
+    te dar\xE1\npropina y si se enfada, tu jefe te quitar\xE1 parte de la propina
+    acumulada. As\xED\nobtienes reputaci\xF3n aqu\xED y se ve reflejado en el tarro
+    de la izquierda."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2003,8 +2003,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2087,10 +2087,10 @@ RectTransform:
   m_Father: {fileID: 1910498232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: -0.00012207, y: 0}
+  m_SizeDelta: {x: 1919.9999, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223887041
 MonoBehaviour:
@@ -2188,15 +2188,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Si cobras mal al cliente, tu reputaci\xF3n bajar\xE1, la cual se muestra
-    mediante un tarro de propinas que se situa en al lado del telefono en el lado
-    izquierdo. Si le cobras bien, tu reputaci\xF3n subira. Dependiendo de tu reputaci\xF3n
-    al final del juego, conseguir\xE1s finalizar tu aventura por este bazar de una
-    manera mejor o peor.  \xA1Buena suerte en tu primer d\xEDa de trabajo por estas
-    tierras!"
+  m_text: "\xA1Ojo! No siempre ser honesto te dar\xE1 buena reputaci\xF3n, quiz\xE1s
+    exigirle a un mago negro que aporte 2 monedas que le faltan no sea la mejor de
+    las ideas.\nDependiendo de tu reputaci\xF3n al final del juego, tendr\xE1s diferentes
+    finales. \n\xA1BUENA SUERTE EN TU PRIMER D\xCDA DE TRABAJO POR ESTAS TIERRAS!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2220,8 +2218,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46
-  m_fontSizeBase: 46
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2566,12 +2564,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Al clickar sobre la flecha de la derecha, se te abrir\xE1 una lista con
-    el valor de los productos que disponemos en la tienda, encargate y asegurate
-    de sumar bien el valor de los productos."
+  m_text: "Al hacer click en la flechita de la derecha de la caja registradora, \nse
+    te desplegar\xE1 una lista con el precio de todos los productos \nque tu tienda
+    ofrece. Deber\xE1s consultar dicha lista para comprobar\nsi el cliente ha abonado
+    bien el importe real de lo que ha comprado."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2595,8 +2594,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2703,7 +2702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb854d9e33a800b4aa4f2a0e221a04fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86f683b82a8656740a44f34d3f13d09b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2770,10 +2769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2815,8 +2814,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1223887040}
-  - {fileID: 1087842482}
   - {fileID: 2053048733}
+  - {fileID: 1087842482}
   - {fileID: 477939779}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2838,6 +2837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48343749bc0df714cbec8cdd125bd198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contador: 0
   paneles:
   - {fileID: 2010279370}
   - {fileID: 656605860}
@@ -2845,6 +2845,8 @@ MonoBehaviour:
   - {fileID: 546684526}
   - {fileID: 272236839}
   - {fileID: 1398453928}
+  previousButton: {fileID: 2053048732}
+  nextButton: {fileID: 1087842481}
 --- !u!1 &1917926120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,7 +2905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d80600dc72a198041965ea5f0dcb43af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e516d1e934ab45a43be4b71d9a2482ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2979,14 +2981,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "El cliente vendr\xE1 y te contar\xE1 su vida, escuchale bien para parecer
-    amable y evitar que te despidan, ya que a veces podr\xE1n contarte informaci\xF3n
-    importante que tendr\xE1s que tener en cuenta. Adem\xE1s se podr\xE1n dar situaciones...
-    Peculiares. \xBFVes el bot\xF3n en la esquina inferior derecha sobre el fondo
-    verde? Pulsa en ese bot\xF3n para pasar los dialogos."
+  m_text: "El cliente vendr\xE1 y te contar\xE1 su vida, lee atentamente la informaci\xF3n
+    ya\nque podr\xEDa ser relevante para futuros d\xEDas. Adem\xE1s, algunos clientes
+    ser\xE1n...\n muy peculiares. \xBFVes el bot\xF3n en la esquina inferior derecha
+    sobre el \nfondo verde? Tendr\xE1s que pulsar en \xE9l para pasar al siguiente
+    di\xE1logo."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
-  m_sharedMaterial: {fileID: 8003770441858485694, guid: 58ca028b10c710946bb536ff88f5ac1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3010,8 +3012,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 50.08
+  m_fontSizeBase: 50.08
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3156,7 +3158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2053048733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3171,7 +3173,7 @@ RectTransform:
   m_Children:
   - {fileID: 501471733}
   m_Father: {fileID: 1910498232}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3199,9 +3201,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.6862745, g: 0.6431373, b: 0.47450984, a: 1}
+    m_HighlightedColor: {r: 0.87843144, g: 0.8352942, b: 0.6666667, a: 1}
+    m_PressedColor: {r: 0.5294118, g: 0.49803925, b: 0.37254903, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

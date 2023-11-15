@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
     [SerializeField] public GameObject dropDownPanel;
+    [SerializeField] public GameObject dropDownButton;
     [SerializeField] public TMP_Text dropDownButtonText;
     [SerializeField] public GameObject position1;
     [SerializeField] public GameObject position2;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int internalCount = 0;
 
     [SerializeField] GameObject canvasPausa;
+    [SerializeField] public GameObject victoryPanel;
 
 
     #region Código Antiguo
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        dropDownButton.SetActive(false);
         estaToPagao = false;
         if (currentScene.name == "Day1")
             Day1();
@@ -109,12 +112,16 @@ public class GameManager : MonoBehaviour
     {
         if (listOpen)
         {
+            leDinero.gameObject.GetComponent<Button>().enabled = true;
+            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
             dropDownPanel.transform.position = position2.transform.position;
             dropDownButtonText.text = "<";
             listOpen = false;
         }
         else
         {
+            leDinero.gameObject.GetComponent<Button>().enabled = false;
+            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
             dropDownPanel.transform.position = position1.transform.position;
             dropDownButtonText.text = ">";
             listOpen = true;
@@ -137,6 +144,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(electropedDenjirenji);
+        dailyCustomers.Add(hybridMara);
         dailyCustomers.Add(limbasticGiovanni);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
@@ -199,6 +207,7 @@ public class GameManager : MonoBehaviour
             leDinero.gameObject.SetActive(true);
             leDinero.gameObject.GetComponent<Button>().enabled = true;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+            dropDownButton.SetActive(true);
 
             if (currentCustomer.name.Contains("Geraaaard"))
                 currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
@@ -229,6 +238,7 @@ public class GameManager : MonoBehaviour
             stopGrangran.gameObject.SetActive(false);
             stopPetit.gameObject.SetActive(false);
 
+
             if (currentCustomer.name.Contains("Geraaaard"))
                 currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ByeBye();
 
@@ -254,6 +264,7 @@ public class GameManager : MonoBehaviour
 
     public void CollectMoney()
     {
+        dropDownButton.SetActive(false);
         FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
@@ -264,6 +275,7 @@ public class GameManager : MonoBehaviour
 
     public void IDontBelieveIt()
     {
+        dropDownButton.SetActive(false);
         FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;

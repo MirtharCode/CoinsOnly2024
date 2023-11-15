@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
-    int contador;
-    public GameObject[] paneles;
+    [SerializeField] int contador;
+    [SerializeField] public GameObject[] paneles;
+    [SerializeField] public GameObject previousButton, nextButton;
 
     void Start()
     {
@@ -14,34 +15,28 @@ public class Tutorial : MonoBehaviour
         MostrarPanelActual();
     }
 
-    void Update()
-    {
-
-    }
-
     public void siguiente()
     {
         contador++;
-
-        if (contador >= 7)
-        {
-            SceneManager.LoadScene(0);
-        }
-
         MostrarPanelActual();
 
+        if (contador < 6)
+            previousButton.SetActive(true);
+
+        else
+            nextButton.SetActive(false);
     }
 
     public void anterior()
     {
         contador--;
-
-        if (contador <= 1)
-        {
-            SceneManager.LoadScene(0);
-        }
-
         MostrarPanelActual();
+
+        if (contador > 1)
+            nextButton.SetActive(true);
+
+        else
+            previousButton.SetActive(false);
     }
 
     void MostrarPanelActual()
@@ -52,9 +47,7 @@ public class Tutorial : MonoBehaviour
         }
 
         if (contador <= paneles.Length && contador >= 1)
-        {
             paneles[contador - 1].SetActive(true);
-        }
     }
 
     public void volverMenu()

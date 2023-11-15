@@ -57,14 +57,14 @@ public class MaraLaManguro : MonoBehaviour
 
         Transform oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         Transform twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
-        product1.transform.SetParent(twoProducts1);
         Transform twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
-        product2.transform.SetParent(twoProducts2);
 
         if (currentScene.name == "Day1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
+            product1.transform.SetParent(twoProducts1);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
+            product2.transform.SetParent(twoProducts2);
             gameManager.GetComponent<GameManager>().leDineroText.text = "18";
         }
     }
@@ -78,6 +78,7 @@ public class MaraLaManguro : MonoBehaviour
         gameManager.GetComponent<GameManager>().internalCount = 0;
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
         Destroy(gameObject, 2);
     }
 
@@ -93,6 +94,7 @@ public class MaraLaManguro : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
     }

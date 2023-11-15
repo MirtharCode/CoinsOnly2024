@@ -67,7 +67,7 @@ public class GiovanniElCocinero : MonoBehaviour
             product1.transform.SetParent(product1Place);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, product2Place.position, product1Place.rotation);
             product2.transform.SetParent(product2Place);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product3Place.position, product3Place.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, product3Place.position, product3Place.rotation);
             product3.transform.SetParent(product3Place);
             gameManager.GetComponent<GameManager>().leDineroText.text = "8";
         }
@@ -83,6 +83,7 @@ public class GiovanniElCocinero : MonoBehaviour
         gameManager.GetComponent<GameManager>().internalCount = 0;
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
         Destroy(gameObject, 2);
     }
 
@@ -98,6 +99,7 @@ public class GiovanniElCocinero : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
     }

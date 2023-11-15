@@ -61,11 +61,11 @@ public class DenjirenjiElSamurai : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product1Place.position, product1Place.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, product1Place.position, product1Place.rotation);
             product1.transform.SetParent(product1Place);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product2Place.position, product1Place.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, product2Place.position, product1Place.rotation);
             product2.transform.SetParent(product2Place);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, product3Place.position, product3Place.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, product3Place.position, product3Place.rotation);
             product3.transform.SetParent(product3Place);
             gameManager.GetComponent<GameManager>().leDineroText.text = "9";
         }
@@ -81,6 +81,7 @@ public class DenjirenjiElSamurai : MonoBehaviour
         gameManager.GetComponent<GameManager>().internalCount = 0;
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
         Destroy(gameObject, 2);
     }
 
@@ -96,6 +97,7 @@ public class DenjirenjiElSamurai : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
     }
