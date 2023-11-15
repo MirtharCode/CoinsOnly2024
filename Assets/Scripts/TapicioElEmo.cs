@@ -44,7 +44,7 @@ public class TapicioElEmo : MonoBehaviour
                 dialogue.Add("Al igual que esta conversación, perdón por hacerte perder el tiempo. *Suspira*");
                 dialogue.Add("Deberías de cobrarme ya, o si no, llegaré tarde a mi torneo de \"Lanzamiento de miradas melancólicas\". *Suspira*");
                 dialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");
-                dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero.");
+
                 dialogue.Add("Otra desgracia más para mi vida, ahora seguro gano el torneo por tu culpa.");
 
                 gameManager.GetComponent<GameManager>().ShowText();

@@ -45,7 +45,6 @@ public class GeeraardElMagoDeArmas : MonoBehaviour
                 dialogue.Add("…");
                 dialogue.Add("Bueno, creo que perdonaré tu desconocimiento y el silencio incómodo que haces cuando te dejo hablar.");
                 dialogue.Add("Cóbrame esto, así al menos esta charla dejará de ser tan incómoda.");
-                dialogue.Add("A veces deseo seguir siendo ser ese pequeño tapiz colgado en el cementerio de limbásticos, pero por desgracia, mi vida es como una canción emo");
 
                 dialogue.Add("Humano... deberías de leer alguna de mis grandes historias, así te firmaré el pecho la próxima vez que te vea por aquí. Ciao!");
                 dialogue.Add("¡PERO QUÉ INSOLENCIA ES ESTA! Con lo importante que soy para este reino... Espero que cuando vuelvas hayas aprendido a contar monedas al menos.");
