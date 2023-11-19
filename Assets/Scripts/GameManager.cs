@@ -7,11 +7,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("CHARACTER SIZES")]
-    [SerializeField] public bool toyChiquito;
-    [SerializeField] public GameObject stopPetit;
-    [SerializeField] public bool toyGrandote;
-    [SerializeField] public GameObject stopGrangran;
+    [Header("TRAMPILLA")]
+    [SerializeField] public GameObject trampilla;
 
     [Header("CHARACTERS THAT CAN APPEAR")]
     [SerializeField] public GameObject currentCustomer;
@@ -71,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject victoryPanel;
+    public Scene currentScene;
 
 
     #region Código Antiguo
@@ -84,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
+        currentScene = SceneManager.GetActiveScene();
         dropDownButton.SetActive(false);
         estaToPagao = false;
         if (currentScene.name == "Day1")
@@ -159,26 +157,7 @@ public class GameManager : MonoBehaviour
         // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.
 
-        if (currentCustomer.name.Contains("Geraaaard"))
-            DialogueTexts(currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count, currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue);
-
-        else if (currentCustomer.name.Contains("Sapopotamo"))
-            DialogueTexts(currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count, currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue);
-
-        else if (currentCustomer.name.Contains("Antonio"))
-            DialogueTexts(currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count, currentCustomer.GetComponent<AntonioElProgramador>().dialogue);
-
-        else if (currentCustomer.name.Contains("Tapiz"))
-            DialogueTexts(currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count, currentCustomer.GetComponent<TapicioElEmo>().dialogue);
-
-        else if (currentCustomer.name.Contains("Denjirenji"))
-            DialogueTexts(currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count, currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue);
-
-        else if (currentCustomer.name.Contains("Mara"))
-            DialogueTexts(currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count, currentCustomer.GetComponent<MaraLaManguro>().dialogue);
-
-        else if (currentCustomer.name.Contains("Giovanni"))
-            DialogueTexts(currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count, currentCustomer.GetComponent<GiovanniElCocinero>().dialogue);
+        DialogueTexts(currentCustomer.GetComponent<Client>().dialogue.Count, currentCustomer.GetComponent<Client>().dialogue);
 
     }
 
@@ -188,7 +167,7 @@ public class GameManager : MonoBehaviour
         if (internalCount < dialogueExtension - 2)
         {
             dialogueText.text = dialogueList[internalCount];
-            SoundCreator(dialogueText.text);
+            //SoundCreator(dialogueText.text);
             internalCount++;
         }
 
@@ -210,55 +189,32 @@ public class GameManager : MonoBehaviour
             dropDownButton.SetActive(true);
 
             if (currentCustomer.name.Contains("Geraaaard"))
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<MO_Geeraard>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
-                currentCustomer.GetComponent<ElvogElSapopotamo>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Antonio"))
-                currentCustomer.GetComponent<AntonioElProgramador>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<L_Antonio>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Tapiz"))
-                currentCustomer.GetComponent<TapicioElEmo>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Denjirenji"))
-                currentCustomer.GetComponent<DenjirenjiElSamurai>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<T_Denjirenji>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Mara"))
-                currentCustomer.GetComponent<MaraLaManguro>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
 
             else if (currentCustomer.name.Contains("Giovanni"))
-                currentCustomer.GetComponent<GiovanniElCocinero>().ShowProductsAndMoney();
+                currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
 
             internalCount++;
         }
 
         else
         {
-            stopGrangran.gameObject.SetActive(false);
-            stopPetit.gameObject.SetActive(false);
-
-
-            if (currentCustomer.name.Contains("Geraaaard"))
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Sapopotamo"))
-                currentCustomer.GetComponent<ElvogElSapopotamo>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Antonio"))
-                currentCustomer.GetComponent<AntonioElProgramador>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Tapiz"))
-                currentCustomer.GetComponent<TapicioElEmo>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Denjirenji"))
-                currentCustomer.GetComponent<DenjirenjiElSamurai>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Mara"))
-                currentCustomer.GetComponent<MaraLaManguro>().ByeBye();
-
-            else if (currentCustomer.name.Contains("Giovanni"))
-                currentCustomer.GetComponent<GiovanniElCocinero>().ByeBye();
+            currentCustomer.GetComponent<Client>().ByeBye();
         }
     }
 
@@ -298,119 +254,43 @@ public class GameManager : MonoBehaviour
 
     public string MoneyText()
     {
-        if (currentCustomer.name.Contains("Geraaaard"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 2];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
+        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
 
-        else if (currentCustomer.name.Contains("Sapopotamo"))
+        if (currentScene.name == "Day1")
         {
-            dialogueText.text =
-                currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 2];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") ||
+                currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
 
-        else if (currentCustomer.name.Contains("Antonio"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<AntonioElProgramador>().dialogue[currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count - 2];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Tapiz"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<TapicioElEmo>().dialogue[currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count - 2];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Denjirenji"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue[currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count - 2];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Mara"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<MaraLaManguro>().dialogue[currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count - 2];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Giovanni"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<GiovanniElCocinero>().dialogue[currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count - 2];
-            LaVoluntad(10);
-            return dialogueText.text;
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
+            {
+                LaVoluntad(-10);
+                return dialogueText.text;
+            }
         }
         return null;
     }
     public string IDontBelieveText()
     {
-        if (currentCustomer.name.Contains("Geraaaard"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue[currentCustomer.GetComponent<GeeraardElMagoDeArmas>().dialogue.Count - 1];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
+        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
 
-        else if (currentCustomer.name.Contains("Sapopotamo"))
+        if (currentScene.name == "Day1")
         {
-            dialogueText.text =
-                currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue[currentCustomer.GetComponent<ElvogElSapopotamo>().dialogue.Count - 1];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") ||
+                currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            {
+                LaVoluntad(-10);
+                return dialogueText.text;
+            }
 
-        else if (currentCustomer.name.Contains("Antonio"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<AntonioElProgramador>().dialogue[currentCustomer.GetComponent<AntonioElProgramador>().dialogue.Count - 1];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Tapiz"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<TapicioElEmo>().dialogue[currentCustomer.GetComponent<TapicioElEmo>().dialogue.Count - 1];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Denjirenji"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue[currentCustomer.GetComponent<DenjirenjiElSamurai>().dialogue.Count - 1];
-            LaVoluntad(10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Mara"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<MaraLaManguro>().dialogue[currentCustomer.GetComponent<MaraLaManguro>().dialogue.Count - 1];
-            LaVoluntad(-10);
-            return dialogueText.text;
-        }
-
-        else if (currentCustomer.name.Contains("Giovanni"))
-        {
-            dialogueText.text =
-                currentCustomer.GetComponent<GiovanniElCocinero>().dialogue[currentCustomer.GetComponent<GiovanniElCocinero>().dialogue.Count - 1];
-            LaVoluntad(-10);
-            return dialogueText.text;
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
         }
         return null;
     }
@@ -559,94 +439,94 @@ public class GameManager : MonoBehaviour
     //    }
     //}
 
-    public void SoundCreator(string texto)
-    {
-        chars = new char[texto.Length];
-        string[] provisionalWords = new string[texto.Length];
-        int pauses = 0;
-        int huecoPalabra = 0;
+    //public void SoundCreator(string texto)
+    //{
+    //    chars = new char[texto.Length];
+    //    string[] provisionalWords = new string[texto.Length];
+    //    int pauses = 0;
+    //    int huecoPalabra = 0;
 
 
-        for (int i = 0; i < texto.Length; i++)
-        {
-            if (texto[i] == ' ')
-            {
-                pauses++;
-                huecoPalabra++;
-            }
+    //    for (int i = 0; i < texto.Length; i++)
+    //    {
+    //        if (texto[i] == ' ')
+    //        {
+    //            pauses++;
+    //            huecoPalabra++;
+    //        }
 
-            else if (texto[i] != ' ')
-                provisionalWords[huecoPalabra] += texto[i];
+    //        else if (texto[i] != ' ')
+    //            provisionalWords[huecoPalabra] += texto[i];
 
-            chars[i] = texto[i];
-        }
+    //        chars[i] = texto[i];
+    //    }
 
-        int palabrasTotales = huecoPalabra + 1;
-        words = new string[palabrasTotales];
+    //    int palabrasTotales = huecoPalabra + 1;
+    //    words = new string[palabrasTotales];
 
-        for (int i = 0; i < palabrasTotales; i++)
-        {
-            words[i] = provisionalWords[i];
-        }
+    //    for (int i = 0; i < palabrasTotales; i++)
+    //    {
+    //        words[i] = provisionalWords[i];
+    //    }
 
-        wordsDuration = new int[words.Length];
+    //    wordsDuration = new int[words.Length];
 
-        for (int i = 0; i < wordsDuration.Length; i++)
-        {
-            for (int j = 0; j < words[i].Length; j++)
-            {
-                wordsDuration[i]++;
-            }
-        }
+    //    for (int i = 0; i < wordsDuration.Length; i++)
+    //    {
+    //        for (int j = 0; j < words[i].Length; j++)
+    //        {
+    //            wordsDuration[i]++;
+    //        }
+    //    }
 
-        //StartCoroutine(SoundMaker());
-    }
+    //    //StartCoroutine(SoundMaker());
+    //}
 
-    IEnumerator SoundMaker()
-    {
+    //IEnumerator SoundMaker()
+    //{
 
-        for (int i = 0; i < wordsDuration.Length; i++)
-        {
-            if (wordsDuration[i] < 3)
-            {
-                conversationSound.clip = marianoSounds[1];
+    //    for (int i = 0; i < wordsDuration.Length; i++)
+    //    {
+    //        if (wordsDuration[i] < 3)
+    //        {
+    //            conversationSound.clip = marianoSounds[1];
 
-                float duration = conversationSound.clip.length / 2f;
-                float randomPitch = Random.Range(0.9f, 1.1f);
+    //            float duration = conversationSound.clip.length / 2f;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
 
-                conversationSound.pitch = randomPitch;
-                conversationSound.Play();
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
 
-                yield return new WaitWhile(() => conversationSound.isPlaying);
-            }
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
 
-            else if (wordsDuration[i] < 7)
-            {
-                conversationSound.clip = marianoSounds[4];
+    //        else if (wordsDuration[i] < 7)
+    //        {
+    //            conversationSound.clip = marianoSounds[4];
 
-                float duration = conversationSound.clip.length / 2f;
-                float randomPitch = Random.Range(0.9f, 1.1f);
+    //            float duration = conversationSound.clip.length / 2f;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
 
-                conversationSound.pitch = randomPitch;
-                conversationSound.Play();
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
 
-                yield return new WaitWhile(() => conversationSound.isPlaying);
-            }
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
 
-            else
-            {
-                conversationSound.clip = marianoSounds[7];
+    //        else
+    //        {
+    //            conversationSound.clip = marianoSounds[7];
 
-                float duration = conversationSound.clip.length / 32;
-                float randomPitch = Random.Range(0.9f, 1.1f);
+    //            float duration = conversationSound.clip.length / 32;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
 
-                conversationSound.pitch = randomPitch;
-                conversationSound.Play();
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
 
-                yield return new WaitWhile(() => conversationSound.isPlaying);
-            }
-        }
-    }
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
+    //    }
+    //}
 
     #endregion
 }

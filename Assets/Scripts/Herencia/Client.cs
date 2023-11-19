@@ -18,29 +18,24 @@ public abstract class Client : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GM");
         currentScene = SceneManager.GetActiveScene();
         dialogue = new List<string>();
+        gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
         oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
         twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
     }
 
     public abstract void ShowProductsAndMoney();
-    public void ByeBye()
-    {
-        gameManager.GetComponent<GameManager>().estaToPagao = false;
-        gameManager.GetComponent<GameManager>().internalCount = 0;
-        gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
-        gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
-        Destroy(gameObject, 2);
-    }
+    public abstract void ByeBye();
+
     protected void OnDestroy()
     {
         List<GameObject> list = gameManager.GetComponent<GameManager>().dailyCustomers;
 
         if (list.Count > 1)
         {
-            gameManager.GetComponent<GameManager>().CharacterShowUp(list[gameManager.GetComponent<GameManager>().customerNumber + 1]);
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+            Debug.Log("Yo " + this.name + "Mando a  " + list[gameManager.GetComponent<GameManager>().customerNumber].name);
+            gameManager.GetComponent<GameManager>().CharacterShowUp(list[gameManager.GetComponent<GameManager>().customerNumber]);
         }
         else
         {

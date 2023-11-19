@@ -9078,10 +9078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9854c8ef84e1234987b015b4794f22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toyChiquito: 0
-  stopPetit: {fileID: 1847460655}
-  toyGrandote: 0
-  stopGrangran: {fileID: 536717154}
+  trampilla: {fileID: 536717154}
   currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
@@ -9126,6 +9123,8 @@ MonoBehaviour:
   internalCount: 0
   canvasPausa: {fileID: 56260916}
   victoryPanel: {fileID: 1134481273}
+  currentScene:
+    m_Handle: 0
   initialConversationText: {fileID: 0}
   chars: 
   words: []
@@ -9170,7 +9169,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13469,7 +13468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1847460656
 BoxCollider2D:
   m_ObjectHideFlags: 0

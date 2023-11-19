@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8043330204968246210}
   - component: {fileID: 8043330204968246221}
   - component: {fileID: 8043330204968246220}
-  - component: {fileID: 974518369816059364}
+  - component: {fileID: 2382758401911487024}
   m_Layer: 0
   m_Name: TapizEmoSinFondo
   m_TagString: CurrentCustomer
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.1, y: 0.8094671}
   m_EdgeRadius: 0
---- !u!114 &974518369816059364
+--- !u!114 &2382758401911487024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8043330204968246209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6744690e73c71ce4886b5cae8c2eeb7e, type: 3}
+  m_Script: {fileID: 11500000, guid: decc407872e421c4db53da23da9b8232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  dialogue: []
+  currentScene:
+    m_Handle: 0
+  oneProduct: {fileID: 0}
+  twoProducts1: {fileID: 0}
+  twoProducts2: {fileID: 0}
   product1: {fileID: 0}
   product2: {fileID: 0}
-  dialogue: []

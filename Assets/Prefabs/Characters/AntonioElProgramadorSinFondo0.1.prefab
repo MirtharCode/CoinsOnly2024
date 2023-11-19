@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1842405180829131058}
   - component: {fileID: 1842405180829131085}
   - component: {fileID: 1842405180829131084}
-  - component: {fileID: -5455670702291595433}
+  - component: {fileID: 2029339053947188826}
   m_Layer: 0
   m_Name: AntonioElProgramadorSinFondo0.1
   m_TagString: CurrentCustomer
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9, y: 0.8094671}
   m_EdgeRadius: 0
---- !u!114 &-5455670702291595433
+--- !u!114 &2029339053947188826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1842405180829131057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbdf6fb18f7c2a941b2695c354909024, type: 3}
+  m_Script: {fileID: 11500000, guid: e78a1805aa6c10441a9e5611a7979936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  product: {fileID: 0}
   dialogue: []
+  currentScene:
+    m_Handle: 0
+  oneProduct: {fileID: 0}
+  twoProducts1: {fileID: 0}
+  twoProducts2: {fileID: 0}
+  product: {fileID: 0}

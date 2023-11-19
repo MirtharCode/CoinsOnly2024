@@ -12,11 +12,6 @@ public class MonkeyDMariano : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
-        gameManager.GetComponent<GameManager>().toyGrandote = true;
-        gameManager.GetComponent<GameManager>().stopGrangran.gameObject.SetActive(true);
-
-        gameManager.GetComponent<GameManager>().toyChiquito = false;
-        gameManager.GetComponent<GameManager>().stopPetit.gameObject.SetActive(false);
 
     }
 

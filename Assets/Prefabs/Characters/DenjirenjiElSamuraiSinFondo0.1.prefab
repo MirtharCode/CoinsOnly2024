@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1842405180829131058}
   - component: {fileID: 1842405180829131085}
   - component: {fileID: 1842405180829131084}
-  - component: {fileID: 3438261771396824225}
   - component: {fileID: 4384575084317191728}
+  - component: {fileID: 2081542518281398691}
   m_Layer: 0
   m_Name: DenjirenjiElSamuraiSinFondo0.1
   m_TagString: CurrentCustomer
@@ -135,23 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9, y: 0.8094671}
   m_EdgeRadius: 0
---- !u!114 &3438261771396824225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842405180829131057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c7dd6affa4e134ca77173087a32177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  product1: {fileID: 0}
-  product2: {fileID: 0}
-  product3: {fileID: 0}
-  dialogue: []
 --- !u!95 &4384575084317191728
 Animator:
   serializedVersion: 5
@@ -173,3 +156,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2081542518281398691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842405180829131057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c1efa564adc3444935de397ee5cf74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  dialogue: []
+  currentScene:
+    m_Handle: 0
+  oneProduct: {fileID: 0}
+  twoProducts1: {fileID: 0}
+  twoProducts2: {fileID: 0}
+  product1: {fileID: 0}
+  product2: {fileID: 0}
+  product3: {fileID: 0}
