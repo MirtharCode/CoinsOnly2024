@@ -307,6 +307,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void Salir()
+    {
+        Debug.Log("Salir...");
+        Application.Quit();
+    }
+
     #region Código Antiguo
     //void firstEntrance(int random)
     //{
