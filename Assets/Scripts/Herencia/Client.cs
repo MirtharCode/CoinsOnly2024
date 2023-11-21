@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,11 +8,15 @@ using UnityEngine.UI;
 public abstract class Client : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
+    [SerializeField] public TMP_Text dialogueUIText;
     [SerializeField] public List<string> dialogue;
     [SerializeField] public Scene currentScene;
     [SerializeField] public Transform oneProduct;
     [SerializeField] public Transform twoProducts1;
     [SerializeField] public Transform twoProducts2;
+
+    [SerializeField] public int lineIndex = 0;
+    [SerializeField] public float typingTime = 0.05f;
 
     void Start()
     {
@@ -22,10 +27,25 @@ public abstract class Client : MonoBehaviour
         oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
         twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
+
     }
 
     public abstract void ShowProductsAndMoney();
     public abstract void ByeBye();
+
+    public IEnumerator ShowLine()
+    {
+        typingTime = 0.05f;
+        dialogueUIText.text = string.Empty;
+
+        foreach (char ch in dialogue[lineIndex])
+        {
+            dialogueUIText.text += ch;
+            yield return new WaitForSeconds(typingTime);
+        }
+
+        lineIndex++;
+    }
 
     protected void OnDestroy()
     {
@@ -44,4 +64,6 @@ public abstract class Client : MonoBehaviour
             Debug.Log("Se acabó el día guachines.");
         }
     }
+
+
 }

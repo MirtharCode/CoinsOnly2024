@@ -169,6 +169,8 @@ public class GameManager : MonoBehaviour
             dialogueText.text = dialogueList[internalCount];
             //SoundCreator(dialogueText.text);
             internalCount++;
+
+            StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
         else
@@ -293,6 +295,11 @@ public class GameManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void MoreSpeed()
+    {
+        currentCustomer.GetComponent<Client>().typingTime = 0;
     }
 
     public void Reanudar()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,10 @@ public class MO_Geeraard : MagosOscuros
                 dialogue.Add("Pero, ¡QUÉ INSOLENCIA ES ESTA! Espero que cuando vuelva aprendas a contar monedas humano.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
+
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                StartCoroutine(ShowLine());
             }
         }
     }
