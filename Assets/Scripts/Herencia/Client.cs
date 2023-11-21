@@ -9,6 +9,7 @@ public abstract class Client : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
     [SerializeField] public TMP_Text dialogueUIText;
+    [SerializeField] public GameObject dialogueUIPanel;
     [SerializeField] public List<string> dialogue;
     [SerializeField] public Scene currentScene;
     [SerializeField] public Transform oneProduct;
@@ -42,6 +43,11 @@ public abstract class Client : MonoBehaviour
         {
             dialogueUIText.text += ch;
             yield return new WaitForSeconds(typingTime);
+        }
+        if (dialogueUIText.text == dialogue[lineIndex])
+        {
+            dialogueUIPanel.transform.GetChild(1).gameObject.SetActive(false);
+            dialogueUIPanel.transform.GetChild(2).gameObject.SetActive(true);
         }
 
         lineIndex++;

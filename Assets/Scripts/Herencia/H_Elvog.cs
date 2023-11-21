@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class H_Elvog : Hibridos
 {
@@ -17,7 +19,7 @@ public class H_Elvog : Hibridos
             {
                 dialogue.Add("Buennnasss *hip* Eeeehhhhh… tuuu no eres el de sieeeembrree…*hip*)");
                 dialogue.Add(" Bueno, el otro erra un ######");
-                dialogue.Add("Ahorra a quien le direee sobre niii despidoooo…Encimaaa eres humanooo…*");
+                dialogue.Add("Ahorra a quién le direee sobre niii despidoooo… Encimaaa eres humanooo…*");
                 dialogue.Add("Ne tocarra contarrrrte a tuuu…*hip * ");
                 dialogue.Add(" Soy Elvog, er ex ex explorador");
                 dialogue.Add("Mooo te looo vasss a creer… el ###### de mi jefeee me despidió *hip*");
@@ -29,6 +31,11 @@ public class H_Elvog : Hibridos
                 dialogue.Add("Perro mushacho *hip* el otroo depemdiete erra mejor *hip*");
 
                 gameManager.GetComponent<GameManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                StartCoroutine(ShowLine());
             }
         }
     }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class T_Denjirenji : Tecnopedos
 {
@@ -31,6 +33,11 @@ public class T_Denjirenji : Tecnopedos
                 dialogue.Add("¡Por una moneda! Discúlpame... espero que el jefe no me mate.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                StartCoroutine(ShowLine());
             }
         }
     }

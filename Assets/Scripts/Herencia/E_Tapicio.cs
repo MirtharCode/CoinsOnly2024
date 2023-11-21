@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class E_Tapicio : Elementales
 {
@@ -28,8 +30,12 @@ public class E_Tapicio : Elementales
                 dialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");
                 dialogue.Add("Otra desgracia más para mi vida, ahora seguro gano el torneo por tu culpa.");
 
-
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 gameManager.GetComponent<GameManager>().ShowText();
+
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                StartCoroutine(ShowLine());
             }
         }
     }

@@ -8,6 +8,7 @@ TagManager:
   - Trampilla
   - CurrentCustomer
   - UIText
+  - UIPanel
   layers:
   - Default
   - TransparentFX

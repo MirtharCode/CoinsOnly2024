@@ -20,18 +20,19 @@ public class MO_Geeraard : MagosOscuros
                 dialogue.Add("Buenas ciudadano, ya llegó aquí, el inigualable Geeraard, gracias, gracias…");
                 dialogue.Add("…");
                 dialogue.Add("¿Por qué no has empezado a llorar de la alegría y a pedirme un autógrafo mientras estás de rodillas?");
-                dialogue.Add("¡Cómo no me conoces! Todos aquí me conocen.");
+                dialogue.Add("¡Cómo que no me conoces! Todos aquí me conocen.");
                 dialogue.Add("El héroe de héroes, quien derrotó al Rey Demonio con una sola daga y los ojos vendados.");
-                dialogue.Add("Vamos…Todos mis admiradores, es decir, todo el reino, saben que soy el mejor héroe de la historia.");
+                dialogue.Add("Vamos… Todos mis admiradores, es decir, todo el reino, saben que soy el mejor héroe de la historia.");
                 dialogue.Add("...");
-                dialogue.Add("Bueno, me imagino que perdonare tu desconocimiento y ese silencio incómodo que provocas.");
-                dialogue.Add("Cobrame esto al menos, así esta charla dejará de ser tan incómoda.");
+                dialogue.Add("Bueno, me imagino que perdonaré tu desconocimiento y ese silencio incómodo que provocas.");
+                dialogue.Add("Cóbrame esto al menos, así esta charla dejará de ser tan incómoda.");
 
                 dialogue.Add("Deberías de leer alguna de mis grandes historias humano, adiós.");
                 dialogue.Add("Pero, ¡QUÉ INSOLENCIA ES ESTA! Espero que cuando vuelva aprendas a contar monedas humano.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
 
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
                 StartCoroutine(ShowLine());
