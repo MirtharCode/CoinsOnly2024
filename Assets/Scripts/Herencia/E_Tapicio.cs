@@ -30,9 +30,9 @@ public class E_Tapicio : Elementales
                 dialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");
                 dialogue.Add("Otra desgracia más para mi vida, ahora seguro gano el torneo por tu culpa.");
 
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 gameManager.GetComponent<GameManager>().ShowText();
 
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
                 StartCoroutine(ShowLine());

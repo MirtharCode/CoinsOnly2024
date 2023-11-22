@@ -30,9 +30,9 @@ public class L_Antonio : Limbasticos
                 dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero…");
                 dialogue.Add(" Uy, me faltan monedas, siempre se cometen estos errores cuando pierdes la cabeza… Ya paro, nos vemos.");
 
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 gameManager.GetComponent<GameManager>().ShowText();
 
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
                 StartCoroutine(ShowLine());

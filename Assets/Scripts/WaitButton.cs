@@ -22,7 +22,7 @@ public class WaitButton : MonoBehaviour
 
     public IEnumerator TiempoEspera()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(2f);
 
         GetComponent<Button>().interactable = true;
 
