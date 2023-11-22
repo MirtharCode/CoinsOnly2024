@@ -22,6 +22,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject hybridMara;
     [SerializeField] public GameObject limbasticGiovanni;
 
+    [SerializeField] public GameObject electropedMagmaDora;
+    [SerializeField] public GameObject evilWizardManolo;
+    [SerializeField] public GameObject limbasticCululu;
+    [SerializeField] public GameObject elementalHandy;
+    [SerializeField] public GameObject hybridPetra;
+    [SerializeField] public GameObject elementalJissy;
+    [SerializeField] public GameObject electropedMasermati;
+
+
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
     [SerializeField] public GameObject dropDownPanel;
@@ -87,6 +96,8 @@ public class GameManager : MonoBehaviour
         estaToPagao = false;
         if (currentScene.name == "Day1")
             Day1();
+        if (currentScene.name == "Day2")
+            Day2();
     }
 
     void Update()
@@ -148,6 +159,22 @@ public class GameManager : MonoBehaviour
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
 
+    public void Day2()
+    {
+        LaVoluntad(50);
+
+        dailyCustomers.Clear();
+        dailyCustomers.Add(electropedMagmaDora);
+        dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(elementalHandy);
+        dailyCustomers.Add(hybridPetra);
+        dailyCustomers.Add(elementalJissy);
+        dailyCustomers.Add(electropedMasermati);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
     public void ShowText()
     {
         FindTheCustomer();
@@ -190,26 +217,55 @@ public class GameManager : MonoBehaviour
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
             dropDownButton.SetActive(true);
 
-            if (currentCustomer.name.Contains("Geraaaard"))
-                currentCustomer.GetComponent<MO_Geeraard>().ShowProductsAndMoney();
+            if (currentScene.name == "Day1")
+            {
+                if (currentCustomer.name.Contains("Geraaaard"))
+                    currentCustomer.GetComponent<MO_Geeraard>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Sapopotamo"))
-                currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Sapopotamo"))
+                    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Antonio"))
-                currentCustomer.GetComponent<L_Antonio>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Antonio"))
+                    currentCustomer.GetComponent<L_Antonio>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Tapiz"))
-                currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Tapiz"))
+                    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Denjirenji"))
-                currentCustomer.GetComponent<T_Denjirenji>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Denjirenji"))
+                    currentCustomer.GetComponent<T_Denjirenji>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Mara"))
-                currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Mara"))
+                    currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
 
-            else if (currentCustomer.name.Contains("Giovanni"))
-                currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Giovanni"))
+                    currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
+
+            }
+
+            else if (currentScene.name == "Day2")
+            {
+                if (currentCustomer.name.Contains("Magma"))
+                    currentCustomer.GetComponent<T_MagmaDora>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Manolo"))
+                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Cululu"))
+                    currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Handy"))
+                    currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Petra"))
+                    currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Jissy"))
+                    currentCustomer.GetComponent<E_Jissy>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Masermati"))
+                    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
+
+            }
 
             internalCount++;
         }
