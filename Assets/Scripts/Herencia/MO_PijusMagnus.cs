@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class H_Mara : Hibridos
+public class MO_PijusMagnus : Hibridos
 {
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
@@ -17,7 +17,7 @@ public class H_Mara : Hibridos
         {
             repetirunavez = true;
 
-            if (currentScene.name == "Day1")
+            if (currentScene.name == "Day2")
             {
                 dialogue.Add("Buenos días querido, soy Mara.");
                 dialogue.Add("¿Podías luego ayudarme a cargar esto hasta fuera?");
@@ -45,13 +45,13 @@ public class H_Mara : Hibridos
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day1")
+        if (currentScene.name == "Day2")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
             product1.transform.SetParent(twoProducts1);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "18";
+            gameManager.GetComponent<GameManager>().leDineroText.text = "20";
         }
     }
 

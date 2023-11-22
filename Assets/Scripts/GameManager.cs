@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject hybridPetra;
     [SerializeField] public GameObject elementalJissy;
     [SerializeField] public GameObject electropedMasermati;
+    [SerializeField] public GameObject evilWizardPijus;
 
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
@@ -171,6 +172,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(elementalJissy);
         dailyCustomers.Add(electropedMasermati);
+        dailyCustomers.Add(evilWizardPijus);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -265,6 +267,8 @@ public class GameManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Masermati"))
                     currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
 
+                else if (currentCustomer.name.Contains("Pijus"))
+                    currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
             }
 
             internalCount++;
