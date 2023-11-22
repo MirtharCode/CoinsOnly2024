@@ -334,6 +334,23 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
         }
+
+        else if (currentScene.name == "Day2")
+        {
+            if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy") ||
+                currentCustomer.name.Contains("Pijus") || currentCustomer.name.Contains("Giovanni"))
+            {
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+        }
+
         return null;
     }
     public string IDontBelieveText()
@@ -358,6 +375,29 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
         }
+
+        else if (currentScene.name == "Day2")
+        {
+            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") ||
+                currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
+            {
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Pijus"))
+            {
+                LaVoluntad(-1);
+                return dialogueText.text;
+            }
+        }
+
         return null;
     }
 

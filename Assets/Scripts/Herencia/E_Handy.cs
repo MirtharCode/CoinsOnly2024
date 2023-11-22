@@ -62,6 +62,7 @@ public class E_Handy : Elementales
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

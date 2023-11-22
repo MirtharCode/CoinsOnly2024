@@ -19,19 +19,18 @@ public class MO_PijusMagnus : Hibridos
 
             if (currentScene.name == "Day2")
             {
-                dialogue.Add("Buenos días querido, soy Mara.");
-                dialogue.Add("¿Podías luego ayudarme a cargar esto hasta fuera?");
-                dialogue.Add("Uy uy, que digo, me imagino que no puedes abandonar tu puesto.");
-                dialogue.Add("Desde que no está mi marido, me cuesta más cargar la compra.");
-                dialogue.Add("Pero bueno, como quiero que esté mi marido si me lo comí.");
-                dialogue.Add("...");
-                dialogue.Add("Que raro que estés inexpresivo, siempre que cuento eso se asustan.");
-                dialogue.Add("No sé porque no se normaliza que los manguros nos comamos a nuestra pareja.");
-                dialogue.Add("Pero sólo para reproducirnos, no somos unos monstruos.");
-                dialogue.Add("Bueno, deberías cobrarme, que tengo que recoger a mi niño del zoo.");
+                dialogue.Add("Tú ve cobrando esto que tengo prisa.");
+                dialogue.Add("Espera-");
+                dialogue.Add("¡¿Eres humano?! ¿No te da vergüenza respirar el mismo aire que yo?");
+                dialogue.Add("No se ni como pagaste lo suficiente para entrar al reino.");
+                dialogue.Add("Y más te vale que me cobres bien, he leído lo del 50%.");
+                dialogue.Add("Así que quiero que me lo rebajes T-O-D-O.");
+                dialogue.Add("Y como me cobres mal tendré que usar mis poderosa habilidad…");
+                dialogue.Add("El número de mi papi.");
+                dialogue.Add("Espero que me cobres bien, venga.");
 
-                dialogue.Add("Muchas gracias joven, espero que tu pareja te coma pronto también ji ji ji.");
-                dialogue.Add("¿Perdona? Ahora por tu culpa mi hijo no tendrá su gato muerto, él solo quería una mascota");
+                dialogue.Add("Así me gusta humano, no sabía qué os habían enseñado a contar allí.");
+                dialogue.Add("¡Cómo que no sirve la oferta! Pues... Pues… Bonita moneda, me la quedo.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
 
