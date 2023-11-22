@@ -35,6 +35,7 @@ public class MO_Geeraard : MagosOscuros
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
+
                 StartCoroutine(ShowLine());
             }
         }
