@@ -17,7 +17,7 @@ public abstract class Client : MonoBehaviour
     [SerializeField] public Transform twoProducts2;
 
     [SerializeField] public int lineIndex = 0;
-    [SerializeField] public float typingTime = 0.05f;
+    [SerializeField] public float typingTime;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public abstract class Client : MonoBehaviour
 
     public IEnumerator ShowLine()
     {
-        typingTime = 0.05f;
+        typingTime = 0.02f;
         dialogueUIText.text = string.Empty;
 
         foreach (char ch in dialogue[lineIndex])
@@ -44,6 +44,7 @@ public abstract class Client : MonoBehaviour
             dialogueUIText.text += ch;
             yield return new WaitForSeconds(typingTime);
         }
+
         if (dialogueUIText.text == dialogue[lineIndex])
         {
             dialogueUIPanel.transform.GetChild(1).gameObject.SetActive(false);

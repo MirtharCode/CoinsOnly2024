@@ -25,7 +25,7 @@ public class L_Giovanni : Limbasticos
                 dialogue.Add("Es el libro de cocina definitivo, o eso creo…");
                 dialogue.Add("Bueno, solo con decirte la primera receta te va a encantar.");
                 dialogue.Add("“Cómo invocar a Azathoth”");
-                dialogue.Add("Suena increíble este plato, pille algunos ingredientes para hacer el plato.");
+                dialogue.Add("Suena increíble este plato, pillaré algunos ingredientes para hacer el plato.");
                 dialogue.Add("“Primer paso: rociar vino hecho de sangre de virgen”");
                 dialogue.Add("Cambiaré el vino por una buena cerveza, le dará más sabor.");
                 dialogue.Add("“Segundo paso: cortar el muñeco voodoo por la mitad junto con la persona sacrificada”");

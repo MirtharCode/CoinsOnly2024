@@ -7,7 +7,8 @@ public class WaitButton : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Button>().interactable = false;
+        GetComponent<Button>().enabled = false;
+        StartCoroutine("TiempoEspera");
     }
 
     void OnEnable()
@@ -22,10 +23,10 @@ public class WaitButton : MonoBehaviour
 
     public IEnumerator TiempoEspera()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
-        GetComponent<Button>().interactable = true;
+        GetComponent<Button>().enabled = true;
 
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.01f);
     }
 }

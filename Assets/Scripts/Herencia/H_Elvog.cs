@@ -17,7 +17,7 @@ public class H_Elvog : Hibridos
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Buennnasss *hip* Eeeehhhhh… tuuu no eres el de sieeeembrree…*hip*)");
+                dialogue.Add("Buennnasss *hip* Eeeehhhhh… tuuu no eres el de sieeeembrree…*hip*");
                 dialogue.Add(" Bueno, el otro erra un ######");
                 dialogue.Add("Ahorra a quién le direee sobre niii despidoooo… Encimaaa eres humanooo…*");
                 dialogue.Add("Ne tocarra contarrrrte a tuuu…*hip * ");
