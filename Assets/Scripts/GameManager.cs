@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("CURSOR RESHULO")]
+    [SerializeField] public GameObject cursor;
+
     [Header("TRAMPILLA")]
     [SerializeField] public GameObject trampilla;
 
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public int internalCount = 0;
 
+    [SerializeField] GameObject canvas;
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject victoryPanel;
     public Scene currentScene;
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
         dropDownButton.SetActive(false);
         estaToPagao = false;
