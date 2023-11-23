@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     [Header("PRODUCTS LIST")]
     [SerializeField] public GameObject energeticDrink;
     [SerializeField] public GameObject beer;
+    [SerializeField] public GameObject crystallBall;
     [SerializeField] public GameObject deadCat;
     [SerializeField] public GameObject voodooDoll;
     [SerializeField] public GameObject manaPotion;
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         dropDownButton.SetActive(false);
         estaToPagao = false;
+
         if (currentScene.name == "Day1")
             Day1();
         if (currentScene.name == "Day2")
@@ -162,8 +164,6 @@ public class GameManager : MonoBehaviour
 
     public void Day2()
     {
-        LaVoluntad(50);
-
         dailyCustomers.Clear();
         dailyCustomers.Add(electropedMagmaDora);
         dailyCustomers.Add(evilWizardManolo);
@@ -186,16 +186,9 @@ public class GameManager : MonoBehaviour
         // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.
 
-        DialogueTexts(currentCustomer.GetComponent<Client>().dialogue.Count, currentCustomer.GetComponent<Client>().dialogue);
-
-    }
-
-    public void DialogueTexts(int dialogueExtension, List<string> dialogueList)
-    {
-        // Este método lo que hace es ver qué línea de diálogo está viéndose ahora y mientras que sean los diálogos "pre-compra" (todos menos los dos últimos)
-        if (internalCount < dialogueExtension - 2)
+        if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2)
         {
-            dialogueText.text = dialogueList[internalCount];
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             //SoundCreator(dialogueText.text);
             internalCount++;
 
@@ -338,13 +331,14 @@ public class GameManager : MonoBehaviour
         else if (currentScene.name == "Day2")
         {
             if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy") ||
-                currentCustomer.name.Contains("Pijus") || currentCustomer.name.Contains("Giovanni"))
+                currentCustomer.name.Contains("Pijus"))
             {
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
+            else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") ||
+                currentCustomer.name.Contains("Masermati"))
             {
                 LaVoluntad(10);
                 return dialogueText.text;

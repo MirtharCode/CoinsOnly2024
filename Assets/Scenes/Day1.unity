@@ -10020,6 +10020,7 @@ MonoBehaviour:
   twoProducts2: {fileID: 1102901061}
   energeticDrink: {fileID: 7204342734881417808, guid: ef2d41c3dd59be342be4faa855b57ca4, type: 3}
   beer: {fileID: 7204342734881417808, guid: f8883a41e206db34a80376d20a7b388d, type: 3}
+  crystallBall: {fileID: 7204342734881417808, guid: e69173bfb7704b74aa1b4bc6f4e994ec, type: 3}
   deadCat: {fileID: 7204342734881417808, guid: 9092e965047f2a14cba9b7f4fa6511a2, type: 3}
   voodooDoll: {fileID: 7204342734881417808, guid: 8371a5018e95e524db83c3a07193ebe9, type: 3}
   manaPotion: {fileID: 7204342734881417808, guid: 4328858a43242ac4bbcf193b24ac9c86, type: 3}

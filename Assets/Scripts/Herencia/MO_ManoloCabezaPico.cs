@@ -46,7 +46,7 @@ public class MO_ManoloCabezaPico : MagosOscuros
     {
         if (currentScene.name == "Day2")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, oneProduct.position, oneProduct.rotation); //Hay que cambiarselo a una bola de cristal
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
