@@ -7,6 +7,6 @@ public class Creditos : MonoBehaviour
 {
     public void Volver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(0);
     }
 }

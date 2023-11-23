@@ -4223,7 +4223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "VOLVER \nAL MEN\xDA"
+  m_text: '>>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -14751,7 +14751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1GRACIAS POR PROBAR NUESTRO JUEGO!"
+  m_text: "Siguiente d\xEDa"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -17003,7 +17003,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1318056129}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Titulo
+        m_MethodName: SiguienteDia2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

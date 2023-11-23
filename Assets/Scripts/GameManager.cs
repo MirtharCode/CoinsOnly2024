@@ -412,6 +412,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SiguienteDia2()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(2);
+    }
+
     public void Salir()
     {
         Debug.Log("Salir...");
