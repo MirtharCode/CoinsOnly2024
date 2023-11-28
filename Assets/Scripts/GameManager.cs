@@ -86,6 +86,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject victoryPanel;
     public Scene currentScene;
 
+    [SerializeField] GameObject normativas;
+    [SerializeField] GameObject precios;
+
+    bool broncaFin = true;
+    bool mostrarJefe = false;
+    [SerializeField] GameObject jefePanel;
+
+    //string quejaText = new quejaText[2];
+
+    //quejaText[0] = "¡¿Cómo es que me acabo de enterar de que no le has cobrado a ese cliente?!"; //Si no le has cobrado y sí deberias
+    //quejaText[1] = "¡Tendrías que haberle hechado a patadas por no traer el dinero suficiente!"; //Si sí le has cobrado y no deberías
+    //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Lo recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -275,7 +287,13 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            currentCustomer.GetComponent<Client>().ByeBye();
+            if(broncaFin == true)
+            {
+                Debug.Log("Ha entrado");
+
+
+                currentCustomer.GetComponent<Client>().ByeBye();
+            }
         }
     }
 
@@ -299,6 +317,7 @@ public class GameManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
         leDinero.gameObject.SetActive(false);
         IDontBelieveText();
+
     }
 
     public void LaVoluntad(float cantidad)
@@ -320,8 +339,7 @@ public class GameManager : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") ||
-                currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
                 LaVoluntad(10);
                 return dialogueText.text;
@@ -329,6 +347,9 @@ public class GameManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
             {
+                broncaFin = false;
+                mostrarJefe = true;
+                jefePanel.SetActive(true);
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -336,15 +357,25 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy") ||
-                currentCustomer.name.Contains("Pijus"))
+            if ( currentCustomer.name.Contains("Pijus"))
             {
+                //Mostrar queja de que no tiene suficiente dinero
+                mostrarJefe = true;
+                jefePanel.SetActive(true);
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") ||
-                currentCustomer.name.Contains("Masermati"))
+            else if(currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy"))
+            {
+                //Mostrar queja de que no cumplen normas
+                mostrarJefe = true;
+                jefePanel.SetActive(true);
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
             {
                 LaVoluntad(10);
                 return dialogueText.text;
@@ -353,6 +384,7 @@ public class GameManager : MonoBehaviour
 
         return null;
     }
+
     public string IDontBelieveText()
     {
         //dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
@@ -362,9 +394,10 @@ public class GameManager : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") ||
-                currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
+                mostrarJefe = true;
+                jefePanel.SetActive(true);
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -378,9 +411,11 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") ||
-                currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
+            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
             {
+                //Queja de que si que tenía el dinero suficiente
+                mostrarJefe = true;
+                jefePanel.SetActive(true);
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -399,6 +434,13 @@ public class GameManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void SaltarJefe()
+    {
+        broncaFin = true;
+        mostrarJefe = false;
+        jefePanel.SetActive(false);
     }
 
     public void MoreSpeed()
@@ -428,6 +470,18 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Salir...");
         Application.Quit();
+    }
+
+    public void ActivarNormas()
+    {
+        normativas.SetActive(true);
+        precios.SetActive(false);
+    }
+
+    public void ActivarPrecios()
+    {
+        precios.SetActive(true);
+        normativas.SetActive(false);
     }
 
     #region Código Antiguo
