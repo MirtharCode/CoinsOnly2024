@@ -5341,7 +5341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -98.42566, y: 50.83658}
+  m_AnchoredPosition: {x: -98.42554, y: 50.83667}
   m_SizeDelta: {x: -1058.8596, y: -828.9429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753033388
@@ -7700,8 +7700,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8775,7 +8775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Normativas del d\xEDa"
+  m_text: "Normativas\ndel d\xEDa"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -10691,7 +10691,10 @@ MonoBehaviour:
     m_Handle: 0
   normativas: {fileID: 857546736}
   precios: {fileID: 1303221010}
+  broncaFin: 1
+  mostrarJefe: 0
   jefePanel: {fileID: 753033386}
+  telefono: {fileID: 1758836934}
   initialConversationText: {fileID: 0}
   chars: 
   words: []
@@ -13642,8 +13645,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.272095, y: 458.7804}
-  m_SizeDelta: {x: 191.4556, y: 59.9212}
+  m_AnchoredPosition: {x: -111.272095, y: 458.78052}
+  m_SizeDelta: {x: 191.4556, y: 74.2505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614433849
 MonoBehaviour:
@@ -14863,6 +14866,7 @@ GameObject:
   - component: {fileID: 1758836935}
   - component: {fileID: 1758836937}
   - component: {fileID: 1758836936}
+  - component: {fileID: 1758836938}
   m_Layer: 5
   m_Name: Phone
   m_TagString: Untagged
@@ -14928,6 +14932,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758836934}
   m_CullTransparentMesh: 1
+--- !u!95 &1758836938
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758836934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3d31cb2e18cebe44b8dc11bfd890b65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1761618297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16204,8 +16229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111.21, y: 458.78}
-  m_SizeDelta: {x: 191.4556, y: 59.921}
+  m_AnchoredPosition: {x: 111.21, y: 458.77988}
+  m_SizeDelta: {x: 191.4556, y: 74.2502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868071392
 MonoBehaviour:
@@ -17831,7 +17856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hoy no hay normativ\xE1s de ning\xFAn tipo"
+  m_text: "Hoy no hay normativas de ning\xFAn tipo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}

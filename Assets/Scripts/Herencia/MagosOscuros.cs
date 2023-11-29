@@ -15,12 +15,18 @@ public abstract class MagosOscuros : Client
 
     public override void ByeBye()
     {
-        gameManager.GetComponent<GameManager>().estaToPagao = false;
-        gameManager.GetComponent<GameManager>().trampilla.SetActive(false);
-        gameManager.GetComponent<GameManager>().internalCount = 0;
-        gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
-        gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
+            gameManager.GetComponent<GameManager>().estaToPagao = false;
+            gameManager.GetComponent<GameManager>().trampilla.SetActive(false);
+            gameManager.GetComponent<GameManager>().internalCount = 0;
+            gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
+            gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+            gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
+
+        if (gameManager.GetComponent<GameManager>().mostrarJefe)
+        {
+            gameManager.GetComponent<GameManager>().jefePanel.SetActive(true);
+        }
+
         Destroy(gameObject, 2);
     }
 }

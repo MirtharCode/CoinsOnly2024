@@ -89,15 +89,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject normativas;
     [SerializeField] GameObject precios;
 
-    bool broncaFin = true;
-    bool mostrarJefe = false;
-    [SerializeField] GameObject jefePanel;
+    public bool broncaFin = true;
+    public bool mostrarJefe = false;
+    public GameObject jefePanel;
+
+    public GameObject telefono;
 
     //string quejaText = new quejaText[2];
 
-    //quejaText[0] = "¡¿Cómo es que me acabo de enterar de que no le has cobrado a ese cliente?!"; //Si no le has cobrado y sí deberias
-    //quejaText[1] = "¡Tendrías que haberle hechado a patadas por no traer el dinero suficiente!"; //Si sí le has cobrado y no deberías
-    //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Lo recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
+    //quejaText[0] = "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO"; //Si no le has cobrado y sí deberias
+    //quejaText[1] = "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"; //Si sí le has cobrado y no deberías
+    //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -136,6 +138,11 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+    }
+
+    void BossCalling()
+    {
+
     }
 
     public void OpenList()
@@ -287,13 +294,7 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            if(broncaFin == true)
-            {
-                Debug.Log("Ha entrado");
-
-
-                currentCustomer.GetComponent<Client>().ByeBye();
-            }
+            currentCustomer.GetComponent<Client>().ByeBye();
         }
     }
 
@@ -347,9 +348,7 @@ public class GameManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
             {
-                broncaFin = false;
                 mostrarJefe = true;
-                jefePanel.SetActive(true);
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -361,7 +360,6 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no tiene suficiente dinero
                 mostrarJefe = true;
-                jefePanel.SetActive(true);
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -370,7 +368,6 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
-                jefePanel.SetActive(true);
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -397,7 +394,6 @@ public class GameManager : MonoBehaviour
             if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
                 mostrarJefe = true;
-                jefePanel.SetActive(true);
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -415,7 +411,6 @@ public class GameManager : MonoBehaviour
             {
                 //Queja de que si que tenía el dinero suficiente
                 mostrarJefe = true;
-                jefePanel.SetActive(true);
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
