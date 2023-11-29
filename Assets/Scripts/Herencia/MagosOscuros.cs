@@ -24,6 +24,7 @@ public abstract class MagosOscuros : Client
 
         if (gameManager.GetComponent<GameManager>().mostrarJefe)
         {
+            StartCoroutine(gameManager.GetComponent<GameManager>().BossCalling);
             gameManager.GetComponent<GameManager>().jefePanel.SetActive(true);
         }
 

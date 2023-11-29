@@ -95,11 +95,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject telefono;
 
-    //string quejaText = new quejaText[2];
+    //string quejaText = new quejaText[3];
 
     //quejaText[0] = "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO"; //Si no le has cobrado y sí deberias
     //quejaText[1] = "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"; //Si sí le has cobrado y no deberías
     //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
+    //quejaText[3] = "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"; //Si no le has cobrado y sí deberias
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -140,9 +141,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void BossCalling()
+    public IEnumerable BossCalling()
     {
+        telefono.gameObject.GetComponent<Animator>().Play("TelefonoAnimacion");
 
+        yield return new WaitForSeconds(1);
+
+        jefePanel.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        jefePanel.SetActive(false);
     }
 
     public void OpenList()
