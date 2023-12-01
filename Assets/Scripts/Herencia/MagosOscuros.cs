@@ -22,11 +22,11 @@ public abstract class MagosOscuros : Client
             gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
             gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
 
-        //if (gameManager.GetComponent<GameManager>().mostrarJefe)
-        //{
-        //    StartCoroutine(gameManager.GetComponent<GameManager>().BossCalling);
-        //    gameManager.GetComponent<GameManager>().jefePanel.SetActive(true);
-        //}
+        if (gameManager.GetComponent<GameManager>().mostrarJefe)
+        {
+            StartCoroutine(gameManager.GetComponent<GameManager>().BossCalling());
+            StopCoroutine(gameManager.GetComponent<GameManager>().BossCalling());
+        }
 
         Destroy(gameObject, 2);
     }

@@ -64,13 +64,24 @@ public abstract class Client : MonoBehaviour
             Debug.Log("Yo " + this.name + "Mando a  " + list[gameManager.GetComponent<GameManager>().customerNumber].name);
             gameManager.GetComponent<GameManager>().CharacterShowUp(list[gameManager.GetComponent<GameManager>().customerNumber]);
         }
+
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
             gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
+
+        StartCoroutine(WaitingForMyDestruction());
+
+
+        gameManager.GetComponent<GameManager>().jefePanel.SetActive(false);
     }
 
+    public IEnumerator WaitingForMyDestruction()
+    {
+        yield return new WaitForSeconds(3f);
+    }
 
 }
+

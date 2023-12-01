@@ -146,17 +146,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public IEnumerable BossCalling()
+    public IEnumerator BossCalling()
     {
         telefono.gameObject.GetComponent<Animator>().Play("TelefonoAnimacion");
 
         yield return new WaitForSeconds(1);
 
         jefePanel.SetActive(true);
+    }
 
-        yield return new WaitForSeconds(1);
-
-        jefePanel.SetActive(false);
+    public IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(5f);
     }
 
     public void OpenList()
