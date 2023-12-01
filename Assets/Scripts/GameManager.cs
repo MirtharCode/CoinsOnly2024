@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject trampilla;
 
     [Header("CHARACTERS THAT CAN APPEAR")]
+
+    [Header("Day1")]
     [SerializeField] public GameObject currentCustomer;
     [SerializeField] public int customerNumber = 0;
     [SerializeField] public List<GameObject> dailyCustomers;
@@ -25,6 +27,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject electropedDenjirenji;
     [SerializeField] public GameObject hybridMara;
     [SerializeField] public GameObject limbasticGiovanni;
+    [SerializeField] public GameObject elementalRockon;
+
+    [Header("Day2")]
 
     [SerializeField] public GameObject electropedMagmaDora;
     [SerializeField] public GameObject evilWizardManolo;
@@ -192,6 +197,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(hybridMara);
         dailyCustomers.Add(limbasticGiovanni);
+        dailyCustomers.Add(elementalRockon);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -268,6 +274,10 @@ public class GameManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Giovanni"))
                     currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Rockon"))
+                    currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
+
 
             }
 
@@ -355,7 +365,7 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
             {
                 mostrarJefe = true;
                 LaVoluntad(-10);
@@ -407,7 +417,7 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji"))
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
             {
                 LaVoluntad(10);
                 return dialogueText.text;
