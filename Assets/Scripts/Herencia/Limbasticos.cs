@@ -21,6 +21,20 @@ public abstract class Limbasticos : Client
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
-        Destroy(gameObject, 2);
+
+        if (gameManager.GetComponent<GameManager>().mostrarJefe)
+        {
+            StartCoroutine(gameManager.GetComponent<GameManager>().BossCalling());
+
+            StartCoroutine(WaitingForMyDestruction());
+
+            Destroy(gameObject, 4);
+
+        }
+
+        else
+        {
+            Destroy(gameObject, 2);
+        }
     }
 }

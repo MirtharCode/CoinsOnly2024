@@ -100,12 +100,17 @@ public class GameManager : MonoBehaviour
 
     public GameObject telefono;
 
+    public List<string> quejas;
+
+    [SerializeField] public TMP_Text textoJefe;
+
+
     //string quejaText = new quejaText[3];
 
-    //quejaText[0] = "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO"; //Si no le has cobrado y sí deberias
+    //quejaText[0] = "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO"; //Si no le has cobrado y sí deberias (Solo para el día 1)
     //quejaText[1] = "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"; //Si sí le has cobrado y no deberías
     //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
-    //quejaText[3] = "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"; //Si no le has cobrado y sí deberias
+    //quejaText[3] = "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"; //Si no le has cobrado y sí deberias (A partir del día 2)
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -118,6 +123,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…"); //Si no le has cobrado y sí deberias
+        quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"); //Si sí le has cobrado y no deberías
+        quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"); //Cuando no cumple las normativas y no te has enterado
+        quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"); //Si no le has cobrado y sí deberias (A partir del día 2)
+
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
         dropDownButton.SetActive(false);
@@ -148,16 +158,13 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator BossCalling()
     {
-        telefono.gameObject.GetComponent<Animator>().Play("TelefonoAnimacion");
+        telefono.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", true);
 
         yield return new WaitForSeconds(1);
 
-        jefePanel.SetActive(true);
-    }
+        telefono.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", false);
 
-    public IEnumerator StartDelay()
-    {
-        yield return new WaitForSeconds(5f);
+        jefePanel.SetActive(true);
     }
 
     public void OpenList()
@@ -369,6 +376,7 @@ public class GameManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
             {
                 mostrarJefe = true;
+                textoJefe.text = quejas[1];
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -380,6 +388,7 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no tiene suficiente dinero
                 mostrarJefe = true;
+                textoJefe.text = quejas[1];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -388,6 +397,7 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
+                textoJefe.text = quejas[2];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -411,9 +421,13 @@ public class GameManager : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz")
+                || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
+
+
                 mostrarJefe = true;
+                textoJefe.text = quejas[0];
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -427,10 +441,12 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
+            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") 
+                || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
             {
                 //Queja de que si que tenía el dinero suficiente
                 mostrarJefe = true;
+                textoJefe.text = quejas[3];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }

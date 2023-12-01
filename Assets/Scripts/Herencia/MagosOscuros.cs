@@ -25,9 +25,16 @@ public abstract class MagosOscuros : Client
         if (gameManager.GetComponent<GameManager>().mostrarJefe)
         {
             StartCoroutine(gameManager.GetComponent<GameManager>().BossCalling());
-            StopCoroutine(gameManager.GetComponent<GameManager>().BossCalling());
+
+            StartCoroutine(WaitingForMyDestruction());
+
+            Destroy(gameObject, 4);
+
         }
 
-        Destroy(gameObject, 2);
+        else
+        {
+            Destroy(gameObject, 2);
+        }
     }
 }

@@ -72,15 +72,17 @@ public abstract class Client : MonoBehaviour
             Debug.Log("Se acabó el día guachines.");
         }
 
-        StartCoroutine(WaitingForMyDestruction());
-
-
         gameManager.GetComponent<GameManager>().jefePanel.SetActive(false);
     }
 
     public IEnumerator WaitingForMyDestruction()
     {
+        Debug.Log("Antes de esperar");
+
         yield return new WaitForSeconds(3f);
+
+        Debug.Log("Despues de esperar");
+
     }
 
 }
