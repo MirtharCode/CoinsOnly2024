@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class H_Elvog : Hibridos
 {
-    [SerializeField] public GameObject product;
+    [SerializeField] public GameObject product1;
+    [SerializeField] public GameObject product2;
+    [SerializeField] public GameObject product3;
+
     bool repetirunavez = false;
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -37,6 +40,29 @@ public class H_Elvog : Hibridos
 
                 StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day3")
+            {
+                dialogue.Add("¡COLEGA, TE NECESITO DE VERDAD!");
+                dialogue.Add("¡HAN PROHIBIDO LAS CERVEZAS A LOS HÍBRIDOS!");
+                dialogue.Add("¡EMPECÉ A HABLAR BIEN DE NUEVO!");
+                dialogue.Add("¡HASTA ME LLEGÓ UNA SOLICITUD DE EMPLEO!");
+                dialogue.Add("¡NO QUIERO VOLVER A TRABAJAR!");
+                dialogue.Add("¡Y MENOS CON ESA TAL PETRA QUE ME QUITÓ EL TRABAJO!");
+                dialogue.Add("¡ME NIEGO!");
+                dialogue.Add("¡TE DARÉ EL DINERO QUE NECESITES!");
+                dialogue.Add("¡PERO NE-CE-SI-TO CERVEZA! ");
+
+                dialogue.Add("¡TE QUIERO MUCHO COLEGA! ");
+                dialogue.Add("Hasta mi dependiente favorito…Adiós a Elvog Borracho");
+
+                gameManager.GetComponent<GameManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                StartCoroutine(ShowLine());
+            }
         }
     }
 
@@ -44,15 +70,27 @@ public class H_Elvog : Hibridos
     {
         if (currentScene.name == "Day1")
         {
-            product = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
-            product.transform.SetParent(oneProduct);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
             gameManager.GetComponent<GameManager>().leDineroText.text = "10";
         }
+
+        else if (currentScene.name == "Day3")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            gameManager.GetComponent<GameManager>().leDineroText.text = "50";
+        }
+
     }
 
     public override void ByeBye()
     {
-        Destroy(product);
+        Destroy(product1);
+        Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

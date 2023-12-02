@@ -40,6 +40,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject electropedMasermati;
     [SerializeField] public GameObject evilWizardPijus;
 
+    [Header("Day3")]
+
+    [SerializeField] public GameObject limbasticSergio;
+    [SerializeField] public GameObject hybridSaltaralisis;
+    [SerializeField] public GameObject evilWizardManoloMano;
+    [SerializeField] public GameObject electropedRaven;
+    [SerializeField] public GameObject elementalHueso;
+    [SerializeField] public GameObject limbasticPatxi;
+    //[SerializeField] public GameObject hybridElvog; (Aparece de nuevo en el día 3)
+
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
@@ -104,14 +114,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public TMP_Text textoJefe;
 
-
-    //string quejaText = new quejaText[3];
-
-    //quejaText[0] = "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO"; //Si no le has cobrado y sí deberias (Solo para el día 1)
-    //quejaText[1] = "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"; //Si sí le has cobrado y no deberías
-    //quejaText[2] = "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"; //Cuando no cumple las normativas y no te has enterado
-    //quejaText[3] = "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"; //Si no le has cobrado y sí deberias (A partir del día 2)
-
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
     [SerializeField] public char[] chars;
@@ -137,6 +139,8 @@ public class GameManager : MonoBehaviour
             Day1();
         if (currentScene.name == "Day2")
             Day2();
+        if (currentScene.name == "Day3")
+            Day3();
     }
 
     void Update()
@@ -221,6 +225,21 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(elementalJissy);
         dailyCustomers.Add(electropedMasermati);
         dailyCustomers.Add(evilWizardPijus);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
+    public void Day3()
+    {
+        dailyCustomers.Clear();
+        dailyCustomers.Add(limbasticSergio);
+        dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(electropedRaven);
+        dailyCustomers.Add(elementalHueso);
+        dailyCustomers.Add(elementalJissy);
+        dailyCustomers.Add(limbasticPatxi);
+        dailyCustomers.Add(hybridElvog);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -316,6 +335,30 @@ public class GameManager : MonoBehaviour
                     currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
             }
 
+            else if (currentScene.name == "Day3")
+            {
+                if (currentCustomer.name.Contains("Sergio"))
+                    currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Saltaralisis"))
+                    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("ManoloMano"))
+                    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Raven"))
+                    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Hueso"))
+                    currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Patxi"))
+                    currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Sapopotamo"))
+                    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
+            }
+
             internalCount++;
         }
 
@@ -409,6 +452,30 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        else if (currentScene.name == "Day3")
+        {
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Patxi"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Sapopotamo"))
+            {
+                LaVoluntad(5);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
+
+
         return null;
     }
 
@@ -463,6 +530,24 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
         }
+
+        else if (currentScene.name == "Day3")
+        {
+            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Sapopotamo"))
+            {
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Reven") || currentCustomer.name.Contains("Patxi"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
+
 
         return null;
     }

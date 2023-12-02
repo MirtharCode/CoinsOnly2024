@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8043330204968246210}
   - component: {fileID: 8043330204968246221}
   - component: {fileID: 8043330204968246220}
-  - component: {fileID: 4127674970165154012}
+  - component: {fileID: 6792106938656893100}
   m_Layer: 0
-  m_Name: HandyFinal
+  m_Name: SergioNervisous Final
   m_TagString: CurrentCustomer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: cc77c0d7b8db5974db657a5a605d5746, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49cb17fcd9931fe4eb6b830b330a0c97, type: 3}
   m_Color: {r: 0.69803923, g: 0.6666667, b: 0.6666667, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.1, y: 0.8094671}
   m_EdgeRadius: 0
---- !u!114 &4127674970165154012
+--- !u!114 &6792106938656893100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8043330204968246209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8edc538a32a03d4f83166f371d9f743, type: 3}
+  m_Script: {fileID: 11500000, guid: 728b263fec2397f4b9bd56f00e8897eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   twoProducts1: {fileID: 0}
   twoProducts2: {fileID: 0}
   lineIndex: 0
-  typingTime: 0.05
+  typingTime: 0
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}

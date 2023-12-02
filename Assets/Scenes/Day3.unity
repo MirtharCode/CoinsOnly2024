@@ -10575,6 +10575,12 @@ MonoBehaviour:
   elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   electropedMasermati: {fileID: 8043330204968246209, guid: 1c519ce09dfe68a4fb14cdbd75365e2d, type: 3}
   evilWizardPijus: {fileID: 8043330204968246209, guid: 56e5944c3aa4c9b4490ec7bce1d51eb4, type: 3}
+  limbasticSergio: {fileID: 8043330204968246209, guid: dc9ea8849b583314eb3b25bf5af47eca, type: 3}
+  hybridSaltaralisis: {fileID: 8043330204968246209, guid: 2abda14aff472074682a7cf8f5d2ee97, type: 3}
+  evilWizardManoloMano: {fileID: 8043330204968246209, guid: 5dd53f96d1dce4d4687ce84db64d83ce, type: 3}
+  electropedRaven: {fileID: 8043330204968246209, guid: 6b85077ca1bbc6f449bb80ca39f2a06f, type: 3}
+  elementalHueso: {fileID: 8043330204968246209, guid: 27e73000c53bab64db7a9237c7ab23ca, type: 3}
+  limbasticPatxi: {fileID: 8043330204968246209, guid: 224518b9d2a111c4f89711cddd2b0756, type: 3}
   listOpen: 0
   dropDownPanel: {fileID: 537900581}
   dropDownButton: {fileID: 32764415}
