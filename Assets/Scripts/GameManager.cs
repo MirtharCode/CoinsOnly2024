@@ -237,7 +237,6 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(evilWizardManoloMano);
         dailyCustomers.Add(electropedRaven);
         dailyCustomers.Add(elementalHueso);
-        dailyCustomers.Add(elementalJissy);
         dailyCustomers.Add(limbasticPatxi);
         dailyCustomers.Add(hybridElvog);
 
@@ -539,7 +538,7 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Reven") || currentCustomer.name.Contains("Patxi"))
+            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Patxi"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
@@ -580,6 +579,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(2);
+    }
+
+    public void SiguienteDia3()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(3);
     }
 
     public void Salir()

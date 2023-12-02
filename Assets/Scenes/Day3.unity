@@ -9980,11 +9980,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "-Los elementales y tecn\xF3podos no podr\xE1n comprar ning\xFAn l\xEDquido.\n\n+Cerveza\r\n+Poci\xF3n
-    de man\xE1\r\n+Poci\xF3n de veneno\r\n+Bebida energ\xE9tica\r\n\n-Los magos tendr\xE1n
-    una rebaja del 50 % en todos los objetos m\xE1gicos...\n\n+Poci\xF3n de man\xE1\r\n+Runas
-    m\xE1gicas\r\n+Bola de cristal\r\n+Ramen m\xE1gico\r\n+Pilas m\xE1gicas\r\n\n-Los
-    limb\xE1sticos no pueden  beber nada con cafe\xEDna.\n\n+Bebida energ\xE9tica\r\n"
+  m_text: "Los h\xEDbridos tendr\xE1n prohibido comprar comida r\xE1pida, alcohol
+    y productos electr\xF3nicos.\r\n\n+Cerveza\r\n+Ramen m\xE1gico\r\n+Pilas m\xE1gicas\r\n\nA
+    los elementales les costar\xE1 el doble cualquier objeto \nrelacionado con la
+    magia negra.\r\n\n+Gato muerto\r\n+Mu\xF1eco voodoo\r\n\nLos magos y limb\xE1sticos
+    no \npodr\xE1n comprar 2 objetos \nm\xE1gicos a la vez\r\n\n+Poci\xF3n de man\xE1\r\n+Runas
+    m\xE1gicas\r\n+Bola de cristal\r\n+Ramen m\xE1gico\r\n+Pilas m\xE1gicas\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -10011,8 +10012,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.3
-  m_fontSizeBase: 26.3
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
