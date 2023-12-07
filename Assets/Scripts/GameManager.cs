@@ -181,6 +181,7 @@ public class GameManager : MonoBehaviour
             dropDownButtonText.text = "<";
             listOpen = false;
         }
+
         else
         {
             leDinero.gameObject.GetComponent<Button>().enabled = false;
