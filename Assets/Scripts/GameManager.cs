@@ -114,6 +114,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public TMP_Text textoJefe;
 
+    [SerializeField] public GameObject botonPlegado;
+    [SerializeField] public GameObject botonDesplegado;
+    
+
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
     [SerializeField] public char[] chars;
@@ -178,7 +182,8 @@ public class GameManager : MonoBehaviour
             leDinero.gameObject.GetComponent<Button>().enabled = true;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
             dropDownPanel.transform.position = position2.transform.position;
-            dropDownButtonText.text = "<";
+            botonDesplegado.SetActive(true);
+            botonPlegado.SetActive(false);
             listOpen = false;
         }
 
@@ -187,7 +192,8 @@ public class GameManager : MonoBehaviour
             leDinero.gameObject.GetComponent<Button>().enabled = false;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
             dropDownPanel.transform.position = position1.transform.position;
-            dropDownButtonText.text = ">";
+            botonDesplegado.SetActive(false);
+            botonPlegado.SetActive(true);
             listOpen = true;
         }
 
