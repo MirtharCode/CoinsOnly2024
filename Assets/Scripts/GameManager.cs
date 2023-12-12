@@ -48,8 +48,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject electropedRaven;
     [SerializeField] public GameObject elementalHueso;
     [SerializeField] public GameObject limbasticPatxi;
-    //[SerializeField] public GameObject hybridElvog; (Aparece de nuevo en el día 3)
-
+    //[SerializeField] public GameObject hybridElvog; //(Aparece de nuevo en el día 3)
+    [SerializeField] public GameObject evilWizardElidora;
+    [SerializeField] public GameObject electropedRustica;
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
     [SerializeField] public bool listOpen;
@@ -246,6 +247,8 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(elementalHueso);
         dailyCustomers.Add(limbasticPatxi);
         dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(electropedRustica);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -363,6 +366,13 @@ public class GameManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Sapopotamo"))
                     currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Elidora"))
+                    currentCustomer.GetComponent<MO_Elidora>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Rustica"))
+                    currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
+
             }
 
             internalCount++;
@@ -418,6 +428,7 @@ public class GameManager : MonoBehaviour
         {
             if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
@@ -453,6 +464,7 @@ public class GameManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
@@ -460,19 +472,23 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day3")
         {
-            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Patxi"))
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") 
+                || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
             {
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
                 LaVoluntad(5);
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso"))
+            else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Elidora"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
@@ -497,8 +513,6 @@ public class GameManager : MonoBehaviour
             if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz")
                 || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
-
-
                 mostrarJefe = true;
                 textoJefe.text = quejas[0];
                 LaVoluntad(-10);
@@ -507,6 +521,7 @@ public class GameManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
@@ -526,12 +541,14 @@ public class GameManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Pijus"))
             {
+                mostrarJefe = false;
                 LaVoluntad(-1);
                 return dialogueText.text;
             }
@@ -539,13 +556,15 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day3")
         {
-            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Sapopotamo"))
+            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Elidora"))
             {
+                mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Patxi"))
+            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") 
+                || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];

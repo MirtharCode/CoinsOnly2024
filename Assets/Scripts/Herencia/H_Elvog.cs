@@ -54,7 +54,7 @@ public class H_Elvog : Hibridos
                 dialogue.Add("¡PERO NE-CE-SI-TO CERVEZA! ");
 
                 dialogue.Add("¡TE QUIERO MUCHO COLEGA! ");
-                dialogue.Add("Hasta mi dependiente favorito…Adiós a Elvog Borracho");
+                dialogue.Add("Hasta mi dependiente favorito… Adiós a Elvog Borracho");
 
                 gameManager.GetComponent<GameManager>().ShowText();
 

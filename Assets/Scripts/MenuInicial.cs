@@ -18,11 +18,11 @@ public class MenuInicial : MonoBehaviour
 
     public void Creditos()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void Tutorial()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }

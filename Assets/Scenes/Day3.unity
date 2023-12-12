@@ -9242,12 +9242,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Los h\xEDbridos tendr\xE1n prohibido comprar comida r\xE1pida, alcohol
-    y productos electr\xF3nicos.\r\n\n+Cerveza\r\n+Ramen m\xE1gico\r\n+Pilas m\xE1gicas\r\n\nA
-    los elementales les costar\xE1 el doble cualquier objeto \nrelacionado con la
-    magia negra.\r\n\n+Gato muerto\r\n+Mu\xF1eco voodoo\r\n\nLos magos y limb\xE1sticos
-    no \npodr\xE1n comprar 2 objetos \nm\xE1gicos a la vez\r\n\n+Poci\xF3n de man\xE1\r\n+Runas
-    m\xE1gicas\r\n+Bola de cristal\r\n+Ramen m\xE1gico\r\n+Pilas m\xE1gicas\r\n"
+  m_text: "-Los h\xEDbridos tendr\xE1n prohibido comprar comida alcohol.\r\n\n+Cerveza\r\n\r\n-A
+    los elementales les costar\xE1 el doble cualquier objeto\n relacionado con la
+    magia negra.\n\n+Gato muerto\r\n+Mu\xF1eco voodoo\r\n\r\n-Los magos y limb\xE1sticos
+    no podr\xE1n comprar 2 pociones\na la vez.\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n
+    de veneno"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -9844,6 +9843,8 @@ MonoBehaviour:
   electropedRaven: {fileID: 8043330204968246209, guid: 6b85077ca1bbc6f449bb80ca39f2a06f, type: 3}
   elementalHueso: {fileID: 8043330204968246209, guid: 27e73000c53bab64db7a9237c7ab23ca, type: 3}
   limbasticPatxi: {fileID: 8043330204968246209, guid: 224518b9d2a111c4f89711cddd2b0756, type: 3}
+  evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
+  electropedRustica: {fileID: 8043330204968246209, guid: 8f4d40bc36b478041bbbcf582087672a, type: 3}
   listOpen: 0
   dropDownPanel: {fileID: 537900581}
   dropDownButton: {fileID: 1377599873}
@@ -16745,7 +16746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2969c10f5fb3c98459a7e1d3d249c1d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca6874bd1915d134e908dc23462c8c80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
