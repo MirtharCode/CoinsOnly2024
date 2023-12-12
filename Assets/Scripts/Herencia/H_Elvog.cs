@@ -38,7 +38,7 @@ public class H_Elvog : Hibridos
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
 
             else if (currentScene.name == "Day3")
@@ -61,7 +61,7 @@ public class H_Elvog : Hibridos
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
         }
     }

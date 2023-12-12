@@ -39,7 +39,7 @@ public class E_Jissy : Elementales
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
         }
     }

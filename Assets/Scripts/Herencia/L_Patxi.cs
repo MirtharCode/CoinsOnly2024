@@ -40,7 +40,7 @@ public class L_Patxi : Limbasticos
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
         }
     }

@@ -36,7 +36,7 @@ public class H_Lepion : Hibridos
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
         }
     }

@@ -35,7 +35,7 @@ public class L_Antonio : Limbasticos
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                StartCoroutine(ShowLine());
+                //StartCoroutine(ShowLine());
             }
         }
     }

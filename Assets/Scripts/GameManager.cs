@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
             //SoundCreator(dialogueText.text);
             internalCount++;
 
-            StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+            //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
         else
@@ -411,8 +411,8 @@ public class GameManager : MonoBehaviour
 
     public string MoneyText()
     {
-        //dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
-        StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
+        //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
 
         if (currentScene.name == "Day1")
         {
@@ -487,9 +487,9 @@ public class GameManager : MonoBehaviour
 
     public string IDontBelieveText()
     {
-        //dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
-        currentCustomer.GetComponent<Client>().lineIndex += 1;
-        StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
+        //currentCustomer.GetComponent<Client>().lineIndex += 1;
+        //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
 
 
         if (currentScene.name == "Day1")
