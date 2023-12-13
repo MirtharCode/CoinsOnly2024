@@ -18,6 +18,7 @@ public abstract class Client : MonoBehaviour
 
     [SerializeField] public int lineIndex = 0;
     [SerializeField] public float typingTime;
+    public string raza;
 
     void Start()
     {

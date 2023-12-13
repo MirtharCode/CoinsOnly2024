@@ -21,7 +21,7 @@ public class T_Raven : Tecnopedos
             {
                 dialogue.Add("¡Hola amigo mío! ¿No es un día maravilloso?");
                 dialogue.Add("Aunque ni he dormido, pero trabajar como DJ Rave-n siempre me llena de energía.");
-                dialogue.Add("Tuve que trabajar en una despedido de soltero, los chicos fueron muy majos.");
+                dialogue.Add("Tuve que trabajar en una despedida de soltero, los chicos fueron muy majos.");
                 dialogue.Add("Pero mi compañero Handy lo pasó un poco mal la verdad.");
                 dialogue.Add("El soltero se encariñó con el pobre Handy, era un limbástico muy cariñoso.");
                 dialogue.Add("Pero bueno, me alegró de que al menos haya podido poner mi música.");

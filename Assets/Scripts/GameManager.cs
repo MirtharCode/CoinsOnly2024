@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public GameObject botonPlegado;
     [SerializeField] public GameObject botonDesplegado;
-    
+
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -267,7 +267,6 @@ public class GameManager : MonoBehaviour
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             //SoundCreator(dialogueText.text);
             internalCount++;
-
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
@@ -444,7 +443,7 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if ( currentCustomer.name.Contains("Pijus"))
+            if (currentCustomer.name.Contains("Pijus"))
             {
                 //Mostrar queja de que no tiene suficiente dinero
                 mostrarJefe = true;
@@ -453,7 +452,7 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if(currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy"))
+            else if (currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Jissy"))
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
@@ -472,7 +471,7 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day3")
         {
-            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") 
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
             {
                 mostrarJefe = false;
@@ -529,7 +528,7 @@ public class GameManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu") 
+            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu")
                 || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati"))
             {
                 //Queja de que si que tenía el dinero suficiente
@@ -563,7 +562,7 @@ public class GameManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven") 
+            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
             {
                 mostrarJefe = true;
