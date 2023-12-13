@@ -61,7 +61,7 @@ public abstract class Client : MonoBehaviour
         if (list.Count > 1)
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
-            Debug.Log("Yo " + this.name + "Mando a  " + list[gameManager.GetComponent<GameManager>().customerNumber].name);
+            //Debug.Log("Yo " + this.name + "Mando a  " + list[gameManager.GetComponent<GameManager>().customerNumber].name);
             gameManager.GetComponent<GameManager>().CharacterShowUp(list[gameManager.GetComponent<GameManager>().customerNumber]);
         }
 
@@ -77,12 +77,9 @@ public abstract class Client : MonoBehaviour
 
     public IEnumerator WaitingForMyDestruction()
     {
-        Debug.Log("Antes de esperar");
-
+        //Debug.Log("Antes de esperar");
         yield return new WaitForSeconds(3f);
-
-        Debug.Log("Despues de esperar");
-
+        //Debug.Log("Despues de esperar");
     }
 
 }
