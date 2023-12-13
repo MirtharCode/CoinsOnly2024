@@ -20,11 +20,11 @@ public class E_Tapicio : Elementales
             {
                 dialogue.Add("Saludos desde mi solitaria existencia, soy Tapicio.");
                 dialogue.Add("¿Qué pasa? ¿Nunca has visto alguien tan animado verdad?");
-                dialogue.Add("Que quieres que te diga, soy prisionero de mi propio destino.");
+                dialogue.Add("Qué quieres que te diga... soy prisionero de mi propio destino.");
                 dialogue.Add("Fui creado para solo trabajar, mis cadenas nunca se romperán.");
                 dialogue.Add("A veces deseo seguir siendo ser ese pequeño tapiz colgado en el cementerio de limbásticos.");
-                dialogue.Add("Pero por desgracia, mi vida es como una canción emo; Larga, triste y nunca termina.");
-                dialogue.Add("Al igual que esta conversación, perdón por hacerte perder el tiempo.");
+                dialogue.Add("Pero por desgracia, mi vida es como una canción emo: Larga, triste y nunca termina.");
+                dialogue.Add("Al igual que esta conversación... perdona por hacerte perder el tiempo.");
                 dialogue.Add("Deberías de cobrarme ya, o si no llegaré tarde a mi torneo de Lanzamiento de miradas melancólicas.");
 
                 dialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");

@@ -19,17 +19,17 @@ public class E_ElementalHueso : Elementales
 
             if (currentScene.name == "Day3")
             {
-                dialogue.Add("Chaval, casi me hago polvo arriba esperando, además tengo prisa.");
-                dialogue.Add("Estoy en la nueva exposición de dinosaurios de la ciudad.");
-                dialogue.Add("Y cuando digo que estoy, es que literalmente estoy.");
-                dialogue.Add("Debido a que tengo huesos de hace millones de años.");
-                dialogue.Add("Un mago arqueólogo me creó y como quedé tan raro, no se dignó ni en darme nombre.");
-                dialogue.Add("Literal me llamo Elemental de Huesos, el elemental de huesos.");
-                dialogue.Add("Por suerte logré valerme por mí mismo, y ahora obtuve un trabajo de verdad.");
-                dialogue.Add("Ser esclavizado por un museo, muchos de mi raza desearían este puesto en vez de la mina.");
-                dialogue.Add("Pero bueno, cóbrame chaval, que tienen que verme en el museo.");
+                dialogue.Add("Oye chaval, casi me hago polvo arriba esperando, atiéndeme que tengo prisa.");
+                dialogue.Add("Es que estoy en la nueva exposición de dinosaurios de la ciudad.");
+                dialogue.Add("Y cuando digo que estoy, es que li-te-ral-men-te estoy.");
+                dialogue.Add("Aunque no lo aparente, tengo millones de años.");
+                dialogue.Add("Un mago me creó a imagen y semejanza de una diosa de la belleza.");
+                dialogue.Add("Soy \"Elemental de huesos\", y soy, e-vi-den-te-men-te un elemental de huesos.");
+                dialogue.Add("Osea, soy única ¿Sabes?, y por eso tengo el mejor trabajo de la ciudad.");
+                dialogue.Add("Soy LA estrella del museo, todo el mundo hace colas interminables para verme...");
+                dialogue.Add("Pero bueno... deja de comerme con la mirada y cóbrame, que me están esperando.");
 
-                dialogue.Add("Un poco caro el muñeco, pero hace años ese muñeco antes eran 3 esclavos elementales, gracias.");
+                dialogue.Add("Un poco caro, pero bueno hace años este muñeco eran 3 esclavos elementales, gracias.");
                 dialogue.Add("Pero si las pociones las bebían hasta los dinosaurios, estúpidas normativas.");
 
                 gameManager.GetComponent<GameManager>().ShowText();

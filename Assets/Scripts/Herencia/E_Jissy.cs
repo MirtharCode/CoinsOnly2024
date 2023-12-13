@@ -19,19 +19,17 @@ public class E_Jissy : Elementales
 
             if (currentScene.name == "Day2")
             {
-                dialogue.Add("¿Qué pasa tío?¿Cómo estamos?");
-                dialogue.Add("Espera, tu… Tu no eres el de el otro día ¿no..?");
+                dialogue.Add("¿Qué pasa tío? ¿Cómo estamos?");
+                dialogue.Add("Espera, tú… Tú no eres el del otro día... ¿No?");
                 dialogue.Add("Yo soy Jissy, Jissy Blueman, mi nombre de las calles tío.");
-                dialogue.Add("Perdona tronco pero, ¿Seguro que no eres el dependiente de siempre?");
-                dialogue.Add("Nunca se me ha dado bien esto de reconocer a la gente, ¿sabes?");
-                dialogue.Add("Pero tienes un parecido al anterior dependiente.");
-                dialogue.Add("Aunque creo que el anterior no era humano, era un raza superior ¿sabes?");
-                dialogue.Add("Espero que no te afectará el comentario, tampoco se me da bien socializar.");
-                dialogue.Add("En fín, espero que te vaya bien.");
-                dialogue.Add("Ah, sí, pero antes de irme, cobrame esto.");
-                dialogue.Add("Que me iba sin pagar ¿sabes?");
+                dialogue.Add("Perdona tronco pero, ¿Seguro que no eres el de siempre?");
+                dialogue.Add("Nunca se me ha dado bien lo de reconocer a la gente, ¿Sabes?");
+                dialogue.Add("Aunque creo que el anterior no era humano, era... un raza superior ¿Sabes?");
+                dialogue.Add("Espero que no te afecte mi comentario, tampoco se me da bien socializar.");
+                dialogue.Add("En fin, que te vaya bien...");
+                dialogue.Add("¡Ah, sí!, antes de irme cóbrame esto, que me iba sin pagar ¿sabes?");
 
-                dialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de la vida ¿sabes?");
+                dialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de... la vida ¿Sabes?");
                 dialogue.Add("Bueno tronco… lo entiendo… ¿Sabes? Me alegra saber que al menos no romperé las normas.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
