@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public abstract class Tecnopedos : Client
 {
+    private void Start()
+    {
+        raza = "Tecno P2";
+    }
+
     protected abstract void OnCollisionEnter2D(Collision2D collision);
     public override void ShowProductsAndMoney()
     {

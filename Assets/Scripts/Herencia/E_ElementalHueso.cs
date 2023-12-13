@@ -24,13 +24,13 @@ public class E_ElementalHueso : Elementales
                 dialogue.Add("Y cuando digo que estoy, es que literalmente estoy.");
                 dialogue.Add("Debido a que tengo huesos de hace millones de años.");
                 dialogue.Add("Un mago arqueólogo me creó y como quedé tan raro, no se dignó ni en darme nombre.");
-                dialogue.Add("Literal me llamo Elemental de Hueso el elemental de huesos.");
-                dialogue.Add("Por suerte logré valerme por mi solo, y ahora obtuve un trabajo de verdad.");
-                dialogue.Add(" Ser esclavizado por un museo, muchos de mi raza desearían este puesto en vez de la mina.");
-                dialogue.Add("Pero bueno, cobrame chaval, que tienen que verme en el museo.");
+                dialogue.Add("Literal me llamo Elemental de Huesos, el elemental de huesos.");
+                dialogue.Add("Por suerte logré valerme por mí mismo, y ahora obtuve un trabajo de verdad.");
+                dialogue.Add("Ser esclavizado por un museo, muchos de mi raza desearían este puesto en vez de la mina.");
+                dialogue.Add("Pero bueno, cóbrame chaval, que tienen que verme en el museo.");
 
                 dialogue.Add("Un poco caro el muñeco, pero hace años ese muñeco antes eran 3 esclavos elementales, gracias.");
-                dialogue.Add("Pero si la cerveza la bebían hasta los dinosaurios, estúpidas normáticas.");
+                dialogue.Add("Pero si las pociones las bebían hasta los dinosaurios, estúpidas normativas.");
 
                 gameManager.GetComponent<GameManager>().ShowText();
 
