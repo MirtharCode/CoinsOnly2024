@@ -20,19 +20,18 @@ public class E_Rockon : Elementales
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("¿Ho-hola que tal?");
-                dialogue.Add("Espero no molestar, y perdona mi tar-tartamudez. ");
+                dialogue.Add("Espero no molestar, y perdona mi tar-tartamudez.");
                 dialogue.Add("En fin, perdona otra vez. No me disculparé más, per-per-perdona.");
                 dialogue.Add("Estoy intentando me-mejorar, como buen Rockon que soy.");
-                dialogue.Add("Debo mejorar como papá, es muy fuerte.");
+                dialogue.Add("Debo mejorar, como papá que es muy fuerte.");
                 dialogue.Add("Siempre me ha querido mu-mu-mucho.");
                 dialogue.Add("Mi co-comida favorita es la gravilla que me hacía.");
-                dialogue.Add("Además si le echabas cemento por encima, ya quedaba bueniiiiiisimo.");
+                dialogue.Add("Además si le echabas cemento por encima, ya quedaba bueníiiiiisimo.");
                 dialogue.Add("Bu-bu-bueno en fin… ¿Me puedes cobrar esto?");
-                dialogue.Add("Es que le quiero dar una sorpresa a papá, seguro que este gato mu-muerto le hace mucha ilusión.");
+                dialogue.Add("Es que le quiero dar una sorpresa a papi, seguro que este gato mu-muerto le hace mucha ilusión.");
 
-                dialogue.Add("Gra-gra-gracias seguro que papá se pone feliz");
-                dialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a papá y mamá… Pero no tengo todo el dinero");
-
+                dialogue.Add("Gra-gra-gracias seguro que mi papaito se pone feliz");
+                dialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a mis papis…");
 
                 gameManager.GetComponent<GameManager>().ShowText();
 
