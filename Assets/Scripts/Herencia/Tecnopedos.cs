@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public abstract class Tecnopedos : Client
 {
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         raza = "Tecno P2";
     }
 

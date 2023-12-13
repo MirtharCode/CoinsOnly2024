@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public abstract class Elementales : Client
 {
+    protected override void Start()
+    {
+        base.Start();
+        raza = "Elemental";
+    }
+
     protected abstract void OnCollisionEnter2D(Collision2D collision);
     public override void ShowProductsAndMoney()
     {

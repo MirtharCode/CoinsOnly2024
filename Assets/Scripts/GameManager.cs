@@ -118,6 +118,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject botonPlegado;
     [SerializeField] public GameObject botonDesplegado;
 
+    [SerializeField] public TMP_Text traductorText;
+
+
 
     #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
@@ -258,6 +261,8 @@ public class GameManager : MonoBehaviour
         FindTheCustomer();
         conversationOn = true;
         dialoguePanel.gameObject.SetActive(true);
+
+        traductorText.text = currentCustomer.GetComponent<Client>().raza;
 
         // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.

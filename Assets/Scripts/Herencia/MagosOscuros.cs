@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public abstract class MagosOscuros : Client
 {
+    protected override void Start()
+    {
+        base.Start();
+        raza = "Mago Oscuro";
+    }
+
     protected abstract void OnCollisionEnter2D(Collision2D collision);
     public override void ShowProductsAndMoney()
     {
@@ -15,12 +21,12 @@ public abstract class MagosOscuros : Client
 
     public override void ByeBye()
     {
-            gameManager.GetComponent<GameManager>().estaToPagao = false;
-            gameManager.GetComponent<GameManager>().trampilla.SetActive(false);
-            gameManager.GetComponent<GameManager>().internalCount = 0;
-            gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
-            gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-            gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
+        gameManager.GetComponent<GameManager>().estaToPagao = false;
+        gameManager.GetComponent<GameManager>().trampilla.SetActive(false);
+        gameManager.GetComponent<GameManager>().internalCount = 0;
+        gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
 
         if (gameManager.GetComponent<GameManager>().mostrarJefe)
         {

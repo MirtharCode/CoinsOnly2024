@@ -9,6 +9,7 @@ TagManager:
   - CurrentCustomer
   - UIText
   - UIPanel
+  - Raza
   layers:
   - Default
   - TransparentFX
