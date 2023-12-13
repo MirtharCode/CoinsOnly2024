@@ -29,7 +29,7 @@ public class T_MagmaDora : Tecnopedos
                 dialogue.Add("En fin, ¿Te importaría cobrarme esto? Que me estoy quedando sin llama y tengo que avivarme un poco.");
 
                 dialogue.Add("Gracias, espero que cuando termine de trabajar no se enfríe de camino a casa.");
-                dialogue.Add("¿Cómo que han prohibido comprar líquidos? ¡AHORA CÓMO PODRÉ COMPRAR LAVA!");
+                dialogue.Add("¿Cómo que han prohibido comprar pociones? ¡AHORA CÓMO PODRÉ COMPRAR MI POCIÓN DE LAVA!");
 
 
                 gameManager.GetComponent<GameManager>().ShowText();

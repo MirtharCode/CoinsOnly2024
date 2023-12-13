@@ -46,11 +46,11 @@ public class E_ElementalHueso : Elementales
     {
         if (currentScene.name == "Day3")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "26";
+            gameManager.GetComponent<GameManager>().leDineroText.text = "22";
         }
     }
 

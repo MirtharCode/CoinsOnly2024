@@ -10276,6 +10276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 5994435751796410855, guid: 0d82a4c78a9370b4888271e1db910713, type: 3}
   trampilla: {fileID: 536717154}
+  Jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
@@ -10286,7 +10287,7 @@ MonoBehaviour:
   electropedDenjirenji: {fileID: 1842405180829131057, guid: 4671f28175521d246ad3b0c6a7c29591, type: 3}
   hybridMara: {fileID: 7336179541738107905, guid: 7a5012c7c29ba8641bbe2b186d7e19d4, type: 3}
   limbasticGiovanni: {fileID: 7336179541738107905, guid: 54e90804b6d1c284387b971f2a19564b, type: 3}
-  elementalRockon: {fileID: 0}
+  elementalRockon: {fileID: 8043330204968246209, guid: 03fa906d62e123941b02821ac1fcea61, type: 3}
   electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
   evilWizardManolo: {fileID: 8043330204968246209, guid: 923e7f8592645d74faa9e85d823cb27d, type: 3}
   limbasticCululu: {fileID: 8043330204968246209, guid: 67e7ec8f3d26f08408518e31b85cadac, type: 3}
@@ -10295,14 +10296,14 @@ MonoBehaviour:
   elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   electropedMasermati: {fileID: 8043330204968246209, guid: 1c519ce09dfe68a4fb14cdbd75365e2d, type: 3}
   evilWizardPijus: {fileID: 8043330204968246209, guid: 56e5944c3aa4c9b4490ec7bce1d51eb4, type: 3}
-  limbasticSergio: {fileID: 0}
-  hybridSaltaralisis: {fileID: 0}
-  evilWizardManoloMano: {fileID: 0}
-  electropedRaven: {fileID: 0}
-  elementalHueso: {fileID: 0}
-  limbasticPatxi: {fileID: 0}
-  evilWizardElidora: {fileID: 0}
-  electropedRustica: {fileID: 0}
+  limbasticSergio: {fileID: 8043330204968246209, guid: dc9ea8849b583314eb3b25bf5af47eca, type: 3}
+  hybridSaltaralisis: {fileID: 8043330204968246209, guid: 2abda14aff472074682a7cf8f5d2ee97, type: 3}
+  evilWizardManoloMano: {fileID: 8043330204968246209, guid: 5dd53f96d1dce4d4687ce84db64d83ce, type: 3}
+  electropedRaven: {fileID: 8043330204968246209, guid: 6b85077ca1bbc6f449bb80ca39f2a06f, type: 3}
+  elementalHueso: {fileID: 8043330204968246209, guid: 27e73000c53bab64db7a9237c7ab23ca, type: 3}
+  limbasticPatxi: {fileID: 8043330204968246209, guid: 224518b9d2a111c4f89711cddd2b0756, type: 3}
+  evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
+  electropedRustica: {fileID: 8043330204968246209, guid: 8f4d40bc36b478041bbbcf582087672a, type: 3}
   listOpen: 0
   dropDownPanel: {fileID: 537900581}
   dropDownButton: {fileID: 1839821965}

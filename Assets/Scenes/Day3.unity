@@ -9957,6 +9957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 5994435751796410855, guid: 0d82a4c78a9370b4888271e1db910713, type: 3}
   trampilla: {fileID: 536717154}
+  Jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
@@ -9967,7 +9968,7 @@ MonoBehaviour:
   electropedDenjirenji: {fileID: 1842405180829131057, guid: 4671f28175521d246ad3b0c6a7c29591, type: 3}
   hybridMara: {fileID: 7336179541738107905, guid: 7a5012c7c29ba8641bbe2b186d7e19d4, type: 3}
   limbasticGiovanni: {fileID: 7336179541738107905, guid: 54e90804b6d1c284387b971f2a19564b, type: 3}
-  elementalRockon: {fileID: 0}
+  elementalRockon: {fileID: 8043330204968246209, guid: 03fa906d62e123941b02821ac1fcea61, type: 3}
   electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
   evilWizardManolo: {fileID: 8043330204968246209, guid: 923e7f8592645d74faa9e85d823cb27d, type: 3}
   limbasticCululu: {fileID: 8043330204968246209, guid: 67e7ec8f3d26f08408518e31b85cadac, type: 3}

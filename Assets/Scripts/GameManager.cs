@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [Header("CHARACTERS THAT CAN APPEAR")]
 
+    [Header("EL JEFE")]
+    [SerializeField] public GameObject Jefe;
+
     [Header("Day1")]
     [SerializeField] public GameObject currentCustomer;
     [SerializeField] public int customerNumber = 0;
@@ -213,6 +216,7 @@ public class GameManager : MonoBehaviour
         LaVoluntad(50);
 
         dailyCustomers.Clear();
+        dailyCustomers.Add(Jefe);
         dailyCustomers.Add(evilWizardGerard);
         dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(limbasticAntonio);
@@ -228,6 +232,7 @@ public class GameManager : MonoBehaviour
     public void Day2()
     {
         dailyCustomers.Clear();
+        dailyCustomers.Add(Jefe);
         dailyCustomers.Add(electropedMagmaDora);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
@@ -243,6 +248,7 @@ public class GameManager : MonoBehaviour
     public void Day3()
     {
         dailyCustomers.Clear();
+        dailyCustomers.Add(Jefe);
         dailyCustomers.Add(limbasticSergio);
         dailyCustomers.Add(hybridSaltaralisis);
         dailyCustomers.Add(evilWizardManoloMano);
@@ -267,8 +273,21 @@ public class GameManager : MonoBehaviour
         // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.
 
-        if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2)
+
+        if (currentCustomer.name.Contains("Jefe") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count)
         {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            internalCount++;
+
+            //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
+            //    currentCustomer.GetComponent<Client>().ByeBye();
+            //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        }
+
+        else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe"))
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             //SoundCreator(dialogueText.text);
             internalCount++;
@@ -285,7 +304,13 @@ public class GameManager : MonoBehaviour
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
 
-        if (!estaToPagao)
+        if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
+        {
+            estaToPagao = true;
+            currentCustomer.GetComponent<Client>().ByeBye();
+        }
+
+        else if (!estaToPagao)
         {
             leDinero.gameObject.SetActive(true);
             leDinero.gameObject.GetComponent<Button>().enabled = true;
