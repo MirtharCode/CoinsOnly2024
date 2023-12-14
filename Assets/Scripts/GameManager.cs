@@ -100,6 +100,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public int internalCount = 0;
 
+    [Header("AUDIO")]
+    [SerializeField] public AudioClip TrampillaEntrada;
+    [SerializeField] public AudioClip TrampillaSalida;
+
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject victoryPanel;
