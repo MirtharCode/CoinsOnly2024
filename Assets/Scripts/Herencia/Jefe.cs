@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Jefe : Hibridos
+public class Jefe : RazaJefe
 {
     bool repetirunavez = false;
 
