@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MO_Elidora : Limbasticos
+public class MO_Elidora : MagosOscuros
 {
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;

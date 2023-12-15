@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class T_Rustica : Limbasticos
+public class T_Rustica : Tecnopedos
 {
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
