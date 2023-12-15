@@ -10018,6 +10018,9 @@ MonoBehaviour:
   dialogueText: {fileID: 1707974684}
   dialoguePanel: {fileID: 2059587798}
   internalCount: 0
+  TrampillaEntrada: {fileID: 8300000, guid: 713f735cab05873429e889ae5f659aa1, type: 3}
+  TrampillaSalida: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
+  audioSource: {fileID: 0}
   canvas: {fileID: 1397739548}
   canvasPausa: {fileID: 56260916}
   victoryPanel: {fileID: 1134481273}

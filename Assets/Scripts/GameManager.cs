@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
     [Header("AUDIO")]
     [SerializeField] public AudioClip TrampillaEntrada;
     [SerializeField] public AudioClip TrampillaSalida;
+    public AudioSource audioSource;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject canvasPausa;
@@ -140,6 +141,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…"); //Si no le has cobrado y sí deberias
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"); //Si sí le has cobrado y no deberías
         quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"); //Cuando no cumple las normativas y no te has enterado
@@ -212,6 +215,7 @@ public class GameManager : MonoBehaviour
 
     public void CharacterShowUp(GameObject character)
     {
+        audioSource.PlayOneShot(TrampillaEntrada);
         GameObject clon = Instantiate(character, showUpPoint);
     }
 
@@ -312,6 +316,7 @@ public class GameManager : MonoBehaviour
         {
             estaToPagao = true;
             currentCustomer.GetComponent<Client>().ByeBye();
+            audioSource.PlayOneShot(TrampillaSalida);
         }
 
         else if (!estaToPagao)
@@ -414,6 +419,7 @@ public class GameManager : MonoBehaviour
         else
         {
             currentCustomer.GetComponent<Client>().ByeBye();
+            audioSource.PlayOneShot(TrampillaSalida);
         }
     }
 

@@ -27,7 +27,6 @@ public abstract class Hibridos : Client
         gameManager.GetComponent<GameManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
         gameManager.GetComponent<GameManager>().dropDownButton.SetActive(false);
-        //gameManager.GetComponent<GameManager>().TrampillaSalida.Play();
 
         if (gameManager.GetComponent<GameManager>().mostrarJefe)
         {
