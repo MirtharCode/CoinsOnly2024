@@ -4967,7 +4967,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318056131}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_mute
         m_Mode: 0
@@ -10180,6 +10180,7 @@ MonoBehaviour:
   TrampillaEntrada: {fileID: 8300000, guid: 713f735cab05873429e889ae5f659aa1, type: 3}
   TrampillaSalida: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
   audioSource: {fileID: 0}
+  musicBox: {fileID: 0}
   canvas: {fileID: 1397739548}
   canvasPausa: {fileID: 56260916}
   victoryPanel: {fileID: 1134481273}
@@ -10200,7 +10201,7 @@ MonoBehaviour:
   chars: 
   words: []
   wordsDuration: 
-  conversationSound: {fileID: 1318056131}
+  conversationSound: {fileID: 0}
   marianoSounds:
   - {fileID: 8300000, guid: 2d6b78a5ee4c8be4983dc283632db2cb, type: 3}
   - {fileID: 8300000, guid: b1f5e1c135f4686499ac872ebf57578e, type: 3}
@@ -10236,11 +10237,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c74f0a0642dbf447a7476988deaa6f5, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.208
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14871,7 +14872,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318056131}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_volume
         m_Mode: 0
@@ -17729,3 +17730,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143919604}
   m_CullTransparentMesh: 1
+--- !u!1001 &4162823613496285183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840464, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162823613107840466, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_Name
+      value: MusicBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}

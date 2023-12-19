@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public AudioClip TrampillaEntrada;
     [SerializeField] public AudioClip TrampillaSalida;
     public AudioSource audioSource;
+    [SerializeField] public GameObject musicBox;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject canvasPausa;
@@ -142,6 +143,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        musicBox = GameObject.FindGameObjectWithTag("MusicBox");
 
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…"); //Si no le has cobrado y sí deberias
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"); //Si sí le has cobrado y no deberías

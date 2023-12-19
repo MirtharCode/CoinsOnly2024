@@ -10,6 +10,7 @@ TagManager:
   - UIText
   - UIPanel
   - Raza
+  - MusicBox
   layers:
   - Default
   - TransparentFX
