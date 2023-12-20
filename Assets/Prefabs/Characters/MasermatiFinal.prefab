@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6dba88e4e579db741bf2c4044bf6ad53, type: 3}
-  m_Color: {r: 0.69803923, g: 0.6666667, b: 0.6666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,3 +146,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddbcf4ae857e5d47b600f622a61517d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  dialogueUIText: {fileID: 0}
+  dialogueUIPanel: {fileID: 0}
+  dialogue: []
+  currentScene:
+    m_Handle: 0
+  oneProduct: {fileID: 0}
+  twoProducts1: {fileID: 0}
+  twoProducts2: {fileID: 0}
+  lineIndex: 0
+  typingTime: 0
+  raza: 
+  product1: {fileID: 0}
+  product2: {fileID: 0}
+  product3: {fileID: 0}
