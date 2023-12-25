@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public abstract class Client : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
+    [SerializeField] public GameObject uIManager;
     [SerializeField] public TMP_Text dialogueUIText;
     [SerializeField] public GameObject dialogueUIPanel;
     [SerializeField] public List<string> dialogue;
@@ -24,6 +25,7 @@ public abstract class Client : MonoBehaviour
     protected virtual void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
+        uIManager = GameObject.FindGameObjectWithTag("UI");
         currentScene = SceneManager.GetActiveScene();
         dialogue = new List<string>();
         gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
@@ -70,7 +72,7 @@ public abstract class Client : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
-            gameManager.GetComponent<GameManager>().victoryPanel.SetActive(true);
+            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }
 

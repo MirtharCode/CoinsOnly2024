@@ -55,14 +55,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject evilWizardElidora;
     [SerializeField] public GameObject electropedRustica;
 
-    [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
-    [SerializeField] public bool listOpen;
-    [SerializeField] public GameObject dropDownPanel;
-    [SerializeField] public GameObject dropDownButton;
-    [SerializeField] public TMP_Text dropDownButtonText;
-    [SerializeField] public GameObject position1;
-    [SerializeField] public GameObject position2;
-
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
     [SerializeField] public GameObject leCajaRegistradora;
@@ -107,12 +99,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject musicBox;
 
     [SerializeField] GameObject canvas;
-    [SerializeField] GameObject canvasPausa;
-    [SerializeField] public GameObject victoryPanel;
     public Scene currentScene;
-
-    [SerializeField] GameObject normativas;
-    [SerializeField] GameObject precios;
 
     public bool broncaFin = true;
     public bool mostrarJefe = false;
@@ -120,13 +107,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject telefono;
 
-    public List<string> quejas;
+
 
     [SerializeField] public TMP_Text textoJefe;
-
-    [SerializeField] public GameObject botonPlegado;
-    [SerializeField] public GameObject botonDesplegado;
-
     [SerializeField] public TMP_Text traductorText;
 
 
@@ -144,15 +127,10 @@ public class GameManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         musicBox = GameObject.FindGameObjectWithTag("MusicBox");
-
-        quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…"); //Si no le has cobrado y sí deberias
-        quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!"); //Si sí le has cobrado y no deberías
-        quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!"); //Cuando no cumple las normativas y no te has enterado
-        quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!"); //Si no le has cobrado y sí deberias (A partir del día 2)
+        canvas = GameObject.FindGameObjectWithTag("UI");
 
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
-        dropDownButton.SetActive(false);
         estaToPagao = false;
 
         if (currentScene.name == "Day1")
@@ -161,23 +139,6 @@ public class GameManager : MonoBehaviour
             Day2();
         if (currentScene.name == "Day3")
             Day3();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (canvasPausa.activeSelf)
-            {
-                canvasPausa.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else
-            {
-                canvasPausa.SetActive(true);
-                Time.timeScale = 0;
-            }
-        }
     }
 
     public IEnumerator BossCalling()
@@ -189,30 +150,6 @@ public class GameManager : MonoBehaviour
         telefono.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", false);
 
         jefePanel.SetActive(true);
-    }
-
-    public void OpenList()
-    {
-        if (listOpen)
-        {
-            leDinero.gameObject.GetComponent<Button>().enabled = true;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
-            dropDownPanel.transform.position = position2.transform.position;
-            botonDesplegado.SetActive(true);
-            botonPlegado.SetActive(false);
-            listOpen = false;
-        }
-
-        else
-        {
-            leDinero.gameObject.GetComponent<Button>().enabled = false;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-            dropDownPanel.transform.position = position1.transform.position;
-            botonDesplegado.SetActive(false);
-            botonPlegado.SetActive(true);
-            listOpen = true;
-        }
-
     }
 
     public void CharacterShowUp(GameObject character)
@@ -313,6 +250,8 @@ public class GameManager : MonoBehaviour
         FindTheCustomer();
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
+        dialoguePanel.gameObject.SetActive(false);
+        canvas.GetComponent<UIManager>().dropDownPanel.gameObject.SetActive(true);
 
         if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
         {
@@ -326,7 +265,7 @@ public class GameManager : MonoBehaviour
             leDinero.gameObject.SetActive(true);
             leDinero.gameObject.GetComponent<Button>().enabled = true;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
-            dropDownButton.SetActive(true);
+            canvas.GetComponent<UIManager>().botonDesplegado.SetActive(true);
 
             if (currentScene.name == "Day1")
             {
@@ -353,7 +292,6 @@ public class GameManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Rockon"))
                     currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
-
 
             }
 
@@ -412,9 +350,7 @@ public class GameManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Rustica"))
                     currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
-
             }
-
             internalCount++;
         }
 
@@ -427,7 +363,7 @@ public class GameManager : MonoBehaviour
 
     public void CollectMoney()
     {
-        dropDownButton.SetActive(false);
+        canvas.GetComponent<UIManager>().botonDesplegado.SetActive(false);
         FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
@@ -438,7 +374,7 @@ public class GameManager : MonoBehaviour
 
     public void IDontBelieveIt()
     {
-        dropDownButton.SetActive(false);
+        canvas.GetComponent<UIManager>().botonDesplegado.SetActive(false);
         FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
@@ -477,7 +413,7 @@ public class GameManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[1];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[1];
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -489,7 +425,7 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no tiene suficiente dinero
                 mostrarJefe = true;
-                textoJefe.text = quejas[1];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[1];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -498,7 +434,7 @@ public class GameManager : MonoBehaviour
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[2];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -524,7 +460,7 @@ public class GameManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Sapopotamo"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[2];
                 LaVoluntad(5);
                 return dialogueText.text;
             }
@@ -532,7 +468,7 @@ public class GameManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Elidora"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[2];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -555,7 +491,7 @@ public class GameManager : MonoBehaviour
                 || currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[0];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[0];
                 LaVoluntad(-10);
                 return dialogueText.text;
             }
@@ -575,7 +511,7 @@ public class GameManager : MonoBehaviour
             {
                 //Queja de que si que tenía el dinero suficiente
                 mostrarJefe = true;
-                textoJefe.text = quejas[3];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[3];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -608,7 +544,7 @@ public class GameManager : MonoBehaviour
                 || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[3];
+                textoJefe.text = canvas.GetComponent<UIManager>().quejas[3];
                 LaVoluntad(-15);
                 return dialogueText.text;
             }
@@ -625,53 +561,10 @@ public class GameManager : MonoBehaviour
         jefePanel.SetActive(false);
     }
 
-    public void MoreSpeed()
-    {
-        currentCustomer.GetComponent<Client>().typingTime = 0;
-    }
-
-    public void Reanudar()
-    {
-        canvasPausa.SetActive(false);
-        Time.timeScale = 1;
-    }
-
-    public void Titulo()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
-    }
-
-    public void SiguienteDia2()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(2);
-    }
-
-    public void SiguienteDia3()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(3);
-    }
-
-    public void Salir()
-    {
-        Debug.Log("Salir...");
-        Application.Quit();
-    }
-
-    public void ActivarNormas()
-    {
-        normativas.SetActive(true);
-        precios.SetActive(false);
-    }
-
-    public void ActivarPrecios()
-    {
-        precios.SetActive(true);
-        normativas.SetActive(false);
-    }
-
+    //public void MoreSpeed()
+    //{
+    //    currentCustomer.GetComponent<Client>().typingTime = 0;
+    //}
     #region Código Antiguo
     //void firstEntrance(int random)
     //{
