@@ -30,7 +30,7 @@ public class L_Antonio : Limbasticos
                 dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero…");
                 dialogue.Add(" Uy, me faltan monedas, siempre se cometen estos errores cuando pierdes la cabeza… Ya paro, nos vemos.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -46,7 +46,7 @@ public class L_Antonio : Limbasticos
         {
             product = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, oneProduct.position, oneProduct.rotation);
             product.transform.SetParent(oneProduct);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "8";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
         }
     }
 

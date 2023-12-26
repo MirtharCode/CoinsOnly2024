@@ -36,7 +36,7 @@ public class L_Sergio : Limbasticos
                 dialogue.Add("Voy a intentar que esto me despierte como es debido.");
                 dialogue.Add("¿Está prohibido venderme esto? En mis tiempos, bebíamos esto sin problema.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -54,7 +54,7 @@ public class L_Sergio : Limbasticos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "20";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "20";
         }
     }
 

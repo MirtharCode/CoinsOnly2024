@@ -32,7 +32,7 @@ public class E_ElementalHueso : Elementales
                 dialogue.Add("Un poco caro, pero bueno hace años este muñeco eran 3 esclavos elementales, gracias.");
                 dialogue.Add("Pero si las pociones las bebían hasta los dinosaurios, estúpidas normativas.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -50,7 +50,7 @@ public class E_ElementalHueso : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "22";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "22";
         }
     }
 

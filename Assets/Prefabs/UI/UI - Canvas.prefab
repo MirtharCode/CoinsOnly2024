@@ -1084,17 +1084,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5aa048ceabd80478dda14c77963f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  currentCustomer: {fileID: 0}
   canvasPausa: {fileID: 0}
+  canvasVictory: {fileID: 0}
   currentScene:
     m_Handle: 0
-  normativas: {fileID: 5982892004902518682}
-  precios: {fileID: 5982892004111707741}
   listOpen: 0
   dropDownPanel: {fileID: 5982892005186836047}
   botonPlegado: {fileID: 5982892004976646699}
   botonDesplegado: {fileID: 5982892005171106617}
   position1: {fileID: 5982892004230308821}
   position2: {fileID: 5982892004935337535}
+  normativas: {fileID: 5982892004902518682}
+  precios: {fileID: 5982892004111707741}
   leDinero: {fileID: 5982892003967584311}
   leCajaRegistradora: {fileID: 5982892004944006116}
   lesPropinas: {fileID: 5982892003182434231}
@@ -1102,6 +1105,17 @@ MonoBehaviour:
   lePropinasText: {fileID: 5982892003244695455}
   propinasNumber: 0
   estaToPagao: 0
+  conversationOn: 0
+  optionsSet: 0
+  dialogueText: {fileID: 5982892005100486788}
+  dialoguePanel: {fileID: 5982892003858235575}
+  internalCount: 0
+  traductorText: {fileID: 5982892003827534848}
+  phone: {fileID: 5982892003975076012}
+  jefePanel: {fileID: 5982892005112561856}
+  textoJefe: {fileID: 5982892004925118166}
+  broncaFin: 1
+  mostrarJefe: 0
   quejas: []
 --- !u!1 &5982892003302237854
 GameObject:
@@ -1225,9 +1239,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Titulo
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TitleScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4321,8 +4335,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
@@ -5429,9 +5443,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SiguienteDia2
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: NextDay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7375,8 +7389,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: CollectMoney
         m_Mode: 1
         m_Arguments:
@@ -9738,8 +9752,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ShowText
         m_Mode: 1
         m_Arguments:
@@ -14179,8 +14193,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1397739549}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: IDontBelieveIt
         m_Mode: 1
         m_Arguments:

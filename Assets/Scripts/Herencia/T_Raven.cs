@@ -36,7 +36,7 @@ public class T_Raven : Tecnopedos
                 dialogue.Add("Gracias compi, ahora iré a descansar para deslumbrar esta noche más.");
                 dialogue.Add("No podré recargar pilas colega… Este será un día con más canciones emos por tí.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -54,7 +54,7 @@ public class T_Raven : Tecnopedos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "8";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
         }
     }
 

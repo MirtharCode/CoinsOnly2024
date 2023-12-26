@@ -33,7 +33,7 @@ public class Jefe : RazaJefe
                 dialogue.Add("No iba a comprarte otro traductor como ese no fuera.");
                 dialogue.Add("Suerte en tu primer día, chico nuevo.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -57,7 +57,7 @@ public class Jefe : RazaJefe
                 dialogue.Add("Recuerda revisar las normas, estarán debajo del catálogo.");
                 dialogue.Add("Buena suerte chico nuevo");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -81,7 +81,7 @@ public class Jefe : RazaJefe
                 dialogue.Add("Mirate las nuevas normas.");
                 dialogue.Add("Suerte chico no tan nuevo.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();

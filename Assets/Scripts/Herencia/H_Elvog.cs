@@ -33,7 +33,7 @@ public class H_Elvog : Hibridos
                 dialogue.Add("Gracias mushacho *hip* Ahorra serás ni depemdiete favorito *hip*");
                 dialogue.Add("Perro mushacho *hip* el otroo depemdiete erra mejor *hip*");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -56,7 +56,7 @@ public class H_Elvog : Hibridos
                 dialogue.Add("¡TE QUIERO MUCHO COLEGA! ");
                 dialogue.Add("Hasta mi dependiente favorito… Adiós a Elvog Borracho");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -72,7 +72,7 @@ public class H_Elvog : Hibridos
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "10";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
 
         else if (currentScene.name == "Day3")
@@ -81,7 +81,7 @@ public class H_Elvog : Hibridos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "50";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "50";
         }
 
     }

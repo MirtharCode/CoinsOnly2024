@@ -30,7 +30,7 @@ public class MO_Geeraard : MagosOscuros
                 dialogue.Add("Deberías de leer alguna de mis grandes historias humano, adiós.");
                 dialogue.Add("Pero, ¡QUÉ INSOLENCIA ES ESTA! Espero que cuando vuelva aprendas a contar monedas humano.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -47,7 +47,7 @@ public class MO_Geeraard : MagosOscuros
         {
             product = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product.transform.SetParent(oneProduct);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "6";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "6";
         }
     }
 

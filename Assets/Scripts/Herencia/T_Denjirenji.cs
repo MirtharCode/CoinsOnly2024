@@ -32,7 +32,7 @@ public class T_Denjirenji : Tecnopedos
                 dialogue.Add("Menos mal que tenía el dinero justo... o eso creo.");
                 dialogue.Add("¡Por una moneda! Discúlpame... espero que el jefe no me mate.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -52,7 +52,7 @@ public class T_Denjirenji : Tecnopedos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "9";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "9";
         }
     }
 

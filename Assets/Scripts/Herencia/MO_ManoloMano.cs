@@ -34,7 +34,7 @@ public class MO_ManoloMano : MagosOscuros
                 dialogue.Add("Buen chico, nos vemos mortal.");
                 dialogue.Add("Parece que eres otro sacrificio más, Azathoth te maldecirá por tu incompetencia.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -52,7 +52,7 @@ public class MO_ManoloMano : MagosOscuros
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "11";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "11";
         }
     }
 

@@ -36,7 +36,7 @@ public class T_Masermati : Tecnopedos
                 dialogue.Add("Gracias cocherrumín, voy a prepararme para la carrera.");
                 dialogue.Add("¡Pero si tengo suficiente! Da igual, tengo algo de prisa.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -56,7 +56,7 @@ public class T_Masermati : Tecnopedos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
     }
 

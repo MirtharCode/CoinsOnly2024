@@ -37,7 +37,7 @@ public class MO_Elidora : MagosOscuros
                 dialogue.Add("Te haré el dependiente oficial… Nada más terminar con el papeleo, adiós humilde súbdito");
                 dialogue.Add("En Reino Slime no tenemos estas estúpidas normativas, aunque ya nunca lo sabrás, adiós humano.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -57,7 +57,7 @@ public class MO_Elidora : MagosOscuros
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
     }
 

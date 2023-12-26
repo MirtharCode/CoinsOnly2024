@@ -76,7 +76,7 @@ public abstract class Client : MonoBehaviour
             Debug.Log("Se acabó el día guachines.");
         }
 
-        gameManager.GetComponent<GameManager>().jefePanel.SetActive(false);
+        uIManager.GetComponent<UIManager>().jefePanel.SetActive(false);
     }
 
     public IEnumerator WaitingForMyDestruction()
