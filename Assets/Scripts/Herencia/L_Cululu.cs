@@ -41,6 +41,32 @@ public class L_Cululu : Limbasticos
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day4")
+            {
+                dialogue.Add("Buenos días mi dependiente favorito, ¿no es preciosa la vida?");
+                dialogue.Add("...");
+                dialogue.Add("Veo que mi pregunta te dejo mudo al igual que yo cuando veo a mi nueva diosa.");
+                dialogue.Add("La cita del otro día no sólo fue genial, fue perfecta.");
+                dialogue.Add("Cuando la ví, quedé perdido en su ojos de mantis, y no paraba de querer acariciar sus preciosas y afiladas garras.");
+                dialogue.Add("Obvio fuí un caballero y no me atreví a tocar sus hermosas garras.");
+                dialogue.Add("Además de que no quería perder mi mano.");
+                dialogue.Add("Pero bueno, lo mejor de la cita fue cuando nos sentamos juntos y cenamos.");
+                dialogue.Add("Y esa cangumantis me dijo 10 palabras, ¡10 PALABRAS!");
+                dialogue.Add("Solo una hembra me había dicho más palabras que esas, mi madre.");
+                dialogue.Add("Mis palabras favoritas fueron “¿Pagas tú, no?” Quiso que pagara yo, qué romántico");
+                dialogue.Add("Tengo pensado decirle de tener otra cita, y creo que esto de aquí será necesario para la cita, así que si pudieras cobrarme.");
+
+                dialogue.Add("Te informaré sobre mi próxima cita, mi dependiente favorito.");
+                dialogue.Add("Tú, enemigo del amor, gracias por arruinar mi cita.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 
@@ -55,6 +81,17 @@ public class L_Cululu : Limbasticos
             product3 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "16";
+        }
+
+        else if (currentScene.name == "Day4")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "26";
         }
     }
 

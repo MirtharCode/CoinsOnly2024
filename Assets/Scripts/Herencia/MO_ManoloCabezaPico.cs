@@ -39,6 +39,29 @@ public class MO_ManoloCabezaPico : MagosOscuros
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day4")
+            {
+                dialogue.Add("¡Hola pequeñín! No te había visto desde ahí abajo.");
+                dialogue.Add("Soy el grandioso Manolo Cabeza de Pico, el mago más rico…Del barrio más alto del reino.");
+                dialogue.Add("Me sobra el dinero, para nada entré aquí por el 50% de descuento en magos.");
+                dialogue.Add("O incluso podría ser un 70% ahora que somos amigos.");
+                dialogue.Add(" Vale vale, no me mires con esa cara impasible, pero venga…");
+                dialogue.Add("Te prometo que te devolveré ese 20%, siempre pago mis deudas.");
+                dialogue.Add("Por ejemplo, mi vecino aún me dice que le debo 2000 monedas y que deje de evitarlo.");
+                dialogue.Add("Pero, por favor, yo no lo evito por la deuda, lo evito para ahorrarme esas 2000 monedas.");
+                dialogue.Add("Creo que no debí decir eso…Bueno, mejor ve cobrando antes de que la lié más.");
+
+                dialogue.Add("Menos mal me he ahorrado esas monedas, así podré mantener mi enorme mansión durante 1 hora más.");
+                dialogue.Add("¿No tengo dinero ni con el 50% de rebaja? Me va a tocar embargar la casa.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 
@@ -51,6 +74,15 @@ public class MO_ManoloCabezaPico : MagosOscuros
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
             uIManager.GetComponent<UIManager>().leDineroText.text = "9";
+        }
+
+        else if (currentScene.name == "Day4")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
     }
 

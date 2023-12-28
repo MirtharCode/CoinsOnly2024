@@ -216,7 +216,7 @@ public class UIManager : MonoBehaviour
                 if (currentCustomer.name.Contains("Magma"))
                     currentCustomer.GetComponent<T_MagmaDora>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("Manolo"))
+                else if (currentCustomer.name.Contains("Enano"))
                     currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
 
                 else if (currentCustomer.name.Contains("Cululu"))
@@ -246,7 +246,7 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Saltaralisis"))
                     currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("ManoloMano"))
+                else if (currentCustomer.name.Contains("Mano"))
                     currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
 
                 else if (currentCustomer.name.Contains("Raven"))
@@ -267,6 +267,22 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Rustica"))
                     currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
             }
+
+            else if (currentScene.name == "Day4")
+            {
+                if (currentCustomer.name.Contains("Tapiz"))
+                    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Mara"))
+                    currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Cululu"))
+                    currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Enano"))
+                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+            }
+
             internalCount++;
         }
 
@@ -387,6 +403,25 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        else if (currentScene.name == "Day4")
+        {
+            if (currentCustomer.name.Contains("Tapicio") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Mara"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
+
+
 
         return null;
     }
@@ -456,6 +491,24 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("ManoloMano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
+
+        else if (currentScene.name == "Day4")
+        {
+            if (currentCustomer.name.Contains("Mara"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Tapicio") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];

@@ -110,6 +110,8 @@ public class GameManager : MonoBehaviour
             Day2();
         if (currentScene.name == "Day3")
             Day3();
+        if (currentScene.name == "Day4")
+            Day4();
     }
 
     public void CharacterShowUp(GameObject character)
@@ -169,6 +171,20 @@ public class GameManager : MonoBehaviour
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
+
+    public void Day4()
+    {
+        canvas.GetComponent<UIManager>().LaVoluntad(50);
+        dailyCustomers.Clear();
+        dailyCustomers.Add(Jefe);
+        dailyCustomers.Add(elementalTapicio);
+        dailyCustomers.Add(hybridMara);
+        dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(evilWizardManolo);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
 
     public void FindTheCustomer()
     {

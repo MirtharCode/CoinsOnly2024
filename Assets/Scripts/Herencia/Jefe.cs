@@ -88,6 +88,31 @@ public class Jefe : RazaJefe
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day4")
+            {
+                dialogue.Add("Buenas chico nuevo, soy el jefe.");
+                dialogue.Add("Parece que estás empezando a acostumbrarte al trabajo.");
+                dialogue.Add("Estás durando más que el antiguo empleado.");
+                dialogue.Add("No sé cómo sigues vivo siquiera.");
+                dialogue.Add("Pero bueno, tengo malas noticias.");
+                dialogue.Add("Parece que quieren acabar con el mercado de las pociones.");
+                dialogue.Add("Muchos magos y limbásticos abusaban de sus efectos.");
+                dialogue.Add("Y encerraron a una secta de elementales que usaban magia negra.");
+                dialogue.Add("Tienen a todas esas razas fichadas.");
+                dialogue.Add("Además de que por culpa de un híbrido borracho, que vomitó al Rey Mago.");
+                dialogue.Add("Los híbridos no pueden beber más alcohol, menudo día.");
+
+                dialogue.Add("Mirate las nuevas normas.");
+                dialogue.Add("Suerte chico no tan nuevo.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 
