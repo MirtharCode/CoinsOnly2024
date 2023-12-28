@@ -32,7 +32,7 @@ public class MO_PijusMagnus : MagosOscuros
                 dialogue.Add("Así me gusta humano, no sabía qué os habían enseñado a contar allí.");
                 dialogue.Add("¡Cómo que no sirve la oferta! Pues... Pues… Bonita moneda, me la quedo.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -50,7 +50,7 @@ public class MO_PijusMagnus : MagosOscuros
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "10";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
     }
 

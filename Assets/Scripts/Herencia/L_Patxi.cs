@@ -35,7 +35,7 @@ public class L_Patxi : Limbasticos
                 dialogue.Add("Mi Antonio va a perder la cabeza con esta cena, perdona, se me pegaron sus chistes.");
                 dialogue.Add("Enemigo del romanticismo, mi Antonio no va a disfrutar mi cena para relajarse.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -55,7 +55,7 @@ public class L_Patxi : Limbasticos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
     }
 

@@ -33,7 +33,7 @@ public class H_Mara : Hibridos
                 dialogue.Add("Muchas gracias joven, espero que tu pareja te coma pronto también ji ji ji.");
                 dialogue.Add("¿Perdona? Ahora por tu culpa mi hijo no tendrá su gato muerto, él solo quería una mascota");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -51,7 +51,7 @@ public class H_Mara : Hibridos
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "18";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
         }
     }
 

@@ -37,7 +37,7 @@ public class E_Handy : Elementales
                 dialogue.Add("Voy a hacer una despedida de soltero !INCREÍBLE! Nos vemos colega.");
                 dialogue.Add("Me has borrado la sonrisa tío, pero entiendo que no puedas romper la normativa");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -55,7 +55,7 @@ public class E_Handy : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "20";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "20";
         }
     }
 

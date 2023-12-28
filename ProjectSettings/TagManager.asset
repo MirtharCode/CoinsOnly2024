@@ -11,6 +11,8 @@ TagManager:
   - UIPanel
   - Raza
   - MusicBox
+  - UIPausa
+  - UI
   layers:
   - Default
   - TransparentFX

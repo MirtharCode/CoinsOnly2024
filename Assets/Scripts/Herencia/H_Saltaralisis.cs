@@ -34,7 +34,7 @@ public class H_Saltaralisis : Hibridos
                 dialogue.Add("Gra… Gra… cías, cambiar runas ahora.");
                 dialogue.Add("No…No…. Poder cambiar, crear más mal entendidos.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -52,7 +52,7 @@ public class H_Saltaralisis : Hibridos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "12";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
     }
 

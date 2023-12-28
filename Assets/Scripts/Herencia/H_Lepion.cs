@@ -31,7 +31,7 @@ public class H_Lepion : Hibridos
                 dialogue.Add("再見，愚蠢的人類，他甚至不知道如何為微波爐充電 \n(Adiós)");
                 dialogue.Add("愚蠢的人類學會了數數 \n(Ni contar sabes, ¿de verdad? Acabas de perder todos los clientes chinos por la zona, \n y espero que pronto pierdas tú el trabajo.)");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -49,7 +49,7 @@ public class H_Lepion : Hibridos
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "13";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "13";
         }
     }
 

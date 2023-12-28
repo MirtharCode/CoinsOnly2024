@@ -34,7 +34,7 @@ public class L_Cululu : Limbasticos
                 dialogue.Add("Muchas gracias hermano, deseame suerte en la cita.");
                 dialogue.Add("Tío, de verdad que no te entiendo, si tengo toda la pasta.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -54,7 +54,7 @@ public class L_Cululu : Limbasticos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
     }
 

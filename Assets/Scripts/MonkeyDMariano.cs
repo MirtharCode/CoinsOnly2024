@@ -20,8 +20,8 @@ public class MonkeyDMariano : MonoBehaviour
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
-            gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "65";
+            //gameManager.GetComponent<GameManager>().leDinero.gameObject.SetActive(true);
+            //gameManager.GetComponent<GameManager>().leDineroText.text = "65";
         }
     }
 }

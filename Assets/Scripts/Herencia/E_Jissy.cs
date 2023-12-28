@@ -32,7 +32,7 @@ public class E_Jissy : Elementales
                 dialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de... la vida ¿Sabes?");
                 dialogue.Add("Bueno tronco… lo entiendo… ¿Sabes? Me alegra saber que al menos no romperé las normas.");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -50,7 +50,7 @@ public class E_Jissy : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "10";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
     }
 

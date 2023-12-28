@@ -33,7 +33,7 @@ public class E_Rockon : Elementales
                 dialogue.Add("Gra-gra-gracias seguro que mi papaito se pone feliz");
                 dialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a mis papis…");
 
-                gameManager.GetComponent<GameManager>().ShowText();
+                uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
@@ -49,7 +49,7 @@ public class E_Rockon : Elementales
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            gameManager.GetComponent<GameManager>().leDineroText.text = "12";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
     }
 
