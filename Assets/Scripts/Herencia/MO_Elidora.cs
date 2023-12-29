@@ -18,7 +18,7 @@ public class MO_Elidora : MagosOscuros
         {
             repetirunavez = true;
 
-            if (currentScene.name == "Day3")
+            if (currentScene.name == "Day4")
             {
                 dialogue.Add("Hola súbdito, ¿No crees que deberías de dejar de atender en este sótano?");
                 dialogue.Add("Casi uno de mis fieles slimes se deshace por culpa de la caída.");
@@ -49,7 +49,7 @@ public class MO_Elidora : MagosOscuros
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day3")
+        if (currentScene.name == "Day4")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

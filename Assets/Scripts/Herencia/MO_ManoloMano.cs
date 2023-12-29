@@ -41,6 +41,24 @@ public class MO_ManoloMano : MagosOscuros
 
                 //StartCoroutine(ShowLine());
             }
+
+            if (currentScene.name == "Day4")
+            {
+                dialogue.Add("Hola humano, hoy no vengo como cliente, sino como testigo de Azathoth.");
+                dialogue.Add("¿Has reconsiderado acercarte a mi iglesia?");
+                dialogue.Add("Últimamente aceptamos a varios humanos para que se unan a rezar con nosotros, siempre vienen nuevos.");
+                dialogue.Add("Aunque hace poco comprobamos que los híbridos también son “bienvenidos” a nuestra religión.");
+                dialogue.Add("Transformamos a uno de ellos en uno de los nuestros... Fue simplemente arte.");
+                dialogue.Add("Pero bueno, solo me acercaba por aquí para que reconsideraras la oferta, siempre te daremos una mano.");
+                dialogue.Add("Suerte en la tienda, humano.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 

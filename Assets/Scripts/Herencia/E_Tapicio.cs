@@ -38,7 +38,7 @@ public class E_Tapicio : Elementales
                 //StartCoroutine(ShowLine());
             }
 
-            else if (currentScene.name == "Day4")
+            else if (currentScene.name == "Day2")
             {
                 dialogue.Add("Hola humano, ¿no tienes días libres o que? ");
                 dialogue.Add("Eres parecido en ese aspecto a los elementales, nosotros tampoco paramos de trabajar, es lo que tiene ser creaciones de los magos. ");
@@ -78,7 +78,7 @@ public class E_Tapicio : Elementales
             uIManager.GetComponent<UIManager>().leDineroText.text = "22";
         }
 
-        else if (currentScene.name == "Day4")
+        else if (currentScene.name == "Day2")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
             product1.transform.SetParent(twoProducts1);

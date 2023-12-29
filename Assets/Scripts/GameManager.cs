@@ -142,12 +142,13 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
         dailyCustomers.Add(Jefe);
-        dailyCustomers.Add(electropedMagmaDora);
+        //dailyCustomers.Add(); aqui va Leipion, pero no está metido porque no está la transferencia de datos aún
+        dailyCustomers.Add(limbasticGiovanni);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(hybridPetra);
-        dailyCustomers.Add(elementalJissy);
+        dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(electropedMasermati);
         dailyCustomers.Add(evilWizardPijus);
 
@@ -166,7 +167,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(elementalHueso);
         dailyCustomers.Add(limbasticPatxi);
         dailyCustomers.Add(hybridElvog);
-        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedRustica);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
@@ -177,10 +178,15 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
         dailyCustomers.Add(Jefe);
-        dailyCustomers.Add(elementalTapicio);
+        dailyCustomers.Add(elementalJissy);
         dailyCustomers.Add(hybridMara);
         dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(evilWizardGerard);
+        dailyCustomers.Add(electropedMagmaDora);
+        dailyCustomers.Add(elementalHandy);
+        dailyCustomers.Add(limbasticAntonio);
+        dailyCustomers.Add(evilWizardManoloMano);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }

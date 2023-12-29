@@ -40,20 +40,20 @@ public class MO_ManoloCabezaPico : MagosOscuros
                 //StartCoroutine(ShowLine());
             }
 
-            else if (currentScene.name == "Day4")
+            else if (currentScene.name == "Day3")
             {
-                dialogue.Add("¡Hola pequeñín! No te había visto desde ahí abajo.");
-                dialogue.Add("Soy el grandioso Manolo Cabeza de Pico, el mago más rico…Del barrio más alto del reino.");
-                dialogue.Add("Me sobra el dinero, para nada entré aquí por el 50% de descuento en magos.");
-                dialogue.Add("O incluso podría ser un 70% ahora que somos amigos.");
-                dialogue.Add(" Vale vale, no me mires con esa cara impasible, pero venga…");
-                dialogue.Add("Te prometo que te devolveré ese 20%, siempre pago mis deudas.");
-                dialogue.Add("Por ejemplo, mi vecino aún me dice que le debo 2000 monedas y que deje de evitarlo.");
-                dialogue.Add("Pero, por favor, yo no lo evito por la deuda, lo evito para ahorrarme esas 2000 monedas.");
-                dialogue.Add("Creo que no debí decir eso…Bueno, mejor ve cobrando antes de que la lié más.");
+                dialogue.Add("Hola humano, que dura es mi vida. ");
+                dialogue.Add("Finalmente mi mayor enemigo ha llegado, Hacienda.");
+                dialogue.Add("Siempre a final de mes necesitan saber los gastos que he hecho para luego quitarme dinero.");
+                dialogue.Add("Por ello tomé una decisión, he creado al grupo: ANTI-HACIENDA.");
+                dialogue.Add("Por ahora estoy solo yo, pero con esto que voy comprar, empezaré con la revolución.");
+                dialogue.Add("Acabaré con Hacienda, recuperaré mi mansión embargada y me repartiré el dinero para mi solo.");
+                dialogue.Add("Creo que lo último se me escapó, no hagas caso cuando deliro.");
+                dialogue.Add("Pero bueno, será mejor que me vaya para… ¡EMPEZAR LA REVOLUCIÓN!");
+                dialogue.Add("Así que bueno, cóbrame y esas cosas humano.");
 
-                dialogue.Add("Menos mal me he ahorrado esas monedas, así podré mantener mi enorme mansión durante 1 hora más.");
-                dialogue.Add("¿No tengo dinero ni con el 50% de rebaja? Me va a tocar embargar la casa.");
+                dialogue.Add("Gracias a tu dedicación, te nombró primer miembro del grupo ANTI-HACIENDA. ¡Viva la Revolución!");
+                dialogue.Add(" No puede ser, ahora no podré ayudar a pobres magos como yo.");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 
@@ -76,7 +76,7 @@ public class MO_ManoloCabezaPico : MagosOscuros
             uIManager.GetComponent<UIManager>().leDineroText.text = "9";
         }
 
-        else if (currentScene.name == "Day4")
+        else if (currentScene.name == "Day3")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

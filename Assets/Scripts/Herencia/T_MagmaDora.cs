@@ -17,7 +17,7 @@ public class T_MagmaDora : Tecnopedos
         {
             repetirunavez = true;
 
-            if (currentScene.name == "Day2")
+            if (currentScene.name == "Day4")
             {
                 dialogue.Add("Buenas mañanas persona fría, soy Magmadora.");
                 dialogue.Add("Frío de personalidad o frío de carne, tú dirás, solo tienes que mirarme.");
@@ -44,7 +44,7 @@ public class T_MagmaDora : Tecnopedos
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day2")
+        if (currentScene.name == "Day4")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

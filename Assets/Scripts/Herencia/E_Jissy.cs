@@ -17,7 +17,7 @@ public class E_Jissy : Elementales
         {
             repetirunavez = true;
 
-            if (currentScene.name == "Day2")
+            if (currentScene.name == "Day4")
             {
                 dialogue.Add("¿Qué pasa tío? ¿Cómo estamos?");
                 dialogue.Add("Espera, tú… Tú no eres el del otro día... ¿No?");
@@ -44,7 +44,7 @@ public class E_Jissy : Elementales
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day2")
+        if (currentScene.name == "Day4")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
