@@ -31,7 +31,8 @@ public abstract class Elementales : Client
         uIManager.GetComponent<UIManager>().internalCount = 0;
         uIManager.GetComponent<UIManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
         uIManager.GetComponent<UIManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-        uIManager.GetComponent<UIManager>().dropDownPanel.SetActive(false);
+        uIManager.GetComponent<UIManager>().dropDownPanelPrecios.SetActive(false);
+        uIManager.GetComponent<UIManager>().dropDownPanelNormativas.SetActive(false);
 
         if (uIManager.GetComponent<UIManager>().mostrarJefe)
         {

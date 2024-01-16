@@ -16,12 +16,20 @@ public class UIManager : MonoBehaviour
 
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
-    [SerializeField] public bool listOpen = false;
-    [SerializeField] public GameObject dropDownPanel;
-    [SerializeField] public GameObject botonPlegado;
-    [SerializeField] public GameObject botonDesplegado;
-    [SerializeField] public GameObject position1;
-    [SerializeField] public GameObject position2;
+    [SerializeField] public bool listOpenPrecios = false;
+    [SerializeField] public GameObject dropDownPanelPrecios;
+    [SerializeField] public GameObject botonPlegadoPrecios;
+    [SerializeField] public GameObject botonDesplegadoPrecios;
+    [SerializeField] public GameObject position1Precios;
+    [SerializeField] public GameObject position2Precios;
+
+    [SerializeField] public bool listOpenNormativas = false;
+    [SerializeField] public GameObject dropDownPanelNormativas;
+    [SerializeField] public GameObject botonPlegadoNormativas;
+    [SerializeField] public GameObject botonDesplegadoNormativas;
+    [SerializeField] public GameObject position1Normativas;
+    [SerializeField] public GameObject position2Normativas;
+
     [SerializeField] GameObject normativas;
     [SerializeField] GameObject precios;
 
@@ -50,19 +58,40 @@ public class UIManager : MonoBehaviour
     public bool mostrarJefe = false;
     [SerializeField] public List<string> quejas;
 
+    public string[] razasNormas;
+    [SerializeField] public TextMeshProUGUI textoRaza;
+
+    [SerializeField] public GameObject panelMagos;
+    [SerializeField] public GameObject panelHibridos;
+    [SerializeField] public GameObject panelElementales;
+    [SerializeField] public GameObject panelLimbasticos;
+    [SerializeField] public GameObject panelTecnopedos;
+
+    int razaSeleccionada;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
         canvasPausa = gameObject.transform.GetChild(7).gameObject;
         canvasVictory = gameObject.transform.GetChild(8).gameObject;
         currentScene = SceneManager.GetActiveScene();
-        botonPlegado.SetActive(false);
+        botonPlegadoPrecios.SetActive(false);
+        botonPlegadoNormativas.SetActive(false);
         estaToPagao = false;
 
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…");                  // Si no le has cobrado y sí deberias haberle cobrado.
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!");                   // Si sí le has cobrado y no deberías haberle cobrado.
         quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!");                                             // Cuando no has cumplido las normativas.
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!");    // Si no le has cobrado y sí deberias haberle cobrado (A partir del día 2).
+
+        razasNormas = new string[5];
+        razasNormas[0] = "Magos Oscuros";
+        razasNormas[1] = "Híbridos";
+        razasNormas[2] = "Elementales";
+        razasNormas[3] = "Limbásticos";
+        razasNormas[4] = "Tecno P2";
+
+        razaSeleccionada = 0;
     }
 
     // Update is called once per frame
@@ -83,28 +112,50 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void OpenList()
+    public void OpenListPrecios()
     {
-        if (listOpen)
+        if (listOpenPrecios)
         {
             leDinero.gameObject.GetComponent<Button>().enabled = true;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
-            dropDownPanel.transform.position = position2.transform.position;
-            botonDesplegado.SetActive(true);
-            botonPlegado.SetActive(false);
-            listOpen = false;
+            dropDownPanelPrecios.transform.position = position2Precios.transform.position;
+            botonDesplegadoPrecios.SetActive(true);
+            botonPlegadoPrecios.SetActive(false);
+            listOpenPrecios = false;
         }
 
         else
         {
             leDinero.gameObject.GetComponent<Button>().enabled = false;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
-            dropDownPanel.transform.position = position1.transform.position;
-            botonDesplegado.SetActive(false);
-            botonPlegado.SetActive(true);
-            listOpen = true;
+            dropDownPanelPrecios.transform.position = position1Precios.transform.position;
+            botonDesplegadoPrecios.SetActive(false);
+            botonPlegadoNormativas.SetActive(true);
+            listOpenPrecios = true;
+        }
+    }
+
+    public void OpenListNormativas()
+    {
+        if (listOpenNormativas)
+        {
+            leDinero.gameObject.GetComponent<Button>().enabled = true;
+            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+            dropDownPanelNormativas.transform.position = position2Normativas.transform.position;
+            botonDesplegadoNormativas.SetActive(true);
+            botonPlegadoNormativas.SetActive(false);
+            listOpenNormativas = false;
         }
 
+        else
+        {
+            leDinero.gameObject.GetComponent<Button>().enabled = false;
+            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+            dropDownPanelNormativas.transform.position = position1Normativas.transform.position;
+            botonDesplegadoNormativas.SetActive(false);
+            botonPlegadoNormativas.SetActive(true);
+            listOpenNormativas = true;
+        }
     }
 
     public IEnumerator BossCalling()
@@ -178,7 +229,8 @@ public class UIManager : MonoBehaviour
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
         dialoguePanel.gameObject.SetActive(false);
-        dropDownPanel.gameObject.SetActive(true);
+        dropDownPanelPrecios.gameObject.SetActive(true);
+        dropDownPanelNormativas.gameObject.SetActive(true);
 
         if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
         {
@@ -200,7 +252,8 @@ public class UIManager : MonoBehaviour
             leDinero.gameObject.SetActive(true);
             leDinero.gameObject.GetComponent<Button>().enabled = true;
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
-            botonDesplegado.SetActive(true);
+            botonDesplegadoPrecios.SetActive(true);
+            botonDesplegadoNormativas.SetActive(true);
 
             if (currentScene.name == "Day1")
             {
@@ -332,7 +385,8 @@ public class UIManager : MonoBehaviour
 
     public void CollectMoney()
     {
-        botonDesplegado.SetActive(false);
+        botonDesplegadoPrecios.SetActive(false);
+        botonDesplegadoNormativas.SetActive(false);
         gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
@@ -343,7 +397,8 @@ public class UIManager : MonoBehaviour
 
     public void IDontBelieveIt()
     {
-        botonDesplegado.SetActive(false);
+        botonDesplegadoPrecios.SetActive(false);
+        botonDesplegadoNormativas.SetActive(false);
         gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
@@ -560,6 +615,116 @@ public class UIManager : MonoBehaviour
 
         return null;
     }
+
+    void MostrarRazaActual()
+    {
+        textoRaza.text = razasNormas[razaSeleccionada];
+    }
+
+    public void RetrocederRaza()
+    {
+        razaSeleccionada = (razaSeleccionada - 1 + razasNormas.Length) % razasNormas.Length;
+
+        MostrarRazaActual();
+
+        if (textoRaza.text == "Magos Oscuros")
+        {
+            panelMagos.SetActive(true);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Elementales")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(true);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Híbridos")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(true);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Limbásticos")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(true);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Tecno P2")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(true);
+        }
+    }
+
+    public void AvanzarRaza()
+    {
+        razaSeleccionada = (razaSeleccionada + 1) % razasNormas.Length;
+
+        MostrarRazaActual();
+
+        if (textoRaza.text == "Magos Oscuros")
+        {
+            panelMagos.SetActive(true);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Elementales")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(true);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Híbridos")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(true);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Limbásticos")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(true);
+            panelTecnopedos.SetActive(false);
+        }
+
+        else if (textoRaza.text == "Tecno P2")
+        {
+            panelMagos.SetActive(false);
+            panelElementales.SetActive(false);
+            panelHibridos.SetActive(false);
+            panelLimbasticos.SetActive(false);
+            panelTecnopedos.SetActive(true);
+        }
+    }
+
 
     public void Resume()
     {
