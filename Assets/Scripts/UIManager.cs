@@ -30,9 +30,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject position1Normativas;
     [SerializeField] public GameObject position2Normativas;
 
-    [SerializeField] GameObject normativas;
-    [SerializeField] GameObject precios;
-
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
     [SerializeField] public GameObject leCajaRegistradora;
@@ -72,8 +69,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
-        canvasPausa = gameObject.transform.GetChild(7).gameObject;
-        canvasVictory = gameObject.transform.GetChild(8).gameObject;
+        canvasPausa = gameObject.transform.GetChild(10).gameObject;
+        canvasVictory = gameObject.transform.GetChild(11).gameObject;
         currentScene = SceneManager.GetActiveScene();
         botonPlegadoPrecios.SetActive(false);
         botonPlegadoNormativas.SetActive(false);
@@ -130,7 +127,7 @@ public class UIManager : MonoBehaviour
             leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
             dropDownPanelPrecios.transform.position = position1Precios.transform.position;
             botonDesplegadoPrecios.SetActive(false);
-            botonPlegadoNormativas.SetActive(true);
+            botonPlegadoPrecios.SetActive(true);
             listOpenPrecios = true;
         }
     }
@@ -752,17 +749,5 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Salir...");
         Application.Quit();
-    }
-
-    public void ShowNormativa()
-    {
-        normativas.SetActive(true);
-        precios.SetActive(false);
-    }
-
-    public void ShowPrecios()
-    {
-        precios.SetActive(true);
-        normativas.SetActive(false);
     }
 }
