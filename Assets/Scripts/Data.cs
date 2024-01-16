@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    [SerializeField] public static int numEvilWizard;
-    [SerializeField] public static int numEvilWizardGerard;
-    [SerializeField] public static int numEvilWizardManolo;
-    [SerializeField] public static int numEvilWizardManoloMano;
-    [SerializeField] public static int numEvilWizardElidora;
-    [SerializeField] public static int numEvilWizardPijus;
+    [SerializeField] public int numEvilWizard;
+    //[SerializeField] public int numEvilWizardGerard;
+    //[SerializeField] public int numEvilWizardManolo;
+    //[SerializeField] public int numEvilWizardManoloMano;
+    //[SerializeField] public int numEvilWizardElidora;
+    //[SerializeField] public int numEvilWizardPijus;
 
-    [SerializeField] public static int numHybrid;
-    [SerializeField] public static int numHybridElvog;
-    [SerializeField] public static int numHybridLepion;
-    [SerializeField] public static int numHybridMara;
-    [SerializeField] public static int numHybridPetra;
-    [SerializeField] public static int numHybridSaltaralisis;
+    [SerializeField] public int numHybrid;
+    //[SerializeField] public int numHybridElvog;
+    //[SerializeField] public int numHybridLepion;
+    //[SerializeField] public int numHybridMara;
+    //[SerializeField] public int numHybridPetra;
+    //[SerializeField] public int numHybridSaltaralisis;
 
-    [SerializeField] public static int numLimbastic;
-    [SerializeField] public static int numLimbasticAntonio;
-    [SerializeField] public static int numLimbasticGiovanni;
-    [SerializeField] public static int numLimbasticCululu;
-    [SerializeField] public static int numLimbasticSergio;
-    [SerializeField] public static int numLimbasticPatxi;
+    [SerializeField] public int numLimbastic;
+    //[SerializeField] public int numLimbasticAntonio;
+    //[SerializeField] public int numLimbasticGiovanni;
+    //[SerializeField] public int numLimbasticCululu;
+    //[SerializeField] public int numLimbasticSergio;
+    //[SerializeField] public int numLimbasticPatxi;
 
-    [SerializeField] public static int numElemental;
-    [SerializeField] public static int numElementalTapicio;
-    [SerializeField] public static int numElementalRockon;
-    [SerializeField] public static int numElementalHandy;
-    [SerializeField] public static int numElementalJissy;
-    [SerializeField] public static int numElementalHueso;
+    [SerializeField] public int numElemental;
+    //[SerializeField] public int numElementalTapicio;
+    //[SerializeField] public int numElementalRockon;
+    //[SerializeField] public int numElementalHandy;
+    //[SerializeField] public int numElementalJissy;
+    //[SerializeField] public int numElementalHueso;
 
-    [SerializeField] public static int numElectroped;
-    [SerializeField] public static int numElectropedDenjirenji;
-    [SerializeField] public static int numElectropedMagmaDora;
-    [SerializeField] public static int numElectropedMasermati;
-    [SerializeField] public static int numElectropedRaven;
-    [SerializeField] public static int numElectropedRustica;
+    [SerializeField] public int numElectroped;
+    //[SerializeField] public int numElectropedDenjirenji;
+    //[SerializeField] public int numElectropedMagmaDora;
+    //[SerializeField] public int numElectropedMasermati;
+    //[SerializeField] public int numElectropedRaven;
+    //[SerializeField] public int numElectropedRustica;
 
-    [SerializeField] public static bool samuraiTriste = false;
-    [SerializeField] public static bool brrachoTriste = false;
+    [SerializeField] public bool samuraiPagaMal = false;
+    [SerializeField] public bool borrachoTriste = false;
+    [SerializeField] public bool day1Check = false;
+    [SerializeField] public bool day2Check = false;
+    [SerializeField] public bool day3Check = false;
+    [SerializeField] public bool day4Check = false;
+    [SerializeField] public bool day5Check = false;
 
     public static Data instance;
 
