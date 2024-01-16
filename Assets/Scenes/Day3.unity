@@ -420,7 +420,8 @@ MonoBehaviour:
   currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
-  Jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
+  jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
+  data: {fileID: 0}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
   limbasticAntonio: {fileID: 1842405180829131057, guid: c135972c57ac94142bc2f95291f711bf, type: 3}

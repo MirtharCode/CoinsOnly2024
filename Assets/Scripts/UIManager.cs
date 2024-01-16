@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.
 
 
-        if (currentCustomer.name.Contains("Jefe")  && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count)
+        if (currentCustomer.name.Contains("Jefe") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
@@ -450,7 +450,7 @@ public class UIManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora") 
+            else if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
                 || currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Magma"))
             {
                 mostrarJefe = true;
@@ -548,7 +548,7 @@ public class UIManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy") 
+            else if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy")
                 || currentCustomer.name.Contains("Antonio"))
             {
                 mostrarJefe = true;

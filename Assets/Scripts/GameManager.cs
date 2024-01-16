@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int customerNumber = 0;
     [SerializeField] public List<GameObject> dailyCustomers;
 
-    [SerializeField] public GameObject Jefe;
+    [SerializeField] public GameObject jefe;
+    [SerializeField] public GameObject data;
 
     [Header("CHARACTERS THAT CAN APPEAR")]
 
@@ -100,18 +101,15 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         musicBox = GameObject.FindGameObjectWithTag("MusicBox");
         canvas = GameObject.FindGameObjectWithTag("UI");
+        data = GameObject.FindGameObjectWithTag("Data");
 
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
 
-        if (currentScene.name == "Day1")
-            Day1();
-        if (currentScene.name == "Day2")
-            Day2();
-        if (currentScene.name == "Day3")
-            Day3();
-        if (currentScene.name == "Day4")
-            Day4();
+        if (currentScene.name == "Day1") Day1();
+        if (currentScene.name == "Day2") Day2();
+        if (currentScene.name == "Day3") Day3();
+        if (currentScene.name == "Day4") Day4();
     }
 
     public void CharacterShowUp(GameObject character)
@@ -124,7 +122,7 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        dailyCustomers.Add(Jefe);
+        dailyCustomers.Add(jefe);
         dailyCustomers.Add(evilWizardGerard);
         dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(limbasticAntonio);
@@ -141,8 +139,8 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        dailyCustomers.Add(Jefe);
-        //dailyCustomers.Add(); aqui va Leipion, pero no está metido porque no está la transferencia de datos aún
+        dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(); aqui va Lepion, pero no está metido porque no está la transferencia de datos aún
         dailyCustomers.Add(limbasticGiovanni);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
@@ -159,7 +157,7 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        dailyCustomers.Add(Jefe);
+        dailyCustomers.Add(jefe);
         dailyCustomers.Add(limbasticSergio);
         dailyCustomers.Add(hybridSaltaralisis);
         dailyCustomers.Add(evilWizardManoloMano);
@@ -177,7 +175,7 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        dailyCustomers.Add(Jefe);
+        dailyCustomers.Add(jefe);
         dailyCustomers.Add(elementalJissy);
         dailyCustomers.Add(hybridMara);
         dailyCustomers.Add(limbasticCululu);
