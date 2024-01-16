@@ -9,14 +9,38 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
     private Image imageComponent;
 
+    [SerializeField] public GameObject data;
+
     void Start()
     {
-        // Accede al componente Image.
+        data = GameObject.FindGameObjectWithTag("Data");
         imageComponent = GetComponent<Image>();
 
-        int randomIndex = Random.Range(0, imagenes.Length);
+        if (!data.GetComponent<Data>().day1Check)           // Solo sale el Jefe.
+            imageComponent.sprite = imagenes[0];
 
-        imageComponent.sprite = imagenes[randomIndex];
+        else if (data.GetComponent<Data>().day1Check)       // Lo anterior y luego hasta Rockon.
+        {
+            int randomIndex = Random.Range(0, 9);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().day2Check)       // Lo anterior hasta Pijus Magnus.
+        {
+            int randomIndex = Random.Range(0, 17);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().day3Check)       // Lo anterior hasta Jissy.
+        {
+            int randomIndex = Random.Range(0, 25);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, imagenes.Length);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
     }
 
 }
