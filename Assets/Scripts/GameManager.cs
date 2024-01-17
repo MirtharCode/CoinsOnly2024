@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject jefe;
     [SerializeField] public GameObject data;
 
+    [Header("Detective")]
+    [SerializeField] public GameObject detective;
+
     [Header("CHARACTERS THAT CAN APPEAR")]
 
     [Header("Day1")]
@@ -139,16 +142,17 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(); aqui va Lepion, pero no está metido porque no está la transferencia de datos aún
-        dailyCustomers.Add(limbasticGiovanni);
-        dailyCustomers.Add(evilWizardManolo);
-        dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(elementalHandy);
-        dailyCustomers.Add(hybridPetra);
-        dailyCustomers.Add(elementalTapicio);
-        dailyCustomers.Add(electropedMasermati);
-        dailyCustomers.Add(evilWizardPijus);
+        //dailyCustomers.Add(jefe);
+        ////dailyCustomers.Add(); aqui va Lepion, pero no está metido porque no está la transferencia de datos aún
+        //dailyCustomers.Add(limbasticGiovanni);
+        //dailyCustomers.Add(evilWizardManolo);
+        //dailyCustomers.Add(limbasticCululu);
+        //dailyCustomers.Add(elementalHandy);
+        //dailyCustomers.Add(hybridPetra);
+        //dailyCustomers.Add(elementalTapicio);
+        //dailyCustomers.Add(electropedMasermati);
+        //dailyCustomers.Add(evilWizardPijus);
+        dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -167,6 +171,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedRustica);
+        dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -185,6 +190,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }

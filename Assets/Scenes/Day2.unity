@@ -480,6 +480,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI - Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5982892003858235575, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982892005112561856, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
 --- !u!1 &1318056128
@@ -519,6 +527,7 @@ MonoBehaviour:
   dailyCustomers: []
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   data: {fileID: 0}
+  detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
   limbasticAntonio: {fileID: 1842405180829131057, guid: c135972c57ac94142bc2f95291f711bf, type: 3}

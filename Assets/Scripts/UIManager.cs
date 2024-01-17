@@ -64,6 +64,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
 
+    [SerializeField] public GameObject panelSospechoso;
+
     int razaSeleccionada;
 
     void Start()
@@ -91,7 +93,6 @@ public class UIManager : MonoBehaviour
         razaSeleccionada = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -196,6 +197,18 @@ public class UIManager : MonoBehaviour
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
+        else if (currentCustomer.name.Contains("Detective") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 1)
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            internalCount++;
+
+            if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 1)
+            {
+
+            }
+        }
+
         else if (currentCustomer.name.Contains("Mano") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count && currentScene.name == "Day4")
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
@@ -230,6 +243,13 @@ public class UIManager : MonoBehaviour
         dropDownPanelNormativas.gameObject.SetActive(true);
 
         if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
+        {
+            estaToPagao = true;
+            currentCustomer.GetComponent<Client>().ByeBye();
+            gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
+        }
+
+        else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Detective"))
         {
             estaToPagao = true;
             currentCustomer.GetComponent<Client>().ByeBye();
