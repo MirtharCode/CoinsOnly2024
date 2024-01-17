@@ -205,7 +205,7 @@ public class UIManager : MonoBehaviour
 
             if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 1)
             {
-
+                panelSospechoso.SetActive(true);
             }
         }
 

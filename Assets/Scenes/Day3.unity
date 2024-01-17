@@ -422,6 +422,7 @@ MonoBehaviour:
   dailyCustomers: []
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   data: {fileID: 0}
+  detective: {fileID: 0}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
   limbasticAntonio: {fileID: 1842405180829131057, guid: c135972c57ac94142bc2f95291f711bf, type: 3}
@@ -740,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 1251263281296449971, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
       value: "+Los h\xEDbridos tienen prohibido comprar alcohol.\n\n-Cerveza"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167396815739684508, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3065623176350269651, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
