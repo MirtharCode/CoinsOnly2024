@@ -43,7 +43,48 @@ public class FotitoPersonajeMenu : MonoBehaviour
             imageComponent.sprite = imagenes[randomIndex];
         }
 
+        else if (data.GetComponent<Data>().finalBueno)       // Se incluye Detective
+        {
+            int randomIndex = Random.Range(0, imagenes.Length);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+    }
+
+    public void ChangingImages()
+    {
+        if (data.GetComponent<Data>().day1Check)       // Lo anterior y luego hasta Rockon.
+        {
+
+            for (int i = 0; i < 9; i++)
+            {
+                if (imagenes[i])
+                {
+
+                }
+            }
+            int randomIndex = Random.Range(0, 9);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().day2Check)       // Lo anterior hasta Pijus Magnus.
+        {
+            int randomIndex = Random.Range(0, 16);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().day3Check)       // Lo anterior hasta Jissy.
+        {
+            int randomIndex = Random.Range(0, 23);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
         else if (data.GetComponent<Data>().day4Check)       // Lo anterior hasta Magmadora
+        {
+            int randomIndex = Random.Range(0, 26);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().finalBueno)       // Se incluye Detective
         {
             int randomIndex = Random.Range(0, imagenes.Length);
             imageComponent.sprite = imagenes[randomIndex];
