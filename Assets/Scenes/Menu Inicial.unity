@@ -1418,7 +1418,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c97d402385a241f4abbd4e88ac4f2b97, type: 3}
   - {fileID: 21300000, guid: 6e43d87728022a849a82e75fb462e7a0, type: 3}
   - {fileID: 21300000, guid: 6e7a92ee9e3ef3c49bf675f37cc0b03c, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 61e90f7848a02164eb7732f2655e5beb, type: 3}
+  data: {fileID: 0}
 --- !u!1 &949199506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1621,7 @@ MonoBehaviour:
   day3Check: 0
   day4Check: 0
   day5Check: 0
+  finalBueno: 0
 --- !u!4 &1160935153
 Transform:
   m_ObjectHideFlags: 0
