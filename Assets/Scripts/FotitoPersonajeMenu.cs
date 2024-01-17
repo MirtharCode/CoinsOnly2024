@@ -27,16 +27,23 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
         else if (data.GetComponent<Data>().day2Check)       // Lo anterior hasta Pijus Magnus.
         {
-            int randomIndex = Random.Range(0, 17);
+            int randomIndex = Random.Range(0, 16);
             imageComponent.sprite = imagenes[randomIndex];
         }
 
         else if (data.GetComponent<Data>().day3Check)       // Lo anterior hasta Jissy.
         {
-            int randomIndex = Random.Range(0, 25);
+            int randomIndex = Random.Range(0, 23);
             imageComponent.sprite = imagenes[randomIndex];
         }
-        else
+
+        else if (data.GetComponent<Data>().day4Check)       // Lo anterior hasta Magmadora
+        {
+            int randomIndex = Random.Range(0, 26);
+            imageComponent.sprite = imagenes[randomIndex];
+        }
+
+        else if (data.GetComponent<Data>().day4Check)       // Lo anterior hasta Magmadora
         {
             int randomIndex = Random.Range(0, imagenes.Length);
             imageComponent.sprite = imagenes[randomIndex];
