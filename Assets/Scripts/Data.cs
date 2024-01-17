@@ -46,6 +46,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool day3Check = false;
     [SerializeField] public bool day4Check = false;
     [SerializeField] public bool day5Check = false;
+    [SerializeField] public bool finalBueno = false;
 
     public static Data instance;
 
