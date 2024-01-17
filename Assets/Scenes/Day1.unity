@@ -374,9 +374,9 @@ MonoBehaviour:
   currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
-  jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   data: {fileID: 0}
-  detective: {fileID: 0}
+  jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
+  detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
   limbasticAntonio: {fileID: 1842405180829131057, guid: c135972c57ac94142bc2f95291f711bf, type: 3}
@@ -385,12 +385,11 @@ MonoBehaviour:
   hybridMara: {fileID: 7336179541738107905, guid: 7a5012c7c29ba8641bbe2b186d7e19d4, type: 3}
   limbasticGiovanni: {fileID: 7336179541738107905, guid: 54e90804b6d1c284387b971f2a19564b, type: 3}
   elementalRockon: {fileID: 8043330204968246209, guid: 03fa906d62e123941b02821ac1fcea61, type: 3}
-  electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
+  hybridLepion: {fileID: 8043330204968246209, guid: 891c37ce5f309114b82746b124147d50, type: 3}
   evilWizardManolo: {fileID: 8043330204968246209, guid: 923e7f8592645d74faa9e85d823cb27d, type: 3}
   limbasticCululu: {fileID: 8043330204968246209, guid: 67e7ec8f3d26f08408518e31b85cadac, type: 3}
   elementalHandy: {fileID: 8043330204968246209, guid: 5d7e8546dce35a449b601c066d1f50e4, type: 3}
   hybridPetra: {fileID: 8043330204968246209, guid: ba2dd11203a10b6409df645e69eed2d2, type: 3}
-  elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   electropedMasermati: {fileID: 8043330204968246209, guid: 1c519ce09dfe68a4fb14cdbd75365e2d, type: 3}
   evilWizardPijus: {fileID: 8043330204968246209, guid: 56e5944c3aa4c9b4490ec7bce1d51eb4, type: 3}
   limbasticSergio: {fileID: 8043330204968246209, guid: dc9ea8849b583314eb3b25bf5af47eca, type: 3}
@@ -399,8 +398,10 @@ MonoBehaviour:
   electropedRaven: {fileID: 8043330204968246209, guid: 6b85077ca1bbc6f449bb80ca39f2a06f, type: 3}
   elementalHueso: {fileID: 8043330204968246209, guid: 27e73000c53bab64db7a9237c7ab23ca, type: 3}
   limbasticPatxi: {fileID: 8043330204968246209, guid: 224518b9d2a111c4f89711cddd2b0756, type: 3}
-  evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
   electropedRustica: {fileID: 8043330204968246209, guid: 8f4d40bc36b478041bbbcf582087672a, type: 3}
+  elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
+  evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
+  electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
   oneProduct: {fileID: 1993393625}
   twoProducts1: {fileID: 595192934}
   twoProducts2: {fileID: 1102901061}

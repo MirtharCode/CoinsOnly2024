@@ -41,6 +41,7 @@ public class Data : MonoBehaviour
 
     [SerializeField] public bool samuraiPagaMal = false;
     [SerializeField] public bool borrachoTriste = false;
+    [SerializeField] public bool day0Check = false;
     [SerializeField] public bool day1Check = false;
     [SerializeField] public bool day2Check = false;
     [SerializeField] public bool day3Check = false;

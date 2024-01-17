@@ -19,15 +19,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int customerNumber = 0;
     [SerializeField] public List<GameObject> dailyCustomers;
 
-    [SerializeField] public GameObject jefe;
+
     [SerializeField] public GameObject data;
+
+
+
+    [Header("CHARACTERS THAT CAN APPEAR")]
+
+    [Header("El jefe")]
+    [SerializeField] public GameObject jefe;
 
     [Header("Detective")]
     [SerializeField] public GameObject detective;
 
-    [Header("CHARACTERS THAT CAN APPEAR")]
-
-    [Header("Day1")]
+    [Header("Day1 (New)")]
     [SerializeField] public GameObject evilWizardGerard;
     [SerializeField] public GameObject hybridElvog;
     [SerializeField] public GameObject limbasticAntonio;
@@ -37,26 +42,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject limbasticGiovanni;
     [SerializeField] public GameObject elementalRockon;
 
-    [Header("Day2")]
-    [SerializeField] public GameObject electropedMagmaDora;
+    [Header("Day2 (New)")]
+    [SerializeField] public GameObject hybridLepion;
     [SerializeField] public GameObject evilWizardManolo;
     [SerializeField] public GameObject limbasticCululu;
     [SerializeField] public GameObject elementalHandy;
     [SerializeField] public GameObject hybridPetra;
-    [SerializeField] public GameObject elementalJissy;
     [SerializeField] public GameObject electropedMasermati;
     [SerializeField] public GameObject evilWizardPijus;
 
-    [Header("Day3")]
+    [Header("Day3 (New)")]
     [SerializeField] public GameObject limbasticSergio;
     [SerializeField] public GameObject hybridSaltaralisis;
     [SerializeField] public GameObject evilWizardManoloMano;
     [SerializeField] public GameObject electropedRaven;
     [SerializeField] public GameObject elementalHueso;
     [SerializeField] public GameObject limbasticPatxi;
-    //[SerializeField] public GameObject hybridElvog; //(Aparece de nuevo en el día 3)
-    [SerializeField] public GameObject evilWizardElidora;
     [SerializeField] public GameObject electropedRustica;
+
+    [Header("Day4 (New)")]
+    [SerializeField] public GameObject elementalJissy;
+    [SerializeField] public GameObject evilWizardElidora;
+    [SerializeField] public GameObject electropedMagmaDora;
 
     [Header("PRODUCTS PLACES")]
     [SerializeField] public Transform oneProduct;
@@ -143,7 +150,7 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
         //dailyCustomers.Add(jefe);
-        ////dailyCustomers.Add(); aqui va Lepion, pero no está metido porque no está la transferencia de datos aún
+        //if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
         //dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         //dailyCustomers.Add(limbasticCululu);
@@ -193,6 +200,11 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
+    public void Day5()
+    {
+        if (!data.GetComponent<Data>().borrachoTriste) dailyCustomers.Add(hybridElvog);
     }
 
 

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
+    [SerializeField] public GameObject data;
     [SerializeField] public GameObject currentCustomer;
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject canvasVictory;
@@ -71,6 +72,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
+        data = GameObject.FindGameObjectWithTag("Data");
         canvasPausa = gameObject.transform.GetChild(10).gameObject;
         canvasVictory = gameObject.transform.GetChild(11).gameObject;
         currentScene = SceneManager.GetActiveScene();
@@ -555,8 +557,16 @@ public class UIManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Rockon"))
             {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Denjirenji"))
+            {
+                data.GetComponent<Data>().samuraiPagaMal = true;
                 mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
@@ -592,9 +602,16 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day3")
         {
-            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") ||
-                currentCustomer.name.Contains("Sapopotamo"))
+            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso"))
             {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Sapopotamo"))
+            {
+                data.GetComponent<Data>().borrachoTriste = true;
                 mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
@@ -756,12 +773,39 @@ public class UIManager : MonoBehaviour
     }
     public void NextDay()
     {
-        for (int i = 0; i < 6; i++)
+        if (currentScene.name == "Day1")
         {
-            if (currentScene.name == "Day" + i)
-            {
-                SceneManager.LoadScene(1 + i);
-            }
+            data.GetComponent<Data>().day0Check = false;
+            data.GetComponent<Data>().day1Check = true;
+            SceneManager.LoadScene(2);
+        }
+
+        else if (currentScene.name == "Day2")
+        {
+            data.GetComponent<Data>().day1Check = false;
+            data.GetComponent<Data>().day2Check = true;
+            SceneManager.LoadScene(3);
+        }
+
+        else if (currentScene.name == "Day3")
+        {
+            data.GetComponent<Data>().day2Check = false;
+            data.GetComponent<Data>().day3Check = true;
+            SceneManager.LoadScene(4);
+        }
+
+        else if (currentScene.name == "Day4")
+        {
+            data.GetComponent<Data>().day3Check = false;
+            data.GetComponent<Data>().day4Check = true;
+            SceneManager.LoadScene(5);
+        }
+
+        else if (currentScene.name == "Day5")
+        {
+            data.GetComponent<Data>().day4Check = false;
+            data.GetComponent<Data>().day5Check = true;
+            SceneManager.LoadScene(6);
         }
     }
 
