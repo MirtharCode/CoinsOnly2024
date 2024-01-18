@@ -81,9 +81,11 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
         data = GameObject.FindGameObjectWithTag("Data");
-        canvasPausa = gameObject.transform.GetChild(10).gameObject;
-        canvasVictory = gameObject.transform.GetChild(11).gameObject;
+        canvasPausa = gameObject.transform.GetChild(11).gameObject;
+        canvasVictory = gameObject.transform.GetChild(12).gameObject;
         currentScene = SceneManager.GetActiveScene();
+        buttonCobrar.SetActive(false);
+        buttonNoCobrar.SetActive(false);
         botonPlegadoPrecios.SetActive(false);
         botonPlegadoNormativas.SetActive(false);
         estaToPagao = false;
@@ -124,8 +126,8 @@ public class UIManager : MonoBehaviour
     {
         if (listOpenPrecios)
         {
-            leDinero.gameObject.GetComponent<Button>().enabled = true;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+            buttonCobrar.SetActive(true);
+            buttonNoCobrar.SetActive(true);
             dropDownPanelPrecios.transform.position = position2Precios.transform.position;
             botonDesplegadoPrecios.SetActive(true);
             botonPlegadoPrecios.SetActive(false);
@@ -134,8 +136,8 @@ public class UIManager : MonoBehaviour
 
         else
         {
-            leDinero.gameObject.GetComponent<Button>().enabled = false;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+            buttonCobrar.SetActive(false);
+            buttonNoCobrar.SetActive(false);
             dropDownPanelPrecios.transform.position = position1Precios.transform.position;
             botonDesplegadoPrecios.SetActive(false);
             botonPlegadoPrecios.SetActive(true);
@@ -147,8 +149,8 @@ public class UIManager : MonoBehaviour
     {
         if (listOpenNormativas)
         {
-            leDinero.gameObject.GetComponent<Button>().enabled = true;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+            buttonCobrar.SetActive(true);
+            buttonNoCobrar.SetActive(true);
             dropDownPanelNormativas.transform.position = position2Normativas.transform.position;
             botonDesplegadoNormativas.SetActive(true);
             botonPlegadoNormativas.SetActive(false);
@@ -157,8 +159,8 @@ public class UIManager : MonoBehaviour
 
         else
         {
-            leDinero.gameObject.GetComponent<Button>().enabled = false;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+            buttonCobrar.SetActive(false);
+            buttonNoCobrar.SetActive(false);
             dropDownPanelNormativas.transform.position = position1Normativas.transform.position;
             botonDesplegadoNormativas.SetActive(false);
             botonPlegadoNormativas.SetActive(true);
@@ -288,8 +290,8 @@ public class UIManager : MonoBehaviour
         else if (!estaToPagao)
         {
             leDinero.gameObject.SetActive(true);
-            leDinero.gameObject.GetComponent<Button>().enabled = true;
-            leCajaRegistradora.gameObject.GetComponent<Button>().enabled = true;
+            buttonCobrar.SetActive(true);
+            buttonNoCobrar.SetActive(true);
             botonDesplegadoPrecios.SetActive(true);
             botonDesplegadoNormativas.SetActive(true);
 

@@ -29,8 +29,8 @@ public abstract class MagosOscuros : Client
         uIManager.GetComponent<UIManager>().estaToPagao = false;
         gameManager.GetComponent<GameManager>().trampilla.SetActive(false);
         uIManager.GetComponent<UIManager>().internalCount = 0;
-        uIManager.GetComponent<UIManager>().leDinero.gameObject.GetComponent<Button>().enabled = false;
-        uIManager.GetComponent<UIManager>().leCajaRegistradora.gameObject.GetComponent<Button>().enabled = false;
+        uIManager.GetComponent<UIManager>().buttonCobrar.SetActive(false);
+        uIManager.GetComponent<UIManager>().buttonNoCobrar.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelPrecios.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelNormativas.SetActive(false);
 

@@ -3292,8 +3292,8 @@ MonoBehaviour:
   position2Normativas: {fileID: 5206362591257699769}
   leDinero: {fileID: 5982892003967584311}
   leCajaRegistradora: {fileID: 5982892004944006116}
-  buttonCobrar: {fileID: 0}
-  buttonNoCobrar: {fileID: 0}
+  buttonCobrar: {fileID: 3102340476712600803}
+  buttonNoCobrar: {fileID: 8570065602312848982}
   lesPropinas: {fileID: 5982892003182434231}
   leDineroText: {fileID: 5982892005254501743}
   lePropinasText: {fileID: 5982892003244695455}
@@ -3319,6 +3319,7 @@ MonoBehaviour:
   panelLimbasticos: {fileID: 3605722945677533689}
   panelTecnopedos: {fileID: 2961625920959064936}
   panelSospechoso: {fileID: 6710720017448890391}
+  panelSeguro: {fileID: 0}
 --- !u!1 &5982892003302237854
 GameObject:
   m_ObjectHideFlags: 0
