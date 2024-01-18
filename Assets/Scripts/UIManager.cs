@@ -34,6 +34,8 @@ public class UIManager : MonoBehaviour
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
     [SerializeField] public GameObject leCajaRegistradora;
+    [SerializeField] public GameObject buttonCobrar;
+    [SerializeField] public GameObject buttonNoCobrar;
     [SerializeField] public GameObject lesPropinas;
     [SerializeField] public TMP_Text leDineroText;
     [SerializeField] public TMP_Text lePropinasText;
