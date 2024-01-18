@@ -67,7 +67,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
 
+    [Header("Detective")]
+
     [SerializeField] public GameObject panelSospechoso;
+    [SerializeField] public GameObject panelSeguro;
+    int variableDetective;
+
+    [Header("Razas")]
 
     int razaSeleccionada;
 
@@ -178,6 +184,21 @@ public class UIManager : MonoBehaviour
         jefePanel.SetActive(false);
     }
 
+    public void AsegurarseSeleccionDetective()
+    {
+        panelSeguro.SetActive(true);
+    }
+
+    public void SospechosoCorrecto()
+    {
+
+    }
+
+    public void SospechosoIncorrecto()
+    {
+
+    }
+
     public void ShowText()
     {
         gameManager.GetComponent<GameManager>().FindTheCustomer();
@@ -206,11 +227,6 @@ public class UIManager : MonoBehaviour
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             internalCount++;
-
-            if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 1)
-            {
-                panelSospechoso.SetActive(true);
-            }
         }
 
         else if (currentCustomer.name.Contains("Mano") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count && currentScene.name == "Day4")
@@ -253,11 +269,12 @@ public class UIManager : MonoBehaviour
             gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
         }
 
-        else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Detective"))
+        else if (currentCustomer.name.Contains("Detective") && !estaToPagao)
         {
-            estaToPagao = true;
-            currentCustomer.GetComponent<Client>().ByeBye();
-            gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
+            dropDownPanelNormativas.SetActive(false);
+            dropDownPanelPrecios.SetActive(false);
+            dialoguePanel.SetActive(false);
+            panelSospechoso.SetActive(true);
         }
 
         else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Mano") && currentScene.name == "Day4")
@@ -426,7 +443,6 @@ public class UIManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
         leDinero.gameObject.SetActive(false);
         IDontBelieveText();
-
     }
 
     public void LaVoluntad(float cantidad)
