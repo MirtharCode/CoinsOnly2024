@@ -21,7 +21,6 @@ public abstract class DetectivePadre : Client
     public override void ShowProductsAndMoney()
     {
         //Relleno
-
     }
 
 

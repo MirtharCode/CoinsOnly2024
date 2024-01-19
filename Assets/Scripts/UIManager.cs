@@ -269,7 +269,7 @@ public class UIManager : MonoBehaviour
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
-        else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe") && currentCustomer.name.Contains("Jefazo"))
+        else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
