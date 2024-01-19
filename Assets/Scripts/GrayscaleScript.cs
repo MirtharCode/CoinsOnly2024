@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class GrayscaleScript : UIManager
+public abstract class GrayscaleScript : MonoBehaviour
 {
 
     private Image image;
@@ -20,8 +20,7 @@ public abstract class GrayscaleScript : UIManager
 
     public void StartGrayscaleRoutine()
     {
-        if(currentCustomer.name.Contains("Detective"))
-            StartCoroutine(GrayscaleRoutine(duration, true));
+        StartCoroutine(GrayscaleRoutine(duration, true));
     }
 
     public void Reset()
