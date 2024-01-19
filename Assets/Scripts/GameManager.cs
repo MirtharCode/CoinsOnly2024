@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Clear();
         //dailyCustomers.Add(jefe);
         //if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        //dailyCustomers.Add(limbasticGiovanni);
+        dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         //dailyCustomers.Add(limbasticCululu);
         //dailyCustomers.Add(elementalHandy);

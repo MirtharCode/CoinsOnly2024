@@ -10,11 +10,13 @@ public abstract class DetectivePadre : Client
     {
         base.Start();
         raza = "¿?";
-        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
-        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
-        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
-        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(3).GetComponent<AudioSource>().mute = true;
-        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(4).GetComponent<AudioSource>().mute = true;
+        gameManager.GetComponent<GameManager>().musicBox.GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(0).GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(2).GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(3).GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(4).GetComponent<AudioSource>().Stop();
+        gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(5).GetComponent<AudioSource>().Play();
     }
 
     protected abstract void OnCollisionEnter2D(Collision2D collision);
@@ -33,20 +35,6 @@ public abstract class DetectivePadre : Client
         uIManager.GetComponent<UIManager>().buttonNoCobrar.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelPrecios.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelNormativas.SetActive(false);
-
-        if (uIManager.GetComponent<UIManager>().mostrarJefe)
-        {
-            StartCoroutine(uIManager.GetComponent<UIManager>().BossCalling());
-
-            StartCoroutine(WaitingForMyDestruction());
-
-            Destroy(gameObject, 4);
-
-        }
-
-        else
-        {
-            Destroy(gameObject, 2);
-        }
+        Destroy(gameObject, 2);
     }
 }
