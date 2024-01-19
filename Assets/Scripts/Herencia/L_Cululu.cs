@@ -67,6 +67,30 @@ public class L_Cululu : Limbasticos
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Hola colega, tengo una mala noticia para ti.");
+                dialogue.Add("La cangumantis y yo lo hemos dejado, me echó spray de pimienta en la esfera cuando la encontré.");
+                dialogue.Add("Es una de las maneras en la que me han dejado, la peor una de mis exs que me dejó por mi hermano.");
+                dialogue.Add("Pero esto ha hecho que abra los ojos y me dé cuenta que de tanto pensar en el amor, me perdí en el sendero de la vida.");
+                dialogue.Add("Así que tome una decisión importante y me desinstalé Hybrinder, aunque me quedara un año de premium.");
+                dialogue.Add("Creo que ahora voy a rehacer mi vida, ahora que soy un limbástico.");
+                dialogue.Add("Puedo intentar ser un monje, perdido en la montaña, para encontrar un nuevo camino.");
+                dialogue.Add("Pero creo que me quedaré trabajando en la gasolinera como siempre, hasta que encuentre mi camino.");
+                dialogue.Add("Hablando de la gasolinera, cóbrame que tengo dentro de nada el turno.");
+
+                dialogue.Add("Voy a empezar con ganas mi nuevo camino, si es que me llega.");
+                dialogue.Add("Espero que empezar mi nuevo camino no se vea afectado por mi nulas capacidades de contar monedas.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
@@ -93,6 +117,18 @@ public class L_Cululu : Limbasticos
             product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "26";
         }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
+        }
+
     }
 
     public override void ByeBye()

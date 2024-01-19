@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1.unity
     guid: ba70f9ba33f0f5144b9dbcecc7ca8a78
   - enabled: 1
+    path: Assets/Scenes/Transiciones/Transicion1-2.unity
+    guid: c1073f2a95a4c5e438b9133470d99346
+  - enabled: 1
     path: Assets/Scenes/Day2.unity
     guid: d6a1a998d3f80da40a9c812b99d1cacb
   - enabled: 1

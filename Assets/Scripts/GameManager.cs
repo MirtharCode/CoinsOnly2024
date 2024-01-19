@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
         if (currentScene.name == "Day2") Day2();
         if (currentScene.name == "Day3") Day3();
         if (currentScene.name == "Day4") Day4();
+        if (currentScene.name == "Day5") Day5();
     }
 
     public void CharacterShowUp(GameObject character)
@@ -132,6 +133,7 @@ public class GameManager : MonoBehaviour
     public void Day1()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
+
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(evilWizardGerard);
@@ -151,10 +153,11 @@ public class GameManager : MonoBehaviour
     public void Day2()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
+
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
+        dailyCustomers.Add(jefe);
         //if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        dailyCustomers.Add(limbasticGiovanni);
+        //dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         //dailyCustomers.Add(limbasticCululu);
         //dailyCustomers.Add(elementalHandy);
@@ -170,6 +173,7 @@ public class GameManager : MonoBehaviour
     public void Day3()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
+
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(limbasticSergio);
@@ -189,6 +193,7 @@ public class GameManager : MonoBehaviour
     public void Day4()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
+
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(elementalJissy);
@@ -207,7 +212,23 @@ public class GameManager : MonoBehaviour
 
     public void Day5()
     {
+        canvas.GetComponent<UIManager>().LaVoluntad(50);
+        dailyCustomers.Clear();
+
+        dailyCustomers.Add(jefe);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(elementalRockon);
         if (!data.GetComponent<Data>().borrachoTriste) dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(electropedMasermati);
+        dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(electropedRaven);
+        dailyCustomers.Add(elementalTapicio);
+        dailyCustomers.Add(detective);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+
     }
 
 

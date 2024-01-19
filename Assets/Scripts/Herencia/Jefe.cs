@@ -109,6 +109,25 @@ public class Jefe : RazaJefe
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Hola humano, ¿Sabes que hoy es un día especial?");
+                dialogue.Add("Es el primer día del año que no tenemos nuevas normas, ¡ASÍ PODRÉ TENER MÁS DINERO!");
+                dialogue.Add("Y al ser un día tan especial, te daré un trato especial.");
+                dialogue.Add("Revisaré cómo trabajaste por mis cámaras… Digo con mis poderosas habilidades mentales.");
+                dialogue.Add("Y si lo has hecho muy bien, seguirás trabajando aquí, o al menos espero que puedas pagarte la maldita documentación.");
+                dialogue.Add("Como no hayas ganado suficiente dinero, ¡TE QUEDAS SIN LA DOCUMENTACIÓN!");
+                dialogue.Add("Pero bueno, confío que hayas sido un buen trabajador.");
+                dialogue.Add("Suerte en el que espero que no sea tu último día.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 

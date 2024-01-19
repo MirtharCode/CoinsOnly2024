@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class GrayscaleScript : MonoBehaviour
+public class GrayscaleScript : MonoBehaviour
 {
 
     private Image image;

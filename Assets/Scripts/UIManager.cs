@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+
         gameManager = GameObject.FindGameObjectWithTag("GM");
         data = GameObject.FindGameObjectWithTag("Data");
         canvasPausa = gameObject.transform.GetChild(11).gameObject;
@@ -269,6 +270,18 @@ public class UIManager : MonoBehaviour
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
+        else if (currentCustomer.name.Contains("Sapopotamo") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count && currentScene.name == "Day5")
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            internalCount++;
+
+            //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
+            //    currentCustomer.GetComponent<Client>().ByeBye();
+            //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        }
+
+
         else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
@@ -326,6 +339,14 @@ public class UIManager : MonoBehaviour
             gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
         }
 
+        else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Sapopotamo") && currentScene.name == "Day5")
+        {
+            mostrarJefe = false;
+            estaToPagao = true;
+            currentCustomer.GetComponent<Client>().ByeBye();
+            gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
+        }
+
         else if (!estaToPagao)
         {
             leDinero.gameObject.SetActive(true);
@@ -359,7 +380,6 @@ public class UIManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Rockon"))
                     currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
-
             }
 
             else if (currentScene.name == "Day2")
@@ -450,6 +470,33 @@ public class UIManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Mano"))
                     currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
+            }
+
+            else if (currentScene.name == "Day5")
+            {
+                if (currentCustomer.name.Contains("Elidora"))
+                    currentCustomer.GetComponent<MO_Elidora>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Rockon"))
+                    currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Cululu"))
+                    currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Masermati"))
+                    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Enano"))
+                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Saltaralisis"))
+                    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Raven"))
+                    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
+
+                else if (currentCustomer.name.Contains("Tapiz"))
+                    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
             }
 
             internalCount++;
@@ -605,7 +652,25 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        else if (currentScene.name == "Day5")
+        {
+            if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Raven")
+                || currentCustomer.name.Contains("Tapiz"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
 
+            else if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Masermati")
+                || currentCustomer.name.Contains("Saltarisis"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
 
         return null;
     }
@@ -710,6 +775,26 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy")
                 || currentCustomer.name.Contains("Antonio"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
+                return dialogueText.text;
+            }
+        }
+
+        else if (currentScene.name == "Day5")
+        {
+            if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Masermati")
+                || currentCustomer.name.Contains("Saltarisis") || currentCustomer.name.Contains("Magma"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Raven")
+                || currentCustomer.name.Contains("Tapiz"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
@@ -848,35 +933,35 @@ public class UIManager : MonoBehaviour
         {
             data.GetComponent<Data>().day0Check = false;
             data.GetComponent<Data>().day1Check = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day2")
         {
             data.GetComponent<Data>().day1Check = false;
             data.GetComponent<Data>().day2Check = true;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day3")
         {
             data.GetComponent<Data>().day2Check = false;
             data.GetComponent<Data>().day3Check = true;
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day4")
         {
             data.GetComponent<Data>().day3Check = false;
             data.GetComponent<Data>().day4Check = true;
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day5")
         {
             data.GetComponent<Data>().day4Check = false;
             data.GetComponent<Data>().day5Check = true;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

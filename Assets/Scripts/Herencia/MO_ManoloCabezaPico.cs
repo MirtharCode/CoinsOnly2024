@@ -62,6 +62,30 @@ public class MO_ManoloCabezaPico : MagosOscuros
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Buenos días próximo creyente, veo que sigues encadenado a esta tienda.");
+                dialogue.Add("Podrías intentar ser más libre si vinieras alguna vez a una de las misas de mi iglesia.");
+                dialogue.Add("Además te beneficiaría venir, con cierta información que te voy a contar ahora.");
+                dialogue.Add("Vamos a hacer que vuelvan antiguos héroes a la vida, el primero fue el gran Sergio Nerviosaus.");
+                dialogue.Add("Pero dentro de poco, no será el único que volverá a la vida y nos ayudará.");
+                dialogue.Add("Así que creo que te beneficiaría estar de nuestra parte, y no de la del detective que lleva unos días viéndote.");
+                dialogue.Add("¿Crees que no lo sabía? Ese detective lleva algunos días indagando en nuestra sagrada iglesia.");
+                dialogue.Add("Además de que siempre viene a esta tienda al final del día, así que espero que hoy le mientas un poquito.");
+                dialogue.Add("Pero bueno, hoy vine como cliente, por lo que cóbrame humano.");
+
+                dialogue.Add("Te espero pronto en mi iglesia, humano.");
+                dialogue.Add("Cuando revivamos a los héroes, espero que no sepas contar mejor.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
@@ -84,12 +108,24 @@ public class MO_ManoloCabezaPico : MagosOscuros
             product2.transform.SetParent(twoProducts1);
             uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
+        }
     }
 
     public override void ByeBye()
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

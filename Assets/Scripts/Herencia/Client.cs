@@ -32,7 +32,6 @@ public abstract class Client : MonoBehaviour
         oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
         twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
-
     }
 
     public abstract void ShowProductsAndMoney();

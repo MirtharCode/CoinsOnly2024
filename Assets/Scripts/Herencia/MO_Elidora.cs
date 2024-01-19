@@ -44,6 +44,30 @@ public class MO_Elidora : MagosOscuros
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Hola humano, vengo defraudada de lo mal hecho que está este reino.");
+                dialogue.Add("Fuí al famoso restaurante de “Tips”, y no dejaron pasar a mis humildes ciudadanos esclavos de slime.");
+                dialogue.Add("Alguna híbrido debió hacer esas normas tan tontas, ¿Cómo no van a permitir criaturas mágicas?");
+                dialogue.Add("Y lo peor es la DECADENCIA del lugar, me obligaron a sentarme en una silla en vez de en mi slimes.");
+                dialogue.Add("Y porqué no hablar del servicio, casi tuve que cazar a los camareros, cómo un oságuila a un salmón.");
+                dialogue.Add("Le voy a poner una estrella en TripKingdom a ese maldito sitio.");
+                dialogue.Add("Seguro no me atendían como debían por ser la reina del reino slime, esos híbridos magofóbicos.");
+                dialogue.Add("Menos mal que en mi reino no excluimos a nadie, excepto a los híbridos a partir de este mal servicio.");
+                dialogue.Add("Haré un restaurante llevado por slimes que lo harán mejor que esos inútiles.");
+                dialogue.Add("Bueno, humano cóbrame que tengo que empezar con la edificación de mi reino.");
+
+                dialogue.Add("Bien hecho humano, si se te da tan bien cobrar, seguro también se te da bien ayudarme con las obras de mi reino.");
+                dialogue.Add("Estúpido humano, menos mal que mis dependientes slimes serán más listos que tú.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
         }
     }
 
@@ -58,6 +82,17 @@ public class MO_Elidora : MagosOscuros
             product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "16";
+        }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
         }
     }
 

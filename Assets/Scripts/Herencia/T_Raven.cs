@@ -43,6 +43,31 @@ public class T_Raven : Tecnopedos
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Hola cielo, espero que estés teniendo un día brillante.");
+                dialogue.Add("A mí ayer me fue genial en la gatoteca, fue muy divertido a mi compañero huir de los gatos.");
+                dialogue.Add("Se le pegaban los gatos con la estática de los globos.");
+                dialogue.Add("¡Además pudimos atender a uno de los miembros de la banda de Magicians of Power!");
+                dialogue.Add("¡SON EL MEJOR GRUPO DEL MUNDO!");
+                dialogue.Add("Y gracias a mis increíbles dotes de persuasión y carisma, me regalaron dos entradas para ir.");
+                dialogue.Add("Seguro le digo a Handy de ir, es un gran compañero, y se esfuerza más que ninguno que haya tenido.");
+                dialogue.Add("Aunque su debilidad sean los gatos con mucho pelo.");
+                dialogue.Add("No se cuál será el próximo trabajo, pero espero que pueda hacerlo junto con él.");
+                dialogue.Add("Te quite mucho tiempo amigo mío, cobrame esto porfi.");
+
+                dialogue.Add("Gracias amigo, espero que llegue ya el día del concierto.");
+                dialogue.Add("¿No puedo comprar esto? Creía que tenía todo el dinero.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
@@ -56,12 +81,22 @@ public class T_Raven : Tecnopedos
             product2.transform.SetParent(twoProducts1);
             uIManager.GetComponent<UIManager>().leDineroText.text = "8";
         }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "24";
+        }
     }
 
     public override void ByeBye()
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

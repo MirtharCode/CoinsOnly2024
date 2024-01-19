@@ -40,6 +40,31 @@ public class E_Rockon : Elementales
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Ho-hola amigo, ¿qué tal tu-tu-tu día de hoy?");
+                dialogue.Add("Seguro que fue un día pri-pri-edrástico, como decimos chicos piedras.");
+                dialogue.Add("Tenemos muchas expresiones ra-raras gracias a mis primos roca, son de pueblo cerrado.");
+                dialogue.Add("Además de que son chicos fuerte como mi padre, dicen que son “Gymbros”.");
+                dialogue.Add("Debería de ir al “Muscle Beluga” para me-mejorar mis músculos, es el mejor gimnasio del reino.");
+                dialogue.Add("Así igualaría la fuerza de mis primos y podría ayudar a mi padre en su restaurante.");
+                dialogue.Add("Él está como esclavo en el “Tips” del reino, es el mejor sitio para comer.");
+                dialogue.Add("Aunque cada día le tocan clientes más desagradables, fue una ma-maga que quería pasar a unos slimes.");
+                dialogue.Add("Se nota que no sabe lo que cuesta limpiar la baba de esas po-pobres criaturas.");
+                dialogue.Add("Se-seguro que estoy haciendo mucha cola, cóbrame amigo.");
+
+                dialogue.Add("Gra-gracias, espero le gusten estos peluches con forma humana a mi padre.");
+                dialogue.Add("Me falta di-dinero, jopetas, perdón amigo.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
@@ -51,11 +76,24 @@ public class E_Rockon : Elementales
             product1.transform.SetParent(oneProduct);
             uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
+        }
     }
 
     public override void ByeBye()
     {
         Destroy(product1);
+        Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

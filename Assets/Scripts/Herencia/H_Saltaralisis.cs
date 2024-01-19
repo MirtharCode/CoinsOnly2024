@@ -41,6 +41,30 @@ public class H_Saltaralisis : Hibridos
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Hola humano, ¿cómo estar día?");
+                dialogue.Add("Como tu ver ver ver ver ver romper runas de nuevo.");
+                dialogue.Add("Yo estar en bar anoche con mi querida familia, hasta que un borracho echarme toda su bebida encima.");
+                dialogue.Add("El tipo no quiso reparar mis runas y romperlas toda la noche.");
+                dialogue.Add("Ahora necesitar cambiar runas de nuevo, la gente no comprender a mí.");
+                dialogue.Add("No entender que yo no nacer con mitad animal, si no con vegetal.");
+                dialogue.Add("Deber cambiar alguna cosa para hacer mejor trato a los híbridos mitad vegetal.");
+                dialogue.Add("O al menos hacer algo para que los híbridos vegetarianos no babear babear babear con nosotros.");
+                dialogue.Add("Ya volver a funcionar mal, cóbrame que querer cambiar runas.");
+
+                dialogue.Add("Gracias humano, cambiar en nada runas.");
+                dialogue.Add("Yo solo querer cerveza para papá, pero bueno, dar solo runas mejor.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
@@ -54,12 +78,22 @@ public class H_Saltaralisis : Hibridos
             product2.transform.SetParent(twoProducts1);
             uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
+
+        else if (currentScene.name == "Day5")
+        {
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
+            product1.transform.SetParent(oneProduct);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts1.position, twoProducts1.rotation);
+            product2.transform.SetParent(twoProducts1);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "14";
+        }
     }
 
     public override void ByeBye()
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

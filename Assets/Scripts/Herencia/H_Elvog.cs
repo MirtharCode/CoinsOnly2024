@@ -63,6 +63,25 @@ public class H_Elvog : Hibridos
 
                 //StartCoroutine(ShowLine());
             }
+
+            else if (currentScene.name == "Day5")
+            {
+                dialogue.Add("Buennnasss *hip* Tú…Tú…  Ahí está miii dependiente favorito.");
+                dialogue.Add("Erres el mejor, tíoooo, gracias a tí no tengo trabajarrr más, er jefe me ha visto borracho, de nuevo.");
+                dialogue.Add("Ahorra seguirré con mi increíble vida jubeniiiil, eres er único capaz de entenderme*hip*");
+                dialogue.Add("Te invitarría a una birra, pero no sé que bebeís los hurmanos, tenéis pinta de beberrrr Carrimocho.");
+                dialogue.Add("No parreceis bebedores fuertes como yo, mi hígado y yo segurro somos los combatientes más fuertes del reino*hip*");
+                dialogue.Add("Te estoy robando muuuuucho tiempo, solo quiero decirte que esperro que podamos ser amigos, y que nos vayamos de copas al terminaaaar el turno.");
+                dialogue.Add("Nos vemos besto amigo.");
+
+                uIManager.GetComponent<UIManager>().ShowText();
+
+                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+                //StartCoroutine(ShowLine());
+            }
+
         }
     }
 
