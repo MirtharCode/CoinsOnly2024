@@ -71,7 +71,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] public GameObject panelSospechoso;
     [SerializeField] public GameObject panelSeguro;
-    int variableDetective;
+    [SerializeField] int variableDetective;
+    bool asegurarseQuitar = false;
+    bool SospechosoTerminado = false;
 
     [Header("Razas")]
 
@@ -186,19 +188,33 @@ public class UIManager : MonoBehaviour
         jefePanel.SetActive(false);
     }
 
-    public void AsegurarseSeleccionDetective()
-    {
-        panelSeguro.SetActive(true);
-    }
-
     public void SospechosoCorrecto()
     {
-
+        panelSeguro.SetActive(true);
+        asegurarseQuitar = true;
     }
 
     public void SospechosoIncorrecto()
     {
+        panelSeguro.SetActive(true);
+    }
 
+    public void VolverSeleccionSospechoso() //Al clicar para volver
+    {
+        asegurarseQuitar = false;
+        panelSeguro.SetActive(false);
+    }
+
+    public void ConfirmarSospechoso() //Al clicar en confirmar
+    {
+        if (asegurarseQuitar)
+        {
+            variableDetective++;
+        }
+
+        panelSospechoso.SetActive(false);
+
+        UltimaFraseDetective();
     }
 
     public void ShowText()
@@ -214,6 +230,17 @@ public class UIManager : MonoBehaviour
 
 
         if (currentCustomer.name.Contains("Jefe") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count)
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            internalCount++;
+
+            //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
+            //    currentCustomer.GetComponent<Client>().ByeBye();
+            //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        }
+
+        else if (currentCustomer.name.Contains("Jefazo") && internalCount < currentCustomer.GetComponent<Client>().dialogue.Count)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
@@ -242,7 +269,7 @@ public class UIManager : MonoBehaviour
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
-        else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe"))
+        else if (internalCount < currentCustomer.GetComponent<Client>().dialogue.Count - 2 && !currentCustomer.name.Contains("Jefe") && currentCustomer.name.Contains("Jefazo"))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
@@ -271,12 +298,24 @@ public class UIManager : MonoBehaviour
             gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
         }
 
+        else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefazo"))
+        {
+            estaToPagao = true;
+            currentCustomer.GetComponent<Client>().ByeBye();
+            gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
+        }
+
         else if (currentCustomer.name.Contains("Detective") && !estaToPagao)
         {
             dropDownPanelNormativas.SetActive(false);
             dropDownPanelPrecios.SetActive(false);
             dialoguePanel.SetActive(false);
             panelSospechoso.SetActive(true);
+        }
+
+        else if (SospechosoTerminado)
+        {
+            currentCustomer.GetComponent<DetectiveHijo>().ShowProductsAndMoney();
         }
 
         else if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Mano") && currentScene.name == "Day4")
@@ -445,6 +484,18 @@ public class UIManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
         leDinero.gameObject.SetActive(false);
         IDontBelieveText();
+    }
+
+    public void UltimaFraseDetective()
+    {
+        botonDesplegadoPrecios.SetActive(false);
+        botonDesplegadoNormativas.SetActive(false);
+        gameManager.GetComponent<GameManager>().FindTheCustomer();
+        conversationOn = true;
+        estaToPagao = true;
+        dialoguePanel.gameObject.SetActive(true);
+        leDinero.gameObject.SetActive(false);
+        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
     }
 
     public void LaVoluntad(float cantidad)

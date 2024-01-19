@@ -433,6 +433,7 @@ MonoBehaviour:
   dailyCustomers: []
   data: {fileID: 0}
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
+  jefe2: {fileID: 8043330204968246209, guid: f495d3d9d33ef604bb28e1cc2537e55a, type: 3}
   detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
