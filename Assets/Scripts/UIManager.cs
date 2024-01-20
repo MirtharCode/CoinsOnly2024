@@ -381,8 +381,8 @@ public class UIManager : MonoBehaviour
 
             else if (currentScene.name == "Day2")
             {
-                //if (currentCustomer.name.Contains(""))
-                //    currentCustomer.GetComponent<>().ShowProductsAndMoney();  Aquí va Lepión, todavía no introducido por la transferencia de datos
+                if (currentCustomer.name.Contains(""))
+                    currentCustomer.GetComponent<H_Lepion>().ShowProductsAndMoney();
 
                 if (currentCustomer.name.Contains("Giovanni"))
                     currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
@@ -594,7 +594,7 @@ public class UIManager : MonoBehaviour
             }
 
             else if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Cululu") ||
-                currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz"))
+                currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Lepion"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -709,7 +709,7 @@ public class UIManager : MonoBehaviour
         else if (currentScene.name == "Day2")
         {
             if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu")
-                || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz"))
+                || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Lepion"))
             {
                 //Queja de que si que tenía el dinero suficiente
                 mostrarJefe = true;

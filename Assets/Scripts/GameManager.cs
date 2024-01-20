@@ -144,7 +144,6 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(hybridMara);
         dailyCustomers.Add(limbasticGiovanni);
         dailyCustomers.Add(elementalRockon);
-        dailyCustomers.Add(detective);
         dailyCustomers.Add(jefe2);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
