@@ -381,10 +381,10 @@ public class UIManager : MonoBehaviour
 
             else if (currentScene.name == "Day2")
             {
-                if (currentCustomer.name.Contains(""))
+                if (currentCustomer.name.Contains("Lepion"))
                     currentCustomer.GetComponent<H_Lepion>().ShowProductsAndMoney();
 
-                if (currentCustomer.name.Contains("Giovanni"))
+                else if (currentCustomer.name.Contains("Giovanni"))
                     currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
 
                 else if (currentCustomer.name.Contains("Enano"))

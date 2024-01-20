@@ -23,8 +23,8 @@ public class Jefe : RazaJefe
                 dialogue.Add("No lo digo yo, lo dice vuestro cerebro enano.");
                 dialogue.Add("Pero bueno, como iba diciendo… ¡ATIENDE BIEN!");
                 dialogue.Add("No quiero perder dinero contigo.");
-                dialogue.Add("Para cobrar dale a LA BOLSA DE DINERO");
-                dialogue.Add("Y para no cobrar, dale a la CAJA REGISTRADORA");
+                dialogue.Add("Para cobrar dale al botón verde de la CAJA REGISTRADORA");
+                dialogue.Add("Y para no cobrar, dale al botón rojo");
                 dialogue.Add("Y como cobres mal, te quitaré dinero de tu querido tarro.");
                 dialogue.Add("Tienes el catálogo de la tienda para saber si el cliente tiene dinero suficiente.");
                 dialogue.Add("Además tendrás una ayuda, la cabeza del antiguo empleado.");
