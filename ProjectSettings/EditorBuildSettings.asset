@@ -12,23 +12,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1.unity
     guid: ba70f9ba33f0f5144b9dbcecc7ca8a78
   - enabled: 1
+    path: Assets/Scenes/Transiciones/Transicion1-2.unity
+    guid: c1073f2a95a4c5e438b9133470d99346
+  - enabled: 1
     path: Assets/Scenes/Day2.unity
     guid: d6a1a998d3f80da40a9c812b99d1cacb
+  - enabled: 1
+    path: Assets/Scenes/Transiciones/Transicion2-3.unity
+    guid: d5129a6df79a2bc4b8e69833b72b52b5
   - enabled: 1
     path: Assets/Scenes/Day3.unity
     guid: f0770d59d3b3fe24d929b5b183438095
   - enabled: 1
+    path: Assets/Scenes/Transiciones/Transicion3-4.unity
+    guid: d9e62cdf4d84ad6419f5f87401c90ab3
+  - enabled: 1
     path: Assets/Scenes/Day4.unity
     guid: dc90c83f4fc242b49bca8a218e361431
+  - enabled: 1
+    path: Assets/Scenes/Transiciones/Transicion4-5.unity
+    guid: ddf2ae5fa89be0c42b6676827511fdc5
+  - enabled: 1
+    path: Assets/Scenes/Day5.unity
+    guid: f498a77050f9fd84fbb4b980563aca07
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 914e01141cb6d66478749137f076ffde
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 91e6023bfe10b8a45b0402497556df3b
-  - enabled: 1
-    path: Assets/Scenes/Transiciones/Transicion1-2.unity
-    guid: c1073f2a95a4c5e438b9133470d99346
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
