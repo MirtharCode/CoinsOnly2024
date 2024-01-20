@@ -208,10 +208,7 @@ public class UIManager : MonoBehaviour
 
     public void ConfirmarSospechoso() //Al clicar en confirmar
     {
-        if (asegurarseQuitar)
-        {
-            variableDetective++;
-        }
+        if (asegurarseQuitar) data.GetComponent<Data>().detectivePoints++;
 
         panelSospechoso.SetActive(false);
 

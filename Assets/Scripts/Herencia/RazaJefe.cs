@@ -33,20 +33,6 @@ public abstract class RazaJefe : Client
         uIManager.GetComponent<UIManager>().buttonNoCobrar.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelPrecios.SetActive(false);
         uIManager.GetComponent<UIManager>().dropDownPanelNormativas.SetActive(false);
-
-        if (uIManager.GetComponent<UIManager>().mostrarJefe)
-        {
-            StartCoroutine(uIManager.GetComponent<UIManager>().BossCalling());
-
-            StartCoroutine(WaitingForMyDestruction());
-
-            Destroy(gameObject, 4);
-
-        }
-
-        else
-        {
-            Destroy(gameObject, 2);
-        }
+        Destroy(gameObject, 2);
     }
 }
