@@ -1,0 +1,13 @@
+¡Gracias por adquirir WinRar Pro! 
+
+ Es broma, para el fondo primero se añade el "fondo base sin brillo ni sombras"
+
+ Luego la capa de objetos (a tener en cuenta, el cuadro de la cangumantis tiene
+que estar encima del espadón de globo y el espadón tiene que encajar bien con el mueble)
+
+ Luego va la capa de "sombras" por encima de todo
+
+ Por último va la capa de brillo, que está desactivada únicamente la primera vez que
+aparece el mago de la nevera en la esquina.
+
+Si hay alguna duda, ya sabeis, un besito guapis <333
