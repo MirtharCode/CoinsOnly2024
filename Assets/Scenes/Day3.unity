@@ -422,6 +422,7 @@ MonoBehaviour:
   dailyCustomers: []
   data: {fileID: 0}
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
+  jefe2: {fileID: 0}
   detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}
   evilWizardGerard: {fileID: 1842405180829131057, guid: 07ff05c935e11774a85b13d47b053faa, type: 3}
   hybridElvog: {fileID: 7336179541738107905, guid: 201635be4fcb9244c9d396a12668ab3b, type: 3}
@@ -796,6 +797,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 799860448433429732, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -943.41437
+      objectReference: {fileID: 0}
     - target: {fileID: 1251263281296449971, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
       value: "+Los h\xEDbridos tienen prohibido comprar alcohol.\n\n-Cerveza"
@@ -803,6 +828,30 @@ PrefabInstance:
     - target: {fileID: 2167396815739684508, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -367.41437
       objectReference: {fileID: 0}
     - target: {fileID: 3065623176350269651, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
@@ -815,6 +864,30 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3f0aa0d0923a0344a83a1e3efe5e6985, type: 3}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528534238597655422, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -847.41437
+      objectReference: {fileID: 0}
     - target: {fileID: 4638867701186084427, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -830,6 +903,54 @@ PrefabInstance:
     - target: {fileID: 4638867701186084427, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248817241935116247, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -751.41437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297291828655670043, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -463.41437
       objectReference: {fileID: 0}
     - target: {fileID: 5982892003295227978, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_Pivot.x
@@ -923,10 +1044,62 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5988426753008478428, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -175.41437
+      objectReference: {fileID: 0}
     - target: {fileID: 6482168688161743534, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
       value: "+Los tecn\xF3podos no pueden comprar ninguna poci\xF3n.\n\n-Poci\xF3n
         de man\xE1\n-Poci\xF3n de veneno\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.41437
       objectReference: {fileID: 0}
     - target: {fileID: 7232458244291908560, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
@@ -938,11 +1111,83 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 95124a2c0c6188f4a911019a97f87822, type: 3}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716639630882068093, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -559.41437
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048722821281861525, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -271.41437
+      objectReference: {fileID: 0}
     - target: {fileID: 8538305245717071616, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
       value: "+Los magos tienen una rebaja del 50 % en estos objetos m\xE1gicos.\n\n-Runas
         m\xE1gicas\n-Bola de cristal\n-Pilas m\xE1gicas\n\n+Los magos no pueden comprar
         2 pociones a la vez.\n\n-Poci\xF3n de man\xE1\n-Poci\xF3n de veneno"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 229.13184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -655.41437
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
