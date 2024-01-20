@@ -9,5 +9,6 @@ que estar encima del espadón de globo y el espadón tiene que encajar bien con 
 
  Por último va la capa de brillo, que está desactivada únicamente la primera vez que
 aparece el mago de la nevera en la esquina.
+	Esta tiene su propia carpeta porque tiene animación de 4 frames para que mejore
 
 Si hay alguna duda, ya sabeis, un besito guapis <333
