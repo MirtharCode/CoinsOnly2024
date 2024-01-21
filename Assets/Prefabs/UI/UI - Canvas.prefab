@@ -884,7 +884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507948100468722411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6080,6 +6080,7 @@ MonoBehaviour:
   internalCount: 0
   traductorText: {fileID: 5982892003827534848}
   phone: {fileID: 5982892003975076012}
+  phoneBW: {fileID: 1507948100468722411}
   jefePanel: {fileID: 5982892005112561856}
   textoJefe: {fileID: 5982892004925118166}
   broncaFin: 1
@@ -6097,6 +6098,7 @@ MonoBehaviour:
   variableDetective: 0
   backgroundBAndW: {fileID: 0}
   tableBAndW: {fileID: 8640198305523296667}
+  candle: {fileID: 7649357147257144314}
   candleBAndW: {fileID: 5982892004513391206}
   extPropinasBAndW: {fileID: 5982892003558459354}
   intPropinasBAndW: {fileID: 5982892003182434231}
@@ -16261,7 +16263,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649357147257144314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

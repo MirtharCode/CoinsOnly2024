@@ -52,6 +52,7 @@ public class UIManager : MonoBehaviour
 
     [Header("BOSS' THINGS")]
     public GameObject phone;
+    public GameObject phoneBW;
     public GameObject jefePanel;
     [SerializeField] public TMP_Text textoJefe;
     public bool broncaFin = true;
@@ -76,6 +77,7 @@ public class UIManager : MonoBehaviour
     bool SospechosoTerminado = false;
     public GameObject backgroundBAndW;
     public GameObject tableBAndW;
+    public GameObject candle;
     public GameObject candleBAndW;
     public GameObject extPropinasBAndW;
     public GameObject intPropinasBAndW;
@@ -554,6 +556,8 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FadeToBAndW(float fadeSpeed = 0.75f)
     {
+        phoneBW.GetComponent<Image>().enabled = true;
+        candle.GetComponent<Image>().enabled = true;
         Color phoneColor = phone.GetComponent<Image>().color;
         float fadeAmount;
 
@@ -561,6 +565,7 @@ public class UIManager : MonoBehaviour
         while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
             && candleBAndW.GetComponent<Image>().color.a > 0 && extPropinasBAndW.GetComponent<Image>().color.a > 0
             && intPropinasBAndW.GetComponent<Image>().color.a > 0 && phone.GetComponent<Image>().color.a > 0
+            && candle.GetComponent<Image>().color.a < 1
             && leCajaRegistradora.GetComponent<Image>().color.a > 0)
 
         //while (phone.GetComponent<Image>().color.a > 0)
