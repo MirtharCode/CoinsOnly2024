@@ -86,6 +86,12 @@ public class UIManager : MonoBehaviour
 
     int razaSeleccionada;
 
+    [Header("BWThings")]
+
+    [SerializeField] public Sprite upperBoxBW;
+    [SerializeField] public Sprite downerBoxBW;
+    [SerializeField] public Sprite buttonBW;
+
     void Start()
     {
 
@@ -557,29 +563,32 @@ public class UIManager : MonoBehaviour
     public IEnumerator FadeToBAndW(float fadeSpeed = 0.75f)
     {
         phoneBW.GetComponent<Image>().enabled = true;
-        candle.GetComponent<Image>().enabled = true;
+        dialoguePanel.GetComponent<Image>().sprite = downerBoxBW;
+        dialoguePanel.transform.GetChild(0).GetComponent<Image>().sprite = upperBoxBW;
+        dialoguePanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = buttonBW;
+
         Color phoneColor = phone.GetComponent<Image>().color;
-        float fadeAmount;
+        Color candleColor = candle.GetComponent<Image>().color;
+        float fadeAmount, negFadeAmount;
 
         print(phoneColor);
         while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
             && candleBAndW.GetComponent<Image>().color.a > 0 && extPropinasBAndW.GetComponent<Image>().color.a > 0
             && intPropinasBAndW.GetComponent<Image>().color.a > 0 && phone.GetComponent<Image>().color.a > 0
-            && candle.GetComponent<Image>().color.a < 1
             && leCajaRegistradora.GetComponent<Image>().color.a > 0)
-
-        //while (phone.GetComponent<Image>().color.a > 0)
         {
             fadeAmount = phoneColor.a - (fadeSpeed * Time.deltaTime);
+            negFadeAmount = candleColor.a + (fadeSpeed * Time.deltaTime);
             phoneColor = new Color(phoneColor.r, phoneColor.g, phoneColor.b, fadeAmount);
+            candleColor = new Color(candleColor.r, candleColor.g, candleColor.b, negFadeAmount);
             phone.GetComponent<Image>().color = phoneColor;
-
             tableBAndW.GetComponent<Image>().color = phoneColor;
             candleBAndW.GetComponent<Image>().color = phoneColor;
             backgroundBAndW.GetComponent<SpriteRenderer>().color = phoneColor;
             extPropinasBAndW.GetComponent<Image>().color = phoneColor;
             intPropinasBAndW.GetComponent<Image>().color = phoneColor;
             leCajaRegistradora.GetComponent<Image>().color = phoneColor;
+            candle.GetComponent<Image>().color = candleColor;
             yield return null;
         }
     }

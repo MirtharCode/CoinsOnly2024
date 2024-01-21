@@ -243,7 +243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7411d9586012664fb5924de34fce257, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d15a2adc5c57794eaa472b1d7041d45, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c158e9eb1c987114ea689981a4d5cafb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4524b569edae77344a9779c3828a7088, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3708,7 +3708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd0b335f489c8f74893b73fb8a870ca7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ace0fd1837855145babb4a9b4f1dbc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6102,6 +6102,9 @@ MonoBehaviour:
   candleBAndW: {fileID: 5982892004513391206}
   extPropinasBAndW: {fileID: 5982892003558459354}
   intPropinasBAndW: {fileID: 5982892003182434231}
+  upperBoxBW: {fileID: 21300000, guid: 5d15a2adc5c57794eaa472b1d7041d45, type: 3}
+  downerBoxBW: {fileID: 21300000, guid: 734101d186c93114f8b482a8d9f9ef4e, type: 3}
+  buttonBW: {fileID: 21300000, guid: 5ec7ac7604c5d42409b46d1741001d62, type: 3}
 --- !u!1 &5982892003302237854
 GameObject:
   m_ObjectHideFlags: 0
@@ -8836,7 +8839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5982892003858235572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15508,7 +15511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca6874bd1915d134e908dc23462c8c80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 734101d186c93114f8b482a8d9f9ef4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16263,13 +16266,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649357147257144314}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
