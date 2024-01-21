@@ -25,7 +25,7 @@ public class DetectiveHijo : DetectivePadre
 
                 uIManager.GetComponent<UIManager>().ShowText();
 
-                GetComponent<GrayscaleScript>().StartGrayscaleRoutine();
+                //GetComponent<GrayscaleScript>().StartGrayscaleRoutine();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8043330204968246220}
   - component: {fileID: 6932100637906878651}
   m_Layer: 0
-  m_Name: ManoloEnanoFinal
+  m_Name: EnanoFinal
   m_TagString: CurrentCustomer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

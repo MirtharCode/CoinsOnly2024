@@ -74,6 +74,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] int variableDetective;
     bool asegurarseQuitar = false;
     bool SospechosoTerminado = false;
+    public GameObject backgroundBAndW;
+    public GameObject tableBAndW;
+    public GameObject candleBAndW;
+    public GameObject extPropinasBAndW;
+    public GameObject intPropinasBAndW;
 
     [Header("Razas")]
 
@@ -122,6 +127,11 @@ public class UIManager : MonoBehaviour
                 canvasPausa.SetActive(true);
                 Time.timeScale = 0;
             }
+        }
+
+        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1)
+        {
+            StartCoroutine(FadeToBAndW());
         }
     }
 
@@ -540,6 +550,33 @@ public class UIManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
         leDinero.gameObject.SetActive(false);
         dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
+    }
+
+    public IEnumerator FadeToBAndW(float fadeSpeed = 0.75f)
+    {
+        Color phoneColor = phone.GetComponent<Image>().color;
+        float fadeAmount;
+
+        print(phoneColor);
+        while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
+            && candleBAndW.GetComponent<Image>().color.a > 0 && extPropinasBAndW.GetComponent<Image>().color.a > 0
+            && intPropinasBAndW.GetComponent<Image>().color.a > 0 && phone.GetComponent<Image>().color.a > 0
+            && leCajaRegistradora.GetComponent<Image>().color.a > 0)
+
+        //while (phone.GetComponent<Image>().color.a > 0)
+        {
+            fadeAmount = phoneColor.a - (fadeSpeed * Time.deltaTime);
+            phoneColor = new Color(phoneColor.r, phoneColor.g, phoneColor.b, fadeAmount);
+            phone.GetComponent<Image>().color = phoneColor;
+
+            tableBAndW.GetComponent<Image>().color = phoneColor;
+            candleBAndW.GetComponent<Image>().color = phoneColor;
+            backgroundBAndW.GetComponent<SpriteRenderer>().color = phoneColor;
+            extPropinasBAndW.GetComponent<Image>().color = phoneColor;
+            intPropinasBAndW.GetComponent<Image>().color = phoneColor;
+            leCajaRegistradora.GetComponent<Image>().color = phoneColor;
+            yield return null;
+        }
     }
 
     public void LaVoluntad(float cantidad)
