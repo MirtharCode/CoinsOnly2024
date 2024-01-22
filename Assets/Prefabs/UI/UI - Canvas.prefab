@@ -5961,9 +5961,9 @@ RectTransform:
   - {fileID: 247903768506236359}
   - {fileID: 5982892005186836044}
   - {fileID: 5982892005216695349}
-  - {fileID: 5982892004638087519}
-  - {fileID: 5982892003552063248}
   - {fileID: 5982892005112561857}
+  - {fileID: 5982892003552063248}
+  - {fileID: 5982892004638087519}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9356,7 +9356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Siguiente d\xEDa"
+  m_text: Ir a casa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -11513,7 +11513,7 @@ RectTransform:
   m_Children:
   - {fileID: 5982892004222438158}
   m_Father: {fileID: 5982892003295227978}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13978,7 +13978,7 @@ RectTransform:
   - {fileID: 5982892004925118161}
   - {fileID: 905834622}
   m_Father: {fileID: 5982892003295227978}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

@@ -82,7 +82,7 @@ public class T_Masermati : Tecnopedos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
 
         else if (currentScene.name == "Day5")

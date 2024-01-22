@@ -39,7 +39,7 @@ public class Data : MonoBehaviour
     //[SerializeField] public int numElectropedRaven;
     //[SerializeField] public int numElectropedRustica;
 
-    [SerializeField] public bool samuraiPagaMal = false;
+    [SerializeField] public bool samuraiPagaMal = true;
     [SerializeField] public bool borrachoTriste = false;
     [SerializeField] public bool day0Check = false;
     [SerializeField] public bool day1Check = false;

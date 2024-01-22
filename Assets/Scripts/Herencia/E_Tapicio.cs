@@ -105,11 +105,11 @@ public class E_Tapicio : Elementales
 
         else if (currentScene.name == "Day2")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
             product1.transform.SetParent(twoProducts1);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, twoProducts2.position, twoProducts2.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "32";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
         }
 
         else if (currentScene.name == "Day5")

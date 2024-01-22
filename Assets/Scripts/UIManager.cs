@@ -122,10 +122,9 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-
         gameManager = GameObject.FindGameObjectWithTag("GM");
         data = GameObject.FindGameObjectWithTag("Data");
-        canvasPausa = gameObject.transform.GetChild(11).gameObject;
+        canvasPausa = gameObject.transform.GetChild(13).gameObject;
         canvasVictory = gameObject.transform.GetChild(12).gameObject;
         currentScene = SceneManager.GetActiveScene();
         buttonCobrar.SetActive(false);
@@ -151,6 +150,12 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        //if (propinasNumber >= 100)
+        //    LaVoluntad(100);
+
+        //if (propinasNumber <= 0)
+        //    LaVoluntad(0);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (canvasPausa.activeSelf)
@@ -165,7 +170,7 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1)
+        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1 && currentScene.name != "Day1")
         {
             StartCoroutine(FadeToBAndW());
         }
@@ -529,8 +534,8 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Masermati"))
                     currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("Enano"))
-                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Mano"))
+                    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
 
                 else if (currentCustomer.name.Contains("Saltaralisis"))
                     currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
@@ -728,7 +733,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day5")
         {
-            if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Raven")
+            if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Tapiz"))
             {
                 mostrarJefe = false;
@@ -776,7 +781,7 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Denjirenji"))
             {
-                data.GetComponent<Data>().samuraiPagaMal = true;
+                data.GetComponent<Data>().samuraiPagaMal = false;
                 mostrarJefe = false;
                 LaVoluntad(10);
                 return dialogueText.text;
@@ -867,7 +872,7 @@ public class UIManager : MonoBehaviour
                 return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Raven")
+            else if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Tapiz"))
             {
                 mostrarJefe = true;

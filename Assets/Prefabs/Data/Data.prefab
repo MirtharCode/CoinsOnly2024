@@ -49,7 +49,7 @@ MonoBehaviour:
   numLimbastic: 0
   numElemental: 0
   numElectroped: 0
-  samuraiPagaMal: 0
+  samuraiPagaMal: 1
   borrachoTriste: 0
   day0Check: 1
   day1Check: 0
@@ -57,4 +57,25 @@ MonoBehaviour:
   day3Check: 0
   day4Check: 0
   day5Check: 0
-  finalBueno: 0
+  finalMuyMaloConseguido: 0
+  finalMaloConseguido: 0
+  finalBuenoConseguido: 0
+  finalMuyBuenoConseguido: 0
+  finalSecretoConseguido: 0
+  tipsPoints: 0
+  detectivePoints: 0
+  giftGeeraard: 0
+  giftEnano: 0
+  giftMano: 0
+  giftElidora: 0
+  giftElvog: 0
+  giftMara: 0
+  giftPetra: 0
+  giftAntonio: 0
+  giftGiovanni: 0
+  giftCululu: 0
+  giftSergio: 0
+  giftTapicio: 0
+  giftHandy: 0
+  giftDenjirenji: 0
+  giftRaven: 0
