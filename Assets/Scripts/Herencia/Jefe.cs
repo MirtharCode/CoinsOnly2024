@@ -19,7 +19,7 @@ public class Jefe : RazaJefe
             {
                 dialogue.Add("Hola chico nuevo, soy tu jefe.");
                 dialogue.Add("Y cómo sé que es tu primer día, te estaré observando.");
-                dialogue.Add("Porque sé que no serás capaz de atender a los clientes bien.");
+                dialogue.Add("Seguro que no serás capaz de atender a los clientes bien.");
                 dialogue.Add("Ya sabes que todos los humanos sois inútiles.");
                 dialogue.Add("No lo digo yo, lo dice vuestro cerebro enano.");
                 dialogue.Add("Pero bueno, como iba diciendo… ¡ATIENDE BIEN!");
