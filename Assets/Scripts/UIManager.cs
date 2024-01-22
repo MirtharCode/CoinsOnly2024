@@ -150,12 +150,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        //if (propinasNumber >= 100)
-        //    LaVoluntad(100);
-
-        //if (propinasNumber <= 0)
-        //    LaVoluntad(0);
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (canvasPausa.activeSelf)
@@ -790,7 +784,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day2")
         {
-            if (currentCustomer.name.Contains("Manolo") || currentCustomer.name.Contains("Cululu")
+            if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Cululu")
                 || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Lepion"))
             {
                 //Queja de que si que tenía el dinero suficiente
