@@ -17,6 +17,7 @@ public class H_Elvog : Hibridos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridElvog;
 
             if (currentScene.name == "Day1")
             {

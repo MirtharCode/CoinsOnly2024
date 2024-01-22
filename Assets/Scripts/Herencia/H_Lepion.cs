@@ -16,6 +16,7 @@ public class H_Lepion : Hibridos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridLepion;
 
             if (currentScene.name == "Day2")
             {

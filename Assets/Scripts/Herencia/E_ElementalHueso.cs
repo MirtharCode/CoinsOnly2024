@@ -16,6 +16,7 @@ public class E_ElementalHueso : Elementales
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalHueso;
 
             if (currentScene.name == "Day3")
             {

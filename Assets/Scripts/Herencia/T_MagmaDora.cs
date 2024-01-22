@@ -16,6 +16,7 @@ public class T_MagmaDora : Tecnopedos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedMagmaDora;
 
             if (currentScene.name == "Day4")
             {

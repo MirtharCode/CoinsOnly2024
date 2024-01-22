@@ -16,6 +16,7 @@ public class T_Rustica : Tecnopedos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedRustica;
 
             if (currentScene.name == "Day3")
             {

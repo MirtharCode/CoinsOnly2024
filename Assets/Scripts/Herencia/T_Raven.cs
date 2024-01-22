@@ -16,6 +16,7 @@ public class T_Raven : Tecnopedos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedRaven;
 
             if (currentScene.name == "Day3")
             {

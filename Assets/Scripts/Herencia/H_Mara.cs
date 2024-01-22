@@ -16,6 +16,7 @@ public class H_Mara : Hibridos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridMara;
 
             if (currentScene.name == "Day1")
             {

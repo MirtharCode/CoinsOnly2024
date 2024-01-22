@@ -13,6 +13,7 @@ public class Jefe2 : RazaJefe
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elJefe;
 
             if (currentScene.name == "Day1")
             {

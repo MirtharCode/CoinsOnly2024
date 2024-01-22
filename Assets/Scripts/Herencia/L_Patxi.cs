@@ -17,6 +17,7 @@ public class L_Patxi : Limbasticos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticPatxi;
 
             if (currentScene.name == "Day3")
             {

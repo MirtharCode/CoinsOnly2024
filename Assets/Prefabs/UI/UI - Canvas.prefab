@@ -1330,7 +1330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2302535132579496942}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6079,6 +6079,33 @@ MonoBehaviour:
   dialoguePanel: {fileID: 5982892003858235575}
   internalCount: 0
   traductorText: {fileID: 5982892003827534848}
+  clientImage: {fileID: 5982892004721749002}
+  evilWizardGerard: {fileID: 21300000, guid: 44bf5fff9816cff419861a582429ddf0, type: 3}
+  hybridElvog: {fileID: 21300000, guid: b25172dd20aac9c4cba0b382eedc90f3, type: 3}
+  limbasticAntonio: {fileID: 21300000, guid: b13e26e5235fc5847864fd025bbbbfa0, type: 3}
+  elementalTapicio: {fileID: 21300000, guid: ebfd0c4bbdf219d4b9b2a8cc2b78c0e1, type: 3}
+  electropedDenjirenji: {fileID: 21300000, guid: ab3f3b1cebb82f941b130d399b15b105, type: 3}
+  hybridMara: {fileID: 21300000, guid: c28229cebda41904f90d98b153652917, type: 3}
+  limbasticGiovanni: {fileID: 21300000, guid: 2856ce88744ac5049bbeefc43a23f0fa, type: 3}
+  elementalRockon: {fileID: 21300000, guid: 58ce98830734c2b469a10803662eb734, type: 3}
+  hybridLepion: {fileID: 21300000, guid: 330df5e1e10e56e4bb6988191f765860, type: 3}
+  evilWizardManolo: {fileID: 21300000, guid: 95124a2c0c6188f4a911019a97f87822, type: 3}
+  limbasticCululu: {fileID: 21300000, guid: ad93a02844c47224da17ee56f9d302d3, type: 3}
+  elementalHandy: {fileID: 21300000, guid: 028dfb989593c854096699347dd32443, type: 3}
+  hybridPetra: {fileID: 21300000, guid: ae3b667dfa1de384ba29e7c659c3c3e4, type: 3}
+  electropedMasermati: {fileID: 21300000, guid: 740fdb7bde48abc499352c25df26a8ea, type: 3}
+  evilWizardPijus: {fileID: 21300000, guid: dcd7497d5b746fb4daebbd9a440d7ea0, type: 3}
+  limbasticSergio: {fileID: 21300000, guid: 3f0aa0d0923a0344a83a1e3efe5e6985, type: 3}
+  hybridSaltaralisis: {fileID: 21300000, guid: caf1e7c350ebade4d92d3ec1097f6ac7, type: 3}
+  evilWizardManoloMano: {fileID: 21300000, guid: 233a7569c8a28ee44ae83aa53eacc799, type: 3}
+  electropedRaven: {fileID: 21300000, guid: 8d417d38063c52e4181c88740de1bc58, type: 3}
+  elementalHueso: {fileID: 21300000, guid: 4c26ac6b18239a842b22d83a2d4d484e, type: 3}
+  limbasticPatxi: {fileID: 21300000, guid: 1fea5271086d9774a91d36981166b026, type: 3}
+  electropedRustica: {fileID: 21300000, guid: fd4094ac042d8844fa462b353a548862, type: 3}
+  elementalJissy: {fileID: 21300000, guid: 48fe3361c8a0b3f4a91cccc5f21a02a3, type: 3}
+  evilWizardElidora: {fileID: 21300000, guid: 1b979ffa1d3bdf246b19442cc862882d, type: 3}
+  electropedMagmaDora: {fileID: 21300000, guid: e2665f1dacea9db47aa1872c602504b1, type: 3}
+  elJefe: {fileID: 21300000, guid: 0da2cf28504d19a498bf786187618b50, type: 3}
   phone: {fileID: 5982892003975076012}
   phoneBW: {fileID: 1507948100468722411}
   jefePanel: {fileID: 5982892005112561856}
@@ -8839,7 +8866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5982892003858235572
 RectTransform:
   m_ObjectHideFlags: 0

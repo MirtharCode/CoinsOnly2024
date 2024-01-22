@@ -44,7 +44,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().finalBueno)       // Se incluye Detective
+        else if (data.GetComponent<Data>().finalSecretoConseguido)       // Se incluye Detective
         {
             randomIndex = Random.Range(0, imagenes.Length);
             imageComponent.sprite = imagenes[randomIndex];
@@ -61,7 +61,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
         else if (data.GetComponent<Data>().day4Check) ImagesLoop(26);
 
-        else if (data.GetComponent<Data>().finalBueno) ImagesLoop(imagenes.Length);
+        else if (data.GetComponent<Data>().finalSecretoConseguido) ImagesLoop(imagenes.Length);
     }
 
     public void PreviousImage()
@@ -74,7 +74,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
         else if (data.GetComponent<Data>().day4Check) ReverseImagesLoop(26);
 
-        else if (data.GetComponent<Data>().finalBueno) ReverseImagesLoop(imagenes.Length);
+        else if (data.GetComponent<Data>().finalSecretoConseguido) ReverseImagesLoop(imagenes.Length);
     }
 
     void ImagesLoop(int limit)

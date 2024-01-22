@@ -16,6 +16,7 @@ public class L_Sergio : Limbasticos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticSergio;
 
             if (currentScene.name == "Day3")
             {

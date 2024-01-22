@@ -16,6 +16,7 @@ public class E_Rockon : Elementales
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalRockon;
 
             if (currentScene.name == "Day1")
             {

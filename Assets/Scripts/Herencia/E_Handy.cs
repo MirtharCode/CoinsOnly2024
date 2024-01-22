@@ -16,6 +16,7 @@ public class E_Handy : Elementales
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalHandy;
 
             if (currentScene.name == "Day2")
             {

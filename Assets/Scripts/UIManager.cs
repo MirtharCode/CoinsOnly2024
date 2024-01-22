@@ -50,6 +50,35 @@ public class UIManager : MonoBehaviour
     [SerializeField] public int internalCount = 0;
     [SerializeField] public TMP_Text traductorText;
 
+    [Header("MINIIMAGES")]
+    [SerializeField] public Image clientImage;
+    [SerializeField] public Sprite evilWizardGerard;
+    [SerializeField] public Sprite hybridElvog;
+    [SerializeField] public Sprite limbasticAntonio;
+    [SerializeField] public Sprite elementalTapicio;
+    [SerializeField] public Sprite electropedDenjirenji;
+    [SerializeField] public Sprite hybridMara;
+    [SerializeField] public Sprite limbasticGiovanni;
+    [SerializeField] public Sprite elementalRockon;
+    [SerializeField] public Sprite hybridLepion;
+    [SerializeField] public Sprite evilWizardManolo;
+    [SerializeField] public Sprite limbasticCululu;
+    [SerializeField] public Sprite elementalHandy;
+    [SerializeField] public Sprite hybridPetra;
+    [SerializeField] public Sprite electropedMasermati;
+    [SerializeField] public Sprite evilWizardPijus;
+    [SerializeField] public Sprite limbasticSergio;
+    [SerializeField] public Sprite hybridSaltaralisis;
+    [SerializeField] public Sprite evilWizardManoloMano;
+    [SerializeField] public Sprite electropedRaven;
+    [SerializeField] public Sprite elementalHueso;
+    [SerializeField] public Sprite limbasticPatxi;
+    [SerializeField] public Sprite electropedRustica;
+    [SerializeField] public Sprite elementalJissy;
+    [SerializeField] public Sprite evilWizardElidora;
+    [SerializeField] public Sprite electropedMagmaDora;
+    [SerializeField] public Sprite elJefe;
+
     [Header("BOSS' THINGS")]
     public GameObject phone;
     public GameObject phoneBW;
@@ -59,17 +88,16 @@ public class UIManager : MonoBehaviour
     public bool mostrarJefe = false;
     [SerializeField] public List<string> quejas;
 
+    [Header("NORMATIVAS")]
     public string[] razasNormas;
     [SerializeField] public TextMeshProUGUI textoRaza;
-
     [SerializeField] public GameObject panelMagos;
     [SerializeField] public GameObject panelHibridos;
     [SerializeField] public GameObject panelElementales;
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
 
-    [Header("Detective")]
-
+    [Header("DETECTIVE")]
     [SerializeField] public GameObject panelSospechoso;
     [SerializeField] public GameObject panelSeguro;
     [SerializeField] int variableDetective;

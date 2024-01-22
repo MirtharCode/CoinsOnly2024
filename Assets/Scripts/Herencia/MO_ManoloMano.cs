@@ -16,6 +16,7 @@ public class MO_ManoloMano : MagosOscuros
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().evilWizardManoloMano;
 
             if (currentScene.name == "Day3")
             {

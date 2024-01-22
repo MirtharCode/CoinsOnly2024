@@ -16,6 +16,7 @@ public class E_Tapicio : Elementales
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalTapicio;
 
             if (currentScene.name == "Day1")
             {

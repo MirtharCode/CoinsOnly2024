@@ -17,7 +17,7 @@ public class MO_Geeraard : MagosOscuros
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
-
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().evilWizardGerard;
             if (currentScene.name == "Day1")
             {
                 dialogue.Add("Buenas ciudadano, ya llegó aquí, el inigualable Geeraard, gracias, gracias…");

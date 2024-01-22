@@ -9,6 +9,7 @@ public abstract class Client : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
     [SerializeField] public GameObject uIManager;
+    [SerializeField] public GameObject data;
     [SerializeField] public TMP_Text dialogueUIText;
     [SerializeField] public GameObject dialogueUIPanel;
     [SerializeField] public List<string> dialogue;
@@ -26,6 +27,7 @@ public abstract class Client : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
         uIManager = GameObject.FindGameObjectWithTag("UI");
+        data = GameObject.FindGameObjectWithTag("Data");
         currentScene = SceneManager.GetActiveScene();
         dialogue = new List<string>();
         gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
@@ -71,6 +73,9 @@ public abstract class Client : MonoBehaviour
         else
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
+
+            if (uIManager.GetComponent<UIManager>().propinasNumber >= 50) data.GetComponent<Data>().tipsPoints++;
+
             uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
             Debug.Log("Se acabó el día guachines.");
         }

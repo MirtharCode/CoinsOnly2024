@@ -17,6 +17,7 @@ public class L_Antonio : Limbasticos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticAntonio;
 
             if (currentScene.name == "Day1")
             {

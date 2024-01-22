@@ -16,6 +16,7 @@ public class T_Denjirenji : Tecnopedos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedDenjirenji;
 
             if (currentScene.name == "Day1")
             {

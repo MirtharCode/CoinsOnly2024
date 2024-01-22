@@ -16,6 +16,7 @@ public class H_Saltaralisis : Hibridos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridSaltaralisis;
 
             if (currentScene.name == "Day3")
             {

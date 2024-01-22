@@ -16,6 +16,7 @@ public class T_Masermati : Tecnopedos
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
+            uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedMasermati;
 
             if (currentScene.name == "Day2")
             {
