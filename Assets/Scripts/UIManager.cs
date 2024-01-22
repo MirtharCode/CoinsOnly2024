@@ -598,8 +598,6 @@ public class UIManager : MonoBehaviour
         Color phoneColor = phone.GetComponent<Image>().color;
         Color candleColor = candle.GetComponent<Image>().color;
         float fadeAmount, negFadeAmount;
-
-        print(phoneColor);
         while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
             && candleBAndW.GetComponent<Image>().color.a > 0 && extPropinasBAndW.GetComponent<Image>().color.a > 0
             && intPropinasBAndW.GetComponent<Image>().color.a > 0 && phone.GetComponent<Image>().color.a > 0
@@ -1009,36 +1007,32 @@ public class UIManager : MonoBehaviour
         {
             data.GetComponent<Data>().day0Check = false;
             data.GetComponent<Data>().day1Check = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day2")
         {
             data.GetComponent<Data>().day1Check = false;
             data.GetComponent<Data>().day2Check = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day3")
         {
             data.GetComponent<Data>().day2Check = false;
             data.GetComponent<Data>().day3Check = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day4")
         {
             data.GetComponent<Data>().day3Check = false;
             data.GetComponent<Data>().day4Check = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         else if (currentScene.name == "Day5")
         {
             data.GetComponent<Data>().day4Check = false;
             data.GetComponent<Data>().day5Check = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        SceneManager.LoadScene(8);
     }
 
     public void Salir()
