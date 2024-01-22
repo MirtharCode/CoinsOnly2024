@@ -55,7 +55,7 @@ public class Jefe : RazaJefe
                 dialogue.Add("Parece que sus cuerpos no soportan los ingredientes ilegales que llevan.");
                 dialogue.Add("Eso es menos dinero para mi por desgracia.");
                 dialogue.Add("Pero la multa será peor si me pillan.");
-                dialogue.Add("Recuerda revisar las normas, estarán debajo del catálogo.");
+                dialogue.Add("Recuerda revisar las normas, están a la izquierda de la pantalla.");
                 dialogue.Add("Buena suerte chico nuevo");
 
                 uIManager.GetComponent<UIManager>().ShowText();
