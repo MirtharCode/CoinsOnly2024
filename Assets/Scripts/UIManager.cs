@@ -78,6 +78,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public Sprite evilWizardElidora;
     [SerializeField] public Sprite electropedMagmaDora;
     [SerializeField] public Sprite elJefe;
+    [SerializeField] public Sprite elDetective;
 
     [Header("BOSS' THINGS")]
     public GameObject phone;

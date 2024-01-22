@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ebfd0c4bbdf219d4b9b2a8cc2b78c0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecaee1dd8e3a61942b937496a697ef8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6106,6 +6106,7 @@ MonoBehaviour:
   evilWizardElidora: {fileID: 21300000, guid: 1b979ffa1d3bdf246b19442cc862882d, type: 3}
   electropedMagmaDora: {fileID: 21300000, guid: e2665f1dacea9db47aa1872c602504b1, type: 3}
   elJefe: {fileID: 21300000, guid: 0da2cf28504d19a498bf786187618b50, type: 3}
+  elDetective: {fileID: 21300000, guid: ecaee1dd8e3a61942b937496a697ef8e, type: 3}
   phone: {fileID: 5982892003975076012}
   phoneBW: {fileID: 1507948100468722411}
   jefePanel: {fileID: 5982892005112561856}
