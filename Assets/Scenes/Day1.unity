@@ -1343,10 +1343,10 @@ PrefabInstance:
     - target: {fileID: 5982892003585980693, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1397739548}
+      objectReference: {fileID: 5982892004648951915}
     - target: {fileID: 5982892003585980693, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: Salir
       objectReference: {fileID: 0}
     - target: {fileID: 5982892003777883272, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.x
