@@ -11,6 +11,12 @@ public class T_MagmaDora : Tecnopedos
     [SerializeField] public GameObject product3;
     bool repetirunavez = false;
 
+    protected override void Start()
+    {
+        base.Start();
+        nombre = "Magma Dora";
+    }
+
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)

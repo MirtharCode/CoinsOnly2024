@@ -11,6 +11,12 @@ public class MO_ManoloCabezaPico : MagosOscuros
     [SerializeField] public GameObject product3;
     bool repetirunavez = false;
 
+    protected override void Start()
+    {
+        base.Start();
+        nombre = "Manolo Cabeza Pico";
+    }
+
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)

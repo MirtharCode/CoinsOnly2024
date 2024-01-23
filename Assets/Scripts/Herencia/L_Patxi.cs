@@ -10,6 +10,12 @@ public class L_Patxi : Limbasticos
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
 
+    protected override void Start()
+    {
+        base.Start();
+        nombre = "Patxi";
+    }
+
     bool repetirunavez = false;
 
     protected override void OnCollisionEnter2D(Collision2D collision)

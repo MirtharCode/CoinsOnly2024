@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public int internalCount = 0;
     [SerializeField] public TMP_Text traductorText;
+    [SerializeField] public TMP_Text NombreText;
 
     [Header("MINIIMAGES")]
     [SerializeField] public Image clientImage;
@@ -268,6 +269,7 @@ public class UIManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(true);
 
         traductorText.text = currentCustomer.GetComponent<Client>().raza;
+        NombreText.text = currentCustomer.GetComponent<Client>().nombre;
 
         // Si el actual cliente tiene como nombre "qhsjdjkqshdkq"
         // Llamo al método DialogueTexts al que le paso la cantidad de líneas que tiene su diálogo y que el diálogo en cuestión.

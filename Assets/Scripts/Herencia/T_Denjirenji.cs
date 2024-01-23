@@ -11,6 +11,12 @@ public class T_Denjirenji : Tecnopedos
     [SerializeField] public GameObject product3;
     bool repetirunavez = false;
 
+    protected override void Start()
+    {
+        base.Start();
+        nombre = "Denjirenji";
+    }
+
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)

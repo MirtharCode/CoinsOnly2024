@@ -22,6 +22,7 @@ public abstract class Client : MonoBehaviour
     [SerializeField] public float typingTime;
 
     public string raza;
+    public string nombre;
 
     protected virtual void Start()
     {
