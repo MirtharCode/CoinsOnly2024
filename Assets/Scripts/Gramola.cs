@@ -32,9 +32,16 @@ public class Gramola : MonoBehaviour
     [SerializeField] public Image imageD;
 
     [SerializeField] public bool awakenDetective;
+    [SerializeField] public int vocesSonando;
+    [SerializeField] public GameObject dosVoces;
+    [SerializeField] public GameObject tresCuatroVoces;
+    [SerializeField] public GameObject masDeCuatroVoces;
+
 
     void Start()
     {
+        vocesSonando = 1;
+
         audioSource = GetComponent<AudioSource>();
         musicPanel = GameObject.FindGameObjectWithTag("MusicPanel");
 
@@ -72,7 +79,32 @@ public class Gramola : MonoBehaviour
 
     void Update()
     {
+        if (vocesSonando == 1)
+        {
+            dosVoces.SetActive(false);
+            tresCuatroVoces.SetActive(false);
+            masDeCuatroVoces.SetActive(false);
+        }
 
+        else if (vocesSonando > 1 && vocesSonando < 3)
+        {
+            dosVoces.SetActive(true);
+            tresCuatroVoces.SetActive(false);
+            masDeCuatroVoces.SetActive(false);
+        }
+
+        else if (vocesSonando >= 3 && vocesSonando < 5)
+        {
+            dosVoces.SetActive(true);
+            tresCuatroVoces.SetActive(true);
+            masDeCuatroVoces.SetActive(false);
+        }
+        else if (vocesSonando >= 5)
+        {
+            dosVoces.SetActive(true);
+            tresCuatroVoces.SetActive(true);
+            masDeCuatroVoces.SetActive(true);
+        }
     }
 
     public void DarkWizardsTheme()
@@ -81,22 +113,22 @@ public class Gramola : MonoBehaviour
         {
             musicDarkWizards.mute = false;
             imageDW.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageDW.sprite == musicPlayImage && awakenDetective)
         {
-            musicDetective.Stop();
-            awakenDetective = false;
             EverybodyShuffleling();
-
             musicDarkWizards.mute = false;
             imageDW.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageDW.sprite == musicStopImage)
         {
             musicDarkWizards.mute = true;
             imageDW.sprite = musicPlayImage;
+            vocesSonando--;
         }
     }
     public void HybridsTheme()
@@ -105,22 +137,22 @@ public class Gramola : MonoBehaviour
         {
             musicHybrids.mute = false;
             imageH.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageH.sprite == musicPlayImage && awakenDetective)
         {
-            musicDetective.Stop();
-            awakenDetective = false;
             EverybodyShuffleling();
-
             musicHybrids.mute = false;
             imageH.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageH.sprite == musicStopImage)
         {
             musicHybrids.mute = true;
             imageH.sprite = musicPlayImage;
+            vocesSonando--;
         }
     }
 
@@ -131,39 +163,47 @@ public class Gramola : MonoBehaviour
         {
             musicTecnoP2.mute = false;
             imageT.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageT.sprite == musicPlayImage && awakenDetective)
         {
-            musicDetective.Stop();
-            awakenDetective = false;
             EverybodyShuffleling();
-
             musicTecnoP2.mute = false;
             imageT.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageT.sprite == musicStopImage)
         {
             musicTecnoP2.mute = true;
             imageT.sprite = musicPlayImage;
+            vocesSonando--;
         }
     }
 
-    // qshdhfkbfafkawdhkhdh
-
     public void LimbasticTheme()
     {
-        if (imageL.sprite == musicPlayImage)
+        if (imageL.sprite == musicPlayImage && !awakenDetective)
         {
             musicLimbastics.mute = false;
             imageL.sprite = musicStopImage;
+            vocesSonando++;
+        }
+
+        else if (imageL.sprite == musicPlayImage && awakenDetective)
+        {
+            EverybodyShuffleling();
+            musicLimbastics.mute = false;
+            imageL.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageL.sprite == musicStopImage)
         {
             musicLimbastics.mute = true;
             imageL.sprite = musicPlayImage;
+            vocesSonando--;
         }
     }
 
@@ -173,12 +213,22 @@ public class Gramola : MonoBehaviour
         {
             musicElementals.mute = false;
             imageE.sprite = musicStopImage;
+            vocesSonando++;
+        }
+
+        else if (imageE.sprite == musicPlayImage)
+        {
+            EverybodyShuffleling();
+            musicElementals.mute = false;
+            imageE.sprite = musicStopImage;
+            vocesSonando++;
         }
 
         else if (imageE.sprite == musicStopImage)
         {
             musicElementals.mute = true;
             imageE.sprite = musicPlayImage;
+            vocesSonando--;
         }
     }
 
@@ -187,6 +237,9 @@ public class Gramola : MonoBehaviour
         if (imageD.sprite == musicPlayImage)
         {
             awakenDetective = true;
+
+            GetComponent<AudioSource>().Stop();
+
 
             imageDW.sprite = musicPlayImage;
             musicDarkWizards.mute = true;
@@ -208,23 +261,26 @@ public class Gramola : MonoBehaviour
             musicElementals.mute = true;
             musicElementals.Stop();
 
-            musicDetective.mute = true;
-            imageD.sprite = musicPlayImage;
-
+            musicDetective.mute = false;
             musicDetective.Play();
             imageD.sprite = musicStopImage;
 
-
+            vocesSonando = 1;
         }
 
         else if (imageD.sprite == musicStopImage)
         {
-
+            EverybodyShuffleling();
         }
     }
 
     public void EverybodyShuffleling()
     {
+        musicDetective.Stop();
+        awakenDetective = false;
+        imageD.sprite = musicPlayImage;
+
+        GetComponent<AudioSource>().Play();
         musicDarkWizards.Play();
         musicHybrids.Play();
         musicTecnoP2.Play();
