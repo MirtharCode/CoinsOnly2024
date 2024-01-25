@@ -143,9 +143,9 @@ public class UIManager : MonoBehaviour
         razasNormas = new string[5];
         razasNormas[0] = "Magos Oscuros";
         razasNormas[1] = "Híbridos";
-        razasNormas[2] = "Elementales";
+        razasNormas[2] = "Tecno P2";
         razasNormas[3] = "Limbásticos";
-        razasNormas[4] = "Tecno P2";
+        razasNormas[4] = "Elementales";
 
         razaSeleccionada = 0;
     }
