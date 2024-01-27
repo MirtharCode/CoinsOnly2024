@@ -911,9 +911,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1251263281296449971, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
-      value: "+Los h\xEDbridos tienen prohibido comprar alcohol.\n\n-Cerveza\n\r\n+Los
-        h\xEDbridos no pueden comprar objetos de magia negra.\n\n-Gato muerto\n-Mu\xF1eco
-        voodoo\n"
+      value: "-Los h\xEDbridos tienen prohibido comprar alcohol\n\n+Cerveza\n\r\n-No
+        pueden comprar objetos de magia negra\n\n+Gato muerto\n+Mu\xF1eco voodoo"
       objectReference: {fileID: 0}
     - target: {fileID: 2775524475393652552, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y
@@ -941,10 +940,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3065623176350269651, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
-      value: "+Los elementales no pueden comprar ninguna poci\xF3n.\n\n-Poci\xF3n
-        de man\xE1\n-Poci\xF3n de veneno\n\r\n+A los elementales les cuesta el doble
-        cualquier objeto relacionado con la magia negra.\n\n-Gato muerto\n-Mu\xF1eco
-        voodoo"
+      value: "-No pueden comprar ninguna poci\xF3n\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n
+        de venena\n\r\n-Los objetos de magia negra les cuestan 10 monedas\n\n+Gato
+        muerto\n+Mu\xF1eco voodoo\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4072780603453312514, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_Sprite
@@ -1180,9 +1178,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482168688161743534, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
-      value: "+Los tecn\xF3podos no pueden comprar ninguna poci\xF3n.\n\n-Poci\xF3n
-        de man\xE1\n-Poci\xF3n de veneno\n\r\n+Los tecn\xF3pedos no pueden comprar
-        estos productos juntos:\n\n-Pilas m\xE1gicas\n-Bebida energ\xE9tica"
+      value: "-No pueden comprar ninguna poci\xF3n\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n
+        de veneno\n\r\n-No pueden comprar estos productos juntos\n\n+Pilas m\xE1gicas\r\n+Bebida
+        energ\xE9tica\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1210,9 +1208,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232458244291908560, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
-      value: "+Los limb\xE1sticos no pueden beber nada con cafe\xEDna.\n\n-Bebida
-        energ\xE9tica\r\n\r\n+Los limb\xE1sticos no pueden comprar 2 pociones a la
-        vez.\n\n-Poci\xF3n de man\xE1\n-Poci\xF3n de veneno"
+      value: "-No pueden beber nada con cafe\xEDna\n\n+Bebida energ\xE9tica\n\r\n-No
+        pueden comprar 2 pociones a la vez\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n de
+        veneno\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7639913253863037820, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_Sprite
@@ -1268,9 +1266,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538305245717071616, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
-      value: "+Los magos tienen una rebaja del 50 % en estos objetos m\xE1gicos\n\n-Runas
-        m\xE1gicas\n-Bola de cristal\n-Pilas m\xE1gicas\n\r\n+Los magos no pueden
-        comprar 2 pociones a la vez\n\n-Poci\xF3n de man\xE1\n-Poci\xF3n de veneno"
+      value: "-Los objetos m\xE1gicos les cuestan 2 monedas\n\n+Runas m\xE1gicas\n+Bola
+        de cristal\n\r\n-Los magos no pueden comprar 2 pociones a la vez\n\n+Poci\xF3n
+        de man\xE1\n+Poci\xF3n de veneno\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8850915488586664425, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y

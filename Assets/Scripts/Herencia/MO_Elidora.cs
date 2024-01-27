@@ -88,7 +88,7 @@ public class MO_Elidora : MagosOscuros
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "26";
         }
 
         else if (currentScene.name == "Day5")
@@ -99,7 +99,7 @@ public class MO_Elidora : MagosOscuros
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
     }
 

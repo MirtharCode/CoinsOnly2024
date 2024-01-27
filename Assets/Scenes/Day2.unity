@@ -3302,8 +3302,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+Los elementales no pueden comprar ninguna poci\xF3n.\n\n-Poci\xF3n de
-    man\xE1\n-Poci\xF3n de veneno\n"
+  m_text: "-No pueden comprar ninguna poci\xF3n.\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n
+    de veneno\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -5123,9 +5123,9 @@ RectTransform:
   m_Father: {fileID: 4950159101420796073}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 206.97, y: -457.195}
   m_SizeDelta: {x: 413.94, y: 914.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4647982693382691074
@@ -16091,8 +16091,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+Los tecn\xF3podos no pueden comprar ninguna poci\xF3n.\n\n-Poci\xF3n
-    de man\xE1\n-Poci\xF3n de veneno\n"
+  m_text: "-No pueden comprar ninguna poci\xF3n.\n\n+Poci\xF3n de man\xE1\n+Poci\xF3n
+    de veneno\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -17025,7 +17025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+Los limb\xE1sticos no pueden beber nada con cafe\xEDna.\n\n-Bebida energ\xE9tica\n"
+  m_text: "-No pueden beber nada con cafe\xEDna.\n\n+Bebida energ\xE9tica\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -18385,8 +18385,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+Los magos tienen una rebaja del 50 % en estos objetos m\xE1gicos.\n\n-Runas
-    m\xE1gicas\n-Bola de cristal\n-Pilas m\xE1gicas"
+  m_text: "-Los objetos m\xE1gicos les cuestan 2 monedas\n\n+Runas m\xE1gicas\n+Bola
+    de cristal\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}

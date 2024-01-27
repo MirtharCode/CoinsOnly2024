@@ -96,7 +96,7 @@ public class MO_Geeraard : MagosOscuros
             product3 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
 
-            uIManager.GetComponent<UIManager>().leDineroText.text = "17";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
         }
     }
 

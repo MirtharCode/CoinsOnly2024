@@ -95,7 +95,7 @@ public class T_Raven : Tecnopedos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "24";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "20";
         }
     }
 

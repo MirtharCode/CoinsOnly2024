@@ -92,7 +92,7 @@ public class L_Antonio : Limbasticos
             product3 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
 
-            uIManager.GetComponent<UIManager>().leDineroText.text = "24";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
         }
     }
 

@@ -89,9 +89,9 @@ public class DetectiveHijo : DetectivePadre
                 dialogue.Add("Esta noche, haremos una redada en la iglesia para encerrar a los miembros.");
                 dialogue.Add("Así que puede que en nada vayamos a cerrar el caso, aunque aún nos queda una cosa por resolver.");
                 dialogue.Add("Quién fue la persona que le dió con el orbe al fiambre.");
-                dialogue.Add("Tenemos algunos sospechosos, pero no estamos del todo seguros.");
+                dialogue.Add("Tenemos algunos sospechosos, pero creemos que es el líder principal.");
                 dialogue.Add("Hasta el detective Black no sabe quién arrestar.");
-                dialogue.Add("Dime humano, ¿quién crees que fue quién lo mató?");
+                dialogue.Add("Dime humano, ¿quién crees qué es el líder?");
                 dialogue.Add("Muchas gracias por ayudar en el caso, espero que nos volvamos a ver.");
 
                 uIManager.GetComponent<UIManager>().ShowText();

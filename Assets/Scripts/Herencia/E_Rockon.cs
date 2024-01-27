@@ -81,7 +81,7 @@ public class E_Rockon : Elementales
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "6";
         }
 
         else if (currentScene.name == "Day5")
@@ -92,7 +92,7 @@ public class E_Rockon : Elementales
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "20";
         }
     }
 
