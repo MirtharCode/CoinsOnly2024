@@ -39,7 +39,7 @@ public class Transiciones : MonoBehaviour
             
             (data.GetComponent<Data>().tipsPoints == 3 || data.GetComponent<Data>().tipsPoints == 4)) SceneManager.LoadScene(11);   // Si acabas el juego habiendo obtenido +50 en tres o cuatro días, pasas al final bueno.
         else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 5
-        && data.GetComponent<Data>().detectivePoints >= 3) SceneManager.LoadScene(13);           // Si acabas el juego habiendo obtenido +50 en los cinco días, y aparte aciertas al mmenos tres veces con el detective, vas al final secreto.
+        && data.GetComponent<Data>().detectivePoints == 4) SceneManager.LoadScene(13);           // Si acabas el juego habiendo obtenido +50 en los cinco días, y aparte aciertas al mmenos tres veces con el detective, vas al final secreto.
 
 
         else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 5) SceneManager.LoadScene(12);      // Si acabas el juego habiendo obtenido +50 en los cinco días, pasas al final muy bueno.
