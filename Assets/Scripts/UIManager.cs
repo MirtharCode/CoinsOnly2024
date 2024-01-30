@@ -98,6 +98,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject panelElementales;
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
+    [SerializeField] public GameObject flechita;
+    bool animaciónFlechita = false;
 
     [Header("DETECTIVE")]
     [SerializeField] public GameObject panelSospechoso;
@@ -159,10 +161,19 @@ public class UIManager : MonoBehaviour
                 canvasPausa.SetActive(false);
                 Time.timeScale = 1;
             }
+
             else
             {
                 canvasPausa.SetActive(true);
                 Time.timeScale = 0;
+            }
+
+            if (dropDownPanelNormativas.activeSelf && animaciónFlechita == false)
+            {
+                flechita.gameObject.GetComponent<Animator>().SetBool("FlechitaGrande", true);
+                flechita.gameObject.GetComponent<Animator>().SetBool("FlechitaGrande", false);
+
+                animaciónFlechita = true;
             }
         }
 
