@@ -555,7 +555,7 @@ MonoBehaviour:
   panelElementales: {fileID: 5288514418266303820}
   panelLimbasticos: {fileID: 3605722944693498074}
   panelTecnopedos: {fileID: 2961625920066124363}
-  flechita: {fileID: 0}
+  flechita: {fileID: 5982892003980231194}
   panelSospechoso: {fileID: 6710720018341896500}
   panelSeguro: {fileID: 1562346667026387284}
   variableDetective: 0
@@ -10383,7 +10383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5982892003964503918
 MonoBehaviour:
   m_ObjectHideFlags: 0
