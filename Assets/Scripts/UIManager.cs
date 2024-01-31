@@ -150,6 +150,8 @@ public class UIManager : MonoBehaviour
         razasNormas[4] = "Elementales";
 
         razaSeleccionada = 0;
+
+        flechita.gameObject.GetComponent<Animator>().SetTrigger("FlechitaGrande");
     }
 
     void Update()
@@ -166,14 +168,6 @@ public class UIManager : MonoBehaviour
             {
                 canvasPausa.SetActive(true);
                 Time.timeScale = 0;
-            }
-
-            if (dropDownPanelNormativas.activeSelf && animaciónFlechita == false)
-            {
-                flechita.gameObject.GetComponent<Animator>().SetBool("FlechitaGrande", true);
-                flechita.gameObject.GetComponent<Animator>().SetBool("FlechitaGrande", false);
-
-                animaciónFlechita = true;
             }
         }
 
