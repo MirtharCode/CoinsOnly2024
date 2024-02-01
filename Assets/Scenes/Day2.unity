@@ -555,7 +555,6 @@ MonoBehaviour:
   panelElementales: {fileID: 5288514418266303820}
   panelLimbasticos: {fileID: 3605722944693498074}
   panelTecnopedos: {fileID: 2961625920066124363}
-  flechita: {fileID: 5982892003980231194}
   panelSospechoso: {fileID: 6710720018341896500}
   panelSeguro: {fileID: 1562346667026387284}
   variableDetective: 0
@@ -10493,6 +10492,7 @@ GameObject:
   - component: {fileID: 5982892003980231199}
   - component: {fileID: 5982892003980231196}
   - component: {fileID: 5982892003980231200}
+  - component: {fileID: 5982892003980231201}
   m_Layer: 5
   m_Name: Button-DesplegarNormativas
   m_TagString: Untagged
@@ -10635,6 +10635,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5982892003980231201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982892003980231194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b572a14210e314a89cbee6fba21881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5982892004030530634
 GameObject:
   m_ObjectHideFlags: 0
