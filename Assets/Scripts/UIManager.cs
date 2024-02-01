@@ -98,8 +98,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject panelElementales;
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
-    [SerializeField] public GameObject flechita;
-    bool animaciónFlechita = false;
 
     [Header("DETECTIVE")]
     [SerializeField] public GameObject panelSospechoso;
@@ -150,8 +148,6 @@ public class UIManager : MonoBehaviour
         razasNormas[4] = "Elementales";
 
         razaSeleccionada = 0;
-
-        flechita.gameObject.GetComponent<Animator>().SetTrigger("FlechitaGrande");
     }
 
     void Update()
