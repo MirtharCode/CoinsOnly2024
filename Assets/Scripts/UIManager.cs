@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject botonDesplegadoPrecios;
     [SerializeField] public GameObject position1Precios;
     [SerializeField] public GameObject position2Precios;
+    [SerializeField] public GameObject preciosButton;
 
     [SerializeField] public bool listOpenNormativas = false;
     [SerializeField] public GameObject dropDownPanelNormativas;
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject panelElementales;
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
+    [SerializeField] public GameObject normativasButton;
 
     [Header("DETECTIVE")]
     [SerializeField] public GameObject panelSospechoso;
@@ -349,6 +351,12 @@ public class UIManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         dropDownPanelPrecios.gameObject.SetActive(true);
         dropDownPanelNormativas.gameObject.SetActive(true);
+
+        if(currentScene.name == "Day1")
+            preciosButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
+
+        if (currentScene.name == "Day2")
+            normativasButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
 
         if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
         {

@@ -54,6 +54,7 @@ public class L_Giovanni : Limbasticos
 
             else if (currentScene.name == "Day2")
             {
+
                 dialogue.Add("Bon día amigo mío, espero que te esté yendo bien estos días.");
                 dialogue.Add("A mí el último plato del otro día no salió como me esperaba la verdad… Me salió... ¡PERFECTO! ");
                 dialogue.Add("Me salió... ¡PERFECTO! ");
