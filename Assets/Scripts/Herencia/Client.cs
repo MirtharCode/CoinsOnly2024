@@ -23,6 +23,8 @@ public abstract class Client : MonoBehaviour
 
     public string raza;
     public string nombre;
+    public AudioSource talkingSound;
+    public AudioClip[] sounds = new AudioClip[5];
 
     protected virtual void Start()
     {
@@ -30,6 +32,7 @@ public abstract class Client : MonoBehaviour
         uIManager = GameObject.FindGameObjectWithTag("UI");
         data = GameObject.FindGameObjectWithTag("Data");
         currentScene = SceneManager.GetActiveScene();
+        talkingSound = GetComponent<AudioSource>();
         dialogue = new List<string>();
         gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
         oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
@@ -89,6 +92,39 @@ public abstract class Client : MonoBehaviour
         //Debug.Log("Antes de esperar");
         yield return new WaitForSeconds(3f);
         //Debug.Log("Despues de esperar");
+    }
+
+    public void Speaking()
+    {
+        char[] arrChar = gameManager.GetComponent<GameManager>().chars;
+
+        for (int j = 0; j < arrChar.Length; j++)
+        {
+            if (arrChar[j] != '¿' || arrChar[j] != '¡')
+            {
+                int rdm = Random.Range(0, 3);
+
+                Debug.Log(rdm);
+
+                talkingSound.clip = sounds[rdm];
+                talkingSound.Play();
+                break;
+            }
+
+            else if (arrChar[j] == '¿')
+            {
+                talkingSound.clip = sounds[3];
+                talkingSound.Play();
+                break;
+            }
+
+            else if (arrChar[j] == '¡')
+            {
+                talkingSound.clip = sounds[4];
+                talkingSound.Play();
+                break;
+            }
+        }
     }
 
 }

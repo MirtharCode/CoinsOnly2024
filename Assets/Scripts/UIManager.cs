@@ -282,6 +282,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
 
             //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
@@ -293,6 +295,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
 
             //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
@@ -304,6 +308,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
         }
 
@@ -311,6 +317,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
 
             //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
@@ -322,6 +330,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
 
             //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
@@ -334,7 +344,8 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-            //SoundCreator(dialogueText.text);
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
             //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
@@ -352,7 +363,7 @@ public class UIManager : MonoBehaviour
         dropDownPanelPrecios.gameObject.SetActive(true);
         dropDownPanelNormativas.gameObject.SetActive(true);
 
-        if(currentScene.name == "Day1")
+        if (currentScene.name == "Day1")
             preciosButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
 
         if (currentScene.name == "Day2")

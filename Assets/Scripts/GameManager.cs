@@ -96,16 +96,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvas;
     public Scene currentScene;
 
-
-
-    #region Código Antiguo
     [SerializeField] public TMP_Text initialConversationText;
     [SerializeField] public char[] chars;
     [SerializeField] public string[] words;
     [SerializeField] public int[] wordsDuration;
-    [SerializeField] public AudioSource conversationSound;
-    [SerializeField] public AudioClip[] marianoSounds;
-    #endregion
+    //[SerializeField] public AudioSource conversationSound;
+    //[SerializeField] public AudioClip[] marianoSounds;
 
     void Start()
     {
@@ -236,11 +232,102 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
     }
 
+    public void SoundCreator(string texto)
+    {
+        chars = new char[texto.Length];
+        string[] provisionalWords = new string[texto.Length];
+        int pauses = 0;
+        int huecoPalabra = 0;
+
+
+        for (int i = 0; i < texto.Length; i++)
+        {
+            if (texto[i] == ' ')
+            {
+                pauses++;
+                huecoPalabra++;
+            }
+
+            else if (texto[i] != ' ')
+                provisionalWords[huecoPalabra] += texto[i];
+
+            chars[i] = texto[i];
+        }
+
+        int palabrasTotales = huecoPalabra + 1;
+        words = new string[palabrasTotales];
+
+        for (int i = 0; i < palabrasTotales; i++)
+        {
+            words[i] = provisionalWords[i];
+        }
+
+        wordsDuration = new int[words.Length];
+
+        for (int i = 0; i < wordsDuration.Length; i++)
+        {
+            for (int j = 0; j < words[i].Length; j++)
+            {
+                wordsDuration[i]++;
+            }
+        }
+
+        //StartCoroutine(SoundMaker());
+    }
+
+    #region Código Antiguo
+
+    //IEnumerator SoundMaker()
+    //{
+
+    //    for (int i = 0; i < wordsDuration.Length; i++)
+    //    {
+    //        if (wordsDuration[i] < 3)
+    //        {
+    //            conversationSound.clip = marianoSounds[1];
+
+    //            float duration = conversationSound.clip.length / 2f;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
+
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
+
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
+
+    //        else if (wordsDuration[i] < 7)
+    //        {
+    //            conversationSound.clip = marianoSounds[4];
+
+    //            float duration = conversationSound.clip.length / 2f;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
+
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
+
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
+
+    //        else
+    //        {
+    //            conversationSound.clip = marianoSounds[7];
+
+    //            float duration = conversationSound.clip.length / 32;
+    //            float randomPitch = Random.Range(0.9f, 1.1f);
+
+    //            conversationSound.pitch = randomPitch;
+    //            conversationSound.Play();
+
+    //            yield return new WaitWhile(() => conversationSound.isPlaying);
+    //        }
+    //    }
+
+
     //public void MoreSpeed()
     //{
     //    currentCustomer.GetComponent<Client>().typingTime = 0;
     //}
-    #region Código Antiguo
+
     //void firstEntrance(int random)
     //{
     //    if (random == 1)
@@ -368,95 +455,6 @@ public class GameManager : MonoBehaviour
     //                GameObject clon = Instantiate(boughtProducts[i], soldPlaces[i].transform.position, soldPlaces[i].transform.rotation);
     //                clon.transform.parent = soldPlaces[i].transform;
     //            }
-    //        }
-    //    }
-    //}
-
-    //public void SoundCreator(string texto)
-    //{
-    //    chars = new char[texto.Length];
-    //    string[] provisionalWords = new string[texto.Length];
-    //    int pauses = 0;
-    //    int huecoPalabra = 0;
-
-
-    //    for (int i = 0; i < texto.Length; i++)
-    //    {
-    //        if (texto[i] == ' ')
-    //        {
-    //            pauses++;
-    //            huecoPalabra++;
-    //        }
-
-    //        else if (texto[i] != ' ')
-    //            provisionalWords[huecoPalabra] += texto[i];
-
-    //        chars[i] = texto[i];
-    //    }
-
-    //    int palabrasTotales = huecoPalabra + 1;
-    //    words = new string[palabrasTotales];
-
-    //    for (int i = 0; i < palabrasTotales; i++)
-    //    {
-    //        words[i] = provisionalWords[i];
-    //    }
-
-    //    wordsDuration = new int[words.Length];
-
-    //    for (int i = 0; i < wordsDuration.Length; i++)
-    //    {
-    //        for (int j = 0; j < words[i].Length; j++)
-    //        {
-    //            wordsDuration[i]++;
-    //        }
-    //    }
-
-    //    //StartCoroutine(SoundMaker());
-    //}
-
-    //IEnumerator SoundMaker()
-    //{
-
-    //    for (int i = 0; i < wordsDuration.Length; i++)
-    //    {
-    //        if (wordsDuration[i] < 3)
-    //        {
-    //            conversationSound.clip = marianoSounds[1];
-
-    //            float duration = conversationSound.clip.length / 2f;
-    //            float randomPitch = Random.Range(0.9f, 1.1f);
-
-    //            conversationSound.pitch = randomPitch;
-    //            conversationSound.Play();
-
-    //            yield return new WaitWhile(() => conversationSound.isPlaying);
-    //        }
-
-    //        else if (wordsDuration[i] < 7)
-    //        {
-    //            conversationSound.clip = marianoSounds[4];
-
-    //            float duration = conversationSound.clip.length / 2f;
-    //            float randomPitch = Random.Range(0.9f, 1.1f);
-
-    //            conversationSound.pitch = randomPitch;
-    //            conversationSound.Play();
-
-    //            yield return new WaitWhile(() => conversationSound.isPlaying);
-    //        }
-
-    //        else
-    //        {
-    //            conversationSound.clip = marianoSounds[7];
-
-    //            float duration = conversationSound.clip.length / 32;
-    //            float randomPitch = Random.Range(0.9f, 1.1f);
-
-    //            conversationSound.pitch = randomPitch;
-    //            conversationSound.Play();
-
-    //            yield return new WaitWhile(() => conversationSound.isPlaying);
     //        }
     //    }
     //}
