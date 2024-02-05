@@ -162,6 +162,13 @@ MonoBehaviour:
   typingTime: 0
   raza: 
   nombre: 
+  talkingSound: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: cfa063eb6d97fd74b8bdaec1cbca4613, type: 3}
+  - {fileID: 8300000, guid: 942402a6e3005184399acc2292f51bdd, type: 3}
+  - {fileID: 8300000, guid: 2b19d83dba6547444b18b7e3c552608f, type: 3}
+  - {fileID: 8300000, guid: c52ecea6929f00540b33196dfc2fde0b, type: 3}
+  - {fileID: 8300000, guid: 934a5dc3429227d4199bc70d260e31b5, type: 3}
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}
