@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public TMP_Text initialConversationText;
     [SerializeField] public char[] chars;
-    [SerializeField] public string[] words;
-    [SerializeField] public int[] wordsDuration;
+    //[SerializeField] public string[] words;
+    //[SerializeField] public int[] wordsDuration;
     //[SerializeField] public AudioSource conversationSound;
     //[SerializeField] public AudioClip[] marianoSounds;
 
@@ -254,23 +254,23 @@ public class GameManager : MonoBehaviour
             chars[i] = texto[i];
         }
 
-        int palabrasTotales = huecoPalabra + 1;
-        words = new string[palabrasTotales];
+        //int palabrasTotales = huecoPalabra + 1;
+        //words = new string[palabrasTotales];
 
-        for (int i = 0; i < palabrasTotales; i++)
-        {
-            words[i] = provisionalWords[i];
-        }
+        //for (int i = 0; i < palabrasTotales; i++)
+        //{
+        //    words[i] = provisionalWords[i];
+        //}
 
-        wordsDuration = new int[words.Length];
+        //wordsDuration = new int[words.Length];
 
-        for (int i = 0; i < wordsDuration.Length; i++)
-        {
-            for (int j = 0; j < words[i].Length; j++)
-            {
-                wordsDuration[i]++;
-            }
-        }
+        //for (int i = 0; i < wordsDuration.Length; i++)
+        //{
+        //    for (int j = 0; j < words[i].Length; j++)
+        //    {
+        //        wordsDuration[i]++;
+        //    }
+        //}
 
         //StartCoroutine(SoundMaker());
     }
