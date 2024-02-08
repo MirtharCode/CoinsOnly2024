@@ -5923,6 +5923,7 @@ MonoBehaviour:
   botonDesplegadoPrecios: {fileID: 1279577738669220075}
   position1Precios: {fileID: 5982892004230308821}
   position2Precios: {fileID: 5982892004935337535}
+  preciosButton: {fileID: 0}
   listOpenNormativas: 0
   dropDownPanelNormativas: {fileID: 5982892005186836047}
   botonPlegadoNormativas: {fileID: 5982892004976646699}
@@ -5987,6 +5988,7 @@ MonoBehaviour:
   panelElementales: {fileID: 5288514417039817839}
   panelLimbasticos: {fileID: 3605722945677533689}
   panelTecnopedos: {fileID: 2961625920959064936}
+  normativasButton: {fileID: 0}
   panelSospechoso: {fileID: 6710720017448890391}
   panelSeguro: {fileID: 1562346668020744311}
   variableDetective: 0
@@ -14774,7 +14776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd944b077b2a2c041a551aacd628bec4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1b6f308790616b45b5a5e730c4b1cb9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
