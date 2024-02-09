@@ -24,6 +24,7 @@ public abstract class Client : MonoBehaviour
     public string raza;
     public string nombre;
     public AudioSource talkingSound;
+    public AudioClip lastPlayerSound;
     public AudioClip[] sounds = new AudioClip[5];
 
     protected virtual void Start()
@@ -105,9 +106,11 @@ public abstract class Client : MonoBehaviour
                 int rdm = Random.Range(0, 3);
 
                 Debug.Log(rdm);
+                AudioClip nextSound = GetRandomSound();
 
-                talkingSound.clip = sounds[rdm];
+                talkingSound.clip = nextSound;
                 talkingSound.Play();
+                lastPlayerSound = nextSound;
                 break;
             }
 
@@ -125,7 +128,19 @@ public abstract class Client : MonoBehaviour
                 break;
             }
         }
-    }
 
+        AudioClip GetRandomSound()
+        {
+            AudioClip randomSound = null;
+
+            // Evita que se reproduzca el mismo sonido dos veces seguidas
+            do
+            {
+                randomSound = sounds[Random.Range(0, 3)];
+            } while (randomSound == lastPlayerSound);
+
+            return randomSound;
+        }
+    }
 }
 
