@@ -163,12 +163,13 @@ MonoBehaviour:
   raza: 
   nombre: 
   talkingSound: {fileID: 0}
+  lastPlayerSound: {fileID: 0}
   sounds:
-  - {fileID: 8300000, guid: 198a6c0773e053348a0f0d57eccb72fb, type: 3}
-  - {fileID: 8300000, guid: 4d40ad8c905dc444aae5eacdff0bf817, type: 3}
-  - {fileID: 8300000, guid: 9afdf96313be3f047ac813e9d4f8b4fc, type: 3}
-  - {fileID: 8300000, guid: a2bf3e44588f4c8409c4b92f2df63394, type: 3}
-  - {fileID: 8300000, guid: 6353e40da8e581e46b7c0ad3f1e2aa33, type: 3}
+  - {fileID: 8300000, guid: 1d6f38b7bbbc01546a91c6723b40316e, type: 3}
+  - {fileID: 8300000, guid: 8c9d32f9addedcc4885263b5143a1701, type: 3}
+  - {fileID: 8300000, guid: af66575cef301f64cb1eb57ac61eb072, type: 3}
+  - {fileID: 8300000, guid: ad6f1a617081bd64e955fff1090965b2, type: 3}
+  - {fileID: 8300000, guid: b836962fa8abd254b9464980c1ccdd4c, type: 3}
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}
