@@ -10,35 +10,23 @@ public class PilaManager : MonoBehaviour
     [SerializeField] public GameObject pila2;
     [SerializeField] public GameObject victoriaPanel;
     [SerializeField] public GameObject derrotaPanel;
+    [SerializeField] public GameObject tutorialPanel;
     [SerializeField] public float tiempoMaximo;
     [SerializeField] public Slider slider;
     public float tiempoActual;
     public bool tiempoActivado = false;
-    public Animation anim;
 
     void Start()
     {
         pila1 = GameObject.FindGameObjectWithTag("Player");
-        ActivarTemporizador();
-        //anim = GetComponent<Animation>();
-        //StartCoroutine(EsperarAnimacion());
+
+        if (!tutorialPanel.activeInHierarchy) ActivarTemporizador();
     }
 
     void Update()
     {
-        if (tiempoActivado)
-        {
-            CambiarContador();
-        }
+        if (tiempoActivado) CambiarContador();
     }
-
-    //IEnumerator EsperarAnimacion()
-    //{
-    //    anim.Play();
-
-    //    yield return new WaitForSeconds(anim.clip.length);
-    //}
-
 
     public void Victoria()
     {
@@ -54,12 +42,12 @@ public class PilaManager : MonoBehaviour
     {
         tiempoActual -= Time.deltaTime;
 
-        if(tiempoActual >= 0)
+        if (tiempoActual >= 0)
         {
             slider.value = tiempoActual;
         }
 
-        if(tiempoActual <= 0)
+        if (tiempoActual <= 0)
         {
             Debug.Log("Derrota");
             derrotaPanel.SetActive(true);
@@ -76,6 +64,7 @@ public class PilaManager : MonoBehaviour
 
     public void ActivarTemporizador()
     {
+        pila1.GetComponent<Pila>().enabled = true;
         tiempoActual = tiempoMaximo;
         slider.maxValue = tiempoMaximo;
         CambiarTemporizador(true);
