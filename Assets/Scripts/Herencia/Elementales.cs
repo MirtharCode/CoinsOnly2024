@@ -17,7 +17,10 @@ public abstract class Elementales : Client
         gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(4).GetComponent<AudioSource>().mute = false;
     }
 
-    protected abstract void OnCollisionEnter2D(Collision2D collision);
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Relleno
+    }
     public override void ShowProductsAndMoney()
     {
         //Relleno

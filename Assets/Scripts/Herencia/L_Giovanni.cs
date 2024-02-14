@@ -9,7 +9,6 @@ public class L_Giovanni : Limbasticos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -26,23 +25,23 @@ public class L_Giovanni : Limbasticos
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("¡Ahoy, amigo mío! Soy Giovanni.");
-                dialogue.Add("No sabes lo que me encontré hoy.");
-                dialogue.Add("¡EL N-E-C-R-O-N-O-M-I-C-Ó-N!");
-                dialogue.Add("Es el libro de cocina definitivo, o eso creo…");
-                dialogue.Add("Bueno, solo con decirte la primera receta te va a encantar.");
-                dialogue.Add("“Cómo invocar a Azathoth”");
-                dialogue.Add("Suena increíble este plato, pillaré algunos ingredientes para hacer el plato.");
-                dialogue.Add("“Primer paso: rociar vino hecho de sangre de virgen”");
-                dialogue.Add("Cambiaré el vino por una buena cerveza, le dará más sabor.");
-                dialogue.Add("“Segundo paso: cortar el muñeco voodoo por la mitad junto con la persona sacrificada”");
-                dialogue.Add("No sé qué es eso de la persona sacrificada, pero el muñeco tiene buena pinta.");
-                dialogue.Add("“Y tercer paso: beber el veneno para que el Dios se adueñe de tu cuerpo”");
-                dialogue.Add("No suelo beber veneno, pero creo que se lo echaré al muñeco para darle el toque picante.");
-                dialogue.Add("Tiene buena pinta ¿verdad? Para eso necesito estos ingredientes, así que si puedes cobrarme.");
+                //dialogue.Add("¡Ahoy, amigo mío! Soy Giovanni.");
+                //dialogue.Add("No sabes lo que me encontré hoy.");
+                //dialogue.Add("¡EL N-E-C-R-O-N-O-M-I-C-Ó-N!");
+                //dialogue.Add("Es el libro de cocina definitivo, o eso creo…");
+                //dialogue.Add("Bueno, solo con decirte la primera receta te va a encantar.");
+                //dialogue.Add("“Cómo invocar a Azathoth”");
+                //dialogue.Add("Suena increíble este plato, pillaré algunos ingredientes para hacer el plato.");
+                //dialogue.Add("“Primer paso: rociar vino hecho de sangre de virgen”");
+                //dialogue.Add("Cambiaré el vino por una buena cerveza, le dará más sabor.");
+                //dialogue.Add("“Segundo paso: cortar el muñeco voodoo por la mitad junto con la persona sacrificada”");
+                //dialogue.Add("No sé qué es eso de la persona sacrificada, pero el muñeco tiene buena pinta.");
+                //dialogue.Add("“Y tercer paso: beber el veneno para que el Dios se adueñe de tu cuerpo”");
+                //dialogue.Add("No suelo beber veneno, pero creo que se lo echaré al muñeco para darle el toque picante.");
+                //dialogue.Add("Tiene buena pinta ¿verdad? Para eso necesito estos ingredientes, así que si puedes cobrarme.");
 
-                dialogue.Add("Gracias, la próxima vez que vuelva te dejaré probar el plato para que me des tu opinión.");
-                dialogue.Add("Madre mía, ahora te perderás el mejor plato del mundo, pillaré las cosas en otro sitio.");
+                //dialogue.Add("Gracias, la próxima vez que vuelva te dejaré probar el plato para que me des tu opinión.");
+                //dialogue.Add("Madre mía, ahora te perderás el mejor plato del mundo, pillaré las cosas en otro sitio.");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 

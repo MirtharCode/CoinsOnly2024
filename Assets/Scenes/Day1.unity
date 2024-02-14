@@ -341,6 +341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: spaSpain
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -510,19 +514,6 @@ MonoBehaviour:
     m_Handle: 0
   initialConversationText: {fileID: 0}
   chars: 
-  words: []
-  wordsDuration: 
-  conversationSound: {fileID: 0}
-  marianoSounds:
-  - {fileID: 8300000, guid: 2d6b78a5ee4c8be4983dc283632db2cb, type: 3}
-  - {fileID: 8300000, guid: b1f5e1c135f4686499ac872ebf57578e, type: 3}
-  - {fileID: 8300000, guid: edd43313c1114d44f8ef523fa1a816fa, type: 3}
-  - {fileID: 8300000, guid: 2eb495874c4d0b842911434635d3e881, type: 3}
-  - {fileID: 8300000, guid: 874ffd071247fe74dba37fb907651a0d, type: 3}
-  - {fileID: 8300000, guid: 972bcfdd605f8e646b9e5a18e0472a84, type: 3}
-  - {fileID: 8300000, guid: 74eacd6b6c870094eb6a546c9e511b1e, type: 3}
-  - {fileID: 8300000, guid: 2f189c2b328c51b429bb2a2d5f080b58, type: 3}
-  - {fileID: 8300000, guid: ee1555e08bbd807408e9b9c63b77de0b, type: 3}
 --- !u!4 &1318056130
 Transform:
   m_ObjectHideFlags: 0

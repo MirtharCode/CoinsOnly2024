@@ -9,7 +9,6 @@ public class H_Lepion : Hibridos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -23,6 +22,7 @@ public class H_Lepion : Hibridos
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridLepion;
+            data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day2")
             {

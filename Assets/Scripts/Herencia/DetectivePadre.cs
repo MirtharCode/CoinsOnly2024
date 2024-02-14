@@ -19,7 +19,10 @@ public abstract class DetectivePadre : Client
         gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(5).GetComponent<AudioSource>().Play();
     }
 
-    protected abstract void OnCollisionEnter2D(Collision2D collision);
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Relleno
+    }
     public override void ShowProductsAndMoney()
     {
         //Relleno

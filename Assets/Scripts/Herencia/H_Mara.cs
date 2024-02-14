@@ -9,7 +9,6 @@ public class H_Mara : Hibridos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -26,19 +25,19 @@ public class H_Mara : Hibridos
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Buenos días querido, soy Mara.");
-                dialogue.Add("¿Podías luego ayudarme a cargar esto hasta fuera?");
-                dialogue.Add("Uy uy, que digo, me imagino que no puedes abandonar tu puesto.");
-                dialogue.Add("Desde que no está mi marido, me cuesta más cargar la compra.");
-                dialogue.Add("Pero bueno, como quiero que esté mi marido si me lo comí.");
-                dialogue.Add("...");
-                dialogue.Add("Que raro que estés inexpresivo, siempre que cuento eso se asustan.");
-                dialogue.Add("No sé porque no se normaliza que los manguros nos comamos a nuestra pareja.");
-                dialogue.Add("Pero sólo para reproducirnos, no somos unos monstruos.");
-                dialogue.Add("Bueno, deberías cobrarme, que tengo que recoger a mi niño del zoo.");
+                //dialogue.Add("Buenos días querido, soy Mara.");
+                //dialogue.Add("¿Podías luego ayudarme a cargar esto hasta fuera?");
+                //dialogue.Add("Uy uy, que digo, me imagino que no puedes abandonar tu puesto.");
+                //dialogue.Add("Desde que no está mi marido, me cuesta más cargar la compra.");
+                //dialogue.Add("Pero bueno, como quiero que esté mi marido si me lo comí.");
+                //dialogue.Add("...");
+                //dialogue.Add("Que raro que estés inexpresivo, siempre que cuento eso se asustan.");
+                //dialogue.Add("No sé porque no se normaliza que los manguros nos comamos a nuestra pareja.");
+                //dialogue.Add("Pero sólo para reproducirnos, no somos unos monstruos.");
+                //dialogue.Add("Bueno, deberías cobrarme, que tengo que recoger a mi niño del zoo.");
 
-                dialogue.Add("Muchas gracias joven, espero que tu pareja te coma pronto también ji ji ji.");
-                dialogue.Add("¿Perdona? Ahora por tu culpa mi hijo no tendrá su gato muerto, él solo quería una mascota");
+                //dialogue.Add("Muchas gracias joven, espero que tu pareja te coma pronto también ji ji ji.");
+                //dialogue.Add("¿Perdona? Ahora por tu culpa mi hijo no tendrá su gato muerto, él solo quería una mascota");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 

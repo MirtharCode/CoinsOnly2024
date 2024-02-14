@@ -16,14 +16,13 @@ public class L_Patxi : Limbasticos
         nombre = "Patxi";
     }
 
-    bool repetirunavez = false;
-
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticPatxi;
+            data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day3")
             {

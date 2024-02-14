@@ -27,6 +27,8 @@ public abstract class Client : MonoBehaviour
     public AudioClip lastPlayerSound;
     public AudioClip[] sounds = new AudioClip[5];
 
+    public bool repetirunavez = false;
+
     protected virtual void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -34,12 +36,16 @@ public abstract class Client : MonoBehaviour
         data = GameObject.FindGameObjectWithTag("Data");
         currentScene = SceneManager.GetActiveScene();
         talkingSound = GetComponent<AudioSource>();
-        dialogue = new List<string>();
         gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
         oneProduct = gameManager.GetComponent<GameManager>().oneProduct.transform;
         twoProducts1 = gameManager.GetComponent<GameManager>().twoProducts1.transform;
         twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
+
+        uIManager.GetComponent<UIManager>().currentCustomer = gameObject;
+        data.GetComponent<Data>().SettingDialogues();
+        dialogue = data.GetComponent<Data>().cCDialogue;
     }
+    protected abstract void OnCollisionEnter2D(Collision2D collision);
 
     public abstract void ShowProductsAndMoney();
     public abstract void ByeBye();

@@ -9,7 +9,6 @@ public class E_Rockon : Elementales
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -26,19 +25,19 @@ public class E_Rockon : Elementales
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("¿Ho-hola que tal?");
-                dialogue.Add("Espero no molestar, y perdona mi tar-tartamudez.");
-                dialogue.Add("En fin, perdona otra vez. No me disculparé más, per-per-perdona.");
-                dialogue.Add("Estoy intentando me-mejorar, como buen Rockon que soy.");
-                dialogue.Add("Debo mejorar, como papá que es muy fuerte.");
-                dialogue.Add("Siempre me ha querido mu-mu-mucho.");
-                dialogue.Add("Mi co-comida favorita es la gravilla que me hacía.");
-                dialogue.Add("Además si le echabas cemento por encima, ya quedaba bueníiiiiisimo.");
-                dialogue.Add("Bu-bu-bueno en fin… ¿Me puedes cobrar esto?");
-                dialogue.Add("Es que le quiero dar una sorpresa a papi, seguro que este gato mu-muerto le hace mucha ilusión.");
+                //dialogue.Add("¿Ho-hola que tal?");
+                //dialogue.Add("Espero no molestar, y perdona mi tar-tartamudez.");
+                //dialogue.Add("En fin, perdona otra vez. No me disculparé más, per-per-perdona.");
+                //dialogue.Add("Estoy intentando me-mejorar, como buen Rockon que soy.");
+                //dialogue.Add("Debo mejorar, como papá que es muy fuerte.");
+                //dialogue.Add("Siempre me ha querido mu-mu-mucho.");
+                //dialogue.Add("Mi co-comida favorita es la gravilla que me hacía.");
+                //dialogue.Add("Además si le echabas cemento por encima, ya quedaba bueníiiiiisimo.");
+                //dialogue.Add("Bu-bu-bueno en fin… ¿Me puedes cobrar esto?");
+                //dialogue.Add("Es que le quiero dar una sorpresa a papi, seguro que este gato mu-muerto le hace mucha ilusión.");
 
-                dialogue.Add("Gra-gra-gracias seguro que mi papaito se pone feliz");
-                dialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a mis papis…");
+                //dialogue.Add("Gra-gra-gracias seguro que mi papaito se pone feliz");
+                //dialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a mis papis…");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 

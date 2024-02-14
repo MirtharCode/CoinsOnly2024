@@ -10,8 +10,6 @@ public class L_Antonio : Limbasticos
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
 
-    bool repetirunavez = false;
-
     protected override void Start()
     {
         base.Start();
@@ -27,18 +25,18 @@ public class L_Antonio : Limbasticos
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Ey…Hola amigo, soy Antonio…¿Qué tal tu día?");
-                dialogue.Add("...");
-                dialogue.Add("Ya veo…No eres muy hablador eh.");
-                dialogue.Add("Te entiendo tio, yo también estoy tan cansado cuando curro en programación.");
-                dialogue.Add(" No se como sobreviví a esta jornada laboral, puede que porque esté muerto.");
-                dialogue.Add(" Ja ja ja ja ja… Perdón, los chistes no son lo mío, mi cabeza no funciona tras un día de trabajo tan duro.");
-                dialogue.Add("Hace que mi cerebro no funciona, porque estoy muerto.");
-                dialogue.Add("Ja ja ja ja ja… Perdón ya paro.");
-                dialogue.Add("Cobrame y dejaré de incomodarte.");
+                //dialogue.Add("Ey…Hola amigo, soy Antonio…¿Qué tal tu día?");
+                //dialogue.Add("...");
+                //dialogue.Add("Ya veo…No eres muy hablador eh.");
+                //dialogue.Add("Te entiendo tio, yo también estoy tan cansado cuando curro en programación.");
+                //dialogue.Add(" No se como sobreviví a esta jornada laboral, puede que porque esté muerto.");
+                //dialogue.Add(" Ja ja ja ja ja… Perdón, los chistes no son lo mío, mi cabeza no funciona tras un día de trabajo tan duro.");
+                //dialogue.Add("Hace que mi cerebro no funciona, porque estoy muerto.");
+                //dialogue.Add("Ja ja ja ja ja… Perdón ya paro.");
+                //dialogue.Add("Cobrame y dejaré de incomodarte.");
 
-                dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero…");
-                dialogue.Add(" Uy, me faltan monedas, siempre se cometen estos errores cuando pierdes la cabeza… Ya paro, nos vemos.");
+                //dialogue.Add("Gra-gracias, aunque ahora que lo pienso no sé si era todo el dinero…");
+                //dialogue.Add(" Uy, me faltan monedas, siempre se cometen estos errores cuando pierdes la cabeza… Ya paro, nos vemos.");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 
