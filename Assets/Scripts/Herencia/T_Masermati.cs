@@ -26,23 +26,6 @@ public class T_Masermati : Tecnopedos
 
             if (currentScene.name == "Day2")
             {
-                dialogue.Add("Hola cocherrumín, estoy preparándome para la carrera del siglo.");
-                dialogue.Add("No me presenté, soy el famoso FMS, Faster More Serious.");
-                dialogue.Add("O como me llamo mi robo-madre, Masermati.");
-                dialogue.Add("Y voy a hacer la primera carrera de mi vida.");
-                dialogue.Add("Aunque espero que no sea la última, no sabes la pasta que cuestan estas mejoras.");
-                dialogue.Add("Los tubos de escape costaron solo 100 monedas.");
-                dialogue.Add("No sabes todos los platos que limpié para tener esa cantidad de monedas.");
-                dialogue.Add("Pero todo este trabajo fue necesario para el día de hoy, para ganar a…");
-                dialogue.Add("¡FLECHA RÁPIDA! El tecnópedo más rápido del reino.");
-                dialogue.Add("Es el coche oficial de Pijus Magnus, el 2º mago más poderoso del reino.");
-                dialogue.Add("O eso dice él, aunque solo lo dice por ser hijo del Rey Mago.");
-                dialogue.Add("Realmente es un tirillas enano, espero que tengas suerte de no encontrarlo.");
-                dialogue.Add("Bueno, cobrame humano, que tengo que estar listo para la carrera.");
-
-                dialogue.Add("Gracias cocherrumín, voy a prepararme para la carrera.");
-                dialogue.Add("¡Pero si tengo suficiente! Da igual, tengo algo de prisa.");
-
                 uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");

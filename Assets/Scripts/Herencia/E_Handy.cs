@@ -26,24 +26,6 @@ public class E_Handy : Elementales
 
             if (currentScene.name == "Day2")
             {
-                dialogue.Add("¡Hola colega! ¿Cómo te encuentras? ¿Bien? ¿Mal?");
-                dialogue.Add("¡YO ESTOY FENOMENAL!");
-                dialogue.Add("Soy Handy, el elemental más fiestero, que ama cualquier celebración.");
-                dialogue.Add("Cumpleaños, bodas, despedidas de solteros y… ¡FUNERALES!");
-                dialogue.Add("Aunque del último funeral me echaron por alguna extraña razón...");
-                dialogue.Add("Estoy tan emocionado amigo mío, tengo una nueva compañera.");
-                dialogue.Add("Se llama Rave-n, incluso estudió fiestología.");
-                dialogue.Add("Aunque me expulsaron del grado de fiestología por mi TFG sobre… ¡ALEGRAR FUNERALES!");
-                dialogue.Add("Se debieron morir de la risa con mi TFG.");
-                dialogue.Add("Bueno colega, sé que estás pasando un buen rato conmigo.");
-                dialogue.Add("Pero tengo una despedida de soltero y tengo que aguantar toda la noche despierto.");
-                dialogue.Add("Y necesito estos utensilios para sobrevivir a los solteros desesperados.");
-                dialogue.Add("Aunque no sé para qué será la bola, me la pidieron los solteros");
-                dialogue.Add("Bueno, cóbrame porfi porfita.");
-
-                dialogue.Add("Voy a hacer una despedida de soltero !INCREÍBLE! Nos vemos colega.");
-                dialogue.Add("Me has borrado la sonrisa tío, pero entiendo que no puedas romper la normativa");
-
                 uIManager.GetComponent<UIManager>().ShowText();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");

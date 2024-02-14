@@ -24,27 +24,13 @@ public class H_Lepion : Hibridos
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridLepion;
             data.GetComponent<Data>().SettingDialogues();
 
-            if (currentScene.name == "Day2")
-            {
-                dialogue.Add("Hola humano.");
-                dialogue.Add("Espera, tu eres el tonto que no sabía contar.");
-                dialogue.Add("Ayer vino aquí ese microondas");
-                dialogue.Add("Y ese cacharro debió darte una moneda más");
-                dialogue.Add("Al menos ahora puedo justificar su despido");
-                dialogue.Add("Aunque el bobo se puso a decir cosas de hacer el harakiri o cosas así.");
-                dialogue.Add("En fin, malditas máquinas japonesas.");
-                dialogue.Add("Ya que estás, cobrame esto, que debo seguir con mi trabajo de blanqueamiento de dinero.");
+            uIManager.GetComponent<UIManager>().ShowText();
 
-                dialogue.Add("Adiós");
-                dialogue.Add("Ni contar sabes, ¿de verdad? Acabas de perder todos los clientes chinos por la zona, \n y espero que pronto pierdas tú el trabajo.");
+            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                uIManager.GetComponent<UIManager>().ShowText();
+            //StartCoroutine(ShowLine());
 
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
         }
     }
 

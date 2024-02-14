@@ -799,7 +799,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 5994435751796410855, guid: 0d82a4c78a9370b4888271e1db910713, type: 3}
   trampilla: {fileID: 536717154}
-  currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
   data: {fileID: 0}
@@ -855,8 +854,6 @@ MonoBehaviour:
     m_Handle: 0
   initialConversationText: {fileID: 0}
   chars: 
-  words: []
-  wordsDuration: 
 --- !u!4 &1318056130
 Transform:
   m_ObjectHideFlags: 0
@@ -1672,6 +1669,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: spaSpain
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: samuraiPagaMal
       value: 0

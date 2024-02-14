@@ -23,29 +23,12 @@ public class MO_PijusMagnus : MagosOscuros
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().evilWizardPijus;
             data.GetComponent<Data>().SettingDialogues();
+            uIManager.GetComponent<UIManager>().ShowText();
 
-            if (currentScene.name == "Day2")
-            {
-                dialogue.Add("Tú ve cobrando esto que tengo prisa.");
-                dialogue.Add("Espera-");
-                dialogue.Add("¡¿Eres humano?! ¿No te da vergüenza respirar el mismo aire que yo?");
-                dialogue.Add("No se ni como pagaste lo suficiente para entrar al reino.");
-                dialogue.Add("Y más te vale que me cobres bien, he leído lo del 50%.");
-                dialogue.Add("Así que quiero que me lo rebajes T-O-D-O.");
-                dialogue.Add("Y como me cobres mal tendré que usar mis poderosa habilidad…");
-                dialogue.Add("El número de mi papi.");
-                dialogue.Add("Espero que me cobres bien, venga.");
+            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                dialogue.Add("Así me gusta humano, no sabía qué os habían enseñado a contar allí.");
-                dialogue.Add("¡Cómo que no sirve la oferta! Pues... Pues… Bonita moneda, me la quedo.");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
+            //StartCoroutine(ShowLine());
         }
     }
 

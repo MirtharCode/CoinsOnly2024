@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f66e067aa583c468b4faf9f433090b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaSpain: 1
+  engAmerican: 0
+  spaColombian: 0
+  uIManager: {fileID: 0}
   numEvilWizard: 0
   numHybrid: 0
   numLimbastic: 0
@@ -79,3 +83,4 @@ MonoBehaviour:
   giftHandy: 0
   giftDenjirenji: 0
   giftRaven: 0
+  cCDialogue: []

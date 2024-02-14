@@ -24,31 +24,12 @@ public class H_Petra : Hibridos
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().hybridPetra;
             data.GetComponent<Data>().SettingDialogues();
 
-            if (currentScene.name == "Day2")
-            {
-                dialogue.Add("Hola dependiente, de verdad que no puedo aguantar más mis ganas de empezar a trabajar.");
-                dialogue.Add("Necesito contárselo a alguien, ¡Por fin puedo ser una exploradora!");
-                dialogue.Add("Necesitaba soltarlo, no sabes lo emocionada que estoy con este nuevo trabajo.");
-                dialogue.Add("Por cierto, no me presenté, me llamo Petra.");
-                dialogue.Add("He estado 12 años en paro desde que no llegué a tiempo a una misión.");
-                dialogue.Add("Pero es lo que pasa cuando eres mitad tortuga y mitad liebre, que mi velocidad siempre será normal.");
-                dialogue.Add("También mi jefe me comentó que esperaba que lo hiciera mejor que el último empleado.");
-                dialogue.Add("Era un sapótamo que se la pasaba bebiendo en el trabajo.");
-                dialogue.Add("Menos mal que no bebo nada de alcohol en mi vida.");
-                dialogue.Add("Uy, perdona, te estoy quitando tiempo.");
-                dialogue.Add("Cobrame esto qué lo necesito para el trabajo.");
+            uIManager.GetComponent<UIManager>().ShowText();
 
-                dialogue.Add("Deseame suerte en mi primer día de curro, ¡Nos vemos!");
-                dialogue.Add("Necesitaba esto de verdad para el trabajo, el jefe me va a despedir y ni empecé.");
+            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
+            //StartCoroutine(ShowLine());         
         }
     }
 

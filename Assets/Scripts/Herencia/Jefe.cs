@@ -22,58 +22,15 @@ public class Jefe : RazaJefe
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elJefe;
             //data.GetComponent<Data>().SettingDialogues();
 
-            if (currentScene.name == "Day1")
-            {
-                //dialogue.Add("Hola chico nuevo, soy tu jefe.");
-                //dialogue.Add("Y cómo sé que es tu primer día, te estaré observando.");
-                //dialogue.Add("Seguro que no serás capaz de atender a los clientes bien.");
-                //dialogue.Add("Ya sabes que todos los humanos sois inútiles.");
-                //dialogue.Add("No lo digo yo, lo dice vuestro cerebro enano.");
-                //dialogue.Add("Pero bueno, como iba diciendo… ¡ATIENDE BIEN!");
-                //dialogue.Add("No quiero perder dinero contigo.");
-                //dialogue.Add("Para cobrar dale al botón verde de la CAJA REGISTRADORA");
-                //dialogue.Add("Y para no cobrar, dale al botón rojo");
-                //dialogue.Add("Y como cobres mal, te quitaré dinero de tu querido tarro.");
-                //dialogue.Add("Tienes el catálogo de la tienda para saber si el cliente tiene dinero suficiente.");
-                //dialogue.Add("Además tendrás una ayuda, la cabeza del antiguo empleado.");
-                //dialogue.Add("Se la arrancó un cliente al que no le vendió su alcohol.");
-                //dialogue.Add("Menos mal que su sistema de traducción sigue funcionando.");
-                //dialogue.Add("No iba a comprarte otro traductor como ese no fuera.");
-                //dialogue.Add("Suerte en tu primer día, chico nuevo.");
+            uIManager.GetComponent<UIManager>().ShowText();
 
-                uIManager.GetComponent<UIManager>().ShowText();
+            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
 
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+            //StartCoroutine(ShowLine());
 
-                //StartCoroutine(ShowLine());
-            }
 
-            else if (currentScene.name == "Day2")
-            {
-                dialogue.Add("Buenos días chico nuevo, soy el jefe.");
-                dialogue.Add("¿Qué tal tu primer día?");
-                dialogue.Add("Nah, es broma, realmente me da igual como te fuera tu primer día.");
-                dialogue.Add("Seguro te lo dije en el tutorial, pero seguro no te acuerdas por tu cerebro enano.");
-                dialogue.Add("Tenemos unas normas que seguir en la tienda.");
-                dialogue.Add("Y hoy es “Magic Friday”, aunque lo seguirá siendo el resto del año, como todos los años...");
-                dialogue.Add("Así que los magos tienen rebajas, y el resto de razas trabajan más a cambio.");
-                dialogue.Add("También han prohibido varias bebidas a algunas razas.");
-                dialogue.Add("Parece que sus cuerpos no soportan los ingredientes ilegales que llevan.");
-                dialogue.Add("Eso es menos dinero para mi por desgracia.");
-                dialogue.Add("Pero la multa será peor si me pillan.");
-                dialogue.Add("Recuerda revisar las normas, están a la izquierda de la pantalla.");
-                dialogue.Add("Buena suerte chico nuevo");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
-            else if (currentScene.name == "Day3")
+            if (currentScene.name == "Day3")
             {
                 dialogue.Add("Buenas chico nuevo, soy el jefe.");
                 dialogue.Add("Parece que estás empezando a acostumbrarte al trabajo.");
@@ -143,4 +100,6 @@ public class Jefe : RazaJefe
     {
         base.ByeBye();
     }
+
+    // El jefe tenía 150 líneas de código.
 }

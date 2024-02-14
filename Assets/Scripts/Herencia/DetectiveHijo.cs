@@ -21,16 +21,7 @@ public class DetectiveHijo : DetectivePadre
 
             if (currentScene.name == "Day2")
             {
-                dialogue.Add("Hola dependiente, soy del departamento de investigación de sucesos paranormales, es decir, soy detective.");
-                dialogue.Add("Y tenía una pregunta respecto a un caso sobre homicidio, alguien ha vuelto un híbrido a un limbástico.");
-                dialogue.Add("Un poco pesado el fiambre diciendo que tenía una cita, pero me da a mi que va a tener que esperar.");
-                dialogue.Add("Creemos que ha podido ser un artefacto mágico el culpable, en concreto un libro de magia.");
-                dialogue.Add("¿Sabes de algún clientes pueda tener un libro mágico?");
-                dialogue.Add("Muchas gracias por la información, espero que tenga un buen día, humano.");
-
                 uIManager.GetComponent<UIManager>().ShowText();
-
-                //GetComponent<GrayscaleScript>().StartGrayscaleRoutine();
 
                 dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
                 dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
