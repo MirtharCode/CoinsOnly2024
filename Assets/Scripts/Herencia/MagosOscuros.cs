@@ -17,11 +17,13 @@ public abstract class MagosOscuros : Client
         gameManager.GetComponent<GameManager>().musicBox.transform.GetChild(4).GetComponent<AudioSource>().mute = true;
     }
 
-    protected abstract void OnCollisionEnter2D(Collision2D collision);
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Relleno
+    }
     public override void ShowProductsAndMoney()
     {
         //Relleno
-
     }
 
     public override void ByeBye()

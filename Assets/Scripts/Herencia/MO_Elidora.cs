@@ -10,8 +10,6 @@ public class MO_Elidora : MagosOscuros
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
 
-    bool repetirunavez = false;
-
     protected override void Start()
     {
         base.Start();
@@ -24,6 +22,7 @@ public class MO_Elidora : MagosOscuros
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().evilWizardElidora;
+            data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day4")
             {

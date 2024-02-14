@@ -9,7 +9,6 @@ public class L_Sergio : Limbasticos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -23,6 +22,7 @@ public class L_Sergio : Limbasticos
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticSergio;
+            data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day3")
             {

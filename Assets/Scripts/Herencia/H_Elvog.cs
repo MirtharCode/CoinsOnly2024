@@ -10,8 +10,6 @@ public class H_Elvog : Hibridos
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
 
-    bool repetirunavez = false;
-
     protected override void Start()
     {
         base.Start();
@@ -27,18 +25,18 @@ public class H_Elvog : Hibridos
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Buennnasss *hip* Eeeehhhhh… tuuu no eres el de sieeeembrree…*hip*");
-                dialogue.Add(" Bueno, el otro erra un ######");
-                dialogue.Add("Ahorra a quién le direee sobre niii despidoooo… Encimaaa eres humanooo…*");
-                dialogue.Add("Ne tocarra contarrrrte a tuuu…*hip * ");
-                dialogue.Add(" Soy Elvog, er ex ex explorador");
-                dialogue.Add("Mooo te looo vasss a creer… el ###### de mi jefeee me despidió *hip*");
-                dialogue.Add("Me dijooo que bebía mushoo alcohooool y que estoy viejo, ¿perro quee dise eseee? *hip*");
-                dialogue.Add("Siii solo temgo 22 añitos, estoooy em la fror de la hueventud *hip*");
-                dialogue.Add("Buemo, che me olvidó *hip*, puedess cobrarme estooo…");
+                //dialogue.Add("Buennnasss *hip* Eeeehhhhh… tuuu no eres el de sieeeembrree…*hip*");
+                //dialogue.Add(" Bueno, el otro erra un ######");
+                //dialogue.Add("Ahorra a quién le direee sobre niii despidoooo… Encimaaa eres humanooo…*");
+                //dialogue.Add("Ne tocarra contarrrrte a tuuu…*hip * ");
+                //dialogue.Add(" Soy Elvog, er ex ex explorador");
+                //dialogue.Add("Mooo te looo vasss a creer… el ###### de mi jefeee me despidió *hip*");
+                //dialogue.Add("Me dijooo que bebía mushoo alcohooool y que estoy viejo, ¿perro quee dise eseee? *hip*");
+                //dialogue.Add("Siii solo temgo 22 añitos, estoooy em la fror de la hueventud *hip*");
+                //dialogue.Add("Buemo, che me olvidó *hip*, puedess cobrarme estooo…");
 
-                dialogue.Add("Gracias mushacho *hip* Ahorra serás ni depemdiete favorito *hip*");
-                dialogue.Add("Perro mushacho *hip* el otroo depemdiete erra mejor *hip*");
+                //dialogue.Add("Gracias mushacho *hip* Ahorra serás ni depemdiete favorito *hip*");
+                //dialogue.Add("Perro mushacho *hip* el otroo depemdiete erra mejor *hip*");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 

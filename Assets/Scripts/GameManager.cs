@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject trampilla;
 
     [Header("CHARACTERS THINGS")]
-    [SerializeField] public GameObject currentCustomer;
     [SerializeField] public int customerNumber = 0;
     [SerializeField] public List<GameObject> dailyCustomers;
 
@@ -227,10 +226,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void FindTheCustomer()
-    {
-        canvas.GetComponent<UIManager>().currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
-    }
+    //public void FindTheCustomer()
+    //{
+    //    canvas.GetComponent<UIManager>().currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
+    //}
 
     public void SoundCreator(string texto)
     {

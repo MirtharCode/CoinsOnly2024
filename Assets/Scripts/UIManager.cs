@@ -267,7 +267,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowText()
     {
-        gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         dialoguePanel.gameObject.SetActive(true);
 
@@ -356,7 +355,7 @@ public class UIManager : MonoBehaviour
 
     public void HideText()
     {
-        gameManager.GetComponent<GameManager>().FindTheCustomer();
+        //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
         dialoguePanel.gameObject.SetActive(false);
@@ -578,7 +577,7 @@ public class UIManager : MonoBehaviour
     {
         botonDesplegadoPrecios.SetActive(false);
         botonDesplegadoNormativas.SetActive(false);
-        gameManager.GetComponent<GameManager>().FindTheCustomer();
+        //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
         dialoguePanel.gameObject.SetActive(true);
@@ -590,7 +589,7 @@ public class UIManager : MonoBehaviour
     {
         botonDesplegadoPrecios.SetActive(false);
         botonDesplegadoNormativas.SetActive(false);
-        gameManager.GetComponent<GameManager>().FindTheCustomer();
+        //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
         dialoguePanel.gameObject.SetActive(true);
@@ -602,7 +601,7 @@ public class UIManager : MonoBehaviour
     {
         botonDesplegadoPrecios.SetActive(false);
         botonDesplegadoNormativas.SetActive(false);
-        gameManager.GetComponent<GameManager>().FindTheCustomer();
+        //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = true;
         estaToPagao = true;
         dialoguePanel.gameObject.SetActive(true);

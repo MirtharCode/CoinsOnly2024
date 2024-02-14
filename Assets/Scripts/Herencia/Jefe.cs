@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Jefe : RazaJefe
 {
-    bool repetirunavez = false;
-
     protected override void Start()
     {
         base.Start();
@@ -16,29 +14,32 @@ public class Jefe : RazaJefe
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
+
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elJefe;
+            //data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day1")
             {
-                dialogue.Add("Hola chico nuevo, soy tu jefe.");
-                dialogue.Add("Y cómo sé que es tu primer día, te estaré observando.");
-                dialogue.Add("Seguro que no serás capaz de atender a los clientes bien.");
-                dialogue.Add("Ya sabes que todos los humanos sois inútiles.");
-                dialogue.Add("No lo digo yo, lo dice vuestro cerebro enano.");
-                dialogue.Add("Pero bueno, como iba diciendo… ¡ATIENDE BIEN!");
-                dialogue.Add("No quiero perder dinero contigo.");
-                dialogue.Add("Para cobrar dale al botón verde de la CAJA REGISTRADORA");
-                dialogue.Add("Y para no cobrar, dale al botón rojo");
-                dialogue.Add("Y como cobres mal, te quitaré dinero de tu querido tarro.");
-                dialogue.Add("Tienes el catálogo de la tienda para saber si el cliente tiene dinero suficiente.");
-                dialogue.Add("Además tendrás una ayuda, la cabeza del antiguo empleado.");
-                dialogue.Add("Se la arrancó un cliente al que no le vendió su alcohol.");
-                dialogue.Add("Menos mal que su sistema de traducción sigue funcionando.");
-                dialogue.Add("No iba a comprarte otro traductor como ese no fuera.");
-                dialogue.Add("Suerte en tu primer día, chico nuevo.");
+                //dialogue.Add("Hola chico nuevo, soy tu jefe.");
+                //dialogue.Add("Y cómo sé que es tu primer día, te estaré observando.");
+                //dialogue.Add("Seguro que no serás capaz de atender a los clientes bien.");
+                //dialogue.Add("Ya sabes que todos los humanos sois inútiles.");
+                //dialogue.Add("No lo digo yo, lo dice vuestro cerebro enano.");
+                //dialogue.Add("Pero bueno, como iba diciendo… ¡ATIENDE BIEN!");
+                //dialogue.Add("No quiero perder dinero contigo.");
+                //dialogue.Add("Para cobrar dale al botón verde de la CAJA REGISTRADORA");
+                //dialogue.Add("Y para no cobrar, dale al botón rojo");
+                //dialogue.Add("Y como cobres mal, te quitaré dinero de tu querido tarro.");
+                //dialogue.Add("Tienes el catálogo de la tienda para saber si el cliente tiene dinero suficiente.");
+                //dialogue.Add("Además tendrás una ayuda, la cabeza del antiguo empleado.");
+                //dialogue.Add("Se la arrancó un cliente al que no le vendió su alcohol.");
+                //dialogue.Add("Menos mal que su sistema de traducción sigue funcionando.");
+                //dialogue.Add("No iba a comprarte otro traductor como ese no fuera.");
+                //dialogue.Add("Suerte en tu primer día, chico nuevo.");
 
                 uIManager.GetComponent<UIManager>().ShowText();
 

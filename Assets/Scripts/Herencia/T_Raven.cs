@@ -9,7 +9,6 @@ public class T_Raven : Tecnopedos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
-    bool repetirunavez = false;
 
     protected override void Start()
     {
@@ -23,6 +22,7 @@ public class T_Raven : Tecnopedos
         {
             repetirunavez = true;
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedRaven;
+            data.GetComponent<Data>().SettingDialogues();
 
             if (currentScene.name == "Day3")
             {

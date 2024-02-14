@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class DetectiveHijo : DetectivePadre
 {
-    bool repetirunavez = false;
-
     protected override void Start()
     {
         base.Start();
