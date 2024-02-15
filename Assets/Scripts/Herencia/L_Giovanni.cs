@@ -20,15 +20,8 @@ public class L_Giovanni : Limbasticos
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticGiovanni;
-
-            uIManager.GetComponent<UIManager>().ShowText();
-
-            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-            //StartCoroutine(ShowLine());
         }
     }
 

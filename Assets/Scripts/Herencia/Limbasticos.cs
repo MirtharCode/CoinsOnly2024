@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,7 +20,17 @@ public abstract class Limbasticos : Client
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        //Relleno
+        if (collision.transform.tag == "Trampilla" && repetirunavez == false)
+        {
+            repetirunavez = true;
+
+            uIManager.GetComponent<UIManager>().ShowText();
+
+            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
+
+            //StartCoroutine(ShowLine());
+        }
     }
     public override void ShowProductsAndMoney()
     {

@@ -20,40 +20,8 @@ public class MO_ManoloCabezaPico : MagosOscuros
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().evilWizardManolo;
-            data.GetComponent<Data>().SettingDialogues();
-
-            uIManager.GetComponent<UIManager>().ShowText();
-
-            dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-            dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-            //StartCoroutine(ShowLine());
-
-
-            if (currentScene.name == "Day3")
-            {
-                dialogue.Add("Hola humano, que dura es mi vida. ");
-                dialogue.Add("Finalmente mi mayor enemigo ha llegado, Hacienda.");
-                dialogue.Add("Siempre a final de mes necesitan saber los gastos que he hecho para luego quitarme dinero.");
-                dialogue.Add("Por ello tomé una decisión, he creado al grupo: ANTI-HACIENDA.");
-                dialogue.Add("Por ahora estoy solo yo, pero con esto que voy comprar, empezaré con la revolución.");
-                dialogue.Add("Acabaré con Hacienda, recuperaré mi mansión embargada y me repartiré el dinero para mi solo.");
-                dialogue.Add("Creo que lo último se me escapó, no hagas caso cuando deliro.");
-                dialogue.Add("Pero bueno, será mejor que me vaya para… ¡EMPEZAR LA REVOLUCIÓN!");
-                dialogue.Add("Así que bueno, cóbrame y esas cosas humano.");
-
-                dialogue.Add("Gracias a tu dedicación, te nombró primer miembro del grupo ANTI-HACIENDA. ¡Viva la Revolución!");
-                dialogue.Add(" No puede ser, ahora no podré ayudar a pobres magos como yo.");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
         }
     }
 

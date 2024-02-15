@@ -20,51 +20,8 @@ public class E_Tapicio : Elementales
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalTapicio;
-
-            if (currentScene.name == "Day1")
-            {
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
-            else if (currentScene.name == "Day2")
-            {
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
-            else if (currentScene.name == "Day5")
-            {
-                dialogue.Add("Hola humano, creo que me acaba de pasar algo sorprendente después de estos años trabajando.");
-                dialogue.Add("Han habido recortes en mi trabajo, por lo que pensaba que me iban a recortar mi sueldo de 3 monedas al mes.");
-                dialogue.Add("Pero lo que parecía un recorte de sueldo, acabó siendo un recorte de verdad.");
-                dialogue.Add("Literalmente han cortado una parte de mí, y salió un mini yo, por lo que creo que ahora soy papicio.");
-                dialogue.Add("Vaya suerte tendrá el tapicín de tener un padre tan realista como yo.");
-                dialogue.Add("Así sabrá de inicio lo triste y dura que es la vida, y no le pasará como a mí al nacer.");
-                dialogue.Add("Aunque no sé qué necesitan comer los tapicines cuando son pequeños, puede que un poco de gravilla le guste.");
-                dialogue.Add("Bueno, hablando del peque, tengo que ir a por él en nada, así que cóbrame.");
-
-                dialogue.Add("Gracias, a ver si estar ahora con hijo me anima más.");
-                dialogue.Add("Ahora el niño me verá más deprimente de siempre.");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
         }
     }
 

@@ -20,36 +20,8 @@ public class L_Sergio : Limbasticos
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().limbasticSergio;
-            data.GetComponent<Data>().SettingDialogues();
-
-            if (currentScene.name == "Day3")
-            {
-                dialogue.Add("Hola joven humano, disculpa la impertinencia, pero deberían de bajar el peso de esas bebidas.");
-                dialogue.Add("No sabes lo que pesan esas malditas latas.");
-                dialogue.Add("No tengo ya fuerza ni para levantarlas.");
-                dialogue.Add("En mis tiempos, cuando era conocido como Sergio Nervisous.");
-                dialogue.Add("Era capaz de levantar piedras y tenía unos nervios de acero.");
-                dialogue.Add("Pero ahora suficiente que aguanto este cubo en mi cabeza.");
-                dialogue.Add("Y encima me ha revivido un mago que dice que es un héroe.");
-                dialogue.Add("Se hace llamar, Geeraard, que nombre más raro para un héroe.");
-                dialogue.Add("Me revivió para que le ayudará en su nueva aventura.");
-                dialogue.Add("¡Pero si no soy capaz ni de levantar una espada de verdad!");
-                dialogue.Add("Con lo bien que estaba en mi tumba.");
-                dialogue.Add("Necesito recuperar mis nervios, así que, cobrame estas bebidas.");
-                dialogue.Add("Seguro revive mi fuerza.");
-
-                dialogue.Add("Voy a intentar que esto me despierte como es debido.");
-                dialogue.Add("¿Está prohibido venderme esto? En mis tiempos, bebíamos esto sin problema.");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
         }
     }
 

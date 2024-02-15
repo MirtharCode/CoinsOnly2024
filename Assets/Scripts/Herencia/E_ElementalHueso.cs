@@ -20,32 +20,8 @@ public class E_ElementalHueso : Elementales
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalHueso;
-            data.GetComponent<Data>().SettingDialogues();
-
-            if (currentScene.name == "Day3")
-            {
-                dialogue.Add("Oye chaval, casi me hago polvo arriba esperando, atiéndeme que tengo prisa.");
-                dialogue.Add("Es que estoy en la nueva exposición de dinosaurios de la ciudad.");
-                dialogue.Add("Y cuando digo que estoy, es que li-te-ral-men-te estoy.");
-                dialogue.Add("Aunque no lo aparente, tengo millones de años.");
-                dialogue.Add("Un mago me creó a imagen y semejanza de una diosa de la belleza.");
-                dialogue.Add("Soy \"Elemental de huesos\", y soy, e-vi-den-te-men-te un elemental de huesos.");
-                dialogue.Add("Osea, soy única ¿Sabes?, y por eso tengo el mejor trabajo de la ciudad.");
-                dialogue.Add("Soy LA estrella del museo, todo el mundo hace colas interminables para verme...");
-                dialogue.Add("Pero bueno... deja de comerme con la mirada y cóbrame, que me están esperando.");
-
-                dialogue.Add("Un poco caro, pero bueno hace años este muñeco eran 3 esclavos elementales, gracias.");
-                dialogue.Add("Pero si las pociones las bebían hasta los dinosaurios, estúpidas normativas.");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
         }
     }
 

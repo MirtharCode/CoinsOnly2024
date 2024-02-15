@@ -20,44 +20,8 @@ public class T_Masermati : Tecnopedos
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().electropedMasermati;
-            data.GetComponent<Data>().SettingDialogues();
-
-            if (currentScene.name == "Day2")
-            {
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
-            else if (currentScene.name == "Day5")
-            {
-                dialogue.Add("Hola cocherrumín, ¿adivina quién participó en la carrera del otro día y quedó en 1º lugar?");
-                dialogue.Add("Pues yo no porque quedé en 8º lugar, pero lo importante fue participar.");
-                dialogue.Add("Si sigo entrenando, puede que para la próxima quede en 1º lugar.");
-                dialogue.Add("Si no fuera porque Flecha Rápida hiciera trampa, ese trasto de 4 ruedas lanzó clavos por el camino.");
-                dialogue.Add("Es igual de miserable que su dueño Pijus Magnus, la próxima vez no se repetirá.");
-                dialogue.Add("Menos mal que mi familia se quedó apoyándome hasta el final.");
-                dialogue.Add("Seguro que en cuanto me ponga la luces traseras y el cambio de marchas mejoraré mucho más.");
-                dialogue.Add("Pero como siempre dan citas para dentro de 3 meses en reparación pública.");
-                dialogue.Add("Esperaré hasta la cita y la operación para ser mejor coche en mi siguiente carrera.");
-                dialogue.Add("Bueno cocherrumín, creo que debería ir corriendo hasta casa que se me hace tarde.");
-
-                dialogue.Add("Ahora voy acelerando a casa para no llegar tarde, chao. ");
-                dialogue.Add("Con las prisas se me olvidó revisar las normas");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
         }
     }
 

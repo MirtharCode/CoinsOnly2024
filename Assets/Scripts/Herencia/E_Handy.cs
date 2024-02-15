@@ -20,44 +20,8 @@ public class E_Handy : Elementales
     {
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
-            repetirunavez = true;
+            base.OnCollisionEnter2D(collision);
             uIManager.GetComponent<UIManager>().clientImage.sprite = uIManager.GetComponent<UIManager>().elementalHandy;
-            data.GetComponent<Data>().SettingDialogues();
-
-            if (currentScene.name == "Day2")
-            {
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
-            if (currentScene.name == "Day4")
-            {
-                dialogue.Add("Dependiente... Hoy no podría ser... ¡LA MEJOR SEMANA DE MI VIDA!");
-                dialogue.Add("El trabajo del otro día fue genial, los solteros fueron encantadores.");
-                dialogue.Add("Les encantó cuando me puse a hacer mi monólogo.");
-                dialogue.Add("Y mi compañera es una DJ genial, en el momento de las copas salió a hacer su parte.");
-                dialogue.Add("Baile con el novio un rato, pero no paraba de tocar mi bocina, era un tipo raro.");
-                dialogue.Add("Pero bueno, ahora tenemos un nuevo trabajo para hoy, una gatoteca.");
-                dialogue.Add("Hemos pensado en animar haciendo un musical con los gatos, pero son unos bichos muy ariscos y arrítmicos.");
-                dialogue.Add("Así que hemos pensado en otra cosa, vamos a bollos con forma de gatito.");
-                dialogue.Add("En fin, sabes que me encanta estar contigo, pero se me está haciendo tarde amigo.");
-                dialogue.Add("Por lo que cóbrame que tengo que alegrar esa gatoteca.");
-
-                dialogue.Add("Deséame la mayor de las suerte en mi nuevo trabajo.");
-                dialogue.Add("Espero que el trabajo me vaya bien igualmente");
-
-                uIManager.GetComponent<UIManager>().ShowText();
-
-                dialogueUIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-                dialogueUIText = GameObject.FindGameObjectWithTag("UIText").GetComponent<TMP_Text>();
-
-                //StartCoroutine(ShowLine());
-            }
-
         }
     }
 
