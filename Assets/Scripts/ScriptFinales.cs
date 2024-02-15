@@ -38,6 +38,7 @@ public class ScriptFinales : MonoBehaviour
         data.GetComponent<Data>().day5Check = false;
         data.GetComponent<Data>().samuraiPagaMal = false;
         data.GetComponent<Data>().borrachoTriste = false;
+        data.GetComponent<Data>().vecesCobradoCululu = 0;
         data.GetComponent<Data>().tipsPoints = 0;
         data.GetComponent<Data>().detectivePoints = 0;
         data.GetComponent<Data>().numLimbastic = 0;

@@ -48,8 +48,9 @@ public class Data : MonoBehaviour
     //[SerializeField] public int numElectropedRaven;
     //[SerializeField] public int numElectropedRustica;
 
-    [SerializeField] public bool samuraiPagaMal = true;
+    [SerializeField] public bool samuraiPagaMal = false;
     [SerializeField] public bool borrachoTriste = false;
+
     [SerializeField] public bool day0Check = false;
     [SerializeField] public bool day1Check = false;
     [SerializeField] public bool day2Check = false;
@@ -64,10 +65,19 @@ public class Data : MonoBehaviour
     [SerializeField] public int tipsPoints;
     [SerializeField] public int detectivePoints;
 
-    [SerializeField] public bool giftGeeraard = false;      // La foto firmada
-    [SerializeField] public bool giftEnano = false;         // Te da un Enano.
+    [SerializeField] public int vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
+    [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
+    [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
+    [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+    [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
+    [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
+    [SerializeField] public bool programadorBuscaEsposo = false;        // Si le cobras a Antonio (día 1)
+    [SerializeField] public bool corredorDeBolsaBuscaEsposo = false;    // Si le cobras a Patxi (día 3).
+
+    [SerializeField] public bool giftGeeraard = false;      // Si nerviosusPagaLoQueDebe es falso, Geerard te dará la foto firmada
+    [SerializeField] public bool giftEnano = false;         // Te da un Enano. Si en el día 2 o 3 encuentras al enano zumbón.
     [SerializeField] public bool giftMano = false;          // Te da un anillo.
-    [SerializeField] public bool giftElidora = false;       // Te pasa un moco.
+    [SerializeField] public bool giftElidora = false;       // Si completas su minijuego te pasa un moco.
     //[SerializeField] public bool giftPijus = false;
     [SerializeField] public bool giftElvog = false;         // Te da una botella con flores.
     //[SerializeField] public bool giftLepion = false;
@@ -77,17 +87,17 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftAntonio = false;       // Te da sus gafas.
     [SerializeField] public bool giftGiovanni = false;      // Te da su "libro de cocina".
     [SerializeField] public bool giftCululu = false;        // Te da la foto de Mara.
-    [SerializeField] public bool giftSergio = false;        // Te da su Globo-Espada.
+    [SerializeField] public bool giftSergio = false;        // Si nerviosusPagaLoQueDebe es verdadero, te da su Globo-Espada.
     //[SerializeField] public bool giftPatxi = false;         
     [SerializeField] public bool giftTapicio = false;       // Te da el puto GOTY.
     //[SerializeField] public bool giftRockon = false;
     [SerializeField] public bool giftHandy = false;         // Te da un disfraz de payaso.
     //[SerializeField] public bool giftJissy = false;
     //[SerializeField] public bool giftHueso = false;
-    [SerializeField] public bool giftDenjirenji = false;    // Te da su espada.
+    [SerializeField] public bool giftDenjirenji = false;    // Si completas su minijuego te da su espada.
     //[SerializeField] public bool giftMagmadora = false;
     //[SerializeField] public bool giftMasermati = false;
-    [SerializeField] public bool giftRaven = false;         // Te da un disco.
+    [SerializeField] public bool giftRaven = false;         // Si completas su minijuego te da un disco.
     //[SerializeField] public bool giftRustica = false;
 
     [SerializeField] public List<string> cCDialogue;

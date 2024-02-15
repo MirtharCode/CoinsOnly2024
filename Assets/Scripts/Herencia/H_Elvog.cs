@@ -14,6 +14,8 @@ public class H_Elvog : Hibridos
     {
         base.Start();
         nombre = "Elvog";
+
+        if (currentScene.name == "Day5") data.GetComponent<Data>().giftElvog = true;
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

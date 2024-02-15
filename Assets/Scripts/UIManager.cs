@@ -654,21 +654,53 @@ public class UIManager : MonoBehaviour
 
         if (currentScene.name == "Day1")
         {
-            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz") ||
-                currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Giovanni"))
+            if (currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Sapopotamo") || currentCustomer.name.Contains("Tapiz"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Denjirenji") || currentCustomer.name.Contains("Rockon"))
+            else if (currentCustomer.name.Contains("Giovanni"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                data.GetComponent<Data>().vecesCobradoGiovanni++;
+            }
+
+            else if (currentCustomer.name.Contains("Mara"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                data.GetComponent<Data>().vecesCobradaMara++;
+            }
+
+            else if (currentCustomer.name.Contains("Antonio"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[1];
                 LaVoluntad(-10);
-                return dialogueText.text;
+
+                data.GetComponent<Data>().programadorBuscaEsposo = true;
             }
+
+            else if (currentCustomer.name.Contains("Rockon"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[1];
+                LaVoluntad(-10);
+            }
+
+            else if (currentCustomer.name.Contains("Denjirenji"))
+            {
+                data.GetComponent<Data>().samuraiPagaMal = true;
+                mostrarJefe = true;
+                textoJefe.text = quejas[1];
+                LaVoluntad(-10);
+            }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day2")
@@ -679,7 +711,6 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[1];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Giovanni") || currentCustomer.name.Contains("Handy"))
@@ -688,7 +719,6 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Cululu") ||
@@ -696,18 +726,28 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day3")
         {
             if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
-                || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Enano"))
+                || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Patxi"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                data.GetComponent<Data>().corredorDeBolsaBuscaEsposo = true;
+
+                if (data.GetComponent<Data>().programadorBuscaEsposo == data.GetComponent<Data>().corredorDeBolsaBuscaEsposo) data.GetComponent<Data>().giftAntonio = true;
             }
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
@@ -715,7 +755,6 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(5);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso"))
@@ -723,18 +762,25 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day4")
         {
-            if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy")
-                || currentCustomer.name.Contains("Antonio"))
+            if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Antonio"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Cululu"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                data.GetComponent<Data>().vecesCobradoCululu++;
             }
 
             else if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
@@ -743,8 +789,9 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day5")
@@ -754,17 +801,27 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Masermati")
-                || currentCustomer.name.Contains("Saltarisis"))
+            else if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Saltarisis"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            else if (currentCustomer.name.Contains("Cululu"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+
+                data.GetComponent<Data>().vecesCobradoCululu++;
+
+                if (data.GetComponent<Data>().vecesCobradoCululu == 3) data.GetComponent<Data>().giftCululu = true;
+            }
+
+            return dialogueText.text;
         }
 
         return null;
@@ -785,23 +842,15 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[0];
                 LaVoluntad(-10);
-                return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Rockon"))
+            else if (currentCustomer.name.Contains("Antonio") || currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Denjirenji"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Denjirenji"))
-            {
-                data.GetComponent<Data>().samuraiPagaMal = false;
-                mostrarJefe = false;
-                LaVoluntad(10);
-                return dialogueText.text;
-            }
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day2")
@@ -813,22 +862,29 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
 
-            else if (currentCustomer.name.Contains("Giovanni") || currentCustomer.name.Contains("Handy"))
+            else if (currentCustomer.name.Contains("Giovanni"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
+            }
+
+            else if (currentCustomer.name.Contains("Handy"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                data.GetComponent<Data>().vecesCobradaHandy++;
             }
 
             else if (currentCustomer.name.Contains("Pijus"))
             {
                 mostrarJefe = false;
                 LaVoluntad(-1);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day3")
@@ -837,7 +893,6 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
@@ -845,7 +900,6 @@ public class UIManager : MonoBehaviour
                 data.GetComponent<Data>().borrachoTriste = true;
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
@@ -854,8 +908,9 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day4")
@@ -865,7 +920,6 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy")
@@ -874,8 +928,28 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            else if (currentCustomer.name.Contains("Cululu") || currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy")
+                || currentCustomer.name.Contains("Antonio"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
+            }
+
+            else if (currentCustomer.name.Contains("Handy"))
+            {
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
+
+                data.GetComponent<Data>().vecesCobradaHandy++;
+
+                if (data.GetComponent<Data>().vecesCobradoCululu == 2) data.GetComponent<Data>().giftHandy = true;
+            }
+
+            return dialogueText.text;
         }
 
         else if (currentScene.name == "Day5")
@@ -885,7 +959,6 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                return dialogueText.text;
             }
 
             else if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
@@ -894,8 +967,9 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
                 LaVoluntad(-15);
-                return dialogueText.text;
             }
+
+            return dialogueText.text;
         }
 
         return null;
