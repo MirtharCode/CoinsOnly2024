@@ -110,8 +110,8 @@ public class Data : MonoBehaviour
         if (instance != null) Destroy(gameObject);
         else instance = this;
 
-        DontDestroyOnLoad(gameObject);
         uIManager = GameObject.FindGameObjectWithTag("UI");
+        DontDestroyOnLoad(gameObject);
     }
 
     #region Todos los diálogos de Coins Only
