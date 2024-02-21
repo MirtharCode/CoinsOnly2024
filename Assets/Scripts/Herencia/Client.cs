@@ -111,7 +111,7 @@ public abstract class Client : MonoBehaviour
             {
                 int rdm = Random.Range(0, 3);
 
-                Debug.Log(rdm);
+                //Debug.Log(rdm);
                 AudioClip nextSound = GetRandomSound();
 
                 talkingSound.clip = nextSound;

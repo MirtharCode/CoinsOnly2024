@@ -150,6 +150,8 @@ public class UIManager : MonoBehaviour
         razasNormas[4] = "Elementales";
 
         razaSeleccionada = 0;
+
+        data.GetComponent<Data>().uIManager = gameObject;
     }
 
     void Update()

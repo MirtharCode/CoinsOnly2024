@@ -105,12 +105,14 @@ public class Data : MonoBehaviour
 
     public static Data instance;
 
-    void Start()
+    void Awake()
     {
+        uIManager = null;
+
         if (instance != null) Destroy(gameObject);
+
         else instance = this;
 
-        uIManager = GameObject.FindGameObjectWithTag("UI");
         DontDestroyOnLoad(gameObject);
     }
 
