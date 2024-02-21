@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cargadores : MonoBehaviour
 {
     [SerializeField] public GameObject pilaManager;
+    [SerializeField] public Sprite pilaCargada;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class Cargadores : MonoBehaviour
         {
             Destroy(gameObject);
             collision.gameObject.GetComponent<Pila>().cargado = true;
+            Sprite nuevoSprite = collision.gameObject.GetComponent<Pila>().spriteCargada;
+            collision.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
         }
     }
 }

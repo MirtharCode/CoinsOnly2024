@@ -9,6 +9,7 @@ public class PilaManager : MonoBehaviour
 {
     [SerializeField] public GameObject pila1;
     [SerializeField] public GameObject pila2;
+    [SerializeField] public GameObject Agua;
     [SerializeField] public GameObject victoriaPanel;
     [SerializeField] public GameObject derrotaPanel;
     [SerializeField] public GameObject tutorialPanel;

@@ -34,7 +34,7 @@ public class PilaPuesta : MonoBehaviour
                 pilaHueco1.GetComponent<SpriteRenderer>().enabled = true;
                 pilaManager.GetComponent<PilaManager>().pila2.SetActive(true);
                 pilaManager.GetComponent<PilaManager>().pila2.tag = "Player";
-                pila = GameObject.Find("Pijus Magnus (1)");
+                pila = GameObject.Find("Pila2");
             }
 
             else if(numPilasHechas == 2)
