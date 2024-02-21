@@ -8,6 +8,7 @@ public class Pila : MonoBehaviour
     public float velocidad = 2f;
     [SerializeField] public bool cargado;
     [SerializeField] public Sprite spriteCargada;
+    [SerializeField] public Sprite spriteNoCargada;
 
     void Start()
     {

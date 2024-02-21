@@ -22,12 +22,12 @@ public class PilaPuesta : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player") && pila.GetComponent<Pila>().cargado == true)
+        if (other.gameObject.CompareTag("Player") && pila.GetComponent<Pila>().cargado == true)
         {
             numPilasHechas++;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
 
             if (numPilasHechas == 1)
             {

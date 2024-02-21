@@ -5,6 +5,7 @@ using UnityEngine;
 public class Agua : MonoBehaviour
 {
     [SerializeField] public GameObject pilaManager;
+    public Transform posicionObjetoVacio;
 
     void Start()
     {
@@ -20,8 +21,11 @@ public class Agua : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<Pila>().cargado == true)
         {
-            Destroy(gameObject);
+            other.transform.position = posicionObjetoVacio.position;
+            other.gameObject.GetComponent<Pila>().cargado = false;
 
+            Sprite nuevoSprite = other.gameObject.GetComponent<Pila>().spriteNoCargada;
+            other.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
         }
     }
 }
