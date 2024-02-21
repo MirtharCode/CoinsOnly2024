@@ -33,7 +33,7 @@ public class Slime : MonoBehaviour
     private SlimeType slimeType;
     private float magicHatRate = 0.25f;
     private float elidoraRate = 0f;
-    private int lives;
+    [SerializeField] private int lives;
     private int slimeIndex = 0;
 
     private void Awake()
@@ -74,12 +74,16 @@ public class Slime : MonoBehaviour
 
                     if (lives == 2)
                     {
+                        Debug.Log(lives);
+                        Debug.Log("Me diste una vez");
                         sR.sprite = slimeMagicHatBroken;
                         lives--;
+                        Debug.Log(lives);
                     }
 
                     else
                     {
+                        Debug.Log("Me diste dos veces");
                         sR.sprite = slimeMagicHatHit;
                         sM.AddScore(slimeIndex);
                         StopAllCoroutines();
@@ -87,19 +91,15 @@ public class Slime : MonoBehaviour
                         hittable = false;
                     }
                     break;
+
                 case SlimeType.Elidora:
                     sM.GameOver(1);
                     break;
+
                 default:
                     break;
             }
-            sR.sprite = slimeHit;
-            StopAllCoroutines();
-            StartCoroutine(QuickHide());
-
-            hittable = false;
         }
-
     }
 
     private IEnumerator ShowHide(Vector2 start, Vector2 end)
@@ -176,6 +176,7 @@ public class Slime : MonoBehaviour
         }
         else
         {
+            random = Random.Range(0f, 1f);
             if (random < magicHatRate)
             {
                 Debug.Log("Tengo Sombrero");
@@ -186,7 +187,6 @@ public class Slime : MonoBehaviour
 
             else
             {
-                Debug.Log("Soy normal");
                 slimeType = SlimeType.Standard;
                 sR.sprite = slime;
                 lives = 1;
@@ -199,7 +199,9 @@ public class Slime : MonoBehaviour
     private void SetLevel(int level)
     {
         elidoraRate = Mathf.Min(level * 0.025f, 0.25f); // En el nivel 10 será de 0.25
+        //Debug.Log("La probabilidad de que Elidora salga y te patee las bolas es de: " + elidoraRate);
         magicHatRate = Mathf.Min(level * 0.025f, 1f);   // En el nivel 40 será del 100%
+        //Debug.Log("La probabilidad de que salga un Slime con sombrero es de: " + magicHatRate);
 
         float durationMin = Mathf.Clamp(1 - level * 0.1f, 0.01f, 1f);
         float durationMax = Mathf.Clamp(2 - level * 0.1f, 0.01f, 2f);
@@ -209,7 +211,7 @@ public class Slime : MonoBehaviour
 
     public void Activate(int level)
     {
-        Debug.Log(level);
+        //Debug.Log("El nivel actual es: " + level);
         SetLevel(level);
         CreateNext();
         StartCoroutine(ShowHide(startPosition, endPosition));
@@ -218,5 +220,11 @@ public class Slime : MonoBehaviour
     public void SetIndex(int index)
     {
         slimeIndex = index;
+    }
+
+    public void StopGame()
+    {
+        hittable = false;
+        StopAllCoroutines();
     }
 }

@@ -6,6 +6,12 @@ public class SlimeManager : MonoBehaviour
 {
     [SerializeField] private List<Slime> slimes;
     [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject outOfTimeText;
+    [SerializeField] private GameObject elidoraText;
+    [SerializeField] private TMPro.TextMeshProUGUI timeText;
+    [SerializeField] private TMPro.TextMeshProUGUI scoreText;
+
     private float startingTime = 30f;
     private float timeRemaining;
 
@@ -30,6 +36,8 @@ public class SlimeManager : MonoBehaviour
                 GameOver(0);
             }
 
+            timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
+
             if (currentSlimes.Count <= (score / 10))
             {
                 int index = Random.Range(0, slimes.Count);
@@ -46,6 +54,9 @@ public class SlimeManager : MonoBehaviour
     public void StartGame()
     {
         playButton.SetActive(false);
+        outOfTimeText.SetActive(false);
+        elidoraText.SetActive(false);
+        gameUI.SetActive(true);
 
         for (int i = 0; i < slimes.Count; i++)
         {
@@ -57,11 +68,22 @@ public class SlimeManager : MonoBehaviour
 
         timeRemaining = startingTime;
         score = 0;
+        scoreText.text = score.ToString();
         playing = true;
     }
 
     public void GameOver(int type)
     {
+        if (type == 0)
+            outOfTimeText.SetActive(true);
+        else
+            elidoraText.SetActive(true);
+
+        foreach (Slime slime in slimes)
+        {
+            slime.StopGame();
+        }
+
         playing = false;
         playButton.SetActive(true);
     }
@@ -69,6 +91,7 @@ public class SlimeManager : MonoBehaviour
     public void AddScore(int slimeIndex)
     {
         score += 1;
+        scoreText.text = $"{score}";
         timeRemaining += 1;
 
         currentSlimes.Remove(slimes[slimeIndex]);
