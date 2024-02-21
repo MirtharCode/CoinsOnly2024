@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    private Vector2 startPosition = new Vector2 (0f, -2.56f);   // El 2.56 es porque el sprite es de 256 píxeles.
+    private Vector2 startPosition = new Vector2(0f, -2.56f);   // El 2.56 es porque el sprite es de 256 píxeles.
     private Vector2 endPosition = Vector2.zero;
 
     // Lo que tarda en mostrarse entero y luego en esconderse.
@@ -13,13 +13,13 @@ public class Slime : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ShowHide(startPosition, endPosition))
+        StartCoroutine(ShowHide(startPosition, endPosition));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private IEnumerator ShowHide(Vector2 start, Vector2 end)
@@ -30,7 +30,7 @@ public class Slime : MonoBehaviour
         // A mostrar el topo mi ciela
         float elapsed = 0f;
 
-        while (elapsed < showDuration) 
+        while (elapsed < showDuration)
         {
             transform.localPosition = Vector2.Lerp(start, end, elapsed / showDuration);
             elapsed += Time.deltaTime;
