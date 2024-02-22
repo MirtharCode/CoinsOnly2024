@@ -935,6 +935,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilaManager: {fileID: 0}
   posicionObjetoVacio: {fileID: 435120185}
+  pilaOut: 0
+  cargador1: {fileID: 755821178}
+  cargador2: {fileID: 352540947}
+  ultimoCargador: {fileID: 0}
 --- !u!1 &435120184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2597,6 +2601,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilaManager: {fileID: 0}
   posicionObjetoVacio: {fileID: 435120185}
+  pilaOut: 0
+  cargador1: {fileID: 755821178}
+  cargador2: {fileID: 352540947}
+  ultimoCargador: {fileID: 0}
 --- !u!1 &1157828189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,6 +4870,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilaManager: {fileID: 0}
   posicionObjetoVacio: {fileID: 435120185}
+  pilaOut: 0
+  cargador1: {fileID: 755821178}
+  cargador2: {fileID: 352540947}
+  ultimoCargador: {fileID: 0}
 --- !u!1 &1791126547
 GameObject:
   m_ObjectHideFlags: 0

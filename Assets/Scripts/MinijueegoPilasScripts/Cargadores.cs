@@ -21,7 +21,7 @@ public class Cargadores : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Pila>().cargado == false)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             collision.gameObject.GetComponent<Pila>().cargado = true;
             Sprite nuevoSprite = collision.gameObject.GetComponent<Pila>().spriteCargada;
             collision.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
