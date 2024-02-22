@@ -60,6 +60,7 @@ public class SlimeManager : MonoBehaviour
 
         for (int i = 0; i < slimes.Count; i++)
         {
+            slimes[i].gameObject.SetActive(true);
             slimes[i].Hide();
             slimes[i].SetIndex(i);
         }

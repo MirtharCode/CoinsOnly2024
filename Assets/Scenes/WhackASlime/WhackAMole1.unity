@@ -265,6 +265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (8)
@@ -333,6 +337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (4)
@@ -884,6 +892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (1)
@@ -1127,6 +1139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (3)
@@ -1359,6 +1375,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (7)
@@ -1427,6 +1447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (2)
@@ -1765,6 +1789,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (5)
@@ -1833,6 +1861,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole (6)
@@ -2120,6 +2152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6428241600318165039, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588740, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_Name
       value: SlimeHole
