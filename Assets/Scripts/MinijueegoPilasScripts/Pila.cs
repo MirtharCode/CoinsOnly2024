@@ -9,6 +9,7 @@ public class Pila : MonoBehaviour
     [SerializeField] public bool cargado;
     [SerializeField] public Sprite spriteCargada;
     [SerializeField] public Sprite spriteNoCargada;
+    [SerializeField] public GameObject explosion;
     private Rigidbody2D rb2d;
 
     void Start()

@@ -548,6 +548,7 @@ MonoBehaviour:
   cargado: 0
   spriteCargada: {fileID: 21300000, guid: 405d2df021dfe4941afa2d5d6ce85760, type: 3}
   spriteNoCargada: {fileID: 21300000, guid: e643dca9c70351540a5495bc5e34444b, type: 3}
+  explosion: {fileID: 9051652964549885384, guid: 74f5f789e4b08214cbd895d545e261b6, type: 3}
 --- !u!50 &181991027
 Rigidbody2D:
   serializedVersion: 4
@@ -874,7 +875,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.39, y: 2.2}
   m_EdgeRadius: 0
 --- !u!212 &364557663
 SpriteRenderer:
@@ -937,7 +938,7 @@ Transform:
   m_GameObject: {fileID: 364557661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2641,7 +2642,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.39, y: 2.2}
   m_EdgeRadius: 0
 --- !u!212 &1133318279
 SpriteRenderer:
@@ -2704,7 +2705,7 @@ Transform:
   m_GameObject: {fileID: 1133318277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4862,7 +4863,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.39, y: 2.2}
   m_EdgeRadius: 0
 --- !u!212 &1774098249
 SpriteRenderer:
@@ -4925,7 +4926,7 @@ Transform:
   m_GameObject: {fileID: 1774098247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.5, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5184,6 +5185,7 @@ MonoBehaviour:
   cargado: 0
   spriteCargada: {fileID: 21300000, guid: 405d2df021dfe4941afa2d5d6ce85760, type: 3}
   spriteNoCargada: {fileID: 21300000, guid: e643dca9c70351540a5495bc5e34444b, type: 3}
+  explosion: {fileID: 9051652964549885384, guid: 74f5f789e4b08214cbd895d545e261b6, type: 3}
 --- !u!95 &1807706138
 Animator:
   serializedVersion: 5

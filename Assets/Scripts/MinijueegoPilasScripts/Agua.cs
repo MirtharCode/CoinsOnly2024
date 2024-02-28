@@ -42,6 +42,9 @@ public class Agua : MonoBehaviour
 
             Sprite nuevoSprite = other.gameObject.GetComponent<Pila>().spriteNoCargada;
             other.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
+
+            GameObject clon = Instantiate(other.gameObject.GetComponent<Pila>().explosion);
+            clon.transform.position = transform.position;
         }
     }
 }
