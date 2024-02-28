@@ -9,10 +9,12 @@ public class Pila : MonoBehaviour
     [SerializeField] public bool cargado;
     [SerializeField] public Sprite spriteCargada;
     [SerializeField] public Sprite spriteNoCargada;
+    private Rigidbody2D rb2d;
 
     void Start()
     {
         cargado = false;
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -22,13 +24,9 @@ public class Pila : MonoBehaviour
 
     void ProcesarMovimiento()
     {
-        if (Input.GetKey(KeyCode.D))
-            transform.position += new Vector3(velocidad, 0f, 0) * Time.deltaTime;
-        if (Input.GetKey(KeyCode.A))
-            transform.position += new Vector3(-velocidad, 0f, 0) * Time.deltaTime;
-        if (Input.GetKey(KeyCode.W))
-            transform.position += new Vector3(0f, velocidad, 0) * Time.deltaTime;
-        if (Input.GetKey(KeyCode.S))
-            transform.position += new Vector3(0f, -velocidad, 0) * Time.deltaTime;
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        rb2d.velocity = new Vector2(moveHorizontal * velocidad, moveVertical * velocidad);
     }
 }

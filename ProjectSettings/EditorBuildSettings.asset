@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1.unity
     guid: ba70f9ba33f0f5144b9dbcecc7ca8a78
   - enabled: 1
-    path: Assets/Scenes/Day2.unity
+    path: Assets/Scenes/Day2_1.unity
     guid: d6a1a998d3f80da40a9c812b99d1cacb
   - enabled: 1
     path: Assets/Scenes/Day3.unity

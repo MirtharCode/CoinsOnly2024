@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "Day1") Day1();
-        if (currentScene.name == "Day2") Day2();
+        if (currentScene.name == "Day2_1") Day2();
         if (currentScene.name == "Day3") Day3();
         if (currentScene.name == "Day4") Day4();
         if (currentScene.name == "Day5") Day5();

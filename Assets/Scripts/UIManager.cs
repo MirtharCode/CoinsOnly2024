@@ -367,7 +367,7 @@ public class UIManager : MonoBehaviour
         if (currentScene.name == "Day1")
             preciosButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
 
-        if (currentScene.name == "Day2")
+        if (currentScene.name == "Day2_1")
             normativasButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
 
         if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count && currentCustomer.name.Contains("Jefe"))
@@ -448,7 +448,7 @@ public class UIManager : MonoBehaviour
                     currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
             }
 
-            else if (currentScene.name == "Day2")
+            else if (currentScene.name == "Day2_1")
             {
                 if (currentCustomer.name.Contains("Lepion"))
                     currentCustomer.GetComponent<H_Lepion>().ShowProductsAndMoney();
@@ -705,7 +705,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day2")
+        else if (currentScene.name == "Day2_1")
         {
             if (currentCustomer.name.Contains("Pijus"))
             {
@@ -855,7 +855,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day2")
+        else if (currentScene.name == "Day2_1")
         {
             if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Cululu")
                 || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Tapiz") || currentCustomer.name.Contains("Lepion"))
@@ -1106,7 +1106,7 @@ public class UIManager : MonoBehaviour
             data.GetComponent<Data>().day1Check = true;
         }
 
-        else if (currentScene.name == "Day2")
+        else if (currentScene.name == "Day2_1")
         {
             data.GetComponent<Data>().day1Check = false;
             data.GetComponent<Data>().day2Check = true;

@@ -38,7 +38,7 @@ public class L_Giovanni : Limbasticos
             uIManager.GetComponent<UIManager>().leDineroText.text = "22";
         }
 
-        else if (currentScene.name == "Day2")
+        else if (currentScene.name == "Day2_1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

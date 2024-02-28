@@ -435,6 +435,7 @@ MonoBehaviour:
   velocidad: 2
   cargado: 0
   spriteCargada: {fileID: 21300000, guid: 405d2df021dfe4941afa2d5d6ce85760, type: 3}
+  spriteNoCargada: {fileID: 0}
 --- !u!50 &181991027
 Rigidbody2D:
   serializedVersion: 4
@@ -800,8 +801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -430, y: 0}
-  m_SizeDelta: {x: 704.211, y: 845.2265}
+  m_AnchoredPosition: {x: -457.75, y: -208}
+  m_SizeDelta: {x: 1004.5031, y: 1196.4612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603565850
 MonoBehaviour:
@@ -2933,7 +2934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4091,6 +4092,7 @@ MonoBehaviour:
   velocidad: 2
   cargado: 0
   spriteCargada: {fileID: 21300000, guid: 405d2df021dfe4941afa2d5d6ce85760, type: 3}
+  spriteNoCargada: {fileID: 0}
 --- !u!1 &1824638983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

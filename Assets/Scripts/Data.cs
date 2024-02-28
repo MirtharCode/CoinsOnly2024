@@ -292,7 +292,7 @@ public class Data : MonoBehaviour
                 }
             }
 
-            else if (currentScene.name == "Day2")
+            else if (currentScene.name == "Day2_1")
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {

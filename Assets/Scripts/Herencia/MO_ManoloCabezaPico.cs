@@ -27,7 +27,7 @@ public class MO_ManoloCabezaPico : MagosOscuros
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day2")
+        if (currentScene.name == "Day2_1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
