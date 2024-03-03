@@ -30,12 +30,14 @@ public class Agua : MonoBehaviour
                 cargador1.SetActive(true);
                 ultimoCargador = cargador1;
             }
-
             else if (!cargador2.activeSelf)
             {
                 cargador2.SetActive(true);
                 ultimoCargador = cargador2;
             }
+
+            // Guardar la posición de la pila
+            Vector3 posicionPila = other.transform.position;
 
             other.transform.position = posicionObjetoVacio.position;
             other.gameObject.GetComponent<Pila>().cargado = false;
@@ -43,8 +45,9 @@ public class Agua : MonoBehaviour
             Sprite nuevoSprite = other.gameObject.GetComponent<Pila>().spriteNoCargada;
             other.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
 
+            // Instanciar la explosión en la posición de la pila
             GameObject clon = Instantiate(other.gameObject.GetComponent<Pila>().explosion);
-            clon.transform.position = transform.position;
+            clon.transform.position = posicionPila;
         }
     }
 }
