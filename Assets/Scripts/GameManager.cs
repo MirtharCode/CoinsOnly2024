@@ -222,14 +222,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
-
     }
-
-
-    //public void FindTheCustomer()
-    //{
-    //    canvas.GetComponent<UIManager>().currentCustomer = GameObject.FindGameObjectWithTag("CurrentCustomer");
-    //}
 
     public void SoundCreator(string texto)
     {
