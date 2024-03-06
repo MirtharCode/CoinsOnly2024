@@ -317,7 +317,8 @@ public class UIManager : MonoBehaviour
            || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
            || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
            || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
-           || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo")))
+           || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
+           || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2")))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -370,7 +371,10 @@ public class UIManager : MonoBehaviour
         }
 
         else if (internalCount == dialogueSize &&
-            ((currentCustomer.name.Contains("Mano") && currentScene.name == "Day4") || currentCustomer.name.Contains("Sapopotamo") && currentScene.name == "Day5"))
+            ((currentCustomer.name.Contains("Mano") && currentScene.name == "Day4") 
+            || (currentCustomer.name.Contains("Sapopotamo") && currentScene.name == "Day5")
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_1")
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_2")))
         {
             mostrarJefe = false;
             estaToPagao = true;
@@ -427,7 +431,25 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Cululu"))
                     currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("Handy"))
+                //else if (currentCustomer.name.Contains("Handy"))
+                //    currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Petra"))
+                //    currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Tapiz"))
+                //    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Masermati"))
+                //    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Pijus"))
+                //    currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
+            }
+
+            else if (currentScene.name == "Day2_2")
+            {
+                if (currentCustomer.name.Contains("Handy"))
                     currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
 
                 else if (currentCustomer.name.Contains("Petra"))
@@ -441,6 +463,7 @@ public class UIManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Pijus"))
                     currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
+
             }
 
             else if (currentScene.name == "Day3")
@@ -1168,7 +1191,7 @@ public class UIManager : MonoBehaviour
             data.GetComponent<Data>().day1Check = true;
         }
 
-        else if (currentScene.name == "Day2_1")
+        else if (currentScene.name == "Day2_2")
         {
             data.GetComponent<Data>().day1Check = false;
             data.GetComponent<Data>().day2Check = true;

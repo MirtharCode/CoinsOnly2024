@@ -113,7 +113,8 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "Day1") Day1();
-        if (currentScene.name == "Day2_1") Day2();
+        if (currentScene.name == "Day2_1") Day2_1();
+        if (currentScene.name == "Day2_2") Day2_2();
         if (currentScene.name == "Day3") Day3();
         if (currentScene.name == "Day4") Day4();
         if (currentScene.name == "Day5") Day5();
@@ -144,7 +145,7 @@ public class GameManager : MonoBehaviour
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
 
-    public void Day2()
+    public void Day2_1()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
@@ -154,6 +155,28 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(limbasticGiovanni);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(electropedDenjirenji);
+        //dailyCustomers.Add(elementalHandy);
+        //dailyCustomers.Add(hybridPetra);
+        //dailyCustomers.Add(elementalTapicio);
+        //dailyCustomers.Add(electropedMasermati);
+        //dailyCustomers.Add(evilWizardPijus);
+        //dailyCustomers.Add(detective);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
+    public void Day2_2()
+    {
+        canvas.GetComponent<UIManager>().LaVoluntad(50);
+
+        dailyCustomers.Clear();
+        //dailyCustomers.Add(jefe);
+        //if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
+        //dailyCustomers.Add(limbasticGiovanni);
+        //dailyCustomers.Add(evilWizardManolo);
+        //dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(elementalTapicio);
