@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("CURSOR RESHULO")]
     [SerializeField] public GameObject cursor;
 
+
     [Header("TRAMPILLA")]
     [SerializeField] public GameObject trampilla;
 
@@ -152,8 +153,8 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
         if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        dailyCustomers.Add(limbasticGiovanni);
-        dailyCustomers.Add(evilWizardManolo);
+        //dailyCustomers.Add(limbasticGiovanni);
+        //dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(elementalHandy);

@@ -18,6 +18,7 @@ TagManager:
   - Energia
   - PM
   - SM
+  - Cursor
   layers:
   - Default
   - TransparentFX

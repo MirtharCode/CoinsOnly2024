@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Day2_1.unity
     guid: d6a1a998d3f80da40a9c812b99d1cacb
   - enabled: 1
+    path: Assets/Scenes/PilaMinijuegos/Pila_Nivel1.unity
+    guid: b7b263a434350f148b28d75edf95e439
+  - enabled: 1
+    path: Assets/Scenes/PilaMinijuegos/Pila_Nivel2.unity
+    guid: 67bbfd1aa69252540b1f95a8bcba1acb
+  - enabled: 1
     path: Assets/Scenes/Day3.unity
     guid: f0770d59d3b3fe24d929b5b183438095
   - enabled: 1

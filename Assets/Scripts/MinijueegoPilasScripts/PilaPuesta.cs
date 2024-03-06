@@ -42,6 +42,7 @@ public class PilaPuesta : MonoBehaviour
                 pilaHueco2.GetComponent<SpriteRenderer>().enabled = true;
                 pilaManager.GetComponent<PilaManager>().Victoria();
                 pilaManager.GetComponent<PilaManager>().CambiarTemporizador(false);
+                pilaManager.GetComponent<PilaManager>().cursor.SetActive(true);
             }
         }
     }

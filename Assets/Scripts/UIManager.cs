@@ -173,6 +173,7 @@ public class UIManager : MonoBehaviour
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!");                   // Si sí le has cobrado y no deberías haberle cobrado.
         quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!");                                             // Cuando no has cumplido las normativas.
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!");    // Si no le has cobrado y sí deberias haberle cobrado (A partir del día 2).
+        quejas.Add("Ese cupón es más falso que el amor que siento por mi madre");    // Cuando la cagas con el boleto
 
         razasNormas = new string[5];
         razasNormas[0] = "Magos Oscuros";
@@ -695,7 +696,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day2_1")
+        else if (currentScene.name == "Day2_1" || currentScene.name == "Day2_2")
         {
             if (currentCustomer.name.Contains("Pijus"))
             {
@@ -848,7 +849,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day2_1")
+        else if (currentScene.name == "Day2_1" || currentScene.name == "Day2_2")
         {
             if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Cululu")
                 || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati")
@@ -1214,7 +1215,13 @@ public class UIManager : MonoBehaviour
             data.GetComponent<Data>().day4Check = false;
             data.GetComponent<Data>().day5Check = true;
         }
-        SceneManager.LoadScene(8);
+
+        SceneManager.LoadScene(10);
+    }
+
+    public void NextDenji()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void Salir()

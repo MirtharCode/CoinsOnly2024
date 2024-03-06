@@ -18,11 +18,16 @@ public class PilaManager : MonoBehaviour
     public float tiempoActual;
     public bool tiempoActivado = false;
 
+    [SerializeField] public GameObject cursor;
+
     void Start()
     {
         pila1 = GameObject.FindGameObjectWithTag("Player");
 
         if (!tutorialPanel.activeInHierarchy) ActivarTemporizador();
+
+        cursor = GameObject.FindGameObjectWithTag("Cursor");
+        cursor.SetActive(false);
     }
 
     void Update()

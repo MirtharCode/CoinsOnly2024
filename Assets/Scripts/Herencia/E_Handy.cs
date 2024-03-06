@@ -27,7 +27,7 @@ public class E_Handy : Elementales
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day2_1")
+        if (currentScene.name == "Day2_2")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

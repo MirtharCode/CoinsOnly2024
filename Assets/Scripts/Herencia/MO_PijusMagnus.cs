@@ -27,7 +27,7 @@ public class MO_PijusMagnus : MagosOscuros
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day2_1")
+        if (currentScene.name == "Day2_2")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
             product1.transform.SetParent(twoProducts1);
