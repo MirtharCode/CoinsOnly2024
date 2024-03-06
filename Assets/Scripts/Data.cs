@@ -378,6 +378,22 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Tío, de verdad que no te entiendo, si tengo toda la pasta.");
                 }
 
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
+                {
+                    cCDialogue.Add("¡Buen ser humano, necesito tu ayuda!.");
+                    cCDialogue.Add("En mi casa se me han acabado las pilas y mi madre no estaba en casa para metermelas y darme energía.");
+                    cCDialogue.Add("Por favor, necesito que me metas las pilas, ya te las pagaré luego. Recuerda meterlas en el hueco de la parte superior");
+                    cCDialogue.Add("¡Y rápido!, que no quiero apagarme y convertirme en uno de esos horribles monstruos.");
+                }
+            }
+
+            else if (currentScene.name == "Day2_2")
+            {
+                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
+                {
+                    cCDialogue.Add("Muchas gracias Ronin, que sepas que te lo recompensaré algún día, espero que mi maestro no se enfade.");
+                }
+
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Handy"))
                 {
                     cCDialogue.Add("¡Hola colega! ¿Cómo te encuentras? ¿Bien? ¿Mal?");
