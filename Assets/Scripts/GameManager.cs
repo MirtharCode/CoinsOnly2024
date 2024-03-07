@@ -116,7 +116,8 @@ public class GameManager : MonoBehaviour
         if (currentScene.name == "Day1") Day1();
         if (currentScene.name == "Day2_1") Day2_1();
         if (currentScene.name == "Day2_2") Day2_2();
-        if (currentScene.name == "Day3") Day3();
+        if (currentScene.name == "Day3_1") Day3_1();
+        if (currentScene.name == "Day3_2") Day3_2();
         if (currentScene.name == "Day4") Day4();
         if (currentScene.name == "Day5") Day5();
     }
@@ -188,25 +189,48 @@ public class GameManager : MonoBehaviour
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
 
-    public void Day3()
+    public void Day3_1()
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        dailyCustomers.Add(limbasticSergio);
-        dailyCustomers.Add(hybridSaltaralisis);
-        dailyCustomers.Add(evilWizardManoloMano);
-        dailyCustomers.Add(electropedRaven);
-        dailyCustomers.Add(elementalHueso);
-        dailyCustomers.Add(limbasticPatxi);
-        dailyCustomers.Add(hybridElvog);
+        //dailyCustomers.Add(limbasticSergio);
+        //dailyCustomers.Add(hybridSaltaralisis);
+        //dailyCustomers.Add(evilWizardManoloMano);
+        //dailyCustomers.Add(electropedRaven);
+        //dailyCustomers.Add(elementalHueso);
+        //dailyCustomers.Add(limbasticPatxi);
+        //dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(electropedDenjirenji);
+        //dailyCustomers.Add(electropedRustica);
+        //dailyCustomers.Add(detective);
+
+        CharacterShowUp(dailyCustomers[customerNumber]);
+    }
+
+    public void Day3_2()
+    {
+        canvas.GetComponent<UIManager>().LaVoluntad(50);
+
+        dailyCustomers.Clear();
+        //dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(limbasticSergio);
+        //dailyCustomers.Add(hybridSaltaralisis);
+        //dailyCustomers.Add(evilWizardManoloMano);
+        //dailyCustomers.Add(electropedRaven);
+        //dailyCustomers.Add(elementalHueso);
+        //dailyCustomers.Add(limbasticPatxi);
+        //dailyCustomers.Add(hybridElvog);
+        //dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(electropedRustica);
         dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
+
 
     public void Day4()
     {

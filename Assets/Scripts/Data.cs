@@ -500,7 +500,7 @@ public class Data : MonoBehaviour
                 }
             }
 
-            else if (currentScene.name == "Day3")
+            else if (currentScene.name == "Day3_1")
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
@@ -661,6 +661,22 @@ public class Data : MonoBehaviour
                     cCDialogue.Add(" No puede ser, ahora no podré ayudar a pobres magos como yo.");
                 }
 
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
+                {
+                    cCDialogue.Add("Hola de nuevo, venía a comprar…");
+                    cCDialogue.Add("¡Pero qué, otra vez no!");
+                    cCDialogue.Add("Estúpida batería rota, hace 1 segundo tenía batería de sobra y ahora de un momento a otro se pone en crítico mi energía.");
+                    cCDialogue.Add("¡Necesito que me metas las baterías otra vez, y está vez ten cuidado con el agua!");
+                }
+            }
+
+            else if (currentScene.name == "Day3_2")
+            {
+                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
+                {
+                    cCDialogue.Add("Ufff, por los pelos, estupida batería, creo que está algo rota por estos sustos que me da, espero que esta deshonra no llegue a los oídos de mi maestro, muchas gracias humano.");
+                }
+
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rustica"))
                 {
                     cCDialogue.Add("Hola cielo, se te vé algo cansado, ¿estás bien?");
@@ -690,362 +706,364 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Y que la compró bajo el nombre de “Manolo”, según un ticket tirado por la escena del crimen.");
                     cCDialogue.Add("¿Sabes si alguno de los siguientes sospechosos pueda tener relación con la descripción que te dí?");
                     cCDialogue.Add("Muchas gracias por la información, espero que tenga un buen día, humano.");
-                }
-            }
 
-            else if (currentScene.name == "Day4")
-            {
-                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
-                {
-                    cCDialogue.Add("Hola chico nuevo, veo que te estás acostumbrando al trabajo en mi tienda.");
-                    cCDialogue.Add("Que raro que ningún mago te la haya arrancado la cabeza por negarte a cobrarle, al anterior dependiente le pasó eso.");
-                    cCDialogue.Add("Aunque gracias a ese mago, no tuve que pagarle ese mes.");
-                    cCDialogue.Add("Así acabé comprando el carruaje más rápido del reino, aunque se quedó obsoleto por culpa de los coches.");
-                    cCDialogue.Add("Por culpa de esas estúpidas máquinas de 4 ruedas, los tecnópedos no podrán comprar pilas y bebida energética junta, por una reacción que los hace más rápidos.");
-                    cCDialogue.Add("Se lo tienen merecido por hacerme gastar mis preciosas monedas en un carruaje que quedó obsoleto.");
-                    cCDialogue.Add("Y también me enteré hace poco que hay una secta convirtiendo híbridos en limbásticos.");
-                    cCDialogue.Add("Por lo que los híbridos no podrán comprar nada de magia negra, esa secta solo me ha hecho perder dinero.");
-                    cCDialogue.Add("Bueno, es hora de que empiece tu turno, recuerda mirar las nuevas normas.");
-                    cCDialogue.Add("Suerte humano.");
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jissy"))
-                {
-                    cCDialogue.Add("¿Qué pasa tío? ¿Cómo estamos?");
-                    cCDialogue.Add("Espera, tú… Tú no eres el del otro día... ¿No?");
-                    cCDialogue.Add("Yo soy Jissy, Jissy Blueman, mi nombre de las calles tío.");
-                    cCDialogue.Add("Perdona tronco pero, ¿Seguro que no eres el de siempre?");
-                    cCDialogue.Add("Nunca se me ha dado bien lo de reconocer a la gente, ¿Sabes?");
-                    cCDialogue.Add("Aunque creo que el anterior no era humano, era... un raza superior ¿Sabes?");
-                    cCDialogue.Add("Espero que no te afecte mi comentario, tampoco se me da bien socializar.");
-                    cCDialogue.Add("En fin, que te vaya bien...");
-                    cCDialogue.Add("¡Ah, sí!, antes de irme cóbrame esto, que me iba sin pagar ¿sabes?");
 
-                    cCDialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de... la vida ¿Sabes?");
-                    cCDialogue.Add("Bueno tronco… lo entiendo… ¿Sabes? Me alegra saber que al menos no romperé las normas.");
+                else if (currentScene.name == "Day4")
+                {
+                    if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
+                    {
+                        cCDialogue.Add("Hola chico nuevo, veo que te estás acostumbrando al trabajo en mi tienda.");
+                        cCDialogue.Add("Que raro que ningún mago te la haya arrancado la cabeza por negarte a cobrarle, al anterior dependiente le pasó eso.");
+                        cCDialogue.Add("Aunque gracias a ese mago, no tuve que pagarle ese mes.");
+                        cCDialogue.Add("Así acabé comprando el carruaje más rápido del reino, aunque se quedó obsoleto por culpa de los coches.");
+                        cCDialogue.Add("Por culpa de esas estúpidas máquinas de 4 ruedas, los tecnópedos no podrán comprar pilas y bebida energética junta, por una reacción que los hace más rápidos.");
+                        cCDialogue.Add("Se lo tienen merecido por hacerme gastar mis preciosas monedas en un carruaje que quedó obsoleto.");
+                        cCDialogue.Add("Y también me enteré hace poco que hay una secta convirtiendo híbridos en limbásticos.");
+                        cCDialogue.Add("Por lo que los híbridos no podrán comprar nada de magia negra, esa secta solo me ha hecho perder dinero.");
+                        cCDialogue.Add("Bueno, es hora de que empiece tu turno, recuerda mirar las nuevas normas.");
+                        cCDialogue.Add("Suerte humano.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jissy"))
+                    {
+                        cCDialogue.Add("¿Qué pasa tío? ¿Cómo estamos?");
+                        cCDialogue.Add("Espera, tú… Tú no eres el del otro día... ¿No?");
+                        cCDialogue.Add("Yo soy Jissy, Jissy Blueman, mi nombre de las calles tío.");
+                        cCDialogue.Add("Perdona tronco pero, ¿Seguro que no eres el de siempre?");
+                        cCDialogue.Add("Nunca se me ha dado bien lo de reconocer a la gente, ¿Sabes?");
+                        cCDialogue.Add("Aunque creo que el anterior no era humano, era... un raza superior ¿Sabes?");
+                        cCDialogue.Add("Espero que no te afecte mi comentario, tampoco se me da bien socializar.");
+                        cCDialogue.Add("En fin, que te vaya bien...");
+                        cCDialogue.Add("¡Ah, sí!, antes de irme cóbrame esto, que me iba sin pagar ¿sabes?");
+
+                        cCDialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de... la vida ¿Sabes?");
+                        cCDialogue.Add("Bueno tronco… lo entiendo… ¿Sabes? Me alegra saber que al menos no romperé las normas.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mara"))
+                    {
+                        cCDialogue.Add("Uy, buenos días cielo, se nota que eres un buen trabajador.");
+                        cCDialogue.Add("Debería de tomar ejemplo de ti, que me hubiera venido mejor trabajar en vez de ir a la horrible cita del otro día.");
+                        cCDialogue.Add("Para una vez que decido volver a darle a un intento al amor, y con el tiempo que le dediqué a mi cuenta de Hybrinder.");
+                        cCDialogue.Add("Llegué al pequeño local limbásticos, con mis patas raptoriales recién afiladas, y el tipo resultó no ser un híbrido.");
+                        cCDialogue.Add("Ni siquiera su cabeza se veía apetitosa, tenía una pedazo de esfera en su cabeza.");
+                        cCDialogue.Add("Y lo más raro es que el que hablaba era el espíritu de la esfera.");
+                        cCDialogue.Add("Igualmente accedí a cenar con él, aunque me hubiera engañado de esta manera.");
+                        cCDialogue.Add("Nada más me separé de él, le bloqueé de todos lados, espero no verlo más en mi vida.");
+                        cCDialogue.Add("Perdona si te aburriste con mi historia querido, cóbrame que tengo que ir a más tiendas querido.");
+
+                        cCDialogue.Add("Gracias cielo, espero nunca que no tengas citas como la mía.");
+                        cCDialogue.Add("¿Está prohibido esto? Bueno, ayer vi varias personas comprándolo, que raro.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Cululu"))
+                    {
+                        cCDialogue.Add("Buenos días mi dependiente favorito, ¿no es preciosa la vida?");
+                        cCDialogue.Add("...");
+                        cCDialogue.Add("Veo que mi pregunta te dejo mudo al igual que yo cuando veo a mi nueva diosa.");
+                        cCDialogue.Add("La cita del otro día no sólo fue genial, fue perfecta.");
+                        cCDialogue.Add("Cuando la ví, quedé perdido en su ojos de mantis, y no paraba de querer acariciar sus preciosas y afiladas garras.");
+                        cCDialogue.Add("Obvio fuí un caballero y no me atreví a tocar sus hermosas garras.");
+                        cCDialogue.Add("Además de que no quería perder mi mano.");
+                        cCDialogue.Add("Pero bueno, lo mejor de la cita fue cuando nos sentamos juntos y cenamos.");
+                        cCDialogue.Add("Y esa cangumantis me dijo 10 palabras, ¡10 PALABRAS!");
+                        cCDialogue.Add("Solo una hembra me había dicho más palabras que esas, mi madre.");
+                        cCDialogue.Add("Mis palabras favoritas fueron “¿Pagas tú, no?” Quiso que pagara yo, qué romántico");
+                        cCDialogue.Add("Tengo pensado decirle de tener otra cita, y creo que esto de aquí será necesario para la cita, así que si pudieras cobrarme.");
+
+                        cCDialogue.Add("Te informaré sobre mi próxima cita, mi dependiente favorito.");
+                        cCDialogue.Add("Tú, enemigo del amor, gracias por arruinar mi cita.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
+                    {
+                        cCDialogue.Add("Hola súbdito, ¿No crees que deberías de dejar de atender en este sótano?");
+                        cCDialogue.Add("Casi uno de mis fieles slimes se deshace por culpa de la caída.");
+                        cCDialogue.Add("Y no sabes el precio que hubieras tenido que pagar por mi slime.");
+                        cCDialogue.Add("Podría haberte nombrado mi nueva silla oficial… La única silla del Reino Slime.");
+                        cCDialogue.Add("Mi gran y poderoso reino de 4 habitantes slimes, donde yo soy la reina.");
+                        cCDialogue.Add("LA PODEROSA REINA MAGA ELIDORA LIMALIGNA.");
+                        cCDialogue.Add("La reina más poderosa de todos los reinos.");
+                        cCDialogue.Add("Aunque aún estoy con los papeles para volver mi reino oficial.");
+                        cCDialogue.Add("Creo que te dejaré unirte a mi reino si me muestras tu gran habilidad atendiendo clientes.");
+                        cCDialogue.Add("¿Qué me dices?");
+                        cCDialogue.Add("...");
+                        cCDialogue.Add("Ya veo que te he sorprendido tanto que te he dejado sin habla.");
+                        cCDialogue.Add("Venga muestrame tus habilidades cobrando.");
+
+                        cCDialogue.Add("Te haré el dependiente oficial… Nada más terminar con el papeleo, adiós humilde súbdito");
+                        cCDialogue.Add("En Reino Slime no tenemos estas estúpidas normativas, aunque ya nunca lo sabrás, adiós humano.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard"))
+                    {
+                        cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
+                        cCDialogue.Add("...");
+                        cCDialogue.Add("Tu mirada me dice que no es así, ¿Es que no tienes tiempo para leer en casa?");
+                        cCDialogue.Add("Eres de los peores fans que he tenido en mi vida.");
+                        cCDialogue.Add("Espero que leas al menos una antes de que escriban mi nueva historia: La caza del collar de Sin Cuello.");
+                        cCDialogue.Add("Mañana mismo partiré camino del reino junto con mi nuevo compañero.");
+                        cCDialogue.Add("Es un limbástico que reviví con ayuda de un mago mano un poco extraño.");
+                        cCDialogue.Add("Al parecer es el único tipo del reino que sabe hacer limbásticos, y yo que pensaba que revivían solos");
+                        cCDialogue.Add("Bueno, como decía de mi compañero, dicen que cuando estaba vivo tenía unos nervios de acero.");
+                        cCDialogue.Add("Así que por eso solo revivimos su sistema nervioso y su cerebro.");
+                        cCDialogue.Add("Espero que sea tan capaz como yo, aunque se le ve un poco tirillas.");
+                        cCDialogue.Add("En fin, necesitaré algunos materiales para el viaje, y esta tienda tiene suerte de ser mi proveedora no oficial.");
+                        cCDialogue.Add("Por lo que tendrás el honor de cobrarme.");
+
+                        cCDialogue.Add("Deséame suerte en mi aventura, aunque no la necesite.");
+                        cCDialogue.Add("Por todo lo que he hecho por el reino, y me lo pagan así.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Magma"))
+                    {
+                        cCDialogue.Add("Buenas mañanas persona fría, soy Magmadora.");
+                        cCDialogue.Add("Frío de personalidad o frío de carne, tú dirás, solo tienes que mirarme.");
+                        cCDialogue.Add("Veo que no eres el mismo trozo de carne fría que había antes en este lugar.");
+                        cCDialogue.Add("Haber si llega ya el maldito verano que yo soy de los que prefiere el calor, sino mira como estoy que ardo.");
+                        cCDialogue.Add("De verdad que la gente que prefiere el frío no la entiendo.");
+                        cCDialogue.Add("Si no estuvieras hecho de carne, también preferirías el calor.");
+                        cCDialogue.Add("Ventajas de no poder sudar.");
+                        cCDialogue.Add("En fin, ¿Te importaría cobrarme esto? Que me estoy quedando sin llama y tengo que avivarme un poco.");
+
+                        cCDialogue.Add("Gracias, espero que cuando termine de trabajar no se enfríe de camino a casa.");
+                        cCDialogue.Add("¿Cómo que han prohibido comprar pociones? ¡AHORA CÓMO PODRÉ COMPRAR MI POCIÓN DE LAVA!");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Handy"))
+                    {
+                        cCDialogue.Add("Dependiente... Hoy no podría ser... ¡LA MEJOR SEMANA DE MI VIDA!");
+                        cCDialogue.Add("El trabajo del otro día fue genial, los solteros fueron encantadores.");
+                        cCDialogue.Add("Les encantó cuando me puse a hacer mi monólogo.");
+                        cCDialogue.Add("Y mi compañera es una DJ genial, en el momento de las copas salió a hacer su parte.");
+                        cCDialogue.Add("Baile con el novio un rato, pero no paraba de tocar mi bocina, era un tipo raro.");
+                        cCDialogue.Add("Pero bueno, ahora tenemos un nuevo trabajo para hoy, una gatoteca.");
+                        cCDialogue.Add("Hemos pensado en animar haciendo un musical con los gatos, pero son unos bichos muy ariscos y arrítmicos.");
+                        cCDialogue.Add("Así que hemos pensado en otra cosa, vamos a bollos con forma de gatito.");
+                        cCDialogue.Add("En fin, sabes que me encanta estar contigo, pero se me está haciendo tarde amigo.");
+                        cCDialogue.Add("Por lo que cóbrame que tengo que alegrar esa gatoteca.");
+
+                        cCDialogue.Add("Deséame la mayor de las suerte en mi nuevo trabajo.");
+                        cCDialogue.Add("Espero que el trabajo me vaya bien igualmente");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Antonio"))
+                    {
+                        cCDialogue.Add("Buenos días chico… Eres el del otro día ¿no?");
+                        cCDialogue.Add("Tengo mala memoria, debe ser porque siempre pierdo la cabeza, ja ja ja...");
+                        cCDialogue.Add("Sabía que eras tú, aún recuerdo el vacío que dejabas cada vez que contaba mi mejor chiste.");
+                        cCDialogue.Add("Entonces tengo la confianza de decirte que me gustaría hacer un regalo a mi novio Patxi.");
+                        cCDialogue.Add("Ayer me hizo una cita y quiero hacer algo a cambio, pensé en proponerle hacer senderismo.");
+                        cCDialogue.Add("Pero con lo lento que voy y lo rápido que va él, seguro no lo disfrutamos igual, por eso me decanté por la opción del regalo.");
+                        cCDialogue.Add("Espero que le guste este gato muerto, seguro que le recuerda a Mistafurriño.");
+                        cCDialogue.Add("Era su gato cuando estaba vivo, y puede que quiera algo que le recuerde a él.");
+                        cCDialogue.Add("Cóbrame por favor que tengo que envolver el regalo.");
+
+                        cCDialogue.Add("Espero que le guste este regalo.");
+                        cCDialogue.Add("Ahora que le regalo yo a mi Patxi.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
+                    {
+                        cCDialogue.Add("Hola humano, hoy no vengo como cliente, sino como testigo de Azathoth.");
+                        cCDialogue.Add("¿Has reconsiderado acercarte a mi iglesia?");
+                        cCDialogue.Add("Últimamente aceptamos a varios humanos para que se unan a rezar con nosotros, siempre vienen nuevos.");
+                        cCDialogue.Add("Aunque hace poco comprobamos que los híbridos también son “bienvenidos” a nuestra religión.");
+                        cCDialogue.Add("Transformamos a uno de ellos en uno de los nuestros... Fue simplemente arte.");
+                        cCDialogue.Add("Pero bueno, solo me acercaba por aquí para que reconsideraras la oferta, siempre te daremos una mano.");
+                        cCDialogue.Add("Suerte en la tienda, humano.");
+                    }
+
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Detective"))
+                    {
+                        cCDialogue.Add("Buenos días humano, la investigación se está alargando bastante.");
+                        cCDialogue.Add("Puede que no lo sepas, pero este caso se empezó porque estamos buscando a quién está creando limbásticos.");
+                        cCDialogue.Add("Los limbásticos son incapaces de recordar dónde les crearon, pero con algo de investigación encontramos algo.");
+                        cCDialogue.Add("Un sospechoso de ayer parece formar parte de una religión de la que desconocemos.");
+                        cCDialogue.Add("Y creemos que pueden estar relacionados con la creación de limbásticos.");
+                        cCDialogue.Add("Pero tampoco tenemos suficientes pruebas para saberlo.");
+                        cCDialogue.Add("Creemos que el sospechoso se reunió con otro cliente de esta tienda para hacer un limbástico.");
+                        cCDialogue.Add("Pero tampoco tenemos suficientes pruebas para saberlo.");
+                        cCDialogue.Add("Creemos que el sospechoso se reunió con otro cliente de esta tienda para hacer un limbástico.");
+                        cCDialogue.Add("¿Sabes si alguno de los siguientes sospechosos se relacionó con la iglesia?");
+                        cCDialogue.Add("Muchas gracias por la información, espero que tenga un buen día, humano.");
+                    }
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mara"))
+                else if (currentScene.name == "Day5")
                 {
-                    cCDialogue.Add("Uy, buenos días cielo, se nota que eres un buen trabajador.");
-                    cCDialogue.Add("Debería de tomar ejemplo de ti, que me hubiera venido mejor trabajar en vez de ir a la horrible cita del otro día.");
-                    cCDialogue.Add("Para una vez que decido volver a darle a un intento al amor, y con el tiempo que le dediqué a mi cuenta de Hybrinder.");
-                    cCDialogue.Add("Llegué al pequeño local limbásticos, con mis patas raptoriales recién afiladas, y el tipo resultó no ser un híbrido.");
-                    cCDialogue.Add("Ni siquiera su cabeza se veía apetitosa, tenía una pedazo de esfera en su cabeza.");
-                    cCDialogue.Add("Y lo más raro es que el que hablaba era el espíritu de la esfera.");
-                    cCDialogue.Add("Igualmente accedí a cenar con él, aunque me hubiera engañado de esta manera.");
-                    cCDialogue.Add("Nada más me separé de él, le bloqueé de todos lados, espero no verlo más en mi vida.");
-                    cCDialogue.Add("Perdona si te aburriste con mi historia querido, cóbrame que tengo que ir a más tiendas querido.");
+                    if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
+                    {
+                        cCDialogue.Add("Hola humano, ¿Sabes que hoy es un día especial?");
+                        cCDialogue.Add("Es el primer día del año que no tenemos nuevas normas, ¡ASÍ PODRÉ TENER MÁS DINERO!");
+                        cCDialogue.Add("Y al ser un día tan especial, te daré un trato especial.");
+                        cCDialogue.Add("Revisaré cómo trabajaste por mis cámaras… Digo con mis poderosas habilidades mentales.");
+                        cCDialogue.Add("Y si lo has hecho muy bien, seguirás trabajando aquí, o al menos espero que puedas pagarte la maldita documentación.");
+                        cCDialogue.Add("Como no hayas ganado suficiente dinero, ¡TE QUEDAS SIN LA DOCUMENTACIÓN!");
+                        cCDialogue.Add("Pero bueno, confío que hayas sido un buen trabajador.");
+                        cCDialogue.Add("Suerte en el que espero que no sea tu último día.");
+                    }
 
-                    cCDialogue.Add("Gracias cielo, espero nunca que no tengas citas como la mía.");
-                    cCDialogue.Add("¿Está prohibido esto? Bueno, ayer vi varias personas comprándolo, que raro.");
-                }
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
+                    {
+                        cCDialogue.Add("Hola humano, vengo defraudada de lo mal hecho que está este reino.");
+                        cCDialogue.Add("Fuí al famoso restaurante de “Tips”, y no dejaron pasar a mis humildes ciudadanos esclavos de slime.");
+                        cCDialogue.Add("Alguna híbrido debió hacer esas normas tan tontas, ¿Cómo no van a permitir criaturas mágicas?");
+                        cCDialogue.Add("Y lo peor es la DECADENCIA del lugar, me obligaron a sentarme en una silla en vez de en mi slimes.");
+                        cCDialogue.Add("Y porqué no hablar del servicio, casi tuve que cazar a los camareros, cómo un oságuila a un salmón.");
+                        cCDialogue.Add("Le voy a poner una estrella en TripKingdom a ese maldito sitio.");
+                        cCDialogue.Add("Seguro no me atendían como debían por ser la reina del reino slime, esos híbridos magofóbicos.");
+                        cCDialogue.Add("Menos mal que en mi reino no excluimos a nadie, excepto a los híbridos a partir de este mal servicio.");
+                        cCDialogue.Add("Haré un restaurante llevado por slimes que lo harán mejor que esos inútiles.");
+                        cCDialogue.Add("Bueno, humano cóbrame que tengo que empezar con la edificación de mi reino.");
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Cululu"))
-                {
-                    cCDialogue.Add("Buenos días mi dependiente favorito, ¿no es preciosa la vida?");
-                    cCDialogue.Add("...");
-                    cCDialogue.Add("Veo que mi pregunta te dejo mudo al igual que yo cuando veo a mi nueva diosa.");
-                    cCDialogue.Add("La cita del otro día no sólo fue genial, fue perfecta.");
-                    cCDialogue.Add("Cuando la ví, quedé perdido en su ojos de mantis, y no paraba de querer acariciar sus preciosas y afiladas garras.");
-                    cCDialogue.Add("Obvio fuí un caballero y no me atreví a tocar sus hermosas garras.");
-                    cCDialogue.Add("Además de que no quería perder mi mano.");
-                    cCDialogue.Add("Pero bueno, lo mejor de la cita fue cuando nos sentamos juntos y cenamos.");
-                    cCDialogue.Add("Y esa cangumantis me dijo 10 palabras, ¡10 PALABRAS!");
-                    cCDialogue.Add("Solo una hembra me había dicho más palabras que esas, mi madre.");
-                    cCDialogue.Add("Mis palabras favoritas fueron “¿Pagas tú, no?” Quiso que pagara yo, qué romántico");
-                    cCDialogue.Add("Tengo pensado decirle de tener otra cita, y creo que esto de aquí será necesario para la cita, así que si pudieras cobrarme.");
+                        cCDialogue.Add("Bien hecho humano, si se te da tan bien cobrar, seguro también se te da bien ayudarme con las obras de mi reino.");
+                        cCDialogue.Add("Estúpido humano, menos mal que mis dependientes slimes serán más listos que tú.");
+                    }
 
-                    cCDialogue.Add("Te informaré sobre mi próxima cita, mi dependiente favorito.");
-                    cCDialogue.Add("Tú, enemigo del amor, gracias por arruinar mi cita.");
-                }
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rockon"))
+                    {
+                        cCDialogue.Add("Ho-hola amigo, ¿qué tal tu-tu-tu día de hoy?");
+                        cCDialogue.Add("Seguro que fue un día pri-pri-edrástico, como decimos chicos piedras.");
+                        cCDialogue.Add("Tenemos muchas expresiones ra-raras gracias a mis primos roca, son de pueblo cerrado.");
+                        cCDialogue.Add("Además de que son chicos fuerte como mi padre, dicen que son “Gymbros”.");
+                        cCDialogue.Add("Debería de ir al “Muscle Beluga” para me-mejorar mis músculos, es el mejor gimnasio del reino.");
+                        cCDialogue.Add("Así igualaría la fuerza de mis primos y podría ayudar a mi padre en su restaurante.");
+                        cCDialogue.Add("Él está como esclavo en el “Tips” del reino, es el mejor sitio para comer.");
+                        cCDialogue.Add("Aunque cada día le tocan clientes más desagradables, fue una ma-maga que quería pasar a unos slimes.");
+                        cCDialogue.Add("Se nota que no sabe lo que cuesta limpiar la baba de esas po-pobres criaturas.");
+                        cCDialogue.Add("Se-seguro que estoy haciendo mucha cola, cóbrame amigo.");
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
-                {
-                    cCDialogue.Add("Hola súbdito, ¿No crees que deberías de dejar de atender en este sótano?");
-                    cCDialogue.Add("Casi uno de mis fieles slimes se deshace por culpa de la caída.");
-                    cCDialogue.Add("Y no sabes el precio que hubieras tenido que pagar por mi slime.");
-                    cCDialogue.Add("Podría haberte nombrado mi nueva silla oficial… La única silla del Reino Slime.");
-                    cCDialogue.Add("Mi gran y poderoso reino de 4 habitantes slimes, donde yo soy la reina.");
-                    cCDialogue.Add("LA PODEROSA REINA MAGA ELIDORA LIMALIGNA.");
-                    cCDialogue.Add("La reina más poderosa de todos los reinos.");
-                    cCDialogue.Add("Aunque aún estoy con los papeles para volver mi reino oficial.");
-                    cCDialogue.Add("Creo que te dejaré unirte a mi reino si me muestras tu gran habilidad atendiendo clientes.");
-                    cCDialogue.Add("¿Qué me dices?");
-                    cCDialogue.Add("...");
-                    cCDialogue.Add("Ya veo que te he sorprendido tanto que te he dejado sin habla.");
-                    cCDialogue.Add("Venga muestrame tus habilidades cobrando.");
+                        cCDialogue.Add("Gra-gracias, espero le gusten estos peluches con forma humana a mi padre.");
+                        cCDialogue.Add("Me falta di-dinero, jopetas, perdón amigo.");
+                    }
 
-                    cCDialogue.Add("Te haré el dependiente oficial… Nada más terminar con el papeleo, adiós humilde súbdito");
-                    cCDialogue.Add("En Reino Slime no tenemos estas estúpidas normativas, aunque ya nunca lo sabrás, adiós humano.");
-                }
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Sapo"))
+                    {
+                        cCDialogue.Add("Buennnasss *hip* Tú…Tú…  Ahí está miii dependiente favorito.");
+                        cCDialogue.Add("Erres el mejor, tíoooo, gracias a tí no tengo trabajarrr más, er jefe me ha visto borracho, de nuevo.");
+                        cCDialogue.Add("Ahorra seguirré con mi increíble vida jubeniiiil, eres er único capaz de entenderme*hip*");
+                        cCDialogue.Add("Te invitarría a una birra, pero no sé que bebeís los hurmanos, tenéis pinta de beberrrr Carrimocho.");
+                        cCDialogue.Add("No parreceis bebedores fuertes como yo, mi hígado y yo segurro somos los combatientes más fuertes del reino*hip*");
+                        cCDialogue.Add("Te estoy robando muuuuucho tiempo, solo quiero decirte que esperro que podamos ser amigos, y que nos vayamos de copas al terminaaaar el turno.");
+                        cCDialogue.Add("Nos vemos besto amigo.");
+                    }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard"))
-                {
-                    cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
-                    cCDialogue.Add("...");
-                    cCDialogue.Add("Tu mirada me dice que no es así, ¿Es que no tienes tiempo para leer en casa?");
-                    cCDialogue.Add("Eres de los peores fans que he tenido en mi vida.");
-                    cCDialogue.Add("Espero que leas al menos una antes de que escriban mi nueva historia: La caza del collar de Sin Cuello.");
-                    cCDialogue.Add("Mañana mismo partiré camino del reino junto con mi nuevo compañero.");
-                    cCDialogue.Add("Es un limbástico que reviví con ayuda de un mago mano un poco extraño.");
-                    cCDialogue.Add("Al parecer es el único tipo del reino que sabe hacer limbásticos, y yo que pensaba que revivían solos");
-                    cCDialogue.Add("Bueno, como decía de mi compañero, dicen que cuando estaba vivo tenía unos nervios de acero.");
-                    cCDialogue.Add("Así que por eso solo revivimos su sistema nervioso y su cerebro.");
-                    cCDialogue.Add("Espero que sea tan capaz como yo, aunque se le ve un poco tirillas.");
-                    cCDialogue.Add("En fin, necesitaré algunos materiales para el viaje, y esta tienda tiene suerte de ser mi proveedora no oficial.");
-                    cCDialogue.Add("Por lo que tendrás el honor de cobrarme.");
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Cululu"))
+                    {
+                        cCDialogue.Add("Hola colega, tengo una mala noticia para ti.");
+                        cCDialogue.Add("La cangumantis y yo lo hemos dejado, me echó spray de pimienta en la esfera cuando la encontré.");
+                        cCDialogue.Add("Es una de las maneras en la que me han dejado, la peor una de mis exs que me dejó por mi hermano.");
+                        cCDialogue.Add("Pero esto ha hecho que abra los ojos y me dé cuenta que de tanto pensar en el amor, me perdí en el sendero de la vida.");
+                        cCDialogue.Add("Así que tome una decisión importante y me desinstalé Hybrinder, aunque me quedara un año de premium.");
+                        cCDialogue.Add("Creo que ahora voy a rehacer mi vida, ahora que soy un limbástico.");
+                        cCDialogue.Add("Puedo intentar ser un monje, perdido en la montaña, para encontrar un nuevo camino.");
+                        cCDialogue.Add("Pero creo que me quedaré trabajando en la gasolinera como siempre, hasta que encuentre mi camino.");
+                        cCDialogue.Add("Hablando de la gasolinera, cóbrame que tengo dentro de nada el turno.");
 
-                    cCDialogue.Add("Deséame suerte en mi aventura, aunque no la necesite.");
-                    cCDialogue.Add("Por todo lo que he hecho por el reino, y me lo pagan así.");
-                }
+                        cCDialogue.Add("Voy a empezar con ganas mi nuevo camino, si es que me llega.");
+                        cCDialogue.Add("Espero que empezar mi nuevo camino no se vea afectado por mi nulas capacidades de contar monedas.");
+                    }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Magma"))
-                {
-                    cCDialogue.Add("Buenas mañanas persona fría, soy Magmadora.");
-                    cCDialogue.Add("Frío de personalidad o frío de carne, tú dirás, solo tienes que mirarme.");
-                    cCDialogue.Add("Veo que no eres el mismo trozo de carne fría que había antes en este lugar.");
-                    cCDialogue.Add("Haber si llega ya el maldito verano que yo soy de los que prefiere el calor, sino mira como estoy que ardo.");
-                    cCDialogue.Add("De verdad que la gente que prefiere el frío no la entiendo.");
-                    cCDialogue.Add("Si no estuvieras hecho de carne, también preferirías el calor.");
-                    cCDialogue.Add("Ventajas de no poder sudar.");
-                    cCDialogue.Add("En fin, ¿Te importaría cobrarme esto? Que me estoy quedando sin llama y tengo que avivarme un poco.");
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Masermati"))
+                    {
+                        cCDialogue.Add("Hola cocherrumín, ¿adivina quién participó en la carrera del otro día y quedó en 1º lugar?");
+                        cCDialogue.Add("Pues yo no porque quedé en 8º lugar, pero lo importante fue participar.");
+                        cCDialogue.Add("Si sigo entrenando, puede que para la próxima quede en 1º lugar.");
+                        cCDialogue.Add("Si no fuera porque Flecha Rápida hiciera trampa, ese trasto de 4 ruedas lanzó clavos por el camino.");
+                        cCDialogue.Add("Es igual de miserable que su dueño Pijus Magnus, la próxima vez no se repetirá.");
+                        cCDialogue.Add("Menos mal que mi familia se quedó apoyándome hasta el final.");
+                        cCDialogue.Add("Seguro que en cuanto me ponga la luces traseras y el cambio de marchas mejoraré mucho más.");
+                        cCDialogue.Add("Pero como siempre dan citas para dentro de 3 meses en reparación pública.");
+                        cCDialogue.Add("Esperaré hasta la cita y la operación para ser mejor coche en mi siguiente carrera.");
+                        cCDialogue.Add("Bueno cocherrumín, creo que debería ir corriendo hasta casa que se me hace tarde.");
 
-                    cCDialogue.Add("Gracias, espero que cuando termine de trabajar no se enfríe de camino a casa.");
-                    cCDialogue.Add("¿Cómo que han prohibido comprar pociones? ¡AHORA CÓMO PODRÉ COMPRAR MI POCIÓN DE LAVA!");
-                }
+                        cCDialogue.Add("Ahora voy acelerando a casa para no llegar tarde, chao. ");
+                        cCDialogue.Add("Con las prisas se me olvidó revisar las normas");
+                    }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Handy"))
-                {
-                    cCDialogue.Add("Dependiente... Hoy no podría ser... ¡LA MEJOR SEMANA DE MI VIDA!");
-                    cCDialogue.Add("El trabajo del otro día fue genial, los solteros fueron encantadores.");
-                    cCDialogue.Add("Les encantó cuando me puse a hacer mi monólogo.");
-                    cCDialogue.Add("Y mi compañera es una DJ genial, en el momento de las copas salió a hacer su parte.");
-                    cCDialogue.Add("Baile con el novio un rato, pero no paraba de tocar mi bocina, era un tipo raro.");
-                    cCDialogue.Add("Pero bueno, ahora tenemos un nuevo trabajo para hoy, una gatoteca.");
-                    cCDialogue.Add("Hemos pensado en animar haciendo un musical con los gatos, pero son unos bichos muy ariscos y arrítmicos.");
-                    cCDialogue.Add("Así que hemos pensado en otra cosa, vamos a bollos con forma de gatito.");
-                    cCDialogue.Add("En fin, sabes que me encanta estar contigo, pero se me está haciendo tarde amigo.");
-                    cCDialogue.Add("Por lo que cóbrame que tengo que alegrar esa gatoteca.");
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
+                    {
+                        cCDialogue.Add("Buenos días próximo creyente, veo que sigues encadenado a esta tienda.");
+                        cCDialogue.Add("Podrías intentar ser más libre si vinieras alguna vez a una de las misas de mi iglesia.");
+                        cCDialogue.Add("Además te beneficiaría venir, con cierta información que te voy a contar ahora.");
+                        cCDialogue.Add("Vamos a hacer que vuelvan antiguos héroes a la vida, el primero fue el gran Sergio Nerviosaus.");
+                        cCDialogue.Add("Pero dentro de poco, no será el único que volverá a la vida y nos ayudará.");
+                        cCDialogue.Add("Así que creo que te beneficiaría estar de nuestra parte, y no de la del detective que lleva unos días viéndote.");
+                        cCDialogue.Add("¿Crees que no lo sabía? Ese detective lleva algunos días indagando en nuestra sagrada iglesia.");
+                        cCDialogue.Add("Además de que siempre viene a esta tienda al final del día, así que espero que hoy le mientas un poquito.");
+                        cCDialogue.Add("Pero bueno, hoy vine como cliente, por lo que cóbrame humano.");
 
-                    cCDialogue.Add("Deséame la mayor de las suerte en mi nuevo trabajo.");
-                    cCDialogue.Add("Espero que el trabajo me vaya bien igualmente");
-                }
+                        cCDialogue.Add("Te espero pronto en mi iglesia, humano.");
+                        cCDialogue.Add("Cuando revivamos a los héroes, espero que no sepas contar mejor.");
+                    }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Antonio"))
-                {
-                    cCDialogue.Add("Buenos días chico… Eres el del otro día ¿no?");
-                    cCDialogue.Add("Tengo mala memoria, debe ser porque siempre pierdo la cabeza, ja ja ja...");
-                    cCDialogue.Add("Sabía que eras tú, aún recuerdo el vacío que dejabas cada vez que contaba mi mejor chiste.");
-                    cCDialogue.Add("Entonces tengo la confianza de decirte que me gustaría hacer un regalo a mi novio Patxi.");
-                    cCDialogue.Add("Ayer me hizo una cita y quiero hacer algo a cambio, pensé en proponerle hacer senderismo.");
-                    cCDialogue.Add("Pero con lo lento que voy y lo rápido que va él, seguro no lo disfrutamos igual, por eso me decanté por la opción del regalo.");
-                    cCDialogue.Add("Espero que le guste este gato muerto, seguro que le recuerda a Mistafurriño.");
-                    cCDialogue.Add("Era su gato cuando estaba vivo, y puede que quiera algo que le recuerde a él.");
-                    cCDialogue.Add("Cóbrame por favor que tengo que envolver el regalo.");
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Salta"))
+                    {
+                        cCDialogue.Add("Hola humano, ¿cómo estar día?");
+                        cCDialogue.Add("Como tu ver ver ver ver ver romper runas de nuevo.");
+                        cCDialogue.Add("Yo estar en bar anoche con mi querida familia, hasta que un borracho echarme toda su bebida encima.");
+                        cCDialogue.Add("El tipo no quiso reparar mis runas y romperlas toda la noche.");
+                        cCDialogue.Add("Ahora necesitar cambiar runas de nuevo, la gente no comprender a mí.");
+                        cCDialogue.Add("No entender que yo no nacer con mitad animal, si no con vegetal.");
+                        cCDialogue.Add("Deber cambiar alguna cosa para hacer mejor trato a los híbridos mitad vegetal.");
+                        cCDialogue.Add("O al menos hacer algo para que los híbridos vegetarianos no babear babear babear con nosotros.");
+                        cCDialogue.Add("Ya volver a funcionar mal, cóbrame que querer cambiar runas.");
 
-                    cCDialogue.Add("Espero que le guste este regalo.");
-                    cCDialogue.Add("Ahora que le regalo yo a mi Patxi.");
-                }
+                        cCDialogue.Add("Gracias humano, cambiar en nada runas.");
+                        cCDialogue.Add("Yo solo querer cerveza para papá, pero bueno, dar solo runas mejor.");
+                    }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
-                {
-                    cCDialogue.Add("Hola humano, hoy no vengo como cliente, sino como testigo de Azathoth.");
-                    cCDialogue.Add("¿Has reconsiderado acercarte a mi iglesia?");
-                    cCDialogue.Add("Últimamente aceptamos a varios humanos para que se unan a rezar con nosotros, siempre vienen nuevos.");
-                    cCDialogue.Add("Aunque hace poco comprobamos que los híbridos también son “bienvenidos” a nuestra religión.");
-                    cCDialogue.Add("Transformamos a uno de ellos en uno de los nuestros... Fue simplemente arte.");
-                    cCDialogue.Add("Pero bueno, solo me acercaba por aquí para que reconsideraras la oferta, siempre te daremos una mano.");
-                    cCDialogue.Add("Suerte en la tienda, humano.");
-                }
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Raven"))
+                    {
+                        cCDialogue.Add("Hola cielo, espero que estés teniendo un día brillante.");
+                        cCDialogue.Add("A mí ayer me fue genial en la gatoteca, fue muy divertido a mi compañero huir de los gatos.");
+                        cCDialogue.Add("Se le pegaban los gatos con la estática de los globos.");
+                        cCDialogue.Add("¡Además pudimos atender a uno de los miembros de la banda de Magicians of Power!");
+                        cCDialogue.Add("¡SON EL MEJOR GRUPO DEL MUNDO!");
+                        cCDialogue.Add("Y gracias a mis increíbles dotes de persuasión y carisma, me regalaron dos entradas para ir.");
+                        cCDialogue.Add("Seguro le digo a Handy de ir, es un gran compañero, y se esfuerza más que ninguno que haya tenido.");
+                        cCDialogue.Add("Aunque su debilidad sean los gatos con mucho pelo.");
+                        cCDialogue.Add("No se cuál será el próximo trabajo, pero espero que pueda hacerlo junto con él.");
+                        cCDialogue.Add("Te quite mucho tiempo amigo mío, cobrame esto porfi.");
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Detective"))
-                {
-                    cCDialogue.Add("Buenos días humano, la investigación se está alargando bastante.");
-                    cCDialogue.Add("Puede que no lo sepas, pero este caso se empezó porque estamos buscando a quién está creando limbásticos.");
-                    cCDialogue.Add("Los limbásticos son incapaces de recordar dónde les crearon, pero con algo de investigación encontramos algo.");
-                    cCDialogue.Add("Un sospechoso de ayer parece formar parte de una religión de la que desconocemos.");
-                    cCDialogue.Add("Y creemos que pueden estar relacionados con la creación de limbásticos.");
-                    cCDialogue.Add("Pero tampoco tenemos suficientes pruebas para saberlo.");
-                    cCDialogue.Add("Creemos que el sospechoso se reunió con otro cliente de esta tienda para hacer un limbástico.");
-                    cCDialogue.Add("Pero tampoco tenemos suficientes pruebas para saberlo.");
-                    cCDialogue.Add("Creemos que el sospechoso se reunió con otro cliente de esta tienda para hacer un limbástico.");
-                    cCDialogue.Add("¿Sabes si alguno de los siguientes sospechosos se relacionó con la iglesia?");
-                    cCDialogue.Add("Muchas gracias por la información, espero que tenga un buen día, humano.");
-                }
-            }
+                        cCDialogue.Add("Gracias amigo, espero que llegue ya el día del concierto.");
+                        cCDialogue.Add("¿No puedo comprar esto? Creía que tenía todo el dinero.");
+                    }
 
-            else if (currentScene.name == "Day5")
-            {
-                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
-                {
-                    cCDialogue.Add("Hola humano, ¿Sabes que hoy es un día especial?");
-                    cCDialogue.Add("Es el primer día del año que no tenemos nuevas normas, ¡ASÍ PODRÉ TENER MÁS DINERO!");
-                    cCDialogue.Add("Y al ser un día tan especial, te daré un trato especial.");
-                    cCDialogue.Add("Revisaré cómo trabajaste por mis cámaras… Digo con mis poderosas habilidades mentales.");
-                    cCDialogue.Add("Y si lo has hecho muy bien, seguirás trabajando aquí, o al menos espero que puedas pagarte la maldita documentación.");
-                    cCDialogue.Add("Como no hayas ganado suficiente dinero, ¡TE QUEDAS SIN LA DOCUMENTACIÓN!");
-                    cCDialogue.Add("Pero bueno, confío que hayas sido un buen trabajador.");
-                    cCDialogue.Add("Suerte en el que espero que no sea tu último día.");
-                }
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Tapiz"))
+                    {
+                        cCDialogue.Add("Hola humano, creo que me acaba de pasar algo sorprendente después de estos años trabajando.");
+                        cCDialogue.Add("Han habido recortes en mi trabajo, por lo que pensaba que me iban a recortar mi sueldo de 3 monedas al mes.");
+                        cCDialogue.Add("Pero lo que parecía un recorte de sueldo, acabó siendo un recorte de verdad.");
+                        cCDialogue.Add("Literalmente han cortado una parte de mí, y salió un mini yo, por lo que creo que ahora soy papicio.");
+                        cCDialogue.Add("Vaya suerte tendrá el tapicín de tener un padre tan realista como yo.");
+                        cCDialogue.Add("Así sabrá de inicio lo triste y dura que es la vida, y no le pasará como a mí al nacer.");
+                        cCDialogue.Add("Aunque no sé qué necesitan comer los tapicines cuando son pequeños, puede que un poco de gravilla le guste.");
+                        cCDialogue.Add("Bueno, hablando del peque, tengo que ir a por él en nada, así que cóbrame.");
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
-                {
-                    cCDialogue.Add("Hola humano, vengo defraudada de lo mal hecho que está este reino.");
-                    cCDialogue.Add("Fuí al famoso restaurante de “Tips”, y no dejaron pasar a mis humildes ciudadanos esclavos de slime.");
-                    cCDialogue.Add("Alguna híbrido debió hacer esas normas tan tontas, ¿Cómo no van a permitir criaturas mágicas?");
-                    cCDialogue.Add("Y lo peor es la DECADENCIA del lugar, me obligaron a sentarme en una silla en vez de en mi slimes.");
-                    cCDialogue.Add("Y porqué no hablar del servicio, casi tuve que cazar a los camareros, cómo un oságuila a un salmón.");
-                    cCDialogue.Add("Le voy a poner una estrella en TripKingdom a ese maldito sitio.");
-                    cCDialogue.Add("Seguro no me atendían como debían por ser la reina del reino slime, esos híbridos magofóbicos.");
-                    cCDialogue.Add("Menos mal que en mi reino no excluimos a nadie, excepto a los híbridos a partir de este mal servicio.");
-                    cCDialogue.Add("Haré un restaurante llevado por slimes que lo harán mejor que esos inútiles.");
-                    cCDialogue.Add("Bueno, humano cóbrame que tengo que empezar con la edificación de mi reino.");
+                        cCDialogue.Add("Gracias, a ver si estar ahora con hijo me anima más.");
+                        cCDialogue.Add("Ahora el niño me verá más deprimente de siempre.");
+                    }
 
-                    cCDialogue.Add("Bien hecho humano, si se te da tan bien cobrar, seguro también se te da bien ayudarme con las obras de mi reino.");
-                    cCDialogue.Add("Estúpido humano, menos mal que mis dependientes slimes serán más listos que tú.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rockon"))
-                {
-                    cCDialogue.Add("Ho-hola amigo, ¿qué tal tu-tu-tu día de hoy?");
-                    cCDialogue.Add("Seguro que fue un día pri-pri-edrástico, como decimos chicos piedras.");
-                    cCDialogue.Add("Tenemos muchas expresiones ra-raras gracias a mis primos roca, son de pueblo cerrado.");
-                    cCDialogue.Add("Además de que son chicos fuerte como mi padre, dicen que son “Gymbros”.");
-                    cCDialogue.Add("Debería de ir al “Muscle Beluga” para me-mejorar mis músculos, es el mejor gimnasio del reino.");
-                    cCDialogue.Add("Así igualaría la fuerza de mis primos y podría ayudar a mi padre en su restaurante.");
-                    cCDialogue.Add("Él está como esclavo en el “Tips” del reino, es el mejor sitio para comer.");
-                    cCDialogue.Add("Aunque cada día le tocan clientes más desagradables, fue una ma-maga que quería pasar a unos slimes.");
-                    cCDialogue.Add("Se nota que no sabe lo que cuesta limpiar la baba de esas po-pobres criaturas.");
-                    cCDialogue.Add("Se-seguro que estoy haciendo mucha cola, cóbrame amigo.");
-
-                    cCDialogue.Add("Gra-gracias, espero le gusten estos peluches con forma humana a mi padre.");
-                    cCDialogue.Add("Me falta di-dinero, jopetas, perdón amigo.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Sapo"))
-                {
-                    cCDialogue.Add("Buennnasss *hip* Tú…Tú…  Ahí está miii dependiente favorito.");
-                    cCDialogue.Add("Erres el mejor, tíoooo, gracias a tí no tengo trabajarrr más, er jefe me ha visto borracho, de nuevo.");
-                    cCDialogue.Add("Ahorra seguirré con mi increíble vida jubeniiiil, eres er único capaz de entenderme*hip*");
-                    cCDialogue.Add("Te invitarría a una birra, pero no sé que bebeís los hurmanos, tenéis pinta de beberrrr Carrimocho.");
-                    cCDialogue.Add("No parreceis bebedores fuertes como yo, mi hígado y yo segurro somos los combatientes más fuertes del reino*hip*");
-                    cCDialogue.Add("Te estoy robando muuuuucho tiempo, solo quiero decirte que esperro que podamos ser amigos, y que nos vayamos de copas al terminaaaar el turno.");
-                    cCDialogue.Add("Nos vemos besto amigo.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Cululu"))
-                {
-                    cCDialogue.Add("Hola colega, tengo una mala noticia para ti.");
-                    cCDialogue.Add("La cangumantis y yo lo hemos dejado, me echó spray de pimienta en la esfera cuando la encontré.");
-                    cCDialogue.Add("Es una de las maneras en la que me han dejado, la peor una de mis exs que me dejó por mi hermano.");
-                    cCDialogue.Add("Pero esto ha hecho que abra los ojos y me dé cuenta que de tanto pensar en el amor, me perdí en el sendero de la vida.");
-                    cCDialogue.Add("Así que tome una decisión importante y me desinstalé Hybrinder, aunque me quedara un año de premium.");
-                    cCDialogue.Add("Creo que ahora voy a rehacer mi vida, ahora que soy un limbástico.");
-                    cCDialogue.Add("Puedo intentar ser un monje, perdido en la montaña, para encontrar un nuevo camino.");
-                    cCDialogue.Add("Pero creo que me quedaré trabajando en la gasolinera como siempre, hasta que encuentre mi camino.");
-                    cCDialogue.Add("Hablando de la gasolinera, cóbrame que tengo dentro de nada el turno.");
-
-                    cCDialogue.Add("Voy a empezar con ganas mi nuevo camino, si es que me llega.");
-                    cCDialogue.Add("Espero que empezar mi nuevo camino no se vea afectado por mi nulas capacidades de contar monedas.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Masermati"))
-                {
-                    cCDialogue.Add("Hola cocherrumín, ¿adivina quién participó en la carrera del otro día y quedó en 1º lugar?");
-                    cCDialogue.Add("Pues yo no porque quedé en 8º lugar, pero lo importante fue participar.");
-                    cCDialogue.Add("Si sigo entrenando, puede que para la próxima quede en 1º lugar.");
-                    cCDialogue.Add("Si no fuera porque Flecha Rápida hiciera trampa, ese trasto de 4 ruedas lanzó clavos por el camino.");
-                    cCDialogue.Add("Es igual de miserable que su dueño Pijus Magnus, la próxima vez no se repetirá.");
-                    cCDialogue.Add("Menos mal que mi familia se quedó apoyándome hasta el final.");
-                    cCDialogue.Add("Seguro que en cuanto me ponga la luces traseras y el cambio de marchas mejoraré mucho más.");
-                    cCDialogue.Add("Pero como siempre dan citas para dentro de 3 meses en reparación pública.");
-                    cCDialogue.Add("Esperaré hasta la cita y la operación para ser mejor coche en mi siguiente carrera.");
-                    cCDialogue.Add("Bueno cocherrumín, creo que debería ir corriendo hasta casa que se me hace tarde.");
-
-                    cCDialogue.Add("Ahora voy acelerando a casa para no llegar tarde, chao. ");
-                    cCDialogue.Add("Con las prisas se me olvidó revisar las normas");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
-                {
-                    cCDialogue.Add("Buenos días próximo creyente, veo que sigues encadenado a esta tienda.");
-                    cCDialogue.Add("Podrías intentar ser más libre si vinieras alguna vez a una de las misas de mi iglesia.");
-                    cCDialogue.Add("Además te beneficiaría venir, con cierta información que te voy a contar ahora.");
-                    cCDialogue.Add("Vamos a hacer que vuelvan antiguos héroes a la vida, el primero fue el gran Sergio Nerviosaus.");
-                    cCDialogue.Add("Pero dentro de poco, no será el único que volverá a la vida y nos ayudará.");
-                    cCDialogue.Add("Así que creo que te beneficiaría estar de nuestra parte, y no de la del detective que lleva unos días viéndote.");
-                    cCDialogue.Add("¿Crees que no lo sabía? Ese detective lleva algunos días indagando en nuestra sagrada iglesia.");
-                    cCDialogue.Add("Además de que siempre viene a esta tienda al final del día, así que espero que hoy le mientas un poquito.");
-                    cCDialogue.Add("Pero bueno, hoy vine como cliente, por lo que cóbrame humano.");
-
-                    cCDialogue.Add("Te espero pronto en mi iglesia, humano.");
-                    cCDialogue.Add("Cuando revivamos a los héroes, espero que no sepas contar mejor.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Salta"))
-                {
-                    cCDialogue.Add("Hola humano, ¿cómo estar día?");
-                    cCDialogue.Add("Como tu ver ver ver ver ver romper runas de nuevo.");
-                    cCDialogue.Add("Yo estar en bar anoche con mi querida familia, hasta que un borracho echarme toda su bebida encima.");
-                    cCDialogue.Add("El tipo no quiso reparar mis runas y romperlas toda la noche.");
-                    cCDialogue.Add("Ahora necesitar cambiar runas de nuevo, la gente no comprender a mí.");
-                    cCDialogue.Add("No entender que yo no nacer con mitad animal, si no con vegetal.");
-                    cCDialogue.Add("Deber cambiar alguna cosa para hacer mejor trato a los híbridos mitad vegetal.");
-                    cCDialogue.Add("O al menos hacer algo para que los híbridos vegetarianos no babear babear babear con nosotros.");
-                    cCDialogue.Add("Ya volver a funcionar mal, cóbrame que querer cambiar runas.");
-
-                    cCDialogue.Add("Gracias humano, cambiar en nada runas.");
-                    cCDialogue.Add("Yo solo querer cerveza para papá, pero bueno, dar solo runas mejor.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Raven"))
-                {
-                    cCDialogue.Add("Hola cielo, espero que estés teniendo un día brillante.");
-                    cCDialogue.Add("A mí ayer me fue genial en la gatoteca, fue muy divertido a mi compañero huir de los gatos.");
-                    cCDialogue.Add("Se le pegaban los gatos con la estática de los globos.");
-                    cCDialogue.Add("¡Además pudimos atender a uno de los miembros de la banda de Magicians of Power!");
-                    cCDialogue.Add("¡SON EL MEJOR GRUPO DEL MUNDO!");
-                    cCDialogue.Add("Y gracias a mis increíbles dotes de persuasión y carisma, me regalaron dos entradas para ir.");
-                    cCDialogue.Add("Seguro le digo a Handy de ir, es un gran compañero, y se esfuerza más que ninguno que haya tenido.");
-                    cCDialogue.Add("Aunque su debilidad sean los gatos con mucho pelo.");
-                    cCDialogue.Add("No se cuál será el próximo trabajo, pero espero que pueda hacerlo junto con él.");
-                    cCDialogue.Add("Te quite mucho tiempo amigo mío, cobrame esto porfi.");
-
-                    cCDialogue.Add("Gracias amigo, espero que llegue ya el día del concierto.");
-                    cCDialogue.Add("¿No puedo comprar esto? Creía que tenía todo el dinero.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Tapiz"))
-                {
-                    cCDialogue.Add("Hola humano, creo que me acaba de pasar algo sorprendente después de estos años trabajando.");
-                    cCDialogue.Add("Han habido recortes en mi trabajo, por lo que pensaba que me iban a recortar mi sueldo de 3 monedas al mes.");
-                    cCDialogue.Add("Pero lo que parecía un recorte de sueldo, acabó siendo un recorte de verdad.");
-                    cCDialogue.Add("Literalmente han cortado una parte de mí, y salió un mini yo, por lo que creo que ahora soy papicio.");
-                    cCDialogue.Add("Vaya suerte tendrá el tapicín de tener un padre tan realista como yo.");
-                    cCDialogue.Add("Así sabrá de inicio lo triste y dura que es la vida, y no le pasará como a mí al nacer.");
-                    cCDialogue.Add("Aunque no sé qué necesitan comer los tapicines cuando son pequeños, puede que un poco de gravilla le guste.");
-                    cCDialogue.Add("Bueno, hablando del peque, tengo que ir a por él en nada, así que cóbrame.");
-
-                    cCDialogue.Add("Gracias, a ver si estar ahora con hijo me anima más.");
-                    cCDialogue.Add("Ahora el niño me verá más deprimente de siempre.");
-                }
-
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Detective"))
-                {
-                    cCDialogue.Add("Traigo muy buenas noticias humano, estamos a nada de cerrar el caso.");
-                    cCDialogue.Add("Uno de los sospechosos de ayer confesó que la iglesia le ayudó a revivir a un tal Sergio Nerviosaus.");
-                    cCDialogue.Add("Esta noche, haremos una redada en la iglesia para encerrar a los miembros.");
-                    cCDialogue.Add("Así que puede que en nada vayamos a cerrar el caso, aunque aún nos queda una cosa por resolver.");
-                    cCDialogue.Add("Quién fue la persona que le dió con el orbe al fiambre.");
-                    cCDialogue.Add("Tenemos algunos sospechosos, pero creemos que es el líder principal.");
-                    cCDialogue.Add("Hasta el detective Black no sabe quién arrestar.");
-                    cCDialogue.Add("Dime humano, ¿quién crees qué es el líder?");
-                    cCDialogue.Add("Muchas gracias por ayudar en el caso, espero que nos volvamos a ver.");
+                    else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Detective"))
+                    {
+                        cCDialogue.Add("Traigo muy buenas noticias humano, estamos a nada de cerrar el caso.");
+                        cCDialogue.Add("Uno de los sospechosos de ayer confesó que la iglesia le ayudó a revivir a un tal Sergio Nerviosaus.");
+                        cCDialogue.Add("Esta noche, haremos una redada en la iglesia para encerrar a los miembros.");
+                        cCDialogue.Add("Así que puede que en nada vayamos a cerrar el caso, aunque aún nos queda una cosa por resolver.");
+                        cCDialogue.Add("Quién fue la persona que le dió con el orbe al fiambre.");
+                        cCDialogue.Add("Tenemos algunos sospechosos, pero creemos que es el líder principal.");
+                        cCDialogue.Add("Hasta el detective Black no sabe quién arrestar.");
+                        cCDialogue.Add("Dime humano, ¿quién crees qué es el líder?");
+                        cCDialogue.Add("Muchas gracias por ayudar en el caso, espero que nos volvamos a ver.");
+                    }
                 }
             }
         }
-    }
 
-    #endregion
+        #endregion
+    }
 }

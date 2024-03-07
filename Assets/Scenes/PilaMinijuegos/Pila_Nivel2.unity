@@ -2940,7 +2940,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1460691903}
         m_TargetAssemblyTypeName: PilaManager, Assembly-CSharp
-        m_MethodName: VolverButton
+        m_MethodName: LoseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4112,6 +4112,8 @@ MonoBehaviour:
   tempo: {fileID: 1299010342}
   tiempoActual: 0
   tiempoActivado: 0
+  currentScene:
+    m_Handle: 0
   cursor: {fileID: 0}
 --- !u!4 &1460691904
 Transform:
@@ -5357,7 +5359,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1460691903}
         m_TargetAssemblyTypeName: PilaManager, Assembly-CSharp
-        m_MethodName: VolverButton
+        m_MethodName: VictoryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

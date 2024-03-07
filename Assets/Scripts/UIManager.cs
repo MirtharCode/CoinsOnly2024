@@ -203,13 +203,14 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Holi");
             TrophyAchieved();
         }
 
-        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1 && currentScene.name != "Day1")
+        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1 && currentScene.name != "Day1" && currentCustomer.name != "Denji")
         {
             StartCoroutine(FadeToBAndW());
         }
@@ -319,7 +320,8 @@ public class UIManager : MonoBehaviour
            || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
            || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
            || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
-           || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2")))
+           || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2" 
+           || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -375,7 +377,9 @@ public class UIManager : MonoBehaviour
             ((currentCustomer.name.Contains("Mano") && currentScene.name == "Day4") 
             || (currentCustomer.name.Contains("Sapopotamo") && currentScene.name == "Day5")
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_1")
-            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_2")))
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_2")
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_1")
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")))
         {
             mostrarJefe = false;
             estaToPagao = true;
@@ -467,7 +471,7 @@ public class UIManager : MonoBehaviour
 
             }
 
-            else if (currentScene.name == "Day3")
+            else if (currentScene.name == "Day3_1")
             {
                 if (currentCustomer.name.Contains("Sergio"))
                     currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
@@ -493,7 +497,37 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Enano"))
                     currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("Rustica"))
+                //else if (currentCustomer.name.Contains("Rustica"))
+                //    currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
+            }
+
+            else if (currentScene.name == "Day3_2")
+            {
+                //if (currentCustomer.name.Contains("Sergio"))
+                //    currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Saltaralisis"))
+                //    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Mano"))
+                //    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Raven"))
+                //    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Hueso"))
+                //    currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Patxi"))
+                //    currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Sapopotamo"))
+                //    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
+
+                //else if (currentCustomer.name.Contains("Enano"))
+                //    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+
+                if (currentCustomer.name.Contains("Rustica"))
                     currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
             }
 
@@ -725,7 +759,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day3")
+        else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
             if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
                 || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Enano"))
@@ -884,7 +918,7 @@ public class UIManager : MonoBehaviour
             return dialogueText.text;
         }
 
-        else if (currentScene.name == "Day3")
+        else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
             if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso"))
             {
@@ -1198,7 +1232,7 @@ public class UIManager : MonoBehaviour
             data.GetComponent<Data>().day2Check = true;
         }
 
-        else if (currentScene.name == "Day3")
+        else if (currentScene.name == "Day3_2")
         {
             data.GetComponent<Data>().day2Check = false;
             data.GetComponent<Data>().day3Check = true;
@@ -1216,12 +1250,16 @@ public class UIManager : MonoBehaviour
             data.GetComponent<Data>().day5Check = true;
         }
 
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(12);
     }
 
     public void NextDenji()
     {
-        SceneManager.LoadScene(3);
+        if (currentScene.name == "Day2_1")
+            SceneManager.LoadScene("Pila_Nivel1");
+
+        else if (currentScene.name == "Day3_1")
+            SceneManager.LoadScene("Pila_Nivel2");
     }
 
     public void Salir()

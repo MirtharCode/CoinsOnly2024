@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Has ganado
+  m_text: 'Has ayudado a Denjirenji '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -940,10 +940,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1766019885}
-  - {fileID: 1379515841}
   - {fileID: 1299010341}
   - {fileID: 1889016023}
+  - {fileID: 1379515841}
+  - {fileID: 1766019885}
   - {fileID: 499675460}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1969,7 +1969,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1460691903}
         m_TargetAssemblyTypeName: PilaManager, Assembly-CSharp
-        m_MethodName: VolverButton
+        m_MethodName: LoseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Has perdido
+  m_text: 'No has podido ayudar a Denjirenji '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
   m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
@@ -2752,7 +2752,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 712769212}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3100,7 +3100,7 @@ RectTransform:
   - {fileID: 1254490030}
   - {fileID: 1189624012}
   m_Father: {fileID: 712769212}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3371,6 +3371,8 @@ MonoBehaviour:
   tempo: {fileID: 1299010342}
   tiempoActual: 0
   tiempoActivado: 0
+  currentScene:
+    m_Handle: 0
   cursor: {fileID: 0}
 --- !u!4 &1460691904
 Transform:
@@ -3923,7 +3925,7 @@ RectTransform:
   - {fileID: 18682558}
   - {fileID: 1824638984}
   m_Father: {fileID: 712769212}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4289,7 +4291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1460691903}
         m_TargetAssemblyTypeName: PilaManager, Assembly-CSharp
-        m_MethodName: VolverButton
+        m_MethodName: VictoryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4482,7 +4484,7 @@ RectTransform:
   m_Children:
   - {fileID: 1319170290}
   m_Father: {fileID: 712769212}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

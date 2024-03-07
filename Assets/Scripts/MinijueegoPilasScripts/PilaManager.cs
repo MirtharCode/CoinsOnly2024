@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ public class PilaManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI tempo;
     public float tiempoActual;
     public bool tiempoActivado = false;
-
+    public Scene currentScene;
     [SerializeField] public GameObject cursor;
 
     void Start()
@@ -28,6 +29,8 @@ public class PilaManager : MonoBehaviour
 
         cursor = GameObject.FindGameObjectWithTag("Cursor");
         cursor.SetActive(false);
+
+        currentScene = SceneManager.GetActiveScene();
     }
 
     void Update()
@@ -40,9 +43,22 @@ public class PilaManager : MonoBehaviour
         victoriaPanel.SetActive(true);
     }
 
-    public void VolverButton()
+    public void VictoryButton()
     {
-        SceneManager.LoadScene(0);
+        if(currentScene.name == "Pila_Nivel1")
+            SceneManager.LoadScene("Day2_2");
+
+        else if (currentScene.name == "Pila_Nivel2")
+            SceneManager.LoadScene("Day3_2");
+    }
+
+    public void LoseButton()
+    {
+        if (currentScene.name == "Pila_Nivel1")
+            SceneManager.LoadScene("Day2_2");
+
+        else if (currentScene.name == "Pila_Nivel2")
+            SceneManager.LoadScene("Day3_2");
     }
 
     public void CambiarContador()

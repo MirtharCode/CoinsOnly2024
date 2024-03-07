@@ -27,7 +27,7 @@ public class T_Rustica : Tecnopedos
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day3")
+        if (currentScene.name == "Day3_2")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);

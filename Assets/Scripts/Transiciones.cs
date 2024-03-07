@@ -25,10 +25,10 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
-        if (data.GetComponent<Data>().day1Check) SceneManager.LoadScene(2);         // Si vienes de acabar el día uno, pasas al dos.
-        else if (data.GetComponent<Data>().day2Check) SceneManager.LoadScene(3);    // Si vienes de acabar el día dos, pasas al tres.
-        else if (data.GetComponent<Data>().day3Check) SceneManager.LoadScene(4);    // Si vienes de acabar el día tres, pasas al cuatro.
-        else if (data.GetComponent<Data>().day4Check) SceneManager.LoadScene(5);    // Si vienes de acabar el día cuatro, pasas al quinto.
+        if (data.GetComponent<Data>().day1Check) SceneManager.LoadScene("Day2_1");         // Si vienes de acabar el día uno, pasas al dos.
+        else if (data.GetComponent<Data>().day2Check) SceneManager.LoadScene("Day3_1");    // Si vienes de acabar el día dos, pasas al tres.
+        else if (data.GetComponent<Data>().day3Check) SceneManager.LoadScene("Day4");    // Si vienes de acabar el día tres, pasas al cuatro.
+        else if (data.GetComponent<Data>().day4Check) SceneManager.LoadScene("Day5");    // Si vienes de acabar el día cuatro, pasas al quinto.
 
         else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 0) SceneManager.LoadScene(9);       // Si acabas el juego sin haber obtenido +50 tips en ningún día, pasas al final muy malo.        
 

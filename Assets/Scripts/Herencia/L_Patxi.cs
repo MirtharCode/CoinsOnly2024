@@ -27,7 +27,7 @@ public class L_Patxi : Limbasticos
 
     public override void ShowProductsAndMoney()
     {
-        if (currentScene.name == "Day3")
+        if (currentScene.name == "Day3_1")
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
