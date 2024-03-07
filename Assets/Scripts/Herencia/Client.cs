@@ -72,6 +72,7 @@ public abstract class Client : MonoBehaviour
 
     protected void OnDestroy()
     {
+        Debug.Log("Mariconera");
         List<GameObject> list = gameManager.GetComponent<GameManager>().dailyCustomers;
 
         if (list.Count > 1)

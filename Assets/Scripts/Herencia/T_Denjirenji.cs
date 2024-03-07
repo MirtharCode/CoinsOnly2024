@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,14 @@ public class T_Denjirenji : Tecnopedos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
+    [SerializeField] public GameObject trampilla;
 
     protected override void Start()
     {
         base.Start();
         nombre = "Denjirenji";
+
+        trampilla = GameObject.FindGameObjectWithTag("Trampilla");
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -41,9 +45,24 @@ public class T_Denjirenji : Tecnopedos
 
     public override void ByeBye()
     {
-        Destroy(product1);
-        Destroy(product2);
-        Destroy(product3);
-        base.ByeBye();
+        if (currentScene.name == "Day2_1")
+        {
+            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
+            trampilla.GetComponent<Animator>().enabled = false;
+        }
+
+        else if (currentScene.name == "Day3_1")
+        {
+            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
+            trampilla.GetComponent<Animator>().enabled = false;
+        }
+
+        else
+        {
+            Destroy(product1);
+            Destroy(product2);
+            Destroy(product3);
+            base.ByeBye();
+        }
     }
 }

@@ -210,7 +210,7 @@ public class UIManager : MonoBehaviour
             TrophyAchieved();
         }
 
-        if (gameManager.GetComponent<GameManager>().dailyCustomers.Count == 1 && currentScene.name != "Day1" && currentCustomer.name != "Denji")
+        if (currentCustomer.name == "Detective")
         {
             StartCoroutine(FadeToBAndW());
         }
@@ -436,20 +436,20 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Cululu"))
                     currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Handy"))
-                //    currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Handy"))
+                    currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Petra"))
-                //    currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Petra"))
+                    currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Tapiz"))
-                //    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Tapiz"))
+                    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Masermati"))
-                //    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Masermati"))
+                    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Pijus"))
-                //    currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Pijus"))
+                    currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
             }
 
             else if (currentScene.name == "Day2_2")
@@ -503,29 +503,29 @@ public class UIManager : MonoBehaviour
 
             else if (currentScene.name == "Day3_2")
             {
-                //if (currentCustomer.name.Contains("Sergio"))
-                //    currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
+                if (currentCustomer.name.Contains("Sergio"))
+                    currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Saltaralisis"))
-                //    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Saltaralisis"))
+                    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Mano"))
-                //    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Mano"))
+                    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Raven"))
-                //    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Raven"))
+                    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Hueso"))
-                //    currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Hueso"))
+                    currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Patxi"))
-                //    currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Patxi"))
+                    currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Sapopotamo"))
-                //    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Sapopotamo"))
+                    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
 
-                //else if (currentCustomer.name.Contains("Enano"))
-                //    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+                else if (currentCustomer.name.Contains("Enano"))
+                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
 
                 if (currentCustomer.name.Contains("Rustica"))
                     currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
