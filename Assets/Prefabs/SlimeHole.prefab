@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 49431de5d538f8749b4783877b44d290, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17e54a6e96fd04d478ffbdca19637c58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,8 +195,8 @@ Transform:
   m_GameObject: {fileID: 6428241600318165039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6428241600608588742}
   m_RootOrder: 0
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 971174b221d5c814f841885a734ca3e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37406e7bd9a72ab46afb61d84fda453e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -265,12 +265,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386097c8f27070c42b05888affbbdf0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime: {fileID: 21300000, guid: 971174b221d5c814f841885a734ca3e8, type: 3}
-  slimeMagicHat: {fileID: 21300000, guid: fd9cec3034e806f438de3bfa42bf574d, type: 3}
-  slimeMagicHatBroken: {fileID: 21300000, guid: 633892f42f6c86c4197e32d44e782f70, type: 3}
-  slimeHit: {fileID: 21300000, guid: 8ef539edcbc6b7f4c819f1f78d402f3e, type: 3}
-  slimeMagicHatHit: {fileID: 21300000, guid: f3480a2838c3e6e4a90af67ec3725664, type: 3}
-  elidora: {fileID: 21300000, guid: 3522cfd5985a13e41b4c67c7d8edb56a, type: 3}
+  slime: {fileID: 21300000, guid: 37406e7bd9a72ab46afb61d84fda453e, type: 3}
+  slimeMagicHat: {fileID: 21300000, guid: bed2c5ce3a84f8f48a96535f18c72ad0, type: 3}
+  slimeMagicHatBroken: {fileID: 21300000, guid: 4f0ea21d312d4cf47bcd41cfb5aaa662, type: 3}
+  slimeHit: {fileID: 21300000, guid: 77d2b68225d25aa42b1d400ac92d508c, type: 3}
+  slimeMagicHatHit: {fileID: 21300000, guid: 406d32d3db4927142ad314a07e35217e, type: 3}
+  elidora: {fileID: 21300000, guid: 3970339a43c9a984c88ec691f86a703b, type: 3}
+  sM: {fileID: 0}
+  lives: 0
 --- !u!61 &6428241600318165459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,7 +290,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -322,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6428241600387955846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.546, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -370,7 +372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7bc67734582b7574785b4f897fa76d09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80a921194121fbe4eb70a732e737343b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
