@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public List<GameObject> dailyCustomers;
 
 
-    [SerializeField] public GameObject data;
-
-
 
     [Header("CHARACTERS THAT CAN APPEAR")]
 
@@ -108,7 +105,6 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         musicBox = GameObject.FindGameObjectWithTag("MusicBox");
         canvas = GameObject.FindGameObjectWithTag("UI");
-        data = GameObject.FindGameObjectWithTag("Data");
 
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
@@ -153,7 +149,7 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
+        if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
         //dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
@@ -174,7 +170,7 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         //dailyCustomers.Add(jefe);
-        //if (data.GetComponent<Data>().samuraiPagaMal) dailyCustomers.Add(hybridLepion);
+        //if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
         //dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         //dailyCustomers.Add(limbasticCululu);
@@ -260,7 +256,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(evilWizardElidora);
         dailyCustomers.Add(elementalRockon);
-        if (!data.GetComponent<Data>().borrachoTriste) dailyCustomers.Add(hybridElvog);
+        if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedMasermati);
         dailyCustomers.Add(evilWizardManoloMano);
