@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SlimeManager : MonoBehaviour
 {
+    [Header("CURSOR RESHULO")]
+    [SerializeField] public GameObject cursor;
+
     [SerializeField] private List<Slime> slimes;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameUI;
@@ -20,9 +24,13 @@ public class SlimeManager : MonoBehaviour
     private int score;
     private bool playing = false;
 
+    [SerializeField] GameObject canvas;
+    public Scene currentScene;
+
     void Start()
     {
-
+        GameObject newCursor = Instantiate(cursor, canvas.transform);
+        currentScene = SceneManager.GetActiveScene();
     }
 
     void Update()

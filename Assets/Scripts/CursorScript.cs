@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CursorScript : MonoBehaviour
 {
     [SerializeField] private Vector3 hotspot = new Vector3(60, -65, 0);
-    public Sprite clickedCursorImage, normalCursorImage;
+    public Sprite normalClickedCursorImage, normalCursorImage;
+    public Sprite normalSmashedHammerImage, normalHammerImage;
     public Image image;
+
+    public Scene currentScene;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +19,8 @@ public class CursorScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
         image = GetComponent<Image>();
+
+        currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -22,6 +28,7 @@ public class CursorScript : MonoBehaviour
     {
         Cursor.visible = false;
         transform.position = Input.mousePosition + hotspot;
+
 
         if (Input.GetMouseButtonDown(0))
             CursorClicked();
@@ -32,11 +39,16 @@ public class CursorScript : MonoBehaviour
 
     private void CursorClicked()
     {
-        image.sprite = clickedCursorImage;
+        if (!currentScene.name.Contains("Whack"))
+            image.sprite = normalClickedCursorImage;
+        else image.sprite = normalSmashedHammerImage;
+
     }
 
     private void CursorNormal()
     {
-        image.sprite = normalCursorImage;
+        if (!currentScene.name.Contains("Whack"))
+            image.sprite = normalCursorImage;
+        else image.sprite = normalHammerImage;
     }
 }

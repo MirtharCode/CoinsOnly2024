@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotspot: {x: 60, y: -65, z: 0}
-  clickedCursorImage: {fileID: 21300000, guid: 0aaa891941ba72a44ac581c4eebe1520, type: 3}
+  normalClickedCursorImage: {fileID: 0}
   normalCursorImage: {fileID: 21300000, guid: 6af87d7e11115d243aaa3cec977adacb, type: 3}
+  normalSmashedHammerImage: {fileID: 21300000, guid: c2cdb6d80eca2c841a44e7e924d15f8a, type: 3}
+  normalHammerImage: {fileID: 21300000, guid: 9b5a4d73a3fc6204883366898eadabff, type: 3}
   image: {fileID: 0}
+  currentScene:
+    m_Handle: 0

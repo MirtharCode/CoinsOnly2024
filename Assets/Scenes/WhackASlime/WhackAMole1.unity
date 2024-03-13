@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.05
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1285,6 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed287cf48a2600f4291e661ab0406f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 5994435751796410855, guid: 0d82a4c78a9370b4888271e1db910713, type: 3}
   slimes:
   - {fileID: 1756437010}
   - {fileID: 875763041}
@@ -1301,6 +1302,9 @@ MonoBehaviour:
   elidoraText: {fileID: 628558859}
   timeText: {fileID: 1831609650}
   scoreText: {fileID: 36814275}
+  canvas: {fileID: 1420174776}
+  currentScene:
+    m_Handle: 0
 --- !u!4 &1550026388
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,7 +1441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.23
+      value: 3.51
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1788,7 +1792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.58
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 6428241600608588742, guid: 9d47fa8601c4f89419c4a622edd45619, type: 3}
       propertyPath: m_LocalPosition.z
