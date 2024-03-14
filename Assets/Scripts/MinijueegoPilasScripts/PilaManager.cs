@@ -41,6 +41,13 @@ public class PilaManager : MonoBehaviour
     public void Victoria()
     {
         victoriaPanel.SetActive(true);
+        cursor.SetActive(true);
+
+        if (currentScene.name == "Pila_Nivel1")
+            Data.instance.samuraiAyudado1 = true;
+
+        else if (currentScene.name == "Pila_Nivel2")
+            Data.instance.samuraiAyudado2 = true;
     }
 
     public void VictoryButton()
@@ -77,6 +84,12 @@ public class PilaManager : MonoBehaviour
             Destroy(pila1);
             Destroy(pila2);
             tiempoActivado = false;
+            cursor.SetActive(true);
+        }
+
+        if (tiempoActual <= 10)
+        {
+            tempo.color = Color.red;
         }
     }
 

@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(limbasticGiovanni);
         //dailyCustomers.Add(evilWizardManolo);
         //dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(electropedDenjirenji);
+        if (Data.instance.samuraiAyudado1) dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(elementalTapicio);
@@ -220,7 +220,7 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(limbasticPatxi);
         //dailyCustomers.Add(hybridElvog);
         //dailyCustomers.Add(evilWizardManolo);
-        dailyCustomers.Add(electropedDenjirenji);
+        if (Data.instance.samuraiAyudado2) dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(electropedRustica);
         dailyCustomers.Add(detective);
 
