@@ -150,8 +150,8 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
         if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        //dailyCustomers.Add(limbasticGiovanni);
-        //dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(limbasticGiovanni);
+        dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(elementalHandy);
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(electropedRaven);
         //dailyCustomers.Add(elementalHueso);
         //dailyCustomers.Add(limbasticPatxi);
-        //dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(electropedRustica);
@@ -234,15 +234,15 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        dailyCustomers.Add(elementalJissy);
-        dailyCustomers.Add(hybridMara);
-        dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(evilWizardElidora);
-        dailyCustomers.Add(evilWizardGerard);
-        dailyCustomers.Add(electropedMagmaDora);
-        dailyCustomers.Add(elementalHandy);
-        dailyCustomers.Add(limbasticAntonio);
-        dailyCustomers.Add(evilWizardManoloMano);
+        //dailyCustomers.Add(elementalJissy);
+        //dailyCustomers.Add(hybridMara);
+        //dailyCustomers.Add(limbasticCululu);
+        //dailyCustomers.Add(evilWizardElidora);
+        //dailyCustomers.Add(evilWizardGerard);
+        //dailyCustomers.Add(electropedMagmaDora);
+        //dailyCustomers.Add(elementalHandy);
+        //dailyCustomers.Add(limbasticAntonio);
+        //dailyCustomers.Add(evilWizardManoloMano);
         dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);

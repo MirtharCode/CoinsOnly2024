@@ -207,8 +207,8 @@ public class UIManager : MonoBehaviour
             Debug.Log("Holi");
             TrophyAchieved();
         }
-
-        if (currentCustomer.name == "Detective")
+        
+        if (currentCustomer != null && currentCustomer.name.Contains("Detective"))
         {
             StartCoroutine(FadeToBAndW());
         }
@@ -637,7 +637,6 @@ public class UIManager : MonoBehaviour
         phoneBW.GetComponent<Image>().enabled = true;
         dialoguePanel.GetComponent<Image>().sprite = downerBoxBW;
         dialoguePanel.transform.GetChild(0).GetComponent<Image>().sprite = upperBoxBW;
-        dialoguePanel.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = buttonBW;
 
         Color phoneColor = phone.GetComponent<Image>().color;
         Color candleColor = candle.GetComponent<Image>().color;
