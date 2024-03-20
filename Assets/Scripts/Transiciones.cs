@@ -49,21 +49,21 @@ public class Transiciones : MonoBehaviour
     public void ShowGifts()
     {
         if (data.GetComponent<Data>().giftGeeraard) transform.GetChild(10).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftEnano) transform.GetChild(11).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftMano) transform.GetChild(4).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftElidora) transform.GetChild(18).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftElvog) transform.GetChild(5).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftMara) transform.GetChild(16).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftPetra) transform.GetChild(14).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftAntonio) transform.GetChild(9).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftGiovanni) transform.GetChild(15).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftCululu) transform.GetChild(8).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftSergio) transform.GetChild(7).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftTapicio) transform.GetChild(17).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftHandy) transform.GetChild(19).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftDenjirenji) transform.GetChild(12).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().giftRaven) transform.GetChild(6).gameObject.SetActive(true);
-        else if (data.GetComponent<Data>().day4Check || data.GetComponent<Data>().day5Check)
+        if (data.GetComponent<Data>().giftEnano) transform.GetChild(11).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftMano) transform.GetChild(4).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftElidora) transform.GetChild(18).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftElvog) transform.GetChild(5).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftMara) transform.GetChild(16).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftPetra) transform.GetChild(14).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftAntonio) transform.GetChild(9).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftGiovanni) transform.GetChild(15).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftCululu) transform.GetChild(8).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftSergio) transform.GetChild(7).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftTapicio) transform.GetChild(17).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftHandy) transform.GetChild(19).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftDenjirenji) transform.GetChild(12).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().giftRaven) transform.GetChild(6).gameObject.SetActive(true);
+        if (data.GetComponent<Data>().day4Check || data.GetComponent<Data>().day5Check)
         {
             transform.GetChild(13).gameObject.SetActive(true);
             transform.GetChild(2).gameObject.SetActive(false);
