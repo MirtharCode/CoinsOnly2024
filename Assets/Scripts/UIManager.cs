@@ -207,7 +207,7 @@ public class UIManager : MonoBehaviour
             Debug.Log("Holi");
             TrophyAchieved();
         }
-        
+
         if (currentCustomer != null && currentCustomer.name.Contains("Detective"))
         {
             StartCoroutine(FadeToBAndW());
@@ -665,8 +665,14 @@ public class UIManager : MonoBehaviour
     public void LaVoluntad(float cantidad)
     {
         propinasNumber += cantidad;
+
+        if (propinasNumber < 0) propinasNumber = 0;
+
+        else if (propinasNumber > 100) propinasNumber = 100;
+
         lesPropinas.GetComponent<Image>().fillAmount = (propinasNumber) / 100;
         lePropinasText.text = "" + propinasNumber;
+
     }
 
     public string MoneyText()
@@ -751,6 +757,7 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
+                Data.instance.propinaDay2_1 = propinasNumber;
             }
 
             return dialogueText.text;
