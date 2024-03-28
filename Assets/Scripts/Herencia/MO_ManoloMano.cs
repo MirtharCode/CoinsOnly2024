@@ -33,7 +33,7 @@ public class MO_ManoloMano : MagosOscuros
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "6";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "11";
         }
 
         else if (currentScene.name == "Day5")

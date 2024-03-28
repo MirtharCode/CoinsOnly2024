@@ -33,7 +33,7 @@ public class E_Handy : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "20";
         }
 
         else if (currentScene.name == "Day4")

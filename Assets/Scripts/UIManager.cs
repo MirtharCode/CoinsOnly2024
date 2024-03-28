@@ -319,7 +319,8 @@ public class UIManager : MonoBehaviour
            || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
            || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
            || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2"
-           || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")))
+           || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
+           || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1"))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -377,7 +378,8 @@ public class UIManager : MonoBehaviour
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_1")
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_2")
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_1")
-            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")))
+            || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")
+            || (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")))
         {
             mostrarJefe = false;
             estaToPagao = true;
@@ -428,8 +430,8 @@ public class UIManager : MonoBehaviour
                 else if (currentCustomer.name.Contains("Giovanni"))
                     currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
 
-                else if (currentCustomer.name.Contains("Enano"))
-                    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
+                //else if (currentCustomer.name.Contains("Enano"))
+                //    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney(); //Solo muestra texto, no trae productos
 
                 else if (currentCustomer.name.Contains("Cululu"))
                     currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
