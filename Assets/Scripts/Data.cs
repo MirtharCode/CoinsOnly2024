@@ -80,7 +80,6 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftMano = false;          // Te da un anillo.
     [SerializeField] public bool giftElidora = false;       // Si completas su minijuego te pasa un moco.
     //[SerializeField] public bool giftPijus = false;
-    [SerializeField] public bool giftElvogProv = false;         // Te da una botella con flores.
     [SerializeField] public bool giftElvog = false;         // Te da una botella con flores.
     //[SerializeField] public bool giftLepion = false;
     [SerializeField] public bool giftMara = false;          // Te da la pierna de su marido.

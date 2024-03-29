@@ -811,6 +811,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: borrachoTriste
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1931,7 +1935,6 @@ MonoBehaviour:
   trampilla: {fileID: 536717154}
   customerNumber: 0
   dailyCustomers: []
-  data: {fileID: 0}
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   jefe2: {fileID: 0}
   detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}

@@ -30,19 +30,19 @@ public class Transiciones : MonoBehaviour
         else if (data.GetComponent<Data>().day3Check) SceneManager.LoadScene("Day4");    // Si vienes de acabar el día tres, pasas al cuatro.
         else if (data.GetComponent<Data>().day4Check) SceneManager.LoadScene("Day5");    // Si vienes de acabar el día cuatro, pasas al quinto.
 
-        else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 0) SceneManager.LoadScene(9);       // Si acabas el juego sin haber obtenido +50 tips en ningún día, pasas al final muy malo.        
+        else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 0) SceneManager.LoadScene(13);       // Si acabas el juego sin haber obtenido +50 tips en ningún día, pasas al final muy malo.        
 
         else if (data.GetComponent<Data>().day5Check &&
-            (data.GetComponent<Data>().tipsPoints == 1 || data.GetComponent<Data>().tipsPoints == 2)) SceneManager.LoadScene(10);   // Si acabas el juego habiendo obtenido +50 en uno o dos días, pasas al final malo.
+            (data.GetComponent<Data>().tipsPoints == 1 || data.GetComponent<Data>().tipsPoints == 2)) SceneManager.LoadScene(14);   // Si acabas el juego habiendo obtenido +50 en uno o dos días, pasas al final malo.
 
         else if (data.GetComponent<Data>().day5Check &&
-            (data.GetComponent<Data>().tipsPoints == 3 || data.GetComponent<Data>().tipsPoints == 4)) SceneManager.LoadScene(11);   // Si acabas el juego habiendo obtenido +50 en tres o cuatro días, pasas al final bueno.
+            (data.GetComponent<Data>().tipsPoints == 3 || data.GetComponent<Data>().tipsPoints == 4)) SceneManager.LoadScene(15);   // Si acabas el juego habiendo obtenido +50 en tres o cuatro días, pasas al final bueno.
 
         else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 5
-        && data.GetComponent<Data>().detectivePoints == 4) SceneManager.LoadScene(13);           // Si acabas el juego habiendo obtenido +50 en los cinco días, y aparte aciertas al mmenos tres veces con el detective, vas al final secreto.
+        && data.GetComponent<Data>().detectivePoints == 4) SceneManager.LoadScene(17);           // Si acabas el juego habiendo obtenido +50 en los cinco días, y aparte aciertas al mmenos tres veces con el detective, vas al final secreto.
 
 
-        else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 5) SceneManager.LoadScene(12);      // Si acabas el juego habiendo obtenido +50 en los cinco días, pasas al final muy bueno.
+        else if (data.GetComponent<Data>().day5Check && data.GetComponent<Data>().tipsPoints == 5) SceneManager.LoadScene(16);      // Si acabas el juego habiendo obtenido +50 en los cinco días, pasas al final muy bueno.
 
     }
 

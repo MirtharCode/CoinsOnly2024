@@ -254,9 +254,9 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
 
-        dailyCustomers.Add(jefe);
-        dailyCustomers.Add(evilWizardElidora);
-        dailyCustomers.Add(elementalRockon);
+        //dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(evilWizardElidora);
+        //dailyCustomers.Add(elementalRockon);
         if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(limbasticCululu);

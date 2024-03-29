@@ -792,7 +792,6 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
             {
-                Data.instance.giftElvogProv = true;
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(5);
