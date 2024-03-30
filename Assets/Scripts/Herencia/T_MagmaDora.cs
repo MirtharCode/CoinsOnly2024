@@ -41,6 +41,7 @@ public class T_MagmaDora : Tecnopedos
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

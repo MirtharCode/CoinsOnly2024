@@ -43,6 +43,7 @@ public class E_Jissy : Elementales
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

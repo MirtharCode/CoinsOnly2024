@@ -9,13 +9,18 @@ public class H_Elvog : Hibridos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
+    [SerializeField] public Sprite spriteAlt;
 
     protected override void Start()
     {
         base.Start();
         nombre = "Elvog";
 
-        if (currentScene.name == "Day5") data.GetComponent<Data>().giftElvog = true;
+        if (currentScene.name == "Day5")
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+            data.GetComponent<Data>().giftElvog = true;
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

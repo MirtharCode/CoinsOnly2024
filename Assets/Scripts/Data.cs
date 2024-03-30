@@ -98,6 +98,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftDenjirenji = false;    // Si completas su minijuego te da su espada.
     //[SerializeField] public bool giftMagmadora = false;
     //[SerializeField] public bool giftMasermati = false;
+    [SerializeField] public bool giftRavenProv = false;         // Si completas su minijuego te da un disco.
     [SerializeField] public bool giftRaven = false;         // Si completas su minijuego te da un disco.
     //[SerializeField] public bool giftRustica = false;
 
@@ -977,6 +978,18 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Ahora voy acelerando a casa para no llegar tarde, chao.");
                     cCDialogue.Add("Con las prisas debí romper el cupón.");
                 }
+
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Antonio"))
+                {
+                    cCDialogue.Add("Hola amigo, ¿a que me ves diferente?");
+                    cCDialogue.Add("Se curó mi miopía gracias a beber tanto veneno.");
+                    cCDialogue.Add("¿Quién iba a decir que el veneno era la cura?");
+                    cCDialogue.Add("Me imagino que no lo ha probado nadie antes, porque se moriría sino.");
+                    cCDialogue.Add("Pero como no puede morir alguien muerto, me curé.");
+                    cCDialogue.Add("Gracias por vendernos el veneno a Patxi y a mí.");
+                    cCDialogue.Add("Ahora no necesitaré mis gafas, puedes quedártelas.");
+                }
+
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
                 {

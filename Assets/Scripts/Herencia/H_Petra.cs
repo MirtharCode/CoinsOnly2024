@@ -9,13 +9,18 @@ public class H_Petra : Hibridos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
+    [SerializeField] public Sprite spriteAlt;
 
     protected override void Start()
     {
         base.Start();
         nombre = "Petra";
 
-        if (currentScene.name == "Day5" && data.GetComponent<Data>().borrachoTriste) data.GetComponent<Data>().giftPetra = true;
+        if (currentScene.name == "Day5" && data.GetComponent<Data>().borrachoTriste)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+            data.GetComponent<Data>().giftPetra = true;
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -35,17 +40,6 @@ public class H_Petra : Hibridos
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
-        }
-
-        else if (currentScene.name == "Day5")
-        {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, oneProduct.position, oneProduct.rotation);
-            product1.transform.SetParent(oneProduct);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, twoProducts1.position, twoProducts1.rotation);
-            product2.transform.SetParent(twoProducts1);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts2.position, twoProducts2.rotation);
-            product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "18";
         }
     }
