@@ -5912,7 +5912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  data: {fileID: 0}
   currentCustomer: {fileID: 0}
   canvasPausa: {fileID: 0}
   canvasVictory: {fileID: 0}
@@ -6019,6 +6018,7 @@ MonoBehaviour:
   giftImageHandy: {fileID: 21300000, guid: 060129f1c4db8f2449948c964e5c5cba, type: 3}
   giftImageDenjirenji: {fileID: 21300000, guid: 8526055d71536364785d5dab60471e22, type: 3}
   giftImageRaven: {fileID: 21300000, guid: 7882264c5d59b4e489efa42dd8f2b826, type: 3}
+  sergioSpriteAlt: {fileID: 21300000, guid: e2b1c4b14ef99af4daeff170235fb118, type: 3}
 --- !u!1 &5982892003302237854
 GameObject:
   m_ObjectHideFlags: 0

@@ -154,6 +154,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] public Sprite giftImageRaven;       // Si completas su minijuego te da un disco.
     //[SerializeField] public Sprite giftImageRustica; 
 
+    [Header("Sprites alternativos")]
+    [SerializeField] Sprite sergioSpriteAlt;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
@@ -844,18 +847,32 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Geraaaard"))
             {
+                Data.instance.vecesCobradoGeerald++;
+
+                if (Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
+
                 mostrarJefe = false;
+                textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
-                //Data.instance.vecesCobradoCululu++;
             }
 
             else if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
-                || currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Geraaaard"))
+                || currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Geraaaard"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
+            }
+
+            else if (currentCustomer.name.Contains("Sergio"))
+            {
+                currentCustomer.GetComponent<SpriteRenderer>().sprite = sergioSpriteAlt;
+                mostrarJefe = false;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+
+                Data.instance.giftSergio = true;
             }
 
             return dialogueText.text;
@@ -986,7 +1003,7 @@ public class UIManager : MonoBehaviour
         else if (currentScene.name == "Day4")
         {
             if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
-                || currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Sergio"))
+                || currentCustomer.name.Contains("Geraaaard") || currentCustomer.name.Contains("Magma"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -1008,6 +1025,17 @@ public class UIManager : MonoBehaviour
                 Data.instance.vecesCobradaHandy++;
 
                 if (Data.instance.vecesCobradoCululu == 2) Data.instance.giftHandy = true;
+            }
+
+            else if (currentCustomer.name.Contains("Sergio"))
+            {
+                Data.instance.vecesCobradoGeerald++;
+
+                if(Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
+
+                mostrarJefe = true;
+                textoJefe.text = quejas[3];
+                LaVoluntad(-15);
             }
 
             return dialogueText.text;

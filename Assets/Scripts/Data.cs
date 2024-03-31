@@ -70,6 +70,7 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
     [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
     [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+    [SerializeField] public int vecesCobradoGeerald = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
     [SerializeField] public bool programadorBuscaEsposo = false;        // Si le cobras a Antonio (día 1)

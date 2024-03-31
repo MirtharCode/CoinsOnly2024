@@ -190,14 +190,14 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(limbasticSergio);
-        //dailyCustomers.Add(hybridSaltaralisis);
-        //dailyCustomers.Add(evilWizardManoloMano);
-        //dailyCustomers.Add(electropedRaven);
-        //dailyCustomers.Add(elementalHueso);
-        //dailyCustomers.Add(limbasticPatxi);
-        //dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(jefe);
+        dailyCustomers.Add(limbasticSergio);
+        dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(electropedRaven);
+        dailyCustomers.Add(elementalHueso);
+        dailyCustomers.Add(limbasticPatxi);
+        dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(electropedRustica);
@@ -253,10 +253,9 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-
-        //dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(evilWizardElidora);
-        //dailyCustomers.Add(elementalRockon);
+        dailyCustomers.Add(jefe);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(elementalRockon);
         if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
         if(Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(limbasticCululu);
