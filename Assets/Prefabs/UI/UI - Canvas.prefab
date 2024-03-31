@@ -6019,6 +6019,7 @@ MonoBehaviour:
   giftImageDenjirenji: {fileID: 21300000, guid: 8526055d71536364785d5dab60471e22, type: 3}
   giftImageRaven: {fileID: 21300000, guid: 7882264c5d59b4e489efa42dd8f2b826, type: 3}
   sergioSpriteAlt: {fileID: 21300000, guid: e2b1c4b14ef99af4daeff170235fb118, type: 3}
+  antonioSpriteAlt: {fileID: 21300000, guid: 6b87a966ec165724387d2fe3022cbf18, type: 3}
 --- !u!1 &5982892003302237854
 GameObject:
   m_ObjectHideFlags: 0

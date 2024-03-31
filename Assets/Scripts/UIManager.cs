@@ -156,6 +156,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Sprites alternativos")]
     [SerializeField] Sprite sergioSpriteAlt;
+    [SerializeField] Sprite antonioSpriteAlt;
 
     void Start()
     {
@@ -325,7 +326,8 @@ public class UIManager : MonoBehaviour
            || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
            || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1")
            || currentCustomer.name.Contains("Petra") && internalCount < dialogueSize && currentScene.name == "Day5"
-           || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5")
+           || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
+           || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -386,7 +388,8 @@ public class UIManager : MonoBehaviour
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")
             || (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
             || (currentCustomer.name.Contains("Petra") && currentScene.name == "Day5")
-            || currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5"))
+            || currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5")
+            || currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
         {
             mostrarJefe = false;
             estaToPagao = true;
@@ -796,12 +799,10 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Patxi"))
             {
+                Data.instance.vecesCobradoAntonio++;
+
                 mostrarJefe = false;
                 LaVoluntad(10);
-
-                Data.instance.corredorDeBolsaBuscaEsposo = true;
-
-                if (Data.instance.programadorBuscaEsposo == Data.instance.corredorDeBolsaBuscaEsposo) Data.instance.giftAntonio = true;
             }
 
             else if (currentCustomer.name.Contains("Raven"))
@@ -831,7 +832,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day4")
         {
-            if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy") || currentCustomer.name.Contains("Antonio"))
+            if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Handy"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -843,6 +844,13 @@ public class UIManager : MonoBehaviour
                 LaVoluntad(10);
 
                 Data.instance.vecesCobradoCululu++;
+            }
+
+            else if (currentCustomer.name.Contains("Antonio"))
+            {
+                Data.instance.vecesCobradoAntonio++;
+                mostrarJefe = false;
+                LaVoluntad(10);
             }
 
             else if (currentCustomer.name.Contains("Geraaaard"))
@@ -857,12 +865,23 @@ public class UIManager : MonoBehaviour
 
             }
 
-            else if (currentCustomer.name.Contains("Mara") || currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
+            else if (currentCustomer.name.Contains("Jissy") || currentCustomer.name.Contains("Elidora")
                 || currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Geraaaard"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
+            }
+
+            else if (currentCustomer.name.Contains("Mara"))
+            {
+                Data.instance.vecesCobradaMara++;
+
+                mostrarJefe = false;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+
+                if (Data.instance.vecesCobradaMara >= 2) Data.instance.giftMara = true;
             }
 
             else if (currentCustomer.name.Contains("Sergio"))
@@ -1031,7 +1050,7 @@ public class UIManager : MonoBehaviour
             {
                 Data.instance.vecesCobradoGeerald++;
 
-                if(Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
+                //if(Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
 
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];

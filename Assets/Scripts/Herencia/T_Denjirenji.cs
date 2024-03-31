@@ -11,6 +11,7 @@ public class T_Denjirenji : Tecnopedos
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
     [SerializeField] public GameObject trampilla;
+    [SerializeField] public Sprite spriteAlt;
 
     protected override void Start()
     {
@@ -18,6 +19,12 @@ public class T_Denjirenji : Tecnopedos
         nombre = "Denjirenji";
 
         trampilla = GameObject.FindGameObjectWithTag("Trampilla");
+
+        if (currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+            data.GetComponent<Data>().giftDenjirenji = true;
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

@@ -49,6 +49,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool borrachoTriste = false;
     [SerializeField] public bool samuraiAyudado1 = false;
     [SerializeField] public bool samuraiAyudado2 = false;
+    [SerializeField] public int vecesSamuraiAyudado = 0;
     [SerializeField] public float propinaDay2_1;
     [SerializeField] public float propinaDay3_1;
 
@@ -71,6 +72,7 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
     [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
     [SerializeField] public int vecesCobradoGeerald = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
+    [SerializeField] public int vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
     [SerializeField] public bool programadorBuscaEsposo = false;        // Si le cobras a Antonio (día 1)
@@ -782,7 +784,17 @@ public class Data : MonoBehaviour
                     cCDialogue.Add(" En Reino Slime sirven estos cupones, adiós humano.");
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard"))
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald == 0)
+                {
+                    cCDialogue.Add("¡Humano, que le vendiste a mi limbástico!");
+                    cCDialogue.Add("Con lo que me costó convencer a la iglesia para invocarlo.");
+                    cCDialogue.Add("No sabes lo difícil que fue encontrar a ese mago mano.");
+                    cCDialogue.Add("Y por no hablar de los ingredientes para revivirlo, fueron muy costosos.");
+                    cCDialogue.Add("Serás… Claro, esto es lo que pasa por dejar a un humano trabajar.");
+                    cCDialogue.Add("Has perdido un cliente, ¡PARA SIEMPRE!");
+                }
+
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald == 1)
                 {
                     cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
                     cCDialogue.Add("...");
