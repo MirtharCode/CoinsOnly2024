@@ -233,12 +233,12 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
-        dailyCustomers.Add(jefe);
-        dailyCustomers.Add(elementalJissy);
-        dailyCustomers.Add(hybridMara);
-        dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(limbasticSergio);
-        dailyCustomers.Add(evilWizardElidora);
+        //dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(elementalJissy);
+        //dailyCustomers.Add(hybridMara);
+        //dailyCustomers.Add(limbasticCululu);
+        //dailyCustomers.Add(limbasticSergio);
+        //dailyCustomers.Add(evilWizardElidora);
         dailyCustomers.Add(evilWizardGerard);
         dailyCustomers.Add(electropedMagmaDora);
         dailyCustomers.Add(elementalHandy);
