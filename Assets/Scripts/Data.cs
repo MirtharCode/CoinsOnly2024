@@ -794,7 +794,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Has perdido un cliente, ¡PARA SIEMPRE!");
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald == 1)
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald != 0)
                 {
                     cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
                     cCDialogue.Add("...");

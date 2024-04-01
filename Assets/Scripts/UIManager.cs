@@ -317,26 +317,42 @@ public class UIManager : MonoBehaviour
         NombreText.text = currentCustomer.GetComponent<Client>().nombre;
         dialogueSize = currentCustomer.GetComponent<Client>().dialogue.Count;
 
-        if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
-           || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
-           || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
-           || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
-           || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
-           || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2"
-           || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
-           || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1")
-           || currentCustomer.name.Contains("Petra") && internalCount < dialogueSize && currentScene.name == "Day5"
-           || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
-           || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
+        if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5"))
         {
+            if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
+               || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
+               || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
+               || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
+               || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
+               || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2"
+               || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
+               || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1")
+               || currentCustomer.name.Contains("Petra") && internalCount < dialogueSize && currentScene.name == "Day5"
+               || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
+               || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
+            {
+                Debug.Log("Yo no debería estar aquí papu");
+                dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+                gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+                currentCustomer.GetComponent<Client>().Speaking();
+                internalCount++;
+
+                //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
+                //    currentCustomer.GetComponent<Client>().ByeBye();
+                //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+            }
+
+            else
+                HideText();
+        }
+
+        else if(currentCustomer.name.Contains("Cululu") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
+        {
+            Debug.Log("HUH");
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
             currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
-
-            //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
-            //    currentCustomer.GetComponent<Client>().ByeBye();
-            //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
         }
 
         else
@@ -695,10 +711,19 @@ public class UIManager : MonoBehaviour
 
     public string MoneyText()
     {
-        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
-        gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        currentCustomer.GetComponent<Client>().Speaking();
-        //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
+        if (currentCustomer.name.Contains("Cululu") && Data.instance.vecesCobradoCululu >= 2)
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+        }
+
+        else
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+        }
 
         if (currentScene.name == "Day1")
         {
@@ -790,7 +815,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
-            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") 
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano")
                 || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = false;
