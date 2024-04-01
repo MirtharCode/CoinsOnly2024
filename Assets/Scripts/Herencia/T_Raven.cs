@@ -14,11 +14,6 @@ public class T_Raven : Tecnopedos
     {
         base.Start();
         nombre = "Raven";
-
-        if (currentScene.name == "Day5" && Data.instance.giftRavenProv == true)
-        {
-            data.GetComponent<Data>().giftRaven = true;
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

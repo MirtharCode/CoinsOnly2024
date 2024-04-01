@@ -317,8 +317,9 @@ public class UIManager : MonoBehaviour
         NombreText.text = currentCustomer.GetComponent<Client>().nombre;
         dialogueSize = currentCustomer.GetComponent<Client>().dialogue.Count;
 
-        if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5"))
+        if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5"))
         {
+            Debug.Log("Nono aqui no papito");
             if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
                || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
                || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
@@ -331,7 +332,6 @@ public class UIManager : MonoBehaviour
                || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
                || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
             {
-                Debug.Log("Yo no debería estar aquí papu");
                 dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
                 gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
                 currentCustomer.GetComponent<Client>().Speaking();
@@ -348,7 +348,15 @@ public class UIManager : MonoBehaviour
 
         else if(currentCustomer.name.Contains("Cululu") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
         {
-            Debug.Log("HUH");
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+            internalCount++;
+        }
+
+        else if (currentCustomer.name.Contains("Raven") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
+        {
+            Debug.Log("Damelo todo");
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
             currentCustomer.GetComponent<Client>().Speaking();
@@ -711,7 +719,14 @@ public class UIManager : MonoBehaviour
 
     public string MoneyText()
     {
-        if (currentCustomer.name.Contains("Cululu") && Data.instance.vecesCobradoCululu >= 2)
+        if (currentCustomer.name.Contains("Cululu") && Data.instance.vecesCobradoCululu >= 2 && currentScene.name == "Day5")
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+        }
+
+        else if (currentCustomer.name.Contains("Raven") && Data.instance.vecesCobradoRaven >= 1 && currentScene.name == "Day5")
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -815,8 +830,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
-            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano")
-                || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Enano"))
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -835,7 +849,7 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = false;
                 LaVoluntad(10);
 
-                Data.instance.giftRavenProv = true;
+                Data.instance.vecesCobradoRaven++;
             }
 
             else if (currentCustomer.name.Contains("Sapopotamo"))
@@ -924,7 +938,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day5")
         {
-            if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Raven")
+            if (currentCustomer.name.Contains("Elidora") || currentCustomer.name.Contains("Mano")
                 || currentCustomer.name.Contains("Tapiz"))
             {
                 mostrarJefe = false;
@@ -946,7 +960,17 @@ public class UIManager : MonoBehaviour
 
                 Data.instance.vecesCobradoCululu++;
 
-                if (Data.instance.vecesCobradoCululu == 3) Data.instance.giftCululu = true;
+                if (Data.instance.vecesCobradoCululu >= 3) Data.instance.giftCululu = true;
+            }
+
+            else if (currentCustomer.name.Contains("Raven"))
+            {
+                mostrarJefe = false;
+                LaVoluntad(10);
+
+                Data.instance.vecesCobradoRaven++;
+
+                if (Data.instance.vecesCobradoRaven >= 2) Data.instance.giftRaven = true;
             }
 
             return dialogueText.text;

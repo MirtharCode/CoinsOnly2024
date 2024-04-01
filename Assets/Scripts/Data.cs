@@ -73,6 +73,7 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
     [SerializeField] public int vecesCobradoGeerald = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
     [SerializeField] public int vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
+    [SerializeField] public int vecesCobradoRaven = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
     [SerializeField] public bool programadorBuscaEsposo = false;        // Si le cobras a Antonio (día 1)
@@ -101,7 +102,6 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftDenjirenji = false;    // Si completas su minijuego te da su espada.
     //[SerializeField] public bool giftMagmadora = false;
     //[SerializeField] public bool giftMasermati = false;
-    [SerializeField] public bool giftRavenProv = false;         // Si completas su minijuego te da un disco.
     [SerializeField] public bool giftRaven = false;         // Si completas su minijuego te da un disco.
     //[SerializeField] public bool giftRustica = false;
 
