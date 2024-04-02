@@ -317,7 +317,8 @@ public class UIManager : MonoBehaviour
         NombreText.text = currentCustomer.GetComponent<Client>().nombre;
         dialogueSize = currentCustomer.GetComponent<Client>().dialogue.Count;
 
-        if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5"))
+        if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5")
+            && !(currentCustomer.name.Contains("Sergio") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4"))
         {
             Debug.Log("Nono aqui no papito");
             if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
@@ -362,6 +363,25 @@ public class UIManager : MonoBehaviour
             currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
         }
+
+        else if (currentCustomer.name.Contains("Sergio") && internalCount < dialogueSize - 3 && currentScene.name == "Day4")
+        {
+            Debug.Log("Damelo todo");
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+            internalCount++;
+        }
+
+        else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4")
+        {
+            Debug.Log("Damelo todo");
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+            internalCount++;
+        }
+
 
         else
             HideText();
@@ -733,6 +753,13 @@ public class UIManager : MonoBehaviour
             currentCustomer.GetComponent<Client>().Speaking();
         }
 
+        else if (currentCustomer.name.Contains("Geraaaard") && Data.instance.vecesCobradoGeerald != 0 && currentScene.name == "Day4" && giftImageGeeraard == true)
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+        }
+
         else
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
@@ -898,7 +925,7 @@ public class UIManager : MonoBehaviour
 
                 if (Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
 
-                mostrarJefe = false;
+                mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
@@ -916,7 +943,7 @@ public class UIManager : MonoBehaviour
             {
                 Data.instance.vecesCobradaMara++;
 
-                mostrarJefe = false;
+                mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
@@ -926,11 +953,27 @@ public class UIManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Sergio"))
             {
                 currentCustomer.GetComponent<SpriteRenderer>().sprite = sergioSpriteAlt;
-                mostrarJefe = false;
+                mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
                 Data.instance.giftSergio = true;
+
+                if (Data.instance.giftSergio == true && Data.instance.giftSergioYaConseguido == false)
+                {
+                    Debug.Log("Gemidos de limbastico");
+                    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
+                    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+                    currentCustomer.GetComponent<Client>().Speaking();
+                    Data.instance.giftSergioYaConseguido = true;
+                }
+
+                else
+                {
+                    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 2];
+                    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+                    currentCustomer.GetComponent<Client>().Speaking();
+                }
             }
 
             return dialogueText.text;

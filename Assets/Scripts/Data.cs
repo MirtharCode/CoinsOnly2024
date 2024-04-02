@@ -93,6 +93,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftGiovanni = false;      // Te da su "libro de cocina".
     [SerializeField] public bool giftCululu = false;        // Te da la foto de Mara.
     [SerializeField] public bool giftSergio = false;        // Si nerviosusPagaLoQueDebe es verdadero, te da su Globo-Espada.
+    [SerializeField] public bool giftSergioYaConseguido = false;        //Para que si el jugador ya ha conseguido el coleccionable en otra partida se active y me muestre odtro dialogo
     //[SerializeField] public bool giftPatxi = false;         
     [SerializeField] public bool giftTapicio = false;       // Te da el puto GOTY.
     //[SerializeField] public bool giftRockon = false;
