@@ -357,7 +357,6 @@ public class UIManager : MonoBehaviour
 
         else if (currentCustomer.name.Contains("Raven") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
         {
-            Debug.Log("Damelo todo");
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
             currentCustomer.GetComponent<Client>().Speaking();
@@ -366,22 +365,27 @@ public class UIManager : MonoBehaviour
 
         else if (currentCustomer.name.Contains("Sergio") && internalCount < dialogueSize - 3 && currentScene.name == "Day4")
         {
-            Debug.Log("Damelo todo");
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
             currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
         }
 
-        else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4")
+        else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald != 0)
         {
-            Debug.Log("Damelo todo");
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
             currentCustomer.GetComponent<Client>().Speaking();
             internalCount++;
         }
 
+        else if (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0 && !(internalCount == dialogueSize))
+        {
+            dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
+            gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
+            currentCustomer.GetComponent<Client>().Speaking();
+            internalCount++;
+        }
 
         else
             HideText();
@@ -432,9 +436,10 @@ public class UIManager : MonoBehaviour
             || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")
             || (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
             || (currentCustomer.name.Contains("Petra") && currentScene.name == "Day5")
-            || currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5")
-            || currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
+            || (currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5")
+            || (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)))
         {
+            Debug.Log("Penetre en tu oooooooooooo");
             mostrarJefe = false;
             estaToPagao = true;
             currentCustomer.GetComponent<Client>().ByeBye();

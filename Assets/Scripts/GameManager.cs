@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject evilWizardElidora;
     [SerializeField] public GameObject electropedMagmaDora;
 
+    [Header("Day5 (New)")]
+    [SerializeField] public GameObject evilWizardMagoHielo;
+
     [Header("PRODUCTS PLACES")]
     [SerializeField] public Transform oneProduct;
     [SerializeField] public Transform twoProducts1;
@@ -253,16 +256,17 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(evilWizardElidora);
-        //dailyCustomers.Add(elementalRockon);
-        //if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
-        //if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
-        //dailyCustomers.Add(limbasticCululu);
-        //dailyCustomers.Add(electropedMasermati);
-        //if (Data.instance.vecesCobradoAntonio >= 2) dailyCustomers.Add(limbasticAntonio);
-        //dailyCustomers.Add(evilWizardManoloMano);
-        //dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(evilWizardMagoHielo);
+        dailyCustomers.Add(jefe);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(elementalRockon);
+        if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
+        if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
+        dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(electropedMasermati);
+        if (Data.instance.vecesCobradoAntonio >= 2) dailyCustomers.Add(limbasticAntonio);
+        dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(hybridSaltaralisis);
         dailyCustomers.Add(electropedRaven);
         dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(detective);
