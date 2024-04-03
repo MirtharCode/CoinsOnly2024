@@ -7,13 +7,11 @@ using UnityEngine.SceneManagement;
 public class Transiciones : MonoBehaviour
 {
     [SerializeField] public GameObject cursor;
-    [SerializeField] public Animator anim;
     [SerializeField] public Data data;
 
     void Start()
     {
         GameObject newCursor = Instantiate(cursor, transform);
-        anim = GetComponent<Animator>();
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<Data>();
         ShowGifts();
     }
