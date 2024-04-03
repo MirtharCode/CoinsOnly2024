@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject evilWizardElidora;
     [SerializeField] public GameObject electropedMagmaDora;
 
+    [Header("Day5 (New)")]
+    [SerializeField] public GameObject evilWizardMagoHielo;
+
     [Header("PRODUCTS PLACES")]
     [SerializeField] public Transform oneProduct;
     [SerializeField] public Transform twoProducts1;
@@ -148,10 +151,10 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
-        dailyCustomers.Add(jefe);
-        if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
+        //dailyCustomers.Add(jefe);
+        //if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
         //dailyCustomers.Add(limbasticGiovanni);
-        //dailyCustomers.Add(evilWizardManolo);
+        dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(elementalHandy);
@@ -166,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     public void Day2_2()
     {
-        canvas.GetComponent<UIManager>().LaVoluntad(50);
+        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay2_1);
 
         dailyCustomers.Clear();
         //dailyCustomers.Add(jefe);
@@ -191,13 +194,13 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(limbasticSergio);
-        //dailyCustomers.Add(hybridSaltaralisis);
-        //dailyCustomers.Add(evilWizardManoloMano);
-        //dailyCustomers.Add(electropedRaven);
-        //dailyCustomers.Add(elementalHueso);
-        //dailyCustomers.Add(limbasticPatxi);
-        //dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(limbasticSergio);
+        dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(electropedRaven);
+        dailyCustomers.Add(elementalHueso);
+        dailyCustomers.Add(limbasticPatxi);
+        dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
         //dailyCustomers.Add(electropedRustica);
@@ -208,7 +211,7 @@ public class GameManager : MonoBehaviour
 
     public void Day3_2()
     {
-        canvas.GetComponent<UIManager>().LaVoluntad(50);
+        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay3_1);
 
         dailyCustomers.Clear();
         //dailyCustomers.Add(jefe);
@@ -233,11 +236,12 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
-        dailyCustomers.Add(jefe);
-        dailyCustomers.Add(elementalJissy);
-        dailyCustomers.Add(hybridMara);
-        dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(evilWizardElidora);
+        //dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(elementalJissy);
+        //dailyCustomers.Add(hybridMara);
+        //dailyCustomers.Add(limbasticCululu);
+        //dailyCustomers.Add(limbasticSergio);
+        //dailyCustomers.Add(evilWizardElidora);
         dailyCustomers.Add(evilWizardGerard);
         dailyCustomers.Add(electropedMagmaDora);
         dailyCustomers.Add(elementalHandy);
@@ -252,13 +256,15 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
-
+        dailyCustomers.Add(evilWizardMagoHielo);
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(evilWizardElidora);
         dailyCustomers.Add(elementalRockon);
         if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
+        if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedMasermati);
+        if (Data.instance.vecesCobradoAntonio >= 2) dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(evilWizardManoloMano);
         dailyCustomers.Add(hybridSaltaralisis);
         dailyCustomers.Add(electropedRaven);

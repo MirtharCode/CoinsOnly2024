@@ -33,7 +33,7 @@ public class H_Mara : Hibridos
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "12";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
         }
 
         else if (currentScene.name == "Day4")
@@ -50,6 +50,7 @@ public class H_Mara : Hibridos
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

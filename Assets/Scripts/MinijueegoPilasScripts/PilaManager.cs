@@ -44,10 +44,16 @@ public class PilaManager : MonoBehaviour
         cursor.SetActive(true);
 
         if (currentScene.name == "Pila_Nivel1")
+        {
+            Data.instance.vecesSamuraiAyudado++;
             Data.instance.samuraiAyudado1 = true;
+        }
 
         else if (currentScene.name == "Pila_Nivel2")
+        {
+            Data.instance.vecesSamuraiAyudado++;
             Data.instance.samuraiAyudado2 = true;
+        }
     }
 
     public void VictoryButton()

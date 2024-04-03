@@ -46,7 +46,7 @@ public class L_Cululu : Limbasticos
             product2.transform.SetParent(twoProducts1);
             product3 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "22";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "26";
         }
 
         else if (currentScene.name == "Day5")

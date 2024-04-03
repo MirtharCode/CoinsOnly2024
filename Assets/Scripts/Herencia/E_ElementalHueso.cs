@@ -41,6 +41,7 @@ public class E_ElementalHueso : Elementales
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }

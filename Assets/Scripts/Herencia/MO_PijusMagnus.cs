@@ -41,6 +41,7 @@ public class MO_PijusMagnus : MagosOscuros
     {
         Destroy(product1);
         Destroy(product2);
+        Destroy(product3);
         base.ByeBye();
     }
 }
