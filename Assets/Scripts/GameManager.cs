@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject evilWizardElidora;
     [SerializeField] public GameObject electropedMagmaDora;
 
+    [Header("Day5 (New)")]
+    [SerializeField] public GameObject evilWizardMagoHielo;
+
     [Header("PRODUCTS PLACES")]
     [SerializeField] public Transform oneProduct;
     [SerializeField] public Transform twoProducts1;
@@ -253,6 +256,7 @@ public class GameManager : MonoBehaviour
     {
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
+        dailyCustomers.Add(evilWizardMagoHielo);
         dailyCustomers.Add(jefe);
         dailyCustomers.Add(evilWizardElidora);
         dailyCustomers.Add(elementalRockon);
