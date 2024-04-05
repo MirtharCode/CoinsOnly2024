@@ -10700,6 +10700,7 @@ GameObject:
   - component: {fileID: 5982892004513391207}
   - component: {fileID: 5982892004513391205}
   - component: {fileID: 5982892004513391204}
+  - component: {fileID: 7267445435599858175}
   m_Layer: 5
   m_Name: LeftLamp
   m_TagString: Untagged
@@ -10755,7 +10756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 149bf64d04ea7214ca31fb806a7c9398, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d39d59ae1e75eed478722ced96f2e4b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10765,6 +10766,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7267445435599858175
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982892004513391206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 879bdc34adbbe6f4bbecafe422806aed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5982892004533932650
 GameObject:
   m_ObjectHideFlags: 0

@@ -714,7 +714,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.8333333
+  - time: 1.9833333
     functionName: MagoHieloRisa
     data: 
     objectReferenceParameter: {fileID: 0}

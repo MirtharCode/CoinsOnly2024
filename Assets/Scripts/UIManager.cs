@@ -320,7 +320,6 @@ public class UIManager : MonoBehaviour
         if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5")
             && !(currentCustomer.name.Contains("Sergio") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4"))
         {
-            Debug.Log("Nono aqui no papito");
             if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
                || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
                || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
