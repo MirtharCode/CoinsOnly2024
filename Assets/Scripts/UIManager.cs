@@ -206,12 +206,6 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Holi");
-            TrophyAchieved();
-        }
-
         if (currentCustomer != null && currentCustomer.name.Contains("Detective"))
         {
             StartCoroutine(FadeToBAndW());
@@ -317,10 +311,12 @@ public class UIManager : MonoBehaviour
         NombreText.text = currentCustomer.GetComponent<Client>().nombre;
         dialogueSize = currentCustomer.GetComponent<Client>().dialogue.Count;
 
+        // Si no es ninguna de las situaciones especiales
         if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5")
             && !(currentCustomer.name.Contains("Sergio") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4")
             && !(currentCustomer.name.Contains("Mara") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Handy") && currentScene.name == "Day4"))
         {
+
             if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
                || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
                || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
@@ -331,7 +327,7 @@ public class UIManager : MonoBehaviour
                || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1")
                || currentCustomer.name.Contains("Petra") && internalCount < dialogueSize && currentScene.name == "Day5"
                || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
-               || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)
+               || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0)
             {
                 dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
                 gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -347,7 +343,7 @@ public class UIManager : MonoBehaviour
                 HideText();
         }
 
-        else if(currentCustomer.name.Contains("Cululu") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
+        else if (currentCustomer.name.Contains("Cululu") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -371,7 +367,7 @@ public class UIManager : MonoBehaviour
             internalCount++;
         }
 
-        else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald != 0)
+        else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 != 0)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -379,7 +375,7 @@ public class UIManager : MonoBehaviour
             internalCount++;
         }
 
-        else if (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0 && !(internalCount == dialogueSize))
+        else if (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0 && !(internalCount == dialogueSize))
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -387,7 +383,7 @@ public class UIManager : MonoBehaviour
             internalCount++;
         }
 
-        else if(currentCustomer.name.Contains("Mara") && currentScene.name == "Day4" && internalCount < dialogueSize - 3)
+        else if (currentCustomer.name.Contains("Mara") && currentScene.name == "Day4" && internalCount < dialogueSize - 3)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -453,7 +449,7 @@ public class UIManager : MonoBehaviour
             || (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
             || (currentCustomer.name.Contains("Petra") && currentScene.name == "Day5")
             || (currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5")
-            || (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.vecesCobradoGeerald == 0)))
+            || (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0)))
         {
             mostrarJefe = false;
             estaToPagao = true;
@@ -773,7 +769,7 @@ public class UIManager : MonoBehaviour
             currentCustomer.GetComponent<Client>().Speaking();
         }
 
-        else if (currentCustomer.name.Contains("Geraaaard") && Data.instance.vecesCobradoGeerald != 0 && currentScene.name == "Day4" && giftImageGeeraard == true)
+        else if (currentCustomer.name.Contains("Geraaaard") && Data.instance.noCobrarSergioCobrarGeeraardD4 != 0 && currentScene.name == "Day4" && giftImageGeeraard == true)
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -830,8 +826,6 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[1];
                 LaVoluntad(-10);
-
-                Data.instance.programadorBuscaEsposo = true;
             }
 
             else if (currentCustomer.name.Contains("Rockon"))
@@ -941,20 +935,22 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Handy"))
             {
-                mostrarJefe = false;
-                LaVoluntad(10);
-
                 Data.instance.vecesCobradaHandy++;
+                mostrarJefe = false;
+                LaVoluntad(10); ;
 
-                if (Data.instance.vecesCobradaHandy >= 2) Data.instance.giftHandy = true;
+                if (Data.instance.vecesCobradaHandy >= 2 && !Data.instance.giftHandy)
+                {
+                    Data.instance.giftHandy = true;
+                    TrophyAchieved("Handy");
+                }
             }
 
             else if (currentCustomer.name.Contains("Cululu"))
             {
+                Data.instance.vecesCobradoCululu++;
                 mostrarJefe = false;
                 LaVoluntad(10);
-
-                Data.instance.vecesCobradoCululu++;
             }
 
             else if (currentCustomer.name.Contains("Antonio"))
@@ -966,9 +962,13 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Geraaaard"))
             {
-                Data.instance.vecesCobradoGeerald++;
+                Data.instance.noCobrarSergioCobrarGeeraardD4++;
 
-                if (Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
+                if (Data.instance.noCobrarSergioCobrarGeeraardD4 >= 2 && !Data.instance.giftGeeraard)
+                {
+                    Data.instance.giftGeeraard = true;
+                    TrophyAchieved("Geeraard");
+                }
 
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
@@ -992,7 +992,11 @@ public class UIManager : MonoBehaviour
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
-                if (Data.instance.vecesCobradaMara >= 2) Data.instance.giftMara = true;
+                if (Data.instance.vecesCobradaMara >= 2 && !Data.instance.giftMara)
+                {
+                    Data.instance.giftMara = true;
+                    TrophyAchieved("Mara");
+                }
             }
 
             else if (currentCustomer.name.Contains("Sergio"))
@@ -1002,14 +1006,13 @@ public class UIManager : MonoBehaviour
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
-                Data.instance.giftSergio = true;
-
-                if (Data.instance.giftSergio == true && Data.instance.giftSergioYaConseguido == false)
+                if (!Data.instance.giftSergio)
                 {
                     dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
                     gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
                     currentCustomer.GetComponent<Client>().Speaking();
-                    Data.instance.giftSergioYaConseguido = true;
+                    Data.instance.giftSergio = true;
+                    TrophyAchieved("Sergio");
                 }
 
                 else
@@ -1041,13 +1044,16 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Cululu"))
             {
+                Data.instance.vecesCobradoCululu++;
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
 
-                Data.instance.vecesCobradoCululu++;
-
-                if (Data.instance.vecesCobradoCululu >= 3) Data.instance.giftCululu = true;
+                if (Data.instance.vecesCobradoCululu >= 3)
+                {
+                    Data.instance.giftCululu = true;
+                    TrophyAchieved("Cululu");
+                }
             }
 
             else if (currentCustomer.name.Contains("Raven"))
@@ -1057,7 +1063,11 @@ public class UIManager : MonoBehaviour
 
                 Data.instance.vecesCobradoRaven++;
 
-                if (Data.instance.vecesCobradoRaven >= 2) Data.instance.giftRaven = true;
+                if (Data.instance.vecesCobradoRaven >= 2)
+                {
+                    Data.instance.giftRaven = true;
+                    TrophyAchieved("Raven");
+                }
             }
 
             return dialogueText.text;
@@ -1174,9 +1184,7 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Sergio"))
             {
-                Data.instance.vecesCobradoGeerald++;
-
-                //if(Data.instance.vecesCobradoGeerald >= 2) Data.instance.giftGeeraard = true;
+                Data.instance.noCobrarSergioCobrarGeeraardD4++;
 
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
@@ -1313,99 +1321,94 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void TrophyAchieved()
+    public void TrophyAchieved(string trophyName)
     {
-        if (Data.instance.giftAntonio)
+        if (trophyName == "Antonio")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageAntonio;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
         }
 
-        else if (Data.instance.giftCululu)
+        else if (trophyName == "Cululu")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageCululu;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
         }
 
-        else if (Data.instance.giftDenjirenji)
+        else if (trophyName == "Denjirenji")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageDenjirenji;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
         }
 
-        else if (Data.instance.giftElidora)
+        // Este te lo da en casa
+        else if (trophyName == "Elidora")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageElidora;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftElvog)
+        else if (trophyName == "Elvog")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageElvog;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
         }
 
-        else if (Data.instance.giftEnano)
+        else if (trophyName == "Enano")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageEnano;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftGeeraard)
+        else if (trophyName == "Geeraard")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageGeeraard;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
         }
 
-        else if (Data.instance.giftGiovanni)
+        else if (trophyName == "Giovanni")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftHandy)
+        else if (trophyName == "Handy")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageHandy;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftMano)
+        else if (trophyName == "Mano")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageMano;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftMara)
+        else if (trophyName == "Mara")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageMara;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftPetra)
+        else if (trophyName == "Petra")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImagePetra;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftGeeraard)
-        {
-            gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageAntonio;
-            gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
-        }
-
-        else if (Data.instance.giftRaven)
+        else if (trophyName == "Raven")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageRaven;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
         }
 
-        else if (Data.instance.giftSergio)
+        else if (trophyName == "Sergio")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageSergio;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
         }
 
-        else if (Data.instance.giftTapicio)
+        else if (trophyName == "Tapicio")
         {
             gameObject.transform.GetChild(14).GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
             gameObject.transform.GetChild(14).GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
@@ -1414,8 +1417,6 @@ public class UIManager : MonoBehaviour
         //StartCoroutine(TrophyShower());
         showTrophyAnim.SetTrigger("TrophyShow");
     }
-
-
 
     public void Resume()
     {

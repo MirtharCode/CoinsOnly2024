@@ -71,13 +71,11 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
     [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
     [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
-    [SerializeField] public int vecesCobradoGeerald = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
+    [SerializeField] public int noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
     [SerializeField] public int vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
     [SerializeField] public int vecesCobradoRaven = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
-    [SerializeField] public bool programadorBuscaEsposo = false;        // Si le cobras a Antonio (día 1)
-    [SerializeField] public bool corredorDeBolsaBuscaEsposo = false;    // Si le cobras a Patxi (día 3).
 
     [SerializeField] public bool giftGeeraard = false;      // Si nerviosusPagaLoQueDebe es falso, Geerard te dará la foto firmada
     [SerializeField] public bool giftEnano = false;         // Te da un Enano. Si en el día 2 o 3 encuentras al enano zumbón.
@@ -93,7 +91,6 @@ public class Data : MonoBehaviour
     [SerializeField] public bool giftGiovanni = false;      // Te da su "libro de cocina".
     [SerializeField] public bool giftCululu = false;        // Te da la foto de Mara.
     [SerializeField] public bool giftSergio = false;        // Si nerviosusPagaLoQueDebe es verdadero, te da su Globo-Espada.
-    [SerializeField] public bool giftSergioYaConseguido = false;        //Para que si el jugador ya ha conseguido el coleccionable en otra partida se active y me muestre odtro dialogo
     //[SerializeField] public bool giftPatxi = false;         
     [SerializeField] public bool giftTapicio = false;       // Te da el puto GOTY.
     //[SerializeField] public bool giftRockon = false;
@@ -654,7 +651,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Espero que esta deshonra no llegue a los oídos de mi maestro, muchas gracias humano.");
                 }
 
-                else if(uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji") && vecesSamuraiAyudado >= 2)
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji") && vecesSamuraiAyudado >= 2)
                 {
                     cCDialogue.Add("Ufff, por los pelos, estupida batería, creo que está algo rota por estos sustos que me da");
                     cCDialogue.Add("Toma, quedate con mi espada legendaria \n cómo agradecimiento. Cuidala bien, la han tocado muchos \n más seres anteriores a ti.");
@@ -768,7 +765,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Bueno, al caso, necesito 3 bebidas energéticas para activar mi 100%");
                     cCDialogue.Add("Y así escapar del reino con mi super energía, o eso ponía en internet sobre esta bebidas.");
                     cCDialogue.Add("Que me dices, ¿me ayudas?");
-                    cCDialogue.Add("Gracias por tu ayuda, tendrás una recompensa, te daré mi legendaria espada, ¡LA GLOSPADA!");
+                    cCDialogue.Add("Gracias por tu ayuda, tendrás una recompensa, te daré mi legendaria espada, ¡LA GLOBOSPADA!");
                     cCDialogue.Add("Sabía que me ayudarías, suerte humano.");
                     cCDialogue.Add("¿De verdad? Qué poco corazón");
                 }
@@ -792,7 +789,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add(" En Reino Slime sirven estos cupones, adiós humano.");
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald == 0)
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && noCobrarSergioCobrarGeeraardD4 == 0)
                 {
                     cCDialogue.Add("¡Humano, que le vendiste a mi limbástico!");
                     cCDialogue.Add("Con lo que me costó convencer a la iglesia para invocarlo.");
@@ -802,7 +799,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Has perdido un cliente, ¡PARA SIEMPRE!");
                 }
 
-                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && vecesCobradoGeerald != 0)
+                else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && noCobrarSergioCobrarGeeraardD4 != 0)
                 {
                     cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
                     cCDialogue.Add("...");

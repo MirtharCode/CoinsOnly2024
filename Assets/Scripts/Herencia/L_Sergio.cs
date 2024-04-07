@@ -9,11 +9,17 @@ public class L_Sergio : Limbasticos
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
+    [SerializeField] public Sprite spriteAlt;
 
     protected override void Start()
     {
         base.Start();
         nombre = "Sergio";
+
+        if (data.GetComponent<Data>().giftSergio)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

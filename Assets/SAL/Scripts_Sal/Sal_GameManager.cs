@@ -55,11 +55,11 @@ public class Sal_GameManager : MonoBehaviour
             WaitingPorSiAcasing();
     }
 
- 
+
 
     public void LevelSelector()
     {
-        SceneManager.LoadScene("02LevelSelector");
+        SceneManager.LoadScene("LevelSelector");
     }
 
 

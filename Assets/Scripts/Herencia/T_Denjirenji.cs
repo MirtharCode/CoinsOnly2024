@@ -20,10 +20,15 @@ public class T_Denjirenji : Tecnopedos
 
         trampilla = GameObject.FindGameObjectWithTag("Trampilla");
 
-        if (currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2)
+        if ((currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2) || data.GetComponent<Data>().giftDenjirenji)
         {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-            data.GetComponent<Data>().giftDenjirenji = true;
+           
+            if (!data.GetComponent<Data>().giftDenjirenji)
+            {
+                data.GetComponent<Data>().giftDenjirenji = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Denjirenji");
+            }
         }
     }
 

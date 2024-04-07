@@ -16,10 +16,15 @@ public class L_Antonio : Limbasticos
         base.Start();
         nombre = "Antonio";
 
-        if (currentScene.name == "Day5")
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftAntonio)
         {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-            data.GetComponent<Data>().giftAntonio = true;
+
+            if (!data.GetComponent<Data>().giftAntonio)
+            {
+                data.GetComponent<Data>().giftAntonio = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Antonio");
+            }
         }
     }
 

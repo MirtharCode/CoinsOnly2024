@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Transiciones : MonoBehaviour
 {
     [SerializeField] public GameObject cursor;
+    [SerializeField] public GameObject transBlack;
+    [SerializeField] public bool imPlayingSAL;
     [SerializeField] public Data data;
 
     void Start()
@@ -23,6 +25,7 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
+        FadeToBlack();
         if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
         else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
         else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
@@ -54,26 +57,42 @@ public class Transiciones : MonoBehaviour
 
     public void ShowGifts()
     {
-        if (data.giftGeeraard) transform.GetChild(10).gameObject.SetActive(true);
-        if (data.giftEnano) transform.GetChild(11).gameObject.SetActive(true);
-        if (data.giftMano) transform.GetChild(4).gameObject.SetActive(true);
-        if (data.giftElidora) transform.GetChild(18).gameObject.SetActive(true);
-        if (data.giftElvog) transform.GetChild(5).gameObject.SetActive(true);
-        if (data.giftMara) transform.GetChild(16).gameObject.SetActive(true);
-        if (data.giftPetra) transform.GetChild(14).gameObject.SetActive(true);
-        if (data.giftAntonio) transform.GetChild(9).gameObject.SetActive(true);
-        if (data.giftGiovanni) transform.GetChild(15).gameObject.SetActive(true);
-        if (data.giftCululu) transform.GetChild(8).gameObject.SetActive(true);
-        if (data.giftSergio) transform.GetChild(7).gameObject.SetActive(true);
-        if (data.giftTapicio) transform.GetChild(17).gameObject.SetActive(true);
-        if (data.giftHandy) transform.GetChild(19).gameObject.SetActive(true);
-        if (data.giftDenjirenji) transform.GetChild(12).gameObject.SetActive(true);
-        if (data.giftRaven) transform.GetChild(6).gameObject.SetActive(true);
+        if (data.giftGeeraard) transform.GetChild(11).gameObject.SetActive(true);
+        if (data.giftEnano) transform.GetChild(12).gameObject.SetActive(true);
+        if (data.giftMano) transform.GetChild(5).gameObject.SetActive(true);
+        if (data.giftElidora) transform.GetChild(19).gameObject.SetActive(true);
+        if (data.giftElvog) transform.GetChild(6).gameObject.SetActive(true);
+        if (data.giftMara) transform.GetChild(17).gameObject.SetActive(true);
+        if (data.giftPetra) transform.GetChild(15).gameObject.SetActive(true);
+        if (data.giftAntonio) transform.GetChild(10).gameObject.SetActive(true);
+        if (data.giftGiovanni) transform.GetChild(16).gameObject.SetActive(true);
+        if (data.giftCululu) transform.GetChild(9).gameObject.SetActive(true);
+        if (data.giftSergio) transform.GetChild(8).gameObject.SetActive(true);
+        if (data.giftTapicio) transform.GetChild(18).gameObject.SetActive(true);
+        if (data.giftHandy) transform.GetChild(20).gameObject.SetActive(true);
+        if (data.giftDenjirenji) transform.GetChild(13).gameObject.SetActive(true);
+        if (data.giftRaven) transform.GetChild(7).gameObject.SetActive(true);
         if (data.day4Check || data.day5Check)
         {
             transform.GetChild(13).gameObject.SetActive(true);
             transform.GetChild(2).gameObject.SetActive(false);
         }
+    }
 
+    public void TravellingAnimation()
+    {
+        imPlayingSAL = true;
+        GetComponent<Animator>().SetBool("PlayingSAL", true);
+
+    }
+
+    public void GoToSAL()
+    {
+        SceneManager.LoadScene("LevelSelector");
+    }
+
+    public void FadeToBlack()
+    {
+        transform.GetChild(22).gameObject.GetComponent<Animator>().SetBool("ToBlack", true);
     }
 }

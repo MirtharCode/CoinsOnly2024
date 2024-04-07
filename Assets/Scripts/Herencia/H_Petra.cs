@@ -16,10 +16,15 @@ public class H_Petra : Hibridos
         base.Start();
         nombre = "Petra";
 
-        if (currentScene.name == "Day5" && data.GetComponent<Data>().borrachoTriste)
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftPetra)
         {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-            data.GetComponent<Data>().giftPetra = true;
+
+            if (!data.GetComponent<Data>().giftPetra)
+            {
+                data.GetComponent<Data>().giftPetra = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Petra");
+            }
         }
     }
 

@@ -16,10 +16,15 @@ public class H_Elvog : Hibridos
         base.Start();
         nombre = "Elvog";
 
-        if (currentScene.name == "Day5")
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftElvog )
         {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-            data.GetComponent<Data>().giftElvog = true;
+
+            if (!data.GetComponent<Data>().giftElvog)
+            {
+                data.GetComponent<Data>().giftElvog = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Elvog");
+            }
         }
     }
 

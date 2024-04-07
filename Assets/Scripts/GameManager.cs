@@ -133,9 +133,9 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        dailyCustomers.Add(evilWizardGerard);
-        dailyCustomers.Add(hybridElvog);
-        dailyCustomers.Add(limbasticAntonio);
+        //dailyCustomers.Add(evilWizardGerard);
+        //dailyCustomers.Add(hybridElvog);
+        //dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(hybridMara);
@@ -151,18 +151,12 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
 
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
-        //if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        //dailyCustomers.Add(limbasticGiovanni);
+        dailyCustomers.Add(jefe);
+        if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
+        dailyCustomers.Add(limbasticGiovanni);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(limbasticCululu);
         dailyCustomers.Add(electropedDenjirenji);
-        //dailyCustomers.Add(elementalHandy);
-        //dailyCustomers.Add(hybridPetra);
-        //dailyCustomers.Add(elementalTapicio);
-        //dailyCustomers.Add(electropedMasermati);
-        //dailyCustomers.Add(evilWizardPijus);
-        //dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -172,11 +166,6 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay2_1);
 
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
-        //if (Data.instance.samuraiPagaMal) dailyCustomers.Add(hybridLepion);
-        //dailyCustomers.Add(limbasticGiovanni);
-        //dailyCustomers.Add(evilWizardManolo);
-        //dailyCustomers.Add(limbasticCululu);
         if (Data.instance.samuraiAyudado1) dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(hybridPetra);
@@ -203,8 +192,6 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
-        //dailyCustomers.Add(electropedRustica);
-        //dailyCustomers.Add(detective);
 
         CharacterShowUp(dailyCustomers[customerNumber]);
     }
@@ -214,15 +201,6 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay3_1);
 
         dailyCustomers.Clear();
-        //dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(limbasticSergio);
-        //dailyCustomers.Add(hybridSaltaralisis);
-        //dailyCustomers.Add(evilWizardManoloMano);
-        //dailyCustomers.Add(electropedRaven);
-        //dailyCustomers.Add(elementalHueso);
-        //dailyCustomers.Add(limbasticPatxi);
-        //dailyCustomers.Add(hybridElvog);
-        //dailyCustomers.Add(evilWizardManolo);
         if (Data.instance.samuraiAyudado2) dailyCustomers.Add(electropedDenjirenji);
         dailyCustomers.Add(electropedRustica);
         dailyCustomers.Add(detective);

@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day2_2.unity
     guid: 80caa0b4abe8edc46805250d2d034cfd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Day3_1.unity
     guid: 840b3bbd24f25eb44b5b86491771ebf9
   - enabled: 1
@@ -63,7 +63,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Finales/Congratulations.unity
     guid: 8a179114e252d1d4c8050f406a9651bb
   - enabled: 1
-    path: Assets/SAL/Escenas_Sal/02LevelSelector.unity
+    path: Assets/SAL/Escenas_Sal/LevelSelector.unity
     guid: 592119a344923d24b93bb462350e8935
   - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level001.unity
