@@ -1722,6 +1722,7 @@ MonoBehaviour:
   elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
   electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
+  evilWizardMagoHielo: {fileID: 0}
   oneProduct: {fileID: 460506036}
   twoProducts1: {fileID: 202686111}
   twoProducts2: {fileID: 1964054750}
@@ -2097,6 +2098,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: samuraiAyudado2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: vecesSamuraiAyudado
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: m_RootOrder
       value: 8

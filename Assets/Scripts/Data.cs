@@ -648,9 +648,16 @@ public class Data : MonoBehaviour
 
             else if (currentScene.name == "Day3_2")
             {
-                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
+                if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji") && vecesSamuraiAyudado < 2)
                 {
-                    cCDialogue.Add("Ufff, por los pelos, estupida batería, creo que está algo rota por estos sustos que me da, espero que esta deshonra no llegue a los oídos de mi maestro, muchas gracias humano.");
+                    cCDialogue.Add("Ufff, por los pelos, estupida batería, creo que está algo rota por estos sustos que me da");
+                    cCDialogue.Add("Espero que esta deshonra no llegue a los oídos de mi maestro, muchas gracias humano.");
+                }
+
+                else if(uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji") && vecesSamuraiAyudado >= 2)
+                {
+                    cCDialogue.Add("Ufff, por los pelos, estupida batería, creo que está algo rota por estos sustos que me da");
+                    cCDialogue.Add("Toma, quedate con mi espada legendaria \n cómo agradecimiento. Cuidala bien, la han tocado muchos \n más seres anteriores a ti.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rustica"))

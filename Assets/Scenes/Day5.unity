@@ -1989,6 +1989,7 @@ MonoBehaviour:
   elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
   electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
+  evilWizardMagoHielo: {fileID: 8043330204968246209, guid: 90c078a54d3d1a345ad88cd0f9cbb2fd, type: 3}
   oneProduct: {fileID: 460506036}
   twoProducts1: {fileID: 202686111}
   twoProducts2: {fileID: 1964054750}
