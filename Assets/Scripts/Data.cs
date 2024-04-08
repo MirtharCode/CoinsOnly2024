@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Data : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool spaColombian;
 
     [SerializeField] public GameObject uIManager;
+    [SerializeField] public HomeManager homeManager;
 
     [SerializeField] public int numEvilWizard;
     //[SerializeField] public int numEvilWizardGerard;
@@ -111,6 +113,7 @@ public class Data : MonoBehaviour
     void Awake()
     {
         uIManager = null;
+        homeManager = null;
 
         if (instance != null) Destroy(gameObject);
 
@@ -1083,8 +1086,19 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Muchas gracias por ayudar en el caso, espero que nos volvamos a ver.");
                 }
             }
-        }
 
-        #endregion
+            else if (currentScene.name == "Home")
+            {
+                if (homeManager.currentHomeClientPrefab.GetComponent<Image>().sprite.name.Contains("Jefe"))
+                {
+                    cCDialogue.Add("Joder, eres como una nevera por detrás, feo a la par que caliente (OwO).");
+                    cCDialogue.Add("Yo desayuno pizza con piña, toso en conciertos y echo primero los cereales y después la leche");
+                    cCDialogue.Add("Adelante, llámame monstruo, pero al menos tengo algo que tú nunca tendrás...");
+                    cCDialogue.Add("¡UNA CASA PROPIA! (Procedes a hacer la lloración)");
+                }
+            }
+
+            #endregion
+        }
     }
 }

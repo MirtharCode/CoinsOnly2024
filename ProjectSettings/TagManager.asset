@@ -19,6 +19,12 @@ TagManager:
   - PM
   - SM
   - Cursor
+  - valla
+  - Bird
+  - Mud
+  - Grass
+  - HM
+  - HomeClient
   layers:
   - Default
   - TransparentFX
