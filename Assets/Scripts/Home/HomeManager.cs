@@ -18,6 +18,9 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public TMP_Text NombreText;
     [SerializeField] public int dialogueSize;
     [SerializeField] public int internalCount;
+    [SerializeField] public AudioSource doorSound;
+    [SerializeField] public AudioClip openDoorSound;
+    [SerializeField] public AudioClip closeDoorSound;
 
     [Header("SPRITES CLIENTES")]
     [SerializeField] public Sprite evilWizardGerard;
@@ -109,11 +112,12 @@ public class HomeManager : MonoBehaviour
 
     public void SomeoneIsKnocking()
     {
+        doorSound.PlayOneShot(openDoorSound);
         GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
 
         if (Data.instance.day0Check)
         {
-            clon.GetComponent<Image>().sprite = limbasticSergio;
+            clon.GetComponent<Image>().sprite = evilWizardGerard;
         }
 
         if (Data.instance.day1Check)
