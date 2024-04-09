@@ -235,13 +235,13 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
         dailyCustomers.Add(evilWizardMagoHielo);
-        //dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(evilWizardElidora);
-        //dailyCustomers.Add(elementalRockon);
-        //if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
-        //if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
-        //dailyCustomers.Add(limbasticCululu);
-        //dailyCustomers.Add(electropedMasermati);
+        dailyCustomers.Add(jefe);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(elementalRockon);
+        if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
+        if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
+        dailyCustomers.Add(limbasticCululu);
+        dailyCustomers.Add(electropedMasermati);
         if (Data.instance.vecesCobradoAntonio >= 2) dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(evilWizardManoloMano);
         dailyCustomers.Add(hybridSaltaralisis);
@@ -249,7 +249,7 @@ public class GameManager : MonoBehaviour
         dailyCustomers.Add(elementalTapicio);
         dailyCustomers.Add(detective);
 
-        CharacterShowUp(dailyCustomers[customerNumber]);
+        if (!canvas.GetComponent<UIManager>().currentCustomer.name.Contains("MagoHielo")) CharacterShowUp(dailyCustomers[customerNumber]);
     }
 
     public void SoundCreator(string texto)

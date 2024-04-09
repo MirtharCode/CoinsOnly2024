@@ -42,7 +42,9 @@ public abstract class Client : MonoBehaviour
         twoProducts2 = gameManager.GetComponent<GameManager>().twoProducts2.transform;
 
         uIManager.GetComponent<UIManager>().currentCustomer = gameObject;
-        data.GetComponent<Data>().SettingDialogues();
+        if (!uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("MagoHielo"))
+            data.GetComponent<Data>().SettingDialogues();
+
         dialogue = data.GetComponent<Data>().cCDialogue;
     }
     protected abstract void OnCollisionEnter2D(Collision2D collision);
