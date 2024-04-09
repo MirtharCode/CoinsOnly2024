@@ -11,6 +11,7 @@ public class Data : MonoBehaviour
 
     [SerializeField] public GameObject uIManager;
     [SerializeField] public HomeManager homeManager;
+    [SerializeField] public Transiciones transiciones;
 
     [SerializeField] public int numEvilWizard;
     //[SerializeField] public int numEvilWizardGerard;
@@ -1089,16 +1090,24 @@ public class Data : MonoBehaviour
 
             else if (currentScene.name == "Home")
             {
-                if (homeManager.currentHomeClientPrefab.GetComponent<Image>().sprite.name.Contains("Jefe"))
+                if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
                 {
-                    cCDialogue.Add("Joder, eres como una nevera por detrás, feo a la par que caliente (OwO).");
-                    cCDialogue.Add("Yo desayuno pizza con piña, toso en conciertos y echo primero los cereales y después la leche");
-                    cCDialogue.Add("Adelante, llámame monstruo, pero al menos tengo algo que tú nunca tendrás...");
-                    cCDialogue.Add("¡UNA CASA PROPIA! (Procedes a hacer la lloración)");
+                    cCDialogue.Add("Te preguntarás como he averiguado donde vives.");
+                    cCDialogue.Add("Eso es problema de David, no mío, yo solo pongo textos provisionales. Hola Whatsapp.");
+                    cCDialogue.Add("Se supone que te tengo que dar el puto GOTY y como ni \"Tadeo Jones Endgame\" ni \"Aristoputas 3\" han salido aún, aquí tienes \"SAL\".");
+                    cCDialogue.Add("Un increíble juego en el que increible encarnarás a Anacleto, un increíble caracol con un increíble salero a cuestas...");
+                    cCDialogue.Add("Para nada me han pagado para decir todo lo anterior.");
+                    cCDialogue.Add("A todo esto, se supone que soy Emo, así que puta vida tete y tal, soy más oscuro que los gallumbos de Batman.");
+                    cCDialogue.Add("Por cierto, seguramente el jefe ya te haya dicho esto al final de tu primer día pero...");
+                    cCDialogue.Add("Si se la estrujas a Rodolfo todo se vuelve oscuro y te duermes enseguida... ¿Turbio cierto?");
+                    cCDialogue.Add("Tranqui que si no sabes a qué me refiero, el programador hará una animación sutil cuando acabe nuestra conversación.");
+                    cCDialogue.Add("Eres libre de jugar a SAL hasta horas intempestivas, nunca llegarás tarde a tu siguiente día de curro.");
+                    cCDialogue.Add("Es lo que tiene jugar a un videojuego dentro de un videojuego supongo.");
+                    cCDialogue.Add("Bueno, que me voy, viva \"My Chemical Romance\" y esas cosas, te me cuidas. ¡Viva el Betis!.");
                 }
             }
-
-            #endregion
         }
     }
+
+    #endregion
 }

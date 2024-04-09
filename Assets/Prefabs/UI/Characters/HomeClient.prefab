@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5882351613853126967}
   - component: {fileID: 1691578926199110340}
   - component: {fileID: 5866501187159745852}
-  - component: {fileID: 7630354195630918255}
+  - component: {fileID: 2197216236551472471}
+  - component: {fileID: 5612088247705302750}
   m_Layer: 5
   m_Name: HomeClient
   m_TagString: HomeClient
@@ -99,7 +100,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7630354195630918255
+--- !u!114 &2197216236551472471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,12 +109,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 369408636780403982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db22e9ebeaf7d834d9f384a8773e5e4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 18acaa4ed221f4b49ac5895e103bc299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hM: {fileID: 0}
-  dialogue: []
-  raza: 
-  nombre: 
-  normalSprite: {fileID: 21300000, guid: 816e3014edefe5f489e57fbc61bc5e90, type: 3}
-  milosSape: {fileID: 21300000, guid: 2b5f8bae429536d4f8d6ac32b90c41c1, type: 3}
+--- !u!114 &5612088247705302750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369408636780403982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a037a768eb8e1bd4597843be46deceb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
