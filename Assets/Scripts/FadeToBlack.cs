@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeToBlack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] public GameObject data;
+
     void Start()
     {
-
+        data = GameObject.FindGameObjectWithTag("Data");
     }
 
     // Update is called once per frame
@@ -19,5 +21,10 @@ public class FadeToBlack : MonoBehaviour
     public void FadeToBlackAnywhere()
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
+    }
+
+    public void ClientEntrance()
+    {
+        data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
     }
 }

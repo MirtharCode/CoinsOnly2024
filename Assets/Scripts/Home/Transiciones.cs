@@ -11,13 +11,16 @@ public class Transiciones : MonoBehaviour
     [SerializeField] public GameObject rodolfosNose;
     [SerializeField] public bool imPlayingSAL;
     [SerializeField] public Data data;
+    [SerializeField] public FadeToBlack fTB;
 
     void Start()
     {
         GameObject newCursor = Instantiate(cursor, transform);
         data = GameObject.FindGameObjectWithTag("Data").GetComponent<Data>();
+        fTB = GameObject.FindGameObjectWithTag("FadeBlack").GetComponent<FadeToBlack>();
         Data.instance.transiciones = gameObject.GetComponent<Transiciones>();
         ShowGifts();
+        //fTB.FadeToBlackAnywhere();
     }
 
     void Update()
