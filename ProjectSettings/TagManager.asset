@@ -25,6 +25,7 @@ TagManager:
   - Grass
   - HM
   - HomeClient
+  - FadeBlack
   layers:
   - Default
   - TransparentFX

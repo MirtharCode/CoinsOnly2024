@@ -120,15 +120,14 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        SomeoneIsKnocking();
+        //SomeoneIsKnocking();
         data = GameObject.FindGameObjectWithTag("Data");
+        data.GetComponent<Data>().homeManager = gameObject.GetComponent<HomeManager>();
     }
 
     void Start()
     {
-        currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-        Data.instance.homeManager = gameObject.GetComponent<HomeManager>();
-        dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
+
     }
 
     // Update is called once per frame
@@ -139,6 +138,7 @@ public class HomeManager : MonoBehaviour
 
     public void SomeoneIsKnocking()
     {
+        Debug.Log("Croquetas");
         doorSound.PlayOneShot(openDoorSound);
         GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
 
@@ -164,6 +164,9 @@ public class HomeManager : MonoBehaviour
             if (Data.instance.giftMano) clon.GetComponent<Image>().sprite = evilWizardManoloManoALT;
             else clon.GetComponent<Image>().sprite = evilWizardManoloMano;
         }
+
+        currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+        dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
     }
 
     public void ShowingText()
