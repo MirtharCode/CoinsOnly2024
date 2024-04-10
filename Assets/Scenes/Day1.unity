@@ -458,10 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 5994435751796410855, guid: 0d82a4c78a9370b4888271e1db910713, type: 3}
   trampilla: {fileID: 536717154}
-  currentCustomer: {fileID: 0}
   customerNumber: 0
   dailyCustomers: []
-  data: {fileID: 0}
   jefe: {fileID: 8043330204968246209, guid: e8e7c1663a70cd0468d3da20898313cb, type: 3}
   jefe2: {fileID: 8043330204968246209, guid: f495d3d9d33ef604bb28e1cc2537e55a, type: 3}
   detective: {fileID: 8043330204968246209, guid: 9b6aa07f1b6c4bb43a45cd439365fbab, type: 3}
@@ -490,6 +488,7 @@ MonoBehaviour:
   elementalJissy: {fileID: 8043330204968246209, guid: a0a562c49fa802e44a9f0a55fbbd5271, type: 3}
   evilWizardElidora: {fileID: 8043330204968246209, guid: 613a1bc34c943e8499cbad732fbb9012, type: 3}
   electropedMagmaDora: {fileID: 8043330204968246209, guid: 9a5ef128036648d4e9f769f6ddd92d2c, type: 3}
+  evilWizardMagoHielo: {fileID: 0}
   oneProduct: {fileID: 1993393625}
   twoProducts1: {fileID: 595192934}
   twoProducts2: {fileID: 1102901061}
@@ -1133,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -367.41437
       objectReference: {fileID: 0}
+    - target: {fileID: 2951955827707649114, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 2976945858305267812, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_Name
       value: Button-PlegarPrecios
@@ -1589,6 +1592,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6255579381593462173, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6299278521468120215, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1640,6 +1647,10 @@ PrefabInstance:
     - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -79.41437
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055254159272289571, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7232458244291908560, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
@@ -1700,6 +1711,10 @@ PrefabInstance:
     - target: {fileID: 8318432404277665462, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394291734937109429, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8491064500481053050, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
