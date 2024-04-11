@@ -222,3 +222,4 @@ MonoBehaviour:
   product2: {fileID: 0}
   product3: {fileID: 0}
   risa: {fileID: 8300000, guid: 4b9343990aa38cb46952b1291c5f3d14, type: 3}
+  grito: {fileID: 8300000, guid: 479824b0486efe540a66efac2752a2bf, type: 3}
