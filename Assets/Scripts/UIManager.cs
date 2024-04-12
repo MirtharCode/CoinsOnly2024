@@ -895,6 +895,11 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
+
+                if (currentCustomer.name.Contains("Enano") && currentScene.name == "Day3_1")
+                {
+                    gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
+                }
             }
 
             else if (currentCustomer.name.Contains("Patxi"))
@@ -1165,6 +1170,11 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
                 LaVoluntad(-15);
+
+                if (currentCustomer.name.Contains("Enano") && currentScene.name == "Day3_1")
+                {
+                    gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
+                }
             }
 
             return dialogueText.text;
