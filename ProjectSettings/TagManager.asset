@@ -26,6 +26,7 @@ TagManager:
   - HM
   - HomeClient
   - FadeBlack
+  - Gnomo
   layers:
   - Default
   - TransparentFX

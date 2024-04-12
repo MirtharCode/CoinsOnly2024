@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject currentCustomer;
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject canvasVictory;
+    [SerializeField] public GameObject gnomo;
     public Scene currentScene;
 
 
@@ -161,15 +162,16 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
-        canvasPausa = gameObject.transform.GetChild(13).gameObject;
-        canvasVictory = gameObject.transform.GetChild(12).gameObject;
+        canvasPausa = gameObject.transform.GetChild(14).gameObject;
+        canvasVictory = gameObject.transform.GetChild(13).gameObject;
         currentScene = SceneManager.GetActiveScene();
         buttonCobrar.SetActive(false);
         buttonNoCobrar.SetActive(false);
         botonPlegadoPrecios.SetActive(false);
         botonPlegadoNormativas.SetActive(false);
         estaToPagao = false;
-        showTrophyAnim = gameObject.transform.GetChild(14).GetComponent<Animator>();
+        showTrophyAnim = gameObject.transform.GetChild(15).GetComponent<Animator>();
+        gnomo = GameObject.FindGameObjectWithTag("Gnomo");
 
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…");                  // Si no le has cobrado y sí deberias haberle cobrado.
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!");                   // Si sí le has cobrado y no deberías haberle cobrado.
@@ -455,6 +457,12 @@ public class UIManager : MonoBehaviour
             estaToPagao = true;
             currentCustomer.GetComponent<Client>().ByeBye();
             gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
+
+            if(currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
+            {
+                gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
+                Debug.Log("Asoma cómo mi prepucio asqueroso");
+            }
         }
 
         else if (!estaToPagao)
@@ -499,9 +507,6 @@ public class UIManager : MonoBehaviour
 
                 else if (currentCustomer.name.Contains("Giovanni"))
                     currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
-
-                //else if (currentCustomer.name.Contains("Enano"))
-                //    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney(); //Solo muestra texto, no trae productos
 
                 else if (currentCustomer.name.Contains("Cululu"))
                     currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
