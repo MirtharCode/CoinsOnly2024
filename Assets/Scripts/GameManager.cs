@@ -188,8 +188,8 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(evilWizardManoloMano);
         //dailyCustomers.Add(electropedRaven);
         //dailyCustomers.Add(elementalHueso);
-        dailyCustomers.Add(limbasticPatxi);
-        dailyCustomers.Add(hybridElvog);
+        //dailyCustomers.Add(limbasticPatxi);
+        //dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
 

@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Gnomo : MonoBehaviour
 {
     [SerializeField] public GameObject gameManager;
     [SerializeField] public GameObject canvas;
+    public Scene currentScene;
 
     Animator animator;
 
@@ -14,6 +19,7 @@ public class Gnomo : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GM");
         canvas = GameObject.FindGameObjectWithTag("UI");
         animator = GetComponent<Animator>();
+        currentScene = SceneManager.GetActiveScene();
     }
 
     void Update()
@@ -23,12 +29,25 @@ public class Gnomo : MonoBehaviour
 
     public void GnomoFinded()
     {
-        Data.instance.numGnomosFinded++;
-        animator.SetBool("Pick", false);
+        if(currentScene.name == "Day2_1")
+        {
+            Data.instance.numGnomosFinded++;
+            animator.SetBool("Pick", false);
+        }
+
+        else if (currentScene.name == "Day3_1")
+        {
+            Data.instance.numGnomosFinded++;
+            animator.SetBool("Pick2", false);
+        }
     }
 
     public void ShowUpGnomoAnim()
     {
-        animator.SetBool("Pick", true);
+        if (currentScene.name == "Day2_1")
+            animator.SetBool("Pick", true);
+
+        else if (currentScene.name == "Day3_1")
+            animator.SetBool("Pick2", true);
     }
 }
