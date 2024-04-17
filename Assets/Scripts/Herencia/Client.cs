@@ -93,7 +93,7 @@ public abstract class Client : MonoBehaviour
             Debug.Log("Se acabó el día guachines.");
         }
 
-        uIManager.GetComponent<UIManager>().jefePanel.SetActive(false);
+        if (gameObject.name != "MagoHielo") uIManager.GetComponent<UIManager>().jefePanel.SetActive(false);
     }
 
     public IEnumerator WaitingForMyDestruction()
