@@ -3056,6 +3056,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8394291734937109429, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 8538305245717071616, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text
       value: "-Los objetos m\xE1gicos les cuestan 2 monedas\n"
@@ -4092,7 +4096,7 @@ GameObject:
   - component: {fileID: 1968168976}
   - component: {fileID: 1968168975}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MagoHielo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4140,7 +4144,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 05e70578b4245fd499cbff25d275c29e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
