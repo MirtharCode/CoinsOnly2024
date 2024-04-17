@@ -39,6 +39,12 @@ public class Gnomo : MonoBehaviour
         {
             Data.instance.numGnomosFinded++;
             animator.SetBool("Pick2", false);
+
+            if(Data.instance.numGnomosFinded >= 2)
+            {
+                Data.instance.giftEnano = true;
+                canvas.GetComponent<UIManager>().TrophyAchieved("Enano");
+            }
         }
     }
 
