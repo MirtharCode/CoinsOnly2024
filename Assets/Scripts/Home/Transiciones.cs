@@ -104,5 +104,6 @@ public class Transiciones : MonoBehaviour
     public void FadeToBlack()
     {
         transform.GetChild(22).gameObject.GetComponent<Animator>().SetBool("ToBlack", true);
+        //Invoke(nameof(NextDayTransiciones), 3);
     }
 }
