@@ -80,6 +80,7 @@ public class Data : MonoBehaviour
     [SerializeField] public int numGnomosFinded = 0;
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
+    [SerializeField] public bool slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
 
     [SerializeField] public bool giftGeeraard = false;      // Si nerviosusPagaLoQueDebe es falso, Geerard te dará la foto firmada
     [SerializeField] public bool giftEnano = false;         // Te da un Enano. Si en el día 2 o 3 encuentras al enano zumbón.
@@ -1093,18 +1094,54 @@ public class Data : MonoBehaviour
             {
                 if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
                 {
-                    cCDialogue.Add("Te preguntarás como he averiguado donde vives.");
-                    cCDialogue.Add("Eso es problema de David, no mío, yo solo pongo textos provisionales. Hola Whatsapp.");
-                    cCDialogue.Add("Se supone que te tengo que dar el puto GOTY y como ni \"Tadeo Jones Endgame\" ni \"Aristoputas 3\" han salido aún, aquí tienes \"SAL\".");
-                    cCDialogue.Add("Un increíble juego en el que increible encarnarás a Anacleto, un increíble caracol con un increíble salero a cuestas...");
-                    cCDialogue.Add("Para nada me han pagado para decir todo lo anterior.");
-                    cCDialogue.Add("A todo esto, se supone que soy Emo, así que puta vida tete y tal, soy más oscuro que los gallumbos de Batman.");
-                    cCDialogue.Add("Por cierto, seguramente el jefe ya te haya dicho esto al final de tu primer día pero...");
-                    cCDialogue.Add("Si se la estrujas a Rodolfo todo se vuelve oscuro y te duermes enseguida... ¿Turbio cierto?");
-                    cCDialogue.Add("Tranqui que si no sabes a qué me refiero, el programador hará una animación sutil cuando acabe nuestra conversación.");
-                    cCDialogue.Add("Eres libre de jugar a SAL hasta horas intempestivas, nunca llegarás tarde a tu siguiente día de curro.");
-                    cCDialogue.Add("Es lo que tiene jugar a un videojuego dentro de un videojuego supongo.");
-                    cCDialogue.Add("Bueno, que me voy, viva \"My Chemical Romance\" y esas cosas, te me cuidas. ¡Viva el Betis!.");
+                    cCDialogue.Add("Saludos humano **suspira**");
+                    cCDialogue.Add("Tu jefe me dijo que te quedarías aquí, qué lugar más triste.");
+                    cCDialogue.Add("Por desgracia tendré que animar este sitio, he traído mi juego favorito.");
+                    cCDialogue.Add("Parecías nuevo en el reino y me diste pena al verte **suspira**");
+                    cCDialogue.Add("Seguramente más clientes como yo puedan traerte cosas si les tratas bien.");
+                    cCDialogue.Add("Ya sea cobrándoles aunque no debas, o ayudándoles con alguna cosa.");
+                    cCDialogue.Add("Seguro que con más objetos animas este sitio.");
+                    cCDialogue.Add("Aunque me gustaría que quedase más triste, como mi propia existencia.");
+                    cCDialogue.Add("Te dejo de molestar humano, suerte estos días.");
+                }
+
+                else if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Giovanni"))
+                {
+                    cCDialogue.Add("Bonna noche amigo mío, espero que descanses bien.");
+                    cCDialogue.Add("Pero antes quería darte un regalo, mi libro de cocina.");
+                    cCDialogue.Add("Bueno, mejor dicho... una copia, pedí que me lo clonaran con magia.");
+                    cCDialogue.Add("Así los dos podremos hacer los platos que queramos cada día.");
+                    cCDialogue.Add("Aunque aquí no veo ninguna cocina, solo un sótano sucio...");
+                    cCDialogue.Add("Bueno, te las apañarás, ciao amigo mío.");
+
+                }
+
+                else if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Elidora"))
+                {
+                    if (!slimeFostiados)
+                    {
+                        cCDialogue.Add("Hola súbdito, estoy haciendo un entrenamiento especial para que los slimes me duren más.");
+                        cCDialogue.Add("Consiste en acariciarles la cabeza con un martillo, pero no me hace mucha gracia cogerlo yo");
+                        cCDialogue.Add("¿Que asco agarrar algo áspero con las manos no? Prefiero que lo haga gente como tú");
+                        cCDialogue.Add("Bueno, que me enredas, haz eso por mi y quien sabe, puede que algún día te de algo que se me rompa y ya no pueda usar");
+                    }
+
+                    else if (slimeFostiados)
+                    {
+                        //if(slimeFail)
+                        cCDialogue.Add("¡Casi me abollas el cerebro!¡Escucho borroso!¡NUNCA TE LO PERDONARÉ CARMONA!");
+                        //else
+                        cCDialogue.Add("Menudo abollón le has dejado a Mc Moco... No creo que me sirva así, te lo regalo");
+                    }
+                }
+
+                else if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Mano"))
+                {
+                    cCDialogue.Add("Hola humano, veo que no has contado nada sobre la iglesia a ese detective.");
+                    cCDialogue.Add("Has mostrado ser fiel a nuestra causa y a la iglesia.");
+                    cCDialogue.Add("Ganaste mi confianza para considerarte uno de nosotros.");
+                    cCDialogue.Add("Acepta este anillo como muestra de agradecimiento.");
+                    cCDialogue.Add("Nos vivimos por verte estos días en la iglesia, ya me entiendes.");
                 }
             }
         }

@@ -10,6 +10,7 @@ public class HomeManager : MonoBehaviour
     public GameObject currentHomeClientPrefab;
     public GameObject currentHomeClientReal;
     public Transform startingPoint;
+    [SerializeField] public GameObject transicionesGameobject;
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public TMP_Text dialogueText;
     [SerializeField] public GameObject data;
@@ -138,31 +139,31 @@ public class HomeManager : MonoBehaviour
 
     public void SomeoneIsKnocking()
     {
-        Debug.Log("Croquetas");
         doorSound.PlayOneShot(openDoorSound);
         GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
 
-        if (Data.instance.day1Check)
+        if (Data.instance.day1Check && !Data.instance.giftTapicio)
         {
             clon.GetComponent<Image>().sprite = elementalTapicio;
             clon.AddComponent<HE_Tapicio>();
         }
 
-        else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2)
+        else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
         {
             clon.GetComponent<Image>().sprite = limbasticGiovanni;
+            clon.AddComponent<HL_Giovanni>();
         }
 
-        else if (Data.instance.day3Check)
+        else if (Data.instance.day3Check && !Data.instance.giftElidora)
         {
-            if (Data.instance.giftElidora) clon.GetComponent<Image>().sprite = evilWizardElidoraALT;
-            else clon.GetComponent<Image>().sprite = evilWizardElidora;
+            clon.GetComponent<Image>().sprite = evilWizardElidora;
+            //clon.AddComponent<HEW_Elidora>();
         }
 
-        else if (Data.instance.day5Check && Data.instance.detectivePoints == 0)
+        else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
         {
-            if (Data.instance.giftMano) clon.GetComponent<Image>().sprite = evilWizardManoloManoALT;
-            else clon.GetComponent<Image>().sprite = evilWizardManoloMano;
+            clon.GetComponent<Image>().sprite = evilWizardManoloMano;
+            //clon.AddComponent<HEW_Manolo>();
         }
 
         currentHomeClientReal = startingPoint.GetChild(0).gameObject;
@@ -202,6 +203,30 @@ public class HomeManager : MonoBehaviour
         {
             Data.instance.giftTapicio = true;
             TrophyAchieved("Tapicio");
+        }
+
+        else if (currentHomeClientReal.name.Contains("Giovanni") && !Data.instance.giftGiovanni)
+        {
+            Data.instance.giftGiovanni = true;
+            TrophyAchieved("Giovanni");
+        }
+
+        else if (currentHomeClientReal.name.Contains("Elidora") && !Data.instance.slimeFostiados)
+        {
+            if (true)
+            {
+
+            }
+            
+            Data.instance.giftGiovanni = true;
+            TrophyAchieved("Giovanni");
+        }
+
+        else if (currentHomeClientReal.name.Contains("Mano") && !Data.instance.giftMano)
+        {
+            Data.instance.giftMano = true;
+            GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardManoloManoALT;
+            TrophyAchieved("Mano");
         }
     }
 

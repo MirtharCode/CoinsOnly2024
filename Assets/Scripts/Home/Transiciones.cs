@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Transiciones : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Transiciones : MonoBehaviour
     [SerializeField] public bool imPlayingSAL;
     [SerializeField] public Data data;
     [SerializeField] public FadeToBlack fTB;
+    [SerializeField] public AnimationClip toBlackClip;
 
     void Start()
     {
@@ -101,9 +103,19 @@ public class Transiciones : MonoBehaviour
         SceneManager.LoadScene("LevelSelector");
     }
 
+    public void GoToWhackASlime()
+    {
+        SceneManager.LoadScene("WhackAMole1");
+    }
+
     public void FadeToBlack()
     {
-        transform.GetChild(22).gameObject.GetComponent<Animator>().SetBool("ToBlack", true);
-        //Invoke(nameof(NextDayTransiciones), 3);
+        float animTime;
+        Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
+
+        anim.SetBool("ToBlack", true);
+        animTime = toBlackClip.length;
+
+        Invoke(nameof(NextDayTransiciones), animTime);
     }
 }
