@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
@@ -157,13 +158,13 @@ public class HomeManager : MonoBehaviour
         else if (Data.instance.day3Check && !Data.instance.giftElidora)
         {
             clon.GetComponent<Image>().sprite = evilWizardElidora;
-            //clon.AddComponent<HEW_Elidora>();
+            clon.AddComponent<HEW_Elidora>();
         }
 
         else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
         {
             clon.GetComponent<Image>().sprite = evilWizardManoloMano;
-            //clon.AddComponent<HEW_Manolo>();
+            clon.AddComponent<HEW_Manolo>();
         }
 
         currentHomeClientReal = startingPoint.GetChild(0).gameObject;
@@ -211,15 +212,21 @@ public class HomeManager : MonoBehaviour
             TrophyAchieved("Giovanni");
         }
 
-        else if (currentHomeClientReal.name.Contains("Elidora") && !Data.instance.slimeFostiados)
+        else if (currentHomeClientReal.name.Contains("Elidora"))
         {
-            if (true)
+            if (!Data.instance.slimeFostiados)
             {
-
+                SceneManager.LoadScene("WhackAMole1");
             }
-            
-            Data.instance.giftGiovanni = true;
-            TrophyAchieved("Giovanni");
+            else
+            {
+                if (!Data.instance.slimeFail)
+                {
+                    GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardElidoraALT;
+                    Data.instance.giftElidora = true;
+                    TrophyAchieved("Elidora");
+                }
+            }
         }
 
         else if (currentHomeClientReal.name.Contains("Mano") && !Data.instance.giftMano)

@@ -81,6 +81,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
     [SerializeField] public bool nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
     [SerializeField] public bool slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
+    [SerializeField] public bool slimeFail = false;                     // Si fallaste en el minijuego de Elidora.
 
     [SerializeField] public bool giftGeeraard = false;      // Si nerviosusPagaLoQueDebe es falso, Geerard te dará la foto firmada
     [SerializeField] public bool giftEnano = false;         // Te da un Enano. Si en el día 2 o 3 encuentras al enano zumbón.
@@ -1128,10 +1129,10 @@ public class Data : MonoBehaviour
 
                     else if (slimeFostiados)
                     {
-                        //if(slimeFail)
-                        cCDialogue.Add("¡Casi me abollas el cerebro!¡Escucho borroso!¡NUNCA TE LO PERDONARÉ CARMONA!");
-                        //else
-                        cCDialogue.Add("Menudo abollón le has dejado a Mc Moco... No creo que me sirva así, te lo regalo");
+                        if (slimeFail)
+                            cCDialogue.Add("¡Casi me abollas el cerebro!¡Escucho borroso!¡NUNCA TE LO PERDONARÉ CARMONA!");
+                        else
+                            cCDialogue.Add("Menudo abollón le has dejado a Mc Moco... No creo que me sirva así, te lo regalo");
                     }
                 }
 
