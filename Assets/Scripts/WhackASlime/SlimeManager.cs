@@ -11,8 +11,8 @@ public class SlimeManager : MonoBehaviour
     [SerializeField] private List<Slime> slimes;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameUI;
-    [SerializeField] private GameObject outOfTimeText;
-    [SerializeField] private GameObject elidoraText;
+    [SerializeField] private GameObject outOfTimePanel;
+    [SerializeField] private GameObject elidoraPanel;
     [SerializeField] private TMPro.TextMeshProUGUI timeText;
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
@@ -31,6 +31,9 @@ public class SlimeManager : MonoBehaviour
     {
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
+        outOfTimePanel.SetActive(false);
+        elidoraPanel.SetActive(false);
+        score = 0;
     }
 
     void Update()
@@ -62,9 +65,10 @@ public class SlimeManager : MonoBehaviour
     public void StartGame()
     {
         playButton.SetActive(false);
-        outOfTimeText.SetActive(false);
-        elidoraText.SetActive(false);
+        outOfTimePanel.SetActive(false);
+        elidoraPanel.SetActive(false);
         gameUI.SetActive(true);
+        score = 0;
 
         for (int i = 0; i < slimes.Count; i++)
         {
@@ -84,9 +88,9 @@ public class SlimeManager : MonoBehaviour
     public void GameOver(int type)
     {
         if (type == 0)
-            outOfTimeText.SetActive(true);
+            outOfTimePanel.SetActive(true);
         else
-            elidoraText.SetActive(true);
+            elidoraPanel.SetActive(true);
 
         foreach (Slime slime in slimes)
         {
@@ -94,7 +98,6 @@ public class SlimeManager : MonoBehaviour
         }
 
         playing = false;
-        playButton.SetActive(true);
     }
 
     public void AddScore(int slimeIndex)
@@ -108,11 +111,32 @@ public class SlimeManager : MonoBehaviour
 
     public void Missed(int slimeIndex, bool isSlime)
     {
-        if (isSlime)
-        {
-            timeRemaining -= 2;
-        }
+        //if (isSlime)
+        //{
+        //    timeRemaining -= 2;
+        //}
 
         currentSlimes.Remove(slimes[slimeIndex]);
+    }
+
+    public void Restart()
+    {
+        outOfTimePanel.SetActive(false);
+        elidoraPanel.SetActive(false);
+        StartGame();
+    }
+
+    public void ToHome()
+    {
+        Data.instance.GetComponent<Data>().slimeFostiados = true;
+
+        if (elidoraPanel.gameObject.activeInHierarchy)
+        {
+            Data.instance.GetComponent<Data>().slimeFail = true;
+            SceneManager.LoadScene("Home");
+        }
+
+        else
+            SceneManager.LoadScene("Home");
     }
 }

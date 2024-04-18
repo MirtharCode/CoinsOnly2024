@@ -14,6 +14,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public GameObject transicionesGameobject;
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public TMP_Text dialogueText;
+    [SerializeField] public Image dialogueMiniImage;
     [SerializeField] public GameObject data;
     [SerializeField] public bool conversationOn;
     [SerializeField] public TMP_Text traductorText;
@@ -23,6 +24,8 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public AudioSource doorSound;
     [SerializeField] public AudioClip openDoorSound;
     [SerializeField] public AudioClip closeDoorSound;
+
+    [SerializeField] public AnimationClip clientGoingOutClip;
 
     [Header("SPRITES CLIENTES")]
     [SerializeField] public Sprite evilWizardGerard;
@@ -61,7 +64,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public Sprite elDetective;
 
     [Header("MINIIMAGES")]
-    [SerializeField] public Image miniClientImage;
+    [SerializeField] public Sprite miniClientImage;
     [SerializeField] public Sprite miniEvilWizardGerard;
     [SerializeField] public Sprite miniHybridElvog;
     [SerializeField] public Sprite miniLimbasticAntonio;
@@ -147,24 +150,28 @@ public class HomeManager : MonoBehaviour
         {
             clon.GetComponent<Image>().sprite = elementalTapicio;
             clon.AddComponent<HE_Tapicio>();
+            miniClientImage = miniElementalTapicio;
         }
 
         else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
         {
             clon.GetComponent<Image>().sprite = limbasticGiovanni;
             clon.AddComponent<HL_Giovanni>();
+            miniClientImage = miniLimbasticGiovanni;
         }
 
         else if (Data.instance.day3Check && !Data.instance.giftElidora)
         {
             clon.GetComponent<Image>().sprite = evilWizardElidora;
             clon.AddComponent<HEW_Elidora>();
+            miniClientImage = miniEvilWizardElidora;
         }
 
         else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
         {
             clon.GetComponent<Image>().sprite = evilWizardManoloMano;
             clon.AddComponent<HEW_Manolo>();
+            miniClientImage = miniEvilWizardManoloMano;
         }
 
         currentHomeClientReal = startingPoint.GetChild(0).gameObject;
@@ -177,6 +184,7 @@ public class HomeManager : MonoBehaviour
         traductorText.text = currentHomeClientReal.GetComponent<HomeClient>().raza;
         NombreText.text = currentHomeClientReal.GetComponent<HomeClient>().nombre;
         dialogueText.text = currentHomeClientReal.GetComponent<HomeClient>().dialogue[internalCount];
+        dialogueMiniImage.sprite = miniClientImage;
     }
 
     public void ChangingText()
@@ -215,9 +223,8 @@ public class HomeManager : MonoBehaviour
         else if (currentHomeClientReal.name.Contains("Elidora"))
         {
             if (!Data.instance.slimeFostiados)
-            {
-                SceneManager.LoadScene("WhackAMole1");
-            }
+                Invoke(nameof(FadeToBlackSlimes), clientGoingOutClip.length);
+
             else
             {
                 if (!Data.instance.slimeFail)
@@ -330,5 +337,21 @@ public class HomeManager : MonoBehaviour
         }
 
         showTrophyAnim.SetTrigger("TrophyShow");
+    }
+
+    public void FadeToBlackSlimes()
+    {
+        float animTime;
+        Animator anim = transicionesGameobject.transform.GetChild(22).gameObject.GetComponent<Animator>();
+
+        anim.SetBool("ToBlack", true);
+        animTime = transicionesGameobject.GetComponent<Transiciones>().toBlackClip.length;
+
+        Invoke(nameof(GoToWhackASlime), animTime);
+    }
+
+    public void GoToWhackASlime()
+    {
+        SceneManager.LoadScene("WhackAMole1");
     }
 }

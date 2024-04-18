@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Day3_2.unity
     guid: f0770d59d3b3fe24d929b5b183438095
   - enabled: 1
+    path: Assets/Scenes/WhackASlime/WhackAMole1.unity
+    guid: cdd83600838f1e24f8b7fa0f3add0cfb
+  - enabled: 1
     path: Assets/Scenes/Day4.unity
     guid: dc90c83f4fc242b49bca8a218e361431
   - enabled: 1

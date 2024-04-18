@@ -557,6 +557,7 @@ MonoBehaviour:
   transicionesGameobject: {fileID: 929208246}
   dialoguePanel: {fileID: 7452574364534758583}
   dialogueText: {fileID: 7452574365716192388}
+  dialogueMiniImage: {fileID: 7452574365298651146}
   data: {fileID: 0}
   conversationOn: 0
   traductorText: {fileID: 7452574364573257728}
@@ -566,6 +567,7 @@ MonoBehaviour:
   doorSound: {fileID: 251695837}
   openDoorSound: {fileID: 8300000, guid: dfa68f910cac1754e8f5be36b30fbcc8, type: 3}
   closeDoorSound: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
+  clientGoingOutClip: {fileID: 7400000, guid: 1db6c9729f014334dbb5c7716ff02f3c, type: 2}
   evilWizardGerard: {fileID: 21300000, guid: fb685a262fcd85b4190581c180073b00, type: 3}
   hybridElvog: {fileID: 21300000, guid: ac56fddb7b671804186c4a0d348ca2df, type: 3}
   hybridElvogALT: {fileID: 21300000, guid: 39ddadae83dfc6e41a799534ad6f4bea, type: 3}
@@ -2127,6 +2129,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day1Check
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: day3Check
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}

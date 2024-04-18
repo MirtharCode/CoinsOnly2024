@@ -10,6 +10,7 @@ public abstract class HomeClient : MonoBehaviour
     [SerializeField] public string raza;
     [SerializeField] public string nombre;
     [SerializeField] public Sprite normalSprite;
+    [SerializeField] public Sprite miniSprite;
     [SerializeField] public Sprite milosSape;
 
     // Start is called before the first frame update
