@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class FadeToBlack : MonoBehaviour
 {
     [SerializeField] public GameObject data;
+    [SerializeField] public AnimationClip fadeToblackClip;
+    [SerializeField] public float fadeToblackClipTime;
+    [SerializeField] public Scene currentScene;
 
     void Start()
     {
         data = GameObject.FindGameObjectWithTag("Data");
+        fadeToblackClipTime = fadeToblackClip.length;
+        currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -21,10 +26,19 @@ public class FadeToBlack : MonoBehaviour
     public void FadeToBlackAnywhere()
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
+
+        if (currentScene.name != "Home")
+            Invoke(nameof(CallingNextday), fadeToblackClipTime);
     }
 
     public void ClientEntrance()
     {
-        data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
+        if (currentScene.name == "Home")
+            data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
+    }
+
+    public void CallingNextday()
+    {
+        data.GetComponent<Data>().uIManager.GetComponent<UIManager>().NextDay();
     }
 }

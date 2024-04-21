@@ -87,10 +87,10 @@ public abstract class Client : MonoBehaviour
         {
             list.Remove(list[gameManager.GetComponent<GameManager>().customerNumber]);
 
-            if (uIManager.GetComponent<UIManager>().propinasNumber >= 50 && currentScene.name != "Day2_1" && currentScene.name != "Day3_1") data.GetComponent<Data>().tipsPoints++;
+            if (uIManager.GetComponent<UIManager>().propinasNumber >= 50 && currentScene.name != "Day2_1" && currentScene.name != "Day3_1")
+                data.GetComponent<Data>().tipsPoints++;
 
-            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
-            Debug.Log("Se acabó el día guachines.");
+            uIManager.transform.GetChild(14).GetComponent<FadeToBlack>().FadeToBlackAnywhere();
         }
 
         if (gameObject.name != "MagoHielo") uIManager.GetComponent<UIManager>().jefePanel.SetActive(false);

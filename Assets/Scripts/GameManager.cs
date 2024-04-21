@@ -137,10 +137,10 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(hybridElvog);
         //dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(elementalTapicio);
-        dailyCustomers.Add(electropedDenjirenji);
-        dailyCustomers.Add(hybridMara);
-        dailyCustomers.Add(limbasticGiovanni);
-        dailyCustomers.Add(elementalRockon);
+        //dailyCustomers.Add(electropedDenjirenji);
+        //dailyCustomers.Add(hybridMara);
+        //dailyCustomers.Add(limbasticGiovanni);
+        //dailyCustomers.Add(elementalRockon);
         dailyCustomers.Add(jefe2);
 
         CharacterShowUp(dailyCustomers[customerNumber]);

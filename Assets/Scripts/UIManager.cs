@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject canvasPausa;
     [SerializeField] public GameObject canvasVictory;
     [SerializeField] public GameObject gnomo;
+    [SerializeField] public GameObject uITrophy;
     public Scene currentScene;
 
 
@@ -162,15 +163,13 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
-        canvasPausa = gameObject.transform.GetChild(14).gameObject;
-        canvasVictory = gameObject.transform.GetChild(13).gameObject;
         currentScene = SceneManager.GetActiveScene();
         buttonCobrar.SetActive(false);
         buttonNoCobrar.SetActive(false);
         botonPlegadoPrecios.SetActive(false);
         botonPlegadoNormativas.SetActive(false);
         estaToPagao = false;
-        showTrophyAnim = gameObject.transform.GetChild(15).GetComponent<Animator>();
+        showTrophyAnim = uITrophy.GetComponent<Animator>();
         gnomo = GameObject.FindGameObjectWithTag("Gnomo");
 
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…");                  // Si no le has cobrado y sí deberias haberle cobrado.
@@ -458,7 +457,7 @@ public class UIManager : MonoBehaviour
             currentCustomer.GetComponent<Client>().ByeBye();
             gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
 
-            if(currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
+            if (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
             {
                 gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
                 Debug.Log("Asoma cómo mi prepucio asqueroso");
@@ -1340,93 +1339,93 @@ public class UIManager : MonoBehaviour
     {
         if (trophyName == "Antonio")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageAntonio;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageAntonio;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
         }
 
         else if (trophyName == "Cululu")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageCululu;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageCululu;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
         }
 
         else if (trophyName == "Denjirenji")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageDenjirenji;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageDenjirenji;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
         }
 
         // Este te lo da en casa
         else if (trophyName == "Elidora")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageElidora;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageElidora;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
         }
 
         else if (trophyName == "Elvog")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageElvog;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageElvog;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
         }
 
         else if (trophyName == "Enano")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageEnano;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageEnano;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
         }
 
         else if (trophyName == "Geeraard")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageGeeraard;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGeeraard;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
         }
 
         else if (trophyName == "Giovanni")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
         }
 
         else if (trophyName == "Handy")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageHandy;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageHandy;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
         }
 
         else if (trophyName == "Mano")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageMano;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMano;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
         }
 
         else if (trophyName == "Mara")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageMara;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMara;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
         }
 
         else if (trophyName == "Petra")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImagePetra;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImagePetra;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
         }
 
         else if (trophyName == "Raven")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageRaven;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageRaven;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
         }
 
         else if (trophyName == "Sergio")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageSergio;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageSergio;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
         }
 
         else if (trophyName == "Tapicio")
         {
-            gameObject.transform.GetChild(15).GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
-            gameObject.transform.GetChild(15).GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
+            uITrophy.transform.GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
+            uITrophy.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
         }
 
         //StartCoroutine(TrophyShower());
@@ -1477,7 +1476,7 @@ public class UIManager : MonoBehaviour
             Data.instance.day5Check = true;
         }
 
-        SceneManager.LoadScene(12);
+        SceneManager.LoadScene("Home");
     }
 
     public void NextDenji()

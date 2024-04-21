@@ -1235,6 +1235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
+  fadeToblackClip: {fileID: 7400000, guid: 7a346c0258485a84bb9f508fb60d43db, type: 2}
+  fadeToblackClipTime: 0
 --- !u!1 &737544346
 GameObject:
   m_ObjectHideFlags: 0

@@ -187,11 +187,11 @@ MonoBehaviour:
   talkingSound: {fileID: 0}
   lastPlayerSound: {fileID: 0}
   sounds:
-  - {fileID: 8300000, guid: ef509d86f4d2c8a408ced3a005aa43a0, type: 3}
-  - {fileID: 8300000, guid: 17bc9301f5cebdd468ddbb0f6049e00a, type: 3}
-  - {fileID: 8300000, guid: 47a7f6fd2a6a71a4fb1563384c8c4343, type: 3}
-  - {fileID: 8300000, guid: 5f87103dbc60a8947aaa36a99ea892a4, type: 3}
-  - {fileID: 8300000, guid: 96507d64f09e4b04f9177df06824d12c, type: 3}
+  - {fileID: 8300000, guid: b819a54af020fe346b8cf71c15de6124, type: 3}
+  - {fileID: 8300000, guid: 608746f8a548bc340b13d5d089db32a2, type: 3}
+  - {fileID: 8300000, guid: 76e692d2be748c442b806fd0fc2e20e1, type: 3}
+  - {fileID: 8300000, guid: 9d204b02dc0a63e4b9d8cf0215e972d3, type: 3}
+  - {fileID: 8300000, guid: 648cc29da38f7b94aac161addc89a024, type: 3}
   repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}

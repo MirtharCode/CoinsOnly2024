@@ -165,11 +165,11 @@ MonoBehaviour:
   talkingSound: {fileID: 0}
   lastPlayerSound: {fileID: 0}
   sounds:
-  - {fileID: 8300000, guid: ef509d86f4d2c8a408ced3a005aa43a0, type: 3}
-  - {fileID: 8300000, guid: 17bc9301f5cebdd468ddbb0f6049e00a, type: 3}
-  - {fileID: 8300000, guid: 47a7f6fd2a6a71a4fb1563384c8c4343, type: 3}
-  - {fileID: 8300000, guid: 5f87103dbc60a8947aaa36a99ea892a4, type: 3}
-  - {fileID: 8300000, guid: 96507d64f09e4b04f9177df06824d12c, type: 3}
+  - {fileID: 8300000, guid: 227dbb122ba4d7e4c9b28785097c1f72, type: 3}
+  - {fileID: 8300000, guid: be0c960919412a54484a42dd06ad5aae, type: 3}
+  - {fileID: 8300000, guid: 9cc2cfa29644bd24dafbf63deccb4a16, type: 3}
+  - {fileID: 8300000, guid: 1fa202cd51c412640afb58407bcccd7b, type: 3}
+  - {fileID: 8300000, guid: b0a922f8e205c074a87dc5327cb52f5e, type: 3}
   repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}
