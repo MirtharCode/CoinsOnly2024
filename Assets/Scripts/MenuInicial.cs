@@ -37,11 +37,8 @@ public class MenuInicial : MonoBehaviour
 
     public void Creditos()
     {
-        SceneManager.LoadScene(10);
-    }
-
-    public void Tutorial()
-    {
         SceneManager.LoadScene(11);
     }
+
+  
 }
