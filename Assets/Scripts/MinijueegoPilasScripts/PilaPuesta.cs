@@ -11,10 +11,15 @@ public class PilaPuesta : MonoBehaviour
     [SerializeField] public GameObject pilaHueco2;
     [SerializeField] public GameObject pila;
 
+    [SerializeField] public AudioClip sonidoColision;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         pilaManager = GameObject.FindGameObjectWithTag("PM");
         pila = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,6 +33,7 @@ public class PilaPuesta : MonoBehaviour
         {
             numPilasHechas++;
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(sonidoColision);
 
             if (numPilasHechas == 1)
             {
