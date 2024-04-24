@@ -8,6 +8,7 @@ public class ScriptFinales : MonoBehaviour
     [SerializeField] public GameObject cursor;
     [SerializeField] public GameObject data;
     [SerializeField] public Scene currentScene;
+    [SerializeField] public AnimationClip toBlackClip;
 
     void Start()
     {
@@ -46,9 +47,17 @@ public class ScriptFinales : MonoBehaviour
         data.GetComponent<Data>().numElemental = 0;
         data.GetComponent<Data>().numEvilWizard = 0;
         data.GetComponent<Data>().numHybrid = 0;
+        SceneManager.LoadScene("MenuInicial");
+    }
 
+    public void FTB()
+    {
+        float animTime;
+        Animator anim = transform.GetChild(1).gameObject.GetComponent<Animator>();
 
+        anim.SetBool("ToBlack", true);
+        animTime = toBlackClip.length;
 
-        SceneManager.LoadScene(0);
+        Invoke(nameof(TitleScreen), animTime);
     }
 }

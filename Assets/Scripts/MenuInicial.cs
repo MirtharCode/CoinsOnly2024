@@ -24,10 +24,10 @@ public class MenuInicial : MonoBehaviour
         }
 
     }
-    public void Jugar()
-    {
-        SceneManager.LoadScene(1);
-    }
+    //public void Jugar()
+    //{
+    //    SceneManager.LoadScene("Day1");
+    //}
 
     public void Salir()
     {
@@ -37,8 +37,8 @@ public class MenuInicial : MonoBehaviour
 
     public void Creditos()
     {
-        SceneManager.LoadScene(11);
+        SceneManager.LoadScene("Creditos");
     }
 
-  
+
 }

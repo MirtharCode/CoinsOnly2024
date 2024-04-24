@@ -22,23 +22,49 @@ public class FadeToBlack : MonoBehaviour
     {
 
     }
+    // TRANSICIÓN A NEGRO DEL MENÚ AL PRIMER DÍA
+    public void FirstFadeToBlack()
+    {
+        GetComponent<Animator>().SetBool("ToBlack", true);
 
+        if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
+            Invoke(nameof(CallingFirstDay), fadeToblackClipTime);
+    }
+
+    public void CallingFirstDay()
+    {
+        SceneManager.LoadScene("Day1");
+    }
+
+    // TRANSICIÓN A NEGRO DE LA TIENDA A CASA
     public void FadeToBlackAnywhere()
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name != "Home")
+        if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
             Invoke(nameof(CallingNextday), fadeToblackClipTime);
-    }
-
-    public void ClientEntrance()
-    {
-        if (currentScene.name == "Home")
-            data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
     }
 
     public void CallingNextday()
     {
         data.GetComponent<Data>().uIManager.GetComponent<UIManager>().NextDay();
+    }
+
+    // TRANSICIÓN A NEGRO DE LOS FINALES A MENÚ INICIAL
+    public void LastFadeToBlack()
+    {
+        GetComponent<Animator>().SetBool("ToBlack", true);
+        Invoke(nameof(CallingMenu), fadeToblackClipTime);
+    }
+    public void CallingMenu()
+    {
+        SceneManager.LoadScene("MenuInicial");
+    }
+
+    // ENTRADA CLIENTE A CASA
+    public void ClientEntrance()
+    {
+        if (currentScene.name == "Home")
+            data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
     }
 }
