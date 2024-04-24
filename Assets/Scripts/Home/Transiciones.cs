@@ -32,7 +32,7 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
-        FadeToBlack();
+        FTBRegular();
         if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
         else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
         else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
@@ -58,7 +58,7 @@ public class Transiciones : MonoBehaviour
                 else if (data.tipsPoints == 5 && data.detectivePoints == 4) SceneManager.LoadScene("FinalSecreto");
             }
         }
-        // Si acabas el juego sin haber obtenido +50 tips en ningún día, pasas al final muy malo.
+        //Si acabas el juego sin haber obtenido + 50 tips en ningún día, pasas al final muy malo.
 
     }
 
@@ -108,7 +108,7 @@ public class Transiciones : MonoBehaviour
         SceneManager.LoadScene("WhackAMole1");
     }
 
-    public void FadeToBlack()
+    public void FTBRegular()
     {
         float animTime;
         Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
@@ -117,5 +117,14 @@ public class Transiciones : MonoBehaviour
         animTime = toBlackClip.length;
 
         Invoke(nameof(NextDayTransiciones), animTime);
+    }
+
+    public void FTBSAL()
+    {
+        float animTime;
+        Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
+
+        anim.SetBool("ToBlack", true);
+        animTime = toBlackClip.length;
     }
 }
