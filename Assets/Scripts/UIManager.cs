@@ -1446,37 +1446,48 @@ public class UIManager : MonoBehaviour
 
     public void NextDay()
     {
-        if (currentScene.name == "Day1")
+        if (currentScene.name != "Day2_1" && currentScene.name != "Day3_1")
         {
-            Data.instance.day0Check = false;
-            Data.instance.day1Check = true;
+            if (currentScene.name == "Day1")
+            {
+                Data.instance.day0Check = false;
+                Data.instance.day1Check = true;
+            }
+
+            else if (currentScene.name == "Day2_2")
+            {
+                Data.instance.day1Check = false;
+                Data.instance.day2Check = true;
+            }
+
+            else if (currentScene.name == "Day3_2")
+            {
+                Data.instance.day2Check = false;
+                Data.instance.day3Check = true;
+            }
+
+            else if (currentScene.name == "Day4")
+            {
+                Data.instance.day3Check = false;
+                Data.instance.day4Check = true;
+            }
+
+            else if (currentScene.name == "Day5")
+            {
+                Data.instance.day4Check = false;
+                Data.instance.day5Check = true;
+            }
+
+            SceneManager.LoadScene("Home");
         }
 
-        else if (currentScene.name == "Day2_2")
+        else
         {
-            Data.instance.day1Check = false;
-            Data.instance.day2Check = true;
+            if (currentScene.name == "Day2_1")
+                SceneManager.LoadScene("Pila_Nivel1");
+            else if (currentScene.name == "Day3_1")
+                SceneManager.LoadScene("Pila_Nivel2");
         }
-
-        else if (currentScene.name == "Day3_2")
-        {
-            Data.instance.day2Check = false;
-            Data.instance.day3Check = true;
-        }
-
-        else if (currentScene.name == "Day4")
-        {
-            Data.instance.day3Check = false;
-            Data.instance.day4Check = true;
-        }
-
-        else if (currentScene.name == "Day5")
-        {
-            Data.instance.day4Check = false;
-            Data.instance.day5Check = true;
-        }
-
-        SceneManager.LoadScene("Home");
     }
 
     public void NextDenji()
