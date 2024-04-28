@@ -27,6 +27,8 @@ public abstract class Client : MonoBehaviour
     public AudioClip lastPlayerSound;
     public AudioClip[] sounds = new AudioClip[5];
 
+    public GameObject ftBObject;
+
     public bool repetirunavez = false;
 
     protected virtual void Start()
@@ -34,6 +36,8 @@ public abstract class Client : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GM");
         uIManager = GameObject.FindGameObjectWithTag("UI");
         data = GameObject.FindGameObjectWithTag("Data");
+        ftBObject = GameObject.FindGameObjectWithTag("FadeBlack");
+
         currentScene = SceneManager.GetActiveScene();
         talkingSound = GetComponent<AudioSource>();
         gameManager.GetComponent<GameManager>().trampilla.SetActive(true);
@@ -90,7 +94,7 @@ public abstract class Client : MonoBehaviour
             if (uIManager.GetComponent<UIManager>().propinasNumber >= 50 && currentScene.name != "Day2_1" && currentScene.name != "Day3_1")
                 data.GetComponent<Data>().tipsPoints++;
 
-            uIManager.transform.GetChild(14).GetComponent<FadeToBlack>().FadeToBlackAnywhere();
+            ftBObject.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
         }
 
         if (gameObject.name != "MagoHielo") uIManager.GetComponent<UIManager>().jefePanel.SetActive(false);
