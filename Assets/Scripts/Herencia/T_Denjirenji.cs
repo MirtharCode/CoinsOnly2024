@@ -23,7 +23,7 @@ public class T_Denjirenji : Tecnopedos
         if ((currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2) || data.GetComponent<Data>().giftDenjirenji)
         {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-           
+
             if (!data.GetComponent<Data>().giftDenjirenji)
             {
                 data.GetComponent<Data>().giftDenjirenji = true;
@@ -57,16 +57,10 @@ public class T_Denjirenji : Tecnopedos
 
     public override void ByeBye()
     {
-        if (currentScene.name == "Day2_1")
+        if (currentScene.name == "Day2_1" || currentScene.name == "Day3_1")
         {
-            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
             trampilla.GetComponent<Animator>().enabled = false;
-        }
-
-        else if (currentScene.name == "Day3_1")
-        {
-            uIManager.GetComponent<UIManager>().canvasVictory.SetActive(true);
-            trampilla.GetComponent<Animator>().enabled = false;
+            ftBObject.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
         }
 
         else
