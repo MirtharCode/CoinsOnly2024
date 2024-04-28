@@ -890,7 +890,7 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
-            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano") || currentCustomer.name.Contains("Enano"))
+            if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -924,7 +924,8 @@ public class UIManager : MonoBehaviour
                 LaVoluntad(5);
             }
 
-            else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Rustica"))
+            else if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso")
+                || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Mano"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
@@ -1150,7 +1151,8 @@ public class UIManager : MonoBehaviour
 
         else if (currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
         {
-            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Rustica"))
+            if (currentCustomer.name.Contains("Sergio") || currentCustomer.name.Contains("Hueso")
+                || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Mano"))
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
@@ -1163,8 +1165,8 @@ public class UIManager : MonoBehaviour
                 LaVoluntad(10);
             }
 
-            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Mano")
-                || currentCustomer.name.Contains("Raven") || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Enano"))
+            else if (currentCustomer.name.Contains("Saltaralisis") || currentCustomer.name.Contains("Raven")
+                || currentCustomer.name.Contains("Patxi") || currentCustomer.name.Contains("Enano"))
             {
                 mostrarJefe = true;
                 textoJefe.text = quejas[3];
