@@ -42,7 +42,9 @@ public class H_Mara : Hibridos
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "18";
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().goodDrinkCupon, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
+            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
         }
     }
 

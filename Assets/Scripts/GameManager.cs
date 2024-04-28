@@ -82,6 +82,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject magicRamen;
     [SerializeField] public GameObject magicRune;
     [SerializeField] public GameObject venomPotion;
+    [SerializeField] public GameObject badDeadCatCupon;
+    [SerializeField] public GameObject badDrinkCupon;
+    [SerializeField] public GameObject badElidoraCupon;
+    [SerializeField] public GameObject badPoisonCupon;
+    [SerializeField] public GameObject badVodooDollCupon;
+    [SerializeField] public GameObject goodDeadCatCupon;
+    [SerializeField] public GameObject goodDrinkCupon;
+    [SerializeField] public GameObject goodPoisonCupon;
+    [SerializeField] public GameObject goodVodooDollCupon;
 
     [Header("CHARACTERS ENTRY/EXIT")]
     [SerializeField] public Transform showUpPoint;

@@ -494,18 +494,19 @@ public class Data : MonoBehaviour
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
                     cCDialogue.Add("Buenas chico nuevo, soy el jefe.");
-                    cCDialogue.Add("Parece que estás empezando a acostumbrarte al trabajo.");
+                    cCDialogue.Add("Parece que te estás acostumbrando a tu trabajo.");
                     cCDialogue.Add("Estás durando más que el antiguo empleado.");
                     cCDialogue.Add("No sé cómo sigues vivo siquiera.");
                     cCDialogue.Add("Pero bueno, tengo malas noticias.");
-                    cCDialogue.Add("Parece que quieren acabar con el mercado de las pociones.");
-                    cCDialogue.Add("Muchos magos y limbásticos abusaban de sus efectos.");
-                    cCDialogue.Add("Y encerraron a una secta de elementales que usaban magia negra.");
-                    cCDialogue.Add("Tienen a todas esas razas fichadas.");
-                    cCDialogue.Add("Además de que por una estúpida norma, todas las tiendas necesitan usar cupones.");
+                    cCDialogue.Add("Ha empezado el mercado de una nueva raza: Los Cupones");
+                    cCDialogue.Add("Son criaturas que se utilizan como trueque a cambio de objetos.");
                     cCDialogue.Add("Con los cupones podrán pillar lo que quieran, ¡LES SALDRÁ GRATIS!");
-                    cCDialogue.Add("Cuidado con que esos cupones no sean falsos o estén rotos.");
-                    cCDialogue.Add("Suerte en tu tercer día chaval.");
+                    cCDialogue.Add("Vaya asco de bichos, al menos son muy coquettes.");
+                    cCDialogue.Add("Debajo de tu pantalla tendrás una retrato de los cupones que son válidos.");
+                    cCDialogue.Add("Cuidado que no te traigan ninguno falso, fijate bien el retrato.");
+                    cCDialogue.Add("Y recuerda revisar las normas, no servirá su cupón si tiene prohibido algún objeto.");
+                    cCDialogue.Add("Suerte humano.");
+
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Sergio"))

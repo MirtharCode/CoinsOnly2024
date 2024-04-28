@@ -949,6 +949,15 @@ MonoBehaviour:
   magicRamen: {fileID: 7204342734881417808, guid: 4cbf40790f3d8a54ea1f6515f47533ea, type: 3}
   magicRune: {fileID: 7204342734881417808, guid: 52cc471a3e40d18458d66dfb1e68b898, type: 3}
   venomPotion: {fileID: 7204342734881417808, guid: db1d79ab061799c40910eb2f41087feb, type: 3}
+  badDeadCatCupon: {fileID: 7204342734881417808, guid: b84e637bf76f88e46bc0e757316c7414, type: 3}
+  badDrinkCupon: {fileID: 7204342734881417808, guid: 2bc9c4308f215514192eaa97daa54238, type: 3}
+  badElidoraCupon: {fileID: 7204342734881417808, guid: 8c828aa924683944898b223695eb9d02, type: 3}
+  badPoisonCupon: {fileID: 7204342734881417808, guid: ae1fc30258edf1049afc9cdc495ac92b, type: 3}
+  badVodooDollCupon: {fileID: 7204342734881417808, guid: ab273c08493b18c4394f4588613dd5e2, type: 3}
+  goodDeadCatCupon: {fileID: 7204342734881417808, guid: 0174e847c3208414981eeddbe72d7ece, type: 3}
+  goodDrinkCupon: {fileID: 7204342734881417808, guid: 407968b8504850a4d9ee2b7746006c39, type: 3}
+  goodPoisonCupon: {fileID: 7204342734881417808, guid: 9620239124970f7468dbe7e3cbf9e422, type: 3}
+  goodVodooDollCupon: {fileID: 7204342734881417808, guid: 26bb450a7d876294caeff6bc5ce81f9a, type: 3}
   showUpPoint: {fileID: 1337903466}
   exitPoint: {fileID: 0}
   TrampillaEntrada: {fileID: 8300000, guid: 713f735cab05873429e889ae5f659aa1, type: 3}

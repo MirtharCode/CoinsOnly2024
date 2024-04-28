@@ -31,22 +31,22 @@ public class MO_Elidora : MagosOscuros
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().manaPotion, twoProducts1.position, twoProducts1.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().badElidoraCupon, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1); //Cupon falso de Elidora
             product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "10";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "6";
         }
 
         else if (currentScene.name == "Day5")
         {
-            product1 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, oneProduct.position, oneProduct.rotation);
+            product1 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().magicBattery, twoProducts1.position, twoProducts1.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRamen, twoProducts2.position, twoProducts2.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().goodDeadCatCupon, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "8";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "4";
         }
     }
 

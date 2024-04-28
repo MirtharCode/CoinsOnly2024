@@ -33,6 +33,8 @@ public class E_ElementalHueso : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().voodooDoll, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().badPoisonCupon, twoProducts2.position, twoProducts2.rotation);
+            product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
     }

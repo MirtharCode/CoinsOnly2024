@@ -42,9 +42,9 @@ public class T_Masermati : Tecnopedos
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().crystallBall, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts1.position, twoProducts1.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().energeticDrink, twoProducts2.position, twoProducts2.rotation);
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().badDeadCatCupon, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2); //Cupon roto de cerveza/bebida
             uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
