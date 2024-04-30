@@ -860,13 +860,22 @@ public class UIManager : MonoBehaviour
                 LaVoluntad(-15);
             }
 
-            else if (currentCustomer.name.Contains("Giovanni") || currentCustomer.name.Contains("Handy"))
+            else if (currentCustomer.name.Contains("Giovanni")) 
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
                 Data.instance.vecesCobradoGiovanni++;
+            }
+
+            else if (currentCustomer.name.Contains("Handy"))
+            {
+                //Mostrar queja de que no cumplen normas
+                mostrarJefe = true;
+                textoJefe.text = quejas[2];
+                LaVoluntad(-15);
+                Data.instance.vecesCobradaHandy++;
             }
 
             else if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati")
@@ -1138,7 +1147,7 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = false;
                 LaVoluntad(10);
 
-                Data.instance.vecesCobradaHandy++;
+                
             }
 
             else if (currentCustomer.name.Contains("Pijus"))

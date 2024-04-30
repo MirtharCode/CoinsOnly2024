@@ -298,7 +298,7 @@ public class Data : MonoBehaviour
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
-                    cCDialogue.Add("Buenos días chico nuevo");
+                    cCDialogue.Add("Buenos días chico nuevo.");
                     cCDialogue.Add("¿Qué tal tu primer día?");
                     cCDialogue.Add("Nah, es broma, realmente me da igual como te fuera tu primer día.");
                     cCDialogue.Add("Seguro te lo dije en el tutorial, pero seguro no te acuerdas por tu cerebro enano.");
@@ -492,7 +492,7 @@ public class Data : MonoBehaviour
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
-                    cCDialogue.Add("Buenas chico nuevo, soy el jefe.");
+                    cCDialogue.Add("Buenas chico nuevo.");
                     cCDialogue.Add("Parece que te estás acostumbrando a tu trabajo.");
                     cCDialogue.Add("Estás durando más que el antiguo empleado.");
                     cCDialogue.Add("No sé cómo sigues vivo siquiera.");
@@ -512,12 +512,12 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("Hola joven humano, disculpa la impertinencia, pero deberían de bajar el peso de esas bebidas.");
                     cCDialogue.Add("No sabes lo que pesan esas malditas latas.");
-                    cCDialogue.Add("No tengo ya fuerza ni para levantarlas.");
+                    cCDialogue.Add("No tengo fuerza ni para levantarlas.");
                     cCDialogue.Add("En mis tiempos, cuando era conocido como Sergio Nervisous.");
                     cCDialogue.Add("Era capaz de levantar piedras y tenía unos nervios de acero.");
                     cCDialogue.Add("Pero ahora suficiente que aguanto este cubo en mi cabeza.");
                     cCDialogue.Add("Y encima me ha revivido un mago que dice que es un héroe.");
-                    cCDialogue.Add("Se hace llamar, Geeraard, que nombre más raro para un héroe.");
+                    cCDialogue.Add("Se hace llamar Geeraard, que nombre más raro para un héroe.");
                     cCDialogue.Add("Me revivió para que le ayudará en su nueva aventura.");
                     cCDialogue.Add("¡Pero si no soy capaz ni de levantar una espada de verdad!");
                     cCDialogue.Add("Con lo bien que estaba en mi tumba.");
