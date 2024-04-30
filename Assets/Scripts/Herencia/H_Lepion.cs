@@ -13,7 +13,7 @@ public class H_Lepion : Hibridos
     protected override void Start()
     {
         base.Start();
-        nombre = "Lepión";
+        nombre = "Leepión";
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
