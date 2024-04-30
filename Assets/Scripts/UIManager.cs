@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject buttonCobrar;
     [SerializeField] public GameObject buttonNoCobrar;
     [SerializeField] public GameObject lesPropinas;
+    [SerializeField] public Sprite[] propinasSprites;
     [SerializeField] public TMP_Text leDineroText;
     [SerializeField] public TMP_Text lePropinasText;
     [SerializeField] public float propinasNumber = 0;
@@ -748,11 +749,47 @@ public class UIManager : MonoBehaviour
     {
         propinasNumber += cantidad;
 
-        if (propinasNumber < 0) propinasNumber = 0;
+        if (propinasNumber <= 0)
+        {
+            propinasNumber = 0;
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[0];
+        }
 
-        else if (propinasNumber > 100) propinasNumber = 100;
+        else if (propinasNumber > 0 && propinasNumber <= 10)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[1];
 
-        lesPropinas.GetComponent<Image>().fillAmount = (propinasNumber) / 100;
+        else if (propinasNumber > 10 && propinasNumber <= 20)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[2];
+
+        else if (propinasNumber > 20 && propinasNumber <= 30)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[3];
+
+        else if (propinasNumber > 30 && propinasNumber <= 40)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[4];
+
+        else if (propinasNumber > 40 && propinasNumber <= 50)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[5];
+
+        else if (propinasNumber > 50 && propinasNumber <= 60)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[6];
+
+        else if (propinasNumber > 60 && propinasNumber <= 70)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[7];
+
+        else if (propinasNumber > 70 && propinasNumber <= 80)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[8];
+
+        else if (propinasNumber > 80 && propinasNumber <= 90)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[9];
+
+        else if (propinasNumber > 90 && propinasNumber <= 100)
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[10];
+
+        else if (propinasNumber > 100)
+        {
+            propinasNumber = 100;
+            lesPropinas.GetComponent<Image>().sprite = propinasSprites[10];
+        }
         lePropinasText.text = "" + propinasNumber;
 
     }
