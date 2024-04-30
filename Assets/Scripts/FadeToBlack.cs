@@ -17,10 +17,7 @@ public class FadeToBlack : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "MenuInicial")
-
             GetComponent<Animator>().SetTrigger("PumPum");
-        else
-            GetComponent<Animator>().SetTrigger("PaiumPaium");
     }
 
     // Update is called once per frame
