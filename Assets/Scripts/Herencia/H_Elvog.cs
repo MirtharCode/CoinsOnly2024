@@ -15,17 +15,6 @@ public class H_Elvog : Hibridos
     {
         base.Start();
         nombre = "Elvog";
-
-        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftElvog )
-        {
-            GetComponent<SpriteRenderer>().sprite = spriteAlt;
-
-            if (!data.GetComponent<Data>().giftElvog)
-            {
-                data.GetComponent<Data>().giftElvog = true;
-                uIManager.GetComponent<UIManager>().TrophyAchieved("Elvog");
-            }
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -58,6 +47,17 @@ public class H_Elvog : Hibridos
 
     public override void ByeBye()
     {
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftElvog)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+
+            if (!data.GetComponent<Data>().giftElvog)
+            {
+                data.GetComponent<Data>().giftElvog = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Elvog");
+            }
+        }
+
         Destroy(product1);
         Destroy(product2);
         Destroy(product3);

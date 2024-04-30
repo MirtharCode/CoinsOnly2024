@@ -15,17 +15,6 @@ public class L_Antonio : Limbasticos
     {
         base.Start();
         nombre = "Antonio";
-
-        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftAntonio)
-        {
-            GetComponent<SpriteRenderer>().sprite = spriteAlt;
-
-            if (!data.GetComponent<Data>().giftAntonio)
-            {
-                data.GetComponent<Data>().giftAntonio = true;
-                uIManager.GetComponent<UIManager>().TrophyAchieved("Antonio");
-            }
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -61,6 +50,17 @@ public class L_Antonio : Limbasticos
 
     public override void ByeBye()
     {
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftAntonio)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+
+            if (!data.GetComponent<Data>().giftAntonio)
+            {
+                data.GetComponent<Data>().giftAntonio = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Antonio");
+            }
+        }
+
         Destroy(product1);
         Destroy(product2);
         Destroy(product3);

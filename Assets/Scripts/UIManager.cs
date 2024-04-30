@@ -461,7 +461,6 @@ public class UIManager : MonoBehaviour
             if (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
             {
                 gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
-                Debug.Log("Asoma cómo mi prepucio asqueroso");
             }
         }
 
@@ -796,6 +795,8 @@ public class UIManager : MonoBehaviour
 
     public string MoneyText()
     {
+        gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().cobrarCajaRegistradoraSound);
+
         if (currentCustomer.name.Contains("Cululu") && Data.instance.vecesCobradoCululu >= 2 && currentScene.name == "Day5")
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
@@ -1135,6 +1136,8 @@ public class UIManager : MonoBehaviour
 
     public string IDontBelieveText()
     {
+        gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().nOcobrarCajaRegistradoraSound);
+
         dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 1];
         gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
         currentCustomer.GetComponent<Client>().Speaking();
@@ -1247,9 +1250,8 @@ public class UIManager : MonoBehaviour
             {
                 Data.instance.noCobrarSergioCobrarGeeraardD4++;
 
-                mostrarJefe = true;
-                textoJefe.text = quejas[3];
-                LaVoluntad(-15);
+                mostrarJefe = false;
+                LaVoluntad(10);
             }
 
             return dialogueText.text;

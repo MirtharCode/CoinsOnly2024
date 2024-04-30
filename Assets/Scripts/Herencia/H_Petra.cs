@@ -15,17 +15,6 @@ public class H_Petra : Hibridos
     {
         base.Start();
         nombre = "Petra";
-
-        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftPetra)
-        {
-            GetComponent<SpriteRenderer>().sprite = spriteAlt;
-
-            if (!data.GetComponent<Data>().giftPetra)
-            {
-                data.GetComponent<Data>().giftPetra = true;
-                uIManager.GetComponent<UIManager>().TrophyAchieved("Petra");
-            }
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -51,6 +40,17 @@ public class H_Petra : Hibridos
 
     public override void ByeBye()
     {
+        if (currentScene.name == "Day5" || data.GetComponent<Data>().giftPetra)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+
+            if (!data.GetComponent<Data>().giftPetra)
+            {
+                data.GetComponent<Data>().giftPetra = true;
+                uIManager.GetComponent<UIManager>().TrophyAchieved("Petra");
+            }
+        }
+
         Destroy(product1);
         Destroy(product2);
         Destroy(product3);

@@ -19,17 +19,6 @@ public class T_Denjirenji : Tecnopedos
         nombre = "Denjirenji";
 
         trampilla = GameObject.FindGameObjectWithTag("Trampilla");
-
-        if ((currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2) || data.GetComponent<Data>().giftDenjirenji)
-        {
-            GetComponent<SpriteRenderer>().sprite = spriteAlt;
-
-            if (!data.GetComponent<Data>().giftDenjirenji)
-            {
-                data.GetComponent<Data>().giftDenjirenji = true;
-                uIManager.GetComponent<UIManager>().TrophyAchieved("Denjirenji");
-            }
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -65,6 +54,17 @@ public class T_Denjirenji : Tecnopedos
 
         else
         {
+            if ((currentScene.name == "Day3_2" && Data.instance.vecesSamuraiAyudado >= 2) || data.GetComponent<Data>().giftDenjirenji)
+            {
+                GetComponent<SpriteRenderer>().sprite = spriteAlt;
+
+                if (!data.GetComponent<Data>().giftDenjirenji)
+                {
+                    data.GetComponent<Data>().giftDenjirenji = true;
+                    uIManager.GetComponent<UIManager>().TrophyAchieved("Denjirenji");
+                }
+            }
+
             Destroy(product1);
             Destroy(product2);
             Destroy(product3);

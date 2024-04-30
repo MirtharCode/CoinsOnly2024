@@ -1855,6 +1855,8 @@ MonoBehaviour:
   exitPoint: {fileID: 0}
   TrampillaEntrada: {fileID: 8300000, guid: 713f735cab05873429e889ae5f659aa1, type: 3}
   TrampillaSalida: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
+  cobrarCajaRegistradoraSound: {fileID: 8300000, guid: 1b74f26d238f1fe46aa45d3452e435fa, type: 3}
+  nOcobrarCajaRegistradoraSound: {fileID: 8300000, guid: 85d97439865cf5541adbf65e33275fac, type: 3}
   audioSource: {fileID: 0}
   musicBox: {fileID: 0}
   canvas: {fileID: 0}
@@ -2215,11 +2217,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: samuraiAyudado2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: vecesSamuraiAyudado
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: m_RootOrder

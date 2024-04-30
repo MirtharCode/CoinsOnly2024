@@ -99,6 +99,8 @@ public class GameManager : MonoBehaviour
     [Header("AUDIO")]
     [SerializeField] public AudioClip TrampillaEntrada;
     [SerializeField] public AudioClip TrampillaSalida;
+    [SerializeField] public AudioClip cobrarCajaRegistradoraSound;
+    [SerializeField] public AudioClip nOcobrarCajaRegistradoraSound;
     public AudioSource audioSource;
     [SerializeField] public GameObject musicBox;
 
@@ -227,10 +229,10 @@ public class GameManager : MonoBehaviour
         //dailyCustomers.Add(elementalJissy);
         //dailyCustomers.Add(hybridMara);
         //dailyCustomers.Add(limbasticCululu);
-        //dailyCustomers.Add(limbasticSergio);
-        //dailyCustomers.Add(evilWizardElidora);
-        //dailyCustomers.Add(evilWizardGerard);
-        //dailyCustomers.Add(electropedMagmaDora);
+        dailyCustomers.Add(limbasticSergio);
+        dailyCustomers.Add(evilWizardElidora);
+        dailyCustomers.Add(evilWizardGerard);
+        dailyCustomers.Add(electropedMagmaDora);
         dailyCustomers.Add(elementalHandy);
         dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(evilWizardManoloMano);
@@ -244,13 +246,13 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<UIManager>().LaVoluntad(50);
         dailyCustomers.Clear();
         dailyCustomers.Add(evilWizardMagoHielo);
-        dailyCustomers.Add(jefe);
-        dailyCustomers.Add(evilWizardElidora);
-        dailyCustomers.Add(elementalRockon);
-        if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
-        if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
-        dailyCustomers.Add(limbasticCululu);
-        dailyCustomers.Add(electropedMasermati);
+        //dailyCustomers.Add(jefe);
+        //dailyCustomers.Add(evilWizardElidora);
+        //dailyCustomers.Add(elementalRockon);
+        //if (!Data.instance.borrachoTriste) dailyCustomers.Add(hybridElvog);
+        //if (Data.instance.borrachoTriste) dailyCustomers.Add(hybridPetra);
+        //dailyCustomers.Add(limbasticCululu);
+        //dailyCustomers.Add(electropedMasermati);
         if (Data.instance.vecesCobradoAntonio >= 2) dailyCustomers.Add(limbasticAntonio);
         dailyCustomers.Add(evilWizardManoloMano);
         dailyCustomers.Add(hybridSaltaralisis);
