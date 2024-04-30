@@ -15,6 +15,12 @@ public class FadeToBlack : MonoBehaviour
         data = GameObject.FindGameObjectWithTag("Data");
         fadeToblackClipTime = fadeToblackClip.length;
         currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "MenuInicial")
+
+            GetComponent<Animator>().SetTrigger("PumPum");
+        else
+            GetComponent<Animator>().SetTrigger("PaiumPaium");
     }
 
     // Update is called once per frame
