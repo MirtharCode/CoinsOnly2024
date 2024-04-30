@@ -866,6 +866,7 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
+                Data.instance.vecesCobradoGiovanni++;
             }
 
             else if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati")
