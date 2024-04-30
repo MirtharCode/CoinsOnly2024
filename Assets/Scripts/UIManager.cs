@@ -209,9 +209,7 @@ public class UIManager : MonoBehaviour
         }
 
         if (currentCustomer != null && currentCustomer.name.Contains("Detective"))
-        {
             StartCoroutine(FadeToBAndW());
-        }
     }
 
     public void OpenListPrecios()
@@ -898,7 +896,7 @@ public class UIManager : MonoBehaviour
                 LaVoluntad(-15);
             }
 
-            else if (currentCustomer.name.Contains("Giovanni")) 
+            else if (currentCustomer.name.Contains("Giovanni"))
             {
                 //Mostrar queja de que no cumplen normas
                 mostrarJefe = true;
@@ -921,7 +919,6 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-                Data.instance.propinaDay2_1 = propinasNumber;
             }
 
             else if (currentCustomer.name.Contains("Cululu"))
@@ -930,7 +927,6 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                Data.instance.propinaDay2_1 = propinasNumber;
             }
 
             return dialogueText.text;
@@ -1543,13 +1539,11 @@ public class UIManager : MonoBehaviour
     {
         if (currentScene.name == "Day2_1")
         {
-            Data.instance.propinaDay2_1 = propinasNumber;
             SceneManager.LoadScene("Pila_Nivel1");
         }
 
         else if (currentScene.name == "Day3_1")
         {
-            Data.instance.propinaDay3_1 = propinasNumber;
             SceneManager.LoadScene("Pila_Nivel2");
         }
     }

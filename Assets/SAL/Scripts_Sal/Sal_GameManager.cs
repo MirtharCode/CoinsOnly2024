@@ -17,6 +17,8 @@ public class Sal_GameManager : MonoBehaviour
     public bool birdMoving = false;                         // Booleano que nos permite que si es verdadero, el pájaro se mueva una casilla.
 
     public float _musicVolumeSlider, _soundVolumeSlider;
+    [SerializeField] public Scene currentScene;
+    [SerializeField] public bool heGanado = false;
 
     void Start()
     {
@@ -25,6 +27,8 @@ public class Sal_GameManager : MonoBehaviour
         totalMudCells = GameObject.FindGameObjectsWithTag("Mud");       // Al iniciar, relleno el array con las que tengan tag Mud.
 
         Time.timeScale = 1;
+
+        currentScene = SceneManager.GetActiveScene();
 
         //if (PlayerPrefs.GetFloat("MusicVolumen") != 1)
         //{
@@ -59,6 +63,27 @@ public class Sal_GameManager : MonoBehaviour
 
     public void LevelSelector()
     {
+        if (heGanado)
+        {
+            if (currentScene.name.Contains("001"))
+                Data.instance.fase1Check = true;
+            else if (currentScene.name.Contains("002"))
+                Data.instance.fase2Check = true;
+            else if (currentScene.name.Contains("003"))
+                Data.instance.fase3Check = true;
+            else if (currentScene.name.Contains("004"))
+                Data.instance.fase4Check = true;
+            else if (currentScene.name.Contains("005"))
+                Data.instance.fase5Check = true;
+            else if (currentScene.name.Contains("006"))
+                Data.instance.fase6Check = true;
+            else if (currentScene.name.Contains("007"))
+                Data.instance.fase7Check = true;
+            else if (currentScene.name.Contains("008"))
+                Data.instance.fase8Check = true;
+            else if (currentScene.name.Contains("009"))
+                Data.instance.fase9Check = true;
+        }
         SceneManager.LoadScene("LevelSelector");
     }
 
@@ -116,11 +141,12 @@ public class Sal_GameManager : MonoBehaviour
     // Función que la agrego al botón de la pantalla de derrota y dependiendo del nombre de la escena, recargo una u otra.
     public void SoyMancoAiuda()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public void GanastePibe()
     {
+
         SceneManager.LoadScene("LevelSelector"); ;
     }
 
@@ -136,6 +162,7 @@ public class Sal_GameManager : MonoBehaviour
     public void WaitingPorSiAcasing()
     {
         // Hago que el contador suba en función del tiempo que pase.
+        heGanado = true;
         secondsPorSiAcasing += Time.deltaTime;
 
         // Si ese contador llega a más de 0,3 y no ha salido a el cartel de victoria...

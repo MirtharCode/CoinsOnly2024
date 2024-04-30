@@ -53,8 +53,6 @@ public class Data : MonoBehaviour
     [SerializeField] public bool samuraiAyudado1 = false;
     [SerializeField] public bool samuraiAyudado2 = false;
     [SerializeField] public int vecesSamuraiAyudado = 0;
-    [SerializeField] public float propinaDay2_1;
-    [SerializeField] public float propinaDay3_1;
 
     [SerializeField] public bool day0Check = false;
     [SerializeField] public bool day1Check = false;
@@ -69,6 +67,20 @@ public class Data : MonoBehaviour
     [SerializeField] public bool finalSecretoConseguido = false;
     [SerializeField] public int tipsPoints;
     [SerializeField] public int detectivePoints;
+
+    [SerializeField] public bool fase1Check = false;
+    [SerializeField] public bool fase2Check = false;
+    [SerializeField] public bool fase3Check = false;
+    [SerializeField] public bool fase4Check = false;
+    [SerializeField] public bool fase5Check = false;
+    [SerializeField] public bool fase6Check = false;
+    [SerializeField] public bool fase7Check = false;
+    [SerializeField] public bool fase8Check = false;
+    [SerializeField] public bool fase9Check = false;
+
+    [SerializeField] public bool sePueTocar = false;
+    [SerializeField] public bool yaSeFueCliente = false;
+    [SerializeField] public float tipsBetweenDays = 0;
 
     [SerializeField] public int vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
     [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.

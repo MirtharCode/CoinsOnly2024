@@ -143,39 +143,43 @@ public class HomeManager : MonoBehaviour
 
     public void SomeoneIsKnocking()
     {
-        doorSound.PlayOneShot(openDoorSound);
-        GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-
-        if (Data.instance.day1Check && !Data.instance.giftTapicio)
+        if (!data.GetComponent<Data>().yaSeFueCliente)
         {
-            clon.GetComponent<Image>().sprite = elementalTapicio;
-            clon.AddComponent<HE_Tapicio>();
-            miniClientImage = miniElementalTapicio;
-        }
+            data.GetComponent<Data>().sePueTocar = false;
+            doorSound.PlayOneShot(openDoorSound);
+            GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
 
-        else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
-        {
-            clon.GetComponent<Image>().sprite = limbasticGiovanni;
-            clon.AddComponent<HL_Giovanni>();
-            miniClientImage = miniLimbasticGiovanni;
-        }
+            if (Data.instance.day1Check && !Data.instance.giftTapicio)
+            {
+                clon.GetComponent<Image>().sprite = elementalTapicio;
+                clon.AddComponent<HE_Tapicio>();
+                miniClientImage = miniElementalTapicio;
+            }
 
-        else if (Data.instance.day3Check && !Data.instance.giftElidora)
-        {
-            clon.GetComponent<Image>().sprite = evilWizardElidora;
-            clon.AddComponent<HEW_Elidora>();
-            miniClientImage = miniEvilWizardElidora;
-        }
+            else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
+            {
+                clon.GetComponent<Image>().sprite = limbasticGiovanni;
+                clon.AddComponent<HL_Giovanni>();
+                miniClientImage = miniLimbasticGiovanni;
+            }
 
-        else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
-        {
-            clon.GetComponent<Image>().sprite = evilWizardManoloMano;
-            clon.AddComponent<HEW_Manolo>();
-            miniClientImage = miniEvilWizardManoloMano;
-        }
+            else if (Data.instance.day3Check && !Data.instance.giftElidora)
+            {
+                clon.GetComponent<Image>().sprite = evilWizardElidora;
+                clon.AddComponent<HEW_Elidora>();
+                miniClientImage = miniEvilWizardElidora;
+            }
 
-        currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-        dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
+            else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
+            {
+                clon.GetComponent<Image>().sprite = evilWizardManoloMano;
+                clon.AddComponent<HEW_Manolo>();
+                miniClientImage = miniEvilWizardManoloMano;
+            }
+
+            currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+            dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
+        }
     }
 
     public void ShowingText()
@@ -242,6 +246,9 @@ public class HomeManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardManoloManoALT;
             TrophyAchieved("Mano");
         }
+
+        data.GetComponent<Data>().sePueTocar = true;
+        data.GetComponent<Data>().yaSeFueCliente = true;
     }
 
     public void TrophyAchieved(string trophyName)

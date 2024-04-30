@@ -104,7 +104,7 @@ public class SlimeManager : MonoBehaviour
     {
         score += 1;
         scoreText.text = $"{score}";
-        timeRemaining += 1;
+        timeRemaining += .1f;
 
         currentSlimes.Remove(slimes[slimeIndex]);
     }

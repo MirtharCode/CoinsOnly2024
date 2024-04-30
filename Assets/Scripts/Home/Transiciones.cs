@@ -32,34 +32,36 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
-        FTBRegular();
-        if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
-        else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
-        else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
-        else if (data.day4Check) SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
-
-        else if (data.day5Check)
+        if (data.GetComponent<Data>().sePueTocar)
         {
-            if (data.tipsPoints == 0) SceneManager.LoadScene("FinalMuyMalo");
+            FTBRegular();
+            if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
+            else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
+            else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
+            else if (data.day4Check) SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
 
-            // Si acabas el juego habiendo obtenido +50 en uno o dos días, pasas al final malo.
-            else if (data.tipsPoints == 1 || data.tipsPoints == 2) SceneManager.LoadScene("FinalMalo");
-
-            // Si acabas el juego habiendo obtenido +50 en tres o cuatro días, pasas al final bueno.
-            else if (data.tipsPoints == 3 || data.tipsPoints == 4) SceneManager.LoadScene("FinalBueno");
-
-            // Si acabas el juego habiendo obtenido +50 en los cinco días...
-            else if (data.tipsPoints == 5)
+            else if (data.day5Check)
             {
-                // ... pero no tienes 4 puntos de Detective, pasas al final muy bueno.
-                if (data.detectivePoints < 4) SceneManager.LoadScene("FinalMuyBueno");
+                if (data.tipsPoints == 0) SceneManager.LoadScene("FinalMuyMalo");
 
-                // y tienes los 5 puntoss al menos tres veces con el detective, vas al final secreto.
-                else if (data.tipsPoints == 5 && data.detectivePoints == 4) SceneManager.LoadScene("FinalSecreto");
+                // Si acabas el juego habiendo obtenido +50 en uno o dos días, pasas al final malo.
+                else if (data.tipsPoints == 1 || data.tipsPoints == 2) SceneManager.LoadScene("FinalMalo");
+
+                // Si acabas el juego habiendo obtenido +50 en tres o cuatro días, pasas al final bueno.
+                else if (data.tipsPoints == 3 || data.tipsPoints == 4) SceneManager.LoadScene("FinalBueno");
+
+                // Si acabas el juego habiendo obtenido +50 en los cinco días...
+                else if (data.tipsPoints == 5)
+                {
+                    // ... pero no tienes 4 puntos de Detective, pasas al final muy bueno.
+                    if (data.detectivePoints < 4) SceneManager.LoadScene("FinalMuyBueno");
+
+                    // y tienes los 5 puntoss al menos tres veces con el detective, vas al final secreto.
+                    else if (data.tipsPoints == 5 && data.detectivePoints == 4) SceneManager.LoadScene("FinalSecreto");
+                }
             }
+            //Si acabas el juego sin haber obtenido + 50 tips en ningún día, pasas al final muy malo.
         }
-        //Si acabas el juego sin haber obtenido + 50 tips en ningún día, pasas al final muy malo.
-
     }
 
     public void ShowGifts()
@@ -93,14 +95,17 @@ public class Transiciones : MonoBehaviour
 
     public void TravellingAnimation()
     {
-        imPlayingSAL = true;
-        GetComponent<Animator>().SetBool("PlayingSAL", true);
-
+        if (data.GetComponent<Data>().sePueTocar)
+        {
+            imPlayingSAL = true;
+            GetComponent<Animator>().SetBool("PlayingSAL", true);
+        }
     }
 
     public void GoToSAL()
     {
-        SceneManager.LoadScene("LevelSelector");
+        if (data.GetComponent<Data>().sePueTocar)
+            SceneManager.LoadScene("LevelSelector");
     }
 
     public void GoToWhackASlime()
@@ -110,13 +115,17 @@ public class Transiciones : MonoBehaviour
 
     public void FTBRegular()
     {
-        float animTime;
-        Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
+        if (data.GetComponent<Data>().sePueTocar)
+        {
+            data.GetComponent<Data>().yaSeFueCliente = false;
+            float animTime;
+            Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
 
-        anim.SetBool("ToBlack", true);
-        animTime = toBlackClip.length;
+            anim.SetBool("ToBlack", true);
+            animTime = toBlackClip.length;
 
-        Invoke(nameof(NextDayTransiciones), animTime);
+            Invoke(nameof(NextDayTransiciones), animTime);
+        }
     }
 
     public void FTBSAL()

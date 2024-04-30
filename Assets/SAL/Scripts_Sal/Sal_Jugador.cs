@@ -23,6 +23,8 @@ public class Sal_Jugador : MonoBehaviour
 
     public string _arriba, _abajo, _izquierda, _derecha, _pausa;
 
+    [SerializeField] public Sal_GameManager gM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,12 +77,14 @@ public class Sal_Jugador : MonoBehaviour
             PlayerPrefs.Save();
         }
         _pausa = PlayerPrefs.GetString("Pausa");
+
+        gM = GameObject.FindGameObjectWithTag("GM").GetComponent<Sal_GameManager>();
     }
 
     void Update()
     {
-        print("El barro es " + CheckMud());
-        print("La colisión es " + CheckCollision());
+        //print("El barro es " + CheckMud());
+        //print("La colisión es " + CheckCollision());
         MoveBarro();
     }
 
@@ -133,7 +137,7 @@ public class Sal_Jugador : MonoBehaviour
             dir = new Vector2(0, 1);            // ... le digo que dir ahora vale uno hacia arriba...
             walking[0] += 1 * Time.deltaTime;   // ... le asigno un valor que siempre será mayor que 0.06...
             infoDir = 0;                        // ... y le digo a mi chivato de direcciones que me estoy moviendo hacia arriba.
-           
+
 
             // Luego, solo si estoy parado (mi destino es donde me encuentro)...
             if (transform.position == destination)
@@ -197,7 +201,7 @@ public class Sal_Jugador : MonoBehaviour
         // ...si no es igual, es que me estoy moviendo, entonces para que no sea infinito el movimiento,
         // hago que walking valga 0 para que no sea mayor a 0.06.
         else
-        { 
+        {
             walking[1] = 0;
         }
 
@@ -255,7 +259,7 @@ public class Sal_Jugador : MonoBehaviour
                 // ...y además no tengo obstáculo delante y el valor que le di antes es mayor que 0.06 (spoiler, siempre lo va a ser)...
                 if (!CheckCollision() && walking[3] > delay)
                 {
-                   // ani.SetBool("walk", true);
+                    // ani.SetBool("walk", true);
 
 
                     if (totalPaharos.Length > 0)
@@ -276,7 +280,7 @@ public class Sal_Jugador : MonoBehaviour
         else
         {
             walking[3] = 0;
-           
+
         }
         // ... por lo que finalmente me muevo a esa destination.
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
@@ -351,8 +355,11 @@ public class Sal_Jugador : MonoBehaviour
     {
         if (Event.current.Equals(Event.KeyboardEvent(_pausa)))
         {
-            canvasMessage.transform.GetChild(2).gameObject.SetActive(true);
-            Time.timeScale = 0;
+            if (!gM.heGanado)
+            {
+                canvasMessage.transform.GetChild(2).gameObject.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
     }

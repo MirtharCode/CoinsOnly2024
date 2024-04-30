@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
 
     public void Day2_2()
     {
-        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay2_1);
+        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.tipsBetweenDays);
 
         dailyCustomers.Clear();
         if (Data.instance.samuraiAyudado1) dailyCustomers.Add(electropedDenjirenji);
@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
 
     public void Day3_2()
     {
-        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.propinaDay3_1);
+        canvas.GetComponent<UIManager>().LaVoluntad(Data.instance.tipsBetweenDays);
 
         dailyCustomers.Clear();
         if (Data.instance.samuraiAyudado2) dailyCustomers.Add(electropedDenjirenji);

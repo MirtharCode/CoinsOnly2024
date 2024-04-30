@@ -49,6 +49,7 @@ public class T_Denjirenji : Tecnopedos
         if (currentScene.name == "Day2_1" || currentScene.name == "Day3_1")
         {
             trampilla.GetComponent<Animator>().enabled = false;
+            Data.instance.tipsBetweenDays = Data.instance.uIManager.GetComponent<UIManager>().propinasNumber;
             ftBObject.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
         }
 
