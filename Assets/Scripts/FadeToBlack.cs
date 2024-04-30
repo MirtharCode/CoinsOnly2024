@@ -9,6 +9,8 @@ public class FadeToBlack : MonoBehaviour
     [SerializeField] public AnimationClip fadeToblackClip;
     [SerializeField] public float fadeToblackClipTime;
     [SerializeField] public Scene currentScene;
+    public AudioSource audioSource;
+    [SerializeField] public AudioClip bonesSound;
 
     void Start()
     {
@@ -69,5 +71,10 @@ public class FadeToBlack : MonoBehaviour
     {
         if (currentScene.name == "Home")
             data.GetComponent<Data>().homeManager.SomeoneIsKnocking();
+    }
+
+    public void PlayBones()
+    {
+        audioSource.PlayOneShot(bonesSound);
     }
 }
