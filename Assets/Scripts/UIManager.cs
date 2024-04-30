@@ -1183,8 +1183,6 @@ public class UIManager : MonoBehaviour
             {
                 mostrarJefe = false;
                 LaVoluntad(10);
-
-                
             }
 
             else if (currentCustomer.name.Contains("Pijus"))
