@@ -145,12 +145,11 @@ public class HomeManager : MonoBehaviour
     {
         if (!data.GetComponent<Data>().yaSeFueCliente)
         {
-            data.GetComponent<Data>().sePueTocar = false;
-            doorSound.PlayOneShot(openDoorSound);
-            GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-
             if (Data.instance.day1Check && !Data.instance.giftTapicio)
             {
+                data.GetComponent<Data>().sePueTocar = false;
+                doorSound.PlayOneShot(openDoorSound);
+                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
                 clon.GetComponent<Image>().sprite = elementalTapicio;
                 clon.AddComponent<HE_Tapicio>();
                 miniClientImage = miniElementalTapicio;
@@ -158,6 +157,9 @@ public class HomeManager : MonoBehaviour
 
             else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
             {
+                data.GetComponent<Data>().sePueTocar = false;
+                doorSound.PlayOneShot(openDoorSound);
+                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
                 clon.GetComponent<Image>().sprite = limbasticGiovanni;
                 clon.AddComponent<HL_Giovanni>();
                 miniClientImage = miniLimbasticGiovanni;
@@ -165,6 +167,9 @@ public class HomeManager : MonoBehaviour
 
             else if (Data.instance.day3Check && !Data.instance.giftElidora)
             {
+                data.GetComponent<Data>().sePueTocar = false;
+                doorSound.PlayOneShot(openDoorSound);
+                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
                 clon.GetComponent<Image>().sprite = evilWizardElidora;
                 clon.AddComponent<HEW_Elidora>();
                 miniClientImage = miniEvilWizardElidora;
@@ -172,6 +177,9 @@ public class HomeManager : MonoBehaviour
 
             else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
             {
+                data.GetComponent<Data>().sePueTocar = false;
+                doorSound.PlayOneShot(openDoorSound);
+                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
                 clon.GetComponent<Image>().sprite = evilWizardManoloMano;
                 clon.AddComponent<HEW_Manolo>();
                 miniClientImage = miniEvilWizardManoloMano;

@@ -39,7 +39,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject buttonCobrar;
     [SerializeField] public GameObject buttonNoCobrar;
     [SerializeField] public GameObject lesPropinas;
+    [SerializeField] public GameObject lesPropinasBW;
     [SerializeField] public Sprite[] propinasSprites;
+    [SerializeField] public Sprite[] propinasBWSprites;
     [SerializeField] public TMP_Text leDineroText;
     [SerializeField] public TMP_Text lePropinasText;
     [SerializeField] public float propinasNumber = 0;
@@ -114,8 +116,7 @@ public class UIManager : MonoBehaviour
     public GameObject tableBAndW;
     public GameObject candle;
     public GameObject candleBAndW;
-    public GameObject extPropinasBAndW;
-    public GameObject intPropinasBAndW;
+    public GameObject propinasBAndW;
 
     [Header("Razas")]
 
@@ -722,9 +723,8 @@ public class UIManager : MonoBehaviour
         Color candleColor = candle.GetComponent<Image>().color;
         float fadeAmount, negFadeAmount;
         while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
-            && candleBAndW.GetComponent<Image>().color.a > 0 && extPropinasBAndW.GetComponent<Image>().color.a > 0
-            && intPropinasBAndW.GetComponent<Image>().color.a > 0 && phone.GetComponent<Image>().color.a > 0
-            && leCajaRegistradora.GetComponent<Image>().color.a > 0)
+            && candleBAndW.GetComponent<Image>().color.a > 0 && propinasBAndW.GetComponent<Image>().color.a > 0
+            && phone.GetComponent<Image>().color.a > 0 && leCajaRegistradora.GetComponent<Image>().color.a > 0)
         {
             fadeAmount = phoneColor.a - (fadeSpeed * Time.deltaTime);
             negFadeAmount = candleColor.a + (fadeSpeed * Time.deltaTime);
@@ -734,8 +734,7 @@ public class UIManager : MonoBehaviour
             tableBAndW.GetComponent<Image>().color = phoneColor;
             candleBAndW.GetComponent<Image>().color = phoneColor;
             backgroundBAndW.GetComponent<SpriteRenderer>().color = phoneColor;
-            extPropinasBAndW.GetComponent<Image>().color = phoneColor;
-            intPropinasBAndW.GetComponent<Image>().color = phoneColor;
+            propinasBAndW.GetComponent<Image>().color = phoneColor;
             leCajaRegistradora.GetComponent<Image>().color = phoneColor;
             candle.GetComponent<Image>().color = candleColor;
             yield return null;
@@ -750,42 +749,79 @@ public class UIManager : MonoBehaviour
         {
             propinasNumber = 0;
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[0];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[0];
         }
 
         else if (propinasNumber > 0 && propinasNumber <= 10)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[1];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[1];
+        }
+
 
         else if (propinasNumber > 10 && propinasNumber <= 20)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[2];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[2];
+        }
+
 
         else if (propinasNumber > 20 && propinasNumber <= 30)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[3];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[3];
+        }
+
 
         else if (propinasNumber > 30 && propinasNumber <= 40)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[4];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[4];
+        }
 
         else if (propinasNumber > 40 && propinasNumber <= 50)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[5];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[5];
+        }
 
         else if (propinasNumber > 50 && propinasNumber <= 60)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[6];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[6];
+        }
 
         else if (propinasNumber > 60 && propinasNumber <= 70)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[7];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[7];
+        }
 
         else if (propinasNumber > 70 && propinasNumber <= 80)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[8];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[8];
+        }
 
         else if (propinasNumber > 80 && propinasNumber <= 90)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[9];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[9];
+        }
+
 
         else if (propinasNumber > 90 && propinasNumber <= 100)
+        {
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[10];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[10];
+        }
+
 
         else if (propinasNumber > 100)
         {
             propinasNumber = 100;
             lesPropinas.GetComponent<Image>().sprite = propinasSprites[10];
+            lesPropinasBW.GetComponent<Image>().sprite = propinasBWSprites[10];
         }
         lePropinasText.text = "" + propinasNumber;
 
