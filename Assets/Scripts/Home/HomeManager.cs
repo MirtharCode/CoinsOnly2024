@@ -26,6 +26,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public AudioClip closeDoorSound;
 
     [SerializeField] public AnimationClip clientGoingOutClip;
+    [SerializeField] public GameObject musicBox;
 
     [Header("SPRITES CLIENTES")]
     [SerializeField] public Sprite evilWizardGerard;
@@ -132,7 +133,10 @@ public class HomeManager : MonoBehaviour
 
     void Start()
     {
-
+        musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
+        musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
+        musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
+        musicBox.transform.GetChild(3).GetComponent<AudioSource>().mute = true;
     }
 
     // Update is called once per frame
