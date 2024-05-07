@@ -8,7 +8,8 @@ public class TutorialTimer : MonoBehaviour
 {
     [SerializeField] public GameObject pM;
     [SerializeField] public SlimeManager sM;
-    [SerializeField] public Image gO;
+    [SerializeField] public GameObject gO;
+    [SerializeField] public AnimationClip gOGrow;
     public Scene currentScene;
 
     void Start()
@@ -28,11 +29,6 @@ public class TutorialTimer : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void ActivarTemporizador()
     {
         if (currentScene.name.Contains("Pila"))
@@ -43,12 +39,27 @@ public class TutorialTimer : MonoBehaviour
             pM.GetComponent<PilaManager>().pila1.GetComponent<Pila>().enabled = true;
         }
 
-        else
-            sM.StartGame();
+        //else
+        //    GoGoPowerRangers();
     }
 
     public void GoGoPowerRangers()
     {
+        if (!currentScene.name.Contains("Pila"))
+        {
+            float gOGrowTiming;
 
+            if (currentScene.name.Contains("Mole"))
+            {
+                gO.gameObject.SetActive(true);
+                gOGrowTiming = gOGrow.length;
+                Invoke(nameof(EmpiezaElJuego), gOGrowTiming);
+            }
+        }
+    }
+
+    public void EmpiezaElJuego()
+    {
+        sM.StartGame();
     }
 }
