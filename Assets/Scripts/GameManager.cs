@@ -195,13 +195,13 @@ public class GameManager : MonoBehaviour
 
         dailyCustomers.Clear();
         dailyCustomers.Add(jefe);
-        //dailyCustomers.Add(limbasticSergio);
-        //dailyCustomers.Add(hybridSaltaralisis);
-        //dailyCustomers.Add(evilWizardManoloMano);
-        //dailyCustomers.Add(electropedRaven);
-        //dailyCustomers.Add(elementalHueso);
-        //dailyCustomers.Add(limbasticPatxi);
-        //dailyCustomers.Add(hybridElvog);
+        dailyCustomers.Add(limbasticSergio);
+        dailyCustomers.Add(hybridSaltaralisis);
+        dailyCustomers.Add(evilWizardManoloMano);
+        dailyCustomers.Add(electropedRaven);
+        dailyCustomers.Add(elementalHueso);
+        dailyCustomers.Add(limbasticPatxi);
+        dailyCustomers.Add(hybridElvog);
         dailyCustomers.Add(evilWizardManolo);
         dailyCustomers.Add(electropedDenjirenji);
 

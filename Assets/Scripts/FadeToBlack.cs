@@ -41,8 +41,13 @@ public class FadeToBlack : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
+        if (currentScene.name != "Home" && currentScene.name == "MenuInicial")
             Invoke(nameof(CallingNextday), fadeToblackClipTime);
+
+        else if (currentScene.name.Contains("Pila"))
+        {
+            Invoke(nameof(VolverDelCuloDelMicroondas), fadeToblackClipTime);
+        }
     }
 
     public void CallingNextday()
@@ -71,5 +76,14 @@ public class FadeToBlack : MonoBehaviour
     public void PlayBones()
     {
         audioSource.PlayOneShot(bonesSound);
+    }
+
+    public void VolverDelCuloDelMicroondas()
+    {
+        if (currentScene.name == "Pila_Nivel1")
+            SceneManager.LoadScene("Day2_2");
+
+        else if (currentScene.name == "Pila_Nivel2")
+            SceneManager.LoadScene("Day3_2");
     }
 }
