@@ -609,9 +609,10 @@ MonoBehaviour:
   magicRune: {fileID: 7204342734881417808, guid: 52cc471a3e40d18458d66dfb1e68b898, type: 3}
   venomPotion: {fileID: 7204342734881417808, guid: db1d79ab061799c40910eb2f41087feb, type: 3}
   badDeadCatCupon: {fileID: 7204342734881417808, guid: b84e637bf76f88e46bc0e757316c7414, type: 3}
-  badDrinkCupon: {fileID: 7204342734881417808, guid: 2bc9c4308f215514192eaa97daa54238, type: 3}
-  badElidoraCupon: {fileID: 7204342734881417808, guid: 8c828aa924683944898b223695eb9d02, type: 3}
-  badPoisonCupon: {fileID: 7204342734881417808, guid: ae1fc30258edf1049afc9cdc495ac92b, type: 3}
+  badDrinkCupon1: {fileID: 7204342734881417808, guid: 2bc9c4308f215514192eaa97daa54238, type: 3}
+  badDrinkCupon2: {fileID: 7204342734881417808, guid: 7defe1d8bc451a94f9d7c451eaafca08, type: 3}
+  badPoisonCupon1: {fileID: 7204342734881417808, guid: ae1fc30258edf1049afc9cdc495ac92b, type: 3}
+  badPoisonCupon2: {fileID: 7204342734881417808, guid: d00aec5667434904e9b1224961cbd260, type: 3}
   badVodooDollCupon: {fileID: 7204342734881417808, guid: ab273c08493b18c4394f4588613dd5e2, type: 3}
   goodDeadCatCupon: {fileID: 7204342734881417808, guid: 0174e847c3208414981eeddbe72d7ece, type: 3}
   goodDrinkCupon: {fileID: 7204342734881417808, guid: 407968b8504850a4d9ee2b7746006c39, type: 3}
@@ -621,6 +622,8 @@ MonoBehaviour:
   exitPoint: {fileID: 0}
   TrampillaEntrada: {fileID: 8300000, guid: 713f735cab05873429e889ae5f659aa1, type: 3}
   TrampillaSalida: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
+  cobrarCajaRegistradoraSound: {fileID: 0}
+  nOcobrarCajaRegistradoraSound: {fileID: 0}
   audioSource: {fileID: 0}
   musicBox: {fileID: 0}
   canvas: {fileID: 1397739548}
@@ -1759,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5982892004638087519, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5982892004721749002, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1837,7 +1844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6557176465321327412, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5855713
+      value: -1.5854492
       objectReference: {fileID: 0}
     - target: {fileID: 6965547056675354710, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1953,7 +1960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8531081435187203222, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8538305245717071616, guid: 978ef68f624a3d245adfec7cb2f76253, type: 3}
       propertyPath: m_text

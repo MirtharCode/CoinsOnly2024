@@ -31,7 +31,7 @@ public class T_Rustica : Tecnopedos
         {
             product1 = Instantiate(gameManager.GetComponent<GameManager>().venomPotion, oneProduct.position, oneProduct.rotation);
             product1.transform.SetParent(oneProduct);
-            product2 = Instantiate(gameManager.GetComponent<GameManager>().badPoisonCupon, twoProducts1.position, twoProducts1.rotation);
+            product2 = Instantiate(gameManager.GetComponent<GameManager>().badPoisonCupon2, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1); //Cupon falso de pociones
             product3 = Instantiate(gameManager.GetComponent<GameManager>().magicRune, twoProducts2.position, twoProducts2.rotation);
             product3.transform.SetParent(twoProducts2);

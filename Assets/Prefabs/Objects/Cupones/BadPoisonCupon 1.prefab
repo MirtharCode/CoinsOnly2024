@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8945412756149673791}
   - component: {fileID: 5963753004741219519}
   m_Layer: 5
-  m_Name: BadElidoraCupon
+  m_Name: BadPoisonCupon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 993b3ce23f1d05645a27b2c350817768, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa40730fc8865643b6df46f419a8909, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
