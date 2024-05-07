@@ -1,13 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialTimer : MonoBehaviour
 {
     [SerializeField] public GameObject pM;
+    [SerializeField] public SlimeManager sM;
+    [SerializeField] public Image gO;
+    public Scene currentScene;
+
     void Start()
     {
-        pM = GameObject.FindGameObjectWithTag("PM");
+        currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name.Contains("Pila"))
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetTrigger("PilaStart");
+            pM = GameObject.FindGameObjectWithTag("PM");
+        }
+
+        else
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetTrigger("SlimeStart");
+            sM = GameObject.FindGameObjectWithTag("SM").GetComponent<SlimeManager>();
+        }
     }
 
     void Update()
@@ -17,9 +35,20 @@ public class TutorialTimer : MonoBehaviour
 
     public void ActivarTemporizador()
     {
-        pM.GetComponent<PilaManager>().tiempoActual = pM.GetComponent<PilaManager>().tiempoMaximo;
-        pM.GetComponent<PilaManager>().tempo.text = "" + pM.GetComponent<PilaManager>().tiempoMaximo.ToString("f0");
-        pM.GetComponent<PilaManager>().CambiarTemporizador(true);
-        pM.GetComponent<PilaManager>().pila1.GetComponent<Pila>().enabled = true;
+        if (currentScene.name.Contains("Pila"))
+        {
+            pM.GetComponent<PilaManager>().tiempoActual = pM.GetComponent<PilaManager>().tiempoMaximo;
+            pM.GetComponent<PilaManager>().tempo.text = "" + pM.GetComponent<PilaManager>().tiempoMaximo.ToString("f0");
+            pM.GetComponent<PilaManager>().CambiarTemporizador(true);
+            pM.GetComponent<PilaManager>().pila1.GetComponent<Pila>().enabled = true;
+        }
+
+        else
+            sM.StartGame();
+    }
+
+    public void GoGoPowerRangers()
+    {
+
     }
 }

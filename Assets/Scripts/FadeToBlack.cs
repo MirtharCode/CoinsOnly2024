@@ -22,11 +22,6 @@ public class FadeToBlack : MonoBehaviour
             GetComponent<Animator>().SetTrigger("PumPum");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     // TRANSICIÓN A NEGRO DEL MENÚ AL PRIMER DÍA
     public void FirstFadeToBlack()
     {
