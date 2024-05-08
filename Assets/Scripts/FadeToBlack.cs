@@ -41,13 +41,17 @@ public class FadeToBlack : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name != "Home" && currentScene.name == "MenuInicial")
-            Invoke(nameof(CallingNextday), fadeToblackClipTime);
-
-        else if (currentScene.name.Contains("Pila"))
+        if (currentScene.name.Contains("Pila"))
         {
             Invoke(nameof(VolverDelCuloDelMicroondas), fadeToblackClipTime);
         }
+
+        else
+        {
+            Invoke(nameof(CallingNextday), fadeToblackClipTime);
+        }
+
+
     }
 
     public void CallingNextday()

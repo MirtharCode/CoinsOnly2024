@@ -75,7 +75,6 @@ public class Slime : MonoBehaviour
                     if (lives == 2)
                     {
                         Debug.Log(lives);
-                        Debug.Log("Me diste una vez");
                         sR.sprite = slimeMagicHatBroken;
                         lives--;
                         Debug.Log(lives);
@@ -83,9 +82,8 @@ public class Slime : MonoBehaviour
 
                     else
                     {
-                        Debug.Log("Me diste dos veces");
                         sR.sprite = slimeMagicHatHit;
-                        sM.AddScore(slimeIndex);
+                        sM.AddScoreHat(slimeIndex);
                         StopAllCoroutines();
                         StartCoroutine(QuickHide());
                         hittable = false;
@@ -170,7 +168,6 @@ public class Slime : MonoBehaviour
         float random = Random.Range(0f, 1f);
         if (random < elidoraRate)
         {
-            Debug.Log("Soy la maguita");
             slimeType = SlimeType.Elidora;
             sR.sprite = elidora;
         }
@@ -179,7 +176,6 @@ public class Slime : MonoBehaviour
             random = Random.Range(0f, 1f);
             if (random < magicHatRate)
             {
-                Debug.Log("Tengo Sombrero");
                 slimeType = SlimeType.MagicHat;
                 sR.sprite = slimeMagicHat;
                 lives = 2;

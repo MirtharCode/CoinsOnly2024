@@ -157,6 +157,8 @@ public class HomeManager : MonoBehaviour
                 clon.GetComponent<Image>().sprite = elementalTapicio;
                 clon.AddComponent<HE_Tapicio>();
                 miniClientImage = miniElementalTapicio;
+                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
             else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
@@ -167,6 +169,8 @@ public class HomeManager : MonoBehaviour
                 clon.GetComponent<Image>().sprite = limbasticGiovanni;
                 clon.AddComponent<HL_Giovanni>();
                 miniClientImage = miniLimbasticGiovanni;
+                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
             else if (Data.instance.day3Check && !Data.instance.giftElidora)
@@ -177,6 +181,8 @@ public class HomeManager : MonoBehaviour
                 clon.GetComponent<Image>().sprite = evilWizardElidora;
                 clon.AddComponent<HEW_Elidora>();
                 miniClientImage = miniEvilWizardElidora;
+                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
             else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
@@ -187,10 +193,9 @@ public class HomeManager : MonoBehaviour
                 clon.GetComponent<Image>().sprite = evilWizardManoloMano;
                 clon.AddComponent<HEW_Manolo>();
                 miniClientImage = miniEvilWizardManoloMano;
+                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
-
-            currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-            dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
         }
     }
 
@@ -228,12 +233,16 @@ public class HomeManager : MonoBehaviour
         {
             Data.instance.giftTapicio = true;
             TrophyAchieved("Tapicio");
+            data.GetComponent<Data>().sePueTocar = true;
+            data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
         else if (currentHomeClientReal.name.Contains("Giovanni") && !Data.instance.giftGiovanni)
         {
             Data.instance.giftGiovanni = true;
             TrophyAchieved("Giovanni");
+            data.GetComponent<Data>().sePueTocar = true;
+            data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
         else if (currentHomeClientReal.name.Contains("Elidora"))
@@ -249,6 +258,8 @@ public class HomeManager : MonoBehaviour
                     Data.instance.giftElidora = true;
                     TrophyAchieved("Elidora");
                 }
+                data.GetComponent<Data>().sePueTocar = true;
+                data.GetComponent<Data>().yaSeFueCliente = true;
             }
         }
 
@@ -257,10 +268,10 @@ public class HomeManager : MonoBehaviour
             Data.instance.giftMano = true;
             GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardManoloManoALT;
             TrophyAchieved("Mano");
+            data.GetComponent<Data>().sePueTocar = true;
+            data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
-        data.GetComponent<Data>().sePueTocar = true;
-        data.GetComponent<Data>().yaSeFueCliente = true;
     }
 
     public void TrophyAchieved(string trophyName)

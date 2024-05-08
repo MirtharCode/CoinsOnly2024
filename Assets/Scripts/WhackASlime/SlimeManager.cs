@@ -109,6 +109,15 @@ public class SlimeManager : MonoBehaviour
         currentSlimes.Remove(slimes[slimeIndex]);
     }
 
+    public void AddScoreHat(int slimeIndex)
+    {
+        score += 3;
+        scoreText.text = $"{score}";
+        timeRemaining += .15f;
+
+        currentSlimes.Remove(slimes[slimeIndex]);
+    }
+
     public void Missed(int slimeIndex, bool isSlime)
     {
         //if (isSlime)
@@ -133,10 +142,20 @@ public class SlimeManager : MonoBehaviour
         if (elidoraPanel.gameObject.activeInHierarchy)
         {
             Data.instance.GetComponent<Data>().slimeFail = true;
+            Data.instance.GetComponent<Data>().elidoraAcariciada = true;
             SceneManager.LoadScene("Home");
         }
 
-        else
-            SceneManager.LoadScene("Home");
+
+        else if (outOfTimePanel.gameObject.activeInHierarchy)
+        {
+            if (score < 50)
+            {
+                Data.instance.GetComponent<Data>().slimeFail = true;
+                SceneManager.LoadScene("Home");
+            }
+            else
+                SceneManager.LoadScene("Home");
+        }
     }
 }
