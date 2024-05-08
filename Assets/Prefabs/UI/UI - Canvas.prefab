@@ -6211,7 +6211,7 @@ MonoBehaviour:
   tableBAndW: {fileID: 8640198305523296667}
   candle: {fileID: 7649357147257144314}
   candleBAndW: {fileID: 5982892004513391206}
-  propinasBAndW: {fileID: 0}
+  propinasBAndW: {fileID: 5982892003558459354}
   upperBoxBW: {fileID: 21300000, guid: 5d15a2adc5c57794eaa472b1d7041d45, type: 3}
   downerBoxBW: {fileID: 21300000, guid: 734101d186c93114f8b482a8d9f9ef4e, type: 3}
   buttonBW: {fileID: 21300000, guid: 5ec7ac7604c5d42409b46d1741001d62, type: 3}
