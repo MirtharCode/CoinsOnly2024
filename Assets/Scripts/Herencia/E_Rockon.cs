@@ -40,7 +40,7 @@ public class E_Rockon : Elementales
             product1.transform.SetParent(oneProduct);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().beer, twoProducts1.position, twoProducts1.rotation);
             product2.transform.SetParent(twoProducts1);
-            product3 = Instantiate(gameManager.GetComponent<GameManager>().badDeadCatCupon, twoProducts2.position, twoProducts2.rotation); //Cupon falso rockon
+            product3 = Instantiate(gameManager.GetComponent<GameManager>().badVodooDollCupon, twoProducts2.position, twoProducts2.rotation); //Cupon falso rockon
             product3.transform.SetParent(twoProducts2);
             uIManager.GetComponent<UIManager>().leDineroText.text = "10";
         }
