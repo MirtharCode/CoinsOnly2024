@@ -276,9 +276,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618047173}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75330746, y: 0.8474709, z: 0.8474709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1017379973}
@@ -286,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 6.1776123, y: -6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618047175
@@ -311,8 +311,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Volver\nal Men\xFA"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
-  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5b79e0ffdcad48645af12a229be96e5d, type: 2}
+  m_sharedMaterial: {fileID: -7022674229599938425, guid: 5b79e0ffdcad48645af12a229be96e5d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
-  m_fontSizeBase: 58
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -534,7 +534,7 @@ RectTransform:
   m_GameObject: {fileID: 1017379972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2765664, y: 1.1347257, z: 1.1347257}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 618047174}
@@ -543,7 +543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 784, y: 378}
+  m_AnchoredPosition: {x: 775, y: 378}
   m_SizeDelta: {x: 231.1019, y: 255.9939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017379974
@@ -622,8 +622,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 41183ac5c01b2e844a847eeeef4dc49d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -833,6 +833,8 @@ MonoBehaviour:
   fadeToblackClipTime: 0
   currentScene:
     m_Handle: 0
+  audioSource: {fileID: 0}
+  bonesSound: {fileID: 0}
 --- !u!95 &1444066226
 Animator:
   serializedVersion: 5
@@ -952,8 +954,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Trabajo a media jornada
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
-  m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5b79e0ffdcad48645af12a229be96e5d, type: 2}
+  m_sharedMaterial: {fileID: -7022674229599938425, guid: 5b79e0ffdcad48645af12a229be96e5d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1087,12 +1089,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Has trabajado mejor de lo que todos esper\xE1bamos (hasta los propios
     creadores del juego), pudiste pagar tu documentaci\xF3n y encima conservar tu
-    trabajo.\r\nAhora podr\xE1s trabajar m\xE1s de lo que seguro querr\xEDas, aunque
+    trabajo.\r\n\nAhora podr\xE1s trabajar m\xE1s de lo que seguro querr\xEDas, aunque
     no te relajes chaval, que el Jefe siempre te observar\xE1.\r\nSe nota que eres
     un buen humano\r."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
-  m_sharedMaterial: {fileID: -697757852661851675, guid: 61ebb5a75b7e81f4b8f2e4a9d9740f58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3c5c24db59fc5e43aa36b4e8331e91e, type: 2}
+  m_sharedMaterial: {fileID: -489538230773720336, guid: c3c5c24db59fc5e43aa36b4e8331e91e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1116,8 +1118,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.3
-  m_fontSizeBase: 44.3
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
