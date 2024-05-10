@@ -28,8 +28,6 @@ public class Agua : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<Pila>().cargado == true)
         {
-            audioSource.PlayOneShot(explosionSound);
-
             if (!cargador1.activeSelf)
             {
                 cargador1.SetActive(true);
@@ -43,6 +41,7 @@ public class Agua : MonoBehaviour
                 ultimoCargador = cargador2;
             }
 
+            audioSource.PlayOneShot(explosionSound);
             Vector3 posicionPila = other.transform.position;
 
             other.transform.position = posicionObjetoVacio.position;
