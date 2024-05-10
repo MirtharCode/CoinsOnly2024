@@ -10,10 +10,13 @@ public class Agua : MonoBehaviour
     public GameObject cargador1;
     public GameObject cargador2;
     public GameObject ultimoCargador;
+    AudioSource audioSource;
+    public AudioClip explosionSound;
 
     void Start()
     {
         pilaManager = GameObject.FindGameObjectWithTag("PM");
+        audioSource = pilaManager.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,6 +28,8 @@ public class Agua : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<Pila>().cargado == true)
         {
+            audioSource.PlayOneShot(explosionSound);
+
             if (!cargador1.activeSelf)
             {
                 cargador1.SetActive(true);
