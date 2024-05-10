@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
@@ -42,16 +43,17 @@ public class FadeToBlack : MonoBehaviour
         GetComponent<Animator>().SetBool("ToBlack", true);
 
         if (currentScene.name.Contains("Pila"))
-        {
             Invoke(nameof(VolverDelCuloDelMicroondas), fadeToblackClipTime);
+
+        else if (currentScene.name.Contains("Whack"))
+        {
+            GetComponent<Image>().enabled = true;
+            Invoke(nameof(VolverDeGolpearSlimes), fadeToblackClipTime);
         }
+
 
         else
-        {
             Invoke(nameof(CallingNextday), fadeToblackClipTime);
-        }
-
-
     }
 
     public void CallingNextday()
@@ -89,5 +91,10 @@ public class FadeToBlack : MonoBehaviour
 
         else if (currentScene.name == "Pila_Nivel2")
             SceneManager.LoadScene("Day3_2");
+    }
+
+    public void VolverDeGolpearSlimes()
+    {
+        SceneManager.LoadScene("Home");
     }
 }

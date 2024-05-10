@@ -11,8 +11,7 @@ public class SlimeManager : MonoBehaviour
     [SerializeField] private List<Slime> slimes;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameUI;
-    [SerializeField] private GameObject outOfTimePanel;
-    [SerializeField] private GameObject elidoraPanel;
+    [SerializeField] private GameObject fTB;
     [SerializeField] private TMPro.TextMeshProUGUI timeText;
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
@@ -31,8 +30,6 @@ public class SlimeManager : MonoBehaviour
     {
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
-        outOfTimePanel.SetActive(false);
-        elidoraPanel.SetActive(false);
         score = 0;
     }
 
@@ -65,8 +62,6 @@ public class SlimeManager : MonoBehaviour
     public void StartGame()
     {
         playButton.SetActive(false);
-        outOfTimePanel.SetActive(false);
-        elidoraPanel.SetActive(false);
         gameUI.SetActive(true);
         score = 0;
 
@@ -88,9 +83,9 @@ public class SlimeManager : MonoBehaviour
     public void GameOver(int type)
     {
         if (type == 0)
-            outOfTimePanel.SetActive(true);
+            OutOfTimeEnd();
         else
-            elidoraPanel.SetActive(true);
+            ElidoraHit();
 
         foreach (Slime slime in slimes)
         {
@@ -130,32 +125,25 @@ public class SlimeManager : MonoBehaviour
 
     public void Restart()
     {
-        outOfTimePanel.SetActive(false);
-        elidoraPanel.SetActive(false);
         StartGame();
     }
 
-    public void ToHome()
+    public void OutOfTimeEnd()
     {
         Data.instance.GetComponent<Data>().slimeFostiados = true;
 
-        if (elidoraPanel.gameObject.activeInHierarchy)
-        {
+        if (score < 50)
             Data.instance.GetComponent<Data>().slimeFail = true;
-            Data.instance.GetComponent<Data>().elidoraAcariciada = true;
-            SceneManager.LoadScene("Home");
-        }
 
+        fTB.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
 
-        else if (outOfTimePanel.gameObject.activeInHierarchy)
-        {
-            if (score < 50)
-            {
-                Data.instance.GetComponent<Data>().slimeFail = true;
-                SceneManager.LoadScene("Home");
-            }
-            else
-                SceneManager.LoadScene("Home");
-        }
+    }
+
+    public void ElidoraHit()
+    {
+        Data.instance.GetComponent<Data>().slimeFostiados = true;
+        Data.instance.GetComponent<Data>().slimeFail = true;
+        Data.instance.GetComponent<Data>().elidoraAcariciada = true;
+        fTB.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
     }
 }

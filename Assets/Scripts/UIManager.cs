@@ -38,6 +38,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject leCajaRegistradora;
     [SerializeField] public GameObject buttonCobrar;
     [SerializeField] public GameObject buttonNoCobrar;
+    [SerializeField] public GameObject leMaletin1;
+    [SerializeField] public GameObject leMaletin2;
     [SerializeField] public GameObject lesPropinas;
     [SerializeField] public GameObject lesPropinasBW;
     [SerializeField] public Sprite[] propinasSprites;
@@ -114,6 +116,7 @@ public class UIManager : MonoBehaviour
     bool SospechosoTerminado = false;
     public GameObject backgroundBAndW;
     public GameObject tableBAndW;
+    public GameObject candleEffect;
     public GameObject candle;
     public GameObject candleBAndW;
     public GameObject propinasBAndW;
@@ -715,6 +718,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FadeToBAndW(float fadeSpeed = 0.75f)
     {
+        candleEffect.SetActive(false);
         phoneBW.GetComponent<Image>().enabled = true;
         dialoguePanel.GetComponent<Image>().sprite = downerBoxBW;
         dialoguePanel.transform.GetChild(0).GetComponent<Image>().sprite = upperBoxBW;
@@ -724,7 +728,8 @@ public class UIManager : MonoBehaviour
         float fadeAmount, negFadeAmount;
         while (tableBAndW.GetComponent<Image>().color.a > 0 && backgroundBAndW.GetComponent<SpriteRenderer>().color.a > 0
             && candleBAndW.GetComponent<Image>().color.a > 0 && propinasBAndW.GetComponent<Image>().color.a > 0
-            && phone.GetComponent<Image>().color.a > 0 && leCajaRegistradora.GetComponent<Image>().color.a > 0)
+            && phone.GetComponent<Image>().color.a > 0 && leCajaRegistradora.GetComponent<Image>().color.a > 0
+            && leMaletin1.GetComponent<Image>().color.a > 0 && leMaletin2.GetComponent<Image>().color.a > 0)
         {
             fadeAmount = phoneColor.a - (fadeSpeed * Time.deltaTime);
             negFadeAmount = candleColor.a + (fadeSpeed * Time.deltaTime);
@@ -735,6 +740,8 @@ public class UIManager : MonoBehaviour
             candleBAndW.GetComponent<Image>().color = phoneColor;
             backgroundBAndW.GetComponent<SpriteRenderer>().color = phoneColor;
             propinasBAndW.GetComponent<Image>().color = phoneColor;
+            leMaletin1.GetComponent<Image>().color = phoneColor;
+            leMaletin2.GetComponent<Image>().color = phoneColor;
             leCajaRegistradora.GetComponent<Image>().color = phoneColor;
             candle.GetComponent<Image>().color = candleColor;
             yield return null;

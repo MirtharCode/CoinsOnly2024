@@ -388,6 +388,117 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &848564502827365048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4454912322793111004}
+  - component: {fileID: 3983541525518075786}
+  - component: {fileID: 5605327333642035962}
+  - component: {fileID: 1132113568255782049}
+  - component: {fileID: 6116464461762012881}
+  m_Layer: 5
+  m_Name: ElCuponazo2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4454912322793111004
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848564502827365048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4431541952448676787}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 586.2784, y: 1036.5758}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3983541525518075786
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848564502827365048}
+  m_CullTransparentMesh: 1
+--- !u!114 &5605327333642035962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848564502827365048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d2cf4a092ca00374d9992f4f548c1a24, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1132113568255782049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848564502827365048}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f3e394e7d9fc74c965de5112c5fe55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6116464461762012881
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848564502827365048}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eee09323d63042f498679e557f9d2eda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &958067915987142542
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +820,7 @@ GameObject:
   - component: {fileID: 7610994069333586600}
   - component: {fileID: 4297104424003257249}
   m_Layer: 5
-  m_Name: ElCuponazo2
+  m_Name: ElCuponazoBW2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +837,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4454912322793111004}
   m_Father: {fileID: 6490849014028305384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -763,7 +875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d2cf4a092ca00374d9992f4f548c1a24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 655bc36d57aa345459839158342b0b09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2439,6 +2551,82 @@ MonoBehaviour:
   m_Sprite: {fileID: 21300000, guid: 965da2bea4b7b6d478fa43a5720ee46c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3449968799425875371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3418357062203151499}
+  - component: {fileID: 2439534628026711764}
+  - component: {fileID: 295688393657914947}
+  m_Layer: 5
+  m_Name: ElCuponazo1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3418357062203151499
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449968799425875371}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2007395372243585987}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 586.2784, y: 587.96}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2439534628026711764
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449968799425875371}
+  m_CullTransparentMesh: 1
+--- !u!114 &295688393657914947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449968799425875371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1ad43843dc8980c4986f0abe660abf59, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4803,10 +4991,8 @@ GameObject:
   - component: {fileID: 2007395372243585987}
   - component: {fileID: 979054745222312360}
   - component: {fileID: 5054361337296527439}
-  - component: {fileID: 5842060109674510933}
-  - component: {fileID: 7428104877714253575}
   m_Layer: 5
-  m_Name: ElCuponazo1
+  m_Name: ElCuponazoBW1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4823,7 +5009,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3418357062203151499}
   m_Father: {fileID: 2560670244052472493}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4860,7 +5047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ad43843dc8980c4986f0abe660abf59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dc0c60237e556c4ea7a7a66cb8f536a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4870,39 +5057,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5842060109674510933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542495307496764564}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f3e394e7d9fc74c965de5112c5fe55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &7428104877714253575
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542495307496764564}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32fea9edf894a814c9b48945880e810d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5596825028669949324
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,6 +6389,8 @@ MonoBehaviour:
   leCajaRegistradora: {fileID: 5982892004944006116}
   buttonCobrar: {fileID: 3102340476712600803}
   buttonNoCobrar: {fileID: 8570065602312848982}
+  leMaletin1: {fileID: 3449968799425875371}
+  leMaletin2: {fileID: 848564502827365048}
   lesPropinas: {fileID: 5982892003558459354}
   lesPropinasBW: {fileID: 7855753266252407460}
   propinasSprites:
@@ -6250,17 +6406,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5bdf0fdda88ad904eae130010a52ed54, type: 3}
   - {fileID: 21300000, guid: 57fe527aadddd714d815b6c1d336fa98, type: 3}
   propinasBWSprites:
-  - {fileID: 21300000, guid: a5e57b9db4878cd41900ef1ff16d61ed, type: 3}
-  - {fileID: 21300000, guid: 28572c4a9f7aca24b99898b49a117144, type: 3}
-  - {fileID: 21300000, guid: 3763ab9e1fba2174ca68e35dbce2d824, type: 3}
-  - {fileID: 21300000, guid: 0802af91fc0f2b245bad38caed36ede2, type: 3}
-  - {fileID: 21300000, guid: 3f87646888ac9c84d8c776c9eeb9a717, type: 3}
-  - {fileID: 21300000, guid: 82c8e59f59086f7479bca9b0d9f8d4a7, type: 3}
-  - {fileID: 21300000, guid: a3a1776be65f53347af782ddfff74963, type: 3}
-  - {fileID: 21300000, guid: cf6c60528dad8d241817d93977333423, type: 3}
-  - {fileID: 21300000, guid: 11ebf70c72b32dd4aabe1170437a01ce, type: 3}
-  - {fileID: 21300000, guid: 5bdf0fdda88ad904eae130010a52ed54, type: 3}
-  - {fileID: 21300000, guid: 57fe527aadddd714d815b6c1d336fa98, type: 3}
+  - {fileID: 21300000, guid: 73f6ba505a0f5624190753f832800826, type: 3}
+  - {fileID: 21300000, guid: 7fee37eaef1058041a21de0b3190b091, type: 3}
+  - {fileID: 21300000, guid: 41924c4bb3b87d0438ff9e3a0f6025ac, type: 3}
+  - {fileID: 21300000, guid: 2f65380c14ecda74c90cc5911636c163, type: 3}
+  - {fileID: 21300000, guid: b73ff9533f1897d4fb69a1df96fe6531, type: 3}
+  - {fileID: 21300000, guid: e27513e7432231e44b9a9f95cea1c7bb, type: 3}
+  - {fileID: 21300000, guid: ae66cbc6f71108348bd447a9b23d183a, type: 3}
+  - {fileID: 21300000, guid: 372513cd074317b40b21a65d84b99b3d, type: 3}
+  - {fileID: 21300000, guid: 989c2b946c4038b42b7294af90b59c68, type: 3}
+  - {fileID: 21300000, guid: c13fa9ce6cb85b24ba29a0608344d128, type: 3}
+  - {fileID: 21300000, guid: 8ad2afa6249e3e048880c13fa40aec73, type: 3}
   leDineroText: {fileID: 5982892005254501743}
   lePropinasText: {fileID: 5982892003244695455}
   propinasNumber: 0
@@ -6321,6 +6477,7 @@ MonoBehaviour:
   variableDetective: 0
   backgroundBAndW: {fileID: 0}
   tableBAndW: {fileID: 8640198305523296667}
+  candleEffect: {fileID: 7115569497141492983}
   candle: {fileID: 7649357147257144314}
   candleBAndW: {fileID: 5982892004513391206}
   propinasBAndW: {fileID: 5982892003558459354}
