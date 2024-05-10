@@ -15,6 +15,9 @@ public class H_Petra : Hibridos
     {
         base.Start();
         nombre = "Petra";
+
+        if (data.GetComponent<Data>().giftPetra)
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

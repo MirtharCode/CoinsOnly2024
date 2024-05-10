@@ -163,12 +163,15 @@ MonoBehaviour:
   raza: 
   nombre: 
   talkingSound: {fileID: 0}
+  lastPlayerSound: {fileID: 0}
   sounds:
-  - {fileID: 8300000, guid: eaa8f0c24ab20da4cba21c2439ff60e1, type: 3}
-  - {fileID: 8300000, guid: 6299f5715505f2a459bdcb595dece993, type: 3}
-  - {fileID: 8300000, guid: 59570ce59f4ad3c439b3a64d0adbeb8b, type: 3}
-  - {fileID: 8300000, guid: b9c1bc3021a1a2048a5344afd225f737, type: 3}
-  - {fileID: 8300000, guid: 32c51253757cf5244a5ea022d5b6c9bf, type: 3}
+  - {fileID: 8300000, guid: d4277a73ba548a94ba4898b96ce548ce, type: 3}
+  - {fileID: 8300000, guid: e1213d33b6737474eab8d9502bdc897a, type: 3}
+  - {fileID: 8300000, guid: 3785c49e4bc868b409257ac10c021402, type: 3}
+  - {fileID: 8300000, guid: c07d7bfa48a214849aaad499b02118ff, type: 3}
+  - {fileID: 8300000, guid: 1297bfcd917602841a1c42c5199387ff, type: 3}
+  ftBObject: {fileID: 0}
+  repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}

@@ -17,6 +17,9 @@ public class T_Denjirenji : Tecnopedos
         base.Start();
         nombre = "Denjirenji";
 
+        if (data.GetComponent<Data>().giftDenjirenji)
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
+
         trampilla = GameObject.FindGameObjectWithTag("Trampilla");
     }
 

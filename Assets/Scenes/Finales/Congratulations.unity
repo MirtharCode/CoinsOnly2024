@@ -154,7 +154,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -369,6 +369,7 @@ MonoBehaviour:
   data: {fileID: 0}
   currentScene:
     m_Handle: 0
+  toBlackClip: {fileID: 0}
 --- !u!1 &1102618558
 GameObject:
   m_ObjectHideFlags: 0

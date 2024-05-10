@@ -17,9 +17,7 @@ public class L_Sergio : Limbasticos
         nombre = "Sergio";
 
         if (data.GetComponent<Data>().giftSergio)
-        {
             GetComponent<SpriteRenderer>().sprite = spriteAlt;
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

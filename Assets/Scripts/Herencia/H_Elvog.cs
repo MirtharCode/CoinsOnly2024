@@ -15,6 +15,9 @@ public class H_Elvog : Hibridos
     {
         base.Start();
         nombre = "Elvog";
+
+        if (data.GetComponent<Data>().giftElvog)
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)

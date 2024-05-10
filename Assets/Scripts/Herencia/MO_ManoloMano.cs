@@ -9,11 +9,15 @@ public class MO_ManoloMano : MagosOscuros
     [SerializeField] public GameObject product1;
     [SerializeField] public GameObject product2;
     [SerializeField] public GameObject product3;
+    [SerializeField] public Sprite spriteAlt;
 
     protected override void Start()
     {
         base.Start();
         nombre = "Manolo Mano Manitas";
+
+        if (data.GetComponent<Data>().giftMano)
+            GetComponent<SpriteRenderer>().sprite = spriteAlt;
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
