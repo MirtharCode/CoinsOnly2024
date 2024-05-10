@@ -14,12 +14,14 @@ public class VoucherIndicator : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         //GetComponent<Animator>().SetTrigger("Up");
-        GetComponent<Image>().color = Color.blue;
+        //GetComponent<Image>().color = Color.blue;
+        GetComponent<Animator>().SetBool("GoingUp", true);
     }
 
-    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
         //GetComponent<Animator>().SetTrigger("Down");
-        GetComponent<Image>().color = Color.green;
+        //GetComponent<Image>().color = Color.green;
+        GetComponent<Animator>().SetBool("GoingUp", false);
     }
 }
