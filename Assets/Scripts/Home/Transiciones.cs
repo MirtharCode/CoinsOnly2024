@@ -31,13 +31,25 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
+        Debug.Log("Holi");
         if (data.GetComponent<Data>().sePueTocar)
         {
             FTBRegular();
             if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
             else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
             else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
-            else if (data.day4Check) SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
+            else if (data.day4Check)
+            {
+                if (data.videoVisto)
+                    SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
+                else
+                {
+                    data.videoActivo = true;
+                    SceneManager.LoadScene("Home");
+                }
+
+            }
+
 
             else if (data.day5Check)
             {

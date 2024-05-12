@@ -60,6 +60,8 @@ public class Data : MonoBehaviour
     [SerializeField] public bool day3Check = false;
     [SerializeField] public bool day4Check = false;
     [SerializeField] public bool day5Check = false;
+    [SerializeField] public bool videoActivo = false;
+    [SerializeField] public bool videoVisto = false;
     [SerializeField] public bool finalMuyMaloConseguido = false;
     [SerializeField] public bool finalMaloConseguido = false;
     [SerializeField] public bool finalBuenoConseguido = false;

@@ -416,6 +416,8 @@ GameObject:
   m_Component:
   - component: {fileID: 55562234}
   - component: {fileID: 55562233}
+  - component: {fileID: 55562235}
+  - component: {fileID: 55562236}
   m_Layer: 5
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -431,7 +433,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55562232}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a5fff3ae77bd79d4ea36f622f15bbe22, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 5c78fcc006883bb4dbe89c0e19c71bcd, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -478,6 +480,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &55562235
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55562232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fd23efa37fb59f43a35aa497f59939a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &55562236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55562232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0500aad2b4c05b54fb9fdb898ac3a100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  video: {fileID: 0}
+  fTBObject: {fileID: 726965284}
+  data: {fileID: 0}
+  transicionesGameobject: {fileID: 929208246}
 --- !u!1 &69593397
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +806,10 @@ MonoBehaviour:
   doorSound: {fileID: 251695837}
   openDoorSound: {fileID: 8300000, guid: a7dd41fe51de5644faa970ec19d44d00, type: 3}
   closeDoorSound: {fileID: 8300000, guid: 2101136223b53334d93b39ca8486c210, type: 3}
+  videoplayer: {fileID: 55562232}
+  pantalla: {fileID: 1446496621}
+  video: {fileID: 32900000, guid: 5c78fcc006883bb4dbe89c0e19c71bcd, type: 3}
+  fTBObject: {fileID: 726965284}
   clientGoingOutClip: {fileID: 7400000, guid: 1db6c9729f014334dbb5c7716ff02f3c, type: 2}
   musicBox: {fileID: 1437515236}
   evilWizardGerard: {fileID: 21300000, guid: fb685a262fcd85b4190581c180073b00, type: 3}
@@ -2803,14 +2846,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day1Check
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day3Check
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: day4Check
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day5Check
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: videoActivo
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}

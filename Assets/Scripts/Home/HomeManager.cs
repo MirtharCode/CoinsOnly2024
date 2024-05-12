@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class HomeManager : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public AudioSource doorSound;
     [SerializeField] public AudioClip openDoorSound;
     [SerializeField] public AudioClip closeDoorSound;
+    [SerializeField] public GameObject videoplayer;
+    [SerializeField] public GameObject pantalla;
+    [SerializeField] public VideoClip video;
+    [SerializeField] public GameObject fTBObject;
+
+
 
     [SerializeField] public AnimationClip clientGoingOutClip;
     [SerializeField] public GameObject musicBox;
@@ -133,10 +140,20 @@ public class HomeManager : MonoBehaviour
 
     void Start()
     {
+
         musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(3).GetComponent<AudioSource>().mute = true;
+
+        if (data.GetComponent<Data>().videoActivo)
+        {
+            musicBox.GetComponent<AudioSource>().mute = true;
+            fTBObject.GetComponent<Image>().enabled = false;
+
+            videoplayer.SetActive(true);
+            pantalla.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -147,7 +164,9 @@ public class HomeManager : MonoBehaviour
 
     public void SomeoneIsKnocking()
     {
-        if (!data.GetComponent<Data>().yaSeFueCliente)
+        data.GetComponent<Data>().sePueTocar = true;
+
+        if (!data.GetComponent<Data>().yaSeFueCliente && !data.GetComponent<Data>().videoActivo)
         {
             if (Data.instance.day1Check && !Data.instance.giftTapicio)
             {
