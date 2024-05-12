@@ -37,17 +37,20 @@ public class FadeToBlack : MonoBehaviour
         SceneManager.LoadScene("Day1");
     }
 
-    // TRANSICIÓN A NEGRO DE LA TIENDA A CASA
+    // TRANSICIÓN A NEGRO DE LA TIENDA A CASA / DE DENJIRENJI A TIENDA / DE ELIDORA A CASA
     public void FadeToBlackAnywhere()
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
         if (currentScene.name.Contains("Pila"))
+        {
+            GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
             Invoke(nameof(VolverDelCuloDelMicroondas), fadeToblackClipTime);
-
+        }
+            
         else if (currentScene.name.Contains("Whack"))
         {
-            GetComponent<Image>().enabled = true;
+            GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
             Invoke(nameof(VolverDeGolpearSlimes), fadeToblackClipTime);
         }
 
