@@ -25,9 +25,10 @@ public class VideoPlayer : MonoBehaviour
     public void VideoShown()
     {
         data.GetComponent<Data>().videoVisto = true;
+        data.GetComponent<Data>().videoActivo = false;
         data.GetComponent<Data>().sePueTocar = true;
         fTBObject.GetComponent<Image>().enabled = true;
-        transicionesGameobject.GetComponent<Transiciones>().NextDayTransiciones();
+        transicionesGameobject.GetComponent<Transiciones>().FTBRegular();
         //SceneManager.LoadScene("Day5");
     }
 }
