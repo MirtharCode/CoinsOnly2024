@@ -967,9 +967,9 @@ public class UIManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Cululu"))
             {
                 Data.instance.vecesCobradoCululu++;
-                mostrarJefe = true;
+                mostrarJefe = false;
                 textoJefe.text = quejas[2];
-                LaVoluntad(-15);
+                LaVoluntad(10);
             }
 
             return dialogueText.text;
