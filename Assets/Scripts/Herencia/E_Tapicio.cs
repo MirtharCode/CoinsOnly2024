@@ -33,7 +33,7 @@ public class E_Tapicio : Elementales
             product1.transform.SetParent(twoProducts1);
             product2 = Instantiate(gameManager.GetComponent<GameManager>().deadCat, twoProducts2.position, twoProducts2.rotation);
             product2.transform.SetParent(twoProducts2);
-            uIManager.GetComponent<UIManager>().leDineroText.text = "22";
+            uIManager.GetComponent<UIManager>().leDineroText.text = "16";
         }
 
         else if (currentScene.name == "Day2_2")

@@ -28,7 +28,7 @@ public class FadeToBlack : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
+        //if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
             Invoke(nameof(CallingFirstDay), fadeToblackClipTime);
     }
 
