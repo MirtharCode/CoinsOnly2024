@@ -51,7 +51,6 @@ public class FadeToBlack : MonoBehaviour
 
         else if (data.GetComponent<Data>().day5Check)
         {
-            SceneManager.LoadScene("Day1");
             data.GetComponent<Data>().samuraiPagaMal = false;
             data.GetComponent<Data>().borrachoTriste = false;
             data.GetComponent<Data>().samuraiAyudado1 = false;
@@ -89,6 +88,8 @@ public class FadeToBlack : MonoBehaviour
             data.GetComponent<Data>().slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
             data.GetComponent<Data>().slimeFail = false;                     // Si no llegaste a 50 puntos en el minijuego de Elidora.
             data.GetComponent<Data>().elidoraAcariciada = false;             // Si le metiste tremendo cebollazo al pedrolo de Elidora.
+
+            SceneManager.LoadScene("Day1");
         }
 
         else
