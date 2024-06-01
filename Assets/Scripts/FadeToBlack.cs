@@ -34,7 +34,65 @@ public class FadeToBlack : MonoBehaviour
 
     public void CallingFirstDay()
     {
-        SceneManager.LoadScene("Day1");
+        if(data.GetComponent<Data>().day0Check)
+            SceneManager.LoadScene("Day1");
+
+        else if(data.GetComponent<Data>().day1Check)
+            SceneManager.LoadScene("Day2_1");
+
+        else if (data.GetComponent<Data>().day2Check)
+            SceneManager.LoadScene("Day3_1");
+
+        else if (data.GetComponent<Data>().day3Check)
+            SceneManager.LoadScene("Day4");
+
+        else if (data.GetComponent<Data>().day4Check)
+            SceneManager.LoadScene("Day5");
+
+        else if (data.GetComponent<Data>().day5Check)
+        {
+            SceneManager.LoadScene("Day1");
+            data.GetComponent<Data>().samuraiPagaMal = false;
+            data.GetComponent<Data>().borrachoTriste = false;
+            data.GetComponent<Data>().samuraiAyudado1 = false;
+            data.GetComponent<Data>().samuraiAyudado2 = false;
+            data.GetComponent<Data>().vecesSamuraiAyudado = 0;
+            data.GetComponent<Data>().videoActivo = false;
+            data.GetComponent<Data>().videoVisto = false;
+            data.GetComponent<Data>().tipsPoints = 0;
+            data.GetComponent<Data>().detectivePoints = 0;
+
+            data.GetComponent<Data>().fase1Check = false;
+            data.GetComponent<Data>().fase2Check = false;
+            data.GetComponent<Data>().fase3Check = false;
+            data.GetComponent<Data>().fase4Check = false;
+            data.GetComponent<Data>().fase5Check = false;
+            data.GetComponent<Data>().fase6Check = false;
+            data.GetComponent<Data>().fase7Check = false;
+            data.GetComponent<Data>().fase8Check = false;
+            data.GetComponent<Data>().fase9Check = false;
+
+            data.GetComponent<Data>().sePueTocar = false;
+            data.GetComponent<Data>().yaSeFueCliente = false;
+            data.GetComponent<Data>().tipsBetweenDays = 0;
+
+            data.GetComponent<Data>().vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
+            data.GetComponent<Data>().vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
+            data.GetComponent<Data>().vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
+            data.GetComponent<Data>().vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+            data.GetComponent<Data>().noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
+            data.GetComponent<Data>().vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
+            data.GetComponent<Data>().vecesCobradoRaven = 0;
+            data.GetComponent<Data>().numGnomosFinded = 0;
+            data.GetComponent<Data>().nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
+            data.GetComponent<Data>().nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
+            data.GetComponent<Data>().slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
+            data.GetComponent<Data>().slimeFail = false;                     // Si no llegaste a 50 puntos en el minijuego de Elidora.
+            data.GetComponent<Data>().elidoraAcariciada = false;             // Si le metiste tremendo cebollazo al pedrolo de Elidora.
+        }
+
+        else
+            SceneManager.LoadScene("Day1");
     }
 
     // TRANSICIÓN A NEGRO DE LA TIENDA A CASA / DE DENJIRENJI A TIENDA / DE ELIDORA A CASA

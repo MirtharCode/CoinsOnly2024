@@ -49,6 +49,8 @@ public class FotitoPersonajeMenu : MonoBehaviour
             randomIndex = Random.Range(0, imagenes.Length);
             imageComponent.sprite = imagenes[randomIndex];
         }
+
+        else imageComponent.sprite = imagenes[0]; //Si no detecta ningún día completado, salta el jefe (Esto debido al guardado)
     }
 
     public void NextImage()
