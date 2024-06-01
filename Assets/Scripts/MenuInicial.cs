@@ -31,6 +31,7 @@ public class MenuInicial : MonoBehaviour
 
     public void Salir()
     {
+        data.GetComponent<Data>().GuardarDatos();
         Debug.Log("Salir...");
         Application.Quit();
     }

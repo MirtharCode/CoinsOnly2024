@@ -1593,6 +1593,7 @@ public class UIManager : MonoBehaviour
 
     public void Salir()
     {
+        Data.instance.GuardarDatos();
         Debug.Log("Salir...");
         Application.Quit();
     }

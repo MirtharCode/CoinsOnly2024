@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class Data : MonoBehaviour
 {
@@ -126,11 +127,15 @@ public class Data : MonoBehaviour
 
     [SerializeField] public List<string> cCDialogue;
 
-
     public static Data instance;
+
+    public string archivoDeGuardado;
+    public SavedData datosJuego = new SavedData();
 
     void Awake()
     {
+        archivoDeGuardado = Application.dataPath + "/datosJuego.json";
+
         uIManager = null;
         homeManager = null;
 
@@ -139,6 +144,198 @@ public class Data : MonoBehaviour
         else instance = this;
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        CargarDatos();
+    }
+
+    public void CargarDatos()
+    {
+        if (File.Exists(archivoDeGuardado))
+        {
+            string contenido = File.ReadAllText(archivoDeGuardado);
+            datosJuego = JsonUtility.FromJson<SavedData>(contenido);
+
+            spaSpain = datosJuego.savedspaSpain;
+            engAmerican = datosJuego.savedengAmerican;
+            spaColombian = datosJuego.savedspaColombian;
+
+            numEvilWizard = datosJuego.savednumEvilWizard;
+
+            numHybrid = datosJuego.savednumHybrid;
+
+            numLimbastic = datosJuego.savednumLimbastic;
+
+            numElemental = datosJuego.savednumElemental;
+
+            numElectroped = datosJuego.SavednumElectroped;
+
+            samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
+            borrachoTriste = datosJuego.savedborrachoTriste;
+            samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+            samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+            vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
+
+            day0Check = datosJuego.savedday0Check;
+            day1Check = datosJuego.savedday1Check;
+            day2Check = datosJuego.savedday2Check;
+            day3Check = datosJuego.savedday3Check;
+            day4Check = datosJuego.savedday4Check;
+            day5Check = datosJuego.savedday5Check;
+            videoActivo = datosJuego.savedvideoActivo;
+            videoVisto = datosJuego.savedvideoVisto;
+            finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
+            finalMaloConseguido = datosJuego.savedfinalMaloConseguido;
+            finalBuenoConseguido = datosJuego.savedfinalBuenoConseguido;
+            finalMuyBuenoConseguido = datosJuego.savedfinalMuyBuenoConseguido;
+            finalSecretoConseguido = datosJuego.savedfinalSecretoConseguido;
+            tipsPoints = datosJuego.savedtipsPoints;
+            detectivePoints = datosJuego.saveddetectivePoints;
+
+            fase1Check = datosJuego.savedfase1Check;
+            fase2Check = datosJuego.savedfase2Check;
+            fase3Check = datosJuego.savedfase3Check;
+            fase4Check = datosJuego.savedfase4Check;
+            fase5Check = datosJuego.savedfase5Check;
+            fase6Check = datosJuego.savedfase6Check;
+            fase7Check = datosJuego.savedfase7Check;
+            fase8Check = datosJuego.savedfase8Check;
+            fase9Check = datosJuego.savedfase9Check;
+
+            sePueTocar = datosJuego.savedsePueTocar;
+            yaSeFueCliente = datosJuego.savedyaSeFueCliente;
+            tipsBetweenDays = datosJuego.savedtipsBetweenDays;
+
+            vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
+            vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
+            vecesCobradaMara = datosJuego.savedvecesCobradaMara;
+            vecesCobradaHandy = datosJuego.savedvecesCobradaHandy;
+            noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
+            vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
+            vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
+            numGnomosFinded = datosJuego.savednumGnomosFinded;
+            nerviosusPagaLoQueDebe = datosJuego.savednerviosusPagaLoQueDebe;
+            nerviosusTeDebePasta = datosJuego.savednerviosusTeDebePasta;
+            slimeFostiados = datosJuego.savedslimeFostiados;
+            slimeFail = datosJuego.savedslimeFail;
+            elidoraAcariciada = datosJuego.savedelidoraAcariciada;
+
+            giftGeeraard = datosJuego.savedgiftGeeraard;
+            giftEnano = datosJuego.savedgiftEnano;
+            giftMano = datosJuego.savedgiftMano;
+            giftElidora = datosJuego.savedgiftElidora;
+            giftElvog = datosJuego.savedgiftElvog;
+            giftMara = datosJuego.savedgiftMara;
+            giftPetra = datosJuego.savedgiftPetra;
+            giftAntonio = datosJuego.savedgiftAntonio;
+            giftGiovanni = datosJuego.savedgiftGiovanni;
+            giftCululu = datosJuego.savedgiftCululu;
+            giftSergio = datosJuego.savedgiftSergio;
+            giftTapicio = datosJuego.savedgiftTapicio;
+            giftHandy = datosJuego.savedgiftHandy;
+            giftDenjirenji = datosJuego.savedgiftDenjirenji;
+            giftRaven = datosJuego.savedgiftRaven;
+
+        }
+
+        else
+        {
+            Debug.Log("El archivo no existe");
+        }
+    }
+
+    public void GuardarDatos()
+    {
+        SavedData nuevosDatos = new SavedData()
+        {
+            savedspaSpain = spaSpain,
+            savedengAmerican = engAmerican,
+            savedspaColombian = spaColombian,
+
+            savednumEvilWizard = numEvilWizard,
+
+            savednumHybrid = numHybrid,
+
+            savednumLimbastic = numLimbastic,
+
+            savednumElemental = numElemental,
+
+            SavednumElectroped = numElectroped,
+
+            savedsamuraiPagaMal = samuraiPagaMal,
+            savedborrachoTriste = borrachoTriste,
+            savedsamuraiAyudado1 = samuraiAyudado1,
+            savedsamuraiAyudado2 = samuraiAyudado2,
+            savedvecesSamuraiAyudado = vecesSamuraiAyudado,
+
+            savedday0Check = day0Check,
+            savedday1Check = day1Check,
+            savedday2Check = day2Check,
+            savedday3Check = day3Check,
+            savedday4Check = day4Check,
+            savedday5Check = day5Check,
+            savedvideoActivo = videoActivo,
+            savedvideoVisto = videoVisto,
+            savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
+            savedfinalMaloConseguido = finalMaloConseguido,
+            savedfinalBuenoConseguido = finalBuenoConseguido,
+            savedfinalMuyBuenoConseguido = finalMuyBuenoConseguido,
+            savedfinalSecretoConseguido = finalSecretoConseguido,
+            savedtipsPoints = tipsPoints,
+            saveddetectivePoints = detectivePoints,
+
+            savedfase1Check = fase1Check,
+            savedfase2Check = fase2Check,
+            savedfase3Check = fase3Check,
+            savedfase4Check = fase4Check,
+            savedfase5Check = fase5Check,
+            savedfase6Check = fase6Check,
+            savedfase7Check = fase7Check,
+            savedfase8Check = fase8Check,
+            savedfase9Check = fase9Check,
+
+            savedsePueTocar = sePueTocar,
+            savedyaSeFueCliente = yaSeFueCliente,
+            savedtipsBetweenDays = tipsBetweenDays,
+
+            savedvecesCobradoCululu = vecesCobradoCululu,
+            savedvecesCobradoGiovanni = vecesCobradoGiovanni,
+            savedvecesCobradaMara = vecesCobradaMara,
+            savedvecesCobradaHandy = vecesCobradaHandy,
+            savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
+            savedvecesCobradoAntonio = vecesCobradoAntonio,
+            savedvecesCobradoRaven = vecesCobradoRaven,
+            savednumGnomosFinded = numGnomosFinded,
+            savednerviosusPagaLoQueDebe = nerviosusPagaLoQueDebe,
+            savednerviosusTeDebePasta = nerviosusTeDebePasta,
+            savedslimeFostiados = slimeFostiados,
+            savedslimeFail = slimeFail,
+            savedelidoraAcariciada = elidoraAcariciada,
+
+            savedgiftGeeraard = giftGeeraard,
+            savedgiftEnano = giftEnano,
+            savedgiftMano = giftMano,
+            savedgiftElidora = giftElidora,
+            savedgiftElvog = giftElvog,
+            savedgiftMara = giftMara,
+            savedgiftPetra = giftPetra,
+            savedgiftAntonio = giftAntonio,
+            savedgiftGiovanni = giftGiovanni,
+            savedgiftCululu = giftCululu,
+            savedgiftSergio = giftSergio,
+            savedgiftTapicio = giftTapicio,
+            savedgiftHandy = giftHandy,
+            savedgiftDenjirenji = giftDenjirenji,
+            savedgiftRaven = giftRaven
+        };
+
+        string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
+
+        File.WriteAllText(archivoDeGuardado, cadenaJSON);
+
+        Debug.Log("Archivo Guardado");
     }
 
     #region Todos los diálogos de Coins Only
