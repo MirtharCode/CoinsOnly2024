@@ -34,6 +34,7 @@ public class Agua : MonoBehaviour
                 cargador1.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 ultimoCargador = cargador1;
             }
+
             else if (!cargador2.activeSelf)
             {
                 cargador2.SetActive(true);

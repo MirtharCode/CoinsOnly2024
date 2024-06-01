@@ -1015,7 +1015,13 @@ public class UIManager : MonoBehaviour
                 || currentCustomer.name.Contains("Rustica") || currentCustomer.name.Contains("Mano"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+
+                if (currentCustomer.name.Contains("Hueso") || currentCustomer.name.Contains("Rustica"))
+                    textoJefe.text = quejas[4];
+
+                else
+                    textoJefe.text = quejas[2];
+
                 LaVoluntad(-15);
             }
 
@@ -1077,7 +1083,13 @@ public class UIManager : MonoBehaviour
                 || currentCustomer.name.Contains("Magma") || currentCustomer.name.Contains("Geraaaard"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+
+                if(currentCustomer.name.Contains("Elidora"))
+                    textoJefe.text = quejas[4];
+
+                else
+                    textoJefe.text = quejas[2];
+
                 LaVoluntad(-15);
             }
 
@@ -1135,7 +1147,13 @@ public class UIManager : MonoBehaviour
             else if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Masermati") || currentCustomer.name.Contains("Saltarisis"))
             {
                 mostrarJefe = true;
-                textoJefe.text = quejas[2];
+
+                if (currentCustomer.name.Contains("Rockon") || currentCustomer.name.Contains("Masermati"))
+                    textoJefe.text = quejas[4];
+
+                else
+                    textoJefe.text = quejas[2];
+
                 LaVoluntad(-15);
             }
 

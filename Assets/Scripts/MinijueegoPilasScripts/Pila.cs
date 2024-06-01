@@ -11,11 +11,14 @@ public class Pila : MonoBehaviour
     [SerializeField] public Sprite spriteNoCargada;
     [SerializeField] public GameObject explosion;
     private Rigidbody2D rb2d;
+    [SerializeField] public AudioClip sonidoColision;
+    private AudioSource audioSource;
 
     void Start()
     {
         cargado = false;
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,5 +32,10 @@ public class Pila : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         rb2d.velocity = new Vector2(moveHorizontal * velocidad, moveVertical * velocidad);
+    }
+
+    public void ReproducirSonido()
+    {
+        audioSource.PlayOneShot(sonidoColision);
     }
 }

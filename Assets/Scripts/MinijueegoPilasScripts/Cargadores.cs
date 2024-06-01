@@ -25,12 +25,11 @@ public class Cargadores : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Pila>().cargado == false)
         {
-            audioSource.PlayOneShot(sonidoColision);
+            collision.gameObject.GetComponent<Pila>().ReproducirSonido();
             collision.gameObject.GetComponent<Pila>().cargado = true;
             Sprite nuevoSprite = collision.gameObject.GetComponent<Pila>().spriteCargada;
             collision.gameObject.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            Invoke(nameof(MiraMamaMeMuero), 1);
+            gameObject.SetActive(false);
         }
     }
 
@@ -45,9 +44,4 @@ public class Cargadores : MonoBehaviour
     //        Invoke(nameof(MiraMamaMeMuero), 1);
     //    }
     //}
-
-    void MiraMamaMeMuero()
-    {
-        gameObject.SetActive(false);
-    }
 }
