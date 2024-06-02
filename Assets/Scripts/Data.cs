@@ -1474,7 +1474,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("And bellys to fill with your partner. Only for reproduction!");
                     cCDialogue.Add("After this I'll go pick up my kid from the zoo.");
                     cCDialogue.Add("Thank you so much cutie, hope you find love too hee hee hee.");
-                    cCDialogue.Add("Aw, now my son won't have the dead cat as a pet...");
+                    cCDialogue.Add("Aw, now my son won't have the dead cat for a pet...");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Giovanni"))
@@ -1485,42 +1485,42 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("The most explosive recipes, I think…");
                     cCDialogue.Add("So, for this first recipe I'll need...");
                     cCDialogue.Add("Oooh! ”How to summon Azathoth”, I'll cook this one");
-                    cCDialogue.Add("Suena increíble este plato, pillaré algunos ingredientes para hacer el plato.");
-                    cCDialogue.Add("“Primer paso: rociar vino hecho de sangre de virgen”");
-                    cCDialogue.Add("Cambiaré el vino por una buena cerveza, le dará más sabor.");
-                    cCDialogue.Add("“Segundo paso: cortar el muñeco voodoo por la mitad junto con la persona sacrificada”");
-                    cCDialogue.Add("No sé qué es eso de la persona sacrificada, pero el muñeco tiene buena pinta.");
-                    cCDialogue.Add("“Y tercer paso: beber el veneno para que el Dios se adueñe de tu cuerpo”");
-                    cCDialogue.Add("No suelo beber veneno, pero creo que se lo echaré al muñeco para darle el toque picante.");
-                    cCDialogue.Add("Tiene buena pinta ¿verdad? Para eso necesito estos ingredientes, así que si puedes cobrarme.");
-                    cCDialogue.Add("Gracias, la próxima vez que vuelva te dejaré probar el plato para que me des tu opinión.");
-                    cCDialogue.Add("Madre mía, ahora te perderás el mejor plato del mundo, pillaré las cosas en otro sitio.");
+                    cCDialogue.Add("Okay, first step...");
+                    cCDialogue.Add("“Cut the voodoo in half”");
+                    cCDialogue.Add("That I can do!");
+                    cCDialogue.Add("“Then pour a wine made out of a virgin's blood...”");
+                    cCDialogue.Add("I think beer will do the trick.");
+                    cCDialogue.Add("“Last step, drink the poison so that the dark one takes control of you body..?”");
+                    cCDialogue.Add("I'm not a big fan of poison, but adding it to the doll will make it... Spicyyyy!");
+                    cCDialogue.Add("Man, cooking is such an art!");
+                    cCDialogue.Add("Aye, thanks for everything, I'll tell you how it goes!");
+                    cCDialogue.Add("Aw sucks! How am I doing the recipe then... I'll get my stuff elsewhere");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rockon"))
                 {
-                    cCDialogue.Add("¿Ho-hola que tal?");
-                    cCDialogue.Add("Espero no molestar, y perdona mi tar-tartamudez. ");
-                    cCDialogue.Add("En fin, perdona otra vez. No me disculparé más, per-per-perdona.");
-                    cCDialogue.Add("Estoy intentando me-mejorar, como buen Rockon que soy.");
-                    cCDialogue.Add("Debo mejorar como papá, es muy fuerte.");
-                    cCDialogue.Add("Siempre me ha querido mu-mu-mucho.");
-                    cCDialogue.Add("Mi co-comida favorita es la gravilla que me hacía.");
-                    cCDialogue.Add("Además si le echabas cemento por encima, ya quedaba bueniiiiiisimo.");
-                    cCDialogue.Add("Bu-bu-bueno en fin… ¿Me puedes cobrar esto?");
-                    cCDialogue.Add("Es que le quiero dar una sorpresa a papá, seguro que este gato mu-muerto le hace mucha ilusión.");
-                    cCDialogue.Add("Gra-gra-gracias seguro que papá se pone feliz");
-                    cCDialogue.Add("Jopetas… Con la ilusión que me hacía regalarles esto a papá y mamá… Pero no tengo todo el dinero");
+                    cCDialogue.Add("Ha-hai... o//o");
+                    cCDialogue.Add("Sorry to bother... and my sta-sta-stammering... ");
+                    cCDialogue.Add("Sorry a-again... I won't say sorry again! I'm so so-sorry!");
+                    cCDialogue.Add("I'm working on it, re-really.");
+                    cCDialogue.Add("Daddy always te-tells me.");
+                    cCDialogue.Add("He is so co-cool. I want to be like him...");
+                    cCDialogue.Add("And he ma-makes the best gravel.");
+                    cCDialogue.Add("Not to mention how good i-it is with cement..!");
+                    cCDialogue.Add("That's why I am t-trying to surprise him with this dead ca-cat..!");
+                    cCDialogue.Add("I'm su-sure it'll make him som ha-happy..!");
+                    cCDialogue.Add("Thanks! Dad's go-gonna enjoy this..!");
+                    cCDialogue.Add("Aw… Not e-enough c-coins..? I'm guessing dad will not get it...");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefazo"))
                 {
-                    cCDialogue.Add("Seguro que fue muy agotador. pero mejor me lo comentas mañana.");
-                    cCDialogue.Add("Y un pajarito llamado Inspector de Empleo me ha dicho que no tienes casa.");
-                    cCDialogue.Add("Menos mal que tienes un jefe tan generoso y rico, así que te prestaré una de las mejores viviendas del reino.");
-                    cCDialogue.Add("Ese maravilloso lugar se llama: El sótano de la casa de mi madre.");
-                    cCDialogue.Add("Espero que te guste.");
-                    cCDialogue.Add("Llévate el traductor por si tengo que hablar contigo, tendrás que entender a mi madre.");
+                    cCDialogue.Add("Hello again, freshie. Hard work, isn't it?");
+                    cCDialogue.Add("A little bird called “Employment Inspector” told me you need a house.");
+                    cCDialogue.Add("And as I am so PIOUS, I am giving you a home, one of the greatests in the land!");
+                    cCDialogue.Add("It's name is... Mother's basement.");
+                    cCDialogue.Add("As you needed the home (for basic employement), you must thank me. Here are the directions.");
+                    cCDialogue.Add("And take the translator with you, you may need to communicate with mother.");
                 }
             }
 
@@ -1528,19 +1528,19 @@ public class Data : MonoBehaviour
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
-                    cCDialogue.Add("Buenos días chico nuevo.");
-                    cCDialogue.Add("¿Qué tal tu primer día?");
-                    cCDialogue.Add("Nah, es broma, realmente me da igual como te fuera tu primer día.");
-                    cCDialogue.Add("Seguro te lo dije en el tutorial, pero seguro no te acuerdas por tu cerebro enano.");
-                    cCDialogue.Add("Tenemos unas normas que seguir en la tienda a partir de hoy.");
-                    cCDialogue.Add("Además es “Magic Friday”, aunque lo seguirá siendo el resto del año, como todos los años...");
-                    cCDialogue.Add("Así que los magos tienen rebajas, y el resto de razas trabajan más a cambio.");
-                    cCDialogue.Add("También han prohibido varias bebidas a algunas razas.");
-                    cCDialogue.Add("Parece que sus cuerpos no soportan los ingredientes ilegales que llevan.");
-                    cCDialogue.Add("Eso es menos dinero para mi por desgracia.");
-                    cCDialogue.Add("Pero la multa será peor si me pillan.");
-                    cCDialogue.Add("Recuerda revisar las normas, están a la izquierda de la pantalla.");
-                    cCDialogue.Add("Buena suerte chico nuevo");
+                    cCDialogue.Add("Good morning freshie.");
+                    cCDialogue.Add("How did it go back at mother's?");
+                    cCDialogue.Add("Nah, just kidding, I don't care, really.");
+                    cCDialogue.Add("I'm quite sure I told you before, but I will remind it to that pea sized brain of yours.");
+                    cCDialogue.Add("We've got rules to follow, and today you get to see some.");
+                    cCDialogue.Add("Today is “Magic Friday”, and it will last forever, as it does every year...");
+                    cCDialogue.Add("That way wizards get more discounts, I get higher sales and the rest pay us!");
+                    cCDialogue.Add("And I've also forbidden somre drinks in the catalogue to certain clients.");
+                    cCDialogue.Add("The Law says they shouldn't drink them, and I don't want to pay fines sooooo...");
+                    cCDialogue.Add("That's how it goes.");
+                    cCDialogue.Add("What are you looking at, do I have a booger or what?!");
+                    cCDialogue.Add("The rules are ON THE LEFT SIDE of what you humans call screen, check them and don't mess up.");
+                    cCDialogue.Add("Show them what you aren't made of!");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Lepion"))
