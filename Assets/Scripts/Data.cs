@@ -558,7 +558,7 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("¡Hola pequeñín!");
                     cCDialogue.Add("Soy el grandioso Manolo Cabeza de Pico, el mago más rico… Del barrio más alto del reino.");
-                    cCDialogue.Add("Creo que se me ha colado uno de mis gnomos defectuoso en la tienda.");
+                    cCDialogue.Add("Creo que se me ha colado uno de mis gnomos defectuosos en la tienda.");
                     cCDialogue.Add("Se llama José Miguel Culo Escurridizo.");
                     cCDialogue.Add("El pobre no podía mantenerse quieto y se coló en la trampilla antes de turno.");
                     cCDialogue.Add("Aunque realmente me cae mal, no hace caso y no para de esconderse.");
@@ -1545,68 +1545,68 @@ public class Data : MonoBehaviour
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Lepion"))
                 {
-                    cCDialogue.Add("Hola humano.");
-                    cCDialogue.Add("Espera, tu eres el tonto que no sabía contar.");
-                    cCDialogue.Add("Ayer vino aquí ese microondas.");
-                    cCDialogue.Add("Y ese cacharro debió darte una moneda más");
-                    cCDialogue.Add("Al menos ahora puedo justificar su despido");
-                    cCDialogue.Add("Aunque el bobo se puso a decir cosas de hacer el harakiri o cosas así.");
-                    cCDialogue.Add("En fin, malditas máquinas japonesas.");
-                    cCDialogue.Add("Ya que estás, cobrame esto, que debo seguir con mi trabajo de blanqueamiento de dinero.");
-                    cCDialogue.Add("Adiós");
-                    cCDialogue.Add("Ni contar sabes, ¿de verdad? Acabas de perder todos los clientes chinos por la zona, \n y espero que pronto pierdas tú el trabajo.");
+                    cCDialogue.Add("Hello human.");
+                    cCDialogue.Add("You must be the no brainer who doesn't know how to count.");
+                    cCDialogue.Add("Yesterday I sent my apprentice here.");
+                    cCDialogue.Add("The microwave who missed one coin.");
+                    cCDialogue.Add("Firing him will be his punishment.");
+                    cCDialogue.Add("He proposed harakiri, but that is not good for me.");
+                    cCDialogue.Add("These yapainese machines.");
+                    cCDialogue.Add("I'll be buying from you now. The slave market is waiting.");
+                    cCDialogue.Add("...");
+                    cCDialogue.Add("So, you don't know to count, right? \n I hope you lose you job.");
 
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Giovanni"))
                 {
-                    cCDialogue.Add("Bon día amigo mío, espero que te esté yendo bien estos días.");
-                    cCDialogue.Add("A mí el último plato del otro día no salió como me esperaba la verdad… Me salió... ¡PERFECTO! ");
-                    cCDialogue.Add("Hice todos los pasos a la perfección, aunque el veneno le dió un toque picante un poco raro.");
-                    cCDialogue.Add("Y fue un poco extraño cuando el plato empezó a hablarme en una lengua antigua, pero peores cosas he probado.");
-                    cCDialogue.Add("Aún recuerdo cuando fui a un restaurante de elementales de roca, aunque obviamente el local era de un mago.");
-                    cCDialogue.Add("El plato estrella era la gravilla, ese plato tenía una textura asquerosa.");
-                    cCDialogue.Add("Era como comerte un castillo de arena derretido.");
-                    cCDialogue.Add("Pero bueno, ahora preparé un plato mucho mejor, así que necesitaré estos ingredientes amigo mío.");
-                    cCDialogue.Add("Gracias, te dejaré probarlo como quede bueno my besto frendo");
-                    cCDialogue.Add("¿Tengo prohibidos estos deliciosos ingredientes? El reino cada vez acaba con la libertad de la comida.");
+                    cCDialogue.Add("Oooooh, lad! Hi again!");
+                    cCDialogue.Add("Do you remember the last dish I came to prepare? Well, it was… FABULOUS! ");
+                    cCDialogue.Add("It was all amazing, although the poison wasn´t that great to be honest.");
+                    cCDialogue.Add("The dish even started talking to me in a weird language, probably because of the poison.");
+                    cCDialogue.Add("It was better than that rock elemental's restaurant, owned by a wizard, obviously.");
+                    cCDialogue.Add("I asked for gravy and got GRAVEL.");
+                    cCDialogue.Add("If I wanted that I would go to the gnome forest!");
+                    cCDialogue.Add("No matter. I am here for new ingredients for a ALL BRAND NEW recipe.");
+                    cCDialogue.Add("That'll do, thanks a million!");
+                    cCDialogue.Add("Forbidden ingredients!? How can they do that to a chef?!");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Enano"))
                 {
-                    cCDialogue.Add("¡Hola pequeñín!");
-                    cCDialogue.Add("Soy el grandioso Manolo Cabeza de Pico, el mago más rico… Del barrio más alto del reino.");
-                    cCDialogue.Add("Creo que se me ha colado uno de mis gnomos defectuoso en la tienda.");
-                    cCDialogue.Add("Se llama José Miguel Culo Escurridizo.");
-                    cCDialogue.Add("El pobre no podía mantenerse quieto y se coló en la trampilla antes de turno.");
-                    cCDialogue.Add("Aunque realmente me cae mal, no hace caso y no para de esconderse.");
-                    cCDialogue.Add("Puede que si lo encuentras un par de veces esta semana se vaya contigo.");
-                    cCDialogue.Add("Así me dejará en paz el pesado, suerte buscándolo.");
+                    cCDialogue.Add("Sup little guy.");
+                    cCDialogue.Add("I am the powerful Pinhead Larry, the richest wizard… From the highest neighborhoods.");
+                    cCDialogue.Add("Did one of my defective gnomes escape?");
+                    cCDialogue.Add("His name is Joseph Sliperybutt the Greasy.");
+                    cCDialogue.Add("He couldn't keep his ass still and decided to roam.");
+                    cCDialogue.Add("I only see advantages, if he doesn't return, I don't care, he was a pain in the ASS.");
+                    cCDialogue.Add("If you ever find him, touch a few different times and he will follow you anywhere.");
+                    cCDialogue.Add("Well, better run so it doesn´t follow me. Later, sucker!");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Cululu"))
                 {
-                    cCDialogue.Add("¿Buenos días? ¿O noches? Ya no sé la verdad.");
-                    cCDialogue.Add("Perdón, te habré confundido un poco, soy el del orbe el que habla.");
-                    cCDialogue.Add("Por este maldito orbe solo puedo ver morado, no distingo si es de día o no.");
-                    cCDialogue.Add("Me llamo Cululú, y hasta hace poco era un híbrido.");
-                    cCDialogue.Add("Pero ahora soy un limbástico, me morí ayer mientras estaba en la gasolinera.");
-                    cCDialogue.Add("Vi a un tío con un libro rarísimo que parecía hacer un ritual, y al verme, me dió un golpe con este orbe.");
-                    cCDialogue.Add("Y al despertar, pues me quedé encerrado aquí, aunque supongo que esto no sea un problema para mi cita.");
-                    cCDialogue.Add("El detective de mi caso me dijo que no fuera por ahora hasta que me acostumbrara a mi nuevo yo.");
-                    cCDialogue.Add("Pero la vida es una, y esa manguro es mi tipo ideal.");
-                    cCDialogue.Add("Pero bueno, espero que encuentren al culpable pronto para que no me atosigue el detective.");
-                    cCDialogue.Add("Ve cobrando estas pociones, que en unos minutos tengo la cita.");
-                    cCDialogue.Add("Muchas gracias hermano, deseame suerte en la cita.");
-                    cCDialogue.Add("Tío, de verdad que no te entiendo, si tengo toda la pasta.");
+                    cCDialogue.Add("Good morning? Night? I have no idea.");
+                    cCDialogue.Add("By the way, eyes up here, I am talking from the orb, yes.");
+                    cCDialogue.Add("I can only see purple through here.");
+                    cCDialogue.Add("I was a hybrid but now i'm a limbastic. Call me Cululu.");
+                    cCDialogue.Add("I died yesterday working at the gas station and as I revived, i'm no longer a hybrid.");
+                    cCDialogue.Add("They guy who killed me was a suspicius looking guy with an even more suspicious looking book.");
+                    cCDialogue.Add("When I woke up I was just trapped in this orb and just use the body to move around, it's hella weird.");
+                    cCDialogue.Add("I have a date today and, even though the detective from my case told me to not go, I'm going!");
+                    cCDialogue.Add("You only live onc- twice, and that LADY mangaroo is my type.");
+                    cCDialogue.Add("He, I hope she likes me too.");
+                    cCDialogue.Add("Help me by charging these potions, they are for the date.");
+                    cCDialogue.Add("Much appreciated brother, wish me luck!");
+                    cCDialogue.Add("Wait, whaaaat..? But I have all the coins!");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
                 {
-                    cCDialogue.Add("¡Buen ser humano, necesito tu ayuda!.");
-                    cCDialogue.Add("En mi casa se me han acabado las pilas y mi madre no estaba en casa para metermelas y darme energía.");
-                    cCDialogue.Add("Por favor, necesito que me metas las pilas, ya te las pagaré luego. Recuerda meterlas en el hueco de la parte superior");
-                    cCDialogue.Add("¡Y rápido!, que no quiero apagarme y convertirme en uno de esos horribles monstruos.");
+                    cCDialogue.Add("Oh master human sensei my beloved, I NEED YOUR HELP!");
+                    cCDialogue.Add("You need to put those batteries inside of me!!!");
+                    cCDialogue.Add("Please! I'll pay you! Put them inside! They go on the behind, in the part uptop");
+                    cCDialogue.Add("Be quick! I don't want to pass out!");
                 }
             }
 
@@ -1614,18 +1614,18 @@ public class Data : MonoBehaviour
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
                 {
-                    cCDialogue.Add("Muchas gracias Ronin, que sepas que te lo recompensaré algún día, espero que mi maestro no se enfade.");
+                    cCDialogue.Add("Thank you Ronin, I'll make it up to you someday, hope master doesn't get angry.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Handy"))
                 {
-                    cCDialogue.Add("¡Hola colega! ¿Cómo te encuentras? ¿Bien? ¿Mal?");
-                    cCDialogue.Add("¡YO ESTOY FENOMENAL!");
-                    cCDialogue.Add("Soy Handy, el elemental más fiestero, que ama cualquier celebración.");
-                    cCDialogue.Add("Cumpleaños, bodas, despedidas de solteros y… ¡FUNERALES!");
-                    cCDialogue.Add("Aunque del último funeral me echaron por alguna extraña razón.");
-                    cCDialogue.Add("Estoy tan emocionado amigo mío, tengo una nueva compañera.");
-                    cCDialogue.Add("Se llama Rave-n, incluso estudió fiestología.");
+                    cCDialogue.Add("Hello homie! Whassup whassup!");
+                    cCDialogue.Add("I'm doing great if you were going to ask!");
+                    cCDialogue.Add("I am Festyglee, the party animal, the heart of all celebrations!");
+                    cCDialogue.Add("Birthdays, weddings, singles outings… And funerals!");
+                    cCDialogue.Add("I was expelled from the last one, tough. I wonder why...");
+                    cCDialogue.Add("I'm so excited though! I have a new roomie, random person I've just met!");
+                    cCDialogue.Add("Her name's Rave-n, incluso estudió fiestología.");
                     cCDialogue.Add("Aunque a mí me expulsaron del grado de fiestología por mi TFG sobre… ¡ALEGRAR FUNERALES!");
                     cCDialogue.Add("Se debieron de morir de la risa con mi TFG.");
                     cCDialogue.Add("Bueno colega, sé que estás pasando un buen rato conmigo.");
