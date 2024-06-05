@@ -1625,14 +1625,14 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Birthdays, weddings, singles outings… And funerals!");
                     cCDialogue.Add("I was expelled from the last one, tough. I wonder why...");
                     cCDialogue.Add("I'm so excited though! I have a new roomie, random person I've just met!");
-                    cCDialogue.Add("Her name's Rave-n, incluso estudió fiestología.");
-                    cCDialogue.Add("Aunque a mí me expulsaron del grado de fiestología por mi TFG sobre… ¡ALEGRAR FUNERALES!");
-                    cCDialogue.Add("Se debieron de morir de la risa con mi TFG.");
-                    cCDialogue.Add("Bueno colega, sé que estás pasando un buen rato conmigo.");
-                    cCDialogue.Add("Pero tengo una despedida de soltero y tengo que aguantar toda la noche despierto.");
-                    cCDialogue.Add("Y necesito estos utensilios para sobrevivir a los solteros desesperados.");
-                    cCDialogue.Add("Aunque no sé para qué será la bola, me la pidieron los solteros");
-                    cCDialogue.Add("Bueno, cobrame porfi porfita.");
+                    cCDialogue.Add("Her name's Rave-n, she even studied partology!");
+                    cCDialogue.Add("i mean i was expelled for my thesis on cheering funerals...");
+                    cCDialogue.Add("They probably DIED OF LAUGHTER. HA HA HA!!!");
+                    cCDialogue.Add("No need to laugh, I can see it on your face.");
+                    cCDialogue.Add("Anyways, I have a party to attend, a single party!");
+                    cCDialogue.Add("Tools are needed to survive the men.");
+                    cCDialogue.Add("I don't even know why they want the orb though...");
+                    cCDialogue.Add("Now, on with .");
                     cCDialogue.Add("Voy a hacer una despedida de soltero !INCREÍBLE! Nos vemos colega.");
                     cCDialogue.Add("Me has borrado la sonrisa tío, pero entiendo que no puedas romper la normativa");
                 }
