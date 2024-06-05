@@ -424,7 +424,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Pero por desgracia, mi vida es como una canción emo: Larga, triste y nunca termina.");
                     cCDialogue.Add("Al igual que esta conversación, perdón por hacerte perder el tiempo.");
                     cCDialogue.Add("Deberías de cobrarme ya, o si no llegaré tarde a mi torneo de lanzamiento de miradas melancólicas.");
-                    cCDialogue.Add("Gracias, espero que no quedar en primer lugar, como siempre.");
+                    cCDialogue.Add("Gracias, espero no quedar en primer lugar, como siempre.");
                     cCDialogue.Add("Otra desgracia más para mi vida, ahora seguro gano el torneo por tu culpa.");
                 }
 
