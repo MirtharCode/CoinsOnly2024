@@ -1722,16 +1722,16 @@ public class Data : MonoBehaviour
             {
                 if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jefe"))
                 {
-                    cCDialogue.Add("Buenas chico nuevo.");
-                    cCDialogue.Add("Parece que te estás acostumbrando a tu trabajo.");
-                    cCDialogue.Add("Estás durando más que el antiguo empleado.");
-                    cCDialogue.Add("No sé cómo sigues vivo siquiera.");
-                    cCDialogue.Add("Pero bueno, tengo malas noticias.");
-                    cCDialogue.Add("Ha empezado el mercado de una nueva raza: Los Cupones");
-                    cCDialogue.Add("Son criaturas que se utilizan como trueque a cambio de objetos.");
-                    cCDialogue.Add("Con los cupones podrán pillar lo que quieran, ¡LES SALDRÁ GRATIS!");
-                    cCDialogue.Add("Vaya asco de bichos, al menos son muy coquettes.");
-                    cCDialogue.Add("Debajo de tu pantalla tendrás una retrato de los cupones que son válidos.");
+                    cCDialogue.Add("Hey, freshie.");
+                    cCDialogue.Add("Are you getting used to this beautiful job?.");
+                    cCDialogue.Add("You are lasting longer than I expected!");
+                    cCDialogue.Add("I thought you would have gotten yourself killed by now.");
+                    cCDialogue.Add("Oh, and something new came up.");
+                    cCDialogue.Add("We have new clients, I mean, new creatures: the CUTIEPONS. Or call them cupons.");
+                    cCDialogue.Add("They can be exchanged for products!");
+                    cCDialogue.Add("That will do for great marketing.");
+                    cCDialogue.Add("I hate them but then I look at them and find them cute. I AM NOT FALLING FOR THAT.");
+                    cCDialogue.Add("You need to check out.");
                     cCDialogue.Add("Cuidado que no te traigan ninguno falso, fijate bien el retrato.");
                     cCDialogue.Add("Y recuerda revisar las normas, no servirá su cupón si tiene prohibido algún objeto.");
                     cCDialogue.Add("Suerte humano.");
