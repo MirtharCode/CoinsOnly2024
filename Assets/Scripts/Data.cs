@@ -1632,45 +1632,45 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Anyways, I have a party to attend, a single party!");
                     cCDialogue.Add("Tools are needed to survive the men.");
                     cCDialogue.Add("I don't even know why they want the orb though...");
-                    cCDialogue.Add("Now, on with .");
-                    cCDialogue.Add("Voy a hacer una despedida de soltero !INCREÍBLE! Nos vemos colega.");
-                    cCDialogue.Add("Me has borrado la sonrisa tío, pero entiendo que no puedas romper la normativa");
+                    cCDialogue.Add("Now, on with the buying!");
+                    cCDialogue.Add("It will be the best! HAVE A NICE LAUGHTER!!!");
+                    cCDialogue.Add("Aw, the mood is down now... Well maybe another time I can buy stuff! Bye");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Petra"))
                 {
-                    cCDialogue.Add("Hola dependiente, de verdad que no puedo aguantar más mis ganas de empezar a trabajar.");
-                    cCDialogue.Add("Necesito contárselo a alguien, ¡Por fin puedo ser una exploradora!");
-                    cCDialogue.Add("Necesitaba soltarlo, no sabes lo emocionada que estoy con este nuevo trabajo.");
-                    cCDialogue.Add("Por cierto, no me presenté, me llamo Petra.");
-                    cCDialogue.Add("He estado 12 años en paro desde que no llegué a tiempo a una misión.");
-                    cCDialogue.Add("Pero es lo que pasa cuando eres mitad tortuga y mitad liebre, que mi velocidad siempre será normal.");
-                    cCDialogue.Add("También mi jefe me comentó que esperaba que lo hiciera mejor que el último empleado.");
-                    cCDialogue.Add("Era un sapótamo que se la pasaba bebiendo en el trabajo.");
-                    cCDialogue.Add("Menos mal que no bebo nada de alcohol en mi vida.");
-                    cCDialogue.Add("Uy, perdona, te estoy quitando tiempo.");
-                    cCDialogue.Add("Cobrame esto qué lo necesito para el trabajo.");
-                    cCDialogue.Add("Deseame suerte en mi primer día de curro, ¡Nos vemos!");
-                    cCDialogue.Add("Necesitaba esto de verdad para el trabajo, el jefe me va a despedir y ni empecé.");
+                    cCDialogue.Add("Good morning sweetie, sorry I don't think I know you but I just need to tell it to someone.");
+                    cCDialogue.Add("I finally got a job as an explorer!");
+                    cCDialogue.Add("Sorry again, it was quite rude but I am feeling really happy about it, sunny.");
+                    cCDialogue.Add("Oh, and where are my manners, my name is Petra.");
+                    cCDialogue.Add("I have been searching for a job for 12 years.");
+                    cCDialogue.Add("You see, when you are half hare, half tortoise, your speed is just average, and that for a mission is not that good.");
+                    cCDialogue.Add("Apparently there was a new job position for me since the last hybrid was so drunk that they had to fire him.");
+                    cCDialogue.Add("What a creature!");
+                    cCDialogue.Add("I just can't stand alcohol other than for healing wounds...");
+                    cCDialogue.Add("Oh, sorry for all the bla bla, sunny.");
+                    cCDialogue.Add("I'll take this gear.");
+                    cCDialogue.Add("I wish I last in this position. See ya later, sunny!");
+                    cCDialogue.Add("Oh god... I really needed that... It's going to be a bad first day for me...");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Tapiz"))
                 {
-                    cCDialogue.Add("Hola humano, ¿no tienes días libres o que? ");
-                    cCDialogue.Add("Eres parecido en ese aspecto a los elementales, nosotros tampoco paramos de trabajar, es lo que tiene ser creaciones de los magos. ");
-                    cCDialogue.Add("Espera, ¿no lo sabías? La mayoría de las razas actuales fueron creadas por ellos. ");
-                    cCDialogue.Add("Que triste es la ignorancia de los humanos. ");
-                    cCDialogue.Add("Los elementales fueron creados para hacer el trabajo de esclavos. ");
-                    cCDialogue.Add("Los tecnópedos fueron creados por accidente cuando metieron una varita en un microondas. ");
-                    cCDialogue.Add("Y los limbásticos no se sabe cómo se crearon, solo se sabe que fueron los magos. ");
-                    cCDialogue.Add("Leí en algunos foros de ocultismo que fueron creados por una iglesia que lleva años oculta entre nosotros.");
-                    cCDialogue.Add("Tampoco pude leer mucho, es lo que tiene tener 23 horas de jornada laboral.");
-                    cCDialogue.Add("Hablando de ello, en nada tengo que volver a trabajar como tapiz en un museo de la zona.");
-                    cCDialogue.Add("Y encima tengo que explicar, de nuevo, al nuevo saco de huesos como va el trabajo allí.");
-                    cCDialogue.Add("Le fue horrible en su primer día, aunque ya es horrible ser parte de nuestra raza.");
-                    cCDialogue.Add("Por lo que ve cobrándome esto antes de que caiga en el olvido.");
-                    cCDialogue.Add("Espero que acabe pronto mi jornada, aunque vaya a comenzar.");
-                    cCDialogue.Add("Ni en mi descanso puedo conseguir un mínimo de felicidad.");
+                    cCDialogue.Add("You again, huh?");
+                    cCDialogue.Add("Just like elementals, you never stop working to serve the higher ups. ");
+                    cCDialogue.Add("I mean, elementals like me are created to work for wizards, you were born to perhaps to do other things. ");
+                    cCDialogue.Add("Humans are so free...");
+                    cCDialogue.Add("And here I am slaved on this never ending prison... ");
+                    cCDialogue.Add("At least i'm not a technopod. Those were normal machines mixed with magic, creepy... ");
+                    cCDialogue.Add("And limbastics we don´t know, but must have been the wizards. ");
+                    cCDialogue.Add("There's this rummor going on about this secret society and chuch that makes them.");
+                    cCDialogue.Add("I wish I could know more about it, but I work 23 hours a day...");
+                    cCDialogue.Add("Look at the time, or don't, you probably don´t care... I need to go back to work, yeah...");
+                    cCDialogue.Add("And explain that numbskull again how to do her job...");
+                    cCDialogue.Add("She is literally a bunch of skulls and bones... Not that I care...");
+                    cCDialogue.Add("Just... Do your job... Don´t worry about me...");
+                    cCDialogue.Add("Hope it's all over soon... Work I mean, or maybe not...");
+                    cCDialogue.Add("Yet again, dissapointment...");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Masermati"))
