@@ -1675,46 +1675,46 @@ public class Data : MonoBehaviour
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Masermati"))
                 {
-                    cCDialogue.Add("Hola cocherrumín, estoy preparándome para la carrera del siglo.");
-                    cCDialogue.Add("No me presenté, soy el famoso FMS, Faster More Serious.");
-                    cCDialogue.Add("O como me llamo mi robo-madre, Masermati.");
-                    cCDialogue.Add("Y voy a hacer la primera carrera de mi vida.");
-                    cCDialogue.Add("Aunque espero que no sea la última, no sabes la pasta que cuestan estas mejoras.");
-                    cCDialogue.Add("Los tubos de escape costaron solo 100 monedas.");
-                    cCDialogue.Add("No sabes todos los platos que limpié para tener esa cantidad de monedas.");
-                    cCDialogue.Add("Pero todo este trabajo fue necesario para el día de hoy, para ganar a…");
-                    cCDialogue.Add("¡FLECHA RÁPIDA! El tecnópedo más rápido del reino.");
-                    cCDialogue.Add("Es el coche oficial de Pijus Magnus, el 2º mago más poderoso del reino.");
-                    cCDialogue.Add("O eso dice él, aunque solo lo dice por ser hijo del Rey Mago.");
-                    cCDialogue.Add("Realmente es un tirillas enano, espero que tengas suerte de no encontrarlo.");
-                    cCDialogue.Add("Bueno, cobrame humano, que tengo que estar listo para la carrera.");
-                    cCDialogue.Add("Gracias cocherrumín, voy a prepararme para la carrera.");
-                    cCDialogue.Add("¡Pero si tengo suficiente! Da igual, tengo algo de prisa.");
+                    cCDialogue.Add("Brooom day, employee.");
+                    cCDialogue.Add("Refer to me as the Cartastic, Beautiful Terravehicle.");
+                    cCDialogue.Add("Or use the name that my mother gave me, Masermatt.");034-
+                    cCDialogue.Add("I will start my first race as a car.");
+                    cCDialogue.Add("I hope I don´t need to upgrade myself much more.");
+                    cCDialogue.Add("Just the tubes alone costed me 300 coins.");
+                    cCDialogue.Add("I really cleaned many dishes for that...");
+                    cCDialogue.Add("It's worth it, don´t worry as I will be racing against…");
+                    cCDialogue.Add("QUICK ARROW! The fastest technopod in the land.");
+                    cCDialogue.Add("It's the official racing car of Pijus Magnus, the 2nd most powerful wizard in the land.");
+                    cCDialogue.Add("Or so he says, he is just the son of the most powerful wizard.");
+                    cCDialogue.Add("I hope you don´t met him. In fact, I hope nobody meets him, unless it's to beat him.");
+                    cCDialogue.Add("Well, gotta get ready and I gotta go fast.");
+                    cCDialogue.Add("First, I grab my products, then, I get outta here! .");
+                    cCDialogue.Add("But, I hav- No time to lose, yeah. BRRRRRRROOOOOOOOM");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Pijus"))
                 {
-                    cCDialogue.Add("Tú ve cobrando esto que tengo prisa.");
-                    cCDialogue.Add("Espera-");
-                    cCDialogue.Add("¡¿Eres humano?! ¿No te da vergüenza respirar el mismo aire que yo?");
-                    cCDialogue.Add("No se ni como pagaste lo suficiente para entrar al reino.");
-                    cCDialogue.Add("Y más te vale que me cobres bien, he leído lo del 50%.");
-                    cCDialogue.Add("Así que quiero que me lo rebajes T-O-D-O.");
-                    cCDialogue.Add("Y como me cobres mal tendré que usar mis poderosa habilidad…");
-                    cCDialogue.Add("El número de mi papi.");
-                    cCDialogue.Add("Espero que me cobres bien, venga.");
-                    cCDialogue.Add("Así me gusta humano, no sabía qué os habían enseñado a contar allí.");
-                    cCDialogue.Add("¡Cómo que no sirve la oferta! Pues...Pues…Bonita moneda, me la quedo.");
+                    cCDialogue.Add("Start cashing, maggot.");
+                    cCDialogue.Add("Wait a minute...");
+                    cCDialogue.Add("A HUMAN?! How dare you breathe the same air I do?");
+                    cCDialogue.Add("You shouldn't even be attending me.");
+                    cCDialogue.Add("I hate this store, I hope you at least get me that 50% off.");
+                    cCDialogue.Add("So better roll the discount on E-V-E-R-Y-T-H-I-N-G.");
+                    cCDialogue.Add("Don't make me…");
+                    cCDialogue.Add("call daddy.");
+                    cCDialogue.Add("Now, DO YOUR JOB!");
+                    cCDialogue.Add("Wow, you really know your place, maggot.");
+                    cCDialogue.Add("No discount?! You! YOU..! WELL! Nice coins you got there! I'LL JUST-.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Detective"))
                 {
-                    cCDialogue.Add("Hola dependiente, soy del departamento de investigación de sucesos paranormales, es decir, soy detective.");
-                    cCDialogue.Add("Y tenía una pregunta respecto a un caso sobre homicidio, alguien ha vuelto un híbrido a un limbástico.");
-                    cCDialogue.Add("Un poco pesado el fiambre diciendo que tenía una cita, pero me da a mi que va a tener que esperar.");
-                    cCDialogue.Add("Creemos que ha podido ser un artefacto mágico el culpable, en concreto un libro de magia.");
-                    cCDialogue.Add("¿Sabes de algún clientes pueda tener un libro mágico?");
-                    cCDialogue.Add("Muchas gracias por la información, espero que tenga un buen día, humano.");
+                    cCDialogue.Add("Good day, friend. I'm from the mysteries and anomalies department, yeah, a detective.");
+                    cCDialogue.Add("I have a question regarding a homicide, a hybrid has been turned into a limbastic.");
+                    cCDialogue.Add("If he really went here, he talked a lot about a date. He came despite my warning, I suspect.");
+                    cCDialogue.Add("We think a magic book was involved in the process.");
+                    cCDialogue.Add("Do you remember any magic book owners that came by?");
+                    cCDialogue.Add("Your help is vital, much appreciated. We may meet again, have a nice day.");
                 }
             }
 
