@@ -585,10 +585,10 @@ public class Data : MonoBehaviour
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Denji"))
                 {
-                    cCDialogue.Add("¡Buen ser humano, necesito tu ayuda!.");
-                    cCDialogue.Add("En mi casa se me han acabado las pilas y mi madre no estaba en casa para metermelas y darme energía.");
+                    cCDialogue.Add("¡Buen ser humano, necesito tu ayuda!");
+                    cCDialogue.Add("En mi casa se me han acabado las pilas y mi madre no estaba en casa para metérmelas y darme energía.");
                     cCDialogue.Add("Por favor, necesito que me metas las pilas, ya te las pagaré luego. Recuerda meterlas en el hueco de la parte superior");
-                    cCDialogue.Add("¡Y rápido!, que no quiero apagarme y convertirme en uno de esos horribles monstruos.");
+                    cCDialogue.Add("¡Y rápido! No quiero apagarme y convertirme en uno de esos horribles monstruos.");
                 }
             }
 
@@ -733,7 +733,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Me revivió para que le ayudará en su nueva aventura.");
                     cCDialogue.Add("¡Pero si no soy capaz ni de levantar una espada de verdad!");
                     cCDialogue.Add("Con lo bien que estaba en mi tumba.");
-                    cCDialogue.Add("Necesito recuperar mis nervios, así que, cobrame estas bebidas.");
+                    cCDialogue.Add("Necesito recuperar mis nervios, así que, cóbrame estas bebidas.");
                     cCDialogue.Add("Seguro revive mi fuerza.");
                     cCDialogue.Add("Voy a intentar que esto me despierte como es debido.");
                     cCDialogue.Add("¿Está prohibido venderme esto? En mis tiempos, bebíamos esto sin problema.");
@@ -744,16 +744,16 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Hola… Hola… Humano .");
                     cCDialogue.Add("Maldito cacharro, no ir como yo querer.");
                     cCDialogue.Add("Llevo desde ser zanahorio con esta silla, y aún fallar.");
-                    cCDialogue.Add("Yo ser Saltaralisis y querer cambiar runas de una vez.");
+                    cCDialogue.Add("Yo ser Saltarálisis y querer cambiar runas de una vez.");
                     cCDialogue.Add("Sí no cambiar runas, no hablar bien y crear malentendidos.");
                     cCDialogue.Add("Ya pasar otro día en banco, y cuando yo decir nombre, romper runa.");
                     cCDialogue.Add("Así que repetir palabra ASALTAR todo rato.");
-                    cCDialogue.Add(" Ellos llamar guardia y yo acabar en cárcel 3 días.");
+                    cCDialogue.Add("Ellos llamar guardia y yo acabar en cárcel 3 días.");
                     cCDialogue.Add("Duros días, pero conocer gente maja en cárcel.");
-                    cCDialogue.Add("Yo conocer…Yo conocer…Yo conocer… Sapótamo borracho.");
+                    cCDialogue.Add("Yo conocer… Yo conocer… Yo conocer… Sapopótamo borracho.");
                     cCDialogue.Add("Vuelve a fallar, mejor cobrar para cambiar runas.");
-                    cCDialogue.Add("Gra… Gra… cías, cambiar runas ahora.");
-                    cCDialogue.Add("No…No…. Poder cambiar, crear más mal entendidos.");
+                    cCDialogue.Add("Gra… Gra… cias, cambiar runas ahora.");
+                    cCDialogue.Add("No… No… Poder cambiar, crear más mal entendidos.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Mano"))
@@ -762,13 +762,13 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("...");
                     cCDialogue.Add("Llevo días buscando un libro que se me fue robado, es importante ¿sabes?");
                     cCDialogue.Add("...");
-                    cCDialogue.Add("El habla no parece ser tu punto fuerte mortal.");
+                    cCDialogue.Add("El habla no parece ser tu punto fuerte, mortal.");
                     cCDialogue.Add("Pero bueno, haré que ese ladrón recuerde mi nombre, Manolo Mago Manitas.");
-                    cCDialogue.Add("Por su culpa y la del otro calamar no se pudo terminar el ritu…");
-                    cCDialogue.Add("Si ves a alguien con libro mágico, avisame mortal.");
+                    cCDialogue.Add("Por su culpa y la del otro calamar no se pudo terminar el ritu-");
+                    cCDialogue.Add("Si ves a alguien con libro mágico, avísame mortal.");
                     cCDialogue.Add("Puede que vuelva en algún otro momento, pero primero debo atender a mi deber.");
                     cCDialogue.Add("Tengo que volver a mi iglesia, hay que dar la misa para nuestro dios, Azathoth.");
-                    cCDialogue.Add("Por lo que ve cobrandome mortal.");
+                    cCDialogue.Add("Por lo que ve cobrándome mortal.");
                     cCDialogue.Add("Buen chico, nos vemos mortal.");
                     cCDialogue.Add("Parece que eres otro sacrificio más, Azathoth te maldecirá por tu incompetencia.");
                 }
@@ -787,7 +787,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Pero parece que la sociedad se está deprimiendo cada vez más.");
                     cCDialogue.Add("Aún así, intentaré alegrar al mundo con mis canciones.");
                     cCDialogue.Add("Pero para ello, necesito recargar pilas colega, que quiero recargar.");
-                    cCDialogue.Add("Cobrame esto si puedes porfi.");
+                    cCDialogue.Add("Cóbrame esto si puedes porfi.");
                     cCDialogue.Add("Gracias compi, ahora iré a descansar para deslumbrar esta noche más.");
                     cCDialogue.Add("No podré recargar pilas colega… Este será un día con más canciones emos.");
                 }
@@ -802,7 +802,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Literal me llamo Elemental de Hueso el elemental de huesos.");
                     cCDialogue.Add("Por suerte logré valerme por mi solo, y ahora obtuve un trabajo de verdad.");
                     cCDialogue.Add(" Ser esclavizado por un museo, muchos de mi raza desearían este puesto en vez de la mina.");
-                    cCDialogue.Add("Pero bueno, cobrame chaval, que tienen que verme en el museo.");
+                    cCDialogue.Add("Pero bueno, cóbrame chaval, que tienen que verme en el museo.");
                     cCDialogue.Add("Un poco caro el muñeco, pero hace años ese muñeco antes eran 3 esclavos elementales, gracias.");
                     cCDialogue.Add("Pero si las pociones las bebían hasta los dinosaurios, estúpidas normátivas.");
                 }
@@ -888,7 +888,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Siempre había alguna que otra pelea entre amigos, o pequeñas peleas de bandas.");
                     cCDialogue.Add("Alguna vez nos pintaban las paredes con latas de spray, eran buenos chicos en el fondo.");
                     cCDialogue.Add("Fue una buena época… Disculpa cielo que me voy por las nubes.");
-                    cCDialogue.Add("Cobrame esto, así voy tirando a la chatarrería a echar unas cartas con mis amigas.");
+                    cCDialogue.Add("Cóbrame esto, así voy tirando a la chatarrería a echar unas cartas con mis amigas.");
                     cCDialogue.Add("Gracias cariño, espero no llegar tarde a la chatarrería.");
                     cCDialogue.Add("¿Mi cupón está roto? Perdón cariño.");
                 }
@@ -927,15 +927,15 @@ public class Data : MonoBehaviour
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Jissy"))
                 {
                     cCDialogue.Add("¿Qué pasa tío?¿Cómo estamos?");
-                    cCDialogue.Add("Espera, tu… Tu no eres el de el otro día ¿no..?");
-                    cCDialogue.Add("Yo  soy Jeese, Jeese Chemman, mi nombre de las calles tío.");
+                    cCDialogue.Add("Espera, tu… Tú no eres el de el otro día ¿no..?");
+                    cCDialogue.Add("Yo soy Jeese, Jeese Chemman, mi nombre de las calles tío.");
                     cCDialogue.Add("Perdona tronco pero, ¿Seguro que no eres el dependiente de siempre?");
                     cCDialogue.Add("Nunca se me ha dado bien esto de reconocer a la gente, ¿sabes?");
                     cCDialogue.Add("Pero tienes un parecido al anterior dependiente.");
                     cCDialogue.Add("Aunque creo que el anterior no era humano, era un raza superior ¿sabes?");
                     cCDialogue.Add("Espero que no te afectará el comentario, tampoco se me da bien socializar.");
-                    cCDialogue.Add("En fín, espero que te vaya bien.");
-                    cCDialogue.Add("Ah, sí, pero antes de irme, cobrame esto.");
+                    cCDialogue.Add("En fin, espero que te vaya bien.");
+                    cCDialogue.Add("Ah, sí, pero antes de irme, cóbrame esto.");
                     cCDialogue.Add("Que me iba sin pagar ¿sabes?");
                     cCDialogue.Add("Gracias colega, deberíamos quedar algún día para hablar de la vida ¿sabes?");
                     cCDialogue.Add("Bueno tronco, no sé cómo no aceptas mi dinero, deberías mejorar en el trabajo.");
@@ -950,11 +950,11 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Ni siquiera su cabeza se veía apetitosa, tenía una pedazo de esfera en su cabeza.");
                     cCDialogue.Add("Igualmente accedí a cenar con él, aunque me hubiera engañado de esta manera.");
                     cCDialogue.Add("Nada más me separé de él, le bloqueé de todos lados, espero no verlo más en mi vida.");
-                    cCDialogue.Add("Mi pata de la suerte seguro dejó de funcionar, es la de mi ex marido.");
-                    cCDialogue.Add("Siempre la llevo en mi bolso, pero dejaré de usarla");
+                    cCDialogue.Add("Mi pata de la suerte seguro dejó de funcionar, es la de mi exmarido.");
+                    cCDialogue.Add("Siempre la llevo en mi bolso, pero dejaré de usarla.");
                     cCDialogue.Add("Perdona si te aburriste con mi historia querido, cóbrame que tengo que ir a más tiendas querido.");
                     cCDialogue.Add("Gracias cielo, quédate con mi pata de la suerte, no creo que la necesite más.");
-                    cCDialogue.Add("Gracias cielo, espero nunca que no tengas citas como la mía.");
+                    cCDialogue.Add("Gracias cielo, espero que nunca tengas citas como la mía.");
                     cCDialogue.Add("¿Está prohibido esto? Bueno, ayer vi varias personas comprándolo, que raro.");
                 }
 
@@ -962,15 +962,15 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("Buenos días mi dependiente favorito, ¿no es preciosa la vida?");
                     cCDialogue.Add("...");
-                    cCDialogue.Add("Veo que mi pregunta te dejo mudo al igual que yo cuando veo a mi nueva diosa.");
+                    cCDialogue.Add("Veo que mi pregunta te dejó mudo, al igual que me pasa cuando veo a mi nueva diosa.");
                     cCDialogue.Add("La cita del otro día no sólo fue genial, fue perfecta.");
-                    cCDialogue.Add("Cuando la ví, quedé perdido en su ojos de mantis, y no paraba de querer acariciar sus preciosas y afiladas garras.");
-                    cCDialogue.Add("Obvio fuí un caballero y no me atreví a tocar sus hermosas garras.");
+                    cCDialogue.Add("Cuando la vi, quedé perdido en su ojos de mantis, y no paraba de querer acariciar sus preciosas y afiladas garras.");
+                    cCDialogue.Add("Obvio, fui un caballero y no me atreví a tocárselas.");
                     cCDialogue.Add("Además de que no quería perder mi mano.");
                     cCDialogue.Add("Pero bueno, lo mejor de la cita fue cuando nos sentamos juntos y cenamos.");
                     cCDialogue.Add("Y esa cangumantis me dijo 10 palabras, ¡10 PALABRAS!");
                     cCDialogue.Add("Solo una hembra me había dicho más palabras que esas, mi madre.");
-                    cCDialogue.Add("Mis palabras favoritas fueron / ¿Pagas tu, no ? / Quiso que pagara yo, qué romántico");
+                    cCDialogue.Add("Mis palabras favoritas fueron / ¿Pagas tú, no ? / Quiso que pagara yo, qué romántico.");
                     cCDialogue.Add("Tengo pensado decirle de tener otra cita, y creo que esto de aquí será necesario para la cita, así que si pudieras cobrarme.");
                     cCDialogue.Add("Te informaré sobre mi próxima cita, mi dependiente favorito.");
                     cCDialogue.Add("Tú, enemigo del amor, gracias por arruinar mi cita.");
@@ -980,20 +980,20 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("Hola humano, ¿podrías ayudarme?");
                     cCDialogue.Add("He decidido no ir a la misión del mago raro que me invocó.");
-                    cCDialogue.Add("No sé quién se cree para ir reviviendome sin mi permiso.");
-                    cCDialogue.Add("Bueno, al caso, necesito 3 bebidas energéticas para activar mi 100%");
-                    cCDialogue.Add("Y así escapar del reino con mi super energía, o eso ponía en internet sobre esta bebidas.");
-                    cCDialogue.Add("Que me dices, ¿me ayudas?");
+                    cCDialogue.Add("No sé quién se cree para ir reviviéndome sin mi permiso.");
+                    cCDialogue.Add("Bueno, el caso, necesito 3 bebidas energéticas para activar mi 100%.");
+                    cCDialogue.Add("Con ello podré escapar del reino con mi super energía, o eso ponía en internet sobre esta bebidas.");
+                    cCDialogue.Add("¿Qué me dices, me ayudas?");
                     cCDialogue.Add("Gracias por tu ayuda, tendrás una recompensa, te daré mi legendaria espada, ¡LA GLOBOSPADA!");
                     cCDialogue.Add("Sabía que me ayudarías, suerte humano.");
-                    cCDialogue.Add("¿De verdad? Qué poco corazón");
+                    cCDialogue.Add("¿De verdad? Qué poco corazón.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
                 {
-                    cCDialogue.Add("Hola súbdito, ¿No crees que deberías de dejar de atender en este sótano?");
-                    cCDialogue.Add("Casi uno de mis fieles slimes se deshace por culpa de la caída.");
-                    cCDialogue.Add("Y no sabes el precio que hubieras tenido que pagar por mi slime.");
+                    cCDialogue.Add("Hola súbdito, ¿no crees que deberías de dejar de atender en este sótano?");
+                    cCDialogue.Add("Uno de mis fieles slimes casi se espachurran por culpa de la caída.");
+                    cCDialogue.Add("Y no sabes el precio que hubieras tenido que pagar por la criatura.");
                     cCDialogue.Add("Podría haberte nombrado mi nueva silla oficial… La única silla del Reino Slime.");
                     cCDialogue.Add("Mi gran y poderoso reino de 4 habitantes slimes, donde yo soy la reina.");
                     cCDialogue.Add("LA PODEROSA REINA MAGA ELIDORA LIMALIGNA.");
@@ -1003,9 +1003,9 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("¿Qué me dices?");
                     cCDialogue.Add("...");
                     cCDialogue.Add("Ya veo que te he sorprendido tanto que te he dejado sin habla.");
-                    cCDialogue.Add("Venga muestrame tus habilidades cobrando.");
+                    cCDialogue.Add("Venga muéstrame tus habilidades cobrando.");
                     cCDialogue.Add("Te haré el dependiente oficial… Nada más terminar con el papeleo, adiós humilde súbdito");
-                    cCDialogue.Add(" En Reino Slime sirven estos cupones, adiós humano.");
+                    cCDialogue.Add("En Reino Slime sirven estos cupones, adiós humano.");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && noCobrarSergioCobrarGeeraardD4 == 0)
@@ -1020,7 +1020,7 @@ public class Data : MonoBehaviour
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Geraaaard") && noCobrarSergioCobrarGeeraardD4 != 0)
                 {
-                    cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de miles historias.");
+                    cCDialogue.Add("Hola humano, espero que en estos días te hayas leído una de mis miles historias.");
                     cCDialogue.Add("...");
                     cCDialogue.Add("Tu mirada me dice que no es así, ¿Es que no tienes tiempo para leer en casa?");
                     cCDialogue.Add("Eres de los peores fans que he tenido en mi vida.");
@@ -1032,7 +1032,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Así que por eso solo revivimos su sistema nervioso y su cerebro.");
                     cCDialogue.Add("Espero que sea tan capaz como yo, aunque se le ve un poco tirillas.");
                     cCDialogue.Add("En fin, necesitaré algunos materiales para el viaje, y esta tienda tiene suerte de ser mi proveedora no oficial.");
-                    cCDialogue.Add("Por lo que tendrás el honor de cobrarme, y con suerte recibirás un autógrafo mio.");
+                    cCDialogue.Add("Por lo que tendrás el honor de cobrarme, y con suerte recibirás un autógrafo mío.");
                     cCDialogue.Add("Deséame suerte en mi aventura, te daré mi foto favorita con un autógrafo, por tu humilde servicio.");
                     cCDialogue.Add("Deséame suerte en mi aventura, aunque no la necesite.");
                     cCDialogue.Add("Por todo lo que he hecho por el reino, y me lo pagan así.");
@@ -1042,14 +1042,14 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("Buenas mañanas persona fría, soy Magmadora.");
                     cCDialogue.Add("Frío de personalidad o frío de carne, tú dirás, solo tienes que mirarme.");
-                    cCDialogue.Add("Veo que no eres el mismo trozo de carne fría que había antes en este lugar.");
-                    cCDialogue.Add("Haber si llega ya el maldito verano que yo soy de los que prefiere el calor, sino mira como estoy que ardo.");
+                    cCDialogue.Add("Veo que no eres el mismo cachocarne que había antes en este lugar.");
+                    cCDialogue.Add("A ver si llega ya el maldito verano que yo soy de los que prefiere el calor: ¡siempre estoy que ardo!");
                     cCDialogue.Add("De verdad que la gente que prefiere el frío no la entiendo.");
                     cCDialogue.Add("Si no estuvieras hecho de carne, también preferirías el calor.");
                     cCDialogue.Add("Ventajas de no poder sudar.");
                     cCDialogue.Add("En fin, ¿Te importaría cobrarme esto? Que me estoy quedando sin llama y tengo que avivarme un poco.");
-                    cCDialogue.Add("Gracias, espero que cuando termine de trabajar no se enfríe de camino a casa.");
-                    cCDialogue.Add("¿Cómo que han prohibido comprar pociones? ¡AHORA CÓMO PODRÉ COMPRAR MI POCIÓN DE LAVA!");
+                    cCDialogue.Add("Gracias, espero que cuando termine de trabajar no se enfríen los productos de camino a casa.");
+                    cCDialogue.Add("¿Cómo que han prohibido comprar pociones? ¿¡AHORA CÓMO PODRÉ COMPRAR MI POCIÓN DE LAVA!?");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Handy"))
@@ -1057,15 +1057,15 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Dependiente... Hoy no podría ser... ¡LA MEJOR SEMANA DE MI VIDA!");
                     cCDialogue.Add("El trabajo del otro día fue genial, los solteros fueron encantadores.");
                     cCDialogue.Add("Les encantó cuando me puse a hacer mi monólogo.");
-                    cCDialogue.Add("Y mi compañera es una DJ genial, en el momento de las copas salió a hacer su parte.");
-                    cCDialogue.Add("Baile con el novio un rato, pero no paraba de tocar mi bocina, era un tipo raro.");
+                    cCDialogue.Add("Y mi compañera es una DJ genial, en el momento de brindar salió a hacer su parte.");
+                    cCDialogue.Add("Bailé con el novio un rato, pero no paraba de tocar mi bocina, era un tipo raro.");
                     cCDialogue.Add("Pero bueno, ahora tenemos un nuevo trabajo para hoy, una gatoteca.");
                     cCDialogue.Add("Hemos pensado en animar haciendo un musical con los gatos, pero son unos bichos muy ariscos y arrítmicos.");
-                    cCDialogue.Add("Así que hemos pensado en otra cosa, vamos a bollos con forma de gatito.");
-                    cCDialogue.Add("En fin, sabes que me encanta estar contigo, pero se me está haciendo tarde amigo.");
+                    cCDialogue.Add("Así que hemos pensado en otra cosa, vamos a hacer bollos con forma de gatito.");
+                    cCDialogue.Add("En fin, sabes que me encanta estar contigo, pero se me está haciendo tarde, amigo.");
                     cCDialogue.Add("Por lo que cóbrame que tengo que alegrar esa gatoteca.");
-                    cCDialogue.Add("Gracias amigo, como muestra de nuestra amistad, el traje que usé en la despedida de soltero.");
-                    cCDialogue.Add("Deséame la mayor de las suerte en mi nuevo trabajo.");
+                    cCDialogue.Add("Gracias amigo, como muestra de nuestra amistad, te doy el traje que usé en la despedida de soltero.");
+                    cCDialogue.Add("Deséame la mayor de las suertes en mi nuevo trabajo.");
                     cCDialogue.Add("Espero que el trabajo me vaya bien igualmente");
                 }
 
@@ -1075,8 +1075,8 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Tengo mala memoria, debe ser porque siempre pierdo la cabeza, ja ja ja...");
                     cCDialogue.Add("Sabía que eras tú, aún recuerdo el vacío que dejabas cada vez que contaba mi mejor chiste.");
                     cCDialogue.Add("Entonces tengo la confianza de decirte que me gustaría hacer un regalo a mi novio Patxi.");
-                    cCDialogue.Add("Ayer me hizo una cita y quiero hacer algo a cambio, pensé en proponerle hacer senderismo.");
-                    cCDialogue.Add("Pero con lo lento que voy y lo rápido que va él, seguro no lo disfrutamos igual, por eso me decanté por la opción del regalo.");
+                    cCDialogue.Add("Ayer me preparó una cita y quiero hacer algo a cambio: pensé en proponerle una ruta de senderismo.");
+                    cCDialogue.Add("Pero con lo lento que voy yo y lo rápido que va él, seguro no lo disfrutamos igual, por eso me decanté por la opción del regalo.");
                     cCDialogue.Add("Espero que le guste este gato muerto, seguro que le recuerda a Mistafurriño.");
                     cCDialogue.Add("Era su gato cuando estaba vivo, y puede que quiera algo que le recuerde a él.");
                     cCDialogue.Add("Cóbrame por favor que tengo que envolver el regalo.");
@@ -1100,7 +1100,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Buenos días humano, la investigación se está alargando bastante.");
                     cCDialogue.Add("Puede que no lo sepas, pero este caso se empezó porque estamos buscando a quién está creando limbásticos.");
                     cCDialogue.Add("Los limbásticos son incapaces de recordar dónde les crearon, pero con algo de investigación encontramos algo.");
-                    cCDialogue.Add("Un sospechoso de ayer parece formar parte de una religión de la que desconocemos.");
+                    cCDialogue.Add("Un sospechoso de ayer parece formar parte de una religión que desconocemos.");
                     cCDialogue.Add("Y creemos que pueden estar relacionados con la creación de limbásticos.");
                     cCDialogue.Add("Pero tampoco tenemos suficientes pruebas para saberlo.");
                     cCDialogue.Add("Creemos que el sospechoso se reunió con otro cliente de esta tienda para hacer un limbástico.");
@@ -1127,8 +1127,8 @@ public class Data : MonoBehaviour
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Elidora"))
                 {
-                    cCDialogue.Add("Hola humano, vengo defraudada de lo mal hecho que está este reino.");
-                    cCDialogue.Add("Fuí al famoso restaurante de “Tips”, y no dejaron pasar a mis humildes ciudadanos esclavos de slime.");
+                    cCDialogue.Add("Hola humano, vengo defraudada de lo mal que trabajas, nah es broma tontolculo.");
+                    cCDialogue.Add("Realmente fuí al famoso restaurante de “Tips”, y no dejaron pasar a mis humildes ciudadanos esclavos de slime.");
                     cCDialogue.Add("Alguna híbrido debió hacer esas normas tan tontas, ¿Cómo no van a permitir criaturas mágicas?");
                     cCDialogue.Add("Y lo peor es la DECADENCIA del lugar, me obligaron a sentarme en una silla en vez de en mi slimes.");
                     cCDialogue.Add("Y porqué no hablar del servicio, casi tuve que cazar a los camareros, cómo un oságuila a un salmón.");
@@ -1144,7 +1144,7 @@ public class Data : MonoBehaviour
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rockon"))
                 {
                     cCDialogue.Add("Ho-hola amigo, ¿qué tal tu-tu-tu día de hoy?");
-                    cCDialogue.Add("Seguro que fue un día pri-pri-edrástico, como decimos chicos piedras.");
+                    cCDialogue.Add("Seguro que fue un día pi-pi-edrástico, como decimos los chicos piedra.");
                     cCDialogue.Add("Tenemos muchas expresiones ra-raras gracias a mis primos roca, son de pueblo cerrado.");
                     cCDialogue.Add("Además de que son chicos fuerte como mi padre, dicen que son “Gymbros”.");
                     cCDialogue.Add("Debería de ir al “Muscle Beluga” para me-mejorar mis músculos, es el mejor gimnasio del reino.");
@@ -1154,7 +1154,7 @@ public class Data : MonoBehaviour
                     cCDialogue.Add("Se nota que no sabe lo que cuesta limpiar la baba de esas po-pobres criaturas.");
                     cCDialogue.Add("Se-seguro que estoy haciendo mucha cola, cóbrame amigo.");
                     cCDialogue.Add("Gra-gracias, espero le gusten estos peluches con forma humana a mi padre.");
-                    cCDialogue.Add("Me falta di-dinero, jopetas, perdón por intentar engañarte con el cupón.");
+                    cCDialogue.Add("Me falta di-dinero... Perdón por intentar engañarte con el cupón... Realmente n-no... No quería...");
                 }
 
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Sapo"))
@@ -1677,7 +1677,7 @@ public class Data : MonoBehaviour
                 {
                     cCDialogue.Add("Brooom day, employee.");
                     cCDialogue.Add("Refer to me as the Cartastic, Beautiful Terravehicle.");
-                    cCDialogue.Add("Or use the name that my mother gave me, Masermatt.");034-
+                    cCDialogue.Add("Or use the name that my mother gave me, Masermatt.");
                     cCDialogue.Add("I will start my first race as a car.");
                     cCDialogue.Add("I hope I don´t need to upgrade myself much more.");
                     cCDialogue.Add("Just the tubes alone costed me 300 coins.");
