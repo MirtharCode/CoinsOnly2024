@@ -1144,7 +1144,7 @@ public class Data : MonoBehaviour
                 else if (uIManager.GetComponent<UIManager>().currentCustomer.name.Contains("Rockon"))
                 {
                     cCDialogue.Add("Ho-hola amigo, ¿qué tal tu-tu-tu día de hoy?");
-                    cCDialogue.Add("Seguro que fue un día pi-pi-edrástico, como decimos los chicos piedra.");
+                    cCDialogue.Add("Seguro que fue un día pi-pie-edrástico, como decimos los chicos piedra.");
                     cCDialogue.Add("Tenemos muchas expresiones ra-raras gracias a mis primos roca, son de pueblo cerrado.");
                     cCDialogue.Add("Además de que son chicos fuerte como mi padre, dicen que son “Gymbros”.");
                     cCDialogue.Add("Debería de ir al “Muscle Beluga” para me-mejorar mis músculos, es el mejor gimnasio del reino.");
