@@ -165,9 +165,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Sprite sergioSpriteAlt;
     [SerializeField] Sprite antonioSpriteAlt;
 
+    [SerializeField] public GameObject data;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GM");
+        data = GameObject.FindGameObjectWithTag("Data");
         currentScene = SceneManager.GetActiveScene();
         buttonCobrar.SetActive(false);
         buttonNoCobrar.SetActive(false);
@@ -1536,6 +1539,7 @@ public class UIManager : MonoBehaviour
 
         //StartCoroutine(TrophyShower());
         showTrophyAnim.SetTrigger("TrophyShow");
+        Data.instance.GuardarDatos();
     }
 
     public void Resume()
@@ -1548,6 +1552,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+        Data.instance.GuardarDatos();
     }
 
     public void NextDay()
@@ -1594,6 +1599,8 @@ public class UIManager : MonoBehaviour
             else if (currentScene.name == "Day3_1")
                 SceneManager.LoadScene("Pila_Nivel2");
         }
+
+        Data.instance.GuardarDatos();
     }
 
     public void NextDenji()
@@ -1607,6 +1614,8 @@ public class UIManager : MonoBehaviour
         {
             SceneManager.LoadScene("Pila_Nivel2");
         }
+
+        Data.instance.GuardarDatos();
     }
 
     public void Salir()

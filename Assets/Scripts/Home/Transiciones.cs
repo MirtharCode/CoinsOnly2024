@@ -70,7 +70,7 @@ public class Transiciones : MonoBehaviour
             }
         }
         //Si acabas el juego sin haber obtenido + 50 tips en ningún día, pasas al final muy malo.
-
+        Data.instance.GuardarDatos();
     }
 
     public void ShowGifts()

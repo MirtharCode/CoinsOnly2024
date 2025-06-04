@@ -39,7 +39,6 @@ public class MenuInicial : MonoBehaviour
     public void Creditos()
     {
         SceneManager.LoadScene("Creditos");
+        data.GetComponent<Data>().GuardarDatos();
     }
-
-
 }
