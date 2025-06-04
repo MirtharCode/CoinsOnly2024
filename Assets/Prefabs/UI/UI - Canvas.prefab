@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 965da2bea4b7b6d478fa43a5720ee46c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7e5f10da2f7baa41ade34e6428f3d9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3925,7 +3925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db70c15a2fcee1f46880904731776ba2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b444461676c745b488d352b814dd82f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4789,7 +4789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad1a99ec6c7d35a43b2b0a5304750052, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da29a4551ab760741aabe043d0504feb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5617,7 +5617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38ffce3a979bd454087268886ecd9ab5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b634d976716fe7b4284a25757da09d5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6578,6 +6578,7 @@ MonoBehaviour:
   giftImageRaven: {fileID: 21300000, guid: 7882264c5d59b4e489efa42dd8f2b826, type: 3}
   sergioSpriteAlt: {fileID: 21300000, guid: e2b1c4b14ef99af4daeff170235fb118, type: 3}
   antonioSpriteAlt: {fileID: 21300000, guid: 6b87a966ec165724387d2fe3022cbf18, type: 3}
+  data: {fileID: 0}
 --- !u!1 &5982892003302237854
 GameObject:
   m_ObjectHideFlags: 0
@@ -14914,7 +14915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1b6f308790616b45b5a5e730c4b1cb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 578d9ebdbabafdb49a5668af3f88889b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
