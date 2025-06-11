@@ -133,15 +133,13 @@ public class Data : MonoBehaviour
     public string archivoDeGuardado2;
     public string archivoDeGuardado3;
     public SavedData datosJuego = new SavedData();
-    public bool slotOneActive = false;
-    public bool slotTwoActive = false;
-    public bool slotThreeActive = false;
+    public int currentSlot = 1;
 
     void Awake()
     {
-        archivoDeGuardado1 = Application.dataPath + "/datosJuego.json";
-        archivoDeGuardado2 = Application.dataPath + "/datosJuego.json";
-        archivoDeGuardado3 = Application.dataPath + "/datosJuego.json";
+        archivoDeGuardado1 = Application.persistentDataPath + "/datosJuego_slot1.json";
+        archivoDeGuardado2 = Application.persistentDataPath + "/datosJuego_slot2.json";
+        archivoDeGuardado3 = Application.persistentDataPath + "/datosJuego_slot3.json";
 
         uIManager = null;
         homeManager = null;
@@ -160,34 +158,31 @@ public class Data : MonoBehaviour
 
     public void SelectFirstSlot()
     {
-        slotOneActive = true;
-        slotTwoActive = false;
-        slotThreeActive = false;
+        currentSlot = 1;
 
         CargarDatos();
+        SceneManager.LoadScene("MenuInicial");
     }
 
     public void SelectSecondSlot()
     {
-        slotOneActive = false;
-        slotTwoActive = true;
-        slotThreeActive = false;
+        currentSlot = 2;
 
         CargarDatos();
+        SceneManager.LoadScene("MenuInicial");
     }
 
     public void SelectThirdSlot()
     {
-        slotOneActive = false;
-        slotTwoActive = false;
-        slotThreeActive = true;
+        currentSlot = 3;
 
         CargarDatos();
+        SceneManager.LoadScene("MenuInicial");
     }
 
     public void CargarDatos()
     {
-        if (slotOneActive)
+        if (currentSlot == 1)
         {
             if (File.Exists(archivoDeGuardado1))
             {
@@ -282,7 +277,7 @@ public class Data : MonoBehaviour
             }
         }
 
-        else if (slotTwoActive)
+        else if (currentSlot == 2)
         {
             if (File.Exists(archivoDeGuardado2))
             {
@@ -377,7 +372,7 @@ public class Data : MonoBehaviour
             }
         }
 
-        else if (slotThreeActive)
+        else if (currentSlot == 3)
         {
             if (File.Exists(archivoDeGuardado3))
             {
@@ -475,7 +470,7 @@ public class Data : MonoBehaviour
 
     public void GuardarDatos()
     {
-        if (slotOneActive)
+        if (currentSlot == 1)
         {
             SavedData nuevosDatos = new SavedData()
             {
@@ -568,7 +563,7 @@ public class Data : MonoBehaviour
 
         }
 
-        else if (slotTwoActive)
+        else if (currentSlot == 2)
         {
             SavedData nuevosDatos = new SavedData()
             {
@@ -661,7 +656,7 @@ public class Data : MonoBehaviour
 
         }
 
-        else if (slotThreeActive)
+        else if (currentSlot == 3)
         {
             SavedData nuevosDatos = new SavedData()
             {
@@ -753,6 +748,8 @@ public class Data : MonoBehaviour
             Debug.Log("Archivo Guardado");
 
         }
+
+        Debug.Log("Slot actual: " + currentSlot);
     }
 
     #region Todos los diálogos de Coins Only
