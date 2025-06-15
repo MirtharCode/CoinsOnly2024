@@ -33,8 +33,10 @@ public class DialogueManager : MonoBehaviour
         public string firstKey;
         public string race;
         public List<ClientLine> dialogueLines = new List<ClientLine>();
-        public string tickResponse;
-        public string crossResponse;
+        public List<ClientLine> tickResponse = new List<ClientLine>();
+        public List<ClientLine> crossResponse = new List<ClientLine>();
+        //public string tickResponse;
+        //public string crossResponse;
         
         //Solo si hay que cobrarle
         public int numberOfProducts;
@@ -342,11 +344,21 @@ public class DialogueManager : MonoBehaviour
             DailyClientInfo client = tempClients[clientID];
 
             if (type == "tick")
-                client.tickResponse = GetText(key);
+            {
+                string text = GetText(key);
+                string tone = GetTone(key);
+                string mood = GetMood(key);
+                client.tickResponse.Add(new ClientLine(text, tone, mood));
+            }
            
             else if (type == "cross")
-                client.crossResponse = GetText(key);
-            
+            {
+                string text = GetText(key);
+                string tone = GetTone(key);
+                string mood = GetMood(key);
+                client.crossResponse.Add(new ClientLine(text, tone, mood));
+            }
+
             else if (type == "init" || type.StartsWith("dialogue") || type == "end" || type == "brake")
             {
                 string text = GetText(key);

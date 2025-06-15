@@ -116,18 +116,14 @@ public class ClientManager : MonoBehaviour
 
             if (iWantToBelieve)
             {
-                dialogueTextBox.text = currentDialogueClient.tickResponse;
-
-                // IMPORTANTE TENGO QUE METERLE MOOD A LAS TICK Y CROSS RESPUESTAS            
-                //ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, tickResponse.mood);
+                dialogueTextBox.text = currentDialogueClient.tickResponse[0].text;          
+                ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.tickResponse[0].mood);
             }
 
             else if (noWayJose)
             {
-                dialogueTextBox.text = currentDialogueClient.crossResponse;
-
-                // IMPORTANTE TENGO QUE METERLE MOOD A LAS TICK Y CROSS RESPUESTAS            
-                //ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, tickResponse.mood);
+                dialogueTextBox.text = currentDialogueClient.crossResponse[0].text;
+                ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.crossResponse[0].mood);
             }
 
             iWantToBelieve = false;
@@ -161,10 +157,7 @@ public class ClientManager : MonoBehaviour
         }
 
         else
-        {
-            Debug.Log("A mi me tienes que cobrar zanguango");
             ShowProducts(currentDialogueClient, currentDialogueClient.numberOfProducts);
-        }
     }
 
     void ChangingSprite(string clientRace, string clientName, string clientMood)
