@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1, y: 0.8094671}
+  m_Size: {x: 4.1, y: 0.81}
   m_EdgeRadius: 0
 --- !u!50 &7336179541738107908
 Rigidbody2D:
@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2e5b8d411acca84439f31b3955b775fb, type: 3}
   - {fileID: 8300000, guid: 95f1e4f23b6e599419639b67bf0df3f1, type: 3}
   - {fileID: 8300000, guid: b3b364dcb8b9dee4c96c82d605a6c380, type: 3}
+  ftBObject: {fileID: 0}
   repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}

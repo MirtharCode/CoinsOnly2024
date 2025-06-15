@@ -652,7 +652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4062275492510113278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6496,8 +6496,8 @@ MonoBehaviour:
   leDineroText: {fileID: 5982892005254501743}
   lePropinasText: {fileID: 5982892003244695455}
   propinasNumber: 0
-  estaToPagao: 0
-  conversationOn: 0
+  estaToPagao: 1
+  conversationOn: 1
   optionsSet: 0
   dialogueText: {fileID: 5982892005100486788}
   dialoguePanel: {fileID: 5982892003858235575}
@@ -9103,7 +9103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5982892003858235572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14320,7 +14320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5982892005171106622
 RectTransform:
   m_ObjectHideFlags: 0

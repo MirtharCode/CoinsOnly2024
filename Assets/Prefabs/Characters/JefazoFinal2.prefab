@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1, y: 0.8094671}
+  m_Size: {x: 4.1, y: 0.81}
   m_EdgeRadius: 0
 --- !u!114 &1441480274138724603
 MonoBehaviour:
@@ -163,12 +163,15 @@ MonoBehaviour:
   raza: 
   nombre: 
   talkingSound: {fileID: 0}
+  lastPlayerSound: {fileID: 0}
   sounds:
   - {fileID: 8300000, guid: 29363059a36428344baefabb4c00d829, type: 3}
   - {fileID: 8300000, guid: 26a0114abe9f2224893422e8565ff138, type: 3}
   - {fileID: 8300000, guid: 4d74dd1ba1dbbf04087e286498e89b03, type: 3}
   - {fileID: 8300000, guid: 622164ede4ad2b7438988d6200d5083c, type: 3}
   - {fileID: 8300000, guid: 7dec9c10a99e36a4fa1cffd382c65247, type: 3}
+  ftBObject: {fileID: 0}
+  repetirunavez: 0
 --- !u!82 &4473003675266425654
 AudioSource:
   m_ObjectHideFlags: 0

@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     [Header("CHARACTERS THAT CAN APPEAR")]
 
+    [Header("Prefab")]
+    [SerializeField] public GameObject clientPrefab;
+
     [Header("El jefe")]
     [SerializeField] public GameObject jefe;
     [SerializeField] public GameObject jefe2;
