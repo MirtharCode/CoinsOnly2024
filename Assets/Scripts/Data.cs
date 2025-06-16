@@ -141,6 +141,8 @@ public class Data : MonoBehaviour
         archivoDeGuardado2 = Application.persistentDataPath + "/datosJuego_slot2.json";
         archivoDeGuardado3 = Application.persistentDataPath + "/datosJuego_slot3.json";
 
+        Debug.Log(archivoDeGuardado1);
+
         uIManager = null;
         homeManager = null;
 
