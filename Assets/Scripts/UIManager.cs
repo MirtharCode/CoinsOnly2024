@@ -184,7 +184,7 @@ public class UIManager : MonoBehaviour
         quejas.Add("¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!");                   // Si sí le has cobrado y no deberías haberle cobrado.
         quejas.Add("¡Aquí tenemos unas normas! ¡¿Las recuerdas?!");                                             // Cuando no has cumplido las normativas.
         quejas.Add("¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!");    // Si no le has cobrado y sí deberias haberle cobrado (A partir del día 2).
-        quejas.Add("Ese cupón es más falso que el amor que siento por mi madre");    // Cuando la cagas con el boleto
+        quejas.Add("Ese cupón es más falso que el amor que siento por mi madre");                               // Cuando la cagas con el boleto
 
         razasNormas = new string[5];
         razasNormas[0] = "Magos Oscuros";

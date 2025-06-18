@@ -113,6 +113,12 @@ public class FadeToBlack : MonoBehaviour
             Invoke(nameof(VolverDeGolpearSlimes), fadeToblackClipTime);
         }
 
+        else if (currentScene.name.Contains("Elidora"))
+        {
+            GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
+            SceneManager.LoadScene("DD");
+        }
+
 
         else
             Invoke(nameof(CallingNextday), fadeToblackClipTime);

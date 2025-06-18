@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClientScript : MonoBehaviour
 {
 
-    [SerializeField] public GameObject uIManager;
+    [SerializeField] public ClientManager cM;
     public bool repetirunavez = false;
+    public AudioSource talkingSound;
+    public AudioClip lastSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        uIManager = GameObject.FindGameObjectWithTag("UI");
+        cM = GameObject.FindGameObjectWithTag("UI").GetComponent<ClientManager>();
+        talkingSound = gameObject.GetComponent<AudioSource>();
+        talkingSound.enabled = true;
 
     }
 
@@ -29,6 +34,7 @@ public class ClientScript : MonoBehaviour
             repetirunavez = true;
 
             DialogueManager.Instance.GetComponent<DialogueManager>().ShowText();
+            cM.Speaking(cM.currentDialogueClient.dialogueLines[0].tone);
         }
     }
 }
