@@ -27,8 +27,6 @@ TagManager:
   - HomeClient
   - FadeBlack
   - Gnomo
-  - ComplainObject
-  - BossPhone
   layers:
   - Default
   - TransparentFX

@@ -2540,6 +2540,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468255671}
   m_CullTransparentMesh: 1
+--- !u!1 &484836867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484836869}
+  - component: {fileID: 484836868}
+  m_Layer: 0
+  m_Name: SceneReferences
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &484836868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484836867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e96d6ea7306d44a833b64539acb8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientManager: {fileID: 1397739548}
+  phoneObject: {fileID: 1758836934}
+  complainObject: {fileID: 753033386}
+  dialoguePanel: {fileID: 1910431965}
+  sospechosoPanel: {fileID: 9177456957901062503}
+  seguroPanel: {fileID: 5091621263567511581}
+  preciosPanel: {fileID: 8069260977113270}
+  botonPlegadoPrecios: {fileID: 8815722500579866638}
+  botonDesplegadoPrecios: {fileID: 4811667083697864833}
+  pos1Precios: {fileID: 453772223}
+  pos2Precios: {fileID: 823273045}
+  normativaPanel: {fileID: 537900581}
+  botonPlegadoNormativas: {fileID: 881359425}
+  botonDesplegadoNormativas: {fileID: 589280083}
+  pos1Normativas: {fileID: 2327065260882921602}
+  pos2Normativas: {fileID: 1965600946015438291}
+  regRaceText: {fileID: 3342487428309252669}
+  darkWizardsPanel: {fileID: 1242579863972634743}
+  hybridsPanel: {fileID: 9116895271944725358}
+  elementalsPanel: {fileID: 1901384650116340741}
+  limbasticsPanel: {fileID: 6993414563311223187}
+  tecnopedsPanel: {fileID: 8799558138118966018}
+  leDinero: {fileID: 1755539549}
+  leDineroText: {fileID: 605566213}
+  leCajaRegistradora: {fileID: 915827598}
+  buttonCobrar: {fileID: 8649790554867328137}
+  buttonNoCobrar: {fileID: 2731853007271945788}
+  centralProduct: {fileID: 1102901060}
+  rightProduct: {fileID: 1993393624}
+  leftProduct: {fileID: 595192933}
+  couponPlace: {fileID: 1981021438}
+  lesPropinas: {fileID: 1124116400}
+  lePropinasText: {fileID: 1548550133}
+--- !u!4 &484836869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484836867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 368.3529, y: 588.20624, z: -212.7378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505012695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,8 +2996,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: OpenListNormativas
         m_Mode: 1
         m_Arguments:
@@ -3639,7 +3716,7 @@ GameObject:
   - component: {fileID: 753033388}
   m_Layer: 5
   m_Name: BossComplains
-  m_TagString: ComplainObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4541,55 +4618,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
+  lastSceneWithDialogues: 
+  clientManager: {fileID: 0}
   clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
   dailyCustomers: []
-  savedDailyCustomers: []
   conversationOn: 0
-  dialoguePanel: {fileID: 1910431965}
-  detectivePanel: {fileID: 9177456957901062503}
-  areYouSurePanel: {fileID: 5091621263567511581}
+  dialoguePanel: {fileID: 0}
+  detectivePanel: {fileID: 0}
+  areYouSurePanel: {fileID: 0}
   traductorText: {fileID: 0}
   NombreText: {fileID: 0}
   allProducts:
     categories: []
   listOpenPrecios: 0
-  dropDownPanelPrecios: {fileID: 8069260977113270}
-  botonPlegadoPrecios: {fileID: 8815722500579866638}
-  botonDesplegadoPrecios: {fileID: 4811667083697864833}
-  position1Precios: {fileID: 453772223}
-  position2Precios: {fileID: 823273045}
-  preciosButton: {fileID: 0}
+  dropDownPanelPrecios: {fileID: 0}
+  botonPlegadoPrecios: {fileID: 0}
+  botonDesplegadoPrecios: {fileID: 0}
+  position1Precios: {fileID: 0}
+  position2Precios: {fileID: 0}
   listOpenNormativas: 0
-  dropDownPanelNormativas: {fileID: 537900581}
-  botonPlegadoNormativas: {fileID: 881359425}
-  botonDesplegadoNormativas: {fileID: 589280083}
-  position1Normativas: {fileID: 2327065260882921602}
-  position2Normativas: {fileID: 1965600946015438291}
+  dropDownPanelNormativas: {fileID: 0}
+  botonPlegadoNormativas: {fileID: 0}
+  botonDesplegadoNormativas: {fileID: 0}
+  position1Normativas: {fileID: 0}
+  position2Normativas: {fileID: 0}
   regulationsAdded: 0
   currentRegulationsNumber: 0
   currentRegulations: []
   regulationsData: []
   razasNormas: []
-  textoRaza: {fileID: 3342487428309252669}
-  panelMagos: {fileID: 1242579863972634743}
-  panelHibridos: {fileID: 9116895271944725358}
-  panelElementales: {fileID: 1901384650116340741}
-  panelLimbasticos: {fileID: 6993414563311223187}
-  panelTecnopedos: {fileID: 8799558138118966018}
-  normativasButton: {fileID: 0}
-  leDinero: {fileID: 1755539549}
-  leDineroText: {fileID: 605566213}
-  leCajaRegistradora: {fileID: 915827598}
-  buttonCobrar: {fileID: 8649790554867328137}
-  buttonNoCobrar: {fileID: 2731853007271945788}
-  centralProduct: {fileID: 1102901060}
-  rightProduct: {fileID: 1993393624}
-  leftProduct: {fileID: 595192933}
-  couponPlace: {fileID: 1981021438}
-  lesPropinas: {fileID: 1124116400}
-  lePropinasText: {fileID: 1548550133}
+  razaSeleccionada: 0
+  textoRaza: {fileID: 0}
+  panelMagos: {fileID: 0}
+  panelHibridos: {fileID: 0}
+  panelElementales: {fileID: 0}
+  panelLimbasticos: {fileID: 0}
+  panelTecnopedos: {fileID: 0}
+  leDinero: {fileID: 0}
+  leDineroText: {fileID: 0}
+  leCajaRegistradora: {fileID: 0}
+  buttonCobrar: {fileID: 0}
+  buttonNoCobrar: {fileID: 0}
+  centralProduct: {fileID: 0}
+  rightProduct: {fileID: 0}
+  leftProduct: {fileID: 0}
+  couponPlace: {fileID: 0}
+  lesPropinas: {fileID: 0}
+  lePropinasText: {fileID: 0}
   propinasNumber: 0
-  phone: {fileID: 1758836934}
+  phone: {fileID: 0}
   jefePanel: {fileID: 0}
   textoJefe: {fileID: 0}
 --- !u!4 &838496886
@@ -4603,8 +4680,7 @@ Transform:
   m_LocalPosition: {x: 620.82684, y: 527.5037, z: -200.58093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 910278284}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4889,8 +4965,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: OpenListNormativas
         m_Mode: 1
         m_Arguments:
@@ -5080,11 +5156,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910278283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -621, y: -512, z: 200.5}
+  m_LocalPosition: {x: -0.17315674, y: 15.503723, z: -0.08093262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 838496886}
+  m_Father: {fileID: 1318056130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915827598
@@ -7581,7 +7657,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 910278284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9783,7 +9860,7 @@ GameObject:
   - component: {fileID: 1758836938}
   m_Layer: 5
   m_Name: Phone
-  m_TagString: BossPhone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13196,8 +13273,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: RetrocederRaza
         m_Mode: 1
         m_Arguments:
@@ -14705,8 +14782,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: OpenListPrecios
         m_Mode: 1
         m_Arguments:
@@ -15902,6 +15979,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056214683058724484, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056214683058724484, guid: 3916d1eaa84dd2541815b655eebaf273, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -16412,8 +16493,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: OpenListPrecios
         m_Mode: 1
         m_Arguments:
@@ -24614,8 +24695,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 838496885}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 5982892004648951920}
+        m_TargetAssemblyTypeName: ClientManager, Assembly-CSharp
         m_MethodName: AvanzarRaza
         m_Mode: 1
         m_Arguments:

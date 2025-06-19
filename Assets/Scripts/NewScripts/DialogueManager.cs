@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -91,8 +89,8 @@ public class DialogueManager : MonoBehaviour
     {
         public string regulationName;
         public string regulationType;
-        public string typeForbidden;
         public string discountedProduct;
+        public string newPrice;
         public string mix1Forbidden;
         public string mix2Forbidden;
         public string raceAffected;
@@ -112,10 +110,12 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsReady { get; private set; } = false;
     public string currentSceneName;
-
+    public string lastSceneWithDialogues ="";
+    public GameObject csvImporter;
+    public GameObject clientManager;
     public GameObject clientPrefab;
     public List<DailyClientInfo> dailyCustomers = new List<DailyClientInfo>();
-    public List<DailyClientInfo> savedDailyCustomers = new List<DailyClientInfo>();
+
     [SerializeField] public bool conversationOn;
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public GameObject detectivePanel;
@@ -132,7 +132,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject botonDesplegadoPrecios;
     [SerializeField] public GameObject position1Precios;
     [SerializeField] public GameObject position2Precios;
-    [SerializeField] public GameObject preciosButton;
 
     [SerializeField] public bool listOpenNormativas = false;
     [SerializeField] public GameObject dropDownPanelNormativas;
@@ -145,18 +144,19 @@ public class DialogueManager : MonoBehaviour
 
     public bool regulationsAdded;
     public int currentRegulationsNumber;
-    public List<string> currentRegulations = new List<string>();
+    public List<string> currentRegulations;
+    
+    [SerializeField]
     public List<RegulationInfo> regulationsData = new List<RegulationInfo>();
 
     public string[] razasNormas;
-    int razaSeleccionada;
+    public int razaSeleccionada;
     [SerializeField] public TextMeshProUGUI textoRaza;
     [SerializeField] public GameObject panelMagos;
     [SerializeField] public GameObject panelHibridos;
     [SerializeField] public GameObject panelElementales;
     [SerializeField] public GameObject panelLimbasticos;
     [SerializeField] public GameObject panelTecnopedos;
-    [SerializeField] public GameObject normativasButton;
 
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
@@ -170,7 +170,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject couponPlace;
     [SerializeField] public GameObject lesPropinas;
     [SerializeField] public TMP_Text lePropinasText;
-    [SerializeField] public float propinasNumber = 0;
+    [SerializeField] public float propinasNumber;
 
     [Header("BOSS' THINGS")]
     public GameObject phone;
@@ -198,18 +198,56 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        phone = GameObject.FindGameObjectWithTag("BossPhone");
-        jefePanel = GameObject.FindGameObjectWithTag("ComplainObject");
-        textoJefe = jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
+        if (lastSceneWithDialogues == currentSceneName)
+        {            
+            if (propinasNumber <= 0)
+            {
+                propinasNumber = 0;
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{0}");
+            }
 
-        if (savedDailyCustomers.Count != 0)
-        {
-            Debug.Log("Añado la lista que me había guardado a dailyCustomers y borro savedDailyCustomers");
-            dailyCustomers = savedDailyCustomers;
-            savedDailyCustomers.Clear();
+            else if (propinasNumber > 0 && propinasNumber <= 10)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{10}");
+
+            else if (propinasNumber > 10 && propinasNumber <= 20)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{20}");
+
+            else if (propinasNumber > 20 && propinasNumber <= 30)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{30}");
+
+            else if (propinasNumber > 30 && propinasNumber <= 40)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{40}");
+
+            else if (propinasNumber > 40 && propinasNumber <= 50)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{50}");
+
+            else if (propinasNumber > 50 && propinasNumber <= 60)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{60}");
+
+            else if (propinasNumber > 60 && propinasNumber <= 70)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{70}");
+
+            else if (propinasNumber > 70 && propinasNumber <= 80)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{80}");
+
+            else if (propinasNumber > 80 && propinasNumber <= 90)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{90}");
+
+            else if (propinasNumber > 90 && propinasNumber <= 100)
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
+
+            else if (propinasNumber > 100)
+            {
+                propinasNumber = 100;
+                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
+            }
+
+            lePropinasText.text = "" + propinasNumber;            
         }
 
+        else
+            clientManager.GetComponent<ClientManager>().LaVoluntad(50);
 
         #region CREANDO EL DICCIONARIO DE TIPOS DE PRODUCTOS
         allProducts = new ProductsType();
@@ -264,158 +302,6 @@ public class DialogueManager : MonoBehaviour
         razaSeleccionada = 0;
         #endregion
     }
-
-    #region CÓDIGO ANTIGUO REFERENTE A LOS DESPLEGABLES DE NORMATIVAS Y PRECIOS QUE CAMBIARÁN
-    public void OpenListPrecios()
-    {
-        if (listOpenPrecios)
-        {
-            buttonCobrar.SetActive(true);
-            buttonNoCobrar.SetActive(true);
-            dropDownPanelPrecios.transform.position = position2Precios.transform.position;
-            botonDesplegadoPrecios.SetActive(true);
-            botonPlegadoPrecios.SetActive(false);
-            listOpenPrecios = false;
-        }
-
-        else
-        {
-            buttonCobrar.SetActive(false);
-            buttonNoCobrar.SetActive(false);
-            dropDownPanelPrecios.transform.position = position1Precios.transform.position;
-            botonDesplegadoPrecios.SetActive(false);
-            botonPlegadoPrecios.SetActive(true);
-            listOpenPrecios = true;
-        }
-    }
-
-    public void OpenListNormativas()
-    {
-        if (listOpenNormativas)
-        {
-            buttonCobrar.SetActive(true);
-            buttonNoCobrar.SetActive(true);
-            dropDownPanelNormativas.transform.position = position2Normativas.transform.position;
-            botonDesplegadoNormativas.SetActive(true);
-            botonPlegadoNormativas.SetActive(false);
-            listOpenNormativas = false;
-        }
-
-        else
-        {
-            buttonCobrar.SetActive(false);
-            buttonNoCobrar.SetActive(false);
-            dropDownPanelNormativas.transform.position = position1Normativas.transform.position;
-            botonDesplegadoNormativas.SetActive(false);
-            botonPlegadoNormativas.SetActive(true);
-            listOpenNormativas = true;
-        }
-    }
-
-    public void RetrocederRaza()
-    {
-        razaSeleccionada = (razaSeleccionada - 1 + razasNormas.Length) % razasNormas.Length;
-
-        textoRaza.text = razasNormas[razaSeleccionada];
-
-        if (textoRaza.text == "Magos Oscuros")
-        {
-            panelMagos.SetActive(true);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Elementales")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(true);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Híbridos")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(true);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Limbásticos")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(true);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Tecno P2")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(true);
-        }
-    }
-
-    public void AvanzarRaza()
-    {
-        razaSeleccionada = (razaSeleccionada + 1) % razasNormas.Length;
-
-        textoRaza.text = razasNormas[razaSeleccionada];
-
-        if (textoRaza.text == "Magos Oscuros")
-        {
-            panelMagos.SetActive(true);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Elementales")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(true);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Híbridos")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(true);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Limbásticos")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(true);
-            panelTecnopedos.SetActive(false);
-        }
-
-        else if (textoRaza.text == "Tecno P2")
-        {
-            panelMagos.SetActive(false);
-            panelElementales.SetActive(false);
-            panelHibridos.SetActive(false);
-            panelLimbasticos.SetActive(false);
-            panelTecnopedos.SetActive(true);
-        }
-    }
-    #endregion
 
     public void LoadFromDatabase(DialogueDatabase db, string dayPrefix)
     {
@@ -522,7 +408,7 @@ public class DialogueManager : MonoBehaviour
 
             if (matchingProduct == null)
             {
-                //Debug.LogWarning($"No se encontró entrada de producto para cliente: {client.name}");
+                Debug.LogWarning($"No se encontró entrada de producto para cliente: {client.name}");
                 continue;
             }
 
@@ -591,96 +477,96 @@ public class DialogueManager : MonoBehaviour
                 // Añadir objetos RegulationInfo
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_01, matchingProduct.WHICHTYPE_01, matchingProduct.FORWHO_01)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_01,
-                    discountedProduct = matchingProduct.NEWPRICE_01,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_01,
+                    newPrice = matchingProduct.NEWPRICE_01,
                     mix1Forbidden = matchingProduct.MIX1_01,
                     mix2Forbidden = matchingProduct.MIX2_01
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_02, matchingProduct.WHICHTYPE_02, matchingProduct.FORWHO_02)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_02,
-                    discountedProduct = matchingProduct.NEWPRICE_02,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_02,
+                    newPrice = matchingProduct.NEWPRICE_02,
                     mix1Forbidden = matchingProduct.MIX1_02,
                     mix2Forbidden = matchingProduct.MIX2_02
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_03, matchingProduct.WHICHTYPE_03, matchingProduct.FORWHO_03)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_03,
-                    discountedProduct = matchingProduct.NEWPRICE_03,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_03,
+                    newPrice = matchingProduct.NEWPRICE_03,
                     mix1Forbidden = matchingProduct.MIX1_03,
                     mix2Forbidden = matchingProduct.MIX2_03
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_04, matchingProduct.WHICHTYPE_04, matchingProduct.FORWHO_04)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_04,
-                    discountedProduct = matchingProduct.NEWPRICE_04,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_04,
+                    newPrice = matchingProduct.NEWPRICE_04,
                     mix1Forbidden = matchingProduct.MIX1_04,
                     mix2Forbidden = matchingProduct.MIX2_04
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_05, matchingProduct.WHICHTYPE_05, matchingProduct.FORWHO_05)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_05,
-                    discountedProduct = matchingProduct.NEWPRICE_05,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_05,
+                    newPrice = matchingProduct.NEWPRICE_05,
                     mix1Forbidden = matchingProduct.MIX1_05,
                     mix2Forbidden = matchingProduct.MIX2_05
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_06, matchingProduct.WHICHTYPE_06, matchingProduct.FORWHO_06)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_06,
-                    discountedProduct = matchingProduct.NEWPRICE_06,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_06,
+                    newPrice = matchingProduct.NEWPRICE_06,
                     mix1Forbidden = matchingProduct.MIX1_06,
                     mix2Forbidden = matchingProduct.MIX2_06
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_07, matchingProduct.WHICHTYPE_07, matchingProduct.FORWHO_07)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_07,
-                    discountedProduct = matchingProduct.NEWPRICE_07,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_07,
+                    newPrice = matchingProduct.NEWPRICE_07,
                     mix1Forbidden = matchingProduct.MIX1_07,
                     mix2Forbidden = matchingProduct.MIX2_07
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_08, matchingProduct.WHICHTYPE_08, matchingProduct.FORWHO_08)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_08,
-                    discountedProduct = matchingProduct.NEWPRICE_08,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_08,
+                    newPrice = matchingProduct.NEWPRICE_08,
                     mix1Forbidden = matchingProduct.MIX1_08,
                     mix2Forbidden = matchingProduct.MIX2_08
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_09, matchingProduct.WHICHTYPE_09, matchingProduct.FORWHO_09)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_09,
-                    discountedProduct = matchingProduct.NEWPRICE_09,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_09,
+                    newPrice = matchingProduct.NEWPRICE_09,
                     mix1Forbidden = matchingProduct.MIX1_09,
                     mix2Forbidden = matchingProduct.MIX2_09
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_10, matchingProduct.WHICHTYPE_10, matchingProduct.FORWHO_10)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_10,
-                    discountedProduct = matchingProduct.NEWPRICE_10,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_10,
+                    newPrice = matchingProduct.NEWPRICE_10,
                     mix1Forbidden = matchingProduct.MIX1_10,
                     mix2Forbidden = matchingProduct.MIX2_10
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_11, matchingProduct.WHICHTYPE_11, matchingProduct.FORWHO_11)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_11,
-                    discountedProduct = matchingProduct.NEWPRICE_11,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_11,
+                    newPrice = matchingProduct.NEWPRICE_11,
                     mix1Forbidden = matchingProduct.MIX1_11,
                     mix2Forbidden = matchingProduct.MIX2_11
                 });
 
                 regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_12, matchingProduct.WHICHTYPE_12, matchingProduct.FORWHO_12)
                 {
-                    typeForbidden = matchingProduct.WHICHPRODUCT_12,
-                    discountedProduct = matchingProduct.NEWPRICE_12,
+                    discountedProduct = matchingProduct.WHICHPRODUCT_12,
+                    newPrice = matchingProduct.NEWPRICE_12,
                     mix1Forbidden = matchingProduct.MIX1_12,
                     mix2Forbidden = matchingProduct.MIX2_12
                 });
@@ -697,7 +583,7 @@ public class DialogueManager : MonoBehaviour
                             ForbiddenType_For(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].regulationType);
 
                         else if (regulationsData[i].regulationName == "changingPriceTo_For_")
-                            ChangingPriceTo_For_(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].discountedProduct);
+                            ChangingPriceTo_For_(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].newPrice, regulationsData[i].discountedProduct);
 
                         else if (regulationsData[i].regulationName == "forbiddenMixof_For_")
                             ForbiddenMixOf_For_(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].mix1Forbidden, regulationsData[i].mix2Forbidden);
@@ -739,7 +625,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void ChangingPriceTo_For_(Transform razasPanelNormativas, string affectedRace, string product)
+    public void ChangingPriceTo_For_(Transform razasPanelNormativas, string affectedRace, string newPrice, string product)
     {
         // Buscar el panel correspondiente a la raza
         Transform razaPanel = razasPanelNormativas.Cast<Transform>()
@@ -748,7 +634,7 @@ public class DialogueManager : MonoBehaviour
         if (razaPanel == null) return;
 
         razaPanel.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = true;
-        razaPanel.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Hoy tienen descuento en:";
+        razaPanel.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Hoy valen " + newPrice + " monedas:";
         razaPanel.GetChild(2).GetComponent<Image>().enabled = true;
         razaPanel.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/Products/{product}");
     }
@@ -1235,5 +1121,56 @@ public class DialogueManager : MonoBehaviour
         //    currentCustomer.GetComponent<Client>().ByeBye();
         //    gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
         //}
+    }
+
+    public void SetSceneReferences(GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel,
+                                   GameObject preciosPanel, GameObject botonDesplegarPreciosPanel, GameObject botonPlegarPreciosPanel, GameObject pos1PreciosPanel, GameObject pos2PreciosPanel,
+                                   GameObject normativaPanel, GameObject botonDesplegarNormativasPanel, GameObject botonPlegarNormativasPanel, GameObject pos1NormativasPanel, GameObject pos2NormativasPanel, TextMeshProUGUI regulationsRaceText,
+                                   GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
+                                   GameObject moneySack, TMP_Text moneySackText, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
+                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
+    {
+        clientManager = cM;
+        phone = phoneObj;
+        jefePanel = complainObj;
+        dialoguePanel = dPanel;
+        detectivePanel = sospechosoPanel;
+        areYouSurePanel = seguroPanel;
+
+        dropDownPanelPrecios = preciosPanel;
+        botonPlegadoPrecios = botonDesplegarPreciosPanel;
+        botonDesplegadoPrecios = botonPlegarPreciosPanel;
+        position1Precios = pos1PreciosPanel;
+        position2Precios = pos2PreciosPanel;
+
+        dropDownPanelNormativas = normativaPanel;
+        botonPlegadoNormativas = botonDesplegarNormativasPanel;
+        botonDesplegadoNormativas = botonPlegarNormativasPanel;
+        position1Normativas = pos1NormativasPanel;
+        position2Normativas = pos2NormativasPanel;
+
+        textoRaza = regulationsRaceText;
+        panelMagos = regMagosOscurosPanel;
+        panelHibridos = regHibridosPanel;
+        panelElementales = regElementalesPanel;
+        panelLimbasticos = regLimbasticosPanel;
+        panelTecnopedos = regTecnopedosPanel;
+
+        leDinero = moneySack;
+        leDineroText = moneySackText;
+        leCajaRegistradora = cachinkThing;
+        buttonCobrar = chargeButton;
+        buttonNoCobrar = byeButton;
+        centralProduct = cenProd;
+        rightProduct = derProd;
+        leftProduct = izqProd;
+        couponPlace = cupPlace;
+        lesPropinas = tipJar;
+        lePropinasText = tipJarText;
+
+
+
+        if (jefePanel != null)
+            textoJefe = jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 }

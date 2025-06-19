@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
 using System;
-using static Unity.VisualScripting.Icons;
 
 [Serializable]
 public class DialogueEntry
@@ -182,15 +180,22 @@ public class CSVImporter : MonoBehaviour
 
         DialogueDatabase db = ParseDialogueCSV(csvFile.text);
         DialogueManager.Instance.LoadFromDatabase(db, currentSceneName);
-        ProductsDatabase productsDb= LoadProductsFromLocalCSV();
-        
+        ProductsDatabase productsDb = LoadProductsFromLocalCSV();
+
         // En caso que no venga de un Minijuego, que me genere la lista de clientes de ese día
-        if (DialogueManager.Instance.savedDailyCustomers.Count == 0)
+        if (DialogueManager.Instance.lastSceneWithDialogues == "")
         {
             Debug.Log("Creo una lista de clientes diarios porque no había nada guardado en savedDailyCustomers");
             DialogueManager.Instance.GenerateDailyClients(); // Crea los DailyClientInfo
             DialogueManager.Instance.AssignProductDataToClients(productsDb);          // Asigna productos a clientes
-        }        
+        }
+
+        else
+        {
+            DialogueManager.Instance.regulationsAdded = false;
+            DialogueManager.Instance.AssignProductDataToClients(productsDb);          // Asigna productos a clientes
+        }          
+
     }
 
     ProductsDatabase LoadProductsFromLocalCSV()

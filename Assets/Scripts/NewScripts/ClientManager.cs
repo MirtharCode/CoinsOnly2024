@@ -21,8 +21,7 @@ public class ClientManager : MonoBehaviour
     [SerializeField] public Transform showUpPoint;
 
 
-    private float timer = 0.3f;
-    private bool firstShow = false;
+    private float timer = .5f;
 
     public DialogueManager.DailyClientInfo currentDialogueClient;
     private int clientDialogueLineIndex = 0;
@@ -33,6 +32,7 @@ public class ClientManager : MonoBehaviour
     private bool cobrasteBien = false;
     private bool cobrasteMal = false;
     private bool teTocaBronca = false;
+    private bool meVoyAMinijuego = false;
 
     public string selectedSuspect;
 
@@ -41,28 +41,16 @@ public class ClientManager : MonoBehaviour
 
     private void Start()
     {
-        LaVoluntad(50);
         StartMusicSetup();
+        Invoke(nameof(StartNextClient), timer);
     }
     void Update()
-    {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0 && !firstShow)
-        {
-            firstShow = true;
-            StartNextClient();
-        }
+    {      
 
         if (!dialogueReady && DialogueManager.Instance.IsReady)
         {
             dialogueReady = true;
             Debug.Log("Diálogos listos.");
-        }
-
-        if (Input.GetKeyDown("space"))
-        {
-            TesteoBurro();
         }
     }
 
@@ -205,7 +193,7 @@ public class ClientManager : MonoBehaviour
         else
         {
             // Esto solo pasa en la demo de MadridOtaku
-            if (currentDialogueClient.name == "Minijefe" && currentDialogueClient.clientID == "clientFINAL" && DialogueManager.Instance.currentSceneName == "DD")
+            if (currentDialogueClient.name == "Mikujefe" && currentDialogueClient.clientID == "clientFINAL" && DialogueManager.Instance.currentSceneName == "DD")
             {
                 StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
                 StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
@@ -237,14 +225,11 @@ public class ClientManager : MonoBehaviour
         {
             if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "minigame")
             {
-                Destroy(currentClient, 1);
+                meVoyAMinijuego = true;
+                showingDialogue = false;
+                DialogueManager.Instance.lastSceneWithDialogues = SceneManager.GetActiveScene().name;
 
-                if (DialogueManager.Instance.dailyCustomers.Count > 0)
-                    DialogueManager.Instance.dailyCustomers.RemoveAt(0);
-
-                DialogueManager.Instance.savedDailyCustomers = DialogueManager.Instance.dailyCustomers;
-
-                GoingToMinigame(currentDialogueClient.name);
+                FinishCurrentClient();               
             }
 
             else if (clientDialogueLineIndex >= currentDialogueClient.dialogueLines.Count)
@@ -427,7 +412,11 @@ public class ClientManager : MonoBehaviour
                 if (DialogueManager.Instance.dailyCustomers.Count > 0)
                     DialogueManager.Instance.dailyCustomers.RemoveAt(0);
 
-                Invoke(nameof(StartNextClient), 1);
+                if (!meVoyAMinijuego)             
+                    Invoke(nameof(StartNextClient), 1);
+
+                else
+                    GoingToMinigame(currentDialogueClient.name);            
             }
 
             else
@@ -680,4 +669,156 @@ public class ClientManager : MonoBehaviour
         }
         mat.SetFloat("_Lerp", 0f);
     }
+
+    #region CÓDIGO ANTIGUO REFERENTE A LOS DESPLEGABLES DE NORMATIVAS Y PRECIOS QUE CAMBIARÁN
+    public void OpenListPrecios()
+    {
+        if (DialogueManager.Instance.listOpenPrecios)
+        {
+            DialogueManager.Instance.buttonCobrar.SetActive(true);
+            DialogueManager.Instance.buttonNoCobrar.SetActive(true);
+            DialogueManager.Instance.dropDownPanelPrecios.transform.position = DialogueManager.Instance.position2Precios.transform.position;
+            DialogueManager.Instance.botonDesplegadoPrecios.SetActive(true);
+            DialogueManager.Instance.botonPlegadoPrecios.SetActive(false);
+            DialogueManager.Instance.listOpenPrecios = false;
+        }
+
+        else
+        {
+            DialogueManager.Instance.buttonCobrar.SetActive(false);
+            DialogueManager.Instance.buttonNoCobrar.SetActive(false);
+            DialogueManager.Instance.dropDownPanelPrecios.transform.position = DialogueManager.Instance.position1Precios.transform.position;
+            DialogueManager.Instance.botonDesplegadoPrecios.SetActive(false);
+            DialogueManager.Instance.botonPlegadoPrecios.SetActive(true);
+            DialogueManager.Instance.listOpenPrecios = true;
+        }
+    }
+
+    public void OpenListNormativas()
+    {
+        if (DialogueManager.Instance.listOpenNormativas)
+        {
+            DialogueManager.Instance.buttonCobrar.SetActive(true);
+            DialogueManager.Instance.buttonNoCobrar.SetActive(true);
+            DialogueManager.Instance.dropDownPanelNormativas.transform.position = DialogueManager.Instance.position2Normativas.transform.position;
+            DialogueManager.Instance.botonDesplegadoNormativas.SetActive(true);
+            DialogueManager.Instance.botonPlegadoNormativas.SetActive(false);
+            DialogueManager.Instance.listOpenNormativas = false;
+        }
+
+        else
+        {
+            DialogueManager.Instance.buttonCobrar.SetActive(false);
+            DialogueManager.Instance.buttonNoCobrar.SetActive(false);
+            DialogueManager.Instance.dropDownPanelNormativas.transform.position = DialogueManager.Instance.position1Normativas.transform.position;
+            DialogueManager.Instance.botonDesplegadoNormativas.SetActive(false);
+            DialogueManager.Instance.botonPlegadoNormativas.SetActive(true);
+            DialogueManager.Instance.listOpenNormativas = true;
+        }
+    }
+
+    public void RetrocederRaza()
+    {
+        DialogueManager.Instance.razaSeleccionada = (DialogueManager.Instance.razaSeleccionada - 1 + DialogueManager.Instance.razasNormas.Length) % DialogueManager.Instance.razasNormas.Length;
+
+        DialogueManager.Instance.textoRaza.text = DialogueManager.Instance.razasNormas[DialogueManager.Instance.razaSeleccionada];
+
+        if (DialogueManager.Instance.textoRaza.text == "Magos Oscuros")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(true);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Elementales")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(true);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Híbridos")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(true);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Limbásticos")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(true);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Tecno P2")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(true);
+        }
+    }
+
+    public void AvanzarRaza()
+    {
+        DialogueManager.Instance.razaSeleccionada = (DialogueManager.Instance.razaSeleccionada + 1) % DialogueManager.Instance.razasNormas.Length;
+
+        DialogueManager.Instance.textoRaza.text = DialogueManager.Instance.razasNormas[DialogueManager.Instance.razaSeleccionada];
+
+        if (DialogueManager.Instance.textoRaza.text == "Magos Oscuros")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(true);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Elementales")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(true);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Híbridos")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(true);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Limbásticos")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(true);
+            DialogueManager.Instance.panelTecnopedos.SetActive(false);
+        }
+
+        else if (DialogueManager.Instance.textoRaza.text == "Tecno P2")
+        {
+            DialogueManager.Instance.panelMagos.SetActive(false);
+            DialogueManager.Instance.panelElementales.SetActive(false);
+            DialogueManager.Instance.panelHibridos.SetActive(false);
+            DialogueManager.Instance.panelLimbasticos.SetActive(false);
+            DialogueManager.Instance.panelTecnopedos.SetActive(true);
+        }
+    }
+    #endregion
 }

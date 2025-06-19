@@ -39,7 +39,7 @@ public class CursorScript : MonoBehaviour
 
     private void CursorClicked()
     {
-        if (!currentScene.name.Contains("Whack"))
+        if (!currentScene.name.Contains("Whack") && !currentScene.name.Contains("Elidora"))
             image.sprite = normalClickedCursorImage;
         else image.sprite = normalSmashedHammerImage;
 
@@ -47,7 +47,7 @@ public class CursorScript : MonoBehaviour
 
     private void CursorNormal()
     {
-        if (!currentScene.name.Contains("Whack"))
+        if (!currentScene.name.Contains("Whack") && !currentScene.name.Contains("Elidora"))
             image.sprite = normalCursorImage;
         else image.sprite = normalHammerImage;
     }
