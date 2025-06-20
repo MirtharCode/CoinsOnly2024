@@ -26671,8 +26671,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Actualmente hay tres normativas: Prohibir productos a una raza, dar descuento
-    de un producto a una raza y... tendr\xE1s esperar a la versi\xF3n completa para
-    saber la tercera."
+    de un producto a una raza y... tendr\xE1s que esperar a la versi\xF3n completa
+    para saber la tercera."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}

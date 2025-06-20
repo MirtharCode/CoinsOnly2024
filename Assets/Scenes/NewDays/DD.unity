@@ -4623,6 +4623,7 @@ MonoBehaviour:
   lesPropinas: {fileID: 0}
   lePropinasText: {fileID: 0}
   propinasNumber: 0
+  puntosElidora: 0
   phone: {fileID: 0}
   jefePanel: {fileID: 0}
   textoJefe: {fileID: 0}
@@ -14811,7 +14812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3582635861580782749}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -965.004, y: -536.7, z: -3}
+  m_LocalPosition: {x: -965.004, y: -536.69995, z: -3.0000002}
   m_LocalScale: {x: 0.070989996, y: 0.070989996, z: 0.070989996}
   m_ConstrainProportionsScale: 1
   m_Children: []
