@@ -104,6 +104,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewDays/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d
+  - enabled: 1
+    path: Assets/Scenes/NewDays/FM.unity
+    guid: 6366e2b42d4e51a47b22b532b4343323
+  - enabled: 1
+    path: Assets/Scenes/NewDays/Credits.unity
+    guid: 39b3fe9a9dc069947a045de35de21ba1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5c844afceb8fd99449c6ea5bede7a507, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: da96729395aa0e844ae1e516cb3fa645, type: 2}

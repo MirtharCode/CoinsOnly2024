@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FormsScene : MonoBehaviour
@@ -58,7 +61,7 @@ public class FormsScene : MonoBehaviour
     public bool mejorarCobrar, noTocarCobrar;
 
     // RESPUESTA PREGUNTA 9
-    TMP_InputField entradaSugerenciaCobro;
+    public TMP_InputField entradaSugerenciaCobro;
     public string sugerenciaCobro;
 
     // RESPUESTA PREGUNTA 10
@@ -74,18 +77,37 @@ public class FormsScene : MonoBehaviour
     public bool masLore, noMasLore;
 
     // RESPUESTA PREGUNTA 14
-    TMP_InputField entradaSugerenciaMerchan;
+    public TMP_InputField entradaSugerenciaMerchan;
     public string sugerenciaMerchan;
 
     // RESPUESTA PREGUNTA 15
-    TMP_InputField entradaSugerenciaFinal;
+    public TMP_InputField entradaSugerenciaFinal;
     public string sugerenciaFinal;
 
+    public GameObject fadeToBlackObject;
+    [SerializeField] public AnimationClip fadeToblackClip;
+    [SerializeField] public float fadeToblackClipTime;
+
+    private string csvPath;
+
+
+    private void Awake()
+    {
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        string folderPath = Path.Combine(desktopPath, "MadridOtakuData");
+
+        if (!Directory.Exists(folderPath))
+            Directory.CreateDirectory(folderPath);
+
+        csvPath = Path.Combine(folderPath, "DatosDelFormulario.csv");
+    }
     // Start is called before the first frame update
     void Start()
     {
         Invoke(nameof(activateINTRO1), .5f);
         charactersPanelsSelected = new List<GameObject>();
+        fadeToblackClipTime = fadeToblackClip.length;
+        DialogueManager.Instance.lastSceneWithDialogues = "";
     }
 
     public void activateINTRO1()
@@ -638,8 +660,14 @@ public class FormsScene : MonoBehaviour
 
     public void activatePREGUNTA10()
     {
+        Debug.Log("Pepote");
         sugerenciaCobro = entradaSugerenciaCobro.text;
 
+        activatePREGUNTA10conDelay();
+    }
+
+    public void activatePREGUNTA10conDelay()
+    {
         pregunta9.SetActive(false);
         pregunta10.SetActive(true);
         pregunta10.GetComponent<AudioSource>().Play();
@@ -748,5 +776,103 @@ public class FormsScene : MonoBehaviour
         outro.SetActive(true);
         outro.GetComponent<AudioSource>().Play();
         outro.transform.GetChild(0).GetComponent<Animator>().Play("JacoboToTheLeft");
+
+        string lineaCSV = GenerarLineaCSV();
+        File.AppendAllText(csvPath, lineaCSV + "\n");
+        Debug.Log($"[CSV LOG] Datos guardados en: {csvPath}");
     }
+
+    public void GoToTheEnd()
+    {
+        fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
+        Invoke(nameof(ToTheCredits), fadeToblackClipTime);
+    }
+
+    public void ToTheCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    private bool GetBool(string fieldName)
+    {
+        var field = this.GetType().GetField(fieldName, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
+        if (field != null && field.FieldType == typeof(bool))
+            return (bool)field.GetValue(this);
+        return false;
+    }
+
+
+    public string GenerarLineaCSV()
+    {
+        List<string> csv = new List<string>();
+
+        // PREGUNTA 1
+        if (demoAburrida) csv.Add("demoAburrida");
+        if (demoNormal) csv.Add("demoNormal");
+        if (demoEntretenida) csv.Add("demoEntretenida");
+        if (demoDivertida) csv.Add("demoDivertida");
+
+        // La pregunta 2 no es necesaria porque la tres hace alusión al personaje seleccionado
+        string[] nombres = { "ANTONIO", "ELVOG", "ELIDORA", "PIJUSMAGNUS", "RAVEN", "ROCON", "MINIJEFE", "DETECTIVE" };
+        foreach (string nombre in nombres)
+        {
+            if (GetBool($"aspectoVisual{nombre}")) csv.Add($"aspectoVisual{nombre}");
+            if (GetBool($"personalidadGuion{nombre}")) csv.Add($"personalidadGuion{nombre}");
+            if (GetBool($"ambasCosas{nombre}")) csv.Add($"ambasCosas{nombre}");
+        }
+
+        // PREGUNTA 4
+        if (yesCosmetics) csv.Add("yesCosmetics");
+        if (noCosmetics) csv.Add("noCosmetics");
+
+        // PREGUNTA 5
+        if (entendiCobro) csv.Add("entendiCobro");
+        if (noEntendiCobro) csv.Add("noEntendiCobro");
+
+        // PREGUNTA 6
+        if (entendiNormativas) csv.Add("entendiNormativas");
+        if (noEntendiNormativas) csv.Add("noEntendiNormativas");
+
+        // PREGUNTA 7
+        if (entendiCupones) csv.Add("entendiCupones");
+        if (noEntendiCupones) csv.Add("noEntendiCupones");
+
+        // PREGUNTA 8
+        if (mejorarCobrar) csv.Add("mejorarCobrar");
+        if (noTocarCobrar) csv.Add("noTocarCobrar");
+
+        // PREGUNTA 9
+        csv.Add(sugerenciaCobro);
+
+        // PREGUNTA 10
+        if (odioVictor) csv.Add("odioVictor");
+        if (mehVictor) csv.Add("mehVictor");
+        if (quieromasVictor) csv.Add("quieromasVictor");
+        if (fangirlVictor) csv.Add("fangirlVictor");
+
+        // PREGUNTA 11
+        if (odioMiguel) csv.Add("odioMiguel");
+        if (mehMiguel) csv.Add("mehMiguel");
+        if (quieromasMiguel) csv.Add("quieromasMiguel");
+        if (fangirlMiguel) csv.Add("fangirlMiguel");
+
+        // PREGUNTA 12
+        if (odioHumor) csv.Add("odioHumor");
+        if (mehHumor) csv.Add("mehHumor");
+        if (quieromasHumor) csv.Add("quieromasHumor");
+        if (fangirlHumor) csv.Add("fangirlHumor");
+
+        // PREGUNTA 13
+        if (masLore) csv.Add("masLore");
+        if (noMasLore) csv.Add("noMasLore");
+
+        // PREGUNTA 14
+        csv.Add(sugerenciaMerchan);
+
+        // PREGUNTA 15
+        csv.Add(sugerenciaFinal);
+
+        return string.Join(",", csv);
+    }
+
 }

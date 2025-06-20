@@ -85,7 +85,6 @@ public class ClientManager : MonoBehaviour
 
     void StartNextClient()
     {
-        CSVExporter.Instance.StartClientTimer();
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
@@ -96,8 +95,9 @@ public class ClientManager : MonoBehaviour
 
         if (DialogueManager.Instance.dailyCustomers.Count == 0)
         {
+            dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
-            CSVExporter.Instance.FinalizeSession();
+            SceneManager.LoadScene("FM");
             return;
         }
 
@@ -369,31 +369,12 @@ public class ClientManager : MonoBehaviour
 
     #endregion
 
-
-    public void TesteoBurro()
-    {
-        cobrasteBien = false;
-        cobrasteMal = false;
-        Destroy(currentClient);
-
-        if (DialogueManager.Instance.dailyCustomers.Count > 0)
-            DialogueManager.Instance.dailyCustomers.RemoveAt(0);
-
-        #region PARTE DEL DESPLEGABLE DE LOS PRECIOS Y NORMATIVAS QUE SE CAMBIARÁ
-        DialogueManager.Instance.dropDownPanelPrecios.gameObject.SetActive(false);
-        DialogueManager.Instance.dropDownPanelNormativas.gameObject.SetActive(false);
-        #endregion
-
-        StartNextClient();
-    }
-
     void FinishCurrentClient()
     {
         DialogueManager.Instance.HideText();
 
         if (currentDialogueClient.numberOfProducts == 0 || cobrasteBien || cobrasteMal)
         {
-            CSVExporter.Instance.StopClientTimer();
             if (currentClient != null)
                 currentClient.GetComponent<BoxCollider2D>().enabled = false;
 
