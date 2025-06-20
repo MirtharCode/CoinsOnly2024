@@ -85,6 +85,7 @@ public class ClientManager : MonoBehaviour
 
     void StartNextClient()
     {
+        DialogueManager.Instance.LaVoluntad(0);
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
@@ -124,7 +125,7 @@ public class ClientManager : MonoBehaviour
     {
         // Activar música base
         AudioSource baseTrack = musicBox.GetComponent<AudioSource>();
-        baseTrack.volume = 0.5f;
+        baseTrack.volume = 0.1f;
         baseTrack.loop = true;
         baseTrack.Play();
 
@@ -152,7 +153,7 @@ public class ClientManager : MonoBehaviour
         audioSource.volume = 0f;
     }
 
-    private IEnumerator FadeIn(AudioSource audioSource, float duration, float targetVolume = .33f)
+    private IEnumerator FadeIn(AudioSource audioSource, float duration, float targetVolume = .17f)
     {
         audioSource.volume = 0f;
 
@@ -423,55 +424,6 @@ public class ClientManager : MonoBehaviour
             ShowProducts(currentDialogueClient, currentDialogueClient.numberOfProducts);
     }
 
-    public void LaVoluntad(float cantidad)
-    {
-        DialogueManager.Instance.propinasNumber += cantidad;
-
-        if (DialogueManager.Instance.propinasNumber <= 0)
-        {
-            DialogueManager.Instance.propinasNumber = 0;
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{0}");
-        }
-
-        else if (DialogueManager.Instance.propinasNumber > 0 && DialogueManager.Instance.propinasNumber <= 10)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{10}");
-
-        else if (DialogueManager.Instance.propinasNumber > 10 && DialogueManager.Instance.propinasNumber <= 20)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{20}");
-
-        else if (DialogueManager.Instance.propinasNumber > 20 && DialogueManager.Instance.propinasNumber <= 30)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{30}");
-
-        else if (DialogueManager.Instance.propinasNumber > 30 && DialogueManager.Instance.propinasNumber <= 40)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{40}");
-
-        else if (DialogueManager.Instance.propinasNumber > 40 && DialogueManager.Instance.propinasNumber <= 50)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{50}");
-
-        else if (DialogueManager.Instance.propinasNumber > 50 && DialogueManager.Instance.propinasNumber <= 60)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{60}");
-
-        else if (DialogueManager.Instance.propinasNumber > 60 && DialogueManager.Instance.propinasNumber <= 70)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{70}");
-
-        else if (DialogueManager.Instance.propinasNumber > 70 && DialogueManager.Instance.propinasNumber <= 80)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{80}");
-
-        else if (DialogueManager.Instance.propinasNumber > 80 && DialogueManager.Instance.propinasNumber <= 90)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{90}");
-
-        else if (DialogueManager.Instance.propinasNumber > 90 && DialogueManager.Instance.propinasNumber <= 100)
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
-
-        else if (DialogueManager.Instance.propinasNumber > 100)
-        {
-            DialogueManager.Instance.propinasNumber = 100;
-            DialogueManager.Instance.lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
-        }
-        DialogueManager.Instance.lePropinasText.text = "" + DialogueManager.Instance.propinasNumber;
-
-    }
-
     public IEnumerator BossCalling(string bossComplain)
     {
         DialogueManager.Instance.phone.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", true);
@@ -577,7 +529,7 @@ public class ClientManager : MonoBehaviour
     {
         if (iWantToBelieve)
         {
-            LaVoluntad(currentDialogueClient.tipsIfCheck);
+            DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfCheck);
 
             if (currentDialogueClient.correctChoice == "TICK")
                 cobrasteBien = true;
@@ -592,7 +544,7 @@ public class ClientManager : MonoBehaviour
 
         else if (noWayJose)
         {
-            LaVoluntad(currentDialogueClient.tipsIfBye);
+            DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfBye);
 
             if (currentDialogueClient.correctChoice == "CROSS")
                 cobrasteBien = true;

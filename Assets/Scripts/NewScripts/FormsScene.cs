@@ -30,6 +30,8 @@ public class FormsScene : MonoBehaviour
     // RESPUESTA PREGUNTA 1
     public bool demoAburrida, demoNormal, demoEntretenida, demoDivertida;
 
+    public int atLeastOne = 0;
+
     // RESPUESTA PREGUNTA 2
     public bool elegidoANTONIO, elegidoELVOG, elegidoELIDORA, elegidoPIJUSMAGNUS, elegidoRAVEN, elegidoROCON, elegidoMINIJEFE, elegidoDETECTIVE;
 
@@ -179,12 +181,14 @@ public class FormsScene : MonoBehaviour
             case 0:
                 if (elegidoANTONIO)
                 {
+                    atLeastOne--;
                     elegidoANTONIO = false;
                     pregunta2.transform.GetChild(3).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoANTONIO = true;
                     pregunta2.transform.GetChild(3).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -194,12 +198,14 @@ public class FormsScene : MonoBehaviour
             case 1:
                 if (elegidoELVOG)
                 {
+                    atLeastOne--;
                     elegidoELVOG = false;
                     pregunta2.transform.GetChild(4).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoELVOG = true;
                     pregunta2.transform.GetChild(4).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -208,12 +214,14 @@ public class FormsScene : MonoBehaviour
             case 2:
                 if (elegidoELIDORA)
                 {
+                    atLeastOne--;
                     elegidoELIDORA = false;
                     pregunta2.transform.GetChild(5).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoELIDORA = true;
                     pregunta2.transform.GetChild(5).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -222,12 +230,14 @@ public class FormsScene : MonoBehaviour
             case 3:
                 if (elegidoPIJUSMAGNUS)
                 {
+                    atLeastOne--;
                     elegidoPIJUSMAGNUS = false;
                     pregunta2.transform.GetChild(6).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoPIJUSMAGNUS = true;
                     pregunta2.transform.GetChild(6).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -236,12 +246,14 @@ public class FormsScene : MonoBehaviour
             case 4:
                 if (elegidoRAVEN)
                 {
+                    atLeastOne--;
                     elegidoRAVEN = false;
                     pregunta2.transform.GetChild(7).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoRAVEN = true;
                     pregunta2.transform.GetChild(7).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -250,12 +262,14 @@ public class FormsScene : MonoBehaviour
             case 5:
                 if (elegidoROCON)
                 {
+                    atLeastOne--;
                     elegidoROCON = false;
                     pregunta2.transform.GetChild(8).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoROCON = true;
                     pregunta2.transform.GetChild(8).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -264,12 +278,14 @@ public class FormsScene : MonoBehaviour
             case 6:
                 if (elegidoMINIJEFE)
                 {
+                    atLeastOne--;
                     elegidoMINIJEFE = false;
                     pregunta2.transform.GetChild(9).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoMINIJEFE = true;
                     pregunta2.transform.GetChild(9).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -278,12 +294,14 @@ public class FormsScene : MonoBehaviour
             case 7:
                 if (elegidoDETECTIVE)
                 {
+                    atLeastOne--;
                     elegidoDETECTIVE = false;
                     pregunta2.transform.GetChild(10).GetComponent<Image>().color = new Color(255, 255, 255);
                 }
 
                 else
                 {
+                    atLeastOne++;
                     elegidoDETECTIVE = true;
                     pregunta2.transform.GetChild(10).GetComponent<Image>().color = new Color(0, 255, 0);
                 }
@@ -293,8 +311,11 @@ public class FormsScene : MonoBehaviour
 
     public void activatePREGUNTAS3()
     {
-        addingPersonajes();
-        Invoke(nameof(activatePREGUNTA3conDelay), .5f);
+        if (atLeastOne > 0)
+        {
+            addingPersonajes();
+            Invoke(nameof(activatePREGUNTA3conDelay), .5f);
+        }            
     }
 
     public void addingPersonajes()
@@ -784,6 +805,7 @@ public class FormsScene : MonoBehaviour
 
     public void GoToTheEnd()
     {
+        DialogueManager.Instance.propinasNumber = 50;
         fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
         Invoke(nameof(ToTheCredits), fadeToblackClipTime);
     }
@@ -805,6 +827,9 @@ public class FormsScene : MonoBehaviour
     public string GenerarLineaCSV()
     {
         List<string> csv = new List<string>();
+
+        csv.Add(DialogueManager.Instance.propinasNumber + " monedas");
+        csv.Add(DialogueManager.Instance.puntosElidora + " puntos");
 
         // PREGUNTA 1
         if (demoAburrida) csv.Add("demoAburrida");

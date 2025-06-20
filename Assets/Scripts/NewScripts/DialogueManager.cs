@@ -172,6 +172,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public TMP_Text lePropinasText;
     [SerializeField] public float propinasNumber;
 
+
+    [SerializeField] public float puntosElidora;
+
     [Header("BOSS' THINGS")]
     public GameObject phone;
     public GameObject jefePanel;
@@ -198,57 +201,31 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
 
         if (lastSceneWithDialogues == currentSceneName)
-        {            
-            if (propinasNumber <= 0)
-            {
-                propinasNumber = 0;
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{0}");
-            }
+        {
+            Debug.Log("He vuelto del minijuego y actualizo las propinas");
+            // Limita el valor entre 0 y 100
+            propinasNumber = Mathf.Clamp(propinasNumber, 0, 100);
 
-            else if (propinasNumber > 0 && propinasNumber <= 10)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{10}");
+            // Redondea hacia abajo al múltiplo de 10 más cercano (0, 10, 20, ..., 100)
+            int nivel = ((int)propinasNumber / 10) * 10;
 
-            else if (propinasNumber > 10 && propinasNumber <= 20)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{20}");
+            // Carga el sprite correspondiente
+            lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
 
-            else if (propinasNumber > 20 && propinasNumber <= 30)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{30}");
-
-            else if (propinasNumber > 30 && propinasNumber <= 40)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{40}");
-
-            else if (propinasNumber > 40 && propinasNumber <= 50)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{50}");
-
-            else if (propinasNumber > 50 && propinasNumber <= 60)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{60}");
-
-            else if (propinasNumber > 60 && propinasNumber <= 70)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{70}");
-
-            else if (propinasNumber > 70 && propinasNumber <= 80)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{80}");
-
-            else if (propinasNumber > 80 && propinasNumber <= 90)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{90}");
-
-            else if (propinasNumber > 90 && propinasNumber <= 100)
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
-
-            else if (propinasNumber > 100)
-            {
-                propinasNumber = 100;
-                lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{100}");
-            }
-
-            lePropinasText.text = "" + propinasNumber;
+            // Actualiza el texto
+            lePropinasText.text = propinasNumber.ToString();
             lastSceneWithDialogues = "";
         }
 
         else
-            clientManager.GetComponent<ClientManager>().LaVoluntad(50);
+        {
+            Debug.Log("Acabo de empezar el juego");
+            LaVoluntad(50);
+        }
+            
 
         #region CREANDO EL DICCIONARIO DE TIPOS DE PRODUCTOS
         allProducts = new ProductsType();
@@ -291,7 +268,6 @@ public class DialogueManager : MonoBehaviour
 
         #endregion
 
-        currentSceneName = SceneManager.GetActiveScene().name;
         #region PARTE DEL DESPLEGABLE DE LAS NORMATIVAS QUE SE CAMBIARÁ
         razasNormas = new string[5];
         razasNormas[0] = "Magos Oscuros";
@@ -455,7 +431,7 @@ public class DialogueManager : MonoBehaviour
                 client.couponType = matchingProduct.COUPONTYPE;
             }
 
-            #region PARTE DE LAS NORMATIVAS (AUNQUE AÚN NO SE CONTEMPLA QUE HAYA DOS POR RAZA ACTIVAS)
+            #region PARTE DE LAS NORMATIVAS (AUNQUE AÚN NO SE CONTEMPLA QUE HAYA DOS POR RAZA ACTIVAS) ELIMINADO PARA LA DEMO PORQUE NO FUNCIONABA
 
             //if (!regulationsAdded && currentRegulationsNumber ==0) // PARCHE HORRIBLE PARA QUE NO PETE LA DEMO
             //{
@@ -1173,5 +1149,23 @@ public class DialogueManager : MonoBehaviour
 
         if (jefePanel != null)
             textoJefe = jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+    }
+
+    public void LaVoluntad(float cantidad)
+    {
+        propinasNumber += cantidad;
+
+        // Limita el valor entre 0 y 100
+        propinasNumber = Mathf.Clamp(DialogueManager.Instance.propinasNumber, 0, 100);
+
+        // Redondea al múltiplo de 10 inferior
+        int nivel = ((int)propinasNumber / 10) * 10;
+
+        // Carga el sprite correspondiente
+        lesPropinas.GetComponent<Image>().sprite =
+            Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
+
+        // Actualiza el texto
+        lePropinasText.text = DialogueManager.Instance.propinasNumber.ToString();
     }
 }
