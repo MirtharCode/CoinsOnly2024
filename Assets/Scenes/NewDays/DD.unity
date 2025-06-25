@@ -2881,6 +2881,7 @@ GameObject:
   - component: {fileID: 589280087}
   - component: {fileID: 589280086}
   - component: {fileID: 589280085}
+  - component: {fileID: 589280088}
   m_Layer: 5
   m_Name: Button-DesplegarNormativas
   m_TagString: Untagged
@@ -3002,6 +3003,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589280083}
   m_CullTransparentMesh: 1
+--- !u!95 &589280088
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589280083}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 213d9bebc46436c4c9a58b656f2a5178, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &595192933
 GameObject:
   m_ObjectHideFlags: 0

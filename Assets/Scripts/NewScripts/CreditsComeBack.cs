@@ -15,7 +15,12 @@ public class CreditsComeBack : MonoBehaviour
     void Start()
     {
         fadeToblackClipTime = fadeToblackClip.length;
+        
+        // En caso de ser una demo de Expo
         Invoke(nameof(ActivarButton), 20);
+        
+        // En caso de ser una demo para subir online
+        Invoke(nameof(EndTheDemo), 5);
     }
 
     // Update is called once per frame
@@ -32,11 +37,17 @@ public class CreditsComeBack : MonoBehaviour
     public void WelcomeAgain()
     {
         fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
-        Invoke(nameof(ToTheDemo), fadeToblackClipTime);
+        Invoke(nameof(RepeatTheDemo), fadeToblackClipTime);
     }
 
-    public void ToTheDemo()
+    public void RepeatTheDemo()
     {
         SceneManager.LoadScene("DD");
+    }
+
+    public void EndTheDemo()
+    {
+        Debug.Log("Demo acabada");
+        Application.Quit();
     }
 }

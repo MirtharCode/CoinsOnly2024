@@ -33,6 +33,7 @@ public class ClientManager : MonoBehaviour
     private bool cobrasteMal = false;
     private bool teTocaBronca = false;
     private bool meVoyAMinijuego = false;
+    private bool interactableHintShown = false;
 
     public string selectedSuspect;
 
@@ -112,8 +113,7 @@ public class ClientManager : MonoBehaviour
 
         if (currentDialogueClient.name == "Detective")
             StartCoroutine(FadeToGrayscale(grayscaleMaterial, 2f));
-
-
+            
         showingDialogue = true;
         MostrarDialogoActual();
         ChangeTheMusic(currentDialogueClient.race, currentDialogueClient.name);
@@ -374,6 +374,14 @@ public class ClientManager : MonoBehaviour
     {
         DialogueManager.Instance.HideText();
 
+        // Para hacer la animación en la demo de enseñar los botones
+        if (currentDialogueClient.name == "Antonio" && SceneManager.GetActiveScene().name == "DD" && !interactableHintShown)
+        {
+            interactableHintShown = true;
+            DialogueManager.Instance.botonDesplegadoPrecios.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
+            DialogueManager.Instance.botonDesplegadoNormativas.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
+        }
+
         if (currentDialogueClient.numberOfProducts == 0 || cobrasteBien || cobrasteMal)
         {
             if (currentClient != null)
@@ -565,6 +573,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.rightProduct.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.leftProduct.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.couponPlace.GetComponent<Image>().enabled = false;
+        DialogueManager.Instance.dropDownPanelPrecios.gameObject.SetActive(false);
+        DialogueManager.Instance.dropDownPanelNormativas.gameObject.SetActive(false);
 
     }
 
