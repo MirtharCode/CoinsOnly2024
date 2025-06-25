@@ -56,26 +56,6 @@ public abstract class Client : MonoBehaviour
     public abstract void ShowProductsAndMoney();
     public abstract void ByeBye();
 
-    //public IEnumerator ShowLine()
-    //{
-    //    typingTime = 0.02f;
-    //    dialogueUIText.text = string.Empty;
-
-    //    foreach (char ch in dialogue[lineIndex])
-    //    {
-    //        dialogueUIText.text += ch;
-    //        yield return new WaitForSeconds(typingTime);
-    //    }
-
-    //    if (dialogueUIText.text == dialogue[lineIndex])
-    //    {
-    //        dialogueUIPanel.transform.GetChild(1).gameObject.SetActive(false);
-    //        dialogueUIPanel.transform.GetChild(2).gameObject.SetActive(true);
-    //    }
-
-    //    lineIndex++;
-    //}
-
     protected void OnDestroy()
     {
         List<GameObject> list = gameManager.GetComponent<GameManager>().dailyCustomers;

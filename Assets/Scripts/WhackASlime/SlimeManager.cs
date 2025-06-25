@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -82,6 +83,9 @@ public class SlimeManager : MonoBehaviour
 
     public void GameOver(int type)
     {
+        if (DialogueManager.Instance != null)
+            DialogueManager.Instance.puntosElidora = score;
+
         if (type == 0)
             OutOfTimeEnd();
         else

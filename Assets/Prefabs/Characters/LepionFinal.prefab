@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1, y: 0.8094671}
+  m_Size: {x: 4.1, y: 0.81}
   m_EdgeRadius: 0
 --- !u!114 &-5795313644032778326
 MonoBehaviour:
@@ -170,6 +170,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 289ba6d82ab8423418fd9d22b0dc3363, type: 3}
   - {fileID: 8300000, guid: 1dfd234d9ee5bf34481b3a807d30b89c, type: 3}
   - {fileID: 8300000, guid: fbf164a349384c44d87610805875f253, type: 3}
+  ftBObject: {fileID: 0}
+  repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}

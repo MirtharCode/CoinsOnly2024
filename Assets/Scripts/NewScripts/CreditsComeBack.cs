@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class CreditsComeBack : MonoBehaviour
+{
+
+    public GameObject fadeToBlackObject;
+    [SerializeField] public AnimationClip fadeToblackClip;
+    [SerializeField] public float fadeToblackClipTime;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        fadeToblackClipTime = fadeToblackClip.length;
+        
+        // En caso de ser una demo de Expo
+        Invoke(nameof(ActivarButton), 20);
+        
+        // En caso de ser una demo para subir online
+        Invoke(nameof(EndTheDemo), 5);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void ActivarButton()
+    {
+        GetComponent<Button>().enabled =true;
+    }
+
+    public void WelcomeAgain()
+    {
+        fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
+        Invoke(nameof(RepeatTheDemo), fadeToblackClipTime);
+    }
+
+    public void RepeatTheDemo()
+    {
+        SceneManager.LoadScene("DD");
+    }
+
+    public void EndTheDemo()
+    {
+        Debug.Log("Demo acabada");
+        Application.Quit();
+    }
+}
