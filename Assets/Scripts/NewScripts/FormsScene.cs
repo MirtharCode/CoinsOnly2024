@@ -633,7 +633,7 @@ public class FormsScene : MonoBehaviour
         switch (opcion)
         {
             case 0:
-                noEntendiNormativas = true;
+                entendiNormativas = true;
                 break;
             case 1:
                 noEntendiNormativas = true;
