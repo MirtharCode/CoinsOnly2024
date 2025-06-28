@@ -12,6 +12,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class FormsScene : MonoBehaviour
 {
+    public string allClientChoices;
+    
     public GameObject intro1, intro2, intro3;
     public GameObject pregunta1;
     public GameObject pregunta2;
@@ -920,9 +922,11 @@ public class FormsScene : MonoBehaviour
 
         for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++) 
         {
-            form.AddField("entry.1723272062", DialogueManager.Instance.chosenChecks[i]);
+            allClientChoices += " " + DialogueManager.Instance.chosenChecks[i];
         }
-        
+
+        form.AddField("entry.1723272062", allClientChoices);
+
         // ¿Cuántas monedas obtuvieron?
         form.AddField("entry.1683268102", DialogueManager.Instance.propinasNumber + " monedas.");
 

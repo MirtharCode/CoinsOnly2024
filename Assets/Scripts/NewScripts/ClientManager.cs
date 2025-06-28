@@ -344,22 +344,24 @@ public class ClientManager : MonoBehaviour
 
     public void MatchingSuspect()
     {
+        string eleccionDetective = "";
+
         if (selectedSuspect == currentDialogueClient.correctAnswer)
         {
-            // CORRECTO!!!
+            eleccionDetective = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
         }
 
         else
         {
-            // INCORRECTO
+            eleccionDetective = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
         }
 
+        DialogueManager.Instance.chosenChecks.Add(eleccionDetective);
         DialogueManager.Instance.areYouSurePanel.SetActive(false);
         DialogueManager.Instance.detectivePanel.SetActive(false);
         DialogueManager.Instance.dialoguePanel.GetComponent<Button>().enabled = true;
         speakerTextBox.text = currentDialogueClient.name;
         MostrarDialogoActual();
-
     }
 
     public void IChangeMyMind()
