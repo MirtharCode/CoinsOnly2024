@@ -14,7 +14,7 @@ public class CreditsComeBack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fadeToblackClipTime = fadeToblackClip.length;
+        fadeToblackClipTime = fadeToblackClip.length;        
         
         // En caso de ser una demo de Expo
         Invoke(nameof(ActivarButton), 20);

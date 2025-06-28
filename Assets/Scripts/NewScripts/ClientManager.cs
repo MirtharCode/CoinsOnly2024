@@ -344,7 +344,7 @@ public class ClientManager : MonoBehaviour
 
     public void MatchingSuspect()
     {
-        string eleccionDetective = "";
+        string eleccionDetective;
 
         if (selectedSuspect == currentDialogueClient.correctAnswer)
         {
@@ -547,7 +547,7 @@ public class ClientManager : MonoBehaviour
             {
                 cobrasteBien = true;
                 
-                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES \n";
+                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
             }
                 
 

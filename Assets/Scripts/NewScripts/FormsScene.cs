@@ -13,7 +13,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class FormsScene : MonoBehaviour
 {
     public string allClientChoices;
-    
+    public GameObject finalButton;
+
     public GameObject intro1, intro2, intro3;
     public GameObject pregunta1;
     public GameObject pregunta2;
@@ -1008,7 +1009,7 @@ public class FormsScene : MonoBehaviour
 
         // PREGUNTA 8 ¿Qué opinas de sumar los precios de productos?
         if (mejorarCobrar) form.AddField("entry.1665910031", "mejorarCobrar");
-        if (noTocarCobrar) form.AddField("entry.1665910031", "noTocarCobrar");
+        if (noTocarCobrar) form.AddField("entry.1665910031", "noMejorarCobrar");
 
         // PREGUNTA 9 ¿Tienes alguna sugerencia respecto a todo lo referente a atender a los clientes? (Normativas, Cupones, Suma de productos, cobro)
         form.AddField("entry.1417983291", sugerenciaCobro);
@@ -1051,6 +1052,8 @@ public class FormsScene : MonoBehaviour
         else
         {
             Debug.Log("¡Formulario enviado!");
+            finalButton.GetComponent<Button>().enabled = true;
+
         }
     }
 
