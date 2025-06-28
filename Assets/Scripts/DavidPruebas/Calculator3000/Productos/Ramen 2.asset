@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828bd66a1aed7be49b64d6549e08cfd6, type: 3}
+  m_Name: Ramen 2
+  m_EditorClassIdentifier: 
+  productName: Ramen
+  icon: {fileID: 21300000, guid: f2c4819bfca8409429a7925d4b85189a, type: 3}
+  price: 9
+  category: 0
+  variantTag: 3
