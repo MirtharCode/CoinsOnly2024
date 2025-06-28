@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor.Localization.Plugins.CSV;
+// using UnityEditor.Localization.Plugins.CSV;  ESTO DESCOMENTARLO PARA OBTENER DATA EN LOCAL
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -97,17 +97,17 @@ public class FormsScene : MonoBehaviour
 
     private string csvPath;
 
+    // ESTA PARTE ES SOLO PARA TENER LA DATA LOCAL
+    //private void Awake()
+    //{
+    //    string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+    //    string folderPath = Path.Combine(desktopPath, "MadridOtakuData");
 
-    private void Awake()
-    {
-        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        string folderPath = Path.Combine(desktopPath, "MadridOtakuData");
+    //    if (!Directory.Exists(folderPath))
+    //        Directory.CreateDirectory(folderPath);
 
-        if (!Directory.Exists(folderPath))
-            Directory.CreateDirectory(folderPath);
-
-        csvPath = Path.Combine(folderPath, "DatosDelFormulario.csv");
-    }
+    //    csvPath = Path.Combine(folderPath, "DatosDelFormulario.csv");
+    //}
     // Start is called before the first frame update
     void Start()
     {
