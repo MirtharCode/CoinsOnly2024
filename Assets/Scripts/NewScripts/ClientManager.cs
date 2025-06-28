@@ -535,17 +535,26 @@ public class ClientManager : MonoBehaviour
 
     public void TimeToCharge()
     {
+        string eleccionCliente="";
+
         if (iWantToBelieve)
         {
             DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfCheck);
 
             if (currentDialogueClient.correctChoice == "TICK")
+            {
                 cobrasteBien = true;
+                
+                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES \n";
+            }
+                
 
             else
             {
                 cobrasteMal = true;
                 teTocaBronca = true;
+
+                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
             }
 
         }
@@ -555,15 +564,23 @@ public class ClientManager : MonoBehaviour
             DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfBye);
 
             if (currentDialogueClient.correctChoice == "CROSS")
+            {
                 cobrasteBien = true;
+                
+                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
+            }
+                
 
             else
             {
                 cobrasteMal = true;
                 teTocaBronca = true;
+
+                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
             }
         }
 
+        DialogueManager.Instance.chosenChecks.Add(eleccionCliente);
         DialogueManager.Instance.ShowText();
         MostrarDialogoActual();
         DialogueManager.Instance.leDinero.SetActive(false);

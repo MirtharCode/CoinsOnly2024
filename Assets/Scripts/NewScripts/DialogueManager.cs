@@ -115,6 +115,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject clientManager;
     public GameObject clientPrefab;
     public List<DailyClientInfo> dailyCustomers = new List<DailyClientInfo>();
+    public List<String> chosenChecks = new List<String>();
 
     [SerializeField] public bool conversationOn;
     [SerializeField] public GameObject dialoguePanel;

@@ -918,6 +918,18 @@ public class FormsScene : MonoBehaviour
         string url = "https://docs.google.com/forms/d/e/1FAIpQLSfiQHDFc3szwLrw9dfEr1NtFP7S0dkmjdQGGd9-h7jTfhAgmQ/formResponse";
         WWWForm form = new WWWForm();
 
+        for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++) 
+        {
+            form.AddField("entry.1723272062", DialogueManager.Instance.chosenChecks[i]);
+        }
+        
+        // ¿Cuántas monedas obtuvieron?
+        form.AddField("entry.1683268102", DialogueManager.Instance.propinasNumber + " monedas.");
+
+        //¿Cuántos puntos obtuvieron?
+        form.AddField("entry.1736884450", DialogueManager.Instance.puntosElidora + " puntos.");
+
+
         // Pregunta 1 ¿QUÉ TE HA PARECIDO LA DEMO?
         if (demoAburrida) form.AddField("entry.1094213056", "demoAburrida");
         if (demoNormal) form.AddField("entry.1094213056", "demoNormal");
