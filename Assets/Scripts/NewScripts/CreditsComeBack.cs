@@ -20,7 +20,7 @@ public class CreditsComeBack : MonoBehaviour
         Invoke(nameof(ActivarButton), 20);
         
         // En caso de ser una demo para subir online
-        Invoke(nameof(EndTheDemo), 5);
+        Invoke(nameof(EndTheDemo1), 10);
     }
 
     // Update is called once per frame
@@ -45,9 +45,15 @@ public class CreditsComeBack : MonoBehaviour
         SceneManager.LoadScene("DD");
     }
 
-    public void EndTheDemo()
+    public void EndTheDemo1()
     {
         Debug.Log("Demo acabada");
+        fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
+        Invoke(nameof(EndTheDemo2), fadeToblackClipTime);
+    }
+
+    public void EndTheDemo2()
+    {
         Application.Quit();
     }
 }

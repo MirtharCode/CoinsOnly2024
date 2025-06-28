@@ -20834,6 +20834,7 @@ MonoBehaviour:
   clientManager: {fileID: 0}
   clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
   dailyCustomers: []
+  chosenChecks: []
   conversationOn: 0
   dialoguePanel: {fileID: 0}
   detectivePanel: {fileID: 0}
@@ -31220,6 +31221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9757936b3b586b419b348bc037d4374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allClientChoices: 
   intro1: {fileID: 1778052967}
   intro2: {fileID: 803799471}
   intro3: {fileID: 664190323}
