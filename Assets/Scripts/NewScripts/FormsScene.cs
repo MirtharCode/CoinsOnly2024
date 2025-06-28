@@ -12,6 +12,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class FormsScene : MonoBehaviour
 {
+    public string allClientChoices;
+    
     public GameObject intro1, intro2, intro3;
     public GameObject pregunta1;
     public GameObject pregunta2;
@@ -917,6 +919,20 @@ public class FormsScene : MonoBehaviour
         Debug.Log("Entro en EnviarFormulario");
         string url = "https://docs.google.com/forms/d/e/1FAIpQLSfiQHDFc3szwLrw9dfEr1NtFP7S0dkmjdQGGd9-h7jTfhAgmQ/formResponse";
         WWWForm form = new WWWForm();
+
+        for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++) 
+        {
+            allClientChoices += " " + DialogueManager.Instance.chosenChecks[i];
+        }
+
+        form.AddField("entry.1723272062", allClientChoices);
+
+        // ¿Cuántas monedas obtuvieron?
+        form.AddField("entry.1683268102", DialogueManager.Instance.propinasNumber + " monedas.");
+
+        //¿Cuántos puntos obtuvieron?
+        form.AddField("entry.1736884450", DialogueManager.Instance.puntosElidora + " puntos.");
+
 
         // Pregunta 1 ¿QUÉ TE HA PARECIDO LA DEMO?
         if (demoAburrida) form.AddField("entry.1094213056", "demoAburrida");

@@ -116,7 +116,7 @@ public class FadeToBlack : MonoBehaviour
         else if (currentScene.name.Contains("Elidora"))
         {
             GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
-            SceneManager.LoadScene("DD");
+            Invoke(nameof(VolverDeGolpearSlimesDemo), fadeToblackClipTime); 
         }
 
 
@@ -164,5 +164,10 @@ public class FadeToBlack : MonoBehaviour
     public void VolverDeGolpearSlimes()
     {
         SceneManager.LoadScene("Home");
+    }
+
+    public void VolverDeGolpearSlimesDemo()
+    {
+        SceneManager.LoadScene("DD");
     }
 }
