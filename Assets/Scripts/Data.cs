@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.IO;
 
 public class Data : MonoBehaviour
 {
@@ -134,6 +135,17 @@ public class Data : MonoBehaviour
     public string archivoDeGuardado3;
     public SavedData datosJuego = new SavedData();
     public int currentSlot = 1;
+    public TextMeshProUGUI textoNumSlot1;
+    public TextMeshProUGUI textoNumSlot2;
+    public TextMeshProUGUI textoNumSlot3;
+    public TextMeshProUGUI textoFechaSlot1;
+    public TextMeshProUGUI textoFechaSlot2;
+    public TextMeshProUGUI textoFechaSlot3;
+    public TextMeshProUGUI textoDiaSlot1;
+    public TextMeshProUGUI textoDiaSlot2;
+    public TextMeshProUGUI textoDiaSlot3;
+    public Button[] deleteButtons;
+    public GameObject deletePanel;
 
     void Awake()
     {
@@ -153,10 +165,90 @@ public class Data : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    //private void Start()
-    //{
-    //    CargarDatos();
-    //}
+    void Start()
+    {
+        for (int i = 0; i < deleteButtons.Length; i++)
+        {
+            int slot = i + 1;
+            deleteButtons[i].onClick.AddListener(() => DeleteSlot(slot));
+        }
+
+        MostrarFechaYDiaSlot(archivoDeGuardado1, textoFechaSlot1, textoDiaSlot1, textoNumSlot1, deleteButtons[0]);
+        MostrarFechaYDiaSlot(archivoDeGuardado2, textoFechaSlot2, textoDiaSlot2, textoNumSlot2, deleteButtons[1]);
+        MostrarFechaYDiaSlot(archivoDeGuardado3, textoFechaSlot3, textoDiaSlot3, textoNumSlot3, deleteButtons[2]);
+    }
+
+    private void MostrarFechaYDiaSlot(string ruta, TextMeshProUGUI textoFecha, TextMeshProUGUI textoDia, TextMeshProUGUI textoNumSlot, Button deleteButton)
+    {
+        if (File.Exists(ruta))
+        {
+            string contenido = File.ReadAllText(ruta);
+            SavedData datos = JsonUtility.FromJson<SavedData>(contenido);
+
+            textoFecha.text = $"Guardado el: {datos.fechaUltimoGuardado}";
+            textoDia.text = $"Día: {datos.ultimoDiaJugado}";
+        }
+        else
+        {
+            textoFecha.text = "";
+            textoDia.text = "Vacio";
+            textoNumSlot.text = "";
+            deleteButton.gameObject.SetActive(false);
+        }
+    }
+
+    public void OpenDeleteSlot()
+    {
+        deletePanel.gameObject.SetActive(true);
+    }
+
+    public void CloseDeleteSlot()
+    {
+        deletePanel.gameObject.SetActive(false);
+    }
+
+    public void DeleteSlot(int selectedSlot)
+    {
+        currentSlot = selectedSlot;
+        OpenDeleteSlot();
+    }
+
+    public void ConfirmDeleteSlot()
+    {
+        string ruta = "";
+
+        switch (currentSlot)
+        {
+            case 1:
+                ruta = archivoDeGuardado1;
+                break;
+            case 2:
+                ruta = archivoDeGuardado2;
+                break;
+            case 3:
+                ruta = archivoDeGuardado3;
+                break;
+        }
+
+        if (File.Exists(ruta))
+        {
+            File.Delete(ruta);
+            Debug.Log($"Archivo del slot {currentSlot} eliminado.");
+        }
+
+        deletePanel.SetActive(false);
+
+        Start();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GuardarDatos();
+            Debug.Log("Guardado manual con la tecla K");
+        }
+    }
 
     public void SelectFirstSlot()
     {
@@ -270,6 +362,8 @@ public class Data : MonoBehaviour
                 giftHandy = datosJuego.savedgiftHandy;
                 giftDenjirenji = datosJuego.savedgiftDenjirenji;
                 giftRaven = datosJuego.savedgiftRaven;
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
 
             }
 
@@ -365,7 +459,8 @@ public class Data : MonoBehaviour
                 giftHandy = datosJuego.savedgiftHandy;
                 giftDenjirenji = datosJuego.savedgiftDenjirenji;
                 giftRaven = datosJuego.savedgiftRaven;
-
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
             }
 
             else
@@ -460,7 +555,8 @@ public class Data : MonoBehaviour
                 giftHandy = datosJuego.savedgiftHandy;
                 giftDenjirenji = datosJuego.savedgiftDenjirenji;
                 giftRaven = datosJuego.savedgiftRaven;
-
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
             }
 
             else
@@ -554,7 +650,10 @@ public class Data : MonoBehaviour
                 savedgiftTapicio = giftTapicio,
                 savedgiftHandy = giftHandy,
                 savedgiftDenjirenji = giftDenjirenji,
-                savedgiftRaven = giftRaven
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
+
             };
 
             string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
@@ -647,7 +746,9 @@ public class Data : MonoBehaviour
                 savedgiftTapicio = giftTapicio,
                 savedgiftHandy = giftHandy,
                 savedgiftDenjirenji = giftDenjirenji,
-                savedgiftRaven = giftRaven
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
             };
 
             string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
@@ -740,7 +841,10 @@ public class Data : MonoBehaviour
                 savedgiftTapicio = giftTapicio,
                 savedgiftHandy = giftHandy,
                 savedgiftDenjirenji = giftDenjirenji,
-                savedgiftRaven = giftRaven
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
+
             };
 
             string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
@@ -752,6 +856,17 @@ public class Data : MonoBehaviour
         }
 
         Debug.Log("Slot actual: " + currentSlot);
+    }
+
+    private int CalcularUltimoDiaJugado()
+    {
+        if (day5Check) return 0;
+        if (day4Check) return 5;
+        if (day3Check) return 4;
+        if (day2Check) return 3;
+        if (day1Check) return 2;
+        if (day0Check) return 1;
+        return -1; // Ningún día jugado aún
     }
 
     #region Todos los diálogos de Coins Only

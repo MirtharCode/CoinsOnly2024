@@ -119,5 +119,7 @@ public class SavedData
     //[SerializeField] public bool giftMagmadora = false;
     //[SerializeField] public bool giftMasermati = false;
     public bool savedgiftRaven = false;         // Si completas su minijuego te da un disco.
-    //[SerializeField] public bool giftRustica = false;
+                                                //[SerializeField] public bool giftRustica = false;
+    public string fechaUltimoGuardado;
+    public int ultimoDiaJugado;
 }
