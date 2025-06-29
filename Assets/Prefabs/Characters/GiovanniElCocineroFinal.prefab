@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.99}
+  m_Offset: {x: 0, y: -3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.1, y: 0.8094671}
+  m_Size: {x: 4.1, y: 0.81}
   m_EdgeRadius: 0
 --- !u!50 &7336179541738107908
 Rigidbody2D:
@@ -163,12 +163,15 @@ MonoBehaviour:
   raza: 
   nombre: 
   talkingSound: {fileID: 0}
+  lastPlayerSound: {fileID: 0}
   sounds:
   - {fileID: 8300000, guid: a086a4d59a505294b91f8c4f3da18871, type: 3}
   - {fileID: 8300000, guid: ad4af7968e363954086fbcd18d8fbf52, type: 3}
   - {fileID: 8300000, guid: 69308f9d7f18df54b996df6ba1fce1f6, type: 3}
   - {fileID: 8300000, guid: 2e12f6f528c425548978612bbc6e5b42, type: 3}
   - {fileID: 8300000, guid: 5a07c9d57c1bb5b4a942f6e7332ddfd8, type: 3}
+  ftBObject: {fileID: 0}
+  repetirunavez: 0
   product1: {fileID: 0}
   product2: {fileID: 0}
   product3: {fileID: 0}

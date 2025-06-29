@@ -49,7 +49,7 @@ public class TutorialTimer : MonoBehaviour
         {
             float gOGrowTiming;
 
-            if (currentScene.name.Contains("Mole"))
+            if (currentScene.name.Contains("Mole") || currentScene.name.Contains("Elidora"))
             {
                 gO.gameObject.SetActive(true);
                 gOGrowTiming = gOGrow.length;
