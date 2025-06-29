@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -147,6 +148,8 @@ public class Data : MonoBehaviour
     public Button[] deleteButtons;
     public GameObject deletePanel;
 
+    public GameObject savingSymbol;
+
     void Awake()
     {
         archivoDeGuardado1 = Application.persistentDataPath + "/datosJuego_slot1.json";
@@ -173,9 +176,12 @@ public class Data : MonoBehaviour
             deleteButtons[i].onClick.AddListener(() => DeleteSlot(slot));
         }
 
-        MostrarFechaYDiaSlot(archivoDeGuardado1, textoFechaSlot1, textoDiaSlot1, textoNumSlot1, deleteButtons[0]);
-        MostrarFechaYDiaSlot(archivoDeGuardado2, textoFechaSlot2, textoDiaSlot2, textoNumSlot2, deleteButtons[1]);
-        MostrarFechaYDiaSlot(archivoDeGuardado3, textoFechaSlot3, textoDiaSlot3, textoNumSlot3, deleteButtons[2]);
+        if (SceneManager.GetActiveScene().name == "SavedSlots")
+        {
+            MostrarFechaYDiaSlot(archivoDeGuardado1, textoFechaSlot1, textoDiaSlot1, textoNumSlot1, deleteButtons[0]);
+            MostrarFechaYDiaSlot(archivoDeGuardado2, textoFechaSlot2, textoDiaSlot2, textoNumSlot2, deleteButtons[1]);
+            MostrarFechaYDiaSlot(archivoDeGuardado3, textoFechaSlot3, textoDiaSlot3, textoNumSlot3, deleteButtons[2]);
+        }
     }
 
     private void MostrarFechaYDiaSlot(string ruta, TextMeshProUGUI textoFecha, TextMeshProUGUI textoDia, TextMeshProUGUI textoNumSlot, Button deleteButton)
@@ -568,6 +574,8 @@ public class Data : MonoBehaviour
 
     public void GuardarDatos()
     {
+        StartCoroutine(SavingSymbolCorrutine());
+
         if (currentSlot == 1)
         {
             SavedData nuevosDatos = new SavedData()
@@ -856,6 +864,15 @@ public class Data : MonoBehaviour
         }
 
         Debug.Log("Slot actual: " + currentSlot);
+    }
+
+    private IEnumerator SavingSymbolCorrutine()
+    {
+        savingSymbol.SetActive(true);
+        Debug.Log("ALOOOOOOOOOO");
+        yield return new WaitForSeconds(3f);
+        savingSymbol.SetActive(false);
+        Debug.Log("ADIOOOOOOOOOOOO");
     }
 
     private int CalcularUltimoDiaJugado()
