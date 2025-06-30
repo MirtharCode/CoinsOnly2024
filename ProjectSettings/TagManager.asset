@@ -27,6 +27,8 @@ TagManager:
   - HomeClient
   - FadeBlack
   - Gnomo
+  - ZoomTarget
+  - ReturnToFreeView
   layers:
   - Default
   - TransparentFX
