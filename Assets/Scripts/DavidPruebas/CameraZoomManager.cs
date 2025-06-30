@@ -8,7 +8,6 @@ public class CameraZoomManager : MonoBehaviour
     public float edgeMaxRotationX = 10f;
     public float edgeMaxRotationY = 15f;
     public float zoomRotateSpeed = 5f;
-    public float backMoveSpeed = 5f;
 
 
     private Vector3 originalPosition;
@@ -17,6 +16,8 @@ public class CameraZoomManager : MonoBehaviour
 
     private bool isInZoomMode = false;
     private ZoomTargetInfo currentZoomInfo;
+    private float currentBackMoveSpeed;
+    private float currentBackRotationSpeed;
 
     private EdgeScrollCamera edgeScroll;
     private EdgeRotateCamera edgeRotate;
@@ -35,7 +36,7 @@ public class CameraZoomManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.collider.CompareTag("ZoomTarget") && isInZoomMode == false)
+                if (hit.collider.CompareTag("ZoomTarget") && !isInZoomMode)
                 {
                     ZoomTargetInfo info = hit.collider.GetComponent<ZoomTargetInfo>();
                     if (info != null)
@@ -43,7 +44,7 @@ public class CameraZoomManager : MonoBehaviour
                         EnterZoomMode(info);
                     }
                 }
-                else if (hit.collider.CompareTag("ReturnToFreeView") && isInZoomMode == true)
+                else if (hit.collider.CompareTag("ReturnToFreeView") && isInZoomMode)
                 {
                     ExitZoomMode();
                 }
@@ -52,11 +53,8 @@ public class CameraZoomManager : MonoBehaviour
 
         if (isInZoomMode && currentZoomInfo != null)
         {
-            // Mover y rotar suavemente hacia el objetivo
             transform.position = Vector3.Lerp(transform.position, currentZoomInfo.targetPosition, moveSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, currentZoomInfo.TargetRotation, rotateSpeed * Time.deltaTime);
-
-            // Zoom (solo si la cámara es ortográfica)
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, currentZoomInfo.targetSize, moveSpeed * Time.deltaTime);
 
             ApplyEdgeRotationWhileZoomed();
@@ -74,6 +72,8 @@ public class CameraZoomManager : MonoBehaviour
 
         isInZoomMode = true;
         currentZoomInfo = info;
+        currentBackMoveSpeed = info.backMoveSpeed;
+        currentBackRotationSpeed = info.backRotationSpeed;
 
         if (edgeScroll) edgeScroll.enabled = false;
         if (edgeRotate) edgeRotate.enabled = false;
@@ -82,25 +82,37 @@ public class CameraZoomManager : MonoBehaviour
     void ExitZoomMode()
     {
         isInZoomMode = false;
-        currentZoomInfo = null;
 
         if (edgeScroll) edgeScroll.enabled = true;
         if (edgeRotate) edgeRotate.enabled = true;
 
         StartCoroutine(SmoothReturnToFreeView());
+        currentZoomInfo = null;
     }
 
     System.Collections.IEnumerator SmoothReturnToFreeView()
     {
-        float t = 0f;
+        float tMove = 0f;
+        float tRot = 0f;
         float startSize = Camera.main.orthographicSize;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
 
-        while (t < 1f)
+        while (tMove < 1f || tRot < 1f)
         {
-            t += Time.deltaTime * backMoveSpeed;
-            transform.position = Vector3.Lerp(transform.position, originalPosition, t);
-            transform.rotation = Quaternion.Lerp(transform.rotation, originalRotation, t);
-            Camera.main.orthographicSize = Mathf.Lerp(startSize, originalCamSize, t);
+            if (tMove < 1f)
+            {
+                tMove += Time.deltaTime * currentBackMoveSpeed;
+                transform.position = Vector3.Lerp(startPos, originalPosition, tMove);
+                Camera.main.orthographicSize = Mathf.Lerp(startSize, originalCamSize, tMove);
+            }
+
+            if (tRot < 1f)
+            {
+                tRot += Time.deltaTime * currentBackRotationSpeed;
+                transform.rotation = Quaternion.Slerp(startRot, originalRotation, tRot);
+            }
+
             yield return null;
         }
     }

@@ -919,7 +919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90810680}
   m_LocalRotation: {x: 0.09236725, y: -0, z: -0, w: 0.99572504}
-  m_LocalPosition: {x: 0.25, y: 4.25, z: -16.75}
+  m_LocalPosition: {x: 0.01, y: 3.61, z: -13.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -972,13 +972,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb4ead5fb27fcf4c816a9774bedb0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotateSpeed: 2
+  moveSpeed: 15
+  rotateSpeed: 7
   edgeThreshold: 300
   edgeMaxRotationX: 1
   edgeMaxRotationY: 1
   zoomRotateSpeed: 0.3
-  backMoveSpeed: 30
 --- !u!1 &101995604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,9 +1355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5304afa33af404d866e54dce815f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 5.4, y: 3.4, z: -13.5}
+  targetPosition: {x: 5, y: 3.4, z: -13.5}
   targetRotationEuler: {x: 26, y: 30, z: 6}
-  targetSize: 2.5
+  targetSize: 2.2
+  backMoveSpeed: 3
+  backRotationSpeed: 6
 --- !u!1 &156862355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4692,7 +4693,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0.02, y: 2.35, z: -10.51}
   targetRotationEuler: {x: 18.3, y: -52.5, z: -0.75}
-  targetSize: 2.5
+  targetSize: 1.9
+  backMoveSpeed: 3
+  backRotationSpeed: 5
 --- !u!65 &664590486
 BoxCollider:
   m_ObjectHideFlags: 0
