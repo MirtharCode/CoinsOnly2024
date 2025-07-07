@@ -9,34 +9,34 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuInicial.unity
     guid: fe3fa36c44529494d85f4ecc0c338d50
   - enabled: 0
-    path: Assets/Scenes/Day1.unity
+    path: Assets/Scenes/Days/Day1.unity
     guid: ba70f9ba33f0f5144b9dbcecc7ca8a78
   - enabled: 0
-    path: Assets/Scenes/Day2_1.unity
+    path: Assets/Scenes/Days/Day2_1.unity
     guid: d6a1a998d3f80da40a9c812b99d1cacb
   - enabled: 0
     path: Assets/Scenes/PilaMinijuegos/Pila_Nivel1.unity
     guid: b7b263a434350f148b28d75edf95e439
   - enabled: 0
-    path: Assets/Scenes/Day2_2.unity
+    path: Assets/Scenes/Days/Day2_2.unity
     guid: 80caa0b4abe8edc46805250d2d034cfd
   - enabled: 0
-    path: Assets/Scenes/Day3_1.unity
+    path: Assets/Scenes/Days/Day3_1.unity
     guid: 840b3bbd24f25eb44b5b86491771ebf9
   - enabled: 0
     path: Assets/Scenes/PilaMinijuegos/Pila_Nivel2.unity
     guid: 67bbfd1aa69252540b1f95a8bcba1acb
   - enabled: 0
-    path: Assets/Scenes/Day3_2.unity
+    path: Assets/Scenes/Days/Day3_2.unity
     guid: f0770d59d3b3fe24d929b5b183438095
   - enabled: 0
     path: Assets/Scenes/WhackASlime/WhackAMole1.unity
     guid: cdd83600838f1e24f8b7fa0f3add0cfb
   - enabled: 0
-    path: Assets/Scenes/Day4.unity
+    path: Assets/Scenes/Days/Day4.unity
     guid: dc90c83f4fc242b49bca8a218e361431
   - enabled: 0
-    path: Assets/Scenes/Day5.unity
+    path: Assets/Scenes/Days/Day5.unity
     guid: f498a77050f9fd84fbb4b980563aca07
   - enabled: 0
     path: Assets/Scenes/Creditos.unity

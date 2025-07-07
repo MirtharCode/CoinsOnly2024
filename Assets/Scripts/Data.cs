@@ -170,14 +170,15 @@ public class Data : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < deleteButtons.Length; i++)
-        {
-            int slot = i + 1;
-            deleteButtons[i].onClick.AddListener(() => DeleteSlot(slot));
-        }
-
         if (SceneManager.GetActiveScene().name == "SavedSlots")
         {
+            for (int i = 0; i < deleteButtons.Length; i++)
+            {
+                int slot = i + 1;
+                deleteButtons[i].onClick.AddListener(() => DeleteSlot(slot));
+            }
+
+        
             MostrarFechaYDiaSlot(archivoDeGuardado1, textoFechaSlot1, textoDiaSlot1, textoNumSlot1, deleteButtons[0]);
             MostrarFechaYDiaSlot(archivoDeGuardado2, textoFechaSlot2, textoDiaSlot2, textoNumSlot2, deleteButtons[1]);
             MostrarFechaYDiaSlot(archivoDeGuardado3, textoFechaSlot3, textoDiaSlot3, textoNumSlot3, deleteButtons[2]);
