@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraZoomManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class CameraZoomManager : MonoBehaviour
     public float edgeMaxRotationY = 15f;
     public float zoomRotateSpeed = 5f;
 
+    public Image edgeGradientLeftImage;
+    public Image edgeGradientRightImage;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -27,6 +30,9 @@ public class CameraZoomManager : MonoBehaviour
         edgeScroll = GetComponent<EdgeScrollCamera>();
         edgeRotate = GetComponent<EdgeRotateCamera>();
         originalCamSize = Camera.main.orthographicSize;
+
+        if (edgeGradientLeftImage != null) edgeGradientLeftImage.enabled = false;
+        if (edgeGradientRightImage != null) edgeGradientRightImage.enabled = false;
     }
 
     private void Update()
@@ -44,10 +50,6 @@ public class CameraZoomManager : MonoBehaviour
                         EnterZoomMode(info);
                     }
                 }
-                else if (hit.collider.CompareTag("ReturnToFreeView") && isInZoomMode)
-                {
-                    ExitZoomMode();
-                }
             }
         }
 
@@ -58,6 +60,7 @@ public class CameraZoomManager : MonoBehaviour
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, currentZoomInfo.targetSize, moveSpeed * Time.deltaTime);
 
             ApplyEdgeRotationWhileZoomed();
+            CheckExitByMouseEdge();
         }
     }
 
@@ -77,6 +80,18 @@ public class CameraZoomManager : MonoBehaviour
 
         if (edgeScroll) edgeScroll.enabled = false;
         if (edgeRotate) edgeRotate.enabled = false;
+
+        if (edgeGradientLeftImage != null) edgeGradientLeftImage.enabled = false;
+        if (edgeGradientRightImage != null) edgeGradientRightImage.enabled = false;
+
+        if (info.exitDirection == ZoomTargetInfo.ExitEdge.Left && edgeGradientLeftImage != null)
+        {
+            edgeGradientLeftImage.enabled = true;
+        }
+        else if (info.exitDirection == ZoomTargetInfo.ExitEdge.Right && edgeGradientRightImage != null)
+        {
+            edgeGradientRightImage.enabled = true;
+        }
     }
 
     void ExitZoomMode()
@@ -85,6 +100,9 @@ public class CameraZoomManager : MonoBehaviour
 
         if (edgeScroll) edgeScroll.enabled = true;
         if (edgeRotate) edgeRotate.enabled = true;
+
+        if (edgeGradientLeftImage != null) edgeGradientLeftImage.enabled = false;
+        if (edgeGradientRightImage != null) edgeGradientRightImage.enabled = false;
 
         StartCoroutine(SmoothReturnToFreeView());
         currentZoomInfo = null;
@@ -114,6 +132,48 @@ public class CameraZoomManager : MonoBehaviour
             }
 
             yield return null;
+        }
+    }
+
+    void CheckExitByMouseEdge()
+    {
+        float mouseX = Input.mousePosition.x;
+
+        if (currentZoomInfo.exitDirection == ZoomTargetInfo.ExitEdge.Left && mouseX < 400f)
+        {
+            float intensity = Mathf.InverseLerp(400f, 50f, mouseX);
+            SetGradientAlpha(intensity);
+
+            if (mouseX <= 50f)
+            {
+                ExitZoomMode();
+            }
+        }
+        else if (currentZoomInfo.exitDirection == ZoomTargetInfo.ExitEdge.Right && mouseX > Screen.width - 400f)
+        {
+            float intensity = Mathf.InverseLerp(Screen.width - 400f, Screen.width - 50f, mouseX);
+            SetGradientAlpha(intensity);
+
+            if (mouseX >= Screen.width - 50f)
+            {
+                ExitZoomMode();
+            }
+        }
+        else
+        {
+            SetGradientAlpha(0f);
+        }
+    }
+
+    void SetGradientAlpha(float alpha)
+    {
+        Image targetImage = currentZoomInfo.exitDirection == ZoomTargetInfo.ExitEdge.Left ? edgeGradientLeftImage : edgeGradientRightImage;
+
+        if (targetImage != null)
+        {
+            Color color = targetImage.color;
+            color.a = Mathf.Clamp01(alpha);
+            targetImage.color = color;
         }
     }
 

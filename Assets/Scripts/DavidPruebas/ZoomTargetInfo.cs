@@ -13,5 +13,13 @@ public class ZoomTargetInfo : MonoBehaviour
     public float backMoveSpeed = 5f;
     public float backRotationSpeed = 5f;
 
+    [Header("Configuración de salida")]
+    public ExitEdge exitDirection = ExitEdge.Left;
+    public enum ExitEdge
+    {
+        Left,
+        Right
+    }
+
     public Quaternion TargetRotation => Quaternion.Euler(targetRotationEuler);
 }
