@@ -57,6 +57,8 @@ public class SavedData
     public bool savedday3Check = false;
     public bool savedday4Check = false;
     public bool savedday5Check = false;
+    public bool savedday6Check = false;
+    public bool savedday7Check = false;
     public bool savedvideoActivo = false;
     public bool savedvideoVisto = false;
     public bool savedfinalMuyMaloConseguido = false;

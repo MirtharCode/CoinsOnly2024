@@ -11,7 +11,7 @@ public class MenuInicial : MonoBehaviour
     private void Start()
     {
         data = GameObject.FindGameObjectWithTag("Data");
-        if (data.GetComponent<Data>().day0Check)
+        if (data.GetComponent<Data>().day00Checked)
         {
             button1.SetActive(false);
             button2.SetActive(false);

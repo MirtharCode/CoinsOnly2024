@@ -1561,32 +1561,32 @@ public class UIManager : MonoBehaviour
         {
             if (currentScene.name == "Day1")
             {
-                Data.instance.day0Check = false;
-                Data.instance.day1Check = true;
+                Data.instance.day00Checked = false;
+                Data.instance.day01Checked = true;
             }
 
             else if (currentScene.name == "Day2_2")
             {
-                Data.instance.day1Check = false;
-                Data.instance.day2Check = true;
+                Data.instance.day01Checked = false;
+                Data.instance.day02Checked = true;
             }
 
             else if (currentScene.name == "Day3_2")
             {
-                Data.instance.day2Check = false;
-                Data.instance.day3Check = true;
+                Data.instance.day02Checked = false;
+                Data.instance.day03Checked = true;
             }
 
             else if (currentScene.name == "Day4")
             {
-                Data.instance.day3Check = false;
-                Data.instance.day4Check = true;
+                Data.instance.day03Checked = false;
+                Data.instance.day04Checked = true;
             }
 
             else if (currentScene.name == "Day5")
             {
-                Data.instance.day4Check = false;
-                Data.instance.day5Check = true;
+                Data.instance.day04Checked = false;
+                Data.instance.day05Checked = true;
             }
 
             SceneManager.LoadScene("Home");

@@ -31,13 +31,22 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
-        Debug.Log("Holi");
+        if (data.day01Checked) SceneManager.LoadScene("02");           // Si vienes de acabar el día uno, pasas al dos.
+        else if (data.day02Checked) SceneManager.LoadScene("03");      // Si vienes de acabar el día dos, pasas al tres.
+        else if (data.day03Checked) SceneManager.LoadScene("04");      // Si vienes de acabar el día tres, pasas al cuatro.
+        else if (data.day04Checked) SceneManager.LoadScene("05");      // Si vienes de acabar el día tres, pasas al cinco.
+        else if (data.day05Checked) SceneManager.LoadScene("06");      // Si vienes de acabar el día tres, pasas al seis.
+        else if (data.day06Checked) SceneManager.LoadScene("07");      // Si vienes de acabar el día tres, pasas al siete.
 
+
+        #region CÓDIGO ANTIGUO
         //FTBRegular();
-        if (data.day1Check) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
-        else if (data.day2Check) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
-        else if (data.day3Check) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
-        else if (data.day4Check)
+        //if (data.day01Checked) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
+        //else if (data.day02Checked) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
+        //else if (data.day03Checked) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
+        #endregion
+
+        else if (data.day04Checked)
         {
             if (data.videoVisto)
                 SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
@@ -49,7 +58,7 @@ public class Transiciones : MonoBehaviour
 
         }
 
-        else if (data.day5Check)
+        else if (data.day05Checked)
         {
             if (data.tipsPoints == 0) SceneManager.LoadScene("FinalMuyMalo");
 
@@ -95,7 +104,7 @@ public class Transiciones : MonoBehaviour
         if (data.giftHandy) transform.GetChild(19).gameObject.SetActive(true);
         if (data.giftDenjirenji) transform.GetChild(12).gameObject.SetActive(true);
         if (data.giftRaven) transform.GetChild(6).gameObject.SetActive(true);
-        if (data.day4Check || data.day5Check)
+        if (data.day04Checked || data.day05Checked)
         {
             transform.GetChild(13).gameObject.SetActive(true);
             //transform.GetChild(2).gameObject.SetActive(false);
@@ -117,10 +126,10 @@ public class Transiciones : MonoBehaviour
             SceneManager.LoadScene("LevelSelector");
     }
 
-    public void GoToWhackASlime()
-    {
-        SceneManager.LoadScene("WhackAMole1");
-    }
+    //public void GoToWhackASlime()
+    //{
+    //    SceneManager.LoadScene("WhackAMole1");
+    //}
 
     public void FTBRegular()
     {

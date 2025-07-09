@@ -57,12 +57,14 @@ public class Data : MonoBehaviour
     [SerializeField] public bool samuraiAyudado2 = false;
     [SerializeField] public int vecesSamuraiAyudado = 0;
 
-    [SerializeField] public bool day0Check = false;
-    [SerializeField] public bool day1Check = false;
-    [SerializeField] public bool day2Check = false;
-    [SerializeField] public bool day3Check = false;
-    [SerializeField] public bool day4Check = false;
-    [SerializeField] public bool day5Check = false;
+    [SerializeField] public bool day00Checked = false;
+    [SerializeField] public bool day01Checked = false;
+    [SerializeField] public bool day02Checked = false;
+    [SerializeField] public bool day03Checked = false;
+    [SerializeField] public bool day04Checked = false;
+    [SerializeField] public bool day05Checked = false;
+    [SerializeField] public bool day06Checked = false;
+    [SerializeField] public bool day07Checked = false;
     [SerializeField] public bool videoActivo = false;
     [SerializeField] public bool videoVisto = false;
     [SerializeField] public bool finalMuyMaloConseguido = false;
@@ -90,9 +92,9 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
     [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
     [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
-    [SerializeField] public int vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
-    [SerializeField] public int noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
-    [SerializeField] public int vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
+    [SerializeField] public int vecesCobradaHandy = 0;                  // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+    [SerializeField] public int noCobrarSergioCobrarGeeraardD4 = 0;     // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
+    [SerializeField] public int vecesCobradoAntonio = 0;                // Tienes que cobrar a Antonio en el dia 4 y a Patxi en el dia 3
     [SerializeField] public int vecesCobradoRaven = 0;
     [SerializeField] public int numGnomosFinded = 0;
     [SerializeField] public bool nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
@@ -310,12 +312,14 @@ public class Data : MonoBehaviour
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
-                day0Check = datosJuego.savedday0Check;
-                day1Check = datosJuego.savedday1Check;
-                day2Check = datosJuego.savedday2Check;
-                day3Check = datosJuego.savedday3Check;
-                day4Check = datosJuego.savedday4Check;
-                day5Check = datosJuego.savedday5Check;
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
                 videoActivo = datosJuego.savedvideoActivo;
                 videoVisto = datosJuego.savedvideoVisto;
                 finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
@@ -407,12 +411,14 @@ public class Data : MonoBehaviour
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
-                day0Check = datosJuego.savedday0Check;
-                day1Check = datosJuego.savedday1Check;
-                day2Check = datosJuego.savedday2Check;
-                day3Check = datosJuego.savedday3Check;
-                day4Check = datosJuego.savedday4Check;
-                day5Check = datosJuego.savedday5Check;
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
                 videoActivo = datosJuego.savedvideoActivo;
                 videoVisto = datosJuego.savedvideoVisto;
                 finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
@@ -503,12 +509,14 @@ public class Data : MonoBehaviour
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
-                day0Check = datosJuego.savedday0Check;
-                day1Check = datosJuego.savedday1Check;
-                day2Check = datosJuego.savedday2Check;
-                day3Check = datosJuego.savedday3Check;
-                day4Check = datosJuego.savedday4Check;
-                day5Check = datosJuego.savedday5Check;
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
                 videoActivo = datosJuego.savedvideoActivo;
                 videoVisto = datosJuego.savedvideoVisto;
                 finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
@@ -601,12 +609,12 @@ public class Data : MonoBehaviour
                 savedsamuraiAyudado2 = samuraiAyudado2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
-                savedday0Check = day0Check,
-                savedday1Check = day1Check,
-                savedday2Check = day2Check,
-                savedday3Check = day3Check,
-                savedday4Check = day4Check,
-                savedday5Check = day5Check,
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
                 savedvideoActivo = videoActivo,
                 savedvideoVisto = videoVisto,
                 savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
@@ -697,12 +705,12 @@ public class Data : MonoBehaviour
                 savedsamuraiAyudado2 = samuraiAyudado2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
-                savedday0Check = day0Check,
-                savedday1Check = day1Check,
-                savedday2Check = day2Check,
-                savedday3Check = day3Check,
-                savedday4Check = day4Check,
-                savedday5Check = day5Check,
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
                 savedvideoActivo = videoActivo,
                 savedvideoVisto = videoVisto,
                 savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
@@ -792,12 +800,12 @@ public class Data : MonoBehaviour
                 savedsamuraiAyudado2 = samuraiAyudado2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
-                savedday0Check = day0Check,
-                savedday1Check = day1Check,
-                savedday2Check = day2Check,
-                savedday3Check = day3Check,
-                savedday4Check = day4Check,
-                savedday5Check = day5Check,
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
                 savedvideoActivo = videoActivo,
                 savedvideoVisto = videoVisto,
                 savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
@@ -878,12 +886,12 @@ public class Data : MonoBehaviour
 
     private int CalcularUltimoDiaJugado()
     {
-        if (day5Check) return 0;
-        if (day4Check) return 5;
-        if (day3Check) return 4;
-        if (day2Check) return 3;
-        if (day1Check) return 2;
-        if (day0Check) return 1;
+        if (day05Checked) return 0;
+        if (day04Checked) return 5;
+        if (day03Checked) return 4;
+        if (day02Checked) return 3;
+        if (day01Checked) return 2;
+        if (day00Checked) return 1;
         return -1; // Ningún día jugado aún
     }
 

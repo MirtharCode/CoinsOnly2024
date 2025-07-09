@@ -44,7 +44,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 91e6023bfe10b8a45b0402497556df3b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: c1073f2a95a4c5e438b9133470d99346
   - enabled: 0
@@ -99,8 +99,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/NewDays/DD.unity
+    path: Assets/Scenes/NewDays/01.unity
     guid: d9f4d63c2f66c0347a04af7822bce24a
+  - enabled: 1
+    path: Assets/Scenes/NewDays/02.unity
+    guid: 6b6feae7e8f4a214b9912a91bc641ada
   - enabled: 1
     path: Assets/Scenes/NewDays/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d

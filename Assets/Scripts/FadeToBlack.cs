@@ -34,22 +34,22 @@ public class FadeToBlack : MonoBehaviour
 
     public void CallingFirstDay()
     {
-        if(data.GetComponent<Data>().day0Check)
+        if(data.GetComponent<Data>().day00Checked)
             SceneManager.LoadScene("Day1");
 
-        else if(data.GetComponent<Data>().day1Check)
+        else if(data.GetComponent<Data>().day01Checked)
             SceneManager.LoadScene("Day2_1");
 
-        else if (data.GetComponent<Data>().day2Check)
+        else if (data.GetComponent<Data>().day02Checked)
             SceneManager.LoadScene("Day3_1");
 
-        else if (data.GetComponent<Data>().day3Check)
+        else if (data.GetComponent<Data>().day03Checked)
             SceneManager.LoadScene("Day4");
 
-        else if (data.GetComponent<Data>().day4Check)
+        else if (data.GetComponent<Data>().day04Checked)
             SceneManager.LoadScene("Day5");
 
-        else if (data.GetComponent<Data>().day5Check)
+        else if (data.GetComponent<Data>().day05Checked)
         {
             data.GetComponent<Data>().samuraiPagaMal = false;
             data.GetComponent<Data>().borrachoTriste = false;

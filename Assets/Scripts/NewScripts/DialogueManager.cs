@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsReady { get; private set; } = false;
     public string currentSceneName;
-    public string lastSceneWithDialogues ="";
+    public string lastSceneWithDialogues;
     public GameObject csvImporter;
     public GameObject clientManager;
     public GameObject clientPrefab;

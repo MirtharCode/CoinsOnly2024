@@ -7,6 +7,7 @@ using System.Linq;
 using System;
 using Unity.Mathematics;
 using UnityEngine.SceneManagement;
+using System.Reflection;
 
 public class ClientManager : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class ClientManager : MonoBehaviour
     private bool teTocaBronca = false;
     private bool meVoyAMinijuego = false;
     private bool interactableHintShown = false;
+    private bool imBW = false;
 
     public string selectedSuspect;
 
@@ -44,10 +46,10 @@ public class ClientManager : MonoBehaviour
     {
         StartMusicSetup();
         Invoke(nameof(StartNextClient), timer);
+        DialogueManager.Instance.lastSceneWithDialogues = SceneManager.GetActiveScene().name;
     }
     void Update()
-    {      
-
+    {
         if (!dialogueReady && DialogueManager.Instance.IsReady)
         {
             dialogueReady = true;
@@ -90,7 +92,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
-        if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD")
+        if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
         {
             StartCoroutine(FadeFromGrayscale(grayscaleMaterial, 2f));
         }
@@ -99,7 +101,8 @@ public class ClientManager : MonoBehaviour
         {
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
-            SceneManager.LoadScene("FM");
+            GoingHome(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene("FM");
             return;
         }
 
@@ -113,7 +116,7 @@ public class ClientManager : MonoBehaviour
 
         if (currentDialogueClient.name == "Detective")
             StartCoroutine(FadeToGrayscale(grayscaleMaterial, 2f));
-            
+
         showingDialogue = true;
         MostrarDialogoActual();
         ChangeTheMusic(currentDialogueClient.race, currentDialogueClient.name);
@@ -228,9 +231,7 @@ public class ClientManager : MonoBehaviour
             {
                 meVoyAMinijuego = true;
                 showingDialogue = false;
-                DialogueManager.Instance.lastSceneWithDialogues = SceneManager.GetActiveScene().name;
-
-                FinishCurrentClient();               
+                FinishCurrentClient();
             }
 
             else if (clientDialogueLineIndex >= currentDialogueClient.dialogueLines.Count)
@@ -404,11 +405,11 @@ public class ClientManager : MonoBehaviour
                 if (DialogueManager.Instance.dailyCustomers.Count > 0)
                     DialogueManager.Instance.dailyCustomers.RemoveAt(0);
 
-                if (!meVoyAMinijuego)             
+                if (!meVoyAMinijuego)
                     Invoke(nameof(StartNextClient), 1);
 
                 else
-                    GoingToMinigame(currentDialogueClient.name);            
+                    GoingToMinigame(currentDialogueClient.name);
             }
 
             else
@@ -537,7 +538,7 @@ public class ClientManager : MonoBehaviour
 
     public void TimeToCharge()
     {
-        string eleccionCliente="";
+        string eleccionCliente = "";
 
         if (iWantToBelieve)
         {
@@ -546,10 +547,10 @@ public class ClientManager : MonoBehaviour
             if (currentDialogueClient.correctChoice == "TICK")
             {
                 cobrasteBien = true;
-                
+
                 eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
             }
-                
+
 
             else
             {
@@ -568,10 +569,10 @@ public class ClientManager : MonoBehaviour
             if (currentDialogueClient.correctChoice == "CROSS")
             {
                 cobrasteBien = true;
-                
+
                 eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
             }
-                
+
 
             else
             {
@@ -609,6 +610,7 @@ public class ClientManager : MonoBehaviour
 
     public IEnumerator FadeToGrayscale(Material mat, float duration)
     {
+        imBW = true;
         float t = 0;
         while (t < duration)
         {
@@ -621,6 +623,7 @@ public class ClientManager : MonoBehaviour
 
     IEnumerator FadeFromGrayscale(Material mat, float duration)
     {
+        imBW = false;
         float t = 0f;
         while (t < duration)
         {
@@ -630,6 +633,46 @@ public class ClientManager : MonoBehaviour
             yield return null;
         }
         mat.SetFloat("_Lerp", 0f);
+    }
+
+    public void GoingHome(string sceneName)
+    {
+        int diaActual;
+
+        if (!int.TryParse(sceneName, out diaActual))
+        {
+            Debug.LogError($"Nombre de escena inválido: {sceneName}");
+            return;
+        }
+
+        string diaPasado = (diaActual - 1).ToString("D2");
+
+        // Construir el nombre del bool según el nombre de la escena
+        string boolToActivate = $"day{sceneName}Checked";
+        string boolToDeactivate = $"day{diaPasado}Checked";
+
+        // Obtener el campo por reflexión
+        FieldInfo field01 = typeof(Data).GetField(boolToDeactivate, BindingFlags.Instance | BindingFlags.Public);
+        FieldInfo field02 = typeof(Data).GetField(boolToActivate, BindingFlags.Instance | BindingFlags.Public);
+
+        if (field01 != null && field01.FieldType == typeof(bool))
+        {
+            field01.SetValue(Data.instance, false);
+            Debug.Log($" Activado: {boolToDeactivate}");
+        }
+        else
+            Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+        if (field02 != null && field02.FieldType == typeof(bool))
+        {
+            field02.SetValue(Data.instance, true);
+            Debug.Log($" Activado: {boolToActivate}");
+        }
+        else
+            Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+        // Cargar la escena Home
+        SceneManager.LoadScene("Home");
     }
 
     #region CÓDIGO ANTIGUO REFERENTE A LOS DESPLEGABLES DE NORMATIVAS Y PRECIOS QUE CAMBIARÁN

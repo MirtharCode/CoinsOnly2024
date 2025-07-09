@@ -31,12 +31,12 @@ public class ScriptFinales : MonoBehaviour
 
     public void TitleScreen()
     {
-        data.GetComponent<Data>().day0Check = true;
-        data.GetComponent<Data>().day1Check = false;
-        data.GetComponent<Data>().day2Check = false;
-        data.GetComponent<Data>().day3Check = false;
-        data.GetComponent<Data>().day4Check = false;
-        data.GetComponent<Data>().day5Check = false;
+        data.GetComponent<Data>().day00Checked = true;
+        data.GetComponent<Data>().day01Checked = false;
+        data.GetComponent<Data>().day02Checked = false;
+        data.GetComponent<Data>().day03Checked = false;
+        data.GetComponent<Data>().day04Checked = false;
+        data.GetComponent<Data>().day05Checked = false;
         data.GetComponent<Data>().samuraiPagaMal = false;
         data.GetComponent<Data>().borrachoTriste = false;
         data.GetComponent<Data>().vecesCobradoCululu = 0;

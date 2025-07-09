@@ -17,28 +17,28 @@ public class FotitoPersonajeMenu : MonoBehaviour
         data = GameObject.FindGameObjectWithTag("Data");
         imageComponent = GetComponent<Image>();
 
-        if (data.GetComponent<Data>().day0Check)           // Solo sale el Jefe.
+        if (data.GetComponent<Data>().day00Checked)           // Solo sale el Jefe.
             imageComponent.sprite = imagenes[0];
 
-        else if (data.GetComponent<Data>().day1Check)       // Lo anterior y luego hasta Rockon.
+        else if (data.GetComponent<Data>().day01Checked)       // Lo anterior y luego hasta Rockon.
         {
             randomIndex = Random.Range(0, 9);
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().day2Check)       // Lo anterior hasta Pijus Magnus.
+        else if (data.GetComponent<Data>().day02Checked)       // Lo anterior hasta Pijus Magnus.
         {
             randomIndex = Random.Range(0, 16);
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().day3Check)       // Lo anterior hasta Jissy.
+        else if (data.GetComponent<Data>().day03Checked)       // Lo anterior hasta Jissy.
         {
             randomIndex = Random.Range(0, 23);
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().day4Check)       // Lo anterior hasta Magmadora
+        else if (data.GetComponent<Data>().day04Checked)       // Lo anterior hasta Magmadora
         {
             randomIndex = Random.Range(0, 26);
             imageComponent.sprite = imagenes[randomIndex];
@@ -55,26 +55,26 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
     public void NextImage()
     {
-        if (data.GetComponent<Data>().day1Check) ImagesLoop(9);
+        if (data.GetComponent<Data>().day01Checked) ImagesLoop(9);
 
-        else if (data.GetComponent<Data>().day2Check) ImagesLoop(16);
+        else if (data.GetComponent<Data>().day02Checked) ImagesLoop(16);
 
-        else if (data.GetComponent<Data>().day3Check) ImagesLoop(23);
+        else if (data.GetComponent<Data>().day03Checked) ImagesLoop(23);
 
-        else if (data.GetComponent<Data>().day4Check) ImagesLoop(26);
+        else if (data.GetComponent<Data>().day04Checked) ImagesLoop(26);
 
         else if (data.GetComponent<Data>().finalSecretoConseguido) ImagesLoop(imagenes.Length);
     }
 
     public void PreviousImage()
     {
-        if (data.GetComponent<Data>().day1Check) ReverseImagesLoop(9);
+        if (data.GetComponent<Data>().day01Checked) ReverseImagesLoop(9);
 
-        else if (data.GetComponent<Data>().day2Check) ReverseImagesLoop(16);
+        else if (data.GetComponent<Data>().day02Checked) ReverseImagesLoop(16);
 
-        else if (data.GetComponent<Data>().day3Check) ReverseImagesLoop(23);
+        else if (data.GetComponent<Data>().day03Checked) ReverseImagesLoop(23);
 
-        else if (data.GetComponent<Data>().day4Check) ReverseImagesLoop(26);
+        else if (data.GetComponent<Data>().day04Checked) ReverseImagesLoop(26);
 
         else if (data.GetComponent<Data>().finalSecretoConseguido) ReverseImagesLoop(imagenes.Length);
     }

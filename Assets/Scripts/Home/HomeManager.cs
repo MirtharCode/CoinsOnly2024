@@ -168,7 +168,7 @@ public class HomeManager : MonoBehaviour
 
         if (!data.GetComponent<Data>().yaSeFueCliente && !data.GetComponent<Data>().videoActivo)
         {
-            if (Data.instance.day1Check && !Data.instance.giftTapicio)
+            if (Data.instance.day01Checked && !Data.instance.giftTapicio)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
@@ -180,7 +180,7 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            else if (Data.instance.day2Check && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
+            else if (Data.instance.day02Checked && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
@@ -192,7 +192,7 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            else if (Data.instance.day3Check && !Data.instance.giftElidora)
+            else if (Data.instance.day03Checked && !Data.instance.giftElidora)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
@@ -204,7 +204,7 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            else if (Data.instance.day5Check && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
+            else if (Data.instance.day05Checked && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
