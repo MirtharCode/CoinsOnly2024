@@ -21,7 +21,7 @@ public class EdgeScrollCamera : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            ReturnToCenter();
+            ReturnToCenter();   // Llamarlo cuando caiga el cliente
         }
         if (returningToCenter)
         {
@@ -29,7 +29,7 @@ public class EdgeScrollCamera : MonoBehaviour
 
             if (Vector3.Distance(transform.position, initialPosition) < 0.01f)
             {
-                returningToCenter = false;
+                returningToCenter = false; // Ponerlo donde quiera que se desbloquee la fijación al centro
                 targetOffsetX = 0f;
             }
             return;  

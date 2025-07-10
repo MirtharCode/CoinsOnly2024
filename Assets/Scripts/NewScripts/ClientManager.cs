@@ -279,7 +279,7 @@ public class ClientManager : MonoBehaviour
             var line = currentDialogueClient.dialogueLines[clientDialogueLineIndex];
 
             speakerRaceTextBox.text = currentDialogueClient.race;
-            speakerTextBox.text = currentDialogueClient.name;
+            speakerTextBox.text = currentDialogueClient.name.ToUpper();
             dialogueTextBox.text = line.text;
 
             if (clientDialogueLineIndex != 0)
@@ -437,11 +437,12 @@ public class ClientManager : MonoBehaviour
 
     public IEnumerator BossCalling(string bossComplain)
     {
-        DialogueManager.Instance.phone.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", true);
+        // Ya no existe el teléfono
+        //DialogueManager.Instance.phone.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", true);
 
         yield return new WaitForSeconds(.5f);
 
-        DialogueManager.Instance.phone.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", false);
+        //DialogueManager.Instance.phone.gameObject.GetComponent<Animator>().SetBool("LlamaJefe", false);
 
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = true;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = true;
@@ -489,8 +490,8 @@ public class ClientManager : MonoBehaviour
 
         else
         {
-            DialogueManager.Instance.centralProduct.GetComponent<Image>().sprite = loaded1;
-            DialogueManager.Instance.centralProduct.GetComponent<Image>().enabled = true;
+            DialogueManager.Instance.centralProduct.GetComponent<SpriteRenderer>().sprite = loaded1;
+            DialogueManager.Instance.centralProduct.GetComponent<SpriteRenderer>().enabled = true;
 
             if (numProducts > 1)
             {
@@ -501,8 +502,8 @@ public class ClientManager : MonoBehaviour
 
                 else
                 {
-                    DialogueManager.Instance.rightProduct.GetComponent<Image>().sprite = loaded2;
-                    DialogueManager.Instance.rightProduct.GetComponent<Image>().enabled = true;
+                    DialogueManager.Instance.rightProduct.GetComponent<SpriteRenderer>().sprite = loaded2;
+                    DialogueManager.Instance.rightProduct.GetComponent<SpriteRenderer>().enabled = true;
 
                     if (numProducts == 3)
                     {
@@ -513,8 +514,8 @@ public class ClientManager : MonoBehaviour
 
                         else
                         {
-                            DialogueManager.Instance.leftProduct.GetComponent<Image>().sprite = loaded3;
-                            DialogueManager.Instance.leftProduct.GetComponent<Image>().enabled = true;
+                            DialogueManager.Instance.leftProduct.GetComponent<SpriteRenderer>().sprite = loaded3;
+                            DialogueManager.Instance.leftProduct.GetComponent<SpriteRenderer>().enabled = true;
                         }
                     }
                 }
@@ -530,8 +531,8 @@ public class ClientManager : MonoBehaviour
 
             else
             {
-                DialogueManager.Instance.couponPlace.GetComponent<Image>().sprite = loadedCoupon;
-                DialogueManager.Instance.couponPlace.GetComponent<Image>().enabled = true;
+                DialogueManager.Instance.couponPlace.GetComponent<SpriteRenderer>().sprite = loadedCoupon;
+                DialogueManager.Instance.couponPlace.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
@@ -589,10 +590,10 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.leDinero.SetActive(false);
         DialogueManager.Instance.buttonCobrar.SetActive(false);
         DialogueManager.Instance.buttonNoCobrar.SetActive(false);
-        DialogueManager.Instance.centralProduct.GetComponent<Image>().enabled = false;
-        DialogueManager.Instance.rightProduct.GetComponent<Image>().enabled = false;
-        DialogueManager.Instance.leftProduct.GetComponent<Image>().enabled = false;
-        DialogueManager.Instance.couponPlace.GetComponent<Image>().enabled = false;
+        DialogueManager.Instance.centralProduct.GetComponent<SpriteRenderer>().enabled = false;
+        DialogueManager.Instance.rightProduct.GetComponent<SpriteRenderer>().enabled = false;
+        DialogueManager.Instance.leftProduct.GetComponent<SpriteRenderer>().enabled = false;
+        DialogueManager.Instance.couponPlace.GetComponent<SpriteRenderer>().enabled = false;
         DialogueManager.Instance.dropDownPanelPrecios.gameObject.SetActive(false);
         DialogueManager.Instance.dropDownPanelNormativas.gameObject.SetActive(false);
 
