@@ -25,6 +25,8 @@ public class CameraZoomManager : MonoBehaviour
     private EdgeScrollCamera edgeScroll;
     private EdgeRotateCamera edgeRotate;
 
+    private bool notZoom = true;
+
     private void Start()
     {
         edgeScroll = GetComponent<EdgeScrollCamera>();
@@ -37,10 +39,19 @@ public class CameraZoomManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ReturnToCenter();   // Llamarlo cuando caiga el cliente y vuelva a hablar el cliente
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            ReturnToMove();   // Llamarlo cuando deje de hablar el cliente
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit) && notZoom == false)
             {
                 if (hit.collider.CompareTag("ZoomTarget") && !isInZoomMode)
                 {
@@ -202,5 +213,14 @@ public class CameraZoomManager : MonoBehaviour
         Quaternion targetRotation = baseRotation * Quaternion.Euler(offsetX, offsetY, 0f);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, zoomRotateSpeed * Time.deltaTime);
+    }
+
+    public void ReturnToCenter()
+    {
+        notZoom = true;
+    }
+    public void ReturnToMove()
+    {
+        notZoom = false;
     }
 }

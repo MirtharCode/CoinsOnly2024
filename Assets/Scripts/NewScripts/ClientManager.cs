@@ -41,12 +41,15 @@ public class ClientManager : MonoBehaviour
 
     [SerializeField] private Material grayscaleMaterial;
 
+    public GameObject Camera;
+
 
     private void Start()
     {
         StartMusicSetup();
         Invoke(nameof(StartNextClient), timer);
         DialogueManager.Instance.lastSceneWithDialogues = SceneManager.GetActiveScene().name;
+        Camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
     void Update()
     {
@@ -400,7 +403,7 @@ public class ClientManager : MonoBehaviour
 
             if (!teTocaBronca)
             {
-                Destroy(currentClient, 1);
+                Destroy(currentClient, 2);
 
                 if (DialogueManager.Instance.dailyCustomers.Count > 0)
                     DialogueManager.Instance.dailyCustomers.RemoveAt(0);
@@ -421,7 +424,7 @@ public class ClientManager : MonoBehaviour
                 else
                     StartCoroutine(BossCalling(currentDialogueClient.bossComplainsByeWrong));
 
-                Destroy(currentClient, 1);
+                Destroy(currentClient, 2);
 
                 if (DialogueManager.Instance.dailyCustomers.Count > 0)
                     DialogueManager.Instance.dailyCustomers.RemoveAt(0);
@@ -482,6 +485,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.buttonCobrar.SetActive(true);
         DialogueManager.Instance.buttonNoCobrar.SetActive(true);
         DialogueManager.Instance.leDineroText.text = client.clientMoney.ToString();
+        Camera.GetComponent<EdgeScrollCamera>().ReturnToMove();
+        Camera.GetComponent<CameraZoomManager>().ReturnToMove();
 
         Sprite loaded1 = Resources.Load<Sprite>($"Sprites/Products/{client.productTypes[2]}");
 

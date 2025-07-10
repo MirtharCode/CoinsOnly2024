@@ -10,7 +10,7 @@ public class EdgeScrollCamera : MonoBehaviour
 
     private Vector3 initialPosition;
     private float targetOffsetX = 0f;
-    private bool returningToCenter = false;
+    private bool returningToCenter = true;
 
     void Start()
     {
@@ -19,9 +19,13 @@ public class EdgeScrollCamera : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ReturnToCenter();   // Llamarlo cuando caiga el cliente y vuelva a hablar el cliente
+        } 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            ReturnToCenter();   // Llamarlo cuando caiga el cliente
+            ReturnToMove();   // Llamarlo cuando deje de hablar el cliente
         }
         if (returningToCenter)
         {
@@ -29,7 +33,6 @@ public class EdgeScrollCamera : MonoBehaviour
 
             if (Vector3.Distance(transform.position, initialPosition) < 0.01f)
             {
-                returningToCenter = false; // Ponerlo donde quiera que se desbloquee la fijación al centro
                 targetOffsetX = 0f;
             }
             return;  
@@ -72,5 +75,9 @@ public class EdgeScrollCamera : MonoBehaviour
     public void ReturnToCenter()
     {
         returningToCenter = true;
+    }
+    public void ReturnToMove()
+    {
+        returningToCenter = false;
     }
 }
