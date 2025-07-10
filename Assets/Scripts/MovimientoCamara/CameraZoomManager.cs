@@ -17,7 +17,7 @@ public class CameraZoomManager : MonoBehaviour
     private Quaternion originalRotation;
     private float originalCamSize;
 
-    private bool isInZoomMode = false;
+    public bool isInZoomMode = false;
     private ZoomTargetInfo currentZoomInfo;
     private float currentBackMoveSpeed;
     private float currentBackRotationSpeed;
