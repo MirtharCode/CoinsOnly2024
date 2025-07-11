@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneReferences : MonoBehaviour
 {
+    public string currentSceneName;
     public GameObject clientManager;
     public GameObject phoneObject;
     public GameObject complainObject;
@@ -33,6 +35,7 @@ public class SceneReferences : MonoBehaviour
 
     public GameObject leDinero;
     public TMP_Text leDineroText;
+    public GameObject leDineroSymbol;
     public GameObject leCajaRegistradora;
     public GameObject buttonCobrar;
     public GameObject buttonNoCobrar;
@@ -43,16 +46,20 @@ public class SceneReferences : MonoBehaviour
     public GameObject lesPropinas;
     public TMP_Text lePropinasText;
 
+    private void Awake()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
+    }
     private void Start()
     {
         // Puedes hacer comprobaciones aquí si quieres
         if (DialogueManager.Instance != null)
         {
-            DialogueManager.Instance.SetSceneReferences(clientManager, phoneObject, complainObject, dialoguePanel, sospechosoPanel, seguroPanel, 
+            DialogueManager.Instance.SetSceneReferences(currentSceneName, clientManager, phoneObject, complainObject, dialoguePanel, sospechosoPanel, seguroPanel, 
                                                         preciosPanel, botonPlegadoPrecios, botonDesplegadoPrecios, pos1Precios, pos2Precios,
                                                         normativaPanel, botonPlegadoNormativas, botonDesplegadoNormativas, pos1Normativas, pos2Normativas, regRaceText,
                                                         darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
-                                                        leDinero, leDineroText, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
+                                                        leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
                                                         centralProduct, rightProduct, leftProduct, couponPlace, lesPropinas, lePropinasText);
         }
     }

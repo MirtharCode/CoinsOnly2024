@@ -109,6 +109,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public bool IsReady { get; private set; } = false;
+    
     public string currentSceneName;
     public string lastSceneWithDialogues;
     public GameObject csvImporter;
@@ -162,6 +163,7 @@ public class DialogueManager : MonoBehaviour
     [Header("ITS ALL ABOUT THE MONEY MONEY MONEY")]
     [SerializeField] public GameObject leDinero;
     [SerializeField] public TMP_Text leDineroText;
+    [SerializeField] public GameObject leDineroSymbol;
     [SerializeField] public GameObject leCajaRegistradora;
     [SerializeField] public GameObject buttonCobrar;
     [SerializeField] public GameObject buttonNoCobrar;
@@ -202,8 +204,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        currentSceneName = SceneManager.GetActiveScene().name;
-
         if (lastSceneWithDialogues == currentSceneName)
         {
             Debug.Log("He vuelto del minijuego y actualizo las propinas");
@@ -835,8 +835,8 @@ public class DialogueManager : MonoBehaviour
         //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = false;
         dialoguePanel.gameObject.SetActive(false);
-        dropDownPanelPrecios.gameObject.SetActive(true);
-        dropDownPanelNormativas.gameObject.SetActive(true);
+        //dropDownPanelPrecios.gameObject.SetActive(true);
+        //dropDownPanelNormativas.gameObject.SetActive(true);
 
         //if (currentScene.name == "Day1")
         //    preciosButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
@@ -1101,13 +1101,14 @@ public class DialogueManager : MonoBehaviour
         //}
     }
 
-    public void SetSceneReferences(GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel,
+    public void SetSceneReferences(string sceneName, GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel,
                                    GameObject preciosPanel, GameObject botonDesplegarPreciosPanel, GameObject botonPlegarPreciosPanel, GameObject pos1PreciosPanel, GameObject pos2PreciosPanel,
                                    GameObject normativaPanel, GameObject botonDesplegarNormativasPanel, GameObject botonPlegarNormativasPanel, GameObject pos1NormativasPanel, GameObject pos2NormativasPanel, TextMeshProUGUI regulationsRaceText,
                                    GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
-                                   GameObject moneySack, TMP_Text moneySackText, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
+                                   GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
     {
+        currentSceneName = sceneName;
         clientManager = cM;
         phone = phoneObj;
         jefePanel = complainObj;
@@ -1136,6 +1137,7 @@ public class DialogueManager : MonoBehaviour
 
         leDinero = moneySack;
         leDineroText = moneySackText;
+        leDineroSymbol = moneySackSymbol;
         leCajaRegistradora = cachinkThing;
         buttonCobrar = chargeButton;
         buttonNoCobrar = byeButton;

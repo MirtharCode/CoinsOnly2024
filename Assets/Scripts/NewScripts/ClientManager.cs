@@ -104,6 +104,7 @@ public class ClientManager : MonoBehaviour
         {
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
+            DialogueManager.Instance.lastSceneWithDialogues = "";
             GoingHome(SceneManager.GetActiveScene().name);
             //SceneManager.LoadScene("FM");
             return;
@@ -484,6 +485,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.leDinero.SetActive(true);
         DialogueManager.Instance.buttonCobrar.SetActive(true);
         DialogueManager.Instance.buttonNoCobrar.SetActive(true);
+        DialogueManager.Instance.leDineroSymbol.SetActive(true);
+        DialogueManager.Instance.leDineroText.gameObject.SetActive(true);
         DialogueManager.Instance.leDineroText.text = client.clientMoney.ToString();
         Camera.GetComponent<EdgeScrollCamera>().ReturnToMove();
         Camera.GetComponent<CameraZoomManager>().ReturnToMove();
@@ -595,6 +598,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.leDinero.SetActive(false);
         DialogueManager.Instance.buttonCobrar.SetActive(false);
         DialogueManager.Instance.buttonNoCobrar.SetActive(false);
+        DialogueManager.Instance.leDineroSymbol.SetActive(false);
+        DialogueManager.Instance.leDineroText.gameObject.SetActive(false);
         DialogueManager.Instance.centralProduct.GetComponent<SpriteRenderer>().enabled = false;
         DialogueManager.Instance.rightProduct.GetComponent<SpriteRenderer>().enabled = false;
         DialogueManager.Instance.leftProduct.GetComponent<SpriteRenderer>().enabled = false;
