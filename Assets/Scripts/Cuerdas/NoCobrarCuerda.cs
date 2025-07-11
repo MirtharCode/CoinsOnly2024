@@ -8,13 +8,12 @@ public class NoCobrarCuerda : MonoBehaviour
     public float maxPullDistance = 3f;
     public float dragStrength = 15f;   
 
-    public event Action CobrarCliente;
-
     private Rigidbody rb;
     private SpringJoint spring;
     private Camera cam;
     private bool isDragging = false;
     private bool hasFiredEvent = false;
+    private bool canTouch = false;
 
     public GameObject Cameras;
     public GameObject ClientManager;
@@ -59,10 +58,17 @@ public class NoCobrarCuerda : MonoBehaviour
             hasFiredEvent = true;
         }
     }
-
+    public void ActivateTouch()
+    {
+        canTouch = true;
+    }
+    public void DeactivateTouch()
+    {
+        canTouch = false;
+    }
     void FixedUpdate()
     {
-        if (isDragging)
+        if (isDragging && canTouch)
         {
             Vector3 mouseWorld = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.WorldToScreenPoint(transform.position).z));
             Vector3 target = new Vector3(transform.position.x, Mathf.Min(mouseWorld.y, anchorPoint.position.y - maxPullDistance), transform.position.z);

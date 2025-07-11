@@ -483,8 +483,8 @@ public class ClientManager : MonoBehaviour
     public void ShowProducts(DialogueManager.DailyClientInfo client, int numProducts)
     {
         DialogueManager.Instance.leDinero.SetActive(true);
-        DialogueManager.Instance.buttonCobrar.SetActive(true);
-        DialogueManager.Instance.buttonNoCobrar.SetActive(true);
+        DialogueManager.Instance.buttonCobrar.GetComponent<CobrarCuerda>().ActivateTouch();
+        DialogueManager.Instance.buttonNoCobrar.GetComponent<NoCobrarCuerda>().ActivateTouch();
         DialogueManager.Instance.leDineroSymbol.SetActive(true);
         DialogueManager.Instance.leDineroText.gameObject.SetActive(true);
         DialogueManager.Instance.leDineroText.text = client.clientMoney.ToString();
@@ -596,8 +596,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.ShowText();
         MostrarDialogoActual();
         DialogueManager.Instance.leDinero.SetActive(false);
-        DialogueManager.Instance.buttonCobrar.SetActive(false);
-        DialogueManager.Instance.buttonNoCobrar.SetActive(false);
+        DialogueManager.Instance.buttonCobrar.GetComponent<CobrarCuerda>().DeactivateTouch();
+        DialogueManager.Instance.buttonNoCobrar.GetComponent<NoCobrarCuerda>().DeactivateTouch();
         DialogueManager.Instance.leDineroSymbol.SetActive(false);
         DialogueManager.Instance.leDineroText.gameObject.SetActive(false);
         DialogueManager.Instance.centralProduct.GetComponent<SpriteRenderer>().enabled = false;
