@@ -878,10 +878,8 @@ public class Data : MonoBehaviour
     private IEnumerator SavingSymbolCorrutine()
     {
         savingSymbol.SetActive(true);
-        Debug.Log("ALOOOOOOOOOO");
         yield return new WaitForSeconds(3f);
         savingSymbol.SetActive(false);
-        Debug.Log("ADIOOOOOOOOOOOO");
     }
 
     private int CalcularUltimoDiaJugado()

@@ -29,31 +29,26 @@ public class Gnomo : MonoBehaviour
 
     public void GnomoFinded()
     {
-        if(currentScene.name == "Day2_1")
-        {
-            Data.instance.numGnomosFinded++;
+
+        Data.instance.numGnomosFinded++;
+
+        if (Data.instance.numGnomosFinded == 1)
             animator.SetBool("Pick", false);
-        }
 
-        else if (currentScene.name == "Day3_1")
+        else if (Data.instance.numGnomosFinded == 2)
         {
-            Data.instance.numGnomosFinded++;
             animator.SetBool("Pick2", false);
-
-            if(Data.instance.numGnomosFinded >= 2)
-            {
-                Data.instance.giftEnano = true;
-                canvas.GetComponent<UIManager>().TrophyAchieved("Enano");
-            }
+            Data.instance.giftEnano = true;
+            canvas.GetComponent<UIManager>().TrophyAchieved("Enano");
         }
     }
 
     public void ShowUpGnomoAnim()
     {
-        if (currentScene.name == "Day2_1")
+        if (Data.instance.numGnomosFinded == 0)
             animator.SetBool("Pick", true);
 
-        else if (currentScene.name == "Day3_1")
+        else if (Data.instance.numGnomosFinded == 1)
             animator.SetBool("Pick2", true);
     }
 }

@@ -142,7 +142,6 @@ public class ProductsDatabase
 
 public class CSVImporter : MonoBehaviour
 {
-    public string currentSceneName;
     [Header("IDIOMA ACTUAL")]
     [SerializeField] private Language currentLanguage = Language.ES; // El predeterminado es español
 
@@ -156,7 +155,6 @@ public class CSVImporter : MonoBehaviour
 
     void Start()
     {
-        currentSceneName = SceneManager.GetActiveScene().name;
         LoadDialoguesFromLocalCSV(currentLanguage);
     }
 
@@ -179,7 +177,7 @@ public class CSVImporter : MonoBehaviour
         }
 
         DialogueDatabase db = ParseDialogueCSV(csvFile.text);
-        DialogueManager.Instance.LoadFromDatabase(db, currentSceneName);
+        DialogueManager.Instance.LoadFromDatabase(db, DialogueManager.Instance.currentDay);
         ProductsDatabase productsDb = LoadProductsFromLocalCSV();
 
         // En caso que no venga de un Minijuego, que me genere la lista de clientes de ese día
@@ -194,7 +192,7 @@ public class CSVImporter : MonoBehaviour
         {
             DialogueManager.Instance.regulationsAdded = false;
             DialogueManager.Instance.AssignProductDataToClients(productsDb);          // Asigna productos a clientes
-        }          
+        }
 
     }
 

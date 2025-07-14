@@ -31,13 +31,7 @@ public class Transiciones : MonoBehaviour
 
     public void NextDayTransiciones()
     {
-        if (data.day01Checked) SceneManager.LoadScene("02");           // Si vienes de acabar el día uno, pasas al dos.
-        else if (data.day02Checked) SceneManager.LoadScene("03");      // Si vienes de acabar el día dos, pasas al tres.
-        else if (data.day03Checked) SceneManager.LoadScene("04");      // Si vienes de acabar el día tres, pasas al cuatro.
-        else if (data.day04Checked) SceneManager.LoadScene("05");      // Si vienes de acabar el día tres, pasas al cinco.
-        else if (data.day05Checked) SceneManager.LoadScene("06");      // Si vienes de acabar el día tres, pasas al seis.
-        else if (data.day06Checked) SceneManager.LoadScene("07");      // Si vienes de acabar el día tres, pasas al siete.
-
+        Data.instance.GuardarDatos();
 
         #region CÓDIGO ANTIGUO
         //FTBRegular();
@@ -46,10 +40,10 @@ public class Transiciones : MonoBehaviour
         //else if (data.day03Checked) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
         #endregion
 
-        else if (data.day04Checked)
+        if (data.day04Checked)
         {
             if (data.videoVisto)
-                SceneManager.LoadScene("Day5");        // Si vienes de acabar el día cuatro, pasas al quinto.
+                SceneManager.LoadScene("Day");        // Si vienes de acabar el día cuatro, pasas al quinto.
             else
             {
                 data.videoActivo = true;
@@ -78,8 +72,9 @@ public class Transiciones : MonoBehaviour
                 else if (data.tipsPoints == 5 && data.detectivePoints == 4) SceneManager.LoadScene("FinalSecreto");
             }
         }
-        //Si acabas el juego sin haber obtenido + 50 tips en ningún día, pasas al final muy malo.
-        Data.instance.GuardarDatos();
+
+        else
+            SceneManager.LoadScene("Day");
     }
 
     public void ShowGifts()

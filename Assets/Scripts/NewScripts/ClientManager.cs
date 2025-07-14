@@ -25,7 +25,7 @@ public class ClientManager : MonoBehaviour
     private float timer = .5f;
 
     public DialogueManager.DailyClientInfo currentDialogueClient;
-    private int clientDialogueLineIndex = 0;
+    [SerializeField] private int clientDialogueLineIndex = 0;
     private bool dialogueReady = false;
     private bool showingDialogue = false;
     public bool iWantToBelieve = false;
@@ -34,8 +34,15 @@ public class ClientManager : MonoBehaviour
     private bool cobrasteMal = false;
     private bool teTocaBronca = false;
     private bool meVoyAMinijuego = false;
-    private bool interactableHintShown = false;
     private bool imBW = false;
+
+    public bool day05client4AltChecked;
+    public bool day06client3DialogueChangedChecked;
+    public bool day06client7DialogueChangedChecked;
+    public bool day06client8DialogueChangedChecked;
+    public bool day07client5AltChecked;
+    public bool day07client7DialogueChangedChecked;
+    public bool day07client10AltChecked;
 
     public string selectedSuspect;
 
@@ -48,7 +55,7 @@ public class ClientManager : MonoBehaviour
     {
         StartMusicSetup();
         Invoke(nameof(StartNextClient), timer);
-        DialogueManager.Instance.lastSceneWithDialogues = SceneManager.GetActiveScene().name;
+        DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
         Camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
     void Update()
@@ -91,13 +98,15 @@ public class ClientManager : MonoBehaviour
 
     void StartNextClient()
     {
+        ClearAlts(DialogueManager.Instance.currentDay);
         DialogueManager.Instance.LaVoluntad(0);
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
         if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
         {
-            StartCoroutine(FadeFromGrayscale(grayscaleMaterial, 2f));
+            imBW = false;
+            DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeOut();
         }
 
         if (DialogueManager.Instance.dailyCustomers.Count == 0)
@@ -105,7 +114,22 @@ public class ClientManager : MonoBehaviour
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
             DialogueManager.Instance.lastSceneWithDialogues = "";
-            GoingHome(SceneManager.GetActiveScene().name);
+            
+            if (!DialogueManager.Instance.theGnomeIsFree)
+                GoingHome(DialogueManager.Instance.currentDay);
+            else
+            {
+                int diaActual;
+
+                if (!int.TryParse(DialogueManager.Instance.currentDay, out diaActual))
+                {
+                    Debug.LogError($"Nombre de escena inválido: {DialogueManager.Instance.currentDay}");
+                    return;
+                }
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(diaActual - 2).GetComponent<NewGnomeScript>().GnomeFleeing();
+            }
+                
+
             //SceneManager.LoadScene("FM");
             return;
         }
@@ -116,10 +140,14 @@ public class ClientManager : MonoBehaviour
 
         CharacterShowUp(DialogueManager.Instance.clientPrefab);
         ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
-        ChangingMiniSprite(currentDialogueClient.name);
+        //ChangingMiniSprite(currentDialogueClient.name);   YA NO ES NECESARIO
 
         if (currentDialogueClient.name == "Detective")
-            StartCoroutine(FadeToGrayscale(grayscaleMaterial, 2f));
+        {
+            imBW = true;
+            DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeIn();
+        }
+        
 
         showingDialogue = true;
         MostrarDialogoActual();
@@ -201,13 +229,13 @@ public class ClientManager : MonoBehaviour
         else
         {
             // Esto solo pasa en la demo de MadridOtaku
-            if (currentDialogueClient.name == "Mikujefe" && currentDialogueClient.clientID == "clientFINAL" && DialogueManager.Instance.currentSceneName == "DD")
-            {
-                StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
-                StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
-                StartCoroutine(FadeFromGrayscale(grayscaleMaterial, 2f));
-            }
-            else if (currentDialogueClient.name == "Detective")
+            //if (currentDialogueClient.name == "Mikujefe" && currentDialogueClient.clientID == "clientFINAL" && DialogueManager.Instance.currentDay == "DD")
+            //{
+            //    StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
+            //    StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
+            //    StartCoroutine(FadeFromGrayscale(grayscaleMaterial, 2f));
+            //}
+            if (currentDialogueClient.name == "Detective")
             {
                 StartCoroutine(FadeOut(musicBox.GetComponent<AudioSource>(), fadeDuration));
 
@@ -231,7 +259,8 @@ public class ClientManager : MonoBehaviour
     {
         if (dialogueReady && showingDialogue)
         {
-            if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "minigame")
+
+            if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "mgIN")
             {
                 meVoyAMinijuego = true;
                 showingDialogue = false;
@@ -265,8 +294,9 @@ public class ClientManager : MonoBehaviour
 
     void MostrarDialogoActual()
     {
+
         if (!cobrasteBien && !cobrasteMal)
-        {
+        {            
             if (currentDialogueClient == null || currentDialogueClient.dialogueLines.Count == 0)
             {
                 Debug.LogWarning("Cliente o líneas de diálogo no válidas.");
@@ -291,6 +321,9 @@ public class ClientManager : MonoBehaviour
 
             ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, line.mood);
 
+            if (line.gift == "collectable")
+                TrophyAchieved(currentDialogueClient.name);
+
             clientDialogueLineIndex++;
         }
 
@@ -304,6 +337,9 @@ public class ClientManager : MonoBehaviour
                 dialogueTextBox.text = currentDialogueClient.tickResponse[0].text;
                 Speaking(currentDialogueClient.tickResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.tickResponse[0].mood);
+
+                if (currentDialogueClient.tickResponse[0].gift == "collectable")
+                    TrophyAchieved(currentDialogueClient.name);
             }
 
             else if (noWayJose)
@@ -311,6 +347,9 @@ public class ClientManager : MonoBehaviour
                 dialogueTextBox.text = currentDialogueClient.crossResponse[0].text;
                 Speaking(currentDialogueClient.crossResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.crossResponse[0].mood);
+
+                if (currentDialogueClient.crossResponse[0].gift == "collectable")
+                    TrophyAchieved(currentDialogueClient.name);
             }
 
             iWantToBelieve = false;
@@ -327,7 +366,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.detectivePanel.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[0]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[1]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[2]}");
-        DialogueManager.Instance.dialoguePanel.GetComponent<Button>().enabled = false;
+        DialogueManager.Instance.dialoguePanel.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
     }
 
     public void SetSelectedSuspectFromButton(GameObject button)
@@ -353,18 +392,18 @@ public class ClientManager : MonoBehaviour
 
         if (selectedSuspect == currentDialogueClient.correctAnswer)
         {
-            eleccionDetective = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
+            eleccionDetective = DialogueManager.Instance.currentDay + currentDialogueClient.name + "YES";
         }
 
         else
         {
-            eleccionDetective = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
+            eleccionDetective = DialogueManager.Instance.currentDay + currentDialogueClient.name + "NOP";
         }
 
         DialogueManager.Instance.chosenChecks.Add(eleccionDetective);
         DialogueManager.Instance.areYouSurePanel.SetActive(false);
         DialogueManager.Instance.detectivePanel.SetActive(false);
-        DialogueManager.Instance.dialoguePanel.GetComponent<Button>().enabled = true;
+        DialogueManager.Instance.dialoguePanel.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
         speakerTextBox.text = currentDialogueClient.name;
         MostrarDialogoActual();
     }
@@ -381,26 +420,18 @@ public class ClientManager : MonoBehaviour
     {
         DialogueManager.Instance.HideText();
 
-        // Para hacer la animación en la demo de enseñar los botones
-        if (currentDialogueClient.name == "Antonio" && SceneManager.GetActiveScene().name == "DD" && !interactableHintShown)
-        {
-            interactableHintShown = true;
-            DialogueManager.Instance.botonDesplegadoPrecios.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
-            DialogueManager.Instance.botonDesplegadoNormativas.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
-        }
-
         if (currentDialogueClient.numberOfProducts == 0 || cobrasteBien || cobrasteMal)
         {
             if (currentClient != null)
+            {
                 currentClient.GetComponent<BoxCollider2D>().enabled = false;
+
+                if (currentDialogueClient.dialogueLines[clientDialogueLineIndex- 1].type == "gnome")
+                    GnomeOut(DialogueManager.Instance.currentDay);
+            }               
 
             cobrasteBien = false;
             cobrasteMal = false;
-
-            #region PARTE DEL DESPLEGABLE DE LOS PRECIOS Y NORMATIVAS QUE SE CAMBIARÁ
-            DialogueManager.Instance.dropDownPanelPrecios.gameObject.SetActive(false);
-            DialogueManager.Instance.dropDownPanelNormativas.gameObject.SetActive(false);
-            #endregion
 
             if (!teTocaBronca)
             {
@@ -464,16 +495,16 @@ public class ClientManager : MonoBehaviour
             currentClient.GetComponent<SpriteRenderer>().sprite = loaded;
     }
 
-    public void ChangingMiniSprite(string clientName)
-    {
-        Sprite loaded = Resources.Load<Sprite>($"Sprites/MiniImages/{clientName}");
+    //public void ChangingMiniSprite(string clientName)
+    //{
+    //    Sprite loaded = Resources.Load<Sprite>($"Sprites/MiniImages/{clientName}");
 
-        if (loaded == null)
-            Debug.LogError($"¡No se pudo cargar el sprite en: Sprites/MiniImages/{clientName}!");
+    //    if (loaded == null)
+    //        Debug.LogError($"¡No se pudo cargar el sprite en: Sprites/MiniImages/{clientName}!");
 
-        else
-            miniImage.sprite = loaded;
-    }
+    //    else
+    //        miniImage.sprite = loaded;
+    //}
 
     public void CharacterShowUp(GameObject character)
     {
@@ -557,7 +588,7 @@ public class ClientManager : MonoBehaviour
             {
                 cobrasteBien = true;
 
-                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
+                eleccionCliente = DialogueManager.Instance.currentDay + currentDialogueClient.name + "YES";
             }
 
 
@@ -566,7 +597,7 @@ public class ClientManager : MonoBehaviour
                 cobrasteMal = true;
                 teTocaBronca = true;
 
-                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
+                eleccionCliente = DialogueManager.Instance.currentDay + currentDialogueClient.name + "NOP";
             }
 
         }
@@ -579,7 +610,7 @@ public class ClientManager : MonoBehaviour
             {
                 cobrasteBien = true;
 
-                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "YES";
+                eleccionCliente = DialogueManager.Instance.currentDay + currentDialogueClient.name + "YES";
             }
 
 
@@ -588,7 +619,7 @@ public class ClientManager : MonoBehaviour
                 cobrasteMal = true;
                 teTocaBronca = true;
 
-                eleccionCliente = DialogueManager.Instance.currentSceneName + currentDialogueClient.name + "NOP";
+                eleccionCliente = DialogueManager.Instance.currentDay + currentDialogueClient.name + "NOP";
             }
         }
 
@@ -604,8 +635,6 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.rightProduct.GetComponent<SpriteRenderer>().enabled = false;
         DialogueManager.Instance.leftProduct.GetComponent<SpriteRenderer>().enabled = false;
         DialogueManager.Instance.couponPlace.GetComponent<SpriteRenderer>().enabled = false;
-        DialogueManager.Instance.dropDownPanelPrecios.gameObject.SetActive(false);
-        DialogueManager.Instance.dropDownPanelNormativas.gameObject.SetActive(false);
 
     }
 
@@ -619,33 +648,6 @@ public class ClientManager : MonoBehaviour
         noWayJose = true;
     }
 
-    public IEnumerator FadeToGrayscale(Material mat, float duration)
-    {
-        imBW = true;
-        float t = 0;
-        while (t < duration)
-        {
-            mat.SetFloat("_Lerp", t / duration);
-            t += Time.deltaTime;
-            yield return null;
-        }
-        mat.SetFloat("_Lerp", 1f);
-    }
-
-    IEnumerator FadeFromGrayscale(Material mat, float duration)
-    {
-        imBW = false;
-        float t = 0f;
-        while (t < duration)
-        {
-            float amount = 1f - (t / duration);
-            mat.SetFloat("_Lerp", amount);
-            t += Time.deltaTime;
-            yield return null;
-        }
-        mat.SetFloat("_Lerp", 0f);
-    }
-
     public void GoingHome(string sceneName)
     {
         int diaActual;
@@ -656,7 +658,7 @@ public class ClientManager : MonoBehaviour
             return;
         }
 
-        string diaPasado = (diaActual - 1).ToString("D2");
+        string diaPasado = (diaActual - 1).ToString("D2");        
 
         // Construir el nombre del bool según el nombre de la escena
         string boolToActivate = $"day{sceneName}Checked";
@@ -682,56 +684,238 @@ public class ClientManager : MonoBehaviour
         else
             Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
 
+        DialogueManager.Instance.currentDay = (diaActual + 1).ToString("D2");
         // Cargar la escena Home
         SceneManager.LoadScene("Home");
     }
 
+    public void ClearAlts(string day)
+    {
+        switch (day)
+        {
+            case "01":
+                break;
+
+            case "02":
+                break;
+
+            case "03":
+                break;
+
+            case "04":
+                break;
+
+            case "05":
+
+                if (!day05client4AltChecked)
+                {
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "05SergioYES")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOUR")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day05client4AltChecked = true;
+                        }
+
+                        else if (DialogueManager.Instance.chosenChecks[i] == "05SergioNOP")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOURalt")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day05client4AltChecked = true;
+                        }
+                    }
+                }
+                break;
+
+            case "06":
+                if (!day06client3DialogueChangedChecked)
+                {
+                    int timesChargedCululu = 0;
+                    
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "02CululuYES" || DialogueManager.Instance.chosenChecks[i] == "04CululuYES")
+                        {
+                            timesChargedCululu++;
+
+                            day06client3DialogueChangedChecked = true;
+                        }
+                    }
+
+                    if (timesChargedCululu == 2)
+                    {
+                        string dialogueChanged = "Gracias amigo, ahora que quiero olvidarla, toma esta foto de ella, no la necesitaré más.";
+                        DialogueManager.Instance.dailyCustomers[3].tickResponse[0].text = dialogueChanged;
+                    }
+
+                    else
+                        DialogueManager.Instance.dailyCustomers[3].tickResponse[4].text = "";
+                }
+
+                else if (!day06client7DialogueChangedChecked)
+                {
+                    int timesChargedRaven = 0;
+
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "02Rave-NYES" || DialogueManager.Instance.chosenChecks[i] == "03Rave-NYES")
+                        {
+                            timesChargedRaven++;
+
+                            day06client7DialogueChangedChecked = true;
+                        }
+                    }
+
+                    if (timesChargedRaven == 2)
+                    {
+                        string dialogueChanged = "¡Eres el mejor! Creo que necesitas un poco de mi magia, coge este disco de mi grupo favorito, ¡TE ENCANTARÁ!";
+                        DialogueManager.Instance.dailyCustomers[7].tickResponse[0].text = dialogueChanged;
+                    }
+
+                    else
+                        DialogueManager.Instance.dailyCustomers[7].tickResponse[4].text = "";
+                }
+
+                else if (!day06client8DialogueChangedChecked)
+                {
+                    int timesChargedTerry = 0;
+
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "02TerryNOP" || DialogueManager.Instance.chosenChecks[i] == "04TerryNOP")
+                        {
+                            timesChargedTerry++;
+
+                            day06client8DialogueChangedChecked = true;
+                        }
+                    }
+
+                    if (timesChargedTerry == 2)
+                    {
+                        string dialogueChanged = "De verdad que eres el mejor, puede que no te haya visto en muchas fiestas, pero creo que este traje te sentará bien.";
+                        DialogueManager.Instance.dailyCustomers[8].tickResponse[0].text = dialogueChanged;
+                    }
+
+                    else
+                        DialogueManager.Instance.dailyCustomers[8].tickResponse[4].text = "";
+                }
+                break;
+
+            case "07":
+                if (!day07client5AltChecked)
+                {
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "05ElvogYES")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFIVEalt")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day07client5AltChecked = true;
+                        }
+
+                        else if (DialogueManager.Instance.chosenChecks[i] == "05ElvogNOP")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFIVE")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day07client5AltChecked = true;
+                        }
+                    }
+                }
+
+                else if (!day07client7DialogueChangedChecked)
+                {
+                    int timesChargedMara = 0;
+
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "01MaraYES" || DialogueManager.Instance.chosenChecks[i] == "04MaraNOP")
+                        {
+                            timesChargedMara++;
+
+                            day07client7DialogueChangedChecked = true;
+                        }
+                    }
+
+                    if (timesChargedMara == 2)
+                    {
+                        string dialogueChanged = "De verdad que eres el mejor, puede que no te haya visto en muchas fiestas, pero creo que este traje te sentará bien.";
+                        DialogueManager.Instance.dailyCustomers[7].tickResponse[0].text = dialogueChanged;
+                    }
+
+                    else
+                        DialogueManager.Instance.dailyCustomers[7].tickResponse[4].text = "";
+                }
+
+                else if (!day07client10AltChecked)
+                {
+                    for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
+                    {
+                        if (DialogueManager.Instance.chosenChecks[i] == "06PatxiYES")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientTENalt")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day07client10AltChecked = true;
+                        }
+
+                        else if (DialogueManager.Instance.chosenChecks[i] == "06PatxiNOP")
+                        {
+                            for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
+                            {
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientNOP")
+                                    DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
+                            }
+
+                            day07client10AltChecked = true;
+                        }
+                    }
+                }
+                break;
+        
+        }
+    }
+
+    public void GnomeOut(string day)
+    {
+        switch (day)
+        {
+            case "02":
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(0).gameObject.SetActive(true);
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(0).GetComponent<Animator>().SetBool("oneAppeared", true);
+                break;
+
+            case "04":
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(1).gameObject.SetActive(true);
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(1).GetComponent<Animator>().SetBool("threeAppeared", true);
+                break;
+
+            case "06":
+                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(2).gameObject.SetActive(true);
+                break;
+        }
+    }
+
     #region CÓDIGO ANTIGUO REFERENTE A LOS DESPLEGABLES DE NORMATIVAS Y PRECIOS QUE CAMBIARÁN
-    public void OpenListPrecios()
-    {
-        if (DialogueManager.Instance.listOpenPrecios)
-        {
-            DialogueManager.Instance.buttonCobrar.SetActive(true);
-            DialogueManager.Instance.buttonNoCobrar.SetActive(true);
-            DialogueManager.Instance.dropDownPanelPrecios.transform.position = DialogueManager.Instance.position2Precios.transform.position;
-            DialogueManager.Instance.botonDesplegadoPrecios.SetActive(true);
-            DialogueManager.Instance.botonPlegadoPrecios.SetActive(false);
-            DialogueManager.Instance.listOpenPrecios = false;
-        }
-
-        else
-        {
-            DialogueManager.Instance.buttonCobrar.SetActive(false);
-            DialogueManager.Instance.buttonNoCobrar.SetActive(false);
-            DialogueManager.Instance.dropDownPanelPrecios.transform.position = DialogueManager.Instance.position1Precios.transform.position;
-            DialogueManager.Instance.botonDesplegadoPrecios.SetActive(false);
-            DialogueManager.Instance.botonPlegadoPrecios.SetActive(true);
-            DialogueManager.Instance.listOpenPrecios = true;
-        }
-    }
-
-    public void OpenListNormativas()
-    {
-        if (DialogueManager.Instance.listOpenNormativas)
-        {
-            DialogueManager.Instance.buttonCobrar.SetActive(true);
-            DialogueManager.Instance.buttonNoCobrar.SetActive(true);
-            DialogueManager.Instance.dropDownPanelNormativas.transform.position = DialogueManager.Instance.position2Normativas.transform.position;
-            DialogueManager.Instance.botonDesplegadoNormativas.SetActive(true);
-            DialogueManager.Instance.botonPlegadoNormativas.SetActive(false);
-            DialogueManager.Instance.listOpenNormativas = false;
-        }
-
-        else
-        {
-            DialogueManager.Instance.buttonCobrar.SetActive(false);
-            DialogueManager.Instance.buttonNoCobrar.SetActive(false);
-            DialogueManager.Instance.dropDownPanelNormativas.transform.position = DialogueManager.Instance.position1Normativas.transform.position;
-            DialogueManager.Instance.botonDesplegadoNormativas.SetActive(false);
-            DialogueManager.Instance.botonPlegadoNormativas.SetActive(true);
-            DialogueManager.Instance.listOpenNormativas = true;
-        }
-    }
 
     public void RetrocederRaza()
     {
@@ -837,4 +1021,59 @@ public class ClientManager : MonoBehaviour
         }
     }
     #endregion
+
+    public void TrophyAchieved(string trophyName)
+    {
+        DialogueManager.Instance.uITrophies.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TrophyImages/{trophyName}");
+
+        if (trophyName == "Antonio")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
+
+        else if (trophyName == "Cululu")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
+
+        else if (trophyName == "Denjirenji")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
+
+        // Este te lo da en casa
+        else if (trophyName == "Elidora")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
+
+        else if (trophyName == "Elvog")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
+
+        else if (trophyName == "Manomo")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
+
+        else if (trophyName == "Geeraard")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
+
+        else if (trophyName == "Giovanni")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
+
+        else if (trophyName == "Terry")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
+
+        else if (trophyName == "Manolo")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
+
+        else if (trophyName == "Mara")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
+
+        else if (trophyName == "Petra")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
+
+        else if (trophyName == "RaveN")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
+
+        else if (trophyName == "Sergio")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
+
+        else if (trophyName == "Tapicio")
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
+
+        //StartCoroutine(TrophyShower());
+        DialogueManager.Instance.uITrophies.GetComponent<Animator>().SetTrigger("TrophyShow");
+        Data.instance.GuardarDatos();
+    }
 }

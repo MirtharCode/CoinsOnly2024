@@ -35,14 +35,14 @@ public class ScreenEffectFader : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            FadeIn();
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            FadeOut();
-        }
+        //if (Input.GetKeyDown(KeyCode.N))
+        //{
+        //    FadeIn();
+        //}
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+        //    FadeOut();
+        //}
     }
 
     //Empieza un fade in (0 -> 1)

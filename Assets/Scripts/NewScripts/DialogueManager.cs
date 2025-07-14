@@ -21,13 +21,15 @@ public class DialogueManager : MonoBehaviour
         public string type;
         public string tone;
         public string mood;
+        public string gift;
 
-        public ClientLine(string text, string tone, string mood, string type)
+        public ClientLine(string text, string tone, string mood, string type, string gift)
         {
             this.text = text;
             this.type = type;
             this.tone = tone;
             this.mood = mood;
+            this.gift = gift;
         }
     }
 
@@ -37,10 +39,13 @@ public class DialogueManager : MonoBehaviour
         public string clientID;
         public string name;
         public string firstKey;
+        public string endKey;
         public string race;
         public List<ClientLine> dialogueLines = new List<ClientLine>();
         public List<ClientLine> tickResponse = new List<ClientLine>();
         public List<ClientLine> crossResponse = new List<ClientLine>();
+        public List<ClientLine> mgGoodResponse = new List<ClientLine>();
+        public List<ClientLine> mgBadResponse = new List<ClientLine>();
 
 
         //Solo si hay que cobrarle
@@ -63,11 +68,12 @@ public class DialogueManager : MonoBehaviour
         public List<string> suspects; // suspects1, suspects2, suspects3
         public string correctAnswer;
 
-        public DailyClientInfo(string clientID, string name, string firstKey, string race)
+        public DailyClientInfo(string clientID, string name, string firstKey, string lastKey, string race)
         {
             this.clientID = clientID;
             this.name = name;
             this.firstKey = firstKey;
+            this.endKey = lastKey;
             this.race = race;
         }
     }
@@ -109,8 +115,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public bool IsReady { get; private set; } = false;
-    
-    public string currentSceneName;
+
+    public string currentDay;
     public string lastSceneWithDialogues;
     public GameObject csvImporter;
     public GameObject clientManager;
@@ -121,33 +127,25 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public bool conversationOn;
     [SerializeField] public GameObject dialoguePanel;
     [SerializeField] public GameObject detectivePanel;
+    [SerializeField] public GameObject bAndWShader;
     [SerializeField] public GameObject areYouSurePanel;
     [SerializeField] public TMP_Text traductorText;
     [SerializeField] public TMP_Text NombreText;
 
+    [SerializeField] public GameObject uITrophies;
+    [SerializeField] public GameObject gnomeMinigameCanvas;
+    [SerializeField] public bool theGnomeIsFree;
+
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
 
     [SerializeField] public ProductsType allProducts;
-    [SerializeField] public bool listOpenPrecios = false;
-    [SerializeField] public GameObject dropDownPanelPrecios;
-    [SerializeField] public GameObject botonPlegadoPrecios;
-    [SerializeField] public GameObject botonDesplegadoPrecios;
-    [SerializeField] public GameObject position1Precios;
-    [SerializeField] public GameObject position2Precios;
-
-    [SerializeField] public bool listOpenNormativas = false;
-    [SerializeField] public GameObject dropDownPanelNormativas;
-    [SerializeField] public GameObject botonPlegadoNormativas;
-    [SerializeField] public GameObject botonDesplegadoNormativas;
-    [SerializeField] public GameObject position1Normativas;
-    [SerializeField] public GameObject position2Normativas;
 
     [Header("NORMATIVAS")]
 
     public bool regulationsAdded;
     public int currentRegulationsNumber;
     public List<string> currentRegulations;
-    
+
     [SerializeField]
     public List<RegulationInfo> regulationsData = new List<RegulationInfo>();
 
@@ -204,7 +202,10 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        if (lastSceneWithDialogues == currentSceneName)
+        if (currentDay == "")
+            currentDay = "01";
+
+        if (lastSceneWithDialogues == currentDay)
         {
             Debug.Log("He vuelto del minijuego y actualizo las propinas");
             // Limita el valor entre 0 y 100
@@ -214,7 +215,7 @@ public class DialogueManager : MonoBehaviour
             int nivel = ((int)propinasNumber / 10) * 10;
 
             // Carga el sprite correspondiente
-            lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
+            //lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
 
             // Actualiza el texto
             lePropinasText.text = propinasNumber.ToString();
@@ -226,7 +227,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Acabo de empezar el juego");
             LaVoluntad(50);
         }
-            
+
 
         #region CREANDO EL DICCIONARIO DE TIPOS DE PRODUCTOS
         allProducts = new ProductsType();
@@ -329,7 +330,8 @@ public class DialogueManager : MonoBehaviour
                 // Primer contacto con el cliente para inicializarlo
                 string name = GetSpeaker(key);
                 string race = GetRace(key);
-                tempClients[clientID] = new DailyClientInfo(clientID, name, key, race);
+                string lastKey = GetLastKey(key);
+                tempClients[clientID] = new DailyClientInfo(clientID, name, key, lastKey, race);
                 dailyCustomers.Add(tempClients[clientID]);
             }
 
@@ -340,7 +342,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                client.tickResponse.Add(new ClientLine(text, tone, mood, type));
+                string gift = GetGift(key);
+                client.tickResponse.Add(new ClientLine(text, tone, mood, type, gift));
             }
 
             else if (type == "cross")
@@ -348,19 +351,42 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                client.crossResponse.Add(new ClientLine(text, tone, mood, type));
+                string gift = GetGift(key);
+                client.crossResponse.Add(new ClientLine(text, tone, mood, type, gift));
             }
 
-            else if (type == "init" || type.StartsWith("dialogue") || type == "end" || type == "brake" || type == "minigame")
+            else if (type == "mgOUTGood")
             {
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                client.dialogueLines.Add(new ClientLine(text, tone, mood, type));
+                string gift = GetGift(key);
+                client.mgGoodResponse.Add(new ClientLine(text, tone, mood, type, gift));
+            }
+
+            else if (type == "mgOUTBad")
+            {
+                string text = GetText(key);
+                string tone = GetTone(key);
+                string mood = GetMood(key);
+                string gift = GetGift(key);
+                client.mgBadResponse.Add(new ClientLine(text, tone, mood, type, gift));
+            }
+
+            else if (type == "init" || type.StartsWith("dialogue") || type == "end" || type == "break" || type == "mgIN" || type == "gnome")
+            {
+                string text = GetText(key);
+                string tone = GetTone(key);
+                string mood = GetMood(key);
+                string gift = GetGift(key);
+                client.dialogueLines.Add(new ClientLine(text, tone, mood, type, gift));
 
                 // Si llegó al final, no hace falta seguir registrando más líneas
-                if (type == "end" || type == "brake")
+                if (type == "end" || type == "break")
+                {
+                    client.endKey = key;
                     continue;
+                }
             }
 
             if (client.name == "Detective")
@@ -382,11 +408,11 @@ public class DialogueManager : MonoBehaviour
             ProductsEntry matchingProduct = productsDb.entries
                 .Find(entry =>
                 entry.CLIENT.Equals(client.name, StringComparison.OrdinalIgnoreCase) &&
-                entry.DAY.Equals(currentSceneName, StringComparison.OrdinalIgnoreCase));
+                entry.DAY.Equals(currentDay, StringComparison.OrdinalIgnoreCase) && entry.CLIENTID.Equals(client.endKey));
 
             if (matchingProduct == null)
             {
-                Debug.LogWarning($"No se encontró entrada de producto para cliente: {client.name}");
+                Debug.LogWarning($"No se encontró entrada de producto para el {client.clientID}, de nombre: {client.name}");
                 continue;
             }
 
@@ -640,24 +666,63 @@ public class DialogueManager : MonoBehaviour
     {
         switch (clientID)
         {
-            case "clientZERO": return 0;
-            case "clientONE": return 1;
-            case "clientTWO": return 2;
-            case "clientTHREE": return 3;
-            case "clientFOUR": return 4;
-            case "clientFIVE": return 5;
-            case "clientSIX": return 6;
-            case "clientSEVEN": return 7;
-            case "clientEIGHT": return 8;
-            case "clientNINE": return 9;
-            case "clientTEN": return 10;
-            case "clientELEVEN": return 11;
-            case "clientTWELVE": return 12;
-            case "clientTHIRTEEN": return 13;
-            case "clientFOURTEEN": return 14;
-            case "clientFIFTEEN": return 15;
-            default: return 999; // fallback genérico, clientFINAL usa int.MaxValue arriba
+            case "clientZERO":
+            case "clientZEROalt": return 0;
+
+            case "clientONE":
+            case "clientONEalt": return 1;
+
+            case "clientTWO":
+            case "clientTWOalt": return 2;
+
+            case "clientTHREE":
+            case "clientTHREEalt": return 3;
+
+            case "clientFOUR":
+            case "clientFOURalt": return 4;
+
+            case "clientFIVE":
+            case "clientFIVEalt": return 5;
+
+            case "clientSIX":
+            case "clientSIXalt": return 6;
+
+            case "clientSEVEN":
+            case "clientSEVENalt": return 7;
+
+            case "clientEIGHT":
+            case "clientEIGHTalt": return 8;
+
+            case "clientNINE":
+            case "clientNINEalt": return 9;
+
+            case "clientTEN":
+            case "clientTENalt": return 10;
+
+            case "clientELEVEN":
+            case "clientELEVENalt": return 11;
+
+            case "clientTWELVE":
+            case "clientTWELVEalt": return 12;
+
+            case "clientTHIRTEEN":
+            case "clientTHIRTEENalt": return 13;
+
+            case "clientFOURTEEN":
+            case "clientFOURTEENalt": return 14;
+
+            case "clientFIFTEEN":
+            case "clientFIFTEENalt": return 15;
+
+            default: return 999;
         }
+    }
+
+    public string GetLastKey(string key)
+    {
+        if (dialogueLookup[key].TYPE == "end" || dialogueLookup[key].TYPE == "break")
+            return dialogueLookup[key].ID;
+        return "";
     }
 
     public string GetSpeaker(string key)
@@ -699,6 +764,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueLookup.ContainsKey(key))
             return dialogueLookup[key].MOOD;
+        return $"[{key}]";
+    }
+
+    public string GetGift(string key)
+    {
+        if (dialogueLookup.ContainsKey(key))
+            return dialogueLookup[key].GIFT;
         return $"[{key}]";
     }
 
@@ -1101,34 +1173,23 @@ public class DialogueManager : MonoBehaviour
         //}
     }
 
-    public void SetSceneReferences(string sceneName, GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel,
-                                   GameObject preciosPanel, GameObject botonDesplegarPreciosPanel, GameObject botonPlegarPreciosPanel, GameObject pos1PreciosPanel, GameObject pos2PreciosPanel,
-                                   GameObject normativaPanel, GameObject botonDesplegarNormativasPanel, GameObject botonPlegarNormativasPanel, GameObject pos1NormativasPanel, GameObject pos2NormativasPanel, TextMeshProUGUI regulationsRaceText,
-                                   GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
+    public void SetSceneReferences(GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel, GameObject bAndWPanel, GameObject gnomeCanvas,
+                                   GameObject trophyCanvas, GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
                                    GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
     {
-        currentSceneName = sceneName;
         clientManager = cM;
         phone = phoneObj;
         jefePanel = complainObj;
         dialoguePanel = dPanel;
         detectivePanel = sospechosoPanel;
         areYouSurePanel = seguroPanel;
+        areYouSurePanel = seguroPanel;
+        bAndWShader = bAndWPanel;
 
-        dropDownPanelPrecios = preciosPanel;
-        botonPlegadoPrecios = botonDesplegarPreciosPanel;
-        botonDesplegadoPrecios = botonPlegarPreciosPanel;
-        position1Precios = pos1PreciosPanel;
-        position2Precios = pos2PreciosPanel;
+        gnomeMinigameCanvas = gnomeCanvas;
+        uITrophies = trophyCanvas;
 
-        dropDownPanelNormativas = normativaPanel;
-        botonPlegadoNormativas = botonDesplegarNormativasPanel;
-        botonDesplegadoNormativas = botonPlegarNormativasPanel;
-        position1Normativas = pos1NormativasPanel;
-        position2Normativas = pos2NormativasPanel;
-
-        textoRaza = regulationsRaceText;
         panelMagos = regMagosOscurosPanel;
         panelHibridos = regHibridosPanel;
         panelElementales = regElementalesPanel;
@@ -1164,9 +1225,8 @@ public class DialogueManager : MonoBehaviour
         // Redondea al múltiplo de 10 inferior
         int nivel = ((int)propinasNumber / 10) * 10;
 
-        // Carga el sprite correspondiente
-        lesPropinas.GetComponent<Image>().sprite =
-            Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
+        // ESTO HAY QUE USARLO CUANDO VÍCTOR HAGA LOS MODELOS DE LAS PROPINAS
+        // lesPropinas.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TipJar/{nivel}");
 
         // Actualiza el texto
         lePropinasText.text = DialogueManager.Instance.propinasNumber.ToString();

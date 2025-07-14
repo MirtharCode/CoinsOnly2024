@@ -51,7 +51,6 @@ public class CobrarCuerda : MonoBehaviour
         float dist = Vector3.Distance(transform.position, anchorPoint.position);
         if (dist >= maxPullDistance * 0.95f && !hasFiredEvent)
         {
-            print("Te cobro macho");
             Cameras.GetComponent<EdgeScrollCamera>().ReturnToCenter();
             Cameras.GetComponent<CameraZoomManager>().ReturnToCenter();
             ClientManager.GetComponent<ClientManager>().IWantToBelieve();
