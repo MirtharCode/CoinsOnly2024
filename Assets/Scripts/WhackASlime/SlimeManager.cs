@@ -134,10 +134,10 @@ public class SlimeManager : MonoBehaviour
 
     public void OutOfTimeEnd()
     {
-        Data.instance.GetComponent<Data>().slimeFostiados = true;
-
-        if (score < 50)
+        if (score < 49)
             Data.instance.GetComponent<Data>().slimeFail = true;
+        else
+            Data.instance.GetComponent<Data>().slimeFostiados = true;
 
         fTB.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
 

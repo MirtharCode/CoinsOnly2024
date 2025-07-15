@@ -36,6 +36,9 @@ public class ClientManager : MonoBehaviour
     private bool meVoyAMinijuego = false;
     private bool imBW = false;
 
+    public bool day03client5DenjirenjiMinigameChecked;
+    public bool day05client6DenjirenjiMinigameChecked;
+    public bool day04client6ElidoraMinigameChecked;
     public bool day05client4AltChecked;
     public bool day06client3DialogueChangedChecked;
     public bool day06client7DialogueChangedChecked;
@@ -49,6 +52,26 @@ public class ClientManager : MonoBehaviour
     [SerializeField] private Material grayscaleMaterial;
 
     public GameObject Camera;
+
+    // MENSAJES DE LOS TROFEOS
+    private static readonly Dictionary<string, string> TrophyMessages = new Dictionary<string, string>
+{
+    { "Antonio", "¡Gafas Otaku \nDesbloqueadas!" },
+    { "Cululu", "¡Foto Tinder \nDesbloqueada!" },
+    { "Denjirenji", "¡Katana \nLáser \nDesbloqueada!" },
+    { "Elidora", "¡Mc Moco \nDesbloqueado!" },
+    { "Elvog", "¡Flores \nen Vodka \nDesbloqueadas!" },
+    { "Manomo", "¡Elena Nito \nDesbloqueado!" },
+    { "Geeraard", "¡Foto to wapa \nDesbloqueada!" },
+    { "Giovanni", "¡Libro Gordo \nDesbloqueado!" },
+    { "Terry", "¡Traje \nde los \nDomingos \nDesbloqueado!" },
+    { "Manolo", "¡El sellaso \nDesbloqueado!" },
+    { "Mara", "¡Trozo de \nex-marido \nDesbloqueado!" },
+    { "Petra", "¡Mapa de \nAlbacete \nDesbloqueado!" },
+    { "RaveN", "¡Disco de \nlos Mojinos \nDesbloqueado!" },
+    { "Sergio", "¡La \nGloboespada \nDesbloqueada!" },
+    { "Tapicio", "¡El GOTY \nDesbloqueado!" }
+};
 
 
     private void Start()
@@ -98,7 +121,7 @@ public class ClientManager : MonoBehaviour
 
     void StartNextClient()
     {
-        ClearAlts(DialogueManager.Instance.currentDay);
+        AltDialogues(DialogueManager.Instance.currentDay);
         DialogueManager.Instance.LaVoluntad(0);
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
@@ -114,7 +137,7 @@ public class ClientManager : MonoBehaviour
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
             DialogueManager.Instance.lastSceneWithDialogues = "";
-            
+
             if (!DialogueManager.Instance.theGnomeIsFree)
                 GoingHome(DialogueManager.Instance.currentDay);
             else
@@ -128,7 +151,7 @@ public class ClientManager : MonoBehaviour
                 }
                 DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(diaActual - 2).GetComponent<NewGnomeScript>().GnomeFleeing();
             }
-                
+
 
             //SceneManager.LoadScene("FM");
             return;
@@ -147,7 +170,7 @@ public class ClientManager : MonoBehaviour
             imBW = true;
             DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeIn();
         }
-        
+
 
         showingDialogue = true;
         MostrarDialogoActual();
@@ -287,16 +310,20 @@ public class ClientManager : MonoBehaviour
         }
     }
 
-    public void GoingToMinigame(string sceneName)
+    public void GoingToMinigame(string sceneName, string day)
     {
-        SceneManager.LoadScene(sceneName);
+        if (sceneName == "Denjirenji")
+            SceneManager.LoadScene(sceneName + day);
+
+        else
+            SceneManager.LoadScene(sceneName);
     }
 
     void MostrarDialogoActual()
     {
 
         if (!cobrasteBien && !cobrasteMal)
-        {            
+        {
             if (currentDialogueClient == null || currentDialogueClient.dialogueLines.Count == 0)
             {
                 Debug.LogWarning("Cliente o líneas de diálogo no válidas.");
@@ -426,25 +453,24 @@ public class ClientManager : MonoBehaviour
             {
                 currentClient.GetComponent<BoxCollider2D>().enabled = false;
 
-                if (currentDialogueClient.dialogueLines[clientDialogueLineIndex- 1].type == "gnome")
+                if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "gnome")
                     GnomeOut(DialogueManager.Instance.currentDay);
-            }               
+            }
 
             cobrasteBien = false;
             cobrasteMal = false;
 
             if (!teTocaBronca)
             {
-                Destroy(currentClient, 2);
-
-                if (DialogueManager.Instance.dailyCustomers.Count > 0)
+                if (DialogueManager.Instance.dailyCustomers.Count > 0 && !meVoyAMinijuego)
+                {
+                    Destroy(currentClient, 2);
                     DialogueManager.Instance.dailyCustomers.RemoveAt(0);
-
-                if (!meVoyAMinijuego)
                     Invoke(nameof(StartNextClient), 1);
+                }
 
                 else
-                    GoingToMinigame(currentDialogueClient.name);
+                    GoingToMinigame(currentDialogueClient.name, DialogueManager.Instance.currentDay);
             }
 
             else
@@ -658,7 +684,7 @@ public class ClientManager : MonoBehaviour
             return;
         }
 
-        string diaPasado = (diaActual - 1).ToString("D2");        
+        string diaPasado = (diaActual - 1).ToString("D2");
 
         // Construir el nombre del bool según el nombre de la escena
         string boolToActivate = $"day{sceneName}Checked";
@@ -689,20 +715,92 @@ public class ClientManager : MonoBehaviour
         SceneManager.LoadScene("Home");
     }
 
-    public void ClearAlts(string day)
+    public void AltDialogues(string day)
     {
         switch (day)
         {
             case "01":
                 break;
 
-            case "02":
+            case "02":                
                 break;
 
             case "03":
+                if (!day03client5DenjirenjiMinigameChecked)
+                {
+                    if (Data.instance.samuraiAyudado1)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientFIVE")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgGoodResponse[0]);
+                                day03client5DenjirenjiMinigameChecked = true;
+                            }
+                        }
+                    }
+
+                    else if (Data.instance.meExplotasteElCulo1)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientFIVE")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgBadResponse[0]);
+                                day03client5DenjirenjiMinigameChecked = true;
+                            }
+                        }
+                    }
+                }
                 break;
 
             case "04":
+
+                if (!day04client6ElidoraMinigameChecked)
+                {
+                    if (Data.instance.slimeFail)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientSIX")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgBadResponse[0]);
+                                day04client6ElidoraMinigameChecked = true;
+                            }
+                        }
+                    }
+
+                    else if (Data.instance.slimeFostiados)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientSIX")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgGoodResponse[0]);
+                                day04client6ElidoraMinigameChecked = true;
+                            }
+                        }
+                    }
+
+                    else if (Data.instance.elidoraAcariciada)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientSIX")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                string dialogueChanged = "¡Casi me abollas el cerebro!¡Escucho borroso!¡NUNCA TE LO PERDONARÉ CARMONA!";
+                                DialogueManager.Instance.dailyCustomers[i].mgBadResponse[0].text = dialogueChanged;
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgBadResponse[0]);
+                                day04client6ElidoraMinigameChecked = true;
+                            }
+                        }
+                    }
+                }                    
                 break;
 
             case "05":
@@ -715,7 +813,7 @@ public class ClientManager : MonoBehaviour
                         {
                             for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
                             {
-                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOUR")
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOURalt")
                                     DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
                             }
 
@@ -726,7 +824,7 @@ public class ClientManager : MonoBehaviour
                         {
                             for (int j = 0; j < DialogueManager.Instance.dailyCustomers.Count; j++)
                             {
-                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOURalt")
+                                if (DialogueManager.Instance.dailyCustomers[j].clientID == "clientFOUR")
                                     DialogueManager.Instance.dailyCustomers.Remove(DialogueManager.Instance.dailyCustomers[j]);
                             }
 
@@ -734,79 +832,102 @@ public class ClientManager : MonoBehaviour
                         }
                     }
                 }
+
+                if (!day05client6DenjirenjiMinigameChecked)
+                {
+                    if (Data.instance.samuraiAyudado2)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientSIX")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgGoodResponse[0]);
+
+                                if (!Data.instance.samuraiAyudado1)
+                                {
+                                    string dialogueChanged = "Aún tengo secuelas de la otra vez, pero agradezco tu esfuerzo en esta ocasión.";
+                                    DialogueManager.Instance.dailyCustomers[i].dialogueLines[0].text = dialogueChanged;
+                                    DialogueManager.Instance.dailyCustomers[i].dialogueLines[0].gift = "";
+                                }
+
+                                day05client6DenjirenjiMinigameChecked = true;
+                            }
+                        }
+                    }
+
+                    else if (Data.instance.meExplotasteElCulo2)
+                    {
+                        for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                        {
+                            if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientSIX")
+                            {
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Clear();
+                                DialogueManager.Instance.dailyCustomers[i].dialogueLines.Add(DialogueManager.Instance.dailyCustomers[i].mgBadResponse[0]);
+                                day05client6DenjirenjiMinigameChecked = true;
+                            }
+                        }
+                    }
+                }
                 break;
 
             case "06":
+
                 if (!day06client3DialogueChangedChecked)
                 {
-                    int timesChargedCululu = 0;
-                    
                     for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
                     {
                         if (DialogueManager.Instance.chosenChecks[i] == "02CululuYES" || DialogueManager.Instance.chosenChecks[i] == "04CululuYES")
                         {
-                            timesChargedCululu++;
+                            Data.instance.vecesCobradoCululu++;
 
                             day06client3DialogueChangedChecked = true;
                         }
                     }
 
-                    if (timesChargedCululu == 2)
+                    if (Data.instance.vecesCobradoCululu == 2)
                     {
                         string dialogueChanged = "Gracias amigo, ahora que quiero olvidarla, toma esta foto de ella, no la necesitaré más.";
                         DialogueManager.Instance.dailyCustomers[3].tickResponse[0].text = dialogueChanged;
                     }
-
-                    else
-                        DialogueManager.Instance.dailyCustomers[3].tickResponse[4].text = "";
                 }
 
                 else if (!day06client7DialogueChangedChecked)
                 {
-                    int timesChargedRaven = 0;
-
                     for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
                     {
                         if (DialogueManager.Instance.chosenChecks[i] == "02Rave-NYES" || DialogueManager.Instance.chosenChecks[i] == "03Rave-NYES")
                         {
-                            timesChargedRaven++;
+                            Data.instance.vecesCobradoRaven++;
 
                             day06client7DialogueChangedChecked = true;
                         }
                     }
 
-                    if (timesChargedRaven == 2)
+                    if (Data.instance.vecesCobradoRaven == 2)
                     {
                         string dialogueChanged = "¡Eres el mejor! Creo que necesitas un poco de mi magia, coge este disco de mi grupo favorito, ¡TE ENCANTARÁ!";
                         DialogueManager.Instance.dailyCustomers[7].tickResponse[0].text = dialogueChanged;
                     }
-
-                    else
-                        DialogueManager.Instance.dailyCustomers[7].tickResponse[4].text = "";
                 }
 
                 else if (!day06client8DialogueChangedChecked)
                 {
-                    int timesChargedTerry = 0;
-
                     for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
                     {
                         if (DialogueManager.Instance.chosenChecks[i] == "02TerryNOP" || DialogueManager.Instance.chosenChecks[i] == "04TerryNOP")
                         {
-                            timesChargedTerry++;
+                            Data.instance.vecesCobradaTerry++;
 
                             day06client8DialogueChangedChecked = true;
                         }
                     }
 
-                    if (timesChargedTerry == 2)
+                    if (Data.instance.vecesCobradaTerry == 2)
                     {
                         string dialogueChanged = "De verdad que eres el mejor, puede que no te haya visto en muchas fiestas, pero creo que este traje te sentará bien.";
                         DialogueManager.Instance.dailyCustomers[8].tickResponse[0].text = dialogueChanged;
                     }
-
-                    else
-                        DialogueManager.Instance.dailyCustomers[8].tickResponse[4].text = "";
                 }
                 break;
 
@@ -841,19 +962,17 @@ public class ClientManager : MonoBehaviour
 
                 else if (!day07client7DialogueChangedChecked)
                 {
-                    int timesChargedMara = 0;
-
                     for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
                     {
                         if (DialogueManager.Instance.chosenChecks[i] == "01MaraYES" || DialogueManager.Instance.chosenChecks[i] == "04MaraNOP")
                         {
-                            timesChargedMara++;
+                            Data.instance.vecesCobradaMara++;
 
                             day07client7DialogueChangedChecked = true;
                         }
                     }
 
-                    if (timesChargedMara == 2)
+                    if (Data.instance.vecesCobradaMara == 2)
                     {
                         string dialogueChanged = "De verdad que eres el mejor, puede que no te haya visto en muchas fiestas, pero creo que este traje te sentará bien.";
                         DialogueManager.Instance.dailyCustomers[7].tickResponse[0].text = dialogueChanged;
@@ -891,7 +1010,7 @@ public class ClientManager : MonoBehaviour
                     }
                 }
                 break;
-        
+
         }
     }
 
@@ -1026,53 +1145,29 @@ public class ClientManager : MonoBehaviour
     {
         DialogueManager.Instance.uITrophies.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TrophyImages/{trophyName}");
 
-        if (trophyName == "Antonio")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
+        #region ACTIVAR EL BOOLEANO DEL TROFEO EN DATA A TRAVÉS DE REFLEXIÓN
 
-        else if (trophyName == "Cululu")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
+        string fieldName = "gift" + trophyName;
 
-        else if (trophyName == "Denjirenji")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
+        var dataType = typeof(Data);
+        var field = dataType.GetField(fieldName);
 
-        // Este te lo da en casa
-        else if (trophyName == "Elidora")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
+        if (field != null && field.FieldType == typeof(bool))
+            field.SetValue(Data.instance, true);
+        else
+            Debug.LogWarning($"No boolean field named '{fieldName}' found in Data.");
+        #endregion
 
-        else if (trophyName == "Elvog")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
+        #region PONER EN LA UI EL MENSAJE DEL TROFEO USANDO EL DICCIONARIO DE TROFEOS
 
-        else if (trophyName == "Manomo")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
+        if (TrophyMessages.TryGetValue(trophyName, out string message))
+            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = message;
 
-        else if (trophyName == "Geeraard")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
+        else
+            Debug.LogWarning($"Trophy name '{trophyName}' no reconocido.");
 
-        else if (trophyName == "Giovanni")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
+        #endregion
 
-        else if (trophyName == "Terry")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
-
-        else if (trophyName == "Manolo")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
-
-        else if (trophyName == "Mara")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
-
-        else if (trophyName == "Petra")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
-
-        else if (trophyName == "RaveN")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
-
-        else if (trophyName == "Sergio")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
-
-        else if (trophyName == "Tapicio")
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
-
-        //StartCoroutine(TrophyShower());
         DialogueManager.Instance.uITrophies.GetComponent<Animator>().SetTrigger("TrophyShow");
         Data.instance.GuardarDatos();
     }

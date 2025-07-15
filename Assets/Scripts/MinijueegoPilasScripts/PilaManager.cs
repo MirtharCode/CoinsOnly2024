@@ -41,13 +41,13 @@ public class PilaManager : MonoBehaviour
     {
         cursor.SetActive(true);
 
-        if (currentScene.name == "Pila_Nivel1")
+        if (currentScene.name == "Denjirenji03")
         {
             Data.instance.vecesSamuraiAyudado++;
             Data.instance.samuraiAyudado1 = true;
         }
 
-        else if (currentScene.name == "Pila_Nivel2")
+        else if (currentScene.name == "Denjirenji05")
         {
             Data.instance.vecesSamuraiAyudado++;
             Data.instance.samuraiAyudado2 = true;
@@ -58,20 +58,12 @@ public class PilaManager : MonoBehaviour
 
     public void VictoryButton()
     {
-        if(currentScene.name == "Pila_Nivel1")
-            SceneManager.LoadScene("Day2_2");
-
-        else if (currentScene.name == "Pila_Nivel2")
-            SceneManager.LoadScene("Day3_2");
+        SceneManager.LoadScene("Day");
     }
 
     public void LoseButton()
     {
-        if (currentScene.name == "Pila_Nivel1")
-            SceneManager.LoadScene("Day2_2");
-
-        else if (currentScene.name == "Pila_Nivel2")
-            SceneManager.LoadScene("Day3_2");
+        SceneManager.LoadScene("Day");
     }
 
     public void CambiarContador()
@@ -91,6 +83,13 @@ public class PilaManager : MonoBehaviour
             Destroy(pila2);
             tiempoActivado = false;
             cursor.SetActive(true);
+
+            if (currentScene.name == "Denjirenji03")
+                Data.instance.meExplotasteElCulo1 = true;
+
+            else if (currentScene.name == "Denjirenji05")
+                Data.instance.meExplotasteElCulo2 = true;
+
         }
 
         if (tiempoActual <= 10)

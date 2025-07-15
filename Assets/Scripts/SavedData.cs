@@ -48,7 +48,9 @@ public class SavedData
     public bool savedsamuraiPagaMal = false;
     public bool savedborrachoTriste = false;
     public bool savedsamuraiAyudado1 = false;
+    public bool savedmeExplotasteElCulo1 = false;
     public bool savedsamuraiAyudado2 = false;
+    public bool savedmeExplotasteElCulo2 = false;
     public int savedvecesSamuraiAyudado = 0;
 
     public bool savedday0Check = false;

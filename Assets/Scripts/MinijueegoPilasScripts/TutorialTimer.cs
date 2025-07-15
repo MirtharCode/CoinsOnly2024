@@ -16,7 +16,7 @@ public class TutorialTimer : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
 
-        if (currentScene.name.Contains("Pila"))
+        if (currentScene.name.Contains("Denjirenji"))
         {
             transform.GetChild(0).GetComponent<Animator>().SetTrigger("PilaStart");
             pM = GameObject.FindGameObjectWithTag("PM");
@@ -31,7 +31,7 @@ public class TutorialTimer : MonoBehaviour
 
     public void ActivarTemporizador()
     {
-        if (currentScene.name.Contains("Pila"))
+        if (currentScene.name.Contains("Denjirenji"))
         {
             pM.GetComponent<PilaManager>().tiempoActual = pM.GetComponent<PilaManager>().tiempoMaximo;
             pM.GetComponent<PilaManager>().tempo.text = "" + pM.GetComponent<PilaManager>().tiempoMaximo.ToString("f0");
@@ -45,7 +45,7 @@ public class TutorialTimer : MonoBehaviour
 
     public void GoGoPowerRangers()
     {
-        if (!currentScene.name.Contains("Pila"))
+        if (!currentScene.name.Contains("Denjirenji"))
         {
             float gOGrowTiming;
 

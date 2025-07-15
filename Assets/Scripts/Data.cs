@@ -54,7 +54,9 @@ public class Data : MonoBehaviour
     [SerializeField] public bool samuraiPagaMal = false;
     [SerializeField] public bool borrachoTriste = false;
     [SerializeField] public bool samuraiAyudado1 = false;
+    [SerializeField] public bool meExplotasteElCulo1 = false;
     [SerializeField] public bool samuraiAyudado2 = false;
+    [SerializeField] public bool meExplotasteElCulo2 = false;
     [SerializeField] public int vecesSamuraiAyudado = 0;
 
     [SerializeField] public bool day00Checked = false;
@@ -92,7 +94,7 @@ public class Data : MonoBehaviour
     [SerializeField] public int vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
     [SerializeField] public int vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
     [SerializeField] public int vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
-    [SerializeField] public int vecesCobradaHandy = 0;                  // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+    [SerializeField] public int vecesCobradaTerry = 0;                  // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
     [SerializeField] public int noCobrarSergioCobrarGeeraardD4 = 0;     // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
     [SerializeField] public int vecesCobradoAntonio = 0;                // Tienes que cobrar a Antonio en el dia 4 y a Patxi en el dia 3
     [SerializeField] public int vecesCobradoRaven = 0;
@@ -180,7 +182,7 @@ public class Data : MonoBehaviour
                 deleteButtons[i].onClick.AddListener(() => DeleteSlot(slot));
             }
 
-        
+
             MostrarFechaYDiaSlot(archivoDeGuardado1, textoFechaSlot1, textoDiaSlot1, textoNumSlot1, deleteButtons[0]);
             MostrarFechaYDiaSlot(archivoDeGuardado2, textoFechaSlot2, textoDiaSlot2, textoNumSlot2, deleteButtons[1]);
             MostrarFechaYDiaSlot(archivoDeGuardado3, textoFechaSlot3, textoDiaSlot3, textoNumSlot3, deleteButtons[2]);
@@ -309,7 +311,9 @@ public class Data : MonoBehaviour
                 samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
                 borrachoTriste = datosJuego.savedborrachoTriste;
                 samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
                 day00Checked = datosJuego.savedday0Check;
@@ -347,7 +351,7 @@ public class Data : MonoBehaviour
                 vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
                 vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
                 vecesCobradaMara = datosJuego.savedvecesCobradaMara;
-                vecesCobradaHandy = datosJuego.savedvecesCobradaHandy;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
                 noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
                 vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
                 vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
@@ -408,7 +412,9 @@ public class Data : MonoBehaviour
                 samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
                 borrachoTriste = datosJuego.savedborrachoTriste;
                 samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
                 day00Checked = datosJuego.savedday0Check;
@@ -446,7 +452,7 @@ public class Data : MonoBehaviour
                 vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
                 vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
                 vecesCobradaMara = datosJuego.savedvecesCobradaMara;
-                vecesCobradaHandy = datosJuego.savedvecesCobradaHandy;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
                 noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
                 vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
                 vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
@@ -503,10 +509,10 @@ public class Data : MonoBehaviour
 
                 numElectroped = datosJuego.SavednumElectroped;
 
-                samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
-                borrachoTriste = datosJuego.savedborrachoTriste;
                 samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
                 samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
                 vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
 
                 day00Checked = datosJuego.savedday0Check;
@@ -544,7 +550,7 @@ public class Data : MonoBehaviour
                 vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
                 vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
                 vecesCobradaMara = datosJuego.savedvecesCobradaMara;
-                vecesCobradaHandy = datosJuego.savedvecesCobradaHandy;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
                 noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
                 vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
                 vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
@@ -606,7 +612,9 @@ public class Data : MonoBehaviour
                 savedsamuraiPagaMal = samuraiPagaMal,
                 savedborrachoTriste = borrachoTriste,
                 savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
                 savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
                 savedday0Check = day00Checked,
@@ -642,7 +650,7 @@ public class Data : MonoBehaviour
                 savedvecesCobradoCululu = vecesCobradoCululu,
                 savedvecesCobradoGiovanni = vecesCobradoGiovanni,
                 savedvecesCobradaMara = vecesCobradaMara,
-                savedvecesCobradaHandy = vecesCobradaHandy,
+                savedvecesCobradaHandy = vecesCobradaTerry,
                 savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
                 savedvecesCobradoAntonio = vecesCobradoAntonio,
                 savedvecesCobradoRaven = vecesCobradoRaven,
@@ -702,7 +710,9 @@ public class Data : MonoBehaviour
                 savedsamuraiPagaMal = samuraiPagaMal,
                 savedborrachoTriste = borrachoTriste,
                 savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
                 savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
                 savedday0Check = day00Checked,
@@ -738,7 +748,7 @@ public class Data : MonoBehaviour
                 savedvecesCobradoCululu = vecesCobradoCululu,
                 savedvecesCobradoGiovanni = vecesCobradoGiovanni,
                 savedvecesCobradaMara = vecesCobradaMara,
-                savedvecesCobradaHandy = vecesCobradaHandy,
+                savedvecesCobradaHandy = vecesCobradaTerry,
                 savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
                 savedvecesCobradoAntonio = vecesCobradoAntonio,
                 savedvecesCobradoRaven = vecesCobradoRaven,
@@ -797,7 +807,9 @@ public class Data : MonoBehaviour
                 savedsamuraiPagaMal = samuraiPagaMal,
                 savedborrachoTriste = borrachoTriste,
                 savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
                 savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
                 savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
                 savedday0Check = day00Checked,
@@ -833,7 +845,7 @@ public class Data : MonoBehaviour
                 savedvecesCobradoCululu = vecesCobradoCululu,
                 savedvecesCobradoGiovanni = vecesCobradoGiovanni,
                 savedvecesCobradaMara = vecesCobradaMara,
-                savedvecesCobradaHandy = vecesCobradaHandy,
+                savedvecesCobradaHandy = vecesCobradaTerry,
                 savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
                 savedvecesCobradoAntonio = vecesCobradoAntonio,
                 savedvecesCobradoRaven = vecesCobradoRaven,
@@ -1860,7 +1872,19 @@ public class Data : MonoBehaviour
 
             else if (currentScene.name == "Home")
             {
-                if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
+                if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Jefe"))
+                {
+                    cCDialogue.Add("¿Increíble verdad? Mi madre tiene un estilo bastante propio.");
+                    cCDialogue.Add("Probablemente te estarás preguntando que por qué todo tan 2D ¿No?");
+                    cCDialogue.Add("¡PUES NO PREGUNTES TANTO!");
+                    cCDialogue.Add("Da gracias que tenía este traductor antiguo y obsoleto por aquí tirado.");
+                    cCDialogue.Add("Bueno, escoge la esquina de suelo más cómoda y...");
+                    cCDialogue.Add("La verdad es que no sé como dormís los humanos, tampoco me interesa.");
+                    cCDialogue.Add("Cuando acabes el ritual que sea que tenga tu especie, apaga la luz.");
+                    cCDialogue.Add("Nos vemos mañana ¡NO LLEGUES TARDE!.");
+                }
+
+                else if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
                 {
                     cCDialogue.Add("Saludos humano **suspira**");
                     cCDialogue.Add("Tu jefe me dijo que te quedarías aquí, qué lugar más triste.");

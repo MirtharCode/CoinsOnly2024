@@ -12478,6 +12478,9 @@ MonoBehaviour:
   clientDialogueLineIndex: 0
   iWantToBelieve: 0
   noWayJose: 0
+  day03client5DenjirenjiMinigameChecked: 0
+  day05client6DenjirenjiMinigameChecked: 0
+  day04client6ElidoraMinigameChecked: 0
   day05client4AltChecked: 0
   day06client3DialogueChangedChecked: 0
   day06client7DialogueChangedChecked: 0

@@ -78,7 +78,7 @@ public class FadeToBlack : MonoBehaviour
             data.GetComponent<Data>().vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
             data.GetComponent<Data>().vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
             data.GetComponent<Data>().vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
-            data.GetComponent<Data>().vecesCobradaHandy = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+            data.GetComponent<Data>().vecesCobradaTerry = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
             data.GetComponent<Data>().noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
             data.GetComponent<Data>().vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
             data.GetComponent<Data>().vecesCobradoRaven = 0;
@@ -101,22 +101,16 @@ public class FadeToBlack : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name.Contains("Pila"))
+        if (currentScene.name.Contains("Denjirenji"))
         {
             GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
-            Invoke(nameof(VolverDelCuloDelMicroondas), fadeToblackClipTime);
-        }
-            
-        else if (currentScene.name.Contains("Whack"))
-        {
-            GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
-            Invoke(nameof(VolverDeGolpearSlimes), fadeToblackClipTime);
+            Invoke(nameof(BackToTheShop), fadeToblackClipTime);
         }
 
         else if (currentScene.name.Contains("Elidora"))
         {
             GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
-            Invoke(nameof(VolverDeGolpearSlimesDemo), fadeToblackClipTime); 
+            Invoke(nameof(BackToTheShop), fadeToblackClipTime);
         }
 
 
@@ -152,18 +146,14 @@ public class FadeToBlack : MonoBehaviour
         audioSource.PlayOneShot(bonesSound);
     }
 
-    public void VolverDelCuloDelMicroondas()
+    public void BackToTheShop()
     {
-        if (currentScene.name == "Pila_Nivel1")
-            SceneManager.LoadScene("Day2_2");
-
-        else if (currentScene.name == "Pila_Nivel2")
-            SceneManager.LoadScene("Day3_2");
+        SceneManager.LoadScene("Day");
     }
 
     public void VolverDeGolpearSlimes()
     {
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("Day");
     }
 
     public void VolverDeGolpearSlimesDemo()

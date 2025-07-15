@@ -168,7 +168,19 @@ public class HomeManager : MonoBehaviour
 
         if (!data.GetComponent<Data>().yaSeFueCliente && !data.GetComponent<Data>().videoActivo)
         {
-            if (Data.instance.day01Checked && !Data.instance.giftTapicio)
+            if (Data.instance.day01Checked)
+            {
+                data.GetComponent<Data>().sePueTocar = false;
+                doorSound.PlayOneShot(openDoorSound);
+                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
+                clon.GetComponent<Image>().sprite = elJefe;
+                clon.AddComponent<HU_Jefe>();
+                miniClientImage = miniElJefe;
+                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
+            }
+
+            if (Data.instance.day02Checked && !Data.instance.giftTapicio)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
@@ -180,7 +192,7 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            else if (Data.instance.day02Checked && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
+            else if (Data.instance.day03Checked && Data.instance.vecesCobradoGiovanni == 2 && !Data.instance.giftGiovanni)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);
@@ -192,17 +204,17 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            else if (Data.instance.day03Checked && !Data.instance.giftElidora)
-            {
-                data.GetComponent<Data>().sePueTocar = false;
-                doorSound.PlayOneShot(openDoorSound);
-                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-                clon.GetComponent<Image>().sprite = evilWizardElidora;
-                clon.AddComponent<HEW_Elidora>();
-                miniClientImage = miniEvilWizardElidora;
-                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
-            }
+            //else if (Data.instance.day03Checked && !Data.instance.giftElidora)
+            //{
+            //    data.GetComponent<Data>().sePueTocar = false;
+            //    doorSound.PlayOneShot(openDoorSound);
+            //    GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
+            //    clon.GetComponent<Image>().sprite = evilWizardElidora;
+            //    clon.AddComponent<HEW_Elidora>();
+            //    miniClientImage = miniEvilWizardElidora;
+            //    currentHomeClientReal = startingPoint.GetChild(0).gameObject;
+            //    dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
+            //}
 
             else if (Data.instance.day05Checked && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
             {
@@ -264,23 +276,23 @@ public class HomeManager : MonoBehaviour
             data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
-        else if (currentHomeClientReal.name.Contains("Elidora"))
-        {
-            if (!Data.instance.slimeFostiados)
-                Invoke(nameof(FadeToBlackSlimes), clientGoingOutClip.length);
+        //else if (currentHomeClientReal.name.Contains("Elidora"))
+        //{
+        //    if (!Data.instance.slimeFostiados)
+        //        Invoke(nameof(FadeToBlackSlimes), clientGoingOutClip.length);
 
-            else
-            {
-                if (!Data.instance.slimeFail)
-                {
-                    GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardElidoraALT;
-                    Data.instance.giftElidora = true;
-                    TrophyAchieved("Elidora");
-                }
-                data.GetComponent<Data>().sePueTocar = true;
-                data.GetComponent<Data>().yaSeFueCliente = true;
-            }
-        }
+        //    else
+        //    {
+        //        if (!Data.instance.slimeFail)
+        //        {
+        //            GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardElidoraALT;
+        //            Data.instance.giftElidora = true;
+        //            TrophyAchieved("Elidora");
+        //        }
+        //        data.GetComponent<Data>().sePueTocar = true;
+        //        data.GetComponent<Data>().yaSeFueCliente = true;
+        //    }
+        //}
 
         else if (currentHomeClientReal.name.Contains("Mano") && !Data.instance.giftMano)
         {
@@ -388,19 +400,19 @@ public class HomeManager : MonoBehaviour
         showTrophyAnim.SetTrigger("TrophyShow");
     }
 
-    public void FadeToBlackSlimes()
-    {
-        float animTime;
-        Animator anim = transicionesGameobject.transform.GetChild(22).gameObject.GetComponent<Animator>();
+    //public void FadeToBlackSlimes()
+    //{
+    //    float animTime;
+    //    Animator anim = transicionesGameobject.transform.GetChild(22).gameObject.GetComponent<Animator>();
 
-        anim.SetBool("ToBlack", true);
-        animTime = transicionesGameobject.GetComponent<Transiciones>().toBlackClip.length;
+    //    anim.SetBool("ToBlack", true);
+    //    animTime = transicionesGameobject.GetComponent<Transiciones>().toBlackClip.length;
 
-        Invoke(nameof(GoToWhackASlime), animTime);
-    }
+    //    Invoke(nameof(GoToWhackASlime), animTime);
+    //}
 
-    public void GoToWhackASlime()
-    {
-        SceneManager.LoadScene("WhackAMole1");
-    }
+    //public void GoToWhackASlime()
+    //{
+    //    SceneManager.LoadScene("WhackAMole1");
+    //}
 }

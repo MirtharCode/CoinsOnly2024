@@ -869,7 +869,7 @@ public class UIManager : MonoBehaviour
             currentCustomer.GetComponent<Client>().Speaking();
         }
 
-        else if (currentCustomer.name.Contains("Handy") && Data.instance.vecesCobradaHandy >= 1 && currentScene.name == "Day4")
+        else if (currentCustomer.name.Contains("Handy") && Data.instance.vecesCobradaTerry >= 1 && currentScene.name == "Day4")
         {
             dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[currentCustomer.GetComponent<Client>().dialogue.Count - 3];
             gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
@@ -957,7 +957,7 @@ public class UIManager : MonoBehaviour
                 mostrarJefe = true;
                 textoJefe.text = quejas[2];
                 LaVoluntad(-15);
-                Data.instance.vecesCobradaHandy++;
+                Data.instance.vecesCobradaTerry++;
             }
 
             else if (currentCustomer.name.Contains("Enano") || currentCustomer.name.Contains("Petra") || currentCustomer.name.Contains("Masermati")
@@ -1041,11 +1041,11 @@ public class UIManager : MonoBehaviour
 
             else if (currentCustomer.name.Contains("Handy"))
             {
-                Data.instance.vecesCobradaHandy++;
+                Data.instance.vecesCobradaTerry++;
                 mostrarJefe = false;
                 LaVoluntad(10); ;
 
-                if (Data.instance.vecesCobradaHandy >= 2 && !Data.instance.giftHandy)
+                if (Data.instance.vecesCobradaTerry >= 2 && !Data.instance.giftHandy)
                 {
                     Data.instance.giftHandy = true;
                     TrophyAchieved("Handy");
