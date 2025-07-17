@@ -13,7 +13,8 @@ public class ClientManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI speakerRaceTextBox;
     [SerializeField] TextMeshProUGUI speakerTextBox;
-    [SerializeField] TextMeshProUGUI dialogueTextBox;
+    [SerializeField] TextMeshProUGUI dialogueTextBoxFirst;
+    [SerializeField] TextMeshProUGUI dialogueTextBoxOther;
     [SerializeField] GameObject musicBox;
     [SerializeField] public string lastRaceMusic = "Desconocida";
     [SerializeField] public string lastNameMusic;
@@ -51,8 +52,6 @@ public class ClientManager : MonoBehaviour
 
     [SerializeField] private Material grayscaleMaterial;
 
-    public GameObject Camera;
-
     // MENSAJES DE LOS TROFEOS
     private static readonly Dictionary<string, string> TrophyMessages = new Dictionary<string, string>
 {
@@ -71,15 +70,33 @@ public class ClientManager : MonoBehaviour
     { "RaveN", "¡Disco de \nlos Mojinos \nDesbloqueado!" },
     { "Sergio", "¡La \nGloboespada \nDesbloqueada!" },
     { "Tapicio", "¡El GOTY \nDesbloqueado!" }
+
 };
 
 
     private void Start()
     {
-        StartMusicSetup();
-        Invoke(nameof(StartNextClient), timer);
-        DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
-        Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (DialogueManager.Instance.currentDay != "01")
+        {
+            DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
+            DialogueManager.Instance.mainCam.transform.GetChild(0).gameObject.SetActive(false);
+            DialogueManager.Instance.dialoguePanelOther.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
+            DialogueManager.Instance.dialoguePanelFirst.gameObject.SetActive(false);
+            speakerRaceTextBox = DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
+            speakerTextBox = DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+            StartMusicSetup();
+            Invoke(nameof(StartNextClient), timer);
+            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
+        }
+
+        else
+        {
+            DialogueManager.Instance.dialoguePanelOther.gameObject.SetActive(false);
+            StartMusicSetup();
+            StartNextClient();
+            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
+            DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
+        }        
     }
     void Update()
     {
@@ -321,7 +338,6 @@ public class ClientManager : MonoBehaviour
 
     void MostrarDialogoActual()
     {
-
         if (!cobrasteBien && !cobrasteMal)
         {
             if (currentDialogueClient == null || currentDialogueClient.dialogueLines.Count == 0)
@@ -341,7 +357,8 @@ public class ClientManager : MonoBehaviour
 
             speakerRaceTextBox.text = currentDialogueClient.race;
             speakerTextBox.text = currentDialogueClient.name.ToUpper();
-            dialogueTextBox.text = line.text;
+
+            ChangingDialogue(line.text);
 
             if (clientDialogueLineIndex != 0)
                 Speaking(line.tone);
@@ -361,7 +378,7 @@ public class ClientManager : MonoBehaviour
 
             if (iWantToBelieve)
             {
-                dialogueTextBox.text = currentDialogueClient.tickResponse[0].text;
+                ChangingDialogue(currentDialogueClient.tickResponse[0].text);
                 Speaking(currentDialogueClient.tickResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.tickResponse[0].mood);
 
@@ -371,7 +388,7 @@ public class ClientManager : MonoBehaviour
 
             else if (noWayJose)
             {
-                dialogueTextBox.text = currentDialogueClient.crossResponse[0].text;
+                ChangingDialogue(currentDialogueClient.crossResponse[0].text);
                 Speaking(currentDialogueClient.crossResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.crossResponse[0].mood);
 
@@ -393,7 +410,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.detectivePanel.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[0]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[1]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[2]}");
-        DialogueManager.Instance.dialoguePanel.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
+        DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
     }
 
     public void SetSelectedSuspectFromButton(GameObject button)
@@ -430,7 +447,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.chosenChecks.Add(eleccionDetective);
         DialogueManager.Instance.areYouSurePanel.SetActive(false);
         DialogueManager.Instance.detectivePanel.SetActive(false);
-        DialogueManager.Instance.dialoguePanel.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
+        DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
         speakerTextBox.text = currentDialogueClient.name;
         MostrarDialogoActual();
     }
@@ -545,8 +562,8 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.leDineroSymbol.SetActive(true);
         DialogueManager.Instance.leDineroText.gameObject.SetActive(true);
         DialogueManager.Instance.leDineroText.text = client.clientMoney.ToString();
-        Camera.GetComponent<EdgeScrollCamera>().ReturnToMove();
-        Camera.GetComponent<CameraZoomManager>().ReturnToMove();
+        DialogueManager.Instance.mainCam.GetComponent<EdgeScrollCamera>().ReturnToMove();
+        DialogueManager.Instance.mainCam.GetComponent<CameraZoomManager>().ReturnToMove();
 
         Sprite loaded1 = Resources.Load<Sprite>($"Sprites/Products/{client.productTypes[2]}");
 
@@ -722,7 +739,7 @@ public class ClientManager : MonoBehaviour
             case "01":
                 break;
 
-            case "02":                
+            case "02":
                 break;
 
             case "03":
@@ -800,7 +817,7 @@ public class ClientManager : MonoBehaviour
                             }
                         }
                     }
-                }                    
+                }
                 break;
 
             case "05":
@@ -1170,5 +1187,75 @@ public class ClientManager : MonoBehaviour
 
         DialogueManager.Instance.uITrophies.GetComponent<Animator>().SetTrigger("TrophyShow");
         Data.instance.GuardarDatos();
+    }
+
+    public void ActivateTabletFirstTime()
+    {
+        DialogueManager.Instance.dialoguePanelFirst.transform.SetParent(DialogueManager.Instance.mainCam.transform);
+        DialogueManager.Instance.dialoguePanelFirst.GetComponent<Animator>().enabled = true;
+        DialogueManager.Instance.dialoguePanelFirst.GetComponent<Animator>().SetBool("TabletTaken", true);
+    }
+
+    public void ChangingDialogue(string text)
+    {
+        if (DialogueManager.Instance.currentDay == "01")
+        {
+            dialogueTextBoxFirst.text = text;
+            RaceFontAndSizeText(dialogueTextBoxFirst);
+        }
+
+        else
+        {
+            dialogueTextBoxOther.text = text;
+            RaceFontAndSizeText(dialogueTextBoxOther);
+        }            
+    }
+
+    public void RaceFontAndSizeText(TextMeshProUGUI textBox)
+    {
+        string race = currentDialogueClient.race;
+
+        string path = $"Fonts/{race}";
+        TMP_FontAsset[] fonts = Resources.LoadAll<TMP_FontAsset>(path);
+
+        Debug.Log(textBox.font);
+
+        if (fonts != null && fonts.Length > 0)
+            textBox.font = fonts[0];
+        else
+            Debug.LogWarning($"No se encontró ninguna fuente en la carpeta: {path}");
+
+        Debug.Log(textBox.font);
+
+        switch (race)
+        {
+            case "Elementales":
+                textBox.fontSize = 70;
+                break;
+
+            case "Híbridos":
+                textBox.fontSize = 90;
+                break;
+
+            case "Limbásticos":
+                textBox.fontSize = 100;
+                break;
+
+            case "Magos Oscuros":
+                textBox.fontSize = 80;
+                break;
+
+            case "Tecnópedos":
+                textBox.fontSize = 70;
+                break;
+
+            case "Desconocida":
+                textBox.fontSize = 90;
+                break;
+
+            default:
+                print("Incorrect intelligence level.");
+                break;
+        }
     }
 }

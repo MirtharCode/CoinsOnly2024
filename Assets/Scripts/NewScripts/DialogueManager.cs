@@ -119,13 +119,15 @@ public class DialogueManager : MonoBehaviour
     public string currentDay;
     public string lastSceneWithDialogues;
     public GameObject csvImporter;
+    public GameObject mainCam;
     public GameObject clientManager;
     public GameObject clientPrefab;
     public List<DailyClientInfo> dailyCustomers = new List<DailyClientInfo>();
     public List<String> chosenChecks = new List<String>();
 
     [SerializeField] public bool conversationOn;
-    [SerializeField] public GameObject dialoguePanel;
+    [SerializeField] public GameObject dialoguePanelFirst;
+    [SerializeField] public GameObject dialoguePanelOther;
     [SerializeField] public GameObject detectivePanel;
     [SerializeField] public GameObject bAndWShader;
     [SerializeField] public GameObject areYouSurePanel;
@@ -808,380 +810,35 @@ public class DialogueManager : MonoBehaviour
     public void ShowText()
     {
         conversationOn = true;
-        dialoguePanel.gameObject.SetActive(true);
-
-        //// Si no es ninguna de las situaciones especiales
-        //if (!(currentCustomer.name.Contains("Cululu") && currentScene.name == "Day5") && !(currentCustomer.name.Contains("Raven") && currentScene.name == "Day5")
-        //    && !(currentCustomer.name.Contains("Sergio") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4")
-        //    && !(currentCustomer.name.Contains("Mara") && currentScene.name == "Day4") && !(currentCustomer.name.Contains("Handy") && currentScene.name == "Day4"))
-        //{
-
-        //    if (((currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")) && internalCount < dialogueSize)
-        //       || (currentCustomer.name.Contains("Detective") && internalCount < dialogueSize - 1)
-        //       || (currentCustomer.name.Contains("Mano") && internalCount < dialogueSize && currentScene.name == "Day4")        // Es necesario que esté
-        //       || (currentCustomer.name.Contains("Sapopotamo") && internalCount < dialogueSize && currentScene.name == "Day5")  // Es necesario que esté
-        //       || (internalCount < dialogueSize - 2 && !currentCustomer.name.Contains("Jefe") && !currentCustomer.name.Contains("Jefazo"))
-        //       || (currentCustomer.name.Contains("Denji") && internalCount < dialogueSize && (currentScene.name == "Day2_1" || currentScene.name == "Day2_2"
-        //       || currentScene.name == "Day3_1" || currentScene.name == "Day3_2")
-        //       || currentCustomer.name.Contains("Enano") && internalCount < dialogueSize && currentScene.name == "Day2_1")
-        //       || currentCustomer.name.Contains("Petra") && internalCount < dialogueSize && currentScene.name == "Day5"
-        //       || currentCustomer.name.Contains("Antonio") && internalCount < dialogueSize && currentScene.name == "Day5"
-        //       || currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0)
-        //    {
-        //        dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //        gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //        currentCustomer.GetComponent<Client>().Speaking();
-        //        internalCount++;
-
-        //        //if (internalCount == currentCustomer.GetComponent<Client>().dialogue.Count)
-        //        //    currentCustomer.GetComponent<Client>().ByeBye();
-        //        //StartCoroutine(currentCustomer.GetComponent<Client>().ShowLine());
-        //    }
-
-        //    else
-        //        HideText();
-        //}
-
-        //else if (currentCustomer.name.Contains("Cululu") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Raven") && internalCount < dialogueSize - 3 && currentScene.name == "Day5")
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Sergio") && internalCount < dialogueSize - 3 && currentScene.name == "Day4")
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Geraaaard") && internalCount < dialogueSize - 3 && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 != 0)
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0 && !(internalCount == dialogueSize))
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Mara") && currentScene.name == "Day4" && internalCount < dialogueSize - 3)
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else if (currentCustomer.name.Contains("Handy") && currentScene.name == "Day4" && internalCount < dialogueSize - 3)
-        //{
-        //    dialogueText.text = currentCustomer.GetComponent<Client>().dialogue[internalCount];
-        //    gameManager.GetComponent<GameManager>().SoundCreator(dialogueText.text);
-        //    currentCustomer.GetComponent<Client>().Speaking();
-        //    internalCount++;
-        //}
-
-        //else
-        //    HideText();
+        
+        if (currentDay == "01")
+            dialoguePanelFirst.gameObject.SetActive(true);
+        
+        else
+            dialoguePanelOther.gameObject.SetActive(true);
     }
 
     public void HideText()
     {
-        //gameManager.GetComponent<GameManager>().FindTheCustomer();
         conversationOn = false;
-        dialoguePanel.gameObject.SetActive(false);
-        //dropDownPanelPrecios.gameObject.SetActive(true);
-        //dropDownPanelNormativas.gameObject.SetActive(true);
-
-        //if (currentScene.name == "Day1")
-        //    preciosButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
-
-        //if (currentScene.name == "Day2_1")
-        //    normativasButton.gameObject.GetComponent<Animator>().SetBool("BigButton", true);
-
-        //if (internalCount == dialogueSize && (currentCustomer.name.Contains("Jefe") || currentCustomer.name.Contains("Jefazo")))
-        //{
-        //    estaToPagao = true;
-        //    currentCustomer.GetComponent<Client>().ByeBye();
-        //    gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
-        //}
-
-        //else if (currentCustomer.name.Contains("Detective") && !estaToPagao)
-        //{
-        //    dropDownPanelNormativas.SetActive(false);
-        //    dropDownPanelPrecios.SetActive(false);
-        //    dialoguePanel.SetActive(false);
-        //    panelSospechoso.SetActive(true);
-        //}
-
-        //else if (SospechosoTerminado)
-        //{
-        //    currentCustomer.GetComponent<DetectiveHijo>().ShowProductsAndMoney();
-        //}
-
-        //else if (internalCount == dialogueSize &&
-        //    ((currentCustomer.name.Contains("Mano") && currentScene.name == "Day4")
-        //    || (currentCustomer.name.Contains("Sapopotamo") && currentScene.name == "Day5")
-        //    || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_1")
-        //    || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day2_2")
-        //    || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_1")
-        //    || (currentCustomer.name.Contains("Denji") && currentScene.name == "Day3_2")
-        //    || (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
-        //    || (currentCustomer.name.Contains("Petra") && currentScene.name == "Day5")
-        //    || (currentCustomer.name.Contains("Antonio") && currentScene.name == "Day5")
-        //    || (currentCustomer.name.Contains("Geraaaard") && currentScene.name == "Day4" && Data.instance.noCobrarSergioCobrarGeeraardD4 == 0)))
-        //{
-        //    mostrarJefe = false;
-        //    estaToPagao = true;
-        //    currentCustomer.GetComponent<Client>().ByeBye();
-        //    gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
-
-        //    if (currentCustomer.name.Contains("Enano") && currentScene.name == "Day2_1")
-        //    {
-        //        gnomo.GetComponent<Gnomo>().ShowUpGnomoAnim();
-        //    }
-        //}
-
-        //else if (!estaToPagao)
-        //{
-        //    leDinero.gameObject.SetActive(true);
-        //    buttonCobrar.SetActive(true);
-        //    buttonNoCobrar.SetActive(true);
-        //    botonDesplegadoPrecios.SetActive(true);
-        //    botonDesplegadoNormativas.SetActive(true);
-
-        //    if (currentScene.name == "Day1")
-        //    {
-        //        if (currentCustomer.name.Contains("Geraaaard"))
-        //            currentCustomer.GetComponent<MO_Geeraard>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Sapopotamo"))
-        //            currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Antonio"))
-        //            currentCustomer.GetComponent<L_Antonio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Tapiz"))
-        //            currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Denjirenji"))
-        //            currentCustomer.GetComponent<T_Denjirenji>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Mara"))
-        //            currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Giovanni"))
-        //            currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Rockon"))
-        //            currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
-        //    }
-
-        //    else if (currentScene.name == "Day2_1")
-        //    {
-        //        if (currentCustomer.name.Contains("Lepion"))
-        //            currentCustomer.GetComponent<H_Lepion>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Giovanni"))
-        //            currentCustomer.GetComponent<L_Giovanni>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Cululu"))
-        //            currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Handy"))
-        //        //    currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Petra"))
-        //        //    currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Tapiz"))
-        //        //    currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Masermati"))
-        //        //    currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Pijus"))
-        //        //    currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
-        //    }
-
-        //    else if (currentScene.name == "Day2_2")
-        //    {
-        //        if (currentCustomer.name.Contains("Handy"))
-        //            currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Petra"))
-        //            currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Tapiz"))
-        //            currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Masermati"))
-        //            currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Pijus"))
-        //            currentCustomer.GetComponent<MO_PijusMagnus>().ShowProductsAndMoney();
-
-        //    }
-
-        //    else if (currentScene.name == "Day3_1")
-        //    {
-        //        if (currentCustomer.name.Contains("Sergio"))
-        //            currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Saltaralisis"))
-        //            currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Mano"))
-        //            currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Raven"))
-        //            currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Hueso"))
-        //            currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Patxi"))
-        //            currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Sapopotamo"))
-        //            currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Enano"))
-        //            currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Rustica"))
-        //        //    currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
-        //    }
-
-        //    else if (currentScene.name == "Day3_2")
-        //    {
-        //        //if (currentCustomer.name.Contains("Sergio"))
-        //        //    currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Saltaralisis"))
-        //        //    currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Mano"))
-        //        //    currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Raven"))
-        //        //    currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Hueso"))
-        //        //    currentCustomer.GetComponent<E_ElementalHueso>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Patxi"))
-        //        //    currentCustomer.GetComponent<L_Patxi>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Sapopotamo"))
-        //        //    currentCustomer.GetComponent<H_Elvog>().ShowProductsAndMoney();
-
-        //        //else if (currentCustomer.name.Contains("Enano"))
-        //        //    currentCustomer.GetComponent<MO_ManoloCabezaPico>().ShowProductsAndMoney();
-
-        //        if (currentCustomer.name.Contains("Rustica"))
-        //            currentCustomer.GetComponent<T_Rustica>().ShowProductsAndMoney();
-        //    }
-
-        //    else if (currentScene.name == "Day4")
-        //    {
-        //        if (currentCustomer.name.Contains("Jissy"))
-        //            currentCustomer.GetComponent<E_Jissy>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Mara"))
-        //            currentCustomer.GetComponent<H_Mara>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Cululu"))
-        //            currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Sergio"))
-        //            currentCustomer.GetComponent<L_Sergio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Elidora"))
-        //            currentCustomer.GetComponent<MO_Elidora>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Geraaaard"))
-        //            currentCustomer.GetComponent<MO_Geeraard>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Magma"))
-        //            currentCustomer.GetComponent<T_MagmaDora>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Handy"))
-        //            currentCustomer.GetComponent<E_Handy>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Antonio"))
-        //            currentCustomer.GetComponent<L_Antonio>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Mano"))
-        //            currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
-        //    }
-
-        //    else if (currentScene.name == "Day5")
-        //    {
-        //        if (currentCustomer.name.Contains("Elidora"))
-        //            currentCustomer.GetComponent<MO_Elidora>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Rockon"))
-        //            currentCustomer.GetComponent<E_Rockon>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Petra"))
-        //            currentCustomer.GetComponent<H_Petra>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Cululu"))
-        //            currentCustomer.GetComponent<L_Cululu>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Masermati"))
-        //            currentCustomer.GetComponent<T_Masermati>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Mano"))
-        //            currentCustomer.GetComponent<MO_ManoloMano>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Saltaralisis"))
-        //            currentCustomer.GetComponent<H_Saltaralisis>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Raven"))
-        //            currentCustomer.GetComponent<T_Raven>().ShowProductsAndMoney();
-
-        //        else if (currentCustomer.name.Contains("Tapiz"))
-        //            currentCustomer.GetComponent<E_Tapicio>().ShowProductsAndMoney();
-        //    }
-
-        //    internalCount++;
-        //}
-
-        //else
-        //{
-        //    currentCustomer.GetComponent<Client>().ByeBye();
-        //    gameManager.GetComponent<GameManager>().audioSource.PlayOneShot(gameManager.GetComponent<GameManager>().TrampillaSalida);
-        //}
+        if (currentDay == "01")
+            dialoguePanelFirst.gameObject.SetActive(false);
+
+        else
+            dialoguePanelOther.gameObject.SetActive(false);
     }
 
-    public void SetSceneReferences(GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanel, GameObject sospechosoPanel, GameObject seguroPanel, GameObject bAndWPanel, GameObject gnomeCanvas,
+    public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanelFirst, GameObject dPanelOther, GameObject sospechosoPanel, GameObject seguroPanel, GameObject bAndWPanel, GameObject gnomeCanvas,
                                    GameObject trophyCanvas, GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
                                    GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
     {
+        mainCam = mC;
         clientManager = cM;
         phone = phoneObj;
         jefePanel = complainObj;
-        dialoguePanel = dPanel;
+        dialoguePanelFirst = dPanelFirst;
+        dialoguePanelOther = dPanelOther;
         detectivePanel = sospechosoPanel;
         areYouSurePanel = seguroPanel;
         areYouSurePanel = seguroPanel;

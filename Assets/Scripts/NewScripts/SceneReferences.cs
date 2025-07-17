@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class SceneReferences : MonoBehaviour
 {
+    public GameObject mainCamera; 
     public GameObject clientManager;
     public GameObject phoneObject;
     public GameObject complainObject;
-    public GameObject dialoguePanel;
+    public GameObject dialoguePanelFirstDay;
+    public GameObject dialoguePanelOtherDays;
     public GameObject sospechosoPanel;
     public GameObject seguroPanel;
     public GameObject bAndWShader;
@@ -42,8 +44,8 @@ public class SceneReferences : MonoBehaviour
         // Puedes hacer comprobaciones aquí si quieres
         if (DialogueManager.Instance != null)
         {
-            DialogueManager.Instance.SetSceneReferences(clientManager, phoneObject, complainObject, dialoguePanel, sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas,
-                                                        trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
+            DialogueManager.Instance.SetSceneReferences(mainCamera, clientManager, phoneObject, complainObject, dialoguePanelFirstDay, dialoguePanelOtherDays, sospechosoPanel, seguroPanel, bAndWShader, 
+                                                        gnomeCanvas,trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
                                                         leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
                                                         centralProduct, rightProduct, leftProduct, couponPlace, lesPropinas, lePropinasText);
         }
