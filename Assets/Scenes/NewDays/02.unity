@@ -833,6 +833,7 @@ GameObject:
   - component: {fileID: 90810686}
   - component: {fileID: 90810685}
   - component: {fileID: 90810684}
+  - component: {fileID: 90810687}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -962,6 +963,39 @@ MonoBehaviour:
   minScrollSpeed: 0.2
   maxScrollSpeed: 5
   returnSpeed: 6
+--- !u!114 &90810687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90810680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &101995604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,11 +1388,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157626880}
   m_CullTransparentMesh: 1
---- !u!1 &164787560 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 246f3d04290115a4987f7c5afdc47c94, type: 3}
-  m_PrefabInstance: {fileID: 323030939}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178473821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,24 +3591,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e96d6ea7306d44a833b64539acb8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: 
+  mainCamera: {fileID: 0}
   clientManager: {fileID: 1397739548}
   phoneObject: {fileID: 1758836934}
   complainObject: {fileID: 753033386}
-  dialoguePanel: {fileID: 164787560}
+  dialoguePanelFirstDay: {fileID: 0}
+  dialoguePanelOtherDays: {fileID: 0}
   sospechosoPanel: {fileID: 9177456957901062503}
   seguroPanel: {fileID: 5091621263567511581}
-  preciosPanel: {fileID: 8069260977113270}
-  botonPlegadoPrecios: {fileID: 8815722500579866638}
-  botonDesplegadoPrecios: {fileID: 4811667083697864833}
-  pos1Precios: {fileID: 453772223}
-  pos2Precios: {fileID: 823273045}
-  normativaPanel: {fileID: 537900581}
-  botonPlegadoNormativas: {fileID: 881359425}
-  botonDesplegadoNormativas: {fileID: 589280083}
-  pos1Normativas: {fileID: 2327065260882921602}
-  pos2Normativas: {fileID: 1965600946015438291}
-  regRaceText: {fileID: 3342487428309252669}
+  bAndWShader: {fileID: 0}
+  gnomeCanvas: {fileID: 0}
+  trophyCanvas: {fileID: 0}
   darkWizardsPanel: {fileID: 1242579863972634743}
   hybridsPanel: {fileID: 9116895271944725358}
   elementalsPanel: {fileID: 1901384650116340741}
@@ -3749,6 +3771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509401436}
   - component: {fileID: 509401435}
+  - component: {fileID: 509401437}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3833,6 +3856,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 38.903, y: -12.28, z: 11.347}
+--- !u!114 &509401437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509401434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &510574166
 GameObject:
   m_ObjectHideFlags: 0
@@ -6360,33 +6403,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: 
+  currentDay: 
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
+  mainCam: {fileID: 0}
   clientManager: {fileID: 0}
   clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
   dailyCustomers: []
   chosenChecks: []
   conversationOn: 0
-  dialoguePanel: {fileID: 0}
+  dialoguePanelFirst: {fileID: 0}
+  dialoguePanelOther: {fileID: 0}
   detectivePanel: {fileID: 0}
+  bAndWShader: {fileID: 0}
   areYouSurePanel: {fileID: 0}
   traductorText: {fileID: 0}
   NombreText: {fileID: 0}
+  uITrophies: {fileID: 0}
+  gnomeMinigameCanvas: {fileID: 0}
+  theGnomeIsFree: 0
   allProducts:
     categories: []
-  listOpenPrecios: 0
-  dropDownPanelPrecios: {fileID: 0}
-  botonPlegadoPrecios: {fileID: 0}
-  botonDesplegadoPrecios: {fileID: 0}
-  position1Precios: {fileID: 0}
-  position2Precios: {fileID: 0}
-  listOpenNormativas: 0
-  dropDownPanelNormativas: {fileID: 0}
-  botonPlegadoNormativas: {fileID: 0}
-  botonDesplegadoNormativas: {fileID: 0}
-  position1Normativas: {fileID: 0}
-  position2Normativas: {fileID: 0}
   regulationsAdded: 0
   currentRegulationsNumber: 0
   currentRegulations: []
@@ -6501,6 +6538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848788212}
   - component: {fileID: 848788213}
+  - component: {fileID: 848788214}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -6585,6 +6623,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &848788214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848788211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &850180730
 GameObject:
   m_ObjectHideFlags: 0
@@ -9333,6 +9391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1196337819}
   - component: {fileID: 1196337818}
+  - component: {fileID: 1196337820}
   m_Layer: 0
   m_Name: LuzFrigo
   m_TagString: Untagged
@@ -9417,6 +9476,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196337820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196337817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1197960081
 GameObject:
   m_ObjectHideFlags: 0
@@ -10803,7 +10882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e0f5d9738817b47a61b814a0892030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: 
   currentLanguage: 0
 --- !u!1 &1337903465
 GameObject:
@@ -12464,6 +12542,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7798bedd22447684ab488cdea3971a05, type: 2}
+    - target: {fileID: -7255168901617812561, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbe6d3276cb22cc4f992d8c9f0972bbb, type: 2}
     - target: {fileID: -7202464317774104332, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -12624,6 +12706,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7798bedd22447684ab488cdea3971a05, type: 2}
+    - target: {fileID: -251664392905880587, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbe6d3276cb22cc4f992d8c9f0972bbb, type: 2}
     - target: {fileID: -230758222943892604, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -12676,6 +12762,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 66d1dca824a9d3640bc0e81a4efff779, type: 2}
+    - target: {fileID: 2910324965269223703, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbe6d3276cb22cc4f992d8c9f0972bbb, type: 2}
     - target: {fileID: 2933128869228144564, guid: dbc34e282976e8547a674b2c43bb68b8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -15195,6 +15285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825831954}
   - component: {fileID: 1825831953}
+  - component: {fileID: 1825831955}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -15279,6 +15370,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1825831955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825831952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1831064611
 GameObject:
   m_ObjectHideFlags: 0
@@ -16307,6 +16418,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970198499}
   m_CullTransparentMesh: 1
+--- !u!1 &1980900789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980900791}
+  - component: {fileID: 1980900790}
+  m_Layer: 0
+  m_Name: PostProces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1980900790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980900789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 080240f57cb9f834f945f747a0d6036c, type: 2}
+--- !u!4 &1980900791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980900789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1166.9335, y: -1474.5095, z: 1114.8081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1981021438
 GameObject:
   m_ObjectHideFlags: 0
@@ -22392,7 +22552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerRaceTextBox: {fileID: 1746749567}
   speakerTextBox: {fileID: 1728772796}
-  dialogueTextBox: {fileID: 1725189854}
+  dialogueTextBoxFirst: {fileID: 0}
+  dialogueTextBoxOther: {fileID: 0}
   musicBox: {fileID: 1082670500}
   lastRaceMusic: 
   lastNameMusic: 
@@ -22403,10 +22564,13 @@ MonoBehaviour:
     clientID: 
     name: 
     firstKey: 
+    endKey: 
     race: 
     dialogueLines: []
     tickResponse: []
     crossResponse: []
+    mgGoodResponse: []
+    mgBadResponse: []
     numberOfProducts: 0
     productTypes: []
     clientMoney: 0
@@ -22421,11 +22585,21 @@ MonoBehaviour:
     couponType: 
     suspects: []
     correctAnswer: 
+  clientDialogueLineIndex: 0
   iWantToBelieve: 0
   noWayJose: 0
+  day03client5DenjirenjiMinigameChecked: 0
+  day05client6DenjirenjiMinigameChecked: 0
+  day04client6ElidoraMinigameChecked: 0
+  day05client4AltChecked: 0
+  day06client3DialogueChangedChecked: 0
+  day06client7DialogueChangedChecked: 0
+  day06client8DialogueChangedChecked: 0
+  day07client5AltChecked: 0
+  day07client7DialogueChangedChecked: 0
+  day07client10AltChecked: 0
   selectedSuspect: 
   grayscaleMaterial: {fileID: 2100000, guid: 7752ac83f52f4fe45bec33c9a30627a6, type: 2}
-  Camera: {fileID: 0}
 --- !u!224 &5982892004996927508
 RectTransform:
   m_ObjectHideFlags: 0
