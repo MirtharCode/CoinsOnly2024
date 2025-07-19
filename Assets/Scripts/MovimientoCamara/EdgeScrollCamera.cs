@@ -80,4 +80,9 @@ public class EdgeScrollCamera : MonoBehaviour
     {
         returningToCenter = false;
     }
+
+    public void TurnOffAnimator()
+    {
+        GetComponent<Animator>().enabled = false;
+    }
 }
