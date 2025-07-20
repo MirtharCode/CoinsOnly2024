@@ -85,4 +85,9 @@ public class EdgeScrollCamera : MonoBehaviour
     {
         GetComponent<Animator>().enabled = false;
     }
+
+    public void TurnOnDialogueCollider()
+    {
+        DialogueManager.Instance.dialoguePanelFirstCollider.GetComponent<BoxCollider>().enabled = true;
+    }
 }

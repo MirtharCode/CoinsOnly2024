@@ -7,12 +7,21 @@ using UnityEngine.UI;
 
 public class SceneReferences : MonoBehaviour
 {
-    public GameObject mainCamera; 
-    public GameObject clientManager;
+    public GameObject mC; 
+    public GameObject cM;
     public GameObject phoneObject;
     public GameObject complainObject;
     public GameObject dialoguePanelFirstDay;
+    public GameObject dialoguePanelFirstDayCollider;
+    public GameObject dialoguePanelFirstDayNameText;
+    public GameObject dialoguePanelFirstDayRaceText;
+    public GameObject dialoguePanelFirstDayDialogueText;
     public GameObject dialoguePanelOtherDays;
+    public GameObject dialoguePanelOtherDaysCollider;
+    public GameObject dialoguePanelOtherDaysNameText;
+    public GameObject dialoguePanelOtherDaysRaceText;
+    public GameObject racePanel;
+    public GameObject dialoguePanelOtherDaysDialogueText;
     public GameObject sospechosoPanel;
     public GameObject seguroPanel;
     public GameObject bAndWShader;
@@ -44,8 +53,10 @@ public class SceneReferences : MonoBehaviour
         // Puedes hacer comprobaciones aquí si quieres
         if (DialogueManager.Instance != null)
         {
-            DialogueManager.Instance.SetSceneReferences(mainCamera, clientManager, phoneObject, complainObject, dialoguePanelFirstDay, dialoguePanelOtherDays, sospechosoPanel, seguroPanel, bAndWShader, 
-                                                        gnomeCanvas,trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
+            DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject, 
+                                                        dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText, 
+                                                        dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
+                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas,trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
                                                         leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
                                                         centralProduct, rightProduct, leftProduct, couponPlace, lesPropinas, lePropinasText);
         }

@@ -127,10 +127,19 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] public bool conversationOn;
     [SerializeField] public GameObject dialoguePanelFirst;
+    [SerializeField] public GameObject dialoguePanelFirstCollider;
+    [SerializeField] public GameObject dialoguePanelFirstNameText;
+    [SerializeField] public GameObject dialoguePanelFirstRaceText;
+    [SerializeField] public GameObject dialoguePanelFirstDialogueText;
     [SerializeField] public GameObject dialoguePanelOther;
+    [SerializeField] public GameObject dialoguePanelOtherCollider;
+    [SerializeField] public GameObject dialoguePanelOtherNameText;
+    [SerializeField] public GameObject dialoguePanelOtherRaceText;
+    [SerializeField] public GameObject dialoguePanelOtherDialogueText;
     [SerializeField] public GameObject detectivePanel;
     [SerializeField] public GameObject bAndWShader;
     [SerializeField] public GameObject areYouSurePanel;
+    [SerializeField] public GameObject racePanel;
     [SerializeField] public TMP_Text traductorText;
     [SerializeField] public TMP_Text NombreText;
 
@@ -828,8 +837,11 @@ public class DialogueManager : MonoBehaviour
             dialoguePanelOther.gameObject.SetActive(false);
     }
 
-    public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, GameObject dPanelFirst, GameObject dPanelOther, GameObject sospechosoPanel, GameObject seguroPanel, GameObject bAndWPanel, GameObject gnomeCanvas,
-                                   GameObject trophyCanvas, GameObject regMagosOscurosPanel, GameObject regHibridosPanel, GameObject regElementalesPanel, GameObject regLimbasticosPanel, GameObject regTecnopedosPanel,
+    public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, 
+                                   GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText, 
+                                   GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
+                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas,GameObject trophyCanvas, 
+                                   GameObject regMOPanel, GameObject regHPanel, GameObject regEPanel, GameObject regLPanel, GameObject regTPanel,
                                    GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
     {
@@ -838,20 +850,29 @@ public class DialogueManager : MonoBehaviour
         phone = phoneObj;
         jefePanel = complainObj;
         dialoguePanelFirst = dPanelFirst;
+        dialoguePanelFirstCollider = dPanelFirstCollider;
+        dialoguePanelFirstNameText = dPanelFirstNameText;
+        dialoguePanelFirstRaceText = dPanelFirstRaceText;
+        dialoguePanelFirstDialogueText = dPanelFirstDialogueText;
         dialoguePanelOther = dPanelOther;
-        detectivePanel = sospechosoPanel;
-        areYouSurePanel = seguroPanel;
-        areYouSurePanel = seguroPanel;
+        dialoguePanelOtherCollider = dPanelOtherCollider;
+        dialoguePanelOtherNameText = dPanelOtherNameText;
+        dialoguePanelOtherRaceText = dPanelOtherRaceText;
+        dialoguePanelOtherDialogueText = dPanelOtherDialogueText;
+        racePanel = _racePanel;
+        detectivePanel = susPanel;
+        areYouSurePanel = secPanel;
+        areYouSurePanel = secPanel;
         bAndWShader = bAndWPanel;
 
         gnomeMinigameCanvas = gnomeCanvas;
         uITrophies = trophyCanvas;
 
-        panelMagos = regMagosOscurosPanel;
-        panelHibridos = regHibridosPanel;
-        panelElementales = regElementalesPanel;
-        panelLimbasticos = regLimbasticosPanel;
-        panelTecnopedos = regTecnopedosPanel;
+        panelMagos = regMOPanel;
+        panelHibridos = regHPanel;
+        panelElementales = regEPanel;
+        panelLimbasticos = regLPanel;
+        panelTecnopedos = regTPanel;
 
         leDinero = moneySack;
         leDineroText = moneySackText;

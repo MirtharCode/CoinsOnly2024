@@ -26,7 +26,7 @@ public class ClientManager : MonoBehaviour
     private float timer = .5f;
 
     public DialogueManager.DailyClientInfo currentDialogueClient;
-    [SerializeField] private int clientDialogueLineIndex = 0;
+    [SerializeField] public int clientDialogueLineIndex = 0;
     private bool dialogueReady = false;
     private bool showingDialogue = false;
     public bool iWantToBelieve = false;
@@ -80,10 +80,9 @@ public class ClientManager : MonoBehaviour
         {
             DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
             DialogueManager.Instance.mainCam.transform.GetChild(0).gameObject.SetActive(false);
-            DialogueManager.Instance.dialoguePanelOther.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
             DialogueManager.Instance.dialoguePanelFirst.gameObject.SetActive(false);
-            speakerRaceTextBox = DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
-            speakerTextBox = DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+            speakerRaceTextBox = DialogueManager.Instance.dialoguePanelOtherRaceText.GetComponent<TextMeshProUGUI>();
+            speakerTextBox = DialogueManager.Instance.dialoguePanelOtherNameText.GetComponent<TextMeshProUGUI>();
             StartMusicSetup();
             Invoke(nameof(StartNextClient), timer);
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
@@ -95,7 +94,8 @@ public class ClientManager : MonoBehaviour
             StartMusicSetup();
             StartNextClient();
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
-            DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
+            DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
+            DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().fontSize = 220;
         }        
     }
     void Update()
@@ -510,7 +510,11 @@ public class ClientManager : MonoBehaviour
         }
 
         else
+        {
             ShowProducts(currentDialogueClient, currentDialogueClient.numberOfProducts);
+            RacePanelUP();
+        }
+            
     }
 
     public IEnumerator BossCalling(string bossComplain)
@@ -622,6 +626,7 @@ public class ClientManager : MonoBehaviour
     public void TimeToCharge()
     {
         string eleccionCliente = "";
+        RacePanelDOWN();
 
         if (iWantToBelieve)
         {
@@ -1257,5 +1262,24 @@ public class ClientManager : MonoBehaviour
                 print("Incorrect intelligence level.");
                 break;
         }
+    }
+
+    public void RacePanelUP()
+    {
+        for (int i = 0; i < DialogueManager.Instance.racePanel.transform.childCount; i++)
+        {
+            if(DialogueManager.Instance.racePanel.transform.GetChild(i).name == currentDialogueClient.race)
+                DialogueManager.Instance.racePanel.transform.GetChild(i).gameObject.SetActive(true);
+            
+            else
+                DialogueManager.Instance.racePanel.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(1);
+    }
+
+    public void RacePanelDOWN()
+    {
+        DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(-1);
     }
 }
