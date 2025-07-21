@@ -179,7 +179,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject centralProduct;
     [SerializeField] public GameObject rightProduct;
     [SerializeField] public GameObject leftProduct;
+
+    [SerializeField] public GameObject couponSign;
     [SerializeField] public GameObject couponPlace;
+    [SerializeField] public GameObject couponInfoContainer;
+
     [SerializeField] public GameObject lesPropinas;
     [SerializeField] public TMP_Text lePropinasText;
     [SerializeField] public float propinasNumber;
@@ -843,7 +847,7 @@ public class DialogueManager : MonoBehaviour
                                    GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas,GameObject trophyCanvas, 
                                    GameObject regMOPanel, GameObject regHPanel, GameObject regEPanel, GameObject regLPanel, GameObject regTPanel,
                                    GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
-                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject cupPlace, GameObject tipJar, TMP_Text tipJarText)
+                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject coupSign, GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
     {
         mainCam = mC;
         clientManager = cM;
@@ -883,7 +887,11 @@ public class DialogueManager : MonoBehaviour
         centralProduct = cenProd;
         rightProduct = derProd;
         leftProduct = izqProd;
-        couponPlace = cupPlace;
+
+        couponSign = coupSign;
+        couponPlace = coupPlace;
+        couponInfoContainer = coupInfoContainer;
+
         lesPropinas = tipJar;
         lePropinasText = tipJarText;
 

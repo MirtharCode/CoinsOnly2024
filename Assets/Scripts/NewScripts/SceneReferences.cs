@@ -44,7 +44,11 @@ public class SceneReferences : MonoBehaviour
     public GameObject centralProduct;
     public GameObject rightProduct;
     public GameObject leftProduct;
+
+    public GameObject couponSign;
     public GameObject couponPlace;
+    public GameObject couponInfoContainer;
+
     public GameObject lesPropinas;
     public TMP_Text lePropinasText;
 
@@ -58,7 +62,7 @@ public class SceneReferences : MonoBehaviour
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
                                                         sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas,trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
                                                         leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
-                                                        centralProduct, rightProduct, leftProduct, couponPlace, lesPropinas, lePropinasText);
+                                                        centralProduct, rightProduct, leftProduct, couponSign, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
         }
     }
 }

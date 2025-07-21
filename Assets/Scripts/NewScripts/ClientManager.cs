@@ -76,16 +76,32 @@ public class ClientManager : MonoBehaviour
 
     private void Start()
     {
+
         if (DialogueManager.Instance.currentDay != "01")
         {
             DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
             DialogueManager.Instance.mainCam.transform.GetChild(0).gameObject.SetActive(false);
             DialogueManager.Instance.dialoguePanelFirst.gameObject.SetActive(false);
+
             speakerRaceTextBox = DialogueManager.Instance.dialoguePanelOtherRaceText.GetComponent<TextMeshProUGUI>();
             speakerTextBox = DialogueManager.Instance.dialoguePanelOtherNameText.GetComponent<TextMeshProUGUI>();
             StartMusicSetup();
             Invoke(nameof(StartNextClient), timer);
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
+
+            if((int.Parse(DialogueManager.Instance.currentDay) >= 4))
+            {
+                DialogueManager.Instance.couponSign.SetActive(true);
+
+                if (DialogueManager.Instance.currentDay == "04")
+                    ShowCouponInfo("toother");
+                else if (DialogueManager.Instance.currentDay == "05")
+                    ShowCouponInfo("geomery");
+                else if (DialogueManager.Instance.currentDay == "06")
+                    ShowCouponInfo("drakerry");
+                else if (DialogueManager.Instance.currentDay == "07")
+                    ShowCouponInfo("dogelle");
+            }                
         }
 
         else
@@ -1281,5 +1297,16 @@ public class ClientManager : MonoBehaviour
     public void RacePanelDOWN()
     {
         DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(-1);
+    }
+
+    public void ShowCouponInfo(string couponName)
+    {
+        for(int i = 0; i < DialogueManager.Instance.couponInfoContainer.transform.childCount; i++)
+        {
+            if (DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).name == couponName)
+                DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).gameObject.SetActive(true);
+            else
+                DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 }
