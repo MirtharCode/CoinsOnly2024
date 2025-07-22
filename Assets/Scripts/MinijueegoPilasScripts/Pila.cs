@@ -23,19 +23,17 @@ public class Pila : MonoBehaviour
 
     void Update()
     {
-        ProcesarMovimiento();
-    }
 
-    void ProcesarMovimiento()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        rb2d.velocity = new Vector2(moveHorizontal * velocidad, moveVertical * velocidad);
     }
 
     public void ReproducirSonido()
     {
         audioSource.PlayOneShot(sonidoColision);
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        rb2d.AddForce(input * velocidad);
     }
 }
