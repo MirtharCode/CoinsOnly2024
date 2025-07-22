@@ -15,6 +15,8 @@ public class SlimeManager : MonoBehaviour
     [SerializeField] private GameObject fTB;
     [SerializeField] private TMPro.TextMeshProUGUI timeText;
     [SerializeField] private TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] private TMPro.TextMeshProUGUI finalScoreText;
+    [SerializeField] private GameObject scorePanel;
 
     private float startingTime = 30f;
     private float timeRemaining;
@@ -139,8 +141,7 @@ public class SlimeManager : MonoBehaviour
         else
             Data.instance.GetComponent<Data>().slimeFostiados = true;
 
-        fTB.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
-
+        ShowScore();
     }
 
     public void ElidoraHit()
@@ -148,6 +149,17 @@ public class SlimeManager : MonoBehaviour
         Data.instance.GetComponent<Data>().slimeFostiados = true;
         Data.instance.GetComponent<Data>().slimeFail = true;
         Data.instance.GetComponent<Data>().elidoraAcariciada = true;
+        ShowScore();
+    }
+
+    public void ShowScore()
+    {
+        scorePanel.gameObject.SetActive(true);
+        finalScoreText.text = score.ToString();
+    }
+
+    public void ContinueButton()
+    {
         fTB.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
     }
 }
