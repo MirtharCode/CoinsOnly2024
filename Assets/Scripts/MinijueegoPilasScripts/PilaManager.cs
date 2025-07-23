@@ -19,6 +19,7 @@ public class PilaManager : MonoBehaviour
     public bool tiempoActivado = false;
     public Scene currentScene;
     [SerializeField] public GameObject cursor;
+    [SerializeField] public ParticleSystem electricityParticules;
 
     void Start()
     {

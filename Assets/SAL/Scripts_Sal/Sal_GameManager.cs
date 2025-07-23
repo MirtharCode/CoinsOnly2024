@@ -19,6 +19,7 @@ public class Sal_GameManager : MonoBehaviour
     public float _musicVolumeSlider, _soundVolumeSlider;
     [SerializeField] public Scene currentScene;
     [SerializeField] public bool heGanado = false;
+    [SerializeField] private Button[] levelsButtons;
 
     void Start()
     {
@@ -43,6 +44,106 @@ public class Sal_GameManager : MonoBehaviour
         //    _soundVolumeSlider = PlayerPrefs.GetFloat("SoundVolumen");
         //    PlayerPrefs.Save();
         //}
+        if (currentScene.name == "LevelSelector")
+        {
+            Color gray100 = new Color(0.392f, 0.392f, 0.392f, 1f);
+
+            if (!Data.instance.fase1Check)
+            {
+                levelsButtons[1].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[1].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[1].colors = colors;
+                levelsButtons[1].interactable = false;
+            }
+
+            if (!Data.instance.fase2Check)
+            {
+                levelsButtons[2].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[2].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[2].colors = colors;
+                levelsButtons[2].interactable = false;
+            }
+
+            if (!Data.instance.fase3Check)
+            {
+                levelsButtons[3].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[3].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[3].colors = colors;
+                levelsButtons[3].interactable = false;
+            }
+
+            if (!Data.instance.fase4Check)
+            {
+                levelsButtons[4].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[4].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[4].colors = colors;
+                levelsButtons[4].interactable = false;
+            }
+
+            if (!Data.instance.fase5Check)
+            {
+                levelsButtons[5].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[5].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[5].colors = colors;
+                levelsButtons[5].interactable = false;
+            }
+
+            if (!Data.instance.fase6Check)
+            {
+                levelsButtons[6].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[6].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[6].colors = colors;
+                levelsButtons[6].interactable = false;
+            }
+
+            if (!Data.instance.fase7Check)
+            {
+                levelsButtons[7].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[7].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[7].colors = colors;
+                levelsButtons[7].interactable = false;
+            }
+
+            if (!Data.instance.fase8Check)
+            {
+                levelsButtons[8].GetComponent<Image>().color = gray100;
+                var colors = levelsButtons[8].colors;
+                colors.normalColor = gray100;
+                colors.highlightedColor = gray100;
+                colors.pressedColor = gray100;
+                colors.selectedColor = gray100;
+                levelsButtons[8].colors = colors;
+                levelsButtons[8].interactable = false;
+            }
+        }
     }
 
     void Update()
@@ -95,42 +196,98 @@ public class Sal_GameManager : MonoBehaviour
 
     public void Level02()
     {
-        SceneManager.LoadScene("Level002");
+        if (Data.instance.fase1Check)
+        {
+            SceneManager.LoadScene("Level002");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level03()
     {
-        SceneManager.LoadScene("Level003");
+        if (Data.instance.fase2Check)
+        {
+            SceneManager.LoadScene("Level003");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level04()
     {
-        SceneManager.LoadScene("Level004");
+        if (Data.instance.fase3Check)
+        {
+            SceneManager.LoadScene("Level004");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level05()
     {
-        SceneManager.LoadScene("Level005");
+        if (Data.instance.fase4Check)
+        {
+            SceneManager.LoadScene("Level005");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level06()
     {
-        SceneManager.LoadScene("Level006");
+        if (Data.instance.fase5Check)
+        {
+            SceneManager.LoadScene("Level006");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level07()
     {
-        SceneManager.LoadScene("Level007");
+        if (Data.instance.fase6Check)
+        {
+            SceneManager.LoadScene("Level007");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level08()
     {
-        SceneManager.LoadScene("Level008");
+        if (Data.instance.fase7Check)
+        {
+            SceneManager.LoadScene("Level008");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Level09()
     {
-        SceneManager.LoadScene("Level009");
+        if (Data.instance.fase8Check)
+        {
+            SceneManager.LoadScene("Level009");
+        }
+        else
+        {
+            Debug.Log("Nivel bloqueado");
+        }
     }
 
     public void Casa()

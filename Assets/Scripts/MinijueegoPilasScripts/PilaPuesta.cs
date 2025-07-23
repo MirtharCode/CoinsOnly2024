@@ -34,6 +34,7 @@ public class PilaPuesta : MonoBehaviour
             numPilasHechas++;
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sonidoColision);
+            pilaManager.GetComponent<PilaManager>().electricityParticules.Play();
 
             if (numPilasHechas == 1)
             {

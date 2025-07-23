@@ -38,31 +38,31 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SAL/Escenas_Sal/LevelSelector.unity
     guid: 592119a344923d24b93bb462350e8935
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level001.unity
     guid: 7f9f82386ce1a39489d2e627f94234a1
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level002.unity
     guid: f1f79cbcac7cd4346a38437083ae8424
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level003.unity
     guid: cdba7b969cfa11f4db33b4659d8baaff
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level004.unity
     guid: fb48c38d281073840ad56e8d7c4db390
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level005.unity
     guid: 7038b4aa5cd9ce04883d118b2905891e
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level006.unity
     guid: 736b629c1928bdd4cab30398bb21a8a4
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level007.unity
     guid: 8c04c40edd5115e45afd2b1d6c802a72
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level008.unity
     guid: dac01f4f19b1c7c49bd3edfe25e3010a
-  - enabled: 0
+  - enabled: 1
     path: Assets/SAL/Escenas_Sal/Level009.unity
     guid: 19f98ddbc7858c848b52276b68783078
   - enabled: 0
