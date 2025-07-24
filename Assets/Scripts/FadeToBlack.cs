@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,9 +19,6 @@ public class FadeToBlack : MonoBehaviour
         data = GameObject.FindGameObjectWithTag("Data");
         fadeToblackClipTime = fadeToblackClip.length;
         currentScene = SceneManager.GetActiveScene();
-
-        if (currentScene.name == "MenuInicial")
-            GetComponent<Animator>().SetTrigger("PumPum");
     }
 
     // TRANSICIÓN A NEGRO DEL MENÚ AL PRIMER DÍA
@@ -29,71 +27,83 @@ public class FadeToBlack : MonoBehaviour
         GetComponent<Animator>().SetBool("ToBlack", true);
 
         //if (currentScene.name != "Home" || currentScene.name == "MenuInicial")
-            Invoke(nameof(CallingFirstDay), fadeToblackClipTime);
+            Invoke(nameof(GoingToTheGame), fadeToblackClipTime);
     }
 
-    public void CallingFirstDay()
+    public string GetCheckedDayNumber()
     {
-        if(data.GetComponent<Data>().day00Checked)
-            SceneManager.LoadScene("Day1");
-
-        else if(data.GetComponent<Data>().day01Checked)
-            SceneManager.LoadScene("Day2_1");
-
-        else if (data.GetComponent<Data>().day02Checked)
-            SceneManager.LoadScene("Day3_1");
-
-        else if (data.GetComponent<Data>().day03Checked)
-            SceneManager.LoadScene("Day4");
-
-        else if (data.GetComponent<Data>().day04Checked)
-            SceneManager.LoadScene("Day5");
-
-        else if (data.GetComponent<Data>().day05Checked)
+        for (int i = 0; i <= 7; i++) // De momento solo hasta el día 7. En caso que se crearan más días habría que cambiar el número.
         {
-            data.GetComponent<Data>().samuraiPagaMal = false;
-            data.GetComponent<Data>().borrachoTriste = false;
-            data.GetComponent<Data>().samuraiAyudado1 = false;
-            data.GetComponent<Data>().samuraiAyudado2 = false;
-            data.GetComponent<Data>().vecesSamuraiAyudado = 0;
-            data.GetComponent<Data>().videoActivo = false;
-            data.GetComponent<Data>().videoVisto = false;
-            data.GetComponent<Data>().tipsPoints = 0;
-            data.GetComponent<Data>().detectivePoints = 0;
+            string fieldName = $"day{i:D2}Checked"; // Cojamos como ejemplo el "day04Checked"
+            
+            var field = typeof(Data).GetField(fieldName, BindingFlags.Instance | BindingFlags.Public);
 
-            data.GetComponent<Data>().fase1Check = false;
-            data.GetComponent<Data>().fase2Check = false;
-            data.GetComponent<Data>().fase3Check = false;
-            data.GetComponent<Data>().fase4Check = false;
-            data.GetComponent<Data>().fase5Check = false;
-            data.GetComponent<Data>().fase6Check = false;
-            data.GetComponent<Data>().fase7Check = false;
-            data.GetComponent<Data>().fase8Check = false;
-            data.GetComponent<Data>().fase9Check = false;
-
-            data.GetComponent<Data>().sePueTocar = false;
-            data.GetComponent<Data>().yaSeFueCliente = false;
-            data.GetComponent<Data>().tipsBetweenDays = 0;
-
-            data.GetComponent<Data>().vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
-            data.GetComponent<Data>().vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
-            data.GetComponent<Data>().vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
-            data.GetComponent<Data>().vecesCobradaTerry = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
-            data.GetComponent<Data>().noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
-            data.GetComponent<Data>().vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
-            data.GetComponent<Data>().vecesCobradoRaven = 0;
-            data.GetComponent<Data>().numGnomosFinded = 0;
-            data.GetComponent<Data>().nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
-            data.GetComponent<Data>().nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
-            data.GetComponent<Data>().slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
-            data.GetComponent<Data>().slimeFail = false;                     // Si no llegaste a 50 puntos en el minijuego de Elidora.
-            data.GetComponent<Data>().elidoraAcariciada = false;             // Si le metiste tremendo cebollazo al pedrolo de Elidora.
-
-            SceneManager.LoadScene("Day1");
+            if (field != null && field.FieldType == typeof(bool))
+            {
+                bool value = (bool)field.GetValue(Data.instance);
+                
+                if (value)
+                {
+                    if (i < 7)
+                    {
+                        i++;
+                        return i.ToString("D2"); // Si "day04Checked" es true, me devolvería "04".
+                    }
+                    
+                    else
+                        ResetData();
+                }                   
+            }
         }
 
-        else
-            SceneManager.LoadScene("Day1");
+        Data.instance.day00Checked = true;
+        return "01";
+    }
+
+    public void GoingToTheGame()
+    {
+        DialogueManager.Instance.currentDay = GetCheckedDayNumber();
+        SceneManager.LoadScene("Day");
+    }
+
+    public void ResetData()
+    {
+        Data.instance.samuraiPagaMal = false;
+        Data.instance.borrachoTriste = false;
+        Data.instance.samuraiAyudado1 = false;
+        Data.instance.samuraiAyudado2 = false;
+        Data.instance.vecesSamuraiAyudado = 0;
+        Data.instance.videoActivo = false;
+        Data.instance.videoVisto = false;
+        Data.instance.tipsPoints = 0;
+        Data.instance.detectivePoints = 0;
+
+        Data.instance.day00Checked = false;
+        Data.instance.day01Checked = false;
+        Data.instance.day02Checked = false;
+        Data.instance.day03Checked = false;
+        Data.instance.day04Checked = false;
+        Data.instance.day05Checked = false;
+        Data.instance.day06Checked = false;
+        Data.instance.day07Checked = false;
+
+        Data.instance.sePueTocar = false;
+        Data.instance.yaSeFueCliente = false;
+        Data.instance.tipsBetweenDays = 0;
+
+        Data.instance.vecesCobradoCululu = 0;                 // Si le cobras 3 veces bien (día 1, 4 y 5), te llevas la foto de la cangumantis en pose sugerente
+        Data.instance.vecesCobradoGiovanni = 0;               // Si le cobras 2 veces bien (día 1 y 2), te llevas un libro que es la bomba.
+        Data.instance.vecesCobradaMara = 0;                   // Si le cobras 2 veces bien (día 1 y 2), te llevas una pata de la suerte.
+        Data.instance.vecesCobradaTerry = 0;                   // Si le cobras 2 veces bien (día 2 y 4), eres un puto payaso.
+        Data.instance.noCobrarSergioCobrarGeeraardD4 = 0;                   // No tienes que cobrar a Sergio en el día 4 y tienes que cobrar a Geerald en el día 4
+        Data.instance.vecesCobradoAntonio = 0;                   // Tienes que cobrar a Antonio en el dia 4 y a Paxi en el dia 3
+        Data.instance.vecesCobradoRaven = 0;
+        Data.instance.numGnomosFinded = 0;
+        Data.instance.nerviosusPagaLoQueDebe = false;        // Si le cobras (día 4) te da la globoespada.
+        Data.instance.nerviosusTeDebePasta = false;          // Si no le cobras Gerardo el magias te dará su bella foto.
+        Data.instance.slimeFostiados = false;                // Si le has dado hasta en el carnet de identidad a los slimes.
+        Data.instance.slimeFail = false;                     // Si no llegaste a 50 puntos en el minijuego de Elidora.
+        Data.instance.elidoraAcariciada = false;             // Si le metiste tremendo cebollazo al pedrolo de Elidora.
     }
 
     // TRANSICIÓN A NEGRO DE LA TIENDA A CASA / DE DENJIRENJI A TIENDA / DE ELIDORA A CASA

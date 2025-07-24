@@ -239,8 +239,11 @@ public class DialogueManager : MonoBehaviour
 
         else
         {
-            Debug.Log("Acabo de empezar el juego");
-            LaVoluntad(50);
+            if (!SceneManager.GetActiveScene().name.Contains("Menu"))
+            {
+                Debug.Log("Acabo de empezar el juego");
+                LaVoluntad(50);
+            }            
         }
 
 
