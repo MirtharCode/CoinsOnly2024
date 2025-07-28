@@ -156,6 +156,7 @@ public class DialogueManager : MonoBehaviour
     public bool regulationsAdded;
     public int currentRegulationsNumber;
     public List<string> currentRegulations;
+    public GameObject currentRegulationsBook;
 
     [SerializeField]
     public List<RegulationInfo> regulationsData = new List<RegulationInfo>();
@@ -848,8 +849,7 @@ public class DialogueManager : MonoBehaviour
                                    GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText, 
                                    GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
                                    GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas,GameObject trophyCanvas, 
-                                   GameObject regMOPanel, GameObject regHPanel, GameObject regEPanel, GameObject regLPanel, GameObject regTPanel,
-                                   GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
+                                   GameObject regBook, GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject coupSign, GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
     {
         mainCam = mC;
@@ -875,11 +875,7 @@ public class DialogueManager : MonoBehaviour
         gnomeMinigameCanvas = gnomeCanvas;
         uITrophies = trophyCanvas;
 
-        panelMagos = regMOPanel;
-        panelHibridos = regHPanel;
-        panelElementales = regEPanel;
-        panelLimbasticos = regLPanel;
-        panelTecnopedos = regTPanel;
+        currentRegulationsBook = regBook;
 
         leDinero = moneySack;
         leDineroText = moneySackText;

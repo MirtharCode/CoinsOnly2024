@@ -76,7 +76,8 @@ public class ClientManager : MonoBehaviour
 
     private void Start()
     {
-
+        RegulationsActivate();
+        
         if (DialogueManager.Instance.currentDay != "01")
         {
             DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
@@ -89,7 +90,7 @@ public class ClientManager : MonoBehaviour
             Invoke(nameof(StartNextClient), timer);
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
 
-            if((int.Parse(DialogueManager.Instance.currentDay) >= 4))
+            if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
             {
                 DialogueManager.Instance.couponSign.SetActive(true);
 
@@ -101,7 +102,7 @@ public class ClientManager : MonoBehaviour
                     ShowCouponInfo("drakerry");
                 else if (DialogueManager.Instance.currentDay == "07")
                     ShowCouponInfo("dogelle");
-            }                
+            }
         }
 
         else
@@ -112,7 +113,7 @@ public class ClientManager : MonoBehaviour
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
             DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
             DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().fontSize = 220;
-        }        
+        }
     }
     void Update()
     {
@@ -530,7 +531,7 @@ public class ClientManager : MonoBehaviour
             ShowProducts(currentDialogueClient, currentDialogueClient.numberOfProducts);
             RacePanelUP();
         }
-            
+
     }
 
     public IEnumerator BossCalling(string bossComplain)
@@ -1229,7 +1230,7 @@ public class ClientManager : MonoBehaviour
         {
             dialogueTextBoxOther.text = text;
             RaceFontAndSizeText(dialogueTextBoxOther);
-        }            
+        }
     }
 
     public void RaceFontAndSizeText(TextMeshProUGUI textBox)
@@ -1284,9 +1285,9 @@ public class ClientManager : MonoBehaviour
     {
         for (int i = 0; i < DialogueManager.Instance.racePanel.transform.childCount; i++)
         {
-            if(DialogueManager.Instance.racePanel.transform.GetChild(i).name == currentDialogueClient.race)
+            if (DialogueManager.Instance.racePanel.transform.GetChild(i).name == currentDialogueClient.race)
                 DialogueManager.Instance.racePanel.transform.GetChild(i).gameObject.SetActive(true);
-            
+
             else
                 DialogueManager.Instance.racePanel.transform.GetChild(i).gameObject.SetActive(false);
         }
@@ -1301,12 +1302,55 @@ public class ClientManager : MonoBehaviour
 
     public void ShowCouponInfo(string couponName)
     {
-        for(int i = 0; i < DialogueManager.Instance.couponInfoContainer.transform.childCount; i++)
+        for (int i = 0; i < DialogueManager.Instance.couponInfoContainer.transform.childCount; i++)
         {
             if (DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).name == couponName)
                 DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).gameObject.SetActive(true);
             else
                 DialogueManager.Instance.couponInfoContainer.transform.GetChild(i).gameObject.SetActive(false);
         }
+    }
+
+    public void RegulationsActivate()
+    {
+        for (int i = 0; i < DialogueManager.Instance.currentRegulationsBook.transform.childCount; i++)
+        {
+            if (DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).name == DialogueManager.Instance.currentDay)
+                DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
+    public void GoingToSecondPage(GameObject day)
+    {
+        day.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+        day.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+
+        day.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(false);
+        day.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void GoingToThirdPage(GameObject day)
+    {
+        day.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+        day.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
+
+        day.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void ReturnToSecondPage(GameObject day)
+    {
+        day.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+        day.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
+
+        day.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void ReturnToFirstPage(GameObject day)
+    {
+        day.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+        day.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+
+        day.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
+        day.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false);
     }
 }

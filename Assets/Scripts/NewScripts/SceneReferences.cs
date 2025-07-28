@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SceneReferences : MonoBehaviour
 {
-    public GameObject mC; 
+    public GameObject mC;
     public GameObject cM;
     public GameObject phoneObject;
     public GameObject complainObject;
@@ -29,11 +29,7 @@ public class SceneReferences : MonoBehaviour
     public GameObject gnomeCanvas;
     public GameObject trophyCanvas;
 
-    public GameObject darkWizardsPanel;
-    public GameObject hybridsPanel;
-    public GameObject elementalsPanel;
-    public GameObject limbasticsPanel;
-    public GameObject tecnopedsPanel;
+    public GameObject regulationsBook;
 
     public GameObject leDinero;
     public TMP_Text leDineroText;
@@ -57,11 +53,10 @@ public class SceneReferences : MonoBehaviour
         // Puedes hacer comprobaciones aquí si quieres
         if (DialogueManager.Instance != null)
         {
-            DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject, 
-                                                        dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText, 
+            DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject,
+                                                        dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText,
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
-                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas,trophyCanvas, darkWizardsPanel, hybridsPanel, elementalsPanel, limbasticsPanel, tecnopedsPanel,
-                                                        leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar, 
+                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, couponSign, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
         }
     }
