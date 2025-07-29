@@ -1320,16 +1320,16 @@ RectTransform:
   m_GameObject: {fileID: 530747797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.52338, y: 11.044834, z: 2.52338}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 315314791}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113.00006, y: 342}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 113.00006, y: 275.7}
+  m_SizeDelta: {x: 622, y: 331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530747799
 MonoBehaviour:
@@ -1363,7 +1363,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 9a8a07f6e1c7e2b42a3134fd3c1c60f1, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: e38abe5d9a6b7874ab753789b83c2bad, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3283,8 +3283,8 @@ RectTransform:
   m_GameObject: {fileID: 1336927512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3800628, y: 10.417535, z: 2.3800628}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 315314791}
   m_RootOrder: 1
@@ -3292,7 +3292,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 112.00009, y: 4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 584, y: 347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336927514
 MonoBehaviour:
@@ -3326,7 +3326,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: ccea0bd8425617a49a8e61cf7f3060fa, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: c9243831a24ea6b4ab08f1238b00f612, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3807,8 +3807,8 @@ RectTransform:
   m_GameObject: {fileID: 1499676621}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6471467, y: 5.95907, z: 5.95907}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 315314791}
   m_RootOrder: 3
@@ -3816,7 +3816,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -314.00024, y: -33.999954}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 230, y: 254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499676623
 MonoBehaviour:
@@ -4361,8 +4361,8 @@ RectTransform:
   m_GameObject: {fileID: 1729950970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6467905, y: 5.958739, z: 5.958739}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1696759323}
   m_RootOrder: 3
@@ -4370,7 +4370,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -327.00067, y: -178.99995}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 230, y: 254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729950972
 MonoBehaviour:
@@ -5010,16 +5010,16 @@ RectTransform:
   m_GameObject: {fileID: 1948165096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4033687, y: 10.519545, z: 2.4033687}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 315314791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115, y: -355}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 115, y: -306}
+  m_SizeDelta: {x: 603, y: 371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948165098
 MonoBehaviour:
@@ -5053,7 +5053,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 2ece4aa688be3bb4492364ccf17c0229, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 7e557bf3224827a46a8114b62bfb01da, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
