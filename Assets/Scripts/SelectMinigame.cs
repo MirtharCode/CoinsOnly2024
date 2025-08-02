@@ -74,33 +74,25 @@ public class SelectMinigame : MonoBehaviour
 
     public void GoSalGame()
     {
+        Data.instance.previousSceneWasMinigameSelector = true;
         SceneManager.LoadScene("LevelSelector");
     }
 
     public void GoDenjiGame1()
     {
+        Data.instance.previousSceneWasMinigameSelector = true;
         SceneManager.LoadScene("Pila_Nivel1");
     }
 
     public void GoDenjiGame2()
     {
+        Data.instance.previousSceneWasMinigameSelector = true;
         SceneManager.LoadScene("Pila_Nivel2");
-    }
-
-    public void OpenDenjiLevels()
-    {
-        denjiLevels.SetActive(true);
-        gamesLevels.SetActive(false);
-    }
-
-    public void CloseDenjiLevels()
-    {
-        denjiLevels.SetActive(false);
-        gamesLevels.SetActive(true);
     }
 
     public void GoElidoraGame()
     {
+        Data.instance.previousSceneWasMinigameSelector = true;
         SceneManager.LoadScene("WhackAMole1");
     }
 }
