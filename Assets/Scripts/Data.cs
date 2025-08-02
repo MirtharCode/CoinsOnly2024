@@ -155,7 +155,6 @@ public class Data : MonoBehaviour
     public GameObject deletePanel;
 
     public GameObject savingSymbol;
-    public bool previousSceneWasMinigameSelector;
 
     void Awake()
     {
