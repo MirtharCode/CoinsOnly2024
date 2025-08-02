@@ -43,28 +43,10 @@ public class CameraZoomManager : MonoBehaviour
         {
             ReturnToCenter();   // Llamarlo cuando caiga el cliente y vuelva a hablar el cliente
         }
+        
         if (Input.GetKeyDown(KeyCode.J))
         {
             ReturnToMove();   // Llamarlo cuando deje de hablar el cliente
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            DialogueManager.Instance.clientManager.GetComponent<ClientManager>().TutorialZoomIns(DialogueManager.Instance.zoomTargetPrices);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            EnterZoomMode(DialogueManager.Instance.zoomTargetRegulations.GetComponent<ZoomTargetInfo>());
-            DialogueManager.Instance.tutorialZoomIn = true;
-            DialogueManager.Instance.dialoguePanelOther.SetActive(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            EnterZoomMode(DialogueManager.Instance.zoomTargetCoupon.GetComponent<ZoomTargetInfo>());
-            DialogueManager.Instance.tutorialZoomIn = true;
-            DialogueManager.Instance.dialoguePanelOther.SetActive(false);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -259,5 +241,12 @@ public class CameraZoomManager : MonoBehaviour
     public void ReturnToMove()
     {
         notZoom = false;
+    }
+
+    public void ReturnToInitialPose()
+    {
+        Camera.main.orthographicSize = 5;
+        transform.position = new Vector3(0.18f, 3.54f, -13.37f);
+        transform.rotation = Quaternion.Euler(10.1277456f, 0, 0);
     }
 }

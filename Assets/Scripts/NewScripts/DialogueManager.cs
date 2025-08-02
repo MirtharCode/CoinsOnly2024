@@ -842,11 +842,11 @@ public class DialogueManager : MonoBehaviour
     public void HideText()
     {
         conversationOn = false;
-        if (currentDay == "01")
-            dialoguePanelFirst.gameObject.SetActive(false);
+        //if (currentDay == "01")
+        //    dialoguePanelFirst.gameObject.SetActive(false);
 
-        else
-            dialoguePanelOther.gameObject.SetActive(false);
+        //else
+        //    dialoguePanelOther.gameObject.SetActive(false);
     }
 
     public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, 

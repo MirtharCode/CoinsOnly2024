@@ -8,6 +8,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine.SceneManagement;
 using System.Reflection;
+using Unity.VisualScripting;
 
 public class ClientManager : MonoBehaviour
 {
@@ -121,6 +122,16 @@ public class ClientManager : MonoBehaviour
         {
             dialogueReady = true;
             Debug.Log("Diálogos listos.");
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(-1);
         }
     }
 
@@ -535,10 +546,12 @@ public class ClientManager : MonoBehaviour
 
                 Invoke(nameof(StartNextClient), 2.5f);
             }
+            ControlarMovimientoTablet("Bloquear");
         }
 
         else
         {
+            ControlarMovimientoTablet("Bloquear");
             ShowProducts(currentDialogueClient, currentDialogueClient.numberOfProducts);
             RacePanelUP();
         }
@@ -700,6 +713,9 @@ public class ClientManager : MonoBehaviour
         }
 
         DialogueManager.Instance.chosenChecks.Add(eleccionCliente);
+
+        ControlarMovimientoTablet("Activar");
+
         DialogueManager.Instance.ShowText();
         MostrarDialogoActual();
         DialogueManager.Instance.leDinero.SetActive(false);
@@ -1378,5 +1394,21 @@ public class ClientManager : MonoBehaviour
     public void CallingZoomOut()
     {
         DialogueManager.Instance.mainCam.GetComponent<CameraZoomManager>().ExitZoomMode();
+    }
+
+    public void ControlarMovimientoTablet(string accion)
+    {
+        DialogueManager.Instance.mainCam.GetComponent<CameraZoomManager>().ReturnToInitialPose();
+
+        GameObject panel = DialogueManager.Instance.currentDay == "01"
+            ? DialogueManager.Instance.dialoguePanelFirst
+            : DialogueManager.Instance.dialoguePanelOther;
+
+        TabletMover mover = panel.GetComponent<TabletMover>();
+
+        string nombreMetodo = accion + "Movimiento";
+
+        var metodo = typeof(TabletMover).GetMethod(nombreMetodo);
+        metodo.Invoke(mover, null);
     }
 }

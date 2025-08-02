@@ -32,8 +32,8 @@ public class ClientScript : MonoBehaviour
         if (collision.transform.tag == "Trampilla" && repetirunavez == false)
         {
             repetirunavez = true;
-
-            DialogueManager.Instance.GetComponent<DialogueManager>().ShowText();
+            DialogueManager.Instance.clientManager.GetComponent<ClientManager>().ControlarMovimientoTablet("Activar");
+            DialogueManager.Instance.ShowText();
             cM.Speaking(cM.currentDialogueClient.dialogueLines[0].tone);
         }
     }
