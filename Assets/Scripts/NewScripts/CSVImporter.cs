@@ -16,7 +16,7 @@ public class DialogueEntry
     public string TONE;
     public string MOOD;
     public string CLIENT;
-    public string GIFT;
+    public string EXTRA;
     public string SUSPECT1;
     public string SUSPECT2;
     public string SUSPECT3;
@@ -242,7 +242,7 @@ public class CSVImporter : MonoBehaviour
                 TONE = fields[6].Trim(),
                 MOOD = fields[7].Trim(),
                 CLIENT = fields[8].Trim(),
-                GIFT = fields[9].Trim(),
+                EXTRA = fields[9].Trim(),
                 SUSPECT1 = fields[10].Trim(),
                 SUSPECT2 = fields[11].Trim(),
                 SUSPECT3 = fields[12].Trim(),

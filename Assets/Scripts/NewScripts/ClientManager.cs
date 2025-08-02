@@ -77,7 +77,7 @@ public class ClientManager : MonoBehaviour
     private void Start()
     {
         RegulationsActivate();
-        
+
         if (DialogueManager.Instance.currentDay != "01")
         {
             DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
@@ -92,7 +92,7 @@ public class ClientManager : MonoBehaviour
 
             if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
             {
-                DialogueManager.Instance.couponSign.SetActive(true);
+                DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
 
                 if (DialogueManager.Instance.currentDay == "04")
                     ShowCouponInfo("toother");
@@ -316,7 +316,18 @@ public class ClientManager : MonoBehaviour
     {
         if (dialogueReady && showingDialogue)
         {
-
+            if(currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra.Contains("camera"))
+            {
+                if(currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraPrices")
+                    TutorialZoomIns(DialogueManager.Instance.zoomTargetPrices);
+                
+                else if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraRegulations")
+                    TutorialZoomIns(DialogueManager.Instance.zoomTargetRegulations);
+                
+                else if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraCoupons")
+                    TutorialZoomIns(DialogueManager.Instance.zoomTargetCoupon);
+            }
+            
             if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "mgIN")
             {
                 meVoyAMinijuego = true;
@@ -382,7 +393,7 @@ public class ClientManager : MonoBehaviour
 
             ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, line.mood);
 
-            if (line.gift == "collectable")
+            if (line.extra == "collectable")
                 TrophyAchieved(currentDialogueClient.name);
 
             clientDialogueLineIndex++;
@@ -399,7 +410,7 @@ public class ClientManager : MonoBehaviour
                 Speaking(currentDialogueClient.tickResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.tickResponse[0].mood);
 
-                if (currentDialogueClient.tickResponse[0].gift == "collectable")
+                if (currentDialogueClient.tickResponse[0].extra == "collectable")
                     TrophyAchieved(currentDialogueClient.name);
             }
 
@@ -409,7 +420,7 @@ public class ClientManager : MonoBehaviour
                 Speaking(currentDialogueClient.crossResponse[0].tone);
                 ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.crossResponse[0].mood);
 
-                if (currentDialogueClient.crossResponse[0].gift == "collectable")
+                if (currentDialogueClient.crossResponse[0].extra == "collectable")
                     TrophyAchieved(currentDialogueClient.name);
             }
 
@@ -887,7 +898,7 @@ public class ClientManager : MonoBehaviour
                                 {
                                     string dialogueChanged = "Aún tengo secuelas de la otra vez, pero agradezco tu esfuerzo en esta ocasión.";
                                     DialogueManager.Instance.dailyCustomers[i].dialogueLines[0].text = dialogueChanged;
-                                    DialogueManager.Instance.dailyCustomers[i].dialogueLines[0].gift = "";
+                                    DialogueManager.Instance.dailyCustomers[i].dialogueLines[0].extra = "";
                                 }
 
                                 day05client6DenjirenjiMinigameChecked = true;
@@ -1240,14 +1251,10 @@ public class ClientManager : MonoBehaviour
         string path = $"Fonts/{race}";
         TMP_FontAsset[] fonts = Resources.LoadAll<TMP_FontAsset>(path);
 
-        Debug.Log(textBox.font);
-
         if (fonts != null && fonts.Length > 0)
             textBox.font = fonts[0];
         else
             Debug.LogWarning($"No se encontró ninguna fuente en la carpeta: {path}");
-
-        Debug.Log(textBox.font);
 
         switch (race)
         {
@@ -1352,5 +1359,24 @@ public class ClientManager : MonoBehaviour
 
         day.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
         day.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    // Funciones que se llamarían cuando los textos tengan la parte de tutorial que cambian la cámara
+    public void TutorialZoomIns(GameObject zoomInWhat)
+    {
+        DialogueManager.Instance.mainCam.GetComponent<CameraZoomManager>().EnterZoomMode(zoomInWhat.GetComponent<ZoomTargetInfo>());
+        DialogueManager.Instance.tutorialZoomIn = true;
+
+        if (DialogueManager.Instance.currentDay != "01")
+            DialogueManager.Instance.dialoguePanelOther.SetActive(false);
+        else
+            DialogueManager.Instance.dialoguePanelFirst.SetActive(false);
+
+        Invoke(nameof(CallingZoomOut), 2);
+    }
+
+    public void CallingZoomOut()
+    {
+        DialogueManager.Instance.mainCam.GetComponent<CameraZoomManager>().ExitZoomMode();
     }
 }

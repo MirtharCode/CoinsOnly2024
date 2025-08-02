@@ -41,7 +41,10 @@ public class SceneReferences : MonoBehaviour
     public GameObject rightProduct;
     public GameObject leftProduct;
 
-    public GameObject couponSign;
+    public GameObject zoomTargetPrices;
+    public GameObject zoomTargetRegulations;
+    public GameObject zoomTargetCoupon;
+
     public GameObject couponPlace;
     public GameObject couponInfoContainer;
 
@@ -57,7 +60,7 @@ public class SceneReferences : MonoBehaviour
                                                         dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText,
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
                                                         sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
-                                                        centralProduct, rightProduct, leftProduct, couponSign, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
+                                                        centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
         }
     }
 }

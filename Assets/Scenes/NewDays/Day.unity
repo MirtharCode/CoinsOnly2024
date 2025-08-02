@@ -12053,7 +12053,9 @@ MonoBehaviour:
   centralProduct: {fileID: 1139868360}
   rightProduct: {fileID: 1358665326}
   leftProduct: {fileID: 2073868486}
-  couponSign: {fileID: 2139555097}
+  zoomTargetPrices: {fileID: 4997457150112115614}
+  zoomTargetRegulations: {fileID: 3822306269334988275}
+  zoomTargetCoupon: {fileID: 2139555097}
   couponPlace: {fileID: 1384414116}
   couponInfoContainer: {fileID: 1362533357}
   lesPropinas: {fileID: 0}
@@ -20959,7 +20961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 01
+  currentDay: 03
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -21011,7 +21013,10 @@ MonoBehaviour:
   centralProduct: {fileID: 0}
   rightProduct: {fileID: 0}
   leftProduct: {fileID: 0}
-  couponSign: {fileID: 0}
+  tutorialZoomIn: 0
+  zoomTargetPrices: {fileID: 0}
+  zoomTargetRegulations: {fileID: 0}
+  zoomTargetCoupon: {fileID: 0}
   couponPlace: {fileID: 0}
   couponInfoContainer: {fileID: 0}
   lesPropinas: {fileID: 0}
@@ -46576,7 +46581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2100889811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47562,7 +47567,7 @@ GameObject:
   - component: {fileID: 2139555101}
   - component: {fileID: 2139555103}
   m_Layer: 0
-  m_Name: Box027 (2)
+  m_Name: ZoomTarget_CouponObject
   m_TagString: ZoomTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58366,7 +58371,7 @@ GameObject:
   - component: {fileID: 1892069276}
   - component: {fileID: 1892069281}
   m_Layer: 0
-  m_Name: Box022
+  m_Name: ZoomTarget_RegulationsObject
   m_TagString: ZoomTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60106,7 +60111,7 @@ GameObject:
   - component: {fileID: 252285376}
   - component: {fileID: 252285381}
   m_Layer: 0
-  m_Name: Box021
+  m_Name: ZoomTarget_PricesObject
   m_TagString: ZoomTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

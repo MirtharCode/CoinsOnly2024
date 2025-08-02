@@ -21,15 +21,15 @@ public class DialogueManager : MonoBehaviour
         public string type;
         public string tone;
         public string mood;
-        public string gift;
+        public string extra;
 
-        public ClientLine(string text, string tone, string mood, string type, string gift)
+        public ClientLine(string text, string tone, string mood, string type, string extra)
         {
             this.text = text;
             this.type = type;
             this.tone = tone;
             this.mood = mood;
-            this.gift = gift;
+            this.extra = extra;
         }
     }
 
@@ -181,7 +181,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject rightProduct;
     [SerializeField] public GameObject leftProduct;
 
-    [SerializeField] public GameObject couponSign;
+    [SerializeField] public bool tutorialZoomIn;
+    [SerializeField] public GameObject zoomTargetPrices;
+    [SerializeField] public GameObject zoomTargetRegulations;
+    [SerializeField] public GameObject zoomTargetCoupon;
+
     [SerializeField] public GameObject couponPlace;
     [SerializeField] public GameObject couponInfoContainer;
 
@@ -361,8 +365,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                string gift = GetGift(key);
-                client.tickResponse.Add(new ClientLine(text, tone, mood, type, gift));
+                string extra = GetExtra(key);
+                client.tickResponse.Add(new ClientLine(text, tone, mood, type, extra));
             }
 
             else if (type == "cross")
@@ -370,8 +374,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                string gift = GetGift(key);
-                client.crossResponse.Add(new ClientLine(text, tone, mood, type, gift));
+                string extra = GetExtra(key);
+                client.crossResponse.Add(new ClientLine(text, tone, mood, type, extra));
             }
 
             else if (type == "mgOUTGood")
@@ -379,8 +383,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                string gift = GetGift(key);
-                client.mgGoodResponse.Add(new ClientLine(text, tone, mood, type, gift));
+                string extra = GetExtra(key);
+                client.mgGoodResponse.Add(new ClientLine(text, tone, mood, type, extra));
             }
 
             else if (type == "mgOUTBad")
@@ -388,8 +392,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                string gift = GetGift(key);
-                client.mgBadResponse.Add(new ClientLine(text, tone, mood, type, gift));
+                string extra = GetExtra(key);
+                client.mgBadResponse.Add(new ClientLine(text, tone, mood, type, extra));
             }
 
             else if (type == "init" || type.StartsWith("dialogue") || type == "end" || type == "break" || type == "mgIN" || type == "gnome")
@@ -397,8 +401,8 @@ public class DialogueManager : MonoBehaviour
                 string text = GetText(key);
                 string tone = GetTone(key);
                 string mood = GetMood(key);
-                string gift = GetGift(key);
-                client.dialogueLines.Add(new ClientLine(text, tone, mood, type, gift));
+                string extra = GetExtra(key);
+                client.dialogueLines.Add(new ClientLine(text, tone, mood, type, extra));
 
                 // Si llegó al final, no hace falta seguir registrando más líneas
                 if (type == "end" || type == "break")
@@ -786,10 +790,10 @@ public class DialogueManager : MonoBehaviour
         return $"[{key}]";
     }
 
-    public string GetGift(string key)
+    public string GetExtra(string key)
     {
         if (dialogueLookup.ContainsKey(key))
-            return dialogueLookup[key].GIFT;
+            return dialogueLookup[key].EXTRA;
         return $"[{key}]";
     }
 
@@ -850,7 +854,8 @@ public class DialogueManager : MonoBehaviour
                                    GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
                                    GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas,GameObject trophyCanvas, 
                                    GameObject regBook, GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
-                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject coupSign, GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
+                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject zoomPricesObject, GameObject zoomRegulationsObject, GameObject zoomCouponObject, 
+                                   GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
     {
         mainCam = mC;
         clientManager = cM;
@@ -886,8 +891,11 @@ public class DialogueManager : MonoBehaviour
         centralProduct = cenProd;
         rightProduct = derProd;
         leftProduct = izqProd;
+        
+        zoomTargetPrices = zoomPricesObject;
+        zoomTargetRegulations = zoomRegulationsObject;
+        zoomTargetCoupon = zoomCouponObject;
 
-        couponSign = coupSign;
         couponPlace = coupPlace;
         couponInfoContainer = coupInfoContainer;
 

@@ -48,6 +48,25 @@ public class CameraZoomManager : MonoBehaviour
             ReturnToMove();   // Llamarlo cuando deje de hablar el cliente
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DialogueManager.Instance.clientManager.GetComponent<ClientManager>().TutorialZoomIns(DialogueManager.Instance.zoomTargetPrices);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            EnterZoomMode(DialogueManager.Instance.zoomTargetRegulations.GetComponent<ZoomTargetInfo>());
+            DialogueManager.Instance.tutorialZoomIn = true;
+            DialogueManager.Instance.dialoguePanelOther.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            EnterZoomMode(DialogueManager.Instance.zoomTargetCoupon.GetComponent<ZoomTargetInfo>());
+            DialogueManager.Instance.tutorialZoomIn = true;
+            DialogueManager.Instance.dialoguePanelOther.SetActive(false);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -75,8 +94,9 @@ public class CameraZoomManager : MonoBehaviour
         }
     }
 
-    void EnterZoomMode(ZoomTargetInfo info)
+    public void EnterZoomMode(ZoomTargetInfo info)
     {
+        
         if (!isInZoomMode)
         {
             originalPosition = transform.position;
@@ -97,16 +117,19 @@ public class CameraZoomManager : MonoBehaviour
 
         if (info.exitDirection == ZoomTargetInfo.ExitEdge.Left && edgeGradientLeftImage != null)
         {
+            Debug.Log("Voy a los precios");
             edgeGradientLeftImage.enabled = true;
         }
         else if (info.exitDirection == ZoomTargetInfo.ExitEdge.Right && edgeGradientRightImage != null)
         {
+            Debug.Log("Voy a las Normativas");
             edgeGradientRightImage.enabled = true;
         }
     }
 
-    void ExitZoomMode()
+    public void ExitZoomMode()
     {
+        Debug.Log("Salgo del Zoom");
         isInZoomMode = false;
 
         if (edgeScroll) edgeScroll.enabled = true;
@@ -117,6 +140,16 @@ public class CameraZoomManager : MonoBehaviour
 
         StartCoroutine(SmoothReturnToFreeView());
         currentZoomInfo = null;
+
+        if (DialogueManager.Instance.tutorialZoomIn)
+        {
+            DialogueManager.Instance.tutorialZoomIn = false;
+            
+            if (DialogueManager.Instance.currentDay != "01")
+                DialogueManager.Instance.dialoguePanelOther.SetActive(true);
+            else
+                DialogueManager.Instance.dialoguePanelFirst.SetActive(true);
+        }        
     }
 
     System.Collections.IEnumerator SmoothReturnToFreeView()
@@ -127,25 +160,29 @@ public class CameraZoomManager : MonoBehaviour
         Vector3 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
-        while (tMove < 1f || tRot < 1f)
+        if (startSize != originalCamSize && startRot != originalRotation)
         {
-            if (tMove < 1f)
+            while (tMove < 1f || tRot < 1f)
             {
-                tMove += Time.deltaTime * currentBackMoveSpeed;
-                transform.position = Vector3.Lerp(startPos, originalPosition, tMove);
-                Camera.main.orthographicSize = Mathf.Lerp(startSize, originalCamSize, tMove);
-            }
+                if (tMove < 1f)
+                {
+                    tMove += Time.deltaTime * currentBackMoveSpeed;
+                    transform.position = Vector3.Lerp(startPos, originalPosition, tMove);
+                    Camera.main.orthographicSize = Mathf.Lerp(startSize, originalCamSize, tMove);
+                }
 
-            if (tRot < 1f)
-            {
-                tRot += Time.deltaTime * currentBackRotationSpeed;
-                transform.rotation = Quaternion.Slerp(startRot, originalRotation, tRot);
-            }
+                if (tRot < 1f)
+                {
+                    tRot += Time.deltaTime * currentBackRotationSpeed;
+                    transform.rotation = Quaternion.Slerp(startRot, originalRotation, tRot);
+                }
 
-            yield return null;
-        }
+                yield return null;
+            }
+        } 
     }
 
+    // Para salir del modo Zoom acercando el ratón a los bordes de la pantalla.
     void CheckExitByMouseEdge()
     {
         float mouseX = Input.mousePosition.x;
