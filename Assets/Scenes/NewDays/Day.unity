@@ -20961,7 +20961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 03
+  currentDay: 01
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -46581,7 +46581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2100889811
 RectTransform:
   m_ObjectHideFlags: 0

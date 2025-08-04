@@ -244,7 +244,7 @@ public class DialogueManager : MonoBehaviour
 
         else
         {
-            if (!SceneManager.GetActiveScene().name.Contains("Menu"))
+            if (!SceneManager.GetActiveScene().name.Contains("Menu") && !SceneManager.GetActiveScene().name.Contains("Cinematic"))
             {
                 Debug.Log("Acabo de empezar el juego");
                 LaVoluntad(50);

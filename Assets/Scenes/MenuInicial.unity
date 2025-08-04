@@ -2440,7 +2440,10 @@ MonoBehaviour:
   centralProduct: {fileID: 0}
   rightProduct: {fileID: 0}
   leftProduct: {fileID: 0}
-  couponSign: {fileID: 0}
+  tutorialZoomIn: 0
+  zoomTargetPrices: {fileID: 0}
+  zoomTargetRegulations: {fileID: 0}
+  zoomTargetCoupon: {fileID: 0}
   couponPlace: {fileID: 0}
   couponInfoContainer: {fileID: 0}
   lesPropinas: {fileID: 0}
@@ -2773,7 +2776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1079462353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5912,7 +5915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day01Checked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day02Checked
