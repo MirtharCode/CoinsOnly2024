@@ -10,7 +10,7 @@ public class DirectionalSound : MonoBehaviour
     public AudioClip soundLeft;
     public AudioClip soundRight;
 
-    public float directionThreshold = 5f; // Sensibilidad del movimiento
+    public float directionThreshold = 5f; 
 
     private bool isClicked = false;
     private bool isMouseOver = false;
@@ -22,8 +22,6 @@ public class DirectionalSound : MonoBehaviour
         Vector3 currentMousePosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(currentMousePosition);
         RaycastHit hit;
-
-        // Verificar si el mouse está sobre este objeto
         isMouseOver = false;
         if (Physics.Raycast(ray, out hit))
         {
@@ -34,12 +32,11 @@ public class DirectionalSound : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     isClicked = true;
-                    lastDirection = ""; // Reset
+                    lastDirection = ""; 
                 }
             }
         }
 
-        // Reproducción de sonido por dirección si no hay uno sonando
         if (isClicked && isMouseOver && !audioSource.isPlaying)
         {
             Vector3 delta = currentMousePosition - lastMousePosition;
@@ -56,7 +53,6 @@ public class DirectionalSound : MonoBehaviour
             }
         }
 
-        // Cancelar si se suelta el clic o se sale del objeto
         if (Input.GetMouseButtonUp(0) || !isMouseOver)
         {
             isClicked = false;
