@@ -42,16 +42,19 @@ public class PilaManager : MonoBehaviour
     {
         cursor.SetActive(true);
 
-        if (currentScene.name == "Denjirenji03")
+        if (!Data.instance.doYouComeFromMinigameSelectorMenu)
         {
-            Data.instance.vecesSamuraiAyudado++;
-            Data.instance.samuraiAyudado1 = true;
-        }
+            if (currentScene.name == "Denjirenji03")
+            {
+                Data.instance.vecesSamuraiAyudado++;
+                Data.instance.samuraiAyudado1 = true;
+            }
 
-        else if (currentScene.name == "Denjirenji05")
-        {
-            Data.instance.vecesSamuraiAyudado++;
-            Data.instance.samuraiAyudado2 = true;
+            else if (currentScene.name == "Denjirenji05")
+            {
+                Data.instance.vecesSamuraiAyudado++;
+                Data.instance.samuraiAyudado2 = true;
+            }
         }
 
         victoriaPanel.GetComponent<FadeToBlack>().FadeToBlackAnywhere();
@@ -85,12 +88,14 @@ public class PilaManager : MonoBehaviour
             tiempoActivado = false;
             cursor.SetActive(true);
 
-            if (currentScene.name == "Denjirenji03")
-                Data.instance.meExplotasteElCulo1 = true;
+            if (!Data.instance.doYouComeFromMinigameSelectorMenu)
+            {
+                if (currentScene.name == "Denjirenji03")
+                    Data.instance.meExplotasteElCulo1 = true;
 
-            else if (currentScene.name == "Denjirenji05")
-                Data.instance.meExplotasteElCulo2 = true;
-
+                else if (currentScene.name == "Denjirenji05")
+                    Data.instance.meExplotasteElCulo2 = true;
+            }
         }
 
         if (tiempoActual <= 10)

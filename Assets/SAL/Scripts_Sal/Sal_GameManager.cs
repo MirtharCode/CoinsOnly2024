@@ -292,7 +292,17 @@ public class Sal_GameManager : MonoBehaviour
 
     public void Casa()
     {
-        SceneManager.LoadScene("Home");
+        if (!Data.instance.doYouComeFromMinigameSelectorMenu)
+        {
+            Data.instance.doYouComeFromMinigameSelectorMenu = false;
+            SceneManager.LoadScene("Home");
+        }
+
+        else
+        {
+            Data.instance.doYouComeFromMinigameSelectorMenu = false;
+            SceneManager.LoadScene("MenuInicial");
+        }
     }
 
     // Función que la agrego al botón de la pantalla de derrota y dependiendo del nombre de la escena, recargo una u otra.

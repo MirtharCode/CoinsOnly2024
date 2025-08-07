@@ -116,18 +116,29 @@ public class FadeToBlack : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("ToBlack", true);
 
-        if (currentScene.name.Contains("Denjirenji"))
+        if (currentScene.name.Contains("Denjirenji") && !Data.instance.doYouComeFromMinigameSelectorMenu)
         {
             GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
             Invoke(nameof(BackToTheShop), fadeToblackClipTime);
         }
 
-        else if (currentScene.name.Contains("Elidora"))
+        else if (currentScene.name.Contains("Denjirenji") && Data.instance.doYouComeFromMinigameSelectorMenu)
+        {
+            Data.instance.doYouComeFromMinigameSelectorMenu = false;
+            Invoke(nameof(CallingMenu), fadeToblackClipTime);
+        }
+
+        else if (currentScene.name.Contains("Elidora") && !Data.instance.doYouComeFromMinigameSelectorMenu)
         {
             GetComponent<Image>().enabled = true;   // Debido a que se desactiva al entrar al minijuego, ya que no quiero fade al entrar
             Invoke(nameof(BackToTheShop), fadeToblackClipTime);
         }
 
+        else if (currentScene.name.Contains("Elidora") && Data.instance.doYouComeFromMinigameSelectorMenu)
+        {
+            Data.instance.doYouComeFromMinigameSelectorMenu = false;
+            Invoke(nameof(CallingMenu), fadeToblackClipTime);
+        }
 
         else
             Invoke(nameof(CallingNextday), fadeToblackClipTime);

@@ -776,6 +776,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &172231542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172231544}
+  - component: {fileID: 172231543}
+  m_Layer: 0
+  m_Name: MinigamesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &172231543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172231542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064d398a4e2c0cd4c9882e4d38e32604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  salButton: {fileID: 530747799}
+  denjiButton: {fileID: 1948165098}
+  denjiLevel1Button: {fileID: 1948165098}
+  denjiLevel2Button: {fileID: 1948165098}
+  elidoraButton: {fileID: 1336927514}
+  denjiLevels: {fileID: 0}
+  gamesLevels: {fileID: 0}
+  data: {fileID: 1160935151}
+  disabledSalButtonSprite: {fileID: 21300000, guid: e38abe5d9a6b7874ab753789b83c2bad, type: 3}
+  disabledDenji1ButtonSprite: {fileID: 21300000, guid: 7e557bf3224827a46a8114b62bfb01da, type: 3}
+  disabledDenji2ButtonSprite: {fileID: 21300000, guid: 7e557bf3224827a46a8114b62bfb01da, type: 3}
+  disabledElidoraButtonSprite: {fileID: 21300000, guid: c9243831a24ea6b4ab08f1238b00f612, type: 3}
+--- !u!4 &172231544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172231542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 966.96423, y: 542.05585, z: 537.0488}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181313014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1463,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 530747800}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172231543}
+        m_TargetAssemblyTypeName: SelectMinigame, Assembly-CSharp
+        m_MethodName: GoSalGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &530747800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3565,7 +3633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1336927515}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172231543}
+        m_TargetAssemblyTypeName: SelectMinigame, Assembly-CSharp
+        m_MethodName: GoElidoraGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1336927515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5613,7 +5693,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1948165099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172231543}
+        m_TargetAssemblyTypeName: SelectMinigame, Assembly-CSharp
+        m_MethodName: GoDenjiGame1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948165099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6507,6 +6599,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: giftTapicio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day01Checked
       value: 0
       objectReference: {fileID: 0}
@@ -6520,6 +6616,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: samuraiPagaMal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: slimeFostiados
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: samuraiAyudado1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: samuraiAyudado2
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}

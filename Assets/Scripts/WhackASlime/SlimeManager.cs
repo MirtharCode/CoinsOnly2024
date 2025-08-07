@@ -136,19 +136,26 @@ public class SlimeManager : MonoBehaviour
 
     public void OutOfTimeEnd()
     {
-        if (score < 49)
-            Data.instance.GetComponent<Data>().slimeFail = true;
-        else
-            Data.instance.GetComponent<Data>().slimeFostiados = true;
+        if (!Data.instance.doYouComeFromMinigameSelectorMenu)
+        {
+            if (score < 49)
+                Data.instance.GetComponent<Data>().slimeFail = true;
+            else
+                Data.instance.GetComponent<Data>().slimeFostiados = true;
+        }
 
         ShowScore();
     }
 
     public void ElidoraHit()
     {
-        Data.instance.GetComponent<Data>().slimeFostiados = true;
-        Data.instance.GetComponent<Data>().slimeFail = true;
-        Data.instance.GetComponent<Data>().elidoraAcariciada = true;
+        if (!Data.instance.doYouComeFromMinigameSelectorMenu)
+        {
+            Data.instance.GetComponent<Data>().slimeFostiados = true;
+            Data.instance.GetComponent<Data>().slimeFail = true;
+            Data.instance.GetComponent<Data>().elidoraAcariciada = true;
+        }
+
         ShowScore();
     }
 

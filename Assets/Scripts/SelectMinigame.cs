@@ -17,79 +17,113 @@ public class SelectMinigame : MonoBehaviour
 
     [SerializeField] public GameObject data;
 
+    [SerializeField] private Sprite disabledSalButtonSprite;
+    [SerializeField] private Sprite disabledDenji1ButtonSprite;
+    [SerializeField] private Sprite disabledDenji2ButtonSprite;
+    [SerializeField] private Sprite disabledElidoraButtonSprite;
+
     private void Start()
     {
         data = GameObject.FindGameObjectWithTag("Data");
 
-        Color gray100 = new Color(0.392f, 0.392f, 0.392f, 1f);
-
         if (!Data.instance.meExplotasteElCulo1 && !Data.instance.samuraiAyudado1)
         {
-            denjiLevel1Button.GetComponent<Image>().color = gray100;
-            var colors = denjiLevel1Button.colors;
-            colors.normalColor = gray100;
-            colors.highlightedColor = gray100;
-            colors.pressedColor = gray100;
-            colors.selectedColor = gray100;
-            denjiLevel1Button.colors = colors;
+            denjiLevel1Button.GetComponent<Image>().sprite = disabledDenji1ButtonSprite;
             denjiLevel1Button.interactable = false;
         }
 
         if (!Data.instance.meExplotasteElCulo2 && !Data.instance.samuraiAyudado2)
         {
-            denjiLevel2Button.GetComponent<Image>().color = gray100;
-            var colors = denjiLevel2Button.colors;
-            colors.normalColor = gray100;
-            colors.highlightedColor = gray100;
-            colors.pressedColor = gray100;
-            colors.selectedColor = gray100;
-            denjiLevel2Button.colors = colors;
+            denjiLevel2Button.GetComponent<Image>().sprite = disabledDenji2ButtonSprite;
             denjiLevel2Button.interactable = false;
         }
 
         if (!Data.instance.slimeFail && !Data.instance.slimeFostiados)
         {
-            elidoraButton.GetComponent<Image>().color = gray100;
-            var colors = elidoraButton.colors;
-            colors.normalColor = gray100;
-            colors.highlightedColor = gray100;
-            colors.pressedColor = gray100;
-            colors.selectedColor = gray100;
-            elidoraButton.colors = colors;
+            elidoraButton.GetComponent<Image>().sprite = disabledElidoraButtonSprite;
             elidoraButton.interactable = false;
         }
 
         if (!Data.instance.giftTapicio)
         {
-            salButton.GetComponent<Image>().color = gray100;
-            var colors = salButton.colors;
-            colors.normalColor = gray100;
-            colors.highlightedColor = gray100;
-            colors.pressedColor = gray100;
-            colors.selectedColor = gray100;
-            salButton.colors = colors;
+            salButton.GetComponent<Image>().sprite = disabledSalButtonSprite;
             salButton.interactable = false;
         }
+
+
+        //Color gray100 = new Color(0.392f, 0.392f, 0.392f, 1f);
+
+        //if (!Data.instance.meExplotasteElCulo1 && !Data.instance.samuraiAyudado1)
+        //{
+        //    denjiLevel1Button.GetComponent<Image>().color = gray100;
+        //    var colors = denjiLevel1Button.colors;
+        //    colors.normalColor = gray100;
+        //    colors.highlightedColor = gray100;
+        //    colors.pressedColor = gray100;
+        //    colors.selectedColor = gray100;
+        //    denjiLevel1Button.colors = colors;
+        //    denjiLevel1Button.interactable = false;
+        //}
+
+        //if (!Data.instance.meExplotasteElCulo2 && !Data.instance.samuraiAyudado2)
+        //{
+        //    denjiLevel2Button.GetComponent<Image>().color = gray100;
+        //    var colors = denjiLevel2Button.colors;
+        //    colors.normalColor = gray100;
+        //    colors.highlightedColor = gray100;
+        //    colors.pressedColor = gray100;
+        //    colors.selectedColor = gray100;
+        //    denjiLevel2Button.colors = colors;
+        //    denjiLevel2Button.interactable = false;
+        //}
+
+        //if (!Data.instance.slimeFail && !Data.instance.slimeFostiados)
+        //{
+        //    elidoraButton.GetComponent<Image>().color = gray100;
+        //    var colors = elidoraButton.colors;
+        //    colors.normalColor = gray100;
+        //    colors.highlightedColor = gray100;
+        //    colors.pressedColor = gray100;
+        //    colors.selectedColor = gray100;
+        //    elidoraButton.colors = colors;
+        //    elidoraButton.interactable = false;
+        //}
+
+        //if (!Data.instance.giftTapicio)
+        //{
+        //    salButton.GetComponent<Image>().color = gray100;
+        //    var colors = salButton.colors;
+        //    colors.normalColor = gray100;
+        //    colors.highlightedColor = gray100;
+        //    colors.pressedColor = gray100;
+        //    colors.selectedColor = gray100;
+        //    salButton.colors = colors;
+        //    salButton.interactable = false;
+        //}
     }
 
     public void GoSalGame()
     {
-        SceneManager.LoadScene("Caracol");
+        Data.instance.doYouComeFromMinigameSelectorMenu = true;
+        SceneManager.LoadScene("LevelSelector");
     }
 
     public void GoDenjiGame1()
     {
-        SceneManager.LoadScene("Pila1");
+        Data.instance.doYouComeFromMinigameSelectorMenu = true;
+        SceneManager.LoadScene("DenjirenjiMinijuego01");
     }
 
     public void GoDenjiGame2()
     {
-        SceneManager.LoadScene("Pila2");
+        Data.instance.doYouComeFromMinigameSelectorMenu = true;
+        SceneManager.LoadScene("DenjirenjiMinijuego02");
     }
 
     public void GoElidoraGame()
     {
-        SceneManager.LoadScene("MataSlimes");
+        Data.instance.doYouComeFromMinigameSelectorMenu = true;
+        SceneManager.LoadScene("ElidoraMinijuego");
     }
 
     public void OpenDenjiLevels()
