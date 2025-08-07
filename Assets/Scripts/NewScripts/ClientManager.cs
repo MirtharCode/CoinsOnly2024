@@ -108,6 +108,8 @@ public class ClientManager : MonoBehaviour
 
         else
         {
+            speakerRaceTextBox = DialogueManager.Instance.dialoguePanelFirstRaceText.GetComponent<TextMeshProUGUI>();
+            speakerTextBox = DialogueManager.Instance.dialoguePanelFirstNameText.GetComponent<TextMeshProUGUI>();
             DialogueManager.Instance.dialoguePanelOther.gameObject.SetActive(false);
             StartMusicSetup();
             StartNextClient();
