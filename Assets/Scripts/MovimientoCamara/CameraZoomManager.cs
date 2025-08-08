@@ -25,6 +25,8 @@ public class CameraZoomManager : MonoBehaviour
     private EdgeScrollCamera edgeScroll;
     private EdgeRotateCamera edgeRotate;
 
+    private Collider zoomTargetCollider;
+
     private bool notZoom = true;
 
     private void Start()
@@ -78,7 +80,6 @@ public class CameraZoomManager : MonoBehaviour
 
     public void EnterZoomMode(ZoomTargetInfo info)
     {
-        
         if (!isInZoomMode)
         {
             originalPosition = transform.position;
@@ -90,6 +91,10 @@ public class CameraZoomManager : MonoBehaviour
         currentZoomInfo = info;
         currentBackMoveSpeed = info.backMoveSpeed;
         currentBackRotationSpeed = info.backRotationSpeed;
+
+        zoomTargetCollider = info.GetComponent<Collider>();
+        if (zoomTargetCollider != null)
+            zoomTargetCollider.enabled = false;
 
         if (edgeScroll) edgeScroll.enabled = false;
         if (edgeRotate) edgeRotate.enabled = false;
@@ -114,6 +119,9 @@ public class CameraZoomManager : MonoBehaviour
         Debug.Log("Salgo del Zoom");
         isInZoomMode = false;
 
+        if (zoomTargetCollider != null)
+            zoomTargetCollider.enabled = true;
+
         if (edgeScroll) edgeScroll.enabled = true;
         if (edgeRotate) edgeRotate.enabled = true;
 
@@ -122,18 +130,18 @@ public class CameraZoomManager : MonoBehaviour
 
         StartCoroutine(SmoothReturnToFreeView());
         currentZoomInfo = null;
+        zoomTargetCollider = null;
 
         if (DialogueManager.Instance.tutorialZoomIn)
         {
             DialogueManager.Instance.tutorialZoomIn = false;
-            
+
             if (DialogueManager.Instance.currentDay != "01")
                 DialogueManager.Instance.dialoguePanelOther.SetActive(true);
             else
                 DialogueManager.Instance.dialoguePanelFirst.SetActive(true);
-        }        
+        }
     }
-
     System.Collections.IEnumerator SmoothReturnToFreeView()
     {
         float tMove = 0f;
