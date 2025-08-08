@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _CutOff: 0
     - _LineCount: 50
-    - _LineMoveSpeed: 1
+    - _LineMoveSpeed: 0.5
     - _LineOpacity: 1
     - _LineThickness: 0.2
     - _QueueControl: 0
@@ -48,7 +48,7 @@ Material:
     - _Saturation: 10
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _NoiseColor: {r: 0.37805265, g: 0.557667, b: 0.6320754, a: 1}
+    - _NoiseColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8484460071005211955
 MonoBehaviour:
