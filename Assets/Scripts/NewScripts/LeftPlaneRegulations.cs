@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class LeftPlaneRegulations : MonoBehaviour, IPointerClickHandler
 {
+    public GameObject rightClikObject;
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Izquierda");
@@ -22,6 +23,7 @@ public class LeftPlaneRegulations : MonoBehaviour, IPointerClickHandler
 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(0).gameObject.SetActive(true);      // Activando el panel derecho de los Limbásticos 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(1).gameObject.SetActive(false);       // Desactivando el panel derecho de los Tecnópedos
+                    GetComponent<BoxCollider>().enabled = false;
                 }
 
                 else if (DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.activeInHierarchy)     // SI EL PANEL DE ELEMENTALES ESTÁ ACTIVO, QUIERE DECIR QUE ESTOY EN LA PÁGINA TRES
@@ -31,6 +33,7 @@ public class LeftPlaneRegulations : MonoBehaviour, IPointerClickHandler
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(0).GetChild(2).gameObject.SetActive(false);      // Desactivando el panel izquierdo de los Elementales
 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(1).gameObject.SetActive(true);       // Activando el panel derecho de los Tecnópedos
+                    rightClikObject.GetComponent<BoxCollider>().enabled = true;
                 }
             }
         }    

@@ -2428,7 +2428,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6272fdc1959d9c64b874045178586b61, type: 3}
-  m_Color: {r: 0.5635515, g: 0.24003203, b: 0.5849056, a: 1}
+  m_Color: {r: 0.7294118, g: 0.70980394, b: 0.70980394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5998,7 +5998,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9528aedb75cf2ea42838dcda257495e2, type: 3}
-  m_Color: {r: 0.13950694, g: 0.5188679, b: 0.14726074, a: 1}
+  m_Color: {r: 0.7294118, g: 0.70980394, b: 0.70980394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6574,7 +6574,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c45807527a6eca14dabb85dc19c232ce, type: 3}
-  m_Color: {r: 0.7924528, g: 0.68045557, b: 0.5420078, a: 1}
+  m_Color: {r: 0.7294118, g: 0.70980394, b: 0.70980394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11050,8 +11050,8 @@ MonoBehaviour:
   dialoguePanelOtherDaysRaceText: {fileID: 258635337}
   racePanel: {fileID: 4161803104194584974}
   dialoguePanelOtherDaysDialogueText: {fileID: 33330780}
-  sospechosoPanel: {fileID: 0}
-  seguroPanel: {fileID: 0}
+  sospechosoPanel: {fileID: 1929691317}
+  seguroPanel: {fileID: 892960598}
   bAndWShader: {fileID: 69989027}
   gnomeCanvas: {fileID: 392858228}
   trophyCanvas: {fileID: 709836598064099544}
@@ -16675,7 +16675,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94ccedde316797744a2285d27070bc23, type: 3}
-  m_Color: {r: 1, g: 0.7052167, b: 0, a: 1}
+  m_Color: {r: 0.7294118, g: 0.70980394, b: 0.70980394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20138,7 +20138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 07
+  currentDay: 02
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -20159,6 +20159,8 @@ MonoBehaviour:
   dialoguePanelOtherDialogueText: {fileID: 0}
   detectivePanel: {fileID: 0}
   bAndWShader: {fileID: 0}
+  postPro: {fileID: 1482957538}
+  postPro_Profile: {fileID: 0}
   areYouSurePanel: {fileID: 0}
   racePanel: {fileID: 0}
   traductorText: {fileID: 0}
@@ -45012,7 +45014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900423608}
   m_LocalRotation: {x: 0.31554574, y: 0.08101459, z: 0.32869065, w: 0.8864706}
-  m_LocalPosition: {x: 0.136, y: 0.015, z: 0.23}
+  m_LocalPosition: {x: 0.138, y: 0.046, z: 0.25}
   m_LocalScale: {x: 0.21956518, y: 0.012499997, z: 0.391642}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45031,6 +45033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a307056192cc432489a40294d521f61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftClikObject: {fileID: 1980200103}
 --- !u!65 &1900423611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45499,7 +45502,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: baab103b99f514642b32959b91423a4f, type: 3}
-  m_Color: {r: 0.7924528, g: 0.68045557, b: 0.5420078, a: 1}
+  m_Color: {r: 0.7294118, g: 0.70980394, b: 0.70980394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -48086,7 +48089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980200103}
   m_LocalRotation: {x: 0.31946775, y: 0.08604456, z: 0.32679096, w: 0.88529336}
-  m_LocalPosition: {x: -0.06, y: -0.142, z: 0.226}
+  m_LocalPosition: {x: -0.058, y: -0.111, z: 0.246}
   m_LocalScale: {x: 0.24686903, y: 0.012499997, z: 0.37543356}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48105,6 +48108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c8e2e775fef40428862fcea4997efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightClikObject: {fileID: 1900423608}
 --- !u!65 &1980200107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48114,7 +48118,7 @@ BoxCollider:
   m_GameObject: {fileID: 1980200103}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -50985,7 +50989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2100889811
 RectTransform:
   m_ObjectHideFlags: 0

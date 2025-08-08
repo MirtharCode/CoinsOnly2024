@@ -488,7 +488,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.chosenChecks.Add(eleccionDetective);
         DialogueManager.Instance.areYouSurePanel.SetActive(false);
         DialogueManager.Instance.detectivePanel.SetActive(false);
-        DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
+        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
         speakerTextBox.text = currentDialogueClient.name;
         MostrarDialogoActual();
     }

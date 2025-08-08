@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class RightPlaneRegulations : MonoBehaviour, IPointerClickHandler
 {
+    public GameObject leftClikObject;
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Derecha");
@@ -22,6 +23,7 @@ public class RightPlaneRegulations : MonoBehaviour, IPointerClickHandler
 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(1).gameObject.SetActive(true);       // Activando el panel derecho de los Tecnópedos 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(0).gameObject.SetActive(false);      // Desactivando el panel derecho de los Limbásticos
+                    leftClikObject.GetComponent<BoxCollider>().enabled = true;
                 }
 
                 else if (DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.activeInHierarchy)     // SI EL PANEL DE HÍBRIDOS ESTÁ ACTIVO, QUIERE DECIR QUE ESTOY EN LA PÁGINA DOS
@@ -31,6 +33,7 @@ public class RightPlaneRegulations : MonoBehaviour, IPointerClickHandler
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(false);      // Desactivando el panel izquierdo de los Híbridos
 
                     DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).GetChild(1).GetChild(1).gameObject.SetActive(false);       // Desactivando el panel derecho de los Tecnópedos
+                    GetComponent<BoxCollider>().enabled = false;
                 }
             }
         }    

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -138,6 +139,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanelOtherDialogueText;
     [SerializeField] public GameObject detectivePanel;
     [SerializeField] public GameObject bAndWShader;
+    [SerializeField] public Volume postPro;
+    [SerializeField] public VolumeProfile postPro_Profile;
     [SerializeField] public GameObject areYouSurePanel;
     [SerializeField] public GameObject racePanel;
     [SerializeField] public TMP_Text traductorText;
@@ -246,6 +249,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (!SceneManager.GetActiveScene().name.Contains("Menu") && !SceneManager.GetActiveScene().name.Contains("Cinematic"))
             {
+                postPro_Profile = postPro.profile;
                 Debug.Log("Acabo de empezar el juego");
                 LaVoluntad(50);
             }            
