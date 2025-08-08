@@ -6810,8 +6810,8 @@ MonoBehaviour:
   targetPosition: {x: 3.5, y: 4, z: -13.5}
   targetRotationEuler: {x: 26, y: 30, z: -13}
   targetSize: 2.2
-  backMoveSpeed: 6
-  backRotationSpeed: 10
+  backMoveSpeed: 3
+  backRotationSpeed: 4
   exitDirection: 0
 --- !u!65 &252285377
 BoxCollider:
@@ -44594,8 +44594,8 @@ MonoBehaviour:
   targetPosition: {x: -4.38, y: 2.24, z: -9.08}
   targetRotationEuler: {x: 26.8, y: -25.4, z: -1.1}
   targetSize: 1.5
-  backMoveSpeed: 6
-  backRotationSpeed: 10
+  backMoveSpeed: 3
+  backRotationSpeed: 4
   exitDirection: 1
 --- !u!65 &1892069277
 BoxCollider:
@@ -58429,7 +58429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421446133747449682}
   m_LocalRotation: {x: -0.7039066, y: -0.06719776, z: 0.06719776, w: 0.7039066}
-  m_LocalPosition: {x: -4.11, y: 0.26, z: 1.1}
+  m_LocalPosition: {x: -4.11, y: 0.26, z: 1.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
