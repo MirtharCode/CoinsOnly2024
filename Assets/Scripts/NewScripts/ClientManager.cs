@@ -9,6 +9,7 @@ using Unity.Mathematics;
 using UnityEngine.SceneManagement;
 using System.Reflection;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public class ClientManager : MonoBehaviour
 {
@@ -214,14 +215,39 @@ public class ClientManager : MonoBehaviour
 
         if (currentDialogueClient.name == "Detective")
         {
-            imBW = true;
-            DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeIn();
+            if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments Color)){
+
+                StartCoroutine(ChangeSaturation());
+
+            }
         }
 
 
         showingDialogue = true;
         MostrarDialogoActual();
         ChangeTheMusic(currentDialogueClient.race, currentDialogueClient.name);
+    }
+
+    private IEnumerator ChangeSaturation()
+    {
+        float startValue = 15f;
+        float endValue = -100f;
+        float duration = 1.5f; 
+
+        if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
+        {
+            float elapsed = 0f;
+            float initial = startValue;
+            color.saturation.value = initial;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / duration;
+                color.saturation.value = Mathf.Lerp(initial, endValue, t);
+                yield return null; 
+            }
+        }
     }
 
     #region MÚSICA
@@ -451,7 +477,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.detectivePanel.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[0]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[1]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[2]}");
-        DialogueManager.Instance.dialoguePanelFirst.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
+        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
     }
 
     public void SetSelectedSuspectFromButton(GameObject button)
