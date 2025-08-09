@@ -477,7 +477,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.detectivePanel.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[0]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[1]}");
         DialogueManager.Instance.detectivePanel.transform.GetChild(2).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/MiniImages/{currentDialogueClient.suspects[2]}");
-        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = false;
+        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
     }
 
     public void SetSelectedSuspectFromButton(GameObject button)
@@ -514,7 +514,7 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.chosenChecks.Add(eleccionDetective);
         DialogueManager.Instance.areYouSurePanel.SetActive(false);
         DialogueManager.Instance.detectivePanel.SetActive(false);
-        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Button>().enabled = true;
+        DialogueManager.Instance.dialoguePanelOther.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
         speakerTextBox.text = currentDialogueClient.name;
         MostrarDialogoActual();
     }

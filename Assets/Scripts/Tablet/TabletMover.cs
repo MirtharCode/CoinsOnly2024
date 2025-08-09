@@ -100,7 +100,8 @@ public class TabletMover : MonoBehaviour
         // Mover hacia arriba
         StopAllCoroutines();
         Debug.Log("Sube :(");
-        StartCoroutine(MoverTabletSuavemente(initialPosition));
+        //StartCoroutine(MoverTabletSuavemente(initialPosition));
+        StartCoroutine(MoverTabletSuavemente(initialPosition + Vector3.up * 3.5f));
     }
 
     private IEnumerator MoverTabletSuavemente(Vector3 destino)
@@ -117,7 +118,8 @@ public class TabletMover : MonoBehaviour
             yield return null;
         }
 
-        tablet.position = destino; 
+        tablet.position = destino;
+        currentOffsetY = 3.5f;
     }
 
     public void ByeByeAnimator() //ESTO ES PARA EL DIA 1
