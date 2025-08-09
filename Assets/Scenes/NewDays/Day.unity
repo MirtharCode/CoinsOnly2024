@@ -6807,9 +6807,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5304afa33af404d866e54dce815f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 3.5, y: 4, z: -13.5}
-  targetRotationEuler: {x: 26, y: 30, z: -13}
-  targetSize: 2.2
+  targetPosition: {x: 1.3, y: 4.5, z: -11.7}
+  targetRotationEuler: {x: 26, y: 36, z: -12}
+  targetSize: 1.9
   backMoveSpeed: 3
   backRotationSpeed: 4
   exitDirection: 0
