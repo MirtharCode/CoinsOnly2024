@@ -14558,7 +14558,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.48235294, g: 0.7294118, b: 0.8039216, a: 1}
+  m_Color: {r: 0.5764706, g: 0.52156866, b: 0.4117647, a: 1}
   m_Intensity: 20
   m_Range: 6
   m_SpotAngle: 132
@@ -20253,7 +20253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 05
+  currentDay: 02
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -29870,8 +29870,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.7607843, b: 1, a: 1}
-  m_Intensity: 8.21
-  m_Range: 3
+  m_Intensity: 11
+  m_Range: 3.33
   m_SpotAngle: 113.46031
   m_InnerSpotAngle: 113.46031
   m_CookieSize: 10
@@ -29928,7 +29928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291817482}
   m_LocalRotation: {x: 0.052809387, y: -0, z: -0, w: 0.9986046}
-  m_LocalPosition: {x: -9.765, y: 2.131, z: -1.35}
+  m_LocalPosition: {x: -9.765, y: 2.407, z: -1.604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42197,7 +42197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed9110d77bb28fc46919fb2c5d06b934, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 254c2376010e3174d8a26d0c3c5f024a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -54811,7 +54811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13c8c5242c6e2414993c15c8390715ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: badbfb94c3659834eb51ed4c545630ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
