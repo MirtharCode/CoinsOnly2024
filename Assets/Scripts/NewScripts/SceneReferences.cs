@@ -28,6 +28,8 @@ public class SceneReferences : MonoBehaviour
 
     public GameObject gnomeCanvas;
     public GameObject trophyCanvas;
+    public GameObject gnomeFog1;
+    public GameObject gnomeFog2;
 
     public GameObject regulationsBook;
 
@@ -59,7 +61,7 @@ public class SceneReferences : MonoBehaviour
             DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject,
                                                         dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText,
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
-                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
+                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
         }
     }

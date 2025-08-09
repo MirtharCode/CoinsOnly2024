@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 431597782}
   - component: {fileID: 431597781}
   - component: {fileID: 431597784}
+  - component: {fileID: 431597785}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1646,6 +1647,39 @@ MonoBehaviour:
   lineGenerate: {fileID: 1450470287244748436, guid: 4b2b8ee790390f240a07c158d1995128, type: 3}
   Player: {fileID: 0}
   distanciaMinima: 1
+--- !u!114 &431597785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431597780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!4 &431984682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 392556894048968107, guid: 9d90671c9412d6f4eb85d7d9720e2680, type: 3}
@@ -6475,6 +6509,10 @@ MonoBehaviour:
   birdMoving: 0
   _musicVolumeSlider: 0
   _soundVolumeSlider: 0
+  currentScene:
+    m_Handle: 0
+  heGanado: 0
+  levelsButtons: []
 --- !u!4 &1709688065
 Transform:
   m_ObjectHideFlags: 0
@@ -6500,9 +6538,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfe45e85c110125449406fb24cc8cd92, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a3f13bd992d51a42bfb083e39c9cb5a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.125
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13466,6 +13504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6329830862455573162, guid: 60a2d535db7f1d44da1ae293c608067f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8114871143482786701, guid: 60a2d535db7f1d44da1ae293c608067f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

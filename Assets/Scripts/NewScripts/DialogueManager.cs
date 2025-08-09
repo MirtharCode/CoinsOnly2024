@@ -149,6 +149,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject uITrophies;
     [SerializeField] public GameObject gnomeMinigameCanvas;
     [SerializeField] public bool theGnomeIsFree;
+    [SerializeField] public GameObject gnomeFog1;
+    [SerializeField] public GameObject gnomeFog2;
 
     [Header("RELATED TO THE DROPDOWN MENU WITH THE LIST OF ITEMS")]
 
@@ -856,7 +858,7 @@ public class DialogueManager : MonoBehaviour
     public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, 
                                    GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText, 
                                    GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
-                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas,GameObject trophyCanvas, 
+                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas, GameObject gnomiebla1, GameObject gnomiebla2, GameObject trophyCanvas, 
                                    GameObject regBook, GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject zoomPricesObject, GameObject zoomRegulationsObject, GameObject zoomCouponObject, 
                                    GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
@@ -882,6 +884,8 @@ public class DialogueManager : MonoBehaviour
         bAndWShader = bAndWPanel;
 
         gnomeMinigameCanvas = gnomeCanvas;
+        gnomeFog1 = gnomiebla1;
+        gnomeFog2 = gnomiebla2;
         uITrophies = trophyCanvas;
 
         currentRegulationsBook = regBook;

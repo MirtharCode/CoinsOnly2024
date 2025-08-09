@@ -8578,6 +8578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6329830862455573162, guid: 60a2d535db7f1d44da1ae293c608067f, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8114871143482786701, guid: 60a2d535db7f1d44da1ae293c608067f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10710,6 +10714,10 @@ MonoBehaviour:
   birdMoving: 0
   _musicVolumeSlider: 0
   _soundVolumeSlider: 0
+  currentScene:
+    m_Handle: 0
+  heGanado: 0
+  levelsButtons: []
 --- !u!4 &1709688065
 Transform:
   m_ObjectHideFlags: 0
@@ -10735,9 +10743,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfe45e85c110125449406fb24cc8cd92, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a3f13bd992d51a42bfb083e39c9cb5a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.125
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

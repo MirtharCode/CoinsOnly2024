@@ -92,12 +92,20 @@ public class ClientManager : MonoBehaviour
             Invoke(nameof(StartNextClient), timer);
             DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
 
+
+            if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
+                DialogueManager.Instance.gnomeFog1.SetActive(true);
+
             if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
             {
                 DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
 
                 if (DialogueManager.Instance.currentDay == "04")
+                {
                     ShowCouponInfo("toother");
+                    DialogueManager.Instance.gnomeFog2.SetActive(true);
+                }
+                    
                 else if (DialogueManager.Instance.currentDay == "05")
                     ShowCouponInfo("geomery");
                 else if (DialogueManager.Instance.currentDay == "06")
