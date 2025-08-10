@@ -37,7 +37,7 @@ public class ClientManager : MonoBehaviour
     private bool cobrasteMal = false;
     private bool teTocaBronca = false;
     private bool meVoyAMinijuego = false;
-    private bool imBW = false;
+    //private bool imBW = false;
 
     public bool day03client5DenjirenjiMinigameChecked;
     public bool day05client6DenjirenjiMinigameChecked;
@@ -182,11 +182,11 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
-        if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
-        {
-            imBW = false;
-            DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeOut();
-        }
+        //if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
+        //{
+        //    imBW = false;
+        //    DialogueManager.Instance.bAndWShader.GetComponent<ScreenEffectFader>().FadeOut();
+        //}
 
         if (DialogueManager.Instance.dailyCustomers.Count == 0)
         {
@@ -224,9 +224,7 @@ public class ClientManager : MonoBehaviour
         if (currentDialogueClient.name == "Detective")
         {
             if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments Color)){
-
                 StartCoroutine(ChangeSaturation());
-
             }
         }
 
@@ -1315,7 +1313,7 @@ public class ClientManager : MonoBehaviour
                 break;
 
             case "Híbridos":
-                textBox.fontSize = 90;
+                textBox.fontSize = 120;
                 break;
 
             case "Limbásticos":
@@ -1331,7 +1329,7 @@ public class ClientManager : MonoBehaviour
                 break;
 
             case "Desconocida":
-                textBox.fontSize = 90;
+                textBox.fontSize = 85;
                 break;
 
             default:

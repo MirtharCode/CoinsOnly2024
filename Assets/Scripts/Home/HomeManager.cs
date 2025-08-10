@@ -260,7 +260,13 @@ public class HomeManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         currentHomeClientReal.GetComponent<Animator>().Play("GoingOut");
 
-        if (currentHomeClientReal.name.Contains("Tapicio") && !Data.instance.giftTapicio)
+        if (currentHomeClientReal.name.Contains("Jefe"))
+        {
+            data.GetComponent<Data>().sePueTocar = true;
+            data.GetComponent<Data>().yaSeFueCliente = true;
+        }
+
+        else if (currentHomeClientReal.name.Contains("Tapicio") && !Data.instance.giftTapicio)
         {
             Data.instance.giftTapicio = true;
             TrophyAchieved("Tapicio");

@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1C\xD3GEME!"
+  m_text: "\xBF\xA1C\xD3GEME!?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -15864,7 +15864,7 @@ MonoBehaviour:
   dialoguePanelOtherDaysDialogueText: {fileID: 33330780}
   sospechosoPanel: {fileID: 1929691317}
   seguroPanel: {fileID: 892960598}
-  bAndWShader: {fileID: 69989027}
+  postPro: {fileID: 1482957538}
   gnomeCanvas: {fileID: 392858228}
   trophyCanvas: {fileID: 709836598064099544}
   gnomeFog1: {fileID: 48430761}
@@ -25067,7 +25067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 02
+  currentDay: 01
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -25087,7 +25087,6 @@ MonoBehaviour:
   dialoguePanelOtherRaceText: {fileID: 0}
   dialoguePanelOtherDialogueText: {fileID: 0}
   detectivePanel: {fileID: 0}
-  bAndWShader: {fileID: 0}
   postPro: {fileID: 1482957538}
   postPro_Profile: {fileID: 0}
   areYouSurePanel: {fileID: 0}
@@ -30339,6 +30338,10 @@ PrefabInstance:
       propertyPath: savingSymbol
       value: 
       objectReference: {fileID: 510574166}
+    - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
+      propertyPath: samuraiPagaMal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 120182492314628035, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: m_RootOrder
       value: 12

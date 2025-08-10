@@ -138,7 +138,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject dialoguePanelOtherRaceText;
     [SerializeField] public GameObject dialoguePanelOtherDialogueText;
     [SerializeField] public GameObject detectivePanel;
-    [SerializeField] public GameObject bAndWShader;
     [SerializeField] public Volume postPro;
     [SerializeField] public VolumeProfile postPro_Profile;
     [SerializeField] public GameObject areYouSurePanel;
@@ -858,7 +857,7 @@ public class DialogueManager : MonoBehaviour
     public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, 
                                    GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText, 
                                    GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
-                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject bAndWPanel, GameObject gnomeCanvas, GameObject gnomiebla1, GameObject gnomiebla2, GameObject trophyCanvas, 
+                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, Volume pPro, GameObject gnomeCanvas, GameObject gnomiebla1, GameObject gnomiebla2, GameObject trophyCanvas, 
                                    GameObject regBook, GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
                                    GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject zoomPricesObject, GameObject zoomRegulationsObject, GameObject zoomCouponObject, 
                                    GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
@@ -881,7 +880,7 @@ public class DialogueManager : MonoBehaviour
         detectivePanel = susPanel;
         areYouSurePanel = secPanel;
         areYouSurePanel = secPanel;
-        bAndWShader = bAndWPanel;
+        postPro = pPro;
 
         gnomeMinigameCanvas = gnomeCanvas;
         gnomeFog1 = gnomiebla1;

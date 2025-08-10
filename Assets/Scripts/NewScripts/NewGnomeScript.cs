@@ -28,19 +28,13 @@ public class NewGnomeScript : MonoBehaviour
         Data.instance.numGnomosFinded++;
         DialogueManager.Instance.theGnomeIsFree = false;
 
-        if (Data.instance.numGnomosFinded == 1)
-            Destroy(gameObject);
-            
-
-        else if (Data.instance.numGnomosFinded == 2)
-            Destroy(gameObject);
-
-        else if (Data.instance.numGnomosFinded == 3)
+        if (Data.instance.numGnomosFinded == 3)
         {
             Data.instance.giftEnano = true;
-            canvas.GetComponent<UIManager>().TrophyAchieved("Enano");
-            Destroy(gameObject);
+            canvas.GetComponent<UIManager>().TrophyAchieved("Enano");            
         }
+
+        Destroy(gameObject);
     }
 
     public void GnomeShowing()
@@ -61,18 +55,20 @@ public class NewGnomeScript : MonoBehaviour
 
     public void GnomeFleeing()
     {
-        if (Data.instance.numGnomosFinded == 0)
-            animator.SetBool("oneFleeing", true);
-
-        else if (Data.instance.numGnomosFinded == 1)
-            animator.SetBool("threeFleeing", true);
-
-        else if (Data.instance.numGnomosFinded == 2)
+        if (DialogueManager.Instance.theGnomeIsFree)
         {
-            animator.SetBool("fourFleeing", true);
-            Data.instance.giftEnano = true;
-            canvas.GetComponent<UIManager>().TrophyAchieved("Enano");
-        }
+            if (DialogueManager.Instance.currentDay == "02")
+                animator.SetBool("oneFleeing", true);
+
+            else if (DialogueManager.Instance.currentDay == "04")
+                animator.SetBool("threeFleeing", true);
+
+            else if (DialogueManager.Instance.currentDay == "06")
+            {
+                DialogueManager.Instance.clientManager.GetComponent<ClientManager>().TutorialZoomIns(DialogueManager.Instance.zoomTargetCoupon);
+                animator.SetBool("fourFleeing", true);
+            }
+        }        
     }
 
     public void CallingGoingHome()

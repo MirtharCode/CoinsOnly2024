@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,7 +25,8 @@ public class SceneReferences : MonoBehaviour
     public GameObject dialoguePanelOtherDaysDialogueText;
     public GameObject sospechosoPanel;
     public GameObject seguroPanel;
-    public GameObject bAndWShader;
+    public Volume postPro;
+
 
     public GameObject gnomeCanvas;
     public GameObject trophyCanvas;
@@ -61,7 +63,7 @@ public class SceneReferences : MonoBehaviour
             DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject,
                                                         dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText,
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
-                                                        sospechosoPanel, seguroPanel, bAndWShader, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
+                                                        sospechosoPanel, seguroPanel, postPro, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
         }
     }
