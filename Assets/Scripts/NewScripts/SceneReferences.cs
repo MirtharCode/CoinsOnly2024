@@ -65,6 +65,9 @@ public class SceneReferences : MonoBehaviour
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
                                                         sospechosoPanel, seguroPanel, postPro, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
+
+            DialogueManager.Instance.postPro_Profile = postPro.profile;
+            DialogueManager.Instance.LaVoluntad(50);
         }
     }
 }

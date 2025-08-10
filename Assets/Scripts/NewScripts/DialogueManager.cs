@@ -243,7 +243,6 @@ public class DialogueManager : MonoBehaviour
 
             // Actualiza el texto
             lePropinasText.text = propinasNumber.ToString();
-            lastSceneWithDialogues = "";
         }
 
         else

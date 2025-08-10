@@ -90,7 +90,6 @@ public class ClientManager : MonoBehaviour
             speakerTextBox = DialogueManager.Instance.dialoguePanelOtherNameText.GetComponent<TextMeshProUGUI>();
             StartMusicSetup();
             Invoke(nameof(StartNextClient), timer);
-            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
 
 
             if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
@@ -122,7 +121,6 @@ public class ClientManager : MonoBehaviour
             DialogueManager.Instance.dialoguePanelOther.gameObject.SetActive(false);
             StartMusicSetup();
             StartNextClient();
-            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
             DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
             DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().fontSize = 220;
         }
@@ -192,7 +190,7 @@ public class ClientManager : MonoBehaviour
         {
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
-            DialogueManager.Instance.lastSceneWithDialogues = "";
+            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
 
             if (!DialogueManager.Instance.theGnomeIsFree)
                 GoingHome(DialogueManager.Instance.currentDay);
@@ -402,6 +400,8 @@ public class ClientManager : MonoBehaviour
 
     public void GoingToMinigame(string sceneName, string day)
     {
+        DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
+
         if (sceneName == "Denjirenji")
             SceneManager.LoadScene(sceneName + day);
 
