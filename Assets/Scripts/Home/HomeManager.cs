@@ -204,19 +204,7 @@ public class HomeManager : MonoBehaviour
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
 
-            //else if (Data.instance.day03Checked && !Data.instance.giftElidora)
-            //{
-            //    data.GetComponent<Data>().sePueTocar = false;
-            //    doorSound.PlayOneShot(openDoorSound);
-            //    GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-            //    clon.GetComponent<Image>().sprite = evilWizardElidora;
-            //    clon.AddComponent<HEW_Elidora>();
-            //    miniClientImage = miniEvilWizardElidora;
-            //    currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-            //    dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
-            //}
-
-            else if (Data.instance.day05Checked && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
+            else if (Data.instance.day07Checked && Data.instance.detectivePoints == 0 && !Data.instance.giftMano)
             {
                 data.GetComponent<Data>().sePueTocar = false;
                 doorSound.PlayOneShot(openDoorSound);

@@ -31,7 +31,6 @@ public class TabletMover : MonoBehaviour
             {
                 if (hit.collider.transform == tabletMover.transform)
                 {
-                    Debug.Log("Click detectado en el collider hijo");
                     isDragging = true;
                     lastMouseY = Input.mousePosition.y;
                 }
@@ -99,7 +98,6 @@ public class TabletMover : MonoBehaviour
 
         // Mover hacia arriba
         StopAllCoroutines();
-        Debug.Log("Sube :(");
         //StartCoroutine(MoverTabletSuavemente(initialPosition));
         StartCoroutine(MoverTabletSuavemente(initialPosition + Vector3.up * 3.5f));
     }

@@ -178,7 +178,7 @@ public class ClientManager : MonoBehaviour
         AltDialogues(DialogueManager.Instance.currentDay);
         DialogueManager.Instance.LaVoluntad(0);
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
-        DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
+        DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;        
 
         //if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
         //{
@@ -205,22 +205,21 @@ public class ClientManager : MonoBehaviour
                 }
                 DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(diaActual - 2).GetComponent<NewGnomeScript>().GnomeFleeing();
             }
-
-
             //SceneManager.LoadScene("FM");
             return;
         }
 
-
         currentDialogueClient = DialogueManager.Instance.dailyCustomers[0];
         clientDialogueLineIndex = 0;
 
+        if (currentDialogueClient.name == "Detective")
+        {
+            if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
+                StartCoroutine(nameof(DialogueManager.Instance.ChangeSaturation));
+        }            
+
         CharacterShowUp(DialogueManager.Instance.clientPrefab);
         ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
-
-        if (currentDialogueClient.name == "Detective")
-            StartCoroutine(nameof(DialogueManager.Instance.ChangeSaturation));
-
 
         showingDialogue = true;
         MostrarDialogoActual();
@@ -436,11 +435,13 @@ public class ClientManager : MonoBehaviour
             if (line.extra == "collectable")
                 TrophyAchieved(currentDialogueClient.name);
 
-            if (line.type == "gnome")
-            {
-                DialogueManager.Instance.theGnomeIsFree = true;
-                GnomeOut(DialogueManager.Instance.currentDay);
-            }
+            
+                // CÓDIGO GNOMO
+            //if (line.type == "gnome")
+            //{
+            //    DialogueManager.Instance.theGnomeIsFree = true;
+            //    GnomeOut(DialogueManager.Instance.currentDay);
+            //}
 
             clientDialogueLineIndex++;
         }
@@ -543,12 +544,6 @@ public class ClientManager : MonoBehaviour
             if (currentClient != null)
             {
                 currentClient.GetComponent<BoxCollider2D>().enabled = false;
-
-                //if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "gnome")
-                //{
-                //    DialogueManager.Instance.theGnomeIsFree = true;
-                //    GnomeOut(DialogueManager.Instance.currentDay);
-                //}
 
             }
 
@@ -1132,7 +1127,6 @@ public class ClientManager : MonoBehaviour
 
             case "04":
                 DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(1).gameObject.SetActive(true);
-                DialogueManager.Instance.gnomeMinigameCanvas.transform.GetChild(1).GetComponent<Animator>().SetBool("threeAppeared", true);
                 break;
 
             case "06":

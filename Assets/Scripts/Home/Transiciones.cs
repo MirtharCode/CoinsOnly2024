@@ -74,7 +74,11 @@ public class Transiciones : MonoBehaviour
         }
 
         else
+        {
+            DialogueManager.Instance.BackToTheDefaultSaturation();
             SceneManager.LoadScene("Day");
+        }
+            
     }
 
     public void ShowGifts()

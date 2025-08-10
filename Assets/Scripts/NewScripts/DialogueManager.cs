@@ -929,6 +929,8 @@ public class DialogueManager : MonoBehaviour
         float endValue = -100f;
         float duration = 1.5f;
 
+        postPro.priority = 5;
+
         if (postPro_Profile.TryGet(out ColorAdjustments color))
         {
             float elapsed = 0f;
