@@ -26,6 +26,7 @@ public class SceneReferences : MonoBehaviour
     public GameObject sospechosoPanel;
     public GameObject seguroPanel;
     public Volume postPro;
+    public VolumeProfile postPro_Profile;
 
 
     public GameObject gnomeCanvas;
@@ -59,15 +60,15 @@ public class SceneReferences : MonoBehaviour
     {
         // Puedes hacer comprobaciones aquí si quieres
         if (DialogueManager.Instance != null)
-        {
+        {            
             DialogueManager.Instance.SetSceneReferences(mC, cM, phoneObject, complainObject,
                                                         dialoguePanelFirstDay, dialoguePanelFirstDayCollider, dialoguePanelFirstDayNameText, dialoguePanelFirstDayRaceText, dialoguePanelFirstDayDialogueText,
                                                         dialoguePanelOtherDays, dialoguePanelOtherDaysCollider, dialoguePanelOtherDaysNameText, dialoguePanelOtherDaysRaceText, dialoguePanelOtherDaysDialogueText, racePanel,
-                                                        sospechosoPanel, seguroPanel, postPro, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
+                                                        sospechosoPanel, seguroPanel, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
 
-            DialogueManager.Instance.postPro_Profile = postPro.profile;
             DialogueManager.Instance.LaVoluntad(50);
+            Invoke(nameof(DialogueManager.Instance.BackToTheDefaultSaturation), 1);
         }
     }
 }

@@ -830,7 +830,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181313014
 GameObject:
@@ -899,7 +899,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &192384791
 MonoBehaviour:
@@ -2475,115 +2475,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976899125}
   m_CullTransparentMesh: 1
---- !u!1 &992442702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 992442704}
-  - component: {fileID: 992442703}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &992442703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992442702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDay: 
-  lastSceneWithDialogues: 
-  csvImporter: {fileID: 0}
-  mainCam: {fileID: 0}
-  clientManager: {fileID: 0}
-  clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
-  dailyCustomers: []
-  chosenChecks: []
-  conversationOn: 0
-  dialoguePanelFirst: {fileID: 0}
-  dialoguePanelFirstCollider: {fileID: 0}
-  dialoguePanelFirstNameText: {fileID: 0}
-  dialoguePanelFirstRaceText: {fileID: 0}
-  dialoguePanelFirstDialogueText: {fileID: 0}
-  dialoguePanelOther: {fileID: 0}
-  dialoguePanelOtherCollider: {fileID: 0}
-  dialoguePanelOtherNameText: {fileID: 0}
-  dialoguePanelOtherRaceText: {fileID: 0}
-  dialoguePanelOtherDialogueText: {fileID: 0}
-  detectivePanel: {fileID: 0}
-  bAndWShader: {fileID: 0}
-  areYouSurePanel: {fileID: 0}
-  racePanel: {fileID: 0}
-  traductorText: {fileID: 0}
-  NombreText: {fileID: 0}
-  uITrophies: {fileID: 0}
-  gnomeMinigameCanvas: {fileID: 0}
-  theGnomeIsFree: 0
-  allProducts:
-    categories: []
-  regulationsAdded: 0
-  currentRegulationsNumber: 0
-  currentRegulations: []
-  currentRegulationsBook: {fileID: 0}
-  regulationsData: []
-  razasNormas: []
-  razaSeleccionada: 0
-  textoRaza: {fileID: 0}
-  panelMagos: {fileID: 0}
-  panelHibridos: {fileID: 0}
-  panelElementales: {fileID: 0}
-  panelLimbasticos: {fileID: 0}
-  panelTecnopedos: {fileID: 0}
-  leDinero: {fileID: 0}
-  leDineroText: {fileID: 0}
-  leDineroSymbol: {fileID: 0}
-  leCajaRegistradora: {fileID: 0}
-  buttonCobrar: {fileID: 0}
-  buttonNoCobrar: {fileID: 0}
-  centralProduct: {fileID: 0}
-  rightProduct: {fileID: 0}
-  leftProduct: {fileID: 0}
-  tutorialZoomIn: 0
-  zoomTargetPrices: {fileID: 0}
-  zoomTargetRegulations: {fileID: 0}
-  zoomTargetCoupon: {fileID: 0}
-  couponPlace: {fileID: 0}
-  couponInfoContainer: {fileID: 0}
-  lesPropinas: {fileID: 0}
-  lePropinasText: {fileID: 0}
-  propinasNumber: 0
-  puntosElidora: 0
-  phone: {fileID: 0}
-  jefePanel: {fileID: 0}
-  textoJefe: {fileID: 0}
---- !u!4 &992442704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992442702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 620.82684, y: 527.5037, z: -200.58093}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053008688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,7 +3191,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160935151 stripped
 GameObject:
@@ -3360,7 +3251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221711219
 GameObject:
@@ -3415,7 +3306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319697657
 GameObject:
@@ -4704,6 +4595,119 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696759322}
   m_CullTransparentMesh: 1
+--- !u!1 &1722981639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722981641}
+  - component: {fileID: 1722981640}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1722981640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722981639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDay: 01
+  lastSceneWithDialogues: 
+  csvImporter: {fileID: 0}
+  mainCam: {fileID: 0}
+  clientManager: {fileID: 0}
+  clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
+  dailyCustomers: []
+  chosenChecks: []
+  conversationOn: 0
+  dialoguePanelFirst: {fileID: 0}
+  dialoguePanelFirstCollider: {fileID: 0}
+  dialoguePanelFirstNameText: {fileID: 0}
+  dialoguePanelFirstRaceText: {fileID: 0}
+  dialoguePanelFirstDialogueText: {fileID: 0}
+  dialoguePanelOther: {fileID: 0}
+  dialoguePanelOtherCollider: {fileID: 0}
+  dialoguePanelOtherNameText: {fileID: 0}
+  dialoguePanelOtherRaceText: {fileID: 0}
+  dialoguePanelOtherDialogueText: {fileID: 0}
+  detectivePanel: {fileID: 0}
+  postPro: {fileID: 2024517643}
+  postPro_Profile: {fileID: 0}
+  areYouSurePanel: {fileID: 0}
+  racePanel: {fileID: 0}
+  traductorText: {fileID: 0}
+  NombreText: {fileID: 0}
+  uITrophies: {fileID: 0}
+  gnomeMinigameCanvas: {fileID: 0}
+  theGnomeIsFree: 0
+  gnomeFog1: {fileID: 0}
+  gnomeFog2: {fileID: 0}
+  allProducts:
+    categories: []
+  regulationsAdded: 0
+  currentRegulationsNumber: 0
+  currentRegulations: []
+  currentRegulationsBook: {fileID: 0}
+  regulationsData: []
+  razasNormas: []
+  razaSeleccionada: 0
+  textoRaza: {fileID: 0}
+  panelMagos: {fileID: 0}
+  panelHibridos: {fileID: 0}
+  panelElementales: {fileID: 0}
+  panelLimbasticos: {fileID: 0}
+  panelTecnopedos: {fileID: 0}
+  leDinero: {fileID: 0}
+  leDineroText: {fileID: 0}
+  leDineroSymbol: {fileID: 0}
+  leCajaRegistradora: {fileID: 0}
+  buttonCobrar: {fileID: 0}
+  buttonNoCobrar: {fileID: 0}
+  centralProduct: {fileID: 0}
+  rightProduct: {fileID: 0}
+  leftProduct: {fileID: 0}
+  tutorialZoomIn: 0
+  zoomTargetPrices: {fileID: 0}
+  zoomTargetRegulations: {fileID: 0}
+  zoomTargetCoupon: {fileID: 0}
+  couponPlace: {fileID: 0}
+  couponInfoContainer: {fileID: 0}
+  lesPropinas: {fileID: 0}
+  lePropinasText: {fileID: 0}
+  propinasNumber: 0
+  puntosElidora: 0
+  phone: {fileID: 0}
+  jefePanel: {fileID: 0}
+  textoJefe: {fileID: 0}
+--- !u!4 &1722981641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722981639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 620.82684, y: 527.5037, z: -200.58093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2024517644}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729950970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5608,7 +5612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948165096
 GameObject:
@@ -6006,7 +6010,7 @@ RectTransform:
   m_Children:
   - {fileID: 246027173}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6148,6 +6152,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007882844}
   m_CullTransparentMesh: 1
+--- !u!1 &2024517642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024517644}
+  - component: {fileID: 2024517643}
+  m_Layer: 0
+  m_Name: Postproces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2024517643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024517642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 5
+  blendDistance: 0
+  weight: 0.97
+  sharedProfile: {fileID: 11400000, guid: 128cc18cc028b7041977d0779d064068, type: 2}
+--- !u!4 &2024517644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024517642}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -616.9073, y: -564.5753, z: 301.95892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1722981641}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032526612
 GameObject:
   m_ObjectHideFlags: 0

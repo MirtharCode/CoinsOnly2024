@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuInicial.unity
     guid: fe3fa36c44529494d85f4ecc0c338d50
+  - enabled: 1
+    path: Assets/Scenes/NewDays/Day.unity
+    guid: d9f4d63c2f66c0347a04af7822bce24a
   - enabled: 0
     path: Assets/Scenes/Creditos.unity
     guid: 914e01141cb6d66478749137f076ffde
@@ -71,9 +74,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewDays/InitialCinematic.unity
     guid: 4d3ba906b1f50a143b27819affb9de1d
-  - enabled: 1
-    path: Assets/Scenes/NewDays/Day.unity
-    guid: d9f4d63c2f66c0347a04af7822bce24a
   - enabled: 1
     path: Assets/Scenes/NewDays/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d

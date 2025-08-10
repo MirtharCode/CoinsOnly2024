@@ -104,7 +104,7 @@ public class ClientManager : MonoBehaviour
                     ShowCouponInfo("toother");
                     DialogueManager.Instance.gnomeFog2.SetActive(true);
                 }
-                    
+
                 else if (DialogueManager.Instance.currentDay == "05")
                     ShowCouponInfo("geomery");
                 else if (DialogueManager.Instance.currentDay == "06")
@@ -190,7 +190,7 @@ public class ClientManager : MonoBehaviour
         {
             dialogueReady = false;
             Debug.Log("Todos los clientes han sido atendidos.");
-            DialogueManager.Instance.lastSceneWithDialogues = DialogueManager.Instance.currentDay;
+            DialogueManager.Instance.lastSceneWithDialogues = "";
 
             if (!DialogueManager.Instance.theGnomeIsFree)
                 GoingHome(DialogueManager.Instance.currentDay);
@@ -217,14 +217,9 @@ public class ClientManager : MonoBehaviour
 
         CharacterShowUp(DialogueManager.Instance.clientPrefab);
         ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
-        //ChangingMiniSprite(currentDialogueClient.name);   YA NO ES NECESARIO
 
         if (currentDialogueClient.name == "Detective")
-        {
-            if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments Color)){
-                StartCoroutine(ChangeSaturation());
-            }
-        }
+            StartCoroutine(nameof(DialogueManager.Instance.ChangeSaturation));
 
 
         showingDialogue = true;
@@ -236,7 +231,7 @@ public class ClientManager : MonoBehaviour
     {
         float startValue = 15f;
         float endValue = -100f;
-        float duration = 1.5f; 
+        float duration = 1.5f;
 
         if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
         {
@@ -249,7 +244,7 @@ public class ClientManager : MonoBehaviour
                 elapsed += Time.deltaTime;
                 float t = elapsed / duration;
                 color.saturation.value = Mathf.Lerp(initial, endValue, t);
-                yield return null; 
+                yield return null;
             }
         }
     }
@@ -359,18 +354,18 @@ public class ClientManager : MonoBehaviour
     {
         if (dialogueReady && showingDialogue)
         {
-            if(currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra.Contains("camera"))
+            if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra.Contains("camera"))
             {
-                if(currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraPrices")
+                if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraPrices")
                     TutorialZoomIns(DialogueManager.Instance.zoomTargetPrices);
-                
+
                 else if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraRegulations")
                     TutorialZoomIns(DialogueManager.Instance.zoomTargetRegulations);
-                
+
                 else if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].extra == "cameraCoupons")
                     TutorialZoomIns(DialogueManager.Instance.zoomTargetCoupon);
             }
-            
+
             if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "mgIN")
             {
                 meVoyAMinijuego = true;
@@ -440,6 +435,12 @@ public class ClientManager : MonoBehaviour
 
             if (line.extra == "collectable")
                 TrophyAchieved(currentDialogueClient.name);
+
+            if (line.type == "gnome")
+            {
+                DialogueManager.Instance.theGnomeIsFree = true;
+                GnomeOut(DialogueManager.Instance.currentDay);
+            }
 
             clientDialogueLineIndex++;
         }
@@ -543,8 +544,12 @@ public class ClientManager : MonoBehaviour
             {
                 currentClient.GetComponent<BoxCollider2D>().enabled = false;
 
-                if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "gnome")
-                    GnomeOut(DialogueManager.Instance.currentDay);
+                //if (currentDialogueClient.dialogueLines[clientDialogueLineIndex - 1].type == "gnome")
+                //{
+                //    DialogueManager.Instance.theGnomeIsFree = true;
+                //    GnomeOut(DialogueManager.Instance.currentDay);
+                //}
+
             }
 
             cobrasteBien = false;
@@ -776,6 +781,8 @@ public class ClientManager : MonoBehaviour
 
     public void GoingHome(string sceneName)
     {
+        DialogueManager.Instance.propinasNumber = 0; // Seteo en 0 el número de propinas para el día siguiente
+
         int diaActual;
 
         if (!int.TryParse(sceneName, out diaActual))

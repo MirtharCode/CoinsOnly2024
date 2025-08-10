@@ -14,7 +14,6 @@ public class NewGnomeScript : MonoBehaviour
     {
         canvas = GameObject.FindGameObjectWithTag("UI");
         animator = GetComponent<Animator>();
-        DialogueManager.Instance.theGnomeIsFree = true;
     }
 
     // Update is called once per frame
@@ -73,6 +72,7 @@ public class NewGnomeScript : MonoBehaviour
 
     public void CallingGoingHome()
     {
+        DialogueManager.Instance.theGnomeIsFree = false;
         DialogueManager.Instance.clientManager.GetComponent<ClientManager>().GoingHome(DialogueManager.Instance.currentDay);
     }
 }

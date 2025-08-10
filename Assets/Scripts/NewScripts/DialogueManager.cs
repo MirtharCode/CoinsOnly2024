@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -229,6 +230,8 @@ public class DialogueManager : MonoBehaviour
         if (currentDay == "")
             currentDay = "01";
 
+        postPro_Profile = postPro.profile;        
+
         if (lastSceneWithDialogues == currentDay)
         {
             Debug.Log("He vuelto del minijuego y actualizo las propinas");
@@ -243,16 +246,6 @@ public class DialogueManager : MonoBehaviour
 
             // Actualiza el texto
             lePropinasText.text = propinasNumber.ToString();
-        }
-
-        else
-        {
-            if (!SceneManager.GetActiveScene().name.Contains("Menu") && !SceneManager.GetActiveScene().name.Contains("Cinematic"))
-            {
-                postPro_Profile = postPro.profile;
-                Debug.Log("Acabo de empezar el juego");
-                LaVoluntad(50);
-            }            
         }
 
 
@@ -835,10 +828,10 @@ public class DialogueManager : MonoBehaviour
     public void ShowText()
     {
         conversationOn = true;
-        
+
         if (currentDay == "01")
             dialoguePanelFirst.gameObject.SetActive(true);
-        
+
         else
             dialoguePanelOther.gameObject.SetActive(true);
     }
@@ -853,12 +846,12 @@ public class DialogueManager : MonoBehaviour
         //    dialoguePanelOther.gameObject.SetActive(false);
     }
 
-    public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj, 
-                                   GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText, 
+    public void SetSceneReferences(GameObject mC, GameObject cM, GameObject phoneObj, GameObject complainObj,
+                                   GameObject dPanelFirst, GameObject dPanelFirstCollider, GameObject dPanelFirstNameText, GameObject dPanelFirstRaceText, GameObject dPanelFirstDialogueText,
                                    GameObject dPanelOther, GameObject dPanelOtherCollider, GameObject dPanelOtherNameText, GameObject dPanelOtherRaceText, GameObject dPanelOtherDialogueText,
-                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, Volume pPro, GameObject gnomeCanvas, GameObject gnomiebla1, GameObject gnomiebla2, GameObject trophyCanvas, 
+                                   GameObject _racePanel, GameObject susPanel, GameObject secPanel, GameObject gnomeCanvas, GameObject gnomiebla1, GameObject gnomiebla2, GameObject trophyCanvas,
                                    GameObject regBook, GameObject moneySack, TMP_Text moneySackText, GameObject moneySackSymbol, GameObject cachinkThing, GameObject chargeButton, GameObject byeButton,
-                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject zoomPricesObject, GameObject zoomRegulationsObject, GameObject zoomCouponObject, 
+                                   GameObject cenProd, GameObject derProd, GameObject izqProd, GameObject zoomPricesObject, GameObject zoomRegulationsObject, GameObject zoomCouponObject,
                                    GameObject coupPlace, GameObject coupInfoContainer, GameObject tipJar, TMP_Text tipJarText)
     {
         mainCam = mC;
@@ -879,7 +872,6 @@ public class DialogueManager : MonoBehaviour
         detectivePanel = susPanel;
         areYouSurePanel = secPanel;
         areYouSurePanel = secPanel;
-        postPro = pPro;
 
         gnomeMinigameCanvas = gnomeCanvas;
         gnomeFog1 = gnomiebla1;
@@ -897,7 +889,7 @@ public class DialogueManager : MonoBehaviour
         centralProduct = cenProd;
         rightProduct = derProd;
         leftProduct = izqProd;
-        
+
         zoomTargetPrices = zoomPricesObject;
         zoomTargetRegulations = zoomRegulationsObject;
         zoomTargetCoupon = zoomCouponObject;
@@ -929,5 +921,33 @@ public class DialogueManager : MonoBehaviour
 
         // Actualiza el texto
         lePropinasText.text = DialogueManager.Instance.propinasNumber.ToString();
+    }
+
+    public IEnumerator ChangeSaturation()
+    {
+        float startValue = 15f;
+        float endValue = -100f;
+        float duration = 1.5f;
+
+        if (postPro_Profile.TryGet(out ColorAdjustments color))
+        {
+            float elapsed = 0f;
+            float initial = startValue;
+            color.saturation.value = initial;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / duration;
+                color.saturation.value = Mathf.Lerp(initial, endValue, t);
+                yield return null;
+            }
+        }
+    }
+
+    public void BackToTheDefaultSaturation()
+    {
+        if (postPro_Profile.TryGet(out ColorAdjustments color))
+            color.saturation.value = 15f;
     }
 }
