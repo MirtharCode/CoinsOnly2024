@@ -41740,7 +41740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1adcbdb487655438fedfea0ac6cc96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1374322872}
   clickSounds:
   - {fileID: 8300000, guid: 53fd3cf2323afb04dad5a8bd7d6a0a6f, type: 3}
   - {fileID: 8300000, guid: 5731702c6ef73584fb0f7189839032d5, type: 3}
