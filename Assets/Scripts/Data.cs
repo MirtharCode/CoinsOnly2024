@@ -290,34 +290,305 @@ public class Data : MonoBehaviour
 
     public void CargarDatos()
     {
-        string rutaArchivo = currentSlot switch
+        if (currentSlot == 1)
         {
-            1 => archivoDeGuardado1,
-            2 => archivoDeGuardado2,
-            3 => archivoDeGuardado3,
-            _ => null
-        };
+            if (File.Exists(archivoDeGuardado1))
+            {
+                string contenido = File.ReadAllText(archivoDeGuardado1);
+                datosJuego = JsonUtility.FromJson<SavedData>(contenido);
 
-        if (string.IsNullOrEmpty(rutaArchivo))
-        {
-            Debug.LogError("Slot inválido.");
-            return;
+                spaSpain = datosJuego.savedspaSpain;
+                engAmerican = datosJuego.savedengAmerican;
+                spaColombian = datosJuego.savedspaColombian;
+
+                numEvilWizard = datosJuego.savednumEvilWizard;
+
+                numHybrid = datosJuego.savednumHybrid;
+
+                numLimbastic = datosJuego.savednumLimbastic;
+
+                numElemental = datosJuego.savednumElemental;
+
+                numElectroped = datosJuego.SavednumElectroped;
+
+                samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
+                borrachoTriste = datosJuego.savedborrachoTriste;
+                samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
+                samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
+                vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
+
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
+                videoActivo = datosJuego.savedvideoActivo;
+                videoVisto = datosJuego.savedvideoVisto;
+                finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
+                finalMaloConseguido = datosJuego.savedfinalMaloConseguido;
+                finalBuenoConseguido = datosJuego.savedfinalBuenoConseguido;
+                finalMuyBuenoConseguido = datosJuego.savedfinalMuyBuenoConseguido;
+                finalSecretoConseguido = datosJuego.savedfinalSecretoConseguido;
+                tipsPoints = datosJuego.savedtipsPoints;
+                detectivePoints = datosJuego.saveddetectivePoints;
+
+                fase1Check = datosJuego.savedfase1Check;
+                fase2Check = datosJuego.savedfase2Check;
+                fase3Check = datosJuego.savedfase3Check;
+                fase4Check = datosJuego.savedfase4Check;
+                fase5Check = datosJuego.savedfase5Check;
+                fase6Check = datosJuego.savedfase6Check;
+                fase7Check = datosJuego.savedfase7Check;
+                fase8Check = datosJuego.savedfase8Check;
+                fase9Check = datosJuego.savedfase9Check;
+
+                sePueTocar = datosJuego.savedsePueTocar;
+                yaSeFueCliente = datosJuego.savedyaSeFueCliente;
+                tipsBetweenDays = datosJuego.savedtipsBetweenDays;
+
+                vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
+                vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
+                vecesCobradaMara = datosJuego.savedvecesCobradaMara;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
+                noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
+                vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
+                vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
+                numGnomosFinded = datosJuego.savednumGnomosFinded;
+                nerviosusPagaLoQueDebe = datosJuego.savednerviosusPagaLoQueDebe;
+                nerviosusTeDebePasta = datosJuego.savednerviosusTeDebePasta;
+                slimeFostiados = datosJuego.savedslimeFostiados;
+                slimeFail = datosJuego.savedslimeFail;
+                elidoraAcariciada = datosJuego.savedelidoraAcariciada;
+
+                giftGeeraard = datosJuego.savedgiftGeeraard;
+                giftEnano = datosJuego.savedgiftEnano;
+                giftMano = datosJuego.savedgiftMano;
+                giftElidora = datosJuego.savedgiftElidora;
+                giftElvog = datosJuego.savedgiftElvog;
+                giftMara = datosJuego.savedgiftMara;
+                giftPetra = datosJuego.savedgiftPetra;
+                giftAntonio = datosJuego.savedgiftAntonio;
+                giftGiovanni = datosJuego.savedgiftGiovanni;
+                giftCululu = datosJuego.savedgiftCululu;
+                giftSergio = datosJuego.savedgiftSergio;
+                giftTapicio = datosJuego.savedgiftTapicio;
+                giftHandy = datosJuego.savedgiftHandy;
+                giftDenjirenji = datosJuego.savedgiftDenjirenji;
+                giftRaven = datosJuego.savedgiftRaven;
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
+
+            }
+
+            else
+            {
+                Debug.Log("El archivo no existe");
+            }
         }
 
-        if (!File.Exists(rutaArchivo))
+        else if (currentSlot == 2)
         {
-            Debug.Log("El archivo no existe");
-            return;
+            if (File.Exists(archivoDeGuardado2))
+            {
+                string contenido = File.ReadAllText(archivoDeGuardado2);
+                datosJuego = JsonUtility.FromJson<SavedData>(contenido);
+
+                spaSpain = datosJuego.savedspaSpain;
+                engAmerican = datosJuego.savedengAmerican;
+                spaColombian = datosJuego.savedspaColombian;
+
+                numEvilWizard = datosJuego.savednumEvilWizard;
+
+                numHybrid = datosJuego.savednumHybrid;
+
+                numLimbastic = datosJuego.savednumLimbastic;
+
+                numElemental = datosJuego.savednumElemental;
+
+                numElectroped = datosJuego.SavednumElectroped;
+
+                samuraiPagaMal = datosJuego.savedsamuraiPagaMal;
+                borrachoTriste = datosJuego.savedborrachoTriste;
+                samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
+                samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
+                vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
+
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
+                videoActivo = datosJuego.savedvideoActivo;
+                videoVisto = datosJuego.savedvideoVisto;
+                finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
+                finalMaloConseguido = datosJuego.savedfinalMaloConseguido;
+                finalBuenoConseguido = datosJuego.savedfinalBuenoConseguido;
+                finalMuyBuenoConseguido = datosJuego.savedfinalMuyBuenoConseguido;
+                finalSecretoConseguido = datosJuego.savedfinalSecretoConseguido;
+                tipsPoints = datosJuego.savedtipsPoints;
+                detectivePoints = datosJuego.saveddetectivePoints;
+
+                fase1Check = datosJuego.savedfase1Check;
+                fase2Check = datosJuego.savedfase2Check;
+                fase3Check = datosJuego.savedfase3Check;
+                fase4Check = datosJuego.savedfase4Check;
+                fase5Check = datosJuego.savedfase5Check;
+                fase6Check = datosJuego.savedfase6Check;
+                fase7Check = datosJuego.savedfase7Check;
+                fase8Check = datosJuego.savedfase8Check;
+                fase9Check = datosJuego.savedfase9Check;
+
+                sePueTocar = datosJuego.savedsePueTocar;
+                yaSeFueCliente = datosJuego.savedyaSeFueCliente;
+                tipsBetweenDays = datosJuego.savedtipsBetweenDays;
+
+                vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
+                vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
+                vecesCobradaMara = datosJuego.savedvecesCobradaMara;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
+                noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
+                vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
+                vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
+                numGnomosFinded = datosJuego.savednumGnomosFinded;
+                nerviosusPagaLoQueDebe = datosJuego.savednerviosusPagaLoQueDebe;
+                nerviosusTeDebePasta = datosJuego.savednerviosusTeDebePasta;
+                slimeFostiados = datosJuego.savedslimeFostiados;
+                slimeFail = datosJuego.savedslimeFail;
+                elidoraAcariciada = datosJuego.savedelidoraAcariciada;
+
+                giftGeeraard = datosJuego.savedgiftGeeraard;
+                giftEnano = datosJuego.savedgiftEnano;
+                giftMano = datosJuego.savedgiftMano;
+                giftElidora = datosJuego.savedgiftElidora;
+                giftElvog = datosJuego.savedgiftElvog;
+                giftMara = datosJuego.savedgiftMara;
+                giftPetra = datosJuego.savedgiftPetra;
+                giftAntonio = datosJuego.savedgiftAntonio;
+                giftGiovanni = datosJuego.savedgiftGiovanni;
+                giftCululu = datosJuego.savedgiftCululu;
+                giftSergio = datosJuego.savedgiftSergio;
+                giftTapicio = datosJuego.savedgiftTapicio;
+                giftHandy = datosJuego.savedgiftHandy;
+                giftDenjirenji = datosJuego.savedgiftDenjirenji;
+                giftRaven = datosJuego.savedgiftRaven;
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
+            }
+
+            else
+            {
+                Debug.Log("El archivo no existe");
+            }
         }
 
-        string contenido = File.ReadAllText(rutaArchivo);
-        datosJuego = JsonUtility.FromJson<SavedData>(contenido);
-        CargarDatosDesde(datosJuego);
+        else if (currentSlot == 3)
+        {
+            if (File.Exists(archivoDeGuardado3))
+            {
+                string contenido = File.ReadAllText(archivoDeGuardado3);
+                datosJuego = JsonUtility.FromJson<SavedData>(contenido);
 
-        Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
-        Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
+                spaSpain = datosJuego.savedspaSpain;
+                engAmerican = datosJuego.savedengAmerican;
+                spaColombian = datosJuego.savedspaColombian;
+
+                numEvilWizard = datosJuego.savednumEvilWizard;
+
+                numHybrid = datosJuego.savednumHybrid;
+
+                numLimbastic = datosJuego.savednumLimbastic;
+
+                numElemental = datosJuego.savednumElemental;
+
+                numElectroped = datosJuego.SavednumElectroped;
+
+                samuraiAyudado1 = datosJuego.savedsamuraiAyudado1;
+                meExplotasteElCulo1 = datosJuego.savedmeExplotasteElCulo1;
+                samuraiAyudado2 = datosJuego.savedsamuraiAyudado2;
+                meExplotasteElCulo2 = datosJuego.savedmeExplotasteElCulo2;
+                vecesSamuraiAyudado = datosJuego.savedvecesSamuraiAyudado;
+
+                day00Checked = datosJuego.savedday0Check;
+                day01Checked = datosJuego.savedday1Check;
+                day02Checked = datosJuego.savedday2Check;
+                day03Checked = datosJuego.savedday3Check;
+                day04Checked = datosJuego.savedday4Check;
+                day05Checked = datosJuego.savedday5Check;
+                day06Checked = datosJuego.savedday6Check;
+                day07Checked = datosJuego.savedday7Check;
+                videoActivo = datosJuego.savedvideoActivo;
+                videoVisto = datosJuego.savedvideoVisto;
+                finalMuyMaloConseguido = datosJuego.savedfinalMuyMaloConseguido;
+                finalMaloConseguido = datosJuego.savedfinalMaloConseguido;
+                finalBuenoConseguido = datosJuego.savedfinalBuenoConseguido;
+                finalMuyBuenoConseguido = datosJuego.savedfinalMuyBuenoConseguido;
+                finalSecretoConseguido = datosJuego.savedfinalSecretoConseguido;
+                tipsPoints = datosJuego.savedtipsPoints;
+                detectivePoints = datosJuego.saveddetectivePoints;
+
+                fase1Check = datosJuego.savedfase1Check;
+                fase2Check = datosJuego.savedfase2Check;
+                fase3Check = datosJuego.savedfase3Check;
+                fase4Check = datosJuego.savedfase4Check;
+                fase5Check = datosJuego.savedfase5Check;
+                fase6Check = datosJuego.savedfase6Check;
+                fase7Check = datosJuego.savedfase7Check;
+                fase8Check = datosJuego.savedfase8Check;
+                fase9Check = datosJuego.savedfase9Check;
+
+                sePueTocar = datosJuego.savedsePueTocar;
+                yaSeFueCliente = datosJuego.savedyaSeFueCliente;
+                tipsBetweenDays = datosJuego.savedtipsBetweenDays;
+
+                vecesCobradoCululu = datosJuego.savedvecesCobradoCululu;
+                vecesCobradoGiovanni = datosJuego.savedvecesCobradoGiovanni;
+                vecesCobradaMara = datosJuego.savedvecesCobradaMara;
+                vecesCobradaTerry = datosJuego.savedvecesCobradaHandy;
+                noCobrarSergioCobrarGeeraardD4 = datosJuego.savednoCobrarSergioCobrarGeeraardD4;
+                vecesCobradoAntonio = datosJuego.savedvecesCobradoAntonio;
+                vecesCobradoRaven = datosJuego.savedvecesCobradoRaven;
+                numGnomosFinded = datosJuego.savednumGnomosFinded;
+                nerviosusPagaLoQueDebe = datosJuego.savednerviosusPagaLoQueDebe;
+                nerviosusTeDebePasta = datosJuego.savednerviosusTeDebePasta;
+                slimeFostiados = datosJuego.savedslimeFostiados;
+                slimeFail = datosJuego.savedslimeFail;
+                elidoraAcariciada = datosJuego.savedelidoraAcariciada;
+
+                giftGeeraard = datosJuego.savedgiftGeeraard;
+                giftEnano = datosJuego.savedgiftEnano;
+                giftMano = datosJuego.savedgiftMano;
+                giftElidora = datosJuego.savedgiftElidora;
+                giftElvog = datosJuego.savedgiftElvog;
+                giftMara = datosJuego.savedgiftMara;
+                giftPetra = datosJuego.savedgiftPetra;
+                giftAntonio = datosJuego.savedgiftAntonio;
+                giftGiovanni = datosJuego.savedgiftGiovanni;
+                giftCululu = datosJuego.savedgiftCululu;
+                giftSergio = datosJuego.savedgiftSergio;
+                giftTapicio = datosJuego.savedgiftTapicio;
+                giftHandy = datosJuego.savedgiftHandy;
+                giftDenjirenji = datosJuego.savedgiftDenjirenji;
+                giftRaven = datosJuego.savedgiftRaven;
+                Debug.Log("Última partida guardada el: " + datosJuego.fechaUltimoGuardado);
+                Debug.Log("Día alcanzado: " + datosJuego.ultimoDiaJugado);
+            }
+
+            else
+            {
+                Debug.Log("El archivo no existe");
+            }
+        }
     }
-
     private void CargarDatosDesde(SavedData datos)
     {
         var camposLocales = this.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
@@ -338,113 +609,303 @@ public class Data : MonoBehaviour
     {
         StartCoroutine(SavingSymbolCorrutine());
 
-        SavedData nuevosDatos = new SavedData()
+        if (currentSlot == 1)
         {
-            savedspaSpain = spaSpain,
-            savedengAmerican = engAmerican,
-            savedspaColombian = spaColombian,
+            SavedData nuevosDatos = new SavedData()
+            {
+                savedspaSpain = spaSpain,
+                savedengAmerican = engAmerican,
+                savedspaColombian = spaColombian,
 
-            savednumEvilWizard = numEvilWizard,
-            savednumHybrid = numHybrid,
-            savednumLimbastic = numLimbastic,
-            savednumElemental = numElemental,
-            SavednumElectroped = numElectroped,
+                savednumEvilWizard = numEvilWizard,
 
-            savedsamuraiPagaMal = samuraiPagaMal,
-            savedborrachoTriste = borrachoTriste,
-            savedsamuraiAyudado1 = samuraiAyudado1,
-            savedmeExplotasteElCulo1 = meExplotasteElCulo1,
-            savedsamuraiAyudado2 = samuraiAyudado2,
-            savedmeExplotasteElCulo2 = meExplotasteElCulo2,
-            savedvecesSamuraiAyudado = vecesSamuraiAyudado,
+                savednumHybrid = numHybrid,
 
-            savedday0Check = day00Checked,
-            savedday1Check = day01Checked,
-            savedday2Check = day02Checked,
-            savedday3Check = day03Checked,
-            savedday4Check = day04Checked,
-            savedday5Check = day05Checked,
-            savedday6Check = day06Checked,
-            savedday7Check = day07Checked,
+                savednumLimbastic = numLimbastic,
 
-            savedvideoActivo = videoActivo,
-            savedvideoVisto = videoVisto,
+                savednumElemental = numElemental,
 
-            savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
-            savedfinalMaloConseguido = finalMaloConseguido,
-            savedfinalBuenoConseguido = finalBuenoConseguido,
-            savedfinalMuyBuenoConseguido = finalMuyBuenoConseguido,
-            savedfinalSecretoConseguido = finalSecretoConseguido,
+                SavednumElectroped = numElectroped,
 
-            savedtipsPoints = tipsPoints,
-            saveddetectivePoints = detectivePoints,
+                savedsamuraiPagaMal = samuraiPagaMal,
+                savedborrachoTriste = borrachoTriste,
+                savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
+                savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
+                savedvecesSamuraiAyudado = vecesSamuraiAyudado,
 
-            savedfase1Check = fase1Check,
-            savedfase2Check = fase2Check,
-            savedfase3Check = fase3Check,
-            savedfase4Check = fase4Check,
-            savedfase5Check = fase5Check,
-            savedfase6Check = fase6Check,
-            savedfase7Check = fase7Check,
-            savedfase8Check = fase8Check,
-            savedfase9Check = fase9Check,
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
+                savedday6Check = day06Checked,
+                savedday7Check = day07Checked,
+                savedvideoActivo = videoActivo,
+                savedvideoVisto = videoVisto,
+                savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
+                savedfinalMaloConseguido = finalMaloConseguido,
+                savedfinalBuenoConseguido = finalBuenoConseguido,
+                savedfinalMuyBuenoConseguido = finalMuyBuenoConseguido,
+                savedfinalSecretoConseguido = finalSecretoConseguido,
+                savedtipsPoints = tipsPoints,
+                saveddetectivePoints = detectivePoints,
 
-            savedsePueTocar = sePueTocar,
-            savedyaSeFueCliente = yaSeFueCliente,
-            savedtipsBetweenDays = tipsBetweenDays,
+                savedfase1Check = fase1Check,
+                savedfase2Check = fase2Check,
+                savedfase3Check = fase3Check,
+                savedfase4Check = fase4Check,
+                savedfase5Check = fase5Check,
+                savedfase6Check = fase6Check,
+                savedfase7Check = fase7Check,
+                savedfase8Check = fase8Check,
+                savedfase9Check = fase9Check,
 
-            savedvecesCobradoCululu = vecesCobradoCululu,
-            savedvecesCobradoGiovanni = vecesCobradoGiovanni,
-            savedvecesCobradaMara = vecesCobradaMara,
-            savedvecesCobradaHandy = vecesCobradaTerry,
-            savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
-            savedvecesCobradoAntonio = vecesCobradoAntonio,
-            savedvecesCobradoRaven = vecesCobradoRaven,
-            savednumGnomosFinded = numGnomosFinded,
-            savednerviosusPagaLoQueDebe = nerviosusPagaLoQueDebe,
-            savednerviosusTeDebePasta = nerviosusTeDebePasta,
-            savedslimeFostiados = slimeFostiados,
-            savedslimeFail = slimeFail,
-            savedelidoraAcariciada = elidoraAcariciada,
+                savedsePueTocar = sePueTocar,
+                savedyaSeFueCliente = yaSeFueCliente,
+                savedtipsBetweenDays = tipsBetweenDays,
 
-            savedgiftGeeraard = giftGeeraard,
-            savedgiftEnano = giftEnano,
-            savedgiftMano = giftMano,
-            savedgiftElidora = giftElidora,
-            savedgiftElvog = giftElvog,
-            savedgiftMara = giftMara,
-            savedgiftPetra = giftPetra,
-            savedgiftAntonio = giftAntonio,
-            savedgiftGiovanni = giftGiovanni,
-            savedgiftCululu = giftCululu,
-            savedgiftSergio = giftSergio,
-            savedgiftTapicio = giftTapicio,
-            savedgiftHandy = giftHandy,
-            savedgiftDenjirenji = giftDenjirenji,
-            savedgiftRaven = giftRaven,
+                savedvecesCobradoCululu = vecesCobradoCululu,
+                savedvecesCobradoGiovanni = vecesCobradoGiovanni,
+                savedvecesCobradaMara = vecesCobradaMara,
+                savedvecesCobradaHandy = vecesCobradaTerry,
+                savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
+                savedvecesCobradoAntonio = vecesCobradoAntonio,
+                savedvecesCobradoRaven = vecesCobradoRaven,
+                savednumGnomosFinded = numGnomosFinded,
+                savednerviosusPagaLoQueDebe = nerviosusPagaLoQueDebe,
+                savednerviosusTeDebePasta = nerviosusTeDebePasta,
+                savedslimeFostiados = slimeFostiados,
+                savedslimeFail = slimeFail,
+                savedelidoraAcariciada = elidoraAcariciada,
 
-            fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
-            ultimoDiaJugado = CalcularUltimoDiaJugado(),
-        };
+                savedgiftGeeraard = giftGeeraard,
+                savedgiftEnano = giftEnano,
+                savedgiftMano = giftMano,
+                savedgiftElidora = giftElidora,
+                savedgiftElvog = giftElvog,
+                savedgiftMara = giftMara,
+                savedgiftPetra = giftPetra,
+                savedgiftAntonio = giftAntonio,
+                savedgiftGiovanni = giftGiovanni,
+                savedgiftCululu = giftCululu,
+                savedgiftSergio = giftSergio,
+                savedgiftTapicio = giftTapicio,
+                savedgiftHandy = giftHandy,
+                savedgiftDenjirenji = giftDenjirenji,
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
 
-        string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
+            };
 
-        string archivo = currentSlot switch
-        {
-            1 => archivoDeGuardado1,
-            2 => archivoDeGuardado2,
-            3 => archivoDeGuardado3,
-            _ => null
-        };
+            string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
 
-        if (!string.IsNullOrEmpty(archivo))
-        {
-            File.WriteAllText(archivo, cadenaJSON);
+            File.WriteAllText(archivoDeGuardado1, cadenaJSON);
+
             Debug.Log("Archivo Guardado");
+
         }
-        else
+
+        else if (currentSlot == 2)
         {
-            Debug.LogWarning("Slot inválido al guardar.");
+            SavedData nuevosDatos = new SavedData()
+            {
+                savedspaSpain = spaSpain,
+                savedengAmerican = engAmerican,
+                savedspaColombian = spaColombian,
+
+                savednumEvilWizard = numEvilWizard,
+
+                savednumHybrid = numHybrid,
+
+                savednumLimbastic = numLimbastic,
+
+                savednumElemental = numElemental,
+
+                SavednumElectroped = numElectroped,
+
+                savedsamuraiPagaMal = samuraiPagaMal,
+                savedborrachoTriste = borrachoTriste,
+                savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
+                savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
+                savedvecesSamuraiAyudado = vecesSamuraiAyudado,
+
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
+                savedday6Check = day06Checked,
+                savedday7Check = day07Checked,
+                savedvideoActivo = videoActivo,
+                savedvideoVisto = videoVisto,
+                savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
+                savedfinalMaloConseguido = finalMaloConseguido,
+                savedfinalBuenoConseguido = finalBuenoConseguido,
+                savedfinalMuyBuenoConseguido = finalMuyBuenoConseguido,
+                savedfinalSecretoConseguido = finalSecretoConseguido,
+                savedtipsPoints = tipsPoints,
+                saveddetectivePoints = detectivePoints,
+
+                savedfase1Check = fase1Check,
+                savedfase2Check = fase2Check,
+                savedfase3Check = fase3Check,
+                savedfase4Check = fase4Check,
+                savedfase5Check = fase5Check,
+                savedfase6Check = fase6Check,
+                savedfase7Check = fase7Check,
+                savedfase8Check = fase8Check,
+                savedfase9Check = fase9Check,
+
+                savedsePueTocar = sePueTocar,
+                savedyaSeFueCliente = yaSeFueCliente,
+                savedtipsBetweenDays = tipsBetweenDays,
+
+                savedvecesCobradoCululu = vecesCobradoCululu,
+                savedvecesCobradoGiovanni = vecesCobradoGiovanni,
+                savedvecesCobradaMara = vecesCobradaMara,
+                savedvecesCobradaHandy = vecesCobradaTerry,
+                savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
+                savedvecesCobradoAntonio = vecesCobradoAntonio,
+                savedvecesCobradoRaven = vecesCobradoRaven,
+                savednumGnomosFinded = numGnomosFinded,
+                savednerviosusPagaLoQueDebe = nerviosusPagaLoQueDebe,
+                savednerviosusTeDebePasta = nerviosusTeDebePasta,
+                savedslimeFostiados = slimeFostiados,
+                savedslimeFail = slimeFail,
+                savedelidoraAcariciada = elidoraAcariciada,
+
+                savedgiftGeeraard = giftGeeraard,
+                savedgiftEnano = giftEnano,
+                savedgiftMano = giftMano,
+                savedgiftElidora = giftElidora,
+                savedgiftElvog = giftElvog,
+                savedgiftMara = giftMara,
+                savedgiftPetra = giftPetra,
+                savedgiftAntonio = giftAntonio,
+                savedgiftGiovanni = giftGiovanni,
+                savedgiftCululu = giftCululu,
+                savedgiftSergio = giftSergio,
+                savedgiftTapicio = giftTapicio,
+                savedgiftHandy = giftHandy,
+                savedgiftDenjirenji = giftDenjirenji,
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
+            };
+
+            string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
+
+            File.WriteAllText(archivoDeGuardado2, cadenaJSON);
+
+            Debug.Log("Archivo Guardado");
+
+        }
+
+        else if (currentSlot == 3)
+        {
+            SavedData nuevosDatos = new SavedData()
+            {
+                savedspaSpain = spaSpain,
+                savedengAmerican = engAmerican,
+                savedspaColombian = spaColombian,
+
+                savednumEvilWizard = numEvilWizard,
+
+                savednumHybrid = numHybrid,
+
+                savednumLimbastic = numLimbastic,
+
+                savednumElemental = numElemental,
+
+                SavednumElectroped = numElectroped,
+
+                savedsamuraiPagaMal = samuraiPagaMal,
+                savedborrachoTriste = borrachoTriste,
+                savedsamuraiAyudado1 = samuraiAyudado1,
+                savedmeExplotasteElCulo1 = meExplotasteElCulo1,
+                savedsamuraiAyudado2 = samuraiAyudado2,
+                savedmeExplotasteElCulo2 = meExplotasteElCulo2,
+                savedvecesSamuraiAyudado = vecesSamuraiAyudado,
+
+                savedday0Check = day00Checked,
+                savedday1Check = day01Checked,
+                savedday2Check = day02Checked,
+                savedday3Check = day03Checked,
+                savedday4Check = day04Checked,
+                savedday5Check = day05Checked,
+                savedday6Check = day06Checked,
+                savedday7Check = day07Checked,
+                savedvideoActivo = videoActivo,
+                savedvideoVisto = videoVisto,
+                savedfinalMuyMaloConseguido = finalMuyMaloConseguido,
+                savedfinalMaloConseguido = finalMaloConseguido,
+                savedfinalBuenoConseguido = finalBuenoConseguido,
+                savedfinalMuyBuenoConseguido = finalMuyBuenoConseguido,
+                savedfinalSecretoConseguido = finalSecretoConseguido,
+                savedtipsPoints = tipsPoints,
+                saveddetectivePoints = detectivePoints,
+
+                savedfase1Check = fase1Check,
+                savedfase2Check = fase2Check,
+                savedfase3Check = fase3Check,
+                savedfase4Check = fase4Check,
+                savedfase5Check = fase5Check,
+                savedfase6Check = fase6Check,
+                savedfase7Check = fase7Check,
+                savedfase8Check = fase8Check,
+                savedfase9Check = fase9Check,
+
+                savedsePueTocar = sePueTocar,
+                savedyaSeFueCliente = yaSeFueCliente,
+                savedtipsBetweenDays = tipsBetweenDays,
+
+                savedvecesCobradoCululu = vecesCobradoCululu,
+                savedvecesCobradoGiovanni = vecesCobradoGiovanni,
+                savedvecesCobradaMara = vecesCobradaMara,
+                savedvecesCobradaHandy = vecesCobradaTerry,
+                savednoCobrarSergioCobrarGeeraardD4 = noCobrarSergioCobrarGeeraardD4,
+                savedvecesCobradoAntonio = vecesCobradoAntonio,
+                savedvecesCobradoRaven = vecesCobradoRaven,
+                savednumGnomosFinded = numGnomosFinded,
+                savednerviosusPagaLoQueDebe = nerviosusPagaLoQueDebe,
+                savednerviosusTeDebePasta = nerviosusTeDebePasta,
+                savedslimeFostiados = slimeFostiados,
+                savedslimeFail = slimeFail,
+                savedelidoraAcariciada = elidoraAcariciada,
+
+                savedgiftGeeraard = giftGeeraard,
+                savedgiftEnano = giftEnano,
+                savedgiftMano = giftMano,
+                savedgiftElidora = giftElidora,
+                savedgiftElvog = giftElvog,
+                savedgiftMara = giftMara,
+                savedgiftPetra = giftPetra,
+                savedgiftAntonio = giftAntonio,
+                savedgiftGiovanni = giftGiovanni,
+                savedgiftCululu = giftCululu,
+                savedgiftSergio = giftSergio,
+                savedgiftTapicio = giftTapicio,
+                savedgiftHandy = giftHandy,
+                savedgiftDenjirenji = giftDenjirenji,
+                savedgiftRaven = giftRaven,
+                fechaUltimoGuardado = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                ultimoDiaJugado = CalcularUltimoDiaJugado(),
+
+            };
+
+            string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
+
+            File.WriteAllText(archivoDeGuardado3, cadenaJSON);
+
+            Debug.Log("Archivo Guardado");
+
         }
 
         Debug.Log("Slot actual: " + currentSlot);
