@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -33,7 +33,17 @@ public class Pila : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        rb2d.AddForce(input * velocidad);
+        float moveInput = Input.GetAxis("Vertical");
+        float rotationInput = Input.GetAxis("Horizontal");
+
+        float rotationSpeed = 100f;
+        transform.Rotate(Vector3.forward * -rotationInput * rotationSpeed * Time.fixedDeltaTime);
+
+        rb2d.AddForce(transform.up * moveInput * velocidad);
+
+        if (Mathf.Abs(moveInput) < 0.1f)
+        {
+            rb2d.velocity *= 0.9f; 
+        }
     }
 }
