@@ -104,19 +104,16 @@ public class CameraZoomManager : MonoBehaviour
 
         if (info.exitDirection == ZoomTargetInfo.ExitEdge.Left && edgeGradientLeftImage != null)
         {
-            Debug.Log("Voy a los precios");
             edgeGradientLeftImage.enabled = true;
         }
         else if (info.exitDirection == ZoomTargetInfo.ExitEdge.Right && edgeGradientRightImage != null)
         {
-            Debug.Log("Voy a las Normativas");
             edgeGradientRightImage.enabled = true;
         }
     }
 
     public void ExitZoomMode()
     {
-        Debug.Log("Salgo del Zoom");
         isInZoomMode = false;
 
         if (zoomTargetCollider != null)

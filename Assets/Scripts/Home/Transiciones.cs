@@ -33,13 +33,6 @@ public class Transiciones : MonoBehaviour
     {
         Data.instance.GuardarDatos();
 
-        #region CÓDIGO ANTIGUO
-        //FTBRegular();
-        //if (data.day01Checked) SceneManager.LoadScene("Day2_1");           // Si vienes de acabar el día uno, pasas al dos.
-        //else if (data.day02Checked) SceneManager.LoadScene("Day3_1");      // Si vienes de acabar el día dos, pasas al tres.
-        //else if (data.day03Checked) SceneManager.LoadScene("Day4");        // Si vienes de acabar el día tres, pasas al cuatro.
-        #endregion
-
         if (data.day04Checked)
         {
             if (data.videoVisto)
@@ -52,7 +45,7 @@ public class Transiciones : MonoBehaviour
 
         }
 
-        else if (data.day05Checked)
+        else if (data.day07Checked)
         {
             if (data.tipsPoints == 0) SceneManager.LoadScene("FinalMuyMalo");
 
@@ -75,7 +68,6 @@ public class Transiciones : MonoBehaviour
 
         else
         {
-            DialogueManager.Instance.BackToTheDefaultSaturation();
             SceneManager.LoadScene("Day");
         }
             

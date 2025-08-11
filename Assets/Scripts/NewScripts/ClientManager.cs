@@ -176,7 +176,7 @@ public class ClientManager : MonoBehaviour
     void StartNextClient()
     {
         AltDialogues(DialogueManager.Instance.currentDay);
-        DialogueManager.Instance.LaVoluntad(0);
+        DialogueManager.Instance.ChangeTipsPaper();
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;        
 
@@ -705,7 +705,8 @@ public class ClientManager : MonoBehaviour
 
         if (iWantToBelieve)
         {
-            DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfCheck);
+            DialogueManager.Instance.propinasNumber += currentDialogueClient.tipsIfCheck;
+            DialogueManager.Instance.ChangeTipsPaper();
 
             if (currentDialogueClient.correctChoice == "TICK")
             {
@@ -727,7 +728,8 @@ public class ClientManager : MonoBehaviour
 
         else if (noWayJose)
         {
-            DialogueManager.Instance.LaVoluntad(currentDialogueClient.tipsIfBye);
+            DialogueManager.Instance.propinasNumber += currentDialogueClient.tipsIfBye;
+            DialogueManager.Instance.ChangeTipsPaper();
 
             if (currentDialogueClient.correctChoice == "CROSS")
             {
@@ -776,7 +778,10 @@ public class ClientManager : MonoBehaviour
 
     public void GoingHome(string sceneName)
     {
-        DialogueManager.Instance.propinasNumber = 0; // Seteo en 0 el número de propinas para el día siguiente
+        if (DialogueManager.Instance.propinasNumber > 50)
+            Data.instance.tipsPoints++;
+
+        DialogueManager.Instance.propinasNumber = 50; // Seteo en 0 el número de propinas para el día siguiente
 
         int diaActual;
 

@@ -67,7 +67,8 @@ public class SceneReferences : MonoBehaviour
                                                         sospechosoPanel, seguroPanel, gnomeCanvas, gnomeFog1, gnomeFog2, trophyCanvas, regulationsBook, leDinero, leDineroText, leDineroSymbol, leCajaRegistradora, buttonCobrar, buttonNoCobrar,
                                                         centralProduct, rightProduct, leftProduct, zoomTargetPrices, zoomTargetRegulations, zoomTargetCoupon, couponPlace, couponInfoContainer, lesPropinas, lePropinasText);
 
-            DialogueManager.Instance.LaVoluntad(50);            
+            if (DialogueManager.Instance.lastSceneWithDialogues != DialogueManager.Instance.currentDay)
+                DialogueManager.Instance.propinasNumber = 50;    
         }
     }
 }

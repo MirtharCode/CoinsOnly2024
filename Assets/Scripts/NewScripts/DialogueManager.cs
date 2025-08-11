@@ -906,10 +906,8 @@ public class DialogueManager : MonoBehaviour
             textoJefe = jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    public void LaVoluntad(float cantidad)
+    public void ChangeTipsPaper()
     {
-        propinasNumber += cantidad;
-
         // Limita el valor entre 0 y 100
         propinasNumber = Mathf.Clamp(DialogueManager.Instance.propinasNumber, 0, 100);
 
@@ -949,6 +947,7 @@ public class DialogueManager : MonoBehaviour
 
     public void BackToTheDefaultSaturation()
     {
+        Debug.Log("Entro a cambiar la saturación a 15");
         if (postPro_Profile.TryGet(out ColorAdjustments color))
             color.saturation.value = 15f;
     }

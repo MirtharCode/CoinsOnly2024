@@ -140,7 +140,7 @@ public class HomeManager : MonoBehaviour
 
     void Start()
     {
-
+        DialogueManager.Instance.BackToTheDefaultSaturation();
         musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
@@ -270,24 +270,6 @@ public class HomeManager : MonoBehaviour
             data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
-        //else if (currentHomeClientReal.name.Contains("Elidora"))
-        //{
-        //    if (!Data.instance.slimeFostiados)
-        //        Invoke(nameof(FadeToBlackSlimes), clientGoingOutClip.length);
-
-        //    else
-        //    {
-        //        if (!Data.instance.slimeFail)
-        //        {
-        //            GameObject.FindGameObjectWithTag("HomeClient").GetComponent<Image>().sprite = evilWizardElidoraALT;
-        //            Data.instance.giftElidora = true;
-        //            TrophyAchieved("Elidora");
-        //        }
-        //        data.GetComponent<Data>().sePueTocar = true;
-        //        data.GetComponent<Data>().yaSeFueCliente = true;
-        //    }
-        //}
-
         else if (currentHomeClientReal.name.Contains("Mano") && !Data.instance.giftMano)
         {
             Data.instance.giftMano = true;
@@ -393,20 +375,4 @@ public class HomeManager : MonoBehaviour
 
         showTrophyAnim.SetTrigger("TrophyShow");
     }
-
-    //public void FadeToBlackSlimes()
-    //{
-    //    float animTime;
-    //    Animator anim = transicionesGameobject.transform.GetChild(22).gameObject.GetComponent<Animator>();
-
-    //    anim.SetBool("ToBlack", true);
-    //    animTime = transicionesGameobject.GetComponent<Transiciones>().toBlackClip.length;
-
-    //    Invoke(nameof(GoToWhackASlime), animTime);
-    //}
-
-    //public void GoToWhackASlime()
-    //{
-    //    SceneManager.LoadScene("WhackAMole1");
-    //}
 }
