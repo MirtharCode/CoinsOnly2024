@@ -18,6 +18,7 @@ public class ClientManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueTextBoxFirst;
     [SerializeField] TextMeshProUGUI dialogueTextBoxOther;
     [SerializeField] GameObject musicBox;
+    [SerializeField] GameObject canvasPausa;
     [SerializeField] public string lastRaceMusic = "Desconocida";
     [SerializeField] public string lastNameMusic;
     [SerializeField] GameObject currentClient;
@@ -133,14 +134,19 @@ public class ClientManager : MonoBehaviour
             Debug.Log("Diálogos listos.");
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(1);
-        }
+            if (canvasPausa.activeSelf)
+            {
+                canvasPausa.SetActive(false);
+                Time.timeScale = 1;
+            }
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            DialogueManager.Instance.racePanel.GetComponent<RacePanelScript>().PlayPanelAnimation(-1);
+            else
+            {
+                canvasPausa.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 
@@ -435,13 +441,11 @@ public class ClientManager : MonoBehaviour
             if (line.extra == "collectable")
                 TrophyAchieved(currentDialogueClient.name);
 
-            
-                // CÓDIGO GNOMO
-            //if (line.type == "gnome")
-            //{
-            //    DialogueManager.Instance.theGnomeIsFree = true;
-            //    GnomeOut(DialogueManager.Instance.currentDay);
-            //}
+            if (line.type == "gnome")
+            {
+                DialogueManager.Instance.theGnomeIsFree = true;
+                GnomeOut(DialogueManager.Instance.currentDay);
+            }
 
             clientDialogueLineIndex++;
         }
@@ -1450,5 +1454,24 @@ public class ClientManager : MonoBehaviour
 
         var metodo = typeof(TabletMover).GetMethod(nombreMetodo);
         metodo.Invoke(mover, null);
+    }
+
+    public void Resume()
+    {
+        canvasPausa.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void TitleScreen()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+        Data.instance.GuardarDatos();
+    }
+    public void QuitGame()
+    {
+        Data.instance.GuardarDatos();
+        Debug.Log("Salir...");
+        Application.Quit();
     }
 }

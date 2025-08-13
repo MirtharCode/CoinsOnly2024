@@ -7,8 +7,6 @@ public class NewGnomeScript : MonoBehaviour
 {
     [SerializeField] public GameObject canvas;
     public Animator animator;
-    public bool showingDone;
-    public bool leavingDone;
 
     void Start()
     {
