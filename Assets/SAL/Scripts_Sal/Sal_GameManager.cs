@@ -20,6 +20,7 @@ public class Sal_GameManager : MonoBehaviour
     [SerializeField] public Scene currentScene;
     [SerializeField] public bool heGanado = false;
     [SerializeField] private Button[] levelsButtons;
+    AudioSource audioSource;
 
     void Start()
     {
@@ -30,6 +31,9 @@ public class Sal_GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         currentScene = SceneManager.GetActiveScene();
+
+        MakeButtonsGrey();
+        audioSource = GetComponent<AudioSource>();
 
         //if (PlayerPrefs.GetFloat("MusicVolumen") != 1)
         //{
@@ -44,6 +48,10 @@ public class Sal_GameManager : MonoBehaviour
         //    _soundVolumeSlider = PlayerPrefs.GetFloat("SoundVolumen");
         //    PlayerPrefs.Save();
         //}
+    }
+
+    void MakeButtonsGrey()
+    {
         if (currentScene.name == "LevelSelector")
         {
             Color gray100 = new Color(0.392f, 0.392f, 0.392f, 1f);
@@ -57,7 +65,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[1].colors = colors;
-                levelsButtons[1].interactable = false;
+
+                IsActiveButton(1);
             }
 
             if (!Data.instance.fase2Check)
@@ -69,7 +78,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[2].colors = colors;
-                levelsButtons[2].interactable = false;
+
+                IsActiveButton(2);
             }
 
             if (!Data.instance.fase3Check)
@@ -81,7 +91,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[3].colors = colors;
-                levelsButtons[3].interactable = false;
+
+                IsActiveButton(3);
             }
 
             if (!Data.instance.fase4Check)
@@ -93,7 +104,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[4].colors = colors;
-                levelsButtons[4].interactable = false;
+
+                IsActiveButton(4);
             }
 
             if (!Data.instance.fase5Check)
@@ -105,7 +117,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[5].colors = colors;
-                levelsButtons[5].interactable = false;
+
+                IsActiveButton(5);
             }
 
             if (!Data.instance.fase6Check)
@@ -117,7 +130,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[6].colors = colors;
-                levelsButtons[6].interactable = false;
+
+                IsActiveButton(6);
             }
 
             if (!Data.instance.fase7Check)
@@ -129,7 +143,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[7].colors = colors;
-                levelsButtons[7].interactable = false;
+
+                IsActiveButton(7);
             }
 
             if (!Data.instance.fase8Check)
@@ -141,7 +156,8 @@ public class Sal_GameManager : MonoBehaviour
                 colors.pressedColor = gray100;
                 colors.selectedColor = gray100;
                 levelsButtons[8].colors = colors;
-                levelsButtons[8].interactable = false;
+
+                IsActiveButton(8);
             }
         }
     }
@@ -200,9 +216,11 @@ public class Sal_GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Level002");
         }
+
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(1));
         }
     }
 
@@ -215,6 +233,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(2));
         }
     }
 
@@ -227,6 +246,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(3));
         }
     }
 
@@ -239,6 +259,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(4));
         }
     }
 
@@ -251,6 +272,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(5));
         }
     }
 
@@ -263,6 +285,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(6));
         }
     }
 
@@ -275,6 +298,7 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(7));
         }
     }
 
@@ -287,7 +311,27 @@ public class Sal_GameManager : MonoBehaviour
         else
         {
             Debug.Log("Nivel bloqueado");
+            StartCoroutine(PlayButtonAnimBool(8));
         }
+    }
+
+    private IEnumerator PlayButtonAnimBool(int buttonIndex)
+    {
+        Animator anim = levelsButtons[buttonIndex].GetComponent<Animator>();
+        if (anim == null) yield break;
+
+        anim.SetBool("WasClicked", true);
+        yield return new WaitForSeconds(0.01f);
+        anim.SetBool("WasClicked", false);
+
+        audioSource.Play();
+    }
+
+    void IsActiveButton(int buttonIndex)
+    {
+        Animator anim = levelsButtons[buttonIndex].GetComponent<Animator>();
+
+        anim.SetBool("Blocked", true);
     }
 
     public void Casa()
