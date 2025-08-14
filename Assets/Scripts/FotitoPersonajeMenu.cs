@@ -7,6 +7,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
 {
     public Sprite[] imagenes;
     public int randomIndex;
+    public string spriteName;
 
     private Image imageComponent;
 
@@ -16,6 +17,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
     {
         data = GameObject.FindGameObjectWithTag("Data");
         imageComponent = GetComponent<Image>();
+        
 
         if (data.GetComponent<Data>().day00Checked)           // Solo sale el Jefe.
             imageComponent.sprite = imagenes[0];
@@ -26,9 +28,9 @@ public class FotitoPersonajeMenu : MonoBehaviour
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().day02Checked)       // Lo anterior hasta Pijus Magnus.
+        else if (data.GetComponent<Data>().day02Checked)       // Lo anterior hasta Rave-N.
         {
-            randomIndex = Random.Range(0, 16);
+            randomIndex = Random.Range(0, 18);
             imageComponent.sprite = imagenes[randomIndex];
         }
 
@@ -51,6 +53,8 @@ public class FotitoPersonajeMenu : MonoBehaviour
         }
 
         else imageComponent.sprite = imagenes[0]; //Si no detecta ningún día completado, salta el jefe (Esto debido al guardado)
+
+        spriteName = imageComponent.sprite.name;
     }
 
     public void NextImage()
@@ -86,6 +90,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
         else randomIndex = 0;
 
         imageComponent.sprite = imagenes[randomIndex];
+        spriteName = imageComponent.sprite.name;
     }
 
     void ReverseImagesLoop(int limit)
@@ -95,5 +100,15 @@ public class FotitoPersonajeMenu : MonoBehaviour
         else randomIndex = limit - 1;
 
         imageComponent.sprite = imagenes[randomIndex];
+        spriteName = imageComponent.sprite.name;
+    }
+
+    public void MakeSound()
+    {
+        string[] sounds = { "exclamative", "interrogative", "normal1", "normal2", "normal3" };
+        int random = Random.Range(0, 5);
+        
+        GetComponent<AudioSource>().clip = Resources.Load<AudioClip>($"Sounds/Voices/{spriteName}/{sounds[random]}");
+        GetComponent<AudioSource>().Play();
     }
 }
