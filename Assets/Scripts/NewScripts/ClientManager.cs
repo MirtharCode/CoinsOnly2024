@@ -608,6 +608,16 @@ public class ClientManager : MonoBehaviour
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = true;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = true;
         DialogueManager.Instance.textoJefe.text = bossComplain;
+        var audioSource = DialogueManager.Instance.jefePanel.GetComponent<AudioSource>();
+        audioSource.enabled = true;
+        audioSource.Play();
+
+        Animator animation = DialogueManager.Instance.jefePanel.GetComponent<Animator>();
+        animation.SetBool("Complain", true);
+
+        yield return new WaitForSeconds(.01f);
+
+        animation.SetBool("Complain", false);
     }
 
     void ChangingSprite(string clientRace, string clientName, string clientMood)
