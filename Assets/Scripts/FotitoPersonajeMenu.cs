@@ -40,7 +40,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
             imageComponent.sprite = imagenes[randomIndex];
         }
 
-        else if (data.GetComponent<Data>().day04Checked)       // Lo anterior hasta Magmadora
+        else if (data.GetComponent<Data>().day04Checked || data.GetComponent<Data>().day05Checked || data.GetComponent<Data>().day06Checked || data.GetComponent<Data>().day07Checked)       // Lo anterior hasta Magmadora
         {
             randomIndex = Random.Range(0, 26);
             imageComponent.sprite = imagenes[randomIndex];
@@ -65,7 +65,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
         else if (data.GetComponent<Data>().day03Checked) ImagesLoop(23);
 
-        else if (data.GetComponent<Data>().day04Checked) ImagesLoop(26);
+        else if (data.GetComponent<Data>().day04Checked || data.GetComponent<Data>().day05Checked || data.GetComponent<Data>().day06Checked || data.GetComponent<Data>().day07Checked) ImagesLoop(26);
 
         else if (data.GetComponent<Data>().finalSecretoConseguido) ImagesLoop(imagenes.Length);
     }
@@ -78,7 +78,7 @@ public class FotitoPersonajeMenu : MonoBehaviour
 
         else if (data.GetComponent<Data>().day03Checked) ReverseImagesLoop(23);
 
-        else if (data.GetComponent<Data>().day04Checked) ReverseImagesLoop(26);
+        else if (data.GetComponent<Data>().day04Checked || data.GetComponent<Data>().day05Checked || data.GetComponent<Data>().day06Checked || data.GetComponent<Data>().day07Checked) ReverseImagesLoop(26);
 
         else if (data.GetComponent<Data>().finalSecretoConseguido) ReverseImagesLoop(imagenes.Length);
     }
