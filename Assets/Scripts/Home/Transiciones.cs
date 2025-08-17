@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Transiciones : MonoBehaviour
 {
@@ -91,6 +92,8 @@ public class Transiciones : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(true);
             transform.GetChild(17).gameObject.SetActive(true);
             rodolfosNose.GetComponent<Animator>().SetTrigger("Resize");
+            rodolfosNose.GetComponent<Button>().enabled = true;
+
         }
         if (data.giftHandy) transform.GetChild(19).gameObject.SetActive(true);
         if (data.giftDenjirenji) transform.GetChild(12).gameObject.SetActive(true);
@@ -128,7 +131,8 @@ public class Transiciones : MonoBehaviour
         {
             data.GetComponent<Data>().yaSeFueCliente = false;
             float animTime;
-            Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
+            Animator anim = transform.GetChild(23).gameObject.GetComponent<Animator>();
+            rodolfosNose.GetComponent<Animator>().SetTrigger("Sleep");
 
             anim.SetBool("ToBlack", true);
             animTime = toBlackClip.length;
@@ -140,7 +144,7 @@ public class Transiciones : MonoBehaviour
     public void FTBSAL()
     {
         float animTime;
-        Animator anim = transform.GetChild(22).gameObject.GetComponent<Animator>();
+        Animator anim = transform.GetChild(23).gameObject.GetComponent<Animator>();
 
         anim.SetBool("ToBlack", true);
         animTime = toBlackClip.length;
