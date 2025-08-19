@@ -983,21 +983,6 @@ public class DialogueManager : MonoBehaviour
         muteTextContainer = muteTC;
     }
 
-    public void ChangingLanguage()
-    {
-        if (currentLanguage == Language.ES)
-        {
-            currentLanguage = Language.EN;
-            ChangingTextsAndFlag(Language.ES);
-        }
-
-        else
-        {
-            currentLanguage = Language.ES;
-            ChangingTextsAndFlag(Language.EN);
-        }
-    }
-
     public void ChangingTextsAndFlag(Language lang)
     {
         LanguageActivations(playButton, lang.ToString());
