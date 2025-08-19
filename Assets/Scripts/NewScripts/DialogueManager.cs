@@ -10,6 +10,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
+public enum Language
+{
+    ES,
+    EN
+}
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
@@ -115,6 +121,19 @@ public class DialogueManager : MonoBehaviour
     {
         return new List<string>(dialogueLookup.Keys);
     }
+
+    [Header("IDIOMA ACTUAL")]
+    public Language currentLanguage = Language.ES;
+
+    [Header("REFERENCIAS MENÚ")]
+    public GameObject playButton;
+    public GameObject minigamesButton;
+    public GameObject optionsButton;
+    public GameObject creditsButton;
+    public GameObject exitButton;
+    public GameObject languageButton;
+    public GameObject musicTextContainer;
+    public GameObject muteTextContainer;
 
     public bool IsReady { get; private set; } = false;
 
@@ -230,7 +249,7 @@ public class DialogueManager : MonoBehaviour
         if (currentDay == "")
             currentDay = "01";
 
-        postPro_Profile = postPro.profile;        
+        postPro_Profile = postPro.profile;
 
         if (lastSceneWithDialogues == currentDay)
         {
@@ -950,5 +969,55 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Entro a cambiar la saturación a 15");
         if (postPro_Profile.TryGet(out ColorAdjustments color))
             color.saturation.value = 15f;
+    }
+
+    public void SetMenuReferences(GameObject playB, GameObject minigamesB, GameObject optionsB, GameObject creditsB, GameObject exitB, GameObject languageB, GameObject musicTC, GameObject muteTC)
+    {
+        playButton = playB;
+        minigamesButton = minigamesB;
+        optionsButton = optionsB;
+        creditsButton = creditsB;
+        exitButton = exitB;
+        languageButton = languageB;
+        musicTextContainer = musicTC;
+        muteTextContainer = muteTC;
+    }
+
+    public void ChangingLanguage()
+    {
+        if (currentLanguage == Language.ES)
+        {
+            currentLanguage = Language.EN;
+            ChangingTextsAndFlag(Language.ES);
+        }
+
+        else
+        {
+            currentLanguage = Language.ES;
+            ChangingTextsAndFlag(Language.EN);
+        }
+    }
+
+    public void ChangingTextsAndFlag(Language lang)
+    {
+        LanguageActivations(playButton, lang.ToString());
+        LanguageActivations(minigamesButton, lang.ToString());
+        LanguageActivations(optionsButton, lang.ToString());
+        LanguageActivations(creditsButton, lang.ToString());
+        LanguageActivations(exitButton, lang.ToString());
+        languageButton.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Menu/Buttons/Languages/{lang}");
+        LanguageActivations(musicTextContainer, lang.ToString());
+        LanguageActivations(muteTextContainer, lang.ToString());
+    }
+
+    public void LanguageActivations(GameObject parent, string childName)
+    {
+        foreach (Transform child in parent.transform)
+        {
+            if (child.name == childName)
+                child.gameObject.SetActive(true);
+            else
+                child.gameObject.SetActive(false);
+        }
     }
 }

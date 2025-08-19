@@ -29,6 +29,21 @@ public class MenuInicial : MonoBehaviour
     //    SceneManager.LoadScene("Day1");
     //}
 
+    public void ChangingLanguage()
+    {
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            DialogueManager.Instance.currentLanguage = Language.EN;
+            DialogueManager.Instance.ChangingTextsAndFlag(Language.EN);
+        }
+
+        else
+        {
+            DialogueManager.Instance.currentLanguage = Language.ES;
+            DialogueManager.Instance.ChangingTextsAndFlag(Language.ES);
+        }
+    }
+
     public void Salir()
     {
         data.GetComponent<Data>().GuardarDatos();

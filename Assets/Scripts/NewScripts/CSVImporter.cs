@@ -142,27 +142,27 @@ public class ProductsDatabase
 
 public class CSVImporter : MonoBehaviour
 {
-    [Header("IDIOMA ACTUAL")]
-    [SerializeField] private Language currentLanguage = Language.ES; // El predeterminado es español
+    //[Header("IDIOMA ACTUAL")]
+    //[SerializeField] private Language currentLanguage = Language.ES; // El predeterminado es español
 
 
     // IDIOMAS DISPONIBLES (En caso de tener nuevas traducciones se añadirían aquí)
-    public enum Language
-    {
-        ES,
-        EN
-    }
+    //public enum Language
+    //{
+    //    ES,
+    //    EN
+    //}
 
     void Start()
     {
-        LoadDialoguesFromLocalCSV(currentLanguage);
+        LoadDialoguesFromLocalCSV(DialogueManager.Instance.currentLanguage);
     }
 
     // En caso de querer cambiar el idioma durante el juego (solo para cuando esté descargado).
     public void ChangeLanguage(Language newLanguage)
     {
-        currentLanguage = newLanguage;
-        LoadDialoguesFromLocalCSV(currentLanguage);
+        DialogueManager.Instance.currentLanguage = newLanguage;
+        LoadDialoguesFromLocalCSV(DialogueManager.Instance.currentLanguage);
     }
 
     void LoadDialoguesFromLocalCSV(Language idioma)
