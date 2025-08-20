@@ -74,7 +74,7 @@ ID,DAY,RACE,ACTOR,TEXT,TYPE,TONE,MOOD,CLIENT,EXTRA,SUSPECT1,SUSPECT2,SUSPECT3,CO
 #DD06030499--,DD,Desconocida,Mikujefe,"¿Pero sabes lo que sí que es bueno para el negocio? Los NF... Que no hombre, ni que fuera RillyWex.",dialogue,interrogative,neutral,clientFINAL,,,,,
 #DD06030599--,DD,Desconocida,Mikujefe,Pero nunca está de más un feedback constructivo. Te dejo en manos de Jack 'O' Boo que te hará preguntitas al respecto.,dialogue,normal,neutral,clientFINAL,,,,,
 #DD06039999--,DD,Desconocida,Mikujefe,"Nos veremos próximamente en Steam, ¡ESTATE ATENTO A LAS REDES DE SLEEPYSKULLSTUDIO!",end,exclamative,neutral,clientFINAL,,,,,
-#0106010000--,01,Desconocida,Minijefe,"Well, look at that! You managed to follow a simple order. Maybe you’ll turn out to be a useful little human after all.",init,exclamative,neutral,clientZERO,,,,,
+#0106010000--,01,Desconocida,Minijefe,Look at that! You managed to follow a simple order. Maybe you’ll turn out to be a useful human after all.,init,exclamative,neutral,clientZERO,,,,,
 #0106010100--,01,Desconocida,Minijefe,That reminds me… I should probably give Jack ’O’ Boo a raise. Too bad I already forgot about it… oh well.,dialogue,normal,neutral,clientZERO,,,,,
 #0106010200--,01,Desconocida,Minijefe,"Anyways… welcome, rookie. From now on, I am your venerated boss in this marvelous store.",dialogue,normal,neutral,clientZERO,,,,,
 #0106010300--,01,Desconocida,Minijefe,"Your duty? Charge customers properly. Simple enough, right?",dialogue,interrogative,neutral,clientZERO,,,,,

@@ -156,7 +156,7 @@ public class HomeManager : MonoBehaviour
             videoplayer.SetActive(true);
             pantalla.SetActive(true);
         }
-        Invoke(nameof(DialogueManager.Instance.BackToTheDefaultSaturation),2);
+        DialogueManager.Instance.BackToTheDefaultSaturation();
     }
 
     // Update is called once per frame
@@ -333,6 +333,8 @@ public class HomeManager : MonoBehaviour
 
     public void SettingHomeDialogues()
     {
+        Data.instance.cCDialogue.Clear();
+
         if (DialogueManager.Instance.currentLanguage == Language.ES)
         {
             humanText.text = "Humano";
@@ -389,14 +391,14 @@ public class HomeManager : MonoBehaviour
 
             if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("jefe"))
             {
-                Data.instance.cCDialogue.Add("¿Increíble verdad? Mi madre tiene un estilo bastante propio.");
-                Data.instance.cCDialogue.Add("Probablemente te estarás preguntando que por qué todo tan 2D ¿No?");
-                Data.instance.cCDialogue.Add("¡PUES NO PREGUNTES TANTO!");
-                Data.instance.cCDialogue.Add("Da gracias que tenía este traductor antiguo y obsoleto por aquí tirado.");
-                Data.instance.cCDialogue.Add("Bueno, escoge la esquina de suelo más cómoda y...");
-                Data.instance.cCDialogue.Add("La verdad es que no sé como dormís los humanos, tampoco me interesa.");
-                Data.instance.cCDialogue.Add("Cuando acabes el ritual que sea que tenga tu especie, apaga la luz.");
-                Data.instance.cCDialogue.Add("Nos vemos mañana ¡NO LLEGUES TARDE!.");
+                Data.instance.cCDialogue.Add("Amazing, right? My mother’s got quite a unique style.");
+                Data.instance.cCDialogue.Add("You’re probably wondering why everything looks so 2D, huh?");
+                Data.instance.cCDialogue.Add("Well... STOP ASKING SO MANY DAMN QUESTIONS!!!");
+                Data.instance.cCDialogue.Add("And be grateful that I had this old, obsolete translator lying around.");
+                Data.instance.cCDialogue.Add("Now pick the comfiest corner of the floor and...");
+                Data.instance.cCDialogue.Add("Honestly, I’ve got no idea how humans sleep (nor do I care).");
+                Data.instance.cCDialogue.Add("When you’re done with whatever ritual your species does, turn off the light.");
+                Data.instance.cCDialogue.Add("See you tomorrow...! AND DO NOT BE LATE!");
             }
 
             else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
@@ -423,11 +425,11 @@ public class HomeManager : MonoBehaviour
 
             else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Mano"))
             {
-                Data.instance.cCDialogue.Add("Hola humano, veo que no has contado nada sobre la iglesia a ese detective.");
-                Data.instance.cCDialogue.Add("Has mostrado ser fiel a nuestra causa y a la iglesia.");
-                Data.instance.cCDialogue.Add("Ganaste mi confianza para considerarte uno de nosotros.");
-                Data.instance.cCDialogue.Add("Acepta este anillo como muestra de agradecimiento.");
-                Data.instance.cCDialogue.Add("Nos vivimos por verte estos días en la iglesia, ya me entiendes.");
+                Data.instance.cCDialogue.Add("Hello, human. I see you kept quiet about the church when the detective came around.");
+                Data.instance.cCDialogue.Add("You’ve shown yourself faithful to our cause… and to the church.");
+                Data.instance.cCDialogue.Add("You’ve earned my trust to be considered one of us.");
+                Data.instance.cCDialogue.Add("Accept this ring as a token of gratitude.");
+                Data.instance.cCDialogue.Add("We look forward to seeing you at the church these days… you know what I mean.");
             }
         }
     }

@@ -15,6 +15,7 @@ public class InitialCinematic : MonoBehaviour
 
     void OnVideoFinished(VideoPlayer vp)
     {
+        Data.instance.initialCinematicDone = true;
         SceneManager.LoadScene("Day");
     }
 

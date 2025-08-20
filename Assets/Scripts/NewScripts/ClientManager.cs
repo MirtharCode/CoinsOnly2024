@@ -634,19 +634,19 @@ public class ClientManager : MonoBehaviour
         if (DialogueManager.Instance.currentLanguage == Language.EN)
         {
             if (bossComplain == "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!")
-                bossComplain = "Here are some regulations! \nDo you remember them?! ";
+                bossComplain = "We’ve got some rules here! \nDo you even remember them?!";
 
             else if (bossComplain == "Ese cupón era más falso que el amor que siento por mi madre")
-                bossComplain = "That coupon was more fake than \nthe love I feel for my mother";
+                bossComplain = "That coupon was faker than \nthe love I pretend to feel for my mother!";
 
             else if (bossComplain == "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!")
-                bossComplain = "You should have kicked him out, \nhe didn't have enough money!";
+                bossComplain = "You should’ve kicked him out! \nHe didn’t even have enough money!";
 
             else if (bossComplain == "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…")
-                bossComplain = "What do you mean you didn't charge that customer?! \nNEW GUY, LESS SALARY...";
+                bossComplain = "What do you mean you didn’t charge that customer?! \nRookie… YOUR SALARY...!";
 
             else if (bossComplain == "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!")
-                bossComplain = "What do you mean you didn't charge that customer?! \nHe had money and wasn't breaking any rules!";
+                bossComplain = "What do you mean you didn’t charge that customer?! \nHe had money and wasn’t breaking any damn rules!";
         }
 
         DialogueManager.Instance.textoJefe.text = bossComplain;

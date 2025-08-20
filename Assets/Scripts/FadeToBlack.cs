@@ -64,7 +64,7 @@ public class FadeToBlack : MonoBehaviour
     {
         DialogueManager.Instance.currentDay = GetCheckedDayNumber();
 
-        if (Data.instance.day01Checked)
+        if (Data.instance.initialCinematicDone)
             SceneManager.LoadScene("Day");
         else
             SceneManager.LoadScene("InitialCinematic");

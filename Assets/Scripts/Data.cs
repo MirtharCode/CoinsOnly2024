@@ -19,39 +19,10 @@ public class Data : MonoBehaviour
     [SerializeField] public Transiciones transiciones;
 
     [SerializeField] public int numEvilWizard;
-    //[SerializeField] public int numEvilWizardGerard;
-    //[SerializeField] public int numEvilWizardManolo;
-    //[SerializeField] public int numEvilWizardManoloMano;
-    //[SerializeField] public int numEvilWizardElidora;
-    //[SerializeField] public int numEvilWizardPijus;
-
     [SerializeField] public int numHybrid;
-    //[SerializeField] public int numHybridElvog;
-    //[SerializeField] public int numHybridLepion;
-    //[SerializeField] public int numHybridMara;
-    //[SerializeField] public int numHybridPetra;
-    //[SerializeField] public int numHybridSaltaralisis;
-
     [SerializeField] public int numLimbastic;
-    //[SerializeField] public int numLimbasticAntonio;
-    //[SerializeField] public int numLimbasticGiovanni;
-    //[SerializeField] public int numLimbasticCululu;
-    //[SerializeField] public int numLimbasticSergio;
-    //[SerializeField] public int numLimbasticPatxi;
-
     [SerializeField] public int numElemental;
-    //[SerializeField] public int numElementalTapicio;
-    //[SerializeField] public int numElementalRockon;
-    //[SerializeField] public int numElementalHandy;
-    //[SerializeField] public int numElementalJissy;
-    //[SerializeField] public int numElementalHueso;
-
     [SerializeField] public int numElectroped;
-    //[SerializeField] public int numElectropedDenjirenji;
-    //[SerializeField] public int numElectropedMagmaDora;
-    //[SerializeField] public int numElectropedMasermati;
-    //[SerializeField] public int numElectropedRaven;
-    //[SerializeField] public int numElectropedRustica;
 
     [SerializeField] public bool samuraiPagaMal = false;
     [SerializeField] public bool borrachoTriste = false;
@@ -71,6 +42,7 @@ public class Data : MonoBehaviour
     [SerializeField] public bool day07Checked = false;
     [SerializeField] public bool videoActivo = false;
     [SerializeField] public bool videoVisto = false;
+    [SerializeField] public bool initialCinematicDone = false;
     [SerializeField] public bool finalMuyMaloConseguido = false;
     [SerializeField] public bool finalMaloConseguido = false;
     [SerializeField] public bool finalBuenoConseguido = false;
