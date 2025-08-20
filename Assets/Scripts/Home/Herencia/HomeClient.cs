@@ -18,7 +18,7 @@ public abstract class HomeClient : MonoBehaviour
     {
         hM = GameObject.FindGameObjectWithTag("HM").GetComponent<HomeManager>();
         gameObject.name = GetComponent<Image>().sprite.name;
-        Data.instance.SettingDialogues();
+        hM.SettingHomeDialogues();
         dialogue = Data.instance.cCDialogue;
         hM.dialogueSize = dialogue.Count;
     }

@@ -8,8 +8,18 @@ public class HU_Jefe : HomeClient
     protected override void Start()
     {
         base.Start();
-        raza = "Desconocida";
-        nombre = "Minijefe";
+
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            raza = "Desconocida";
+            nombre = "Minijefe";
+        }
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            raza = "Unkwown";
+            nombre = "Miniboss";
+        }
     }
 
     // Update is called once per frame

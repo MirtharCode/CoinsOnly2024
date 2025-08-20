@@ -19,6 +19,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public GameObject data;
     [SerializeField] public bool conversationOn;
     [SerializeField] public TMP_Text traductorText;
+    [SerializeField] public TMP_Text humanText;
     [SerializeField] public TMP_Text NombreText;
     [SerializeField] public int dialogueSize;
     [SerializeField] public int internalCount;
@@ -29,6 +30,7 @@ public class HomeManager : MonoBehaviour
     [SerializeField] public GameObject pantalla;
     [SerializeField] public VideoClip video;
     [SerializeField] public GameObject fTBObject;
+    [SerializeField] public GameObject lampSwitch;
 
 
 
@@ -140,11 +142,11 @@ public class HomeManager : MonoBehaviour
 
     void Start()
     {
-        DialogueManager.Instance.BackToTheDefaultSaturation();
         musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
         musicBox.transform.GetChild(3).GetComponent<AudioSource>().mute = true;
+        lampSwitch.GetComponent<Button>().enabled = false;
 
         if (data.GetComponent<Data>().videoActivo)
         {
@@ -154,6 +156,7 @@ public class HomeManager : MonoBehaviour
             videoplayer.SetActive(true);
             pantalla.SetActive(true);
         }
+        Invoke(nameof(DialogueManager.Instance.BackToTheDefaultSaturation),2);
     }
 
     // Update is called once per frame
@@ -248,7 +251,7 @@ public class HomeManager : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         currentHomeClientReal.GetComponent<Animator>().Play("GoingOut");
 
-        if (currentHomeClientReal.name.Contains("Jefe"))
+        if (currentHomeClientReal.name.Contains("jefe"))
         {
             data.GetComponent<Data>().sePueTocar = true;
             data.GetComponent<Data>().yaSeFueCliente = true;
@@ -279,100 +282,153 @@ public class HomeManager : MonoBehaviour
             data.GetComponent<Data>().yaSeFueCliente = true;
         }
 
+        lampSwitch.GetComponent<Button>().enabled = true;
+
     }
 
     public void TrophyAchieved(string trophyName)
     {
-        if (trophyName == "Antonio")
+        if(DialogueManager.Instance.currentLanguage == Language.ES)
         {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageAntonio;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Gafas Otaku \nDesbloqueadas!";
+            if (trophyName == "Giovanni")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡The Necronomicook \nUnlocked!";
+            }
+
+            else if (trophyName == "Mano")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMano;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
+            }
+            else if (trophyName == "Tapicio")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
+            }
         }
 
-        else if (trophyName == "Cululu")
+        if (DialogueManager.Instance.currentLanguage == Language.EN)
         {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageCululu;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto Tinder \nDesbloqueada!";
-        }
+            if (trophyName == "Giovanni")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "The Necronomicook \nUnlocked!";
+            }
 
-        else if (trophyName == "Denjirenji")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageDenjirenji;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Katana \nLáser \nDesbloqueada!";
-        }
-
-        else if (trophyName == "Elidora")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageElidora;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mc Moco \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Elvog")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageElvog;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Flores \nen Vodka \nDesbloqueadas!";
-        }
-
-        else if (trophyName == "Enano")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageEnano;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Elena Nito \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Geeraard")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGeeraard;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Foto to wapa \nDesbloqueada!";
-        }
-
-        else if (trophyName == "Giovanni")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageGiovanni;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Libro Gordo \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Handy")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageHandy;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Traje \nde los \nDomingos \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Mano")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMano;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El sellaso \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Mara")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMara;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Trozo de \nex-marido \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Petra")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImagePetra;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Mapa de \nAlbacete \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Raven")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageRaven;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡Disco de \nlos Mojinos \nDesbloqueado!";
-        }
-
-        else if (trophyName == "Sergio")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageSergio;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡La \nGloboespada \nDesbloqueada!";
-        }
-
-        else if (trophyName == "Tapicio")
-        {
-            trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
-            trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "¡El GOTY \nDesbloqueado!";
+            else if (trophyName == "Mano")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageMano;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "The Ring \nUnlocked!";
+            }
+            else if (trophyName == "Tapicio")
+            {
+                trophyUI.transform.GetChild(0).GetComponent<Image>().sprite = giftImageTapicio;
+                trophyUI.transform.GetChild(1).GetComponent<TMP_Text>().text = "GOTY \nUnlocked!";
+            }
         }
 
         showTrophyAnim.SetTrigger("TrophyShow");
+    }
+
+    public void SettingHomeDialogues()
+    {
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            humanText.text = "Humano";
+
+            if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("jefe"))
+            {
+                Data.instance.cCDialogue.Add("¿Increíble verdad? Mi madre tiene un estilo bastante propio.");
+                Data.instance.cCDialogue.Add("Probablemente te estarás preguntando que por qué todo tan 2D ¿No?");
+                Data.instance.cCDialogue.Add("¡PUES NO PREGUNTES TANTO!");
+                Data.instance.cCDialogue.Add("Da gracias que tenía este traductor antiguo y obsoleto por aquí tirado.");
+                Data.instance.cCDialogue.Add("Bueno, escoge la esquina de suelo más cómoda y...");
+                Data.instance.cCDialogue.Add("La verdad es que no sé como dormís los humanos, tampoco me interesa.");
+                Data.instance.cCDialogue.Add("Cuando acabes el ritual que sea que tenga tu especie, apaga la luz.");
+                Data.instance.cCDialogue.Add("Nos vemos mañana ¡NO LLEGUES TARDE!.");
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
+            {
+                Data.instance.cCDialogue.Add("Saludos humano **suspira**");
+                Data.instance.cCDialogue.Add("Tu jefe me dijo que te quedarías aquí, qué lugar más triste.");
+                Data.instance.cCDialogue.Add("Por desgracia tendré que animar este sitio, he traído mi juego favorito.");
+                Data.instance.cCDialogue.Add("Parecías nuevo en el reino y me diste pena al verte **suspira**");
+                Data.instance.cCDialogue.Add("Seguramente más clientes como yo puedan traerte cosas si les tratas bien.");
+                Data.instance.cCDialogue.Add("Ya sea cobrándoles aunque no debas, o ayudándoles con alguna cosa.");
+                Data.instance.cCDialogue.Add("Seguro que con más objetos animas este sitio.");
+                Data.instance.cCDialogue.Add("Aunque me gustaría que quedase más triste, como mi propia existencia.");
+                Data.instance.cCDialogue.Add("Te dejo de molestar humano, suerte estos días.");
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Giovanni"))
+            {
+                Data.instance.cCDialogue.Add("Bonna noche amigo mío, espero que descanses bien.");
+                Data.instance.cCDialogue.Add("Pero antes quería darte un regalo, mi libro de cocina.");
+                Data.instance.cCDialogue.Add("Bueno, mejor dicho... una copia, pedí que me lo clonaran con magia.");
+                Data.instance.cCDialogue.Add("Así los dos podremos hacer los platos que queramos cada día.");
+                Data.instance.cCDialogue.Add("Aunque aquí no veo ninguna cocina, solo un sótano sucio...");
+                Data.instance.cCDialogue.Add("Bueno, te las apañarás, ciao amigo mío.");
+
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Mano"))
+            {
+                Data.instance.cCDialogue.Add("Hola humano, veo que no has contado nada sobre la iglesia a ese detective.");
+                Data.instance.cCDialogue.Add("Has mostrado ser fiel a nuestra causa y a la iglesia.");
+                Data.instance.cCDialogue.Add("Ganaste mi confianza para considerarte uno de nosotros.");
+                Data.instance.cCDialogue.Add("Acepta este anillo como muestra de agradecimiento.");
+                Data.instance.cCDialogue.Add("Nos vivimos por verte estos días en la iglesia, ya me entiendes.");
+            }
+        }
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            humanText.text = "Human";
+
+            if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("jefe"))
+            {
+                Data.instance.cCDialogue.Add("¿Increíble verdad? Mi madre tiene un estilo bastante propio.");
+                Data.instance.cCDialogue.Add("Probablemente te estarás preguntando que por qué todo tan 2D ¿No?");
+                Data.instance.cCDialogue.Add("¡PUES NO PREGUNTES TANTO!");
+                Data.instance.cCDialogue.Add("Da gracias que tenía este traductor antiguo y obsoleto por aquí tirado.");
+                Data.instance.cCDialogue.Add("Bueno, escoge la esquina de suelo más cómoda y...");
+                Data.instance.cCDialogue.Add("La verdad es que no sé como dormís los humanos, tampoco me interesa.");
+                Data.instance.cCDialogue.Add("Cuando acabes el ritual que sea que tenga tu especie, apaga la luz.");
+                Data.instance.cCDialogue.Add("Nos vemos mañana ¡NO LLEGUES TARDE!.");
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Tapicio"))
+            {
+                Data.instance.cCDialogue.Add("Your boss said you’ll be staying here.");
+                Data.instance.cCDialogue.Add("This place is as gloomy… as my soul.");
+                Data.instance.cCDialogue.Add("I brought you a game — maybe you can decorate the room with it.");
+                Data.instance.cCDialogue.Add("If you treat customers well, they’ll give you stuff.");
+                Data.instance.cCDialogue.Add("Maybe if you do them favors, they’ll give you even… more random trash?");
+                Data.instance.cCDialogue.Add("I’ll leave you now with my grain of trash for your room, human. Good night.");
+
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Giovanni"))
+            {
+                Data.instance.cCDialogue.Add("Bonna notte, my friend. Hope you rest well.");
+                Data.instance.cCDialogue.Add("But first, I got you a present — my cookbook.");
+                Data.instance.cCDialogue.Add("Well, technically it’s a magical photocopy.");
+                Data.instance.cCDialogue.Add("Now we both can cook divine dishes any day.");
+                Data.instance.cCDialogue.Add("Though… there’s no kitchen here — just a filthy basement.");
+                Data.instance.cCDialogue.Add("You’ll figure it out. Ciao, my friend.");
+
+            }
+
+            else if (currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Mano"))
+            {
+                Data.instance.cCDialogue.Add("Hola humano, veo que no has contado nada sobre la iglesia a ese detective.");
+                Data.instance.cCDialogue.Add("Has mostrado ser fiel a nuestra causa y a la iglesia.");
+                Data.instance.cCDialogue.Add("Ganaste mi confianza para considerarte uno de nosotros.");
+                Data.instance.cCDialogue.Add("Acepta este anillo como muestra de agradecimiento.");
+                Data.instance.cCDialogue.Add("Nos vivimos por verte estos días en la iglesia, ya me entiendes.");
+            }
+        }
     }
 }

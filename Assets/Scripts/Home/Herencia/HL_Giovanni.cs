@@ -9,6 +9,18 @@ public class HL_Giovanni : HomeLimbastics
     {
         base.Start();
         nombre = "Giovanni";
+
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            raza = "Limbásticos";
+            nombre = "Giovanni";
+        }
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            raza = "Limbastics";
+            nombre = "Giovanni";
+        }
     }
 
     // Update is called once per frame

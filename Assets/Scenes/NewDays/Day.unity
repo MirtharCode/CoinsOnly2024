@@ -30041,7 +30041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: 0
+  currentLanguage: 1
   playButton: {fileID: 0}
   minigamesButton: {fileID: 0}
   optionsButton: {fileID: 0}

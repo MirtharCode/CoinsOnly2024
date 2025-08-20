@@ -9,6 +9,18 @@ public class HEW_Manolo : HomeEvilWizards
     {
         base.Start();
         nombre = "Manolo";
+
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            raza = "Magos Oscuros";
+            nombre = "Manolo";
+        }
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            raza = "Dark Wizards";
+            nombre = "Manolo";
+        }
     }
 
     // Update is called once per frame

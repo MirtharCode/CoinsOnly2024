@@ -18,7 +18,11 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerClickHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (clickSound != null && audioSource != null)
+        if (clickSound != null && audioSource != null && Data.instance.sePueTocar)
+        {
             audioSource.PlayOneShot(clickSound);
+            GetComponent<Animator>().SetTrigger("Sleep");
+        }
+            
     }
 }

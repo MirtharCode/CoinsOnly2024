@@ -9,6 +9,18 @@ public class HE_Tapicio : HomeElementals
     {
         base.Start();
         nombre = "Tapicio";
+
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            raza = "Elementales";
+            nombre = "Tapicio";
+        }
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            raza = "Elementals";
+            nombre = "Tapesjerry";
+        }
     }
 
     // Update is called once per frame

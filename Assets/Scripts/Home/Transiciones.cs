@@ -132,7 +132,6 @@ public class Transiciones : MonoBehaviour
             data.GetComponent<Data>().yaSeFueCliente = false;
             float animTime;
             Animator anim = transform.GetChild(23).gameObject.GetComponent<Animator>();
-            rodolfosNose.GetComponent<Animator>().SetTrigger("Sleep");
 
             anim.SetBool("ToBlack", true);
             animTime = toBlackClip.length;

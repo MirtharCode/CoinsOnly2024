@@ -56,10 +56,10 @@ public class ClientManager : MonoBehaviour
     [SerializeField] private Material grayscaleMaterial;
 
     // MENSAJES DE LOS TROFEOS
-    private static readonly Dictionary<string, string> TrophyMessages = new Dictionary<string, string>
+    private static readonly Dictionary<string, string> TrophyMessagesES = new Dictionary<string, string>
 {
     { "Antonio", "¡Gafas Otaku \nDesbloqueadas!" },
-    { "Cululu", "¡Foto Tinder \nDesbloqueada!" },
+    { "Cululu", "¡Foto Tonder \nDesbloqueada!" },
     { "Denjirenji", "¡Katana \nLáser \nDesbloqueada!" },
     { "Elidora", "¡Mc Moco \nDesbloqueado!" },
     { "Elvog", "¡Flores \nen Vodka \nDesbloqueadas!" },
@@ -73,6 +73,26 @@ public class ClientManager : MonoBehaviour
     { "RaveN", "¡Disco de \nlos Mojinos \nDesbloqueado!" },
     { "Sergio", "¡La \nGloboespada \nDesbloqueada!" },
     { "Tapicio", "¡El GOTY \nDesbloqueado!" }
+
+};
+
+    private static readonly Dictionary<string, string> TrophyMessagesEN = new Dictionary<string, string>
+{
+    { "Antonio", "Otaku Glasses \nUnlocked!" },
+    { "Cululu", "Tonder Photo \nUnlocked!" },
+    { "Denjirenji", "Laser \nKatana \nUnlocked!" },
+    { "Elidora", "Mc Moco \nUnlocked!" },
+    { "Elvog", "Marinated \nFlowers \nUnlocked!" },
+    { "Manomo", "Stare-You \nUnlocked!" },
+    { "Geeraard", "Geeraard \nYour Beloved \nUnlocked!" },
+    { "Giovanni", "The Necronomicook \nUnlocked!" },
+    { "Terry", "Eye-catching  \noutfit \nUnlocked!" },
+    { "Manolo", "The Ring \nUnlocked!" },
+    { "Mara", "Piece of \nex-husband \nUnlocked!" },
+    { "Petra", "Springfield \nMap \nUnlocked!" },
+    { "RaveN", "Tenacious \nDisk \nUnlocked!" },
+    { "Sergio", "Ballunt \nSword \nUnlocked!" },
+    { "Tapicio", "GOTY \nUnlocked!" }
 
 };
 
@@ -610,7 +630,28 @@ public class ClientManager : MonoBehaviour
 
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = true;
         DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = true;
+
+        if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            if (bossComplain == "¡Aquí tenemos unas normas! ¡¿Las recuerdas?!")
+                bossComplain = "Here are some regulations! \nDo you remember them?! ";
+
+            else if (bossComplain == "Ese cupón era más falso que el amor que siento por mi madre")
+                bossComplain = "That coupon was more fake than \nthe love I feel for my mother";
+
+            else if (bossComplain == "¡Tendrías que haberle echado a patadas, no tenía el dinero suficiente!")
+                bossComplain = "You should have kicked him out, \nhe didn't have enough money!";
+
+            else if (bossComplain == "¡¿Cómo que no le has cobrado a ese cliente?! CHICO NUEVO, MENOS SUELDO…")
+                bossComplain = "What do you mean you didn't charge that customer?! \nNEW GUY, LESS SALARY...";
+
+            else if (bossComplain == "¡¿Cómo que no le has cobrado a ese cliente?! ¡Tenía dinero y no rompía ninguna norma!")
+                bossComplain = "What do you mean you didn't charge that customer?! \nHe had money and wasn't breaking any rules!";
+        }
+
         DialogueManager.Instance.textoJefe.text = bossComplain;
+              
+
         var audioSource = DialogueManager.Instance.jefePanel.GetComponent<AudioSource>();
         audioSource.enabled = true;
         audioSource.Play();
@@ -941,7 +982,7 @@ public class ClientManager : MonoBehaviour
                                 dialogueChangedByPresent = "¡Sabía que me ayudarías!¡Buena suerte humano!";
 
                             else if (DialogueManager.Instance.currentLanguage == Language.ES) { }
-                                dialogueChangedByPresent = "Knew you’d help. Good luck, human.";
+                            dialogueChangedByPresent = "Knew you’d help. Good luck, human.";
 
                             DialogueManager.Instance.dailyCustomers[i].tickResponse[0].text = dialogueChangedByPresent;
                             DialogueManager.Instance.dailyCustomers[i].tickResponse[0].extra = "";
@@ -1216,11 +1257,25 @@ public class ClientManager : MonoBehaviour
 
         #region PONER EN LA UI EL MENSAJE DEL TROFEO USANDO EL DICCIONARIO DE TROFEOS
 
-        if (TrophyMessages.TryGetValue(trophyName, out string message))
-            DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = message;
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            if (TrophyMessagesES.TryGetValue(trophyName, out string message))
+                DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = message;
 
-        else
-            Debug.LogWarning($"Trophy name '{trophyName}' no reconocido.");
+            else
+                Debug.LogWarning($"Trophy name '{trophyName}' no reconocido.");
+        }
+
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            if (TrophyMessagesEN.TryGetValue(trophyName, out string message))
+                DialogueManager.Instance.uITrophies.transform.GetChild(1).GetComponent<TMP_Text>().text = message;
+
+            else
+                Debug.LogWarning($"Trophy name '{trophyName}' no reconocido.");
+        }
+
 
         #endregion
 

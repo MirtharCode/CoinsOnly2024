@@ -1899,7 +1899,7 @@ public class Data : MonoBehaviour
 
             else if (currentScene.name == "Home")
             {
-                if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("Jefe"))
+                if (homeManager.currentHomeClientReal.GetComponent<Image>().sprite.name.Contains("jefe"))
                 {
                     cCDialogue.Add("¿Increíble verdad? Mi madre tiene un estilo bastante propio.");
                     cCDialogue.Add("Probablemente te estarás preguntando que por qué todo tan 2D ¿No?");

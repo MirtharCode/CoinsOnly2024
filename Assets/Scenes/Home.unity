@@ -221,6 +221,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 16209978}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &16209979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,6 +998,7 @@ MonoBehaviour:
   data: {fileID: 0}
   conversationOn: 0
   traductorText: {fileID: 7452574364573257728}
+  humanText: {fileID: 7452574363956741994}
   NombreText: {fileID: 171605494838966581}
   dialogueSize: 0
   internalCount: 0
@@ -996,6 +1009,7 @@ MonoBehaviour:
   pantalla: {fileID: 1446496621}
   video: {fileID: 32900000, guid: 5c78fcc006883bb4dbe89c0e19c71bcd, type: 3}
   fTBObject: {fileID: 726965284}
+  lampSwitch: {fileID: 16209976}
   clientGoingOutClip: {fileID: 7400000, guid: 1db6c9729f014334dbb5c7716ff02f3c, type: 2}
   musicBox: {fileID: 1437515236}
   evilWizardGerard: {fileID: 21300000, guid: fb685a262fcd85b4190581c180073b00, type: 3}
@@ -1173,6 +1187,228 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &364950687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 364950689}
+  - component: {fileID: 364950688}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &364950688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364950687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLanguage: 0
+  playButton: {fileID: 0}
+  minigamesButton: {fileID: 0}
+  optionsButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  languageButton: {fileID: 0}
+  musicTextContainer: {fileID: 0}
+  muteTextContainer: {fileID: 0}
+  currentDay: 01
+  lastSceneWithDialogues: 
+  csvImporter: {fileID: 0}
+  mainCam: {fileID: 0}
+  clientManager: {fileID: 0}
+  clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
+  dailyCustomers: []
+  chosenChecks: []
+  conversationOn: 0
+  dialoguePanelFirst: {fileID: 0}
+  dialoguePanelFirstCollider: {fileID: 0}
+  dialoguePanelFirstNameText: {fileID: 0}
+  dialoguePanelFirstRaceText: {fileID: 0}
+  dialoguePanelFirstDialogueText: {fileID: 0}
+  dialoguePanelOther: {fileID: 0}
+  dialoguePanelOtherCollider: {fileID: 0}
+  dialoguePanelOtherNameText: {fileID: 0}
+  dialoguePanelOtherRaceText: {fileID: 0}
+  dialoguePanelOtherDialogueText: {fileID: 0}
+  detectivePanel: {fileID: 0}
+  postPro: {fileID: 1840511620}
+  postPro_Profile: {fileID: 0}
+  areYouSurePanel: {fileID: 0}
+  racePanel: {fileID: 0}
+  traductorText: {fileID: 0}
+  NombreText: {fileID: 0}
+  uITrophies: {fileID: 0}
+  gnomeMinigameCanvas: {fileID: 0}
+  theGnomeIsFree: 0
+  gnomeFog1: {fileID: 0}
+  gnomeFog2: {fileID: 0}
+  allProducts:
+    categories: []
+  beerText: {fileID: 0}
+  magicRamenText: {fileID: 0}
+  energyDrinkText: {fileID: 0}
+  manaPotionText: {fileID: 0}
+  venomPotionText: {fileID: 0}
+  deadCatText: {fileID: 0}
+  vodooDollText: {fileID: 0}
+  crystallBallText: {fileID: 0}
+  magicBatteriesText: {fileID: 0}
+  magicRunesText: {fileID: 0}
+  regulationsAdded: 0
+  currentRegulationsNumber: 0
+  currentRegulations: []
+  currentRegulationsBook: {fileID: 0}
+  regulationsData: []
+  reg01DWTitle: {fileID: 0}
+  reg01DWNoRegText: {fileID: 0}
+  reg01HybTitle: {fileID: 0}
+  reg01HybNoRegText: {fileID: 0}
+  reg01EleTitle: {fileID: 0}
+  reg01EleNoRegText: {fileID: 0}
+  reg01LimTitle: {fileID: 0}
+  reg01LimNoRegText: {fileID: 0}
+  reg01TP2Title: {fileID: 0}
+  reg01TP2NoRegText: {fileID: 0}
+  reg02DWTitle: {fileID: 0}
+  reg02DWNoRegText: {fileID: 0}
+  reg02HybTitle: {fileID: 0}
+  reg02HybNoRegText: {fileID: 0}
+  reg02EleTitle: {fileID: 0}
+  reg02EleReg1Text: {fileID: 0}
+  reg02LimTitle: {fileID: 0}
+  reg02LimReg1Text: {fileID: 0}
+  reg02TP2Title: {fileID: 0}
+  reg02TP2NoRegText: {fileID: 0}
+  reg03DWTitle: {fileID: 0}
+  reg03DWReg1Text: {fileID: 0}
+  reg03HybTitle: {fileID: 0}
+  reg03HybNoRegText: {fileID: 0}
+  reg03EleTitle: {fileID: 0}
+  reg03EleReg1Text: {fileID: 0}
+  reg03LimTitle: {fileID: 0}
+  reg03LimReg1Text: {fileID: 0}
+  reg03TP2Title: {fileID: 0}
+  reg03TP2Reg1Text: {fileID: 0}
+  reg04DWTitle: {fileID: 0}
+  reg04DWReg1Text: {fileID: 0}
+  reg04DWReg2Text: {fileID: 0}
+  reg04HybTitle: {fileID: 0}
+  reg04HybReg1Text: {fileID: 0}
+  reg04EleTitle: {fileID: 0}
+  reg04EleReg1Text: {fileID: 0}
+  reg04EleReg2Text: {fileID: 0}
+  reg04LimTitle: {fileID: 0}
+  reg04LimReg1Text: {fileID: 0}
+  reg04TP2Title: {fileID: 0}
+  reg04TP2Reg1Text: {fileID: 0}
+  reg05DWTitle: {fileID: 0}
+  reg05DWReg1Text: {fileID: 0}
+  reg05DWReg2Text: {fileID: 0}
+  reg05HybTitle: {fileID: 0}
+  reg05HybReg1Text: {fileID: 0}
+  reg05HybReg2Text: {fileID: 0}
+  reg05EleTitle: {fileID: 0}
+  reg05EleReg1Text: {fileID: 0}
+  reg05EleReg2Text: {fileID: 0}
+  reg05LimTitle: {fileID: 0}
+  reg05LimReg1Text: {fileID: 0}
+  reg05TP2Title: {fileID: 0}
+  reg05TP2Reg1Text: {fileID: 0}
+  reg06DWTitle: {fileID: 0}
+  reg06DWReg1Text: {fileID: 0}
+  reg06DWReg2Text: {fileID: 0}
+  reg06HybTitle: {fileID: 0}
+  reg06HybReg1Text: {fileID: 0}
+  reg06HybReg2Text: {fileID: 0}
+  reg06EleTitle: {fileID: 0}
+  reg06EleReg1Text: {fileID: 0}
+  reg06EleReg2Text: {fileID: 0}
+  reg06LimTitle: {fileID: 0}
+  reg06LimReg1Text: {fileID: 0}
+  reg06LimReg2Text: {fileID: 0}
+  reg06TP2Title: {fileID: 0}
+  reg06TP2Reg1Text: {fileID: 0}
+  reg06TP2Reg2Text: {fileID: 0}
+  reg07DWTitle: {fileID: 0}
+  reg07DWReg1Text: {fileID: 0}
+  reg07DWReg2Text: {fileID: 0}
+  reg07HybTitle: {fileID: 0}
+  reg07HybReg1Text: {fileID: 0}
+  reg07HybReg2Text: {fileID: 0}
+  reg07EleTitle: {fileID: 0}
+  reg07EleReg1Text: {fileID: 0}
+  reg07EleReg2Text: {fileID: 0}
+  reg07LimTitle: {fileID: 0}
+  reg07LimReg1Text: {fileID: 0}
+  reg07LimReg2Text: {fileID: 0}
+  reg07TP2Title: {fileID: 0}
+  reg07TP2Reg1Text: {fileID: 0}
+  reg07TP2Reg2Text: {fileID: 0}
+  darkWizardsTitleText: 
+  limbasticsTitleText: 
+  hybridsTitleText: 
+  tecnoP2TitleText: 
+  elementalsTitleText: 
+  noRegText: 
+  noBuyPotionText: 
+  noBuyCaffeineText: 
+  magicItems2coinsText: 
+  darkmagicItems10coinsText: 
+  noBuyAtTheSameTimeText: 
+  noBuyAlcoholText: 
+  noBuyDarkMagicText: 
+  leDinero: {fileID: 0}
+  leDineroText: {fileID: 0}
+  leDineroSymbol: {fileID: 0}
+  leCajaRegistradora: {fileID: 0}
+  buttonCobrar: {fileID: 0}
+  buttonNoCobrar: {fileID: 0}
+  centralProduct: {fileID: 0}
+  rightProduct: {fileID: 0}
+  leftProduct: {fileID: 0}
+  tutorialZoomIn: 0
+  zoomTargetPrices: {fileID: 0}
+  zoomTargetRegulations: {fileID: 0}
+  zoomTargetCoupon: {fileID: 0}
+  couponPlace: {fileID: 0}
+  couponInfoContainer: {fileID: 0}
+  lesPropinas: {fileID: 0}
+  lePropinasText: {fileID: 0}
+  propinasNumber: 0
+  puntosElidora: 0
+  phone: {fileID: 0}
+  jefePanel: {fileID: 0}
+  textoJefe: {fileID: 0}
+--- !u!4 &364950689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364950687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 620.82684, y: 527.5037, z: -200.58093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1840511621}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373900181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,118 +2562,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022738235}
   m_CullTransparentMesh: 1
---- !u!1 &1047723679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1047723681}
-  - component: {fileID: 1047723680}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1047723680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047723679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0dcec0a68f8832479c6b276698379ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDay: 01
-  lastSceneWithDialogues: 
-  csvImporter: {fileID: 0}
-  mainCam: {fileID: 0}
-  clientManager: {fileID: 0}
-  clientPrefab: {fileID: 8043330204968246209, guid: 6173dbf209c68a1468f7a3a6f5fec697, type: 3}
-  dailyCustomers: []
-  chosenChecks: []
-  conversationOn: 0
-  dialoguePanelFirst: {fileID: 0}
-  dialoguePanelFirstCollider: {fileID: 0}
-  dialoguePanelFirstNameText: {fileID: 0}
-  dialoguePanelFirstRaceText: {fileID: 0}
-  dialoguePanelFirstDialogueText: {fileID: 0}
-  dialoguePanelOther: {fileID: 0}
-  dialoguePanelOtherCollider: {fileID: 0}
-  dialoguePanelOtherNameText: {fileID: 0}
-  dialoguePanelOtherRaceText: {fileID: 0}
-  dialoguePanelOtherDialogueText: {fileID: 0}
-  detectivePanel: {fileID: 0}
-  postPro: {fileID: 0}
-  postPro_Profile: {fileID: 0}
-  areYouSurePanel: {fileID: 0}
-  racePanel: {fileID: 0}
-  traductorText: {fileID: 0}
-  NombreText: {fileID: 0}
-  uITrophies: {fileID: 0}
-  gnomeMinigameCanvas: {fileID: 0}
-  theGnomeIsFree: 0
-  gnomeFog1: {fileID: 0}
-  gnomeFog2: {fileID: 0}
-  allProducts:
-    categories: []
-  regulationsAdded: 0
-  currentRegulationsNumber: 0
-  currentRegulations: []
-  currentRegulationsBook: {fileID: 0}
-  regulationsData: []
-  razasNormas: []
-  razaSeleccionada: 0
-  textoRaza: {fileID: 0}
-  panelMagos: {fileID: 0}
-  panelHibridos: {fileID: 0}
-  panelElementales: {fileID: 0}
-  panelLimbasticos: {fileID: 0}
-  panelTecnopedos: {fileID: 0}
-  leDinero: {fileID: 0}
-  leDineroText: {fileID: 0}
-  leDineroSymbol: {fileID: 0}
-  leCajaRegistradora: {fileID: 0}
-  buttonCobrar: {fileID: 0}
-  buttonNoCobrar: {fileID: 0}
-  centralProduct: {fileID: 0}
-  rightProduct: {fileID: 0}
-  leftProduct: {fileID: 0}
-  tutorialZoomIn: 0
-  zoomTargetPrices: {fileID: 0}
-  zoomTargetRegulations: {fileID: 0}
-  zoomTargetCoupon: {fileID: 0}
-  couponPlace: {fileID: 0}
-  couponInfoContainer: {fileID: 0}
-  lesPropinas: {fileID: 0}
-  lePropinasText: {fileID: 0}
-  propinasNumber: 0
-  puntosElidora: 0
-  phone: {fileID: 0}
-  jefePanel: {fileID: 0}
-  textoJefe: {fileID: 0}
---- !u!4 &1047723681
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047723679}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 620.82684, y: 527.5037, z: -200.58093}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1081738983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 393.6, y: 224}
+  m_AnchoredPosition: {x: 0, y: 224}
   m_SizeDelta: {x: 510, y: 224}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &1369199847
@@ -3173,7 +3297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day02Checked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: samuraiPagaMal
@@ -3907,6 +4031,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730538972}
   m_CullTransparentMesh: 1
+--- !u!1 &1840511619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840511621}
+  - component: {fileID: 1840511620}
+  m_Layer: 0
+  m_Name: Postproces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1840511620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840511619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 5
+  blendDistance: 0
+  weight: 0.97
+  sharedProfile: {fileID: 11400000, guid: 128cc18cc028b7041977d0779d064068, type: 2}
+--- !u!4 &1840511621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840511619}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -616.9073, y: -564.5753, z: 301.95892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 364950689}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009575486
 GameObject:
   m_ObjectHideFlags: 0
