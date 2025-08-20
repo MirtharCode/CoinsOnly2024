@@ -3695,7 +3695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1079462353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5929,19 +5929,119 @@ MonoBehaviour:
   gnomeFog2: {fileID: 0}
   allProducts:
     categories: []
+  beerText: {fileID: 0}
+  magicRamenText: {fileID: 0}
+  energyDrinkText: {fileID: 0}
+  manaPotionText: {fileID: 0}
+  venomPotionText: {fileID: 0}
+  deadCatText: {fileID: 0}
+  vodooDollText: {fileID: 0}
+  crystallBallText: {fileID: 0}
+  magicBatteriesText: {fileID: 0}
+  magicRunesText: {fileID: 0}
   regulationsAdded: 0
   currentRegulationsNumber: 0
   currentRegulations: []
   currentRegulationsBook: {fileID: 0}
   regulationsData: []
-  razasNormas: []
-  razaSeleccionada: 0
-  textoRaza: {fileID: 0}
-  panelMagos: {fileID: 0}
-  panelHibridos: {fileID: 0}
-  panelElementales: {fileID: 0}
-  panelLimbasticos: {fileID: 0}
-  panelTecnopedos: {fileID: 0}
+  reg01DWTitle: {fileID: 0}
+  reg01DWNoRegText: {fileID: 0}
+  reg01HybTitle: {fileID: 0}
+  reg01HybNoRegText: {fileID: 0}
+  reg01EleTitle: {fileID: 0}
+  reg01EleNoRegText: {fileID: 0}
+  reg01LimTitle: {fileID: 0}
+  reg01LimNoRegText: {fileID: 0}
+  reg01TP2Title: {fileID: 0}
+  reg01TP2NoRegText: {fileID: 0}
+  reg02DWTitle: {fileID: 0}
+  reg02DWNoRegText: {fileID: 0}
+  reg02HybTitle: {fileID: 0}
+  reg02HybNoRegText: {fileID: 0}
+  reg02EleTitle: {fileID: 0}
+  reg02EleReg1Text: {fileID: 0}
+  reg02LimTitle: {fileID: 0}
+  reg02LimReg1Text: {fileID: 0}
+  reg02TP2Title: {fileID: 0}
+  reg02TP2NoRegText: {fileID: 0}
+  reg03DWTitle: {fileID: 0}
+  reg03DWReg1Text: {fileID: 0}
+  reg03HybTitle: {fileID: 0}
+  reg03HybNoRegText: {fileID: 0}
+  reg03EleTitle: {fileID: 0}
+  reg03EleReg1Text: {fileID: 0}
+  reg03LimTitle: {fileID: 0}
+  reg03LimReg1Text: {fileID: 0}
+  reg03TP2Title: {fileID: 0}
+  reg03TP2Reg1Text: {fileID: 0}
+  reg04DWTitle: {fileID: 0}
+  reg04DWReg1Text: {fileID: 0}
+  reg04DWReg2Text: {fileID: 0}
+  reg04HybTitle: {fileID: 0}
+  reg04HybReg1Text: {fileID: 0}
+  reg04EleTitle: {fileID: 0}
+  reg04EleReg1Text: {fileID: 0}
+  reg04EleReg2Text: {fileID: 0}
+  reg04LimTitle: {fileID: 0}
+  reg04LimReg1Text: {fileID: 0}
+  reg04TP2Title: {fileID: 0}
+  reg04TP2Reg1Text: {fileID: 0}
+  reg05DWTitle: {fileID: 0}
+  reg05DWReg1Text: {fileID: 0}
+  reg05DWReg2Text: {fileID: 0}
+  reg05HybTitle: {fileID: 0}
+  reg05HybReg1Text: {fileID: 0}
+  reg05HybReg2Text: {fileID: 0}
+  reg05EleTitle: {fileID: 0}
+  reg05EleReg1Text: {fileID: 0}
+  reg05EleReg2Text: {fileID: 0}
+  reg05LimTitle: {fileID: 0}
+  reg05LimReg1Text: {fileID: 0}
+  reg05TP2Title: {fileID: 0}
+  reg05TP2Reg1Text: {fileID: 0}
+  reg06DWTitle: {fileID: 0}
+  reg06DWReg1Text: {fileID: 0}
+  reg06DWReg2Text: {fileID: 0}
+  reg06HybTitle: {fileID: 0}
+  reg06HybReg1Text: {fileID: 0}
+  reg06HybReg2Text: {fileID: 0}
+  reg06EleTitle: {fileID: 0}
+  reg06EleReg1Text: {fileID: 0}
+  reg06EleReg2Text: {fileID: 0}
+  reg06LimTitle: {fileID: 0}
+  reg06LimReg1Text: {fileID: 0}
+  reg06LimReg2Text: {fileID: 0}
+  reg06TP2Title: {fileID: 0}
+  reg06TP2Reg1Text: {fileID: 0}
+  reg06TP2Reg2Text: {fileID: 0}
+  reg07DWTitle: {fileID: 0}
+  reg07DWReg1Text: {fileID: 0}
+  reg07DWReg2Text: {fileID: 0}
+  reg07HybTitle: {fileID: 0}
+  reg07HybReg1Text: {fileID: 0}
+  reg07HybReg2Text: {fileID: 0}
+  reg07EleTitle: {fileID: 0}
+  reg07EleReg1Text: {fileID: 0}
+  reg07EleReg2Text: {fileID: 0}
+  reg07LimTitle: {fileID: 0}
+  reg07LimReg1Text: {fileID: 0}
+  reg07LimReg2Text: {fileID: 0}
+  reg07TP2Title: {fileID: 0}
+  reg07TP2Reg1Text: {fileID: 0}
+  reg07TP2Reg2Text: {fileID: 0}
+  darkWizardsTitleText: 
+  limbasticsTitleText: 
+  hybridsTitleText: 
+  tecnoP2TitleText: 
+  elementalsTitleText: 
+  noRegText: 
+  noBuyPotionText: 
+  noBuyCaffeineText: 
+  magicItems2coinsText: 
+  darkmagicItems10coinsText: 
+  noBuyAtTheSameTimeText: 
+  noBuyAlcoholText: 
+  noBuyDarkMagicText: 
   leDinero: {fileID: 0}
   leDineroText: {fileID: 0}
   leDineroSymbol: {fileID: 0}
@@ -8090,7 +8190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: day07Checked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120182492314628034, guid: 99c0e2b62243cc2448bdbb3a01d4c63d, type: 3}
       propertyPath: borrachoTriste
