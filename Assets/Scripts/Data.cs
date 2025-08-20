@@ -174,11 +174,11 @@ public class Data : MonoBehaviour
             textoFecha.text = $"Guardado el: {datos.fechaUltimoGuardado}";
             textoDia.text = $"Día: {datos.ultimoDiaJugado}";
         }
+
         else
         {
-            textoFecha.text = "";
-            textoDia.text = "Vacio";
-            textoNumSlot.text = "";
+            textoFecha.text = "Nueva Partida";
+            textoDia.text = "Día: 0";
             deleteButton.gameObject.SetActive(false);
         }
     }
@@ -901,7 +901,7 @@ public class Data : MonoBehaviour
         if (day02Checked) return 3;
         if (day01Checked) return 2;
         if (day00Checked) return 1;
-        return -1; // Ningún día jugado aún
+        return 0; // Ningún día jugado aún
     }
 
     #region Todos los diálogos de Coins Only
