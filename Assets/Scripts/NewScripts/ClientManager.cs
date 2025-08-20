@@ -81,6 +81,9 @@ public class ClientManager : MonoBehaviour
     {
         RegulationsActivate();
 
+        DialogueManager.Instance.LanguagePricesText();
+        DialogueManager.Instance.LanguageRegulationsText();
+
         if (DialogueManager.Instance.currentDay != "01")
         {
             DialogueManager.Instance.mainCam.GetComponent<Animator>().enabled = false;
@@ -184,7 +187,7 @@ public class ClientManager : MonoBehaviour
         AltDialogues(DialogueManager.Instance.currentDay);
         DialogueManager.Instance.ChangeTipsPaper();
         DialogueManager.Instance.jefePanel.GetComponent<Image>().enabled = false;
-        DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;        
+        DialogueManager.Instance.jefePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
 
         //if (DialogueManager.Instance.dailyCustomers.Count == 0 && SceneManager.GetActiveScene().name != "DD" && imBW)
         //{
@@ -222,7 +225,7 @@ public class ClientManager : MonoBehaviour
         {
             if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
                 StartCoroutine(nameof(DialogueManager.Instance.ChangeSaturation));
-        }            
+        }
 
         CharacterShowUp(DialogueManager.Instance.clientPrefab);
         ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
@@ -428,8 +431,8 @@ public class ClientManager : MonoBehaviour
 
             var line = currentDialogueClient.dialogueLines[clientDialogueLineIndex];
 
-            speakerRaceTextBox.text = currentDialogueClient.race;
-            speakerTextBox.text = currentDialogueClient.name.ToUpper();
+            RacesDependOnLanguage();
+            NamesDependOnLanguage();
 
             ChangingDialogue(line.text);
 
@@ -452,8 +455,8 @@ public class ClientManager : MonoBehaviour
 
         else
         {
-            speakerRaceTextBox.text = currentDialogueClient.race;
-            speakerTextBox.text = currentDialogueClient.name;
+            RacesDependOnLanguage();
+            NamesDependOnLanguage();
 
             if (iWantToBelieve)
             {
@@ -926,6 +929,46 @@ public class ClientManager : MonoBehaviour
 
             case "05":
 
+                if (Data.instance.giftSergio)
+                {
+                    for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                    {
+                        if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientONE")
+                        {
+                            string dialogueChangedByPresent = "";
+
+                            if (DialogueManager.Instance.currentLanguage == Language.ES)
+                                dialogueChangedByPresent = "¡Sabía que me ayudarías!¡Buena suerte humano!";
+
+                            else if (DialogueManager.Instance.currentLanguage == Language.ES) { }
+                                dialogueChangedByPresent = "Knew you’d help. Good luck, human.";
+
+                            DialogueManager.Instance.dailyCustomers[i].tickResponse[0].text = dialogueChangedByPresent;
+                            DialogueManager.Instance.dailyCustomers[i].tickResponse[0].extra = "";
+                        }
+                    }
+                }
+
+                if (Data.instance.giftGeeraard)
+                {
+                    for (int i = 0; i < DialogueManager.Instance.dailyCustomers.Count; i++)
+                    {
+                        if (DialogueManager.Instance.dailyCustomers[i].clientID == "clientFOUR")
+                        {
+                            string dialogueChangedByPresent = "";
+
+                            if (DialogueManager.Instance.currentLanguage == Language.ES)
+                                dialogueChangedByPresent = "Nos veremos en algún futuro, querido fan.";
+
+                            else if (DialogueManager.Instance.currentLanguage == Language.ES) { }
+                            dialogueChangedByPresent = "We’ll meet again, my dear fan.";
+
+                            DialogueManager.Instance.dailyCustomers[i].tickResponse[0].text = dialogueChangedByPresent;
+                            DialogueManager.Instance.dailyCustomers[i].tickResponse[0].extra = "";
+                        }
+                    }
+                }
+
                 if (!day05client4AltChecked)
                 {
                     for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
@@ -1154,113 +1197,6 @@ public class ClientManager : MonoBehaviour
         }
     }
 
-    #region CÓDIGO ANTIGUO REFERENTE A LOS DESPLEGABLES DE NORMATIVAS Y PRECIOS QUE CAMBIARÁN
-
-    public void RetrocederRaza()
-    {
-        DialogueManager.Instance.razaSeleccionada = (DialogueManager.Instance.razaSeleccionada - 1 + DialogueManager.Instance.razasNormas.Length) % DialogueManager.Instance.razasNormas.Length;
-
-        DialogueManager.Instance.textoRaza.text = DialogueManager.Instance.razasNormas[DialogueManager.Instance.razaSeleccionada];
-
-        if (DialogueManager.Instance.textoRaza.text == "Magos Oscuros")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(true);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Elementales")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(true);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Híbridos")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(true);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Limbásticos")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(true);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Tecno P2")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(true);
-        }
-    }
-
-    public void AvanzarRaza()
-    {
-        DialogueManager.Instance.razaSeleccionada = (DialogueManager.Instance.razaSeleccionada + 1) % DialogueManager.Instance.razasNormas.Length;
-
-        DialogueManager.Instance.textoRaza.text = DialogueManager.Instance.razasNormas[DialogueManager.Instance.razaSeleccionada];
-
-        if (DialogueManager.Instance.textoRaza.text == "Magos Oscuros")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(true);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Elementales")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(true);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Híbridos")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(true);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Limbásticos")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(true);
-            DialogueManager.Instance.panelTecnopedos.SetActive(false);
-        }
-
-        else if (DialogueManager.Instance.textoRaza.text == "Tecno P2")
-        {
-            DialogueManager.Instance.panelMagos.SetActive(false);
-            DialogueManager.Instance.panelElementales.SetActive(false);
-            DialogueManager.Instance.panelHibridos.SetActive(false);
-            DialogueManager.Instance.panelLimbasticos.SetActive(false);
-            DialogueManager.Instance.panelTecnopedos.SetActive(true);
-        }
-    }
-    #endregion
-
     public void TrophyAchieved(string trophyName)
     {
         DialogueManager.Instance.uITrophies.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/TrophyImages/{trophyName}");
@@ -1390,6 +1326,8 @@ public class ClientManager : MonoBehaviour
 
     public void RegulationsActivate()
     {
+        DialogueManager.Instance.FillingRegulationsTextsLists();
+
         for (int i = 0; i < DialogueManager.Instance.currentRegulationsBook.transform.childCount; i++)
         {
             if (DialogueManager.Instance.currentRegulationsBook.transform.GetChild(i).name == DialogueManager.Instance.currentDay)
@@ -1483,5 +1421,68 @@ public class ClientManager : MonoBehaviour
         Data.instance.GuardarDatos();
         Debug.Log("Salir...");
         Application.Quit();
+    }
+
+    public void RacesDependOnLanguage()
+    {
+        if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            if (currentDialogueClient.race == "Magos Oscuros")
+                speakerRaceTextBox.text = "Evil Wizards";
+
+            else if (currentDialogueClient.race == "Híbridos")
+                speakerRaceTextBox.text = "Hybrids";
+
+            else if (currentDialogueClient.race == "Limbásticos")
+                speakerRaceTextBox.text = "Limbastics";
+
+            else if (currentDialogueClient.race == "Elementales")
+                speakerRaceTextBox.text = "Elementals";
+
+            else if (currentDialogueClient.race == "Tecnópedos")
+                speakerRaceTextBox.text = "TecnoP2";
+
+            else if (currentDialogueClient.race == "Desconocida")
+                speakerRaceTextBox.text = "Unkwown";
+        }
+
+        else
+            speakerRaceTextBox.text = currentDialogueClient.race;
+    }
+
+    public void NamesDependOnLanguage()
+    {
+        if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            if (currentDialogueClient.name == "Minijefe")
+                speakerTextBox.text = "Miniboss";
+
+            else if (currentDialogueClient.name == "Antonio")
+                speakerTextBox.text = "Anthony";
+
+            else if (currentDialogueClient.name == "Rústica")
+                speakerTextBox.text = "Rusty";
+
+            else if (currentDialogueClient.name == "Tapicio")
+                speakerTextBox.text = "Tapesjerry";
+
+            else if (currentDialogueClient.name == "Magmadora")
+                speakerTextBox.text = "Magmachine";
+
+            else if (currentDialogueClient.name == "Lepión")
+                speakerTextBox.text = "Leepion";
+
+            else if (currentDialogueClient.name == "Manomo")
+                speakerTextBox.text = "Manny";
+
+            else if (currentDialogueClient.name == "Rocón")
+                speakerTextBox.text = "Rockon";
+
+            else
+                speakerTextBox.text = currentDialogueClient.name.ToUpper();
+        }
+
+        else
+            speakerTextBox.text = currentDialogueClient.name.ToUpper();
     }
 }
