@@ -9,17 +9,13 @@
 Shader "Custom/Outline Fill" {
   Properties {
     [Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 0
-
-    _OutlineColor("Outline Color", Color) = (1, 1, 1, 1)
-    _OutlineWidth("Outline Width", Range(0, 10)) = 2
+    _OutlineColor("Outline Color", Color) = (1,1,1,1)
+    _OutlineWidth("Outline Width", Range(0,10)) = 2
+    _StencilRef("Stencil Ref", Float) = 1
   }
 
   SubShader {
-    Tags {
-      "Queue" = "Transparent+110"
-      "RenderType" = "Transparent"
-      "DisableBatching" = "True"
-    }
+    Tags { "Queue"="Transparent+110" "RenderType"="Transparent" "DisableBatching"="True" }
 
     Pass {
       Name "Fill"
@@ -30,13 +26,12 @@ Shader "Custom/Outline Fill" {
       ColorMask RGB
 
       Stencil {
-        Ref 1
+        Ref [_StencilRef]
         Comp NotEqual
       }
 
       CGPROGRAM
       #include "UnityCG.cginc"
-
       #pragma vertex vert
       #pragma fragment frag
 
@@ -58,7 +53,6 @@ Shader "Custom/Outline Fill" {
 
       v2f vert(appdata input) {
         v2f output;
-
         UNITY_SETUP_INSTANCE_ID(input);
         UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
 
@@ -68,7 +62,6 @@ Shader "Custom/Outline Fill" {
 
         output.position = UnityViewToClipPos(viewPosition + viewNormal * -viewPosition.z * _OutlineWidth / 1000.0);
         output.color = _OutlineColor;
-
         return output;
       }
 

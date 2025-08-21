@@ -71219,7 +71219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2100889811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -80468,6 +80468,7 @@ GameObject:
   - component: {fileID: 9216024901254582071}
   - component: {fileID: 7238612613478226007}
   - component: {fileID: 2725200355647423956}
+  - component: {fileID: 9216024901254582072}
   m_Layer: 0
   m_Name: SM_Mohai
   m_TagString: Untagged
@@ -81879,6 +81880,7 @@ GameObject:
   - component: {fileID: 765096345721499147}
   - component: {fileID: 7563210370033179842}
   - component: {fileID: 8979023033615048605}
+  - component: {fileID: 8979023033615048606}
   m_Layer: 0
   m_Name: SM_Cadena
   m_TagString: Untagged
@@ -82399,6 +82401,7 @@ GameObject:
   - component: {fileID: 9083191429031553197}
   - component: {fileID: 1814684471639681602}
   - component: {fileID: 5424286274647075449}
+  - component: {fileID: 9083191429031553198}
   m_Layer: 0
   m_Name: SM_Frigo
   m_TagString: Untagged
@@ -83065,6 +83068,7 @@ GameObject:
   - component: {fileID: 126028350228997629}
   - component: {fileID: 558286457380855552}
   - component: {fileID: 5492539390174496570}
+  - component: {fileID: 5492539390174496571}
   m_Layer: 0
   m_Name: SM_Espada
   m_TagString: Untagged
@@ -83844,7 +83848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3914142514575905043
 GameObject:
   m_ObjectHideFlags: 0
@@ -84758,6 +84762,7 @@ GameObject:
   - component: {fileID: 4508372873087765791}
   - component: {fileID: 1886156881333541157}
   - component: {fileID: 1068377734748699126}
+  - component: {fileID: 4508372873087765792}
   m_Layer: 0
   m_Name: SM_Baculo
   m_TagString: Untagged
@@ -85028,6 +85033,24 @@ Transform:
   m_Father: {fileID: 7542887930511963583}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4508372873087765792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411709180830451158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &4524485670965140245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85055,6 +85078,7 @@ GameObject:
   - component: {fileID: 664426046208746703}
   - component: {fileID: 598966840955668229}
   - component: {fileID: 6995965006706448070}
+  - component: {fileID: 6995965006706448072}
   m_Layer: 0
   m_Name: SM_Cuerda
   m_TagString: Untagged
@@ -86154,6 +86178,7 @@ GameObject:
   - component: {fileID: 892403617011143859}
   - component: {fileID: 9100999415719079098}
   - component: {fileID: 183292103406138121}
+  - component: {fileID: 9100999415719079099}
   m_Layer: 0
   m_Name: SM_Tarro 1
   m_TagString: Untagged
@@ -86332,6 +86357,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5492539390174496571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551067881497970190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.05
 --- !u!23 &5500436076685728210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87465,6 +87504,7 @@ GameObject:
   - component: {fileID: 7692108626346037649}
   - component: {fileID: 4139013547508114956}
   - component: {fileID: 3761381753262920072}
+  - component: {fileID: 7692108626346037650}
   m_Layer: 0
   m_Name: SM_Puerta_Frigo
   m_TagString: Untagged
@@ -87772,6 +87812,7 @@ GameObject:
   - component: {fileID: 1286975754298000687}
   - component: {fileID: 4545538818978133697}
   - component: {fileID: 1393150045039095519}
+  - component: {fileID: 6435297402597083750}
   m_Layer: 0
   m_Name: SM_Puerta
   m_TagString: Untagged
@@ -87779,6 +87820,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &6435297402597083750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435297402597083749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.05
 --- !u!33 &6467255160106157083
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88605,6 +88660,7 @@ GameObject:
   - component: {fileID: 1713863868396677621}
   - component: {fileID: 6360412277143174400}
   - component: {fileID: 8023826422190156807}
+  - component: {fileID: 8023826422190156808}
   m_Layer: 0
   m_Name: SM_Tarro
   m_TagString: Untagged
@@ -88687,6 +88743,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6995965006706448072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549556891670743680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.01
 --- !u!4 &7070350626577045222
 Transform:
   m_ObjectHideFlags: 0
@@ -88779,6 +88849,7 @@ GameObject:
   - component: {fileID: 2521293004837073892}
   - component: {fileID: 1736676827129770645}
   - component: {fileID: 8812459292240628344}
+  - component: {fileID: 8812459292240628345}
   m_Layer: 0
   m_Name: SM_Barril_Alto
   m_TagString: Untagged
@@ -94540,6 +94611,20 @@ Transform:
   m_Father: {fileID: 7542887930511963583}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7692108626346037650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213664317560140702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.04
 --- !u!33 &7695633808086289270
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95185,6 +95270,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8023826422190156808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949298105874789237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.03
 --- !u!33 &8035535226280014040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95763,6 +95862,7 @@ GameObject:
   - component: {fileID: 8082988028491111659}
   - component: {fileID: 3189994514899015207}
   - component: {fileID: 7773612062139913455}
+  - component: {fileID: 8498663731703021008}
   m_Layer: 0
   m_Name: SM_Caja_Madera
   m_TagString: Untagged
@@ -95770,6 +95870,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &8498663731703021008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498663731703021007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.03
 --- !u!23 &8515760047511793846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95904,6 +96018,7 @@ GameObject:
   - component: {fileID: 6583731820750256609}
   - component: {fileID: 8382352329355320136}
   - component: {fileID: 8009874694978152952}
+  - component: {fileID: 8549230067882940932}
   m_Layer: 0
   m_Name: SM_Barril_Bajo
   m_TagString: Untagged
@@ -95911,6 +96026,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &8549230067882940932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549230067882940931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8638958803887233957
 GameObject:
   m_ObjectHideFlags: 0
@@ -96394,6 +96527,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8812459292240628345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119066753973093256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &8835409690043597139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96828,6 +96979,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8979023033615048606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723554386224839262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.01
 --- !u!33 &8988823795548735928
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97071,6 +97236,20 @@ Transform:
   m_Father: {fileID: 7542887930511963583}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9083191429031553198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094902271142498792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.04
 --- !u!33 &9100999415719079098
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97079,6 +97258,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421446133747449682}
   m_Mesh: {fileID: -6697314489237839203, guid: 2c9a2a90a599dd04bb1f3099b575c191, type: 3}
+--- !u!114 &9100999415719079099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421446133747449682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1
 --- !u!33 &9125704263629284081
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97193,6 +97386,7 @@ GameObject:
   - component: {fileID: 2516509265070601395}
   - component: {fileID: 2298840996947224572}
   - component: {fileID: 7385576041159916722}
+  - component: {fileID: 9170606800692854823}
   m_Layer: 0
   m_Name: SM_Puerta_Tablones 1
   m_TagString: Untagged
@@ -97200,6 +97394,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &9170606800692854823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170606800692854822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &9185549888693609167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97302,6 +97514,20 @@ Transform:
   m_Father: {fileID: 7542887930511963583}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9216024901254582072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808892103535964365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.03
 --- !u!4 &9220857992313135682
 Transform:
   m_ObjectHideFlags: 0
