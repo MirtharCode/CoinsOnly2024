@@ -15,8 +15,8 @@ public class BegginingCinematicEnd : MonoBehaviour
     public float endSize = 0.1f;
 
     [Header("Tiempos y velocidades")]
-    public float smoothTimeToMid = 0.8f; // suavizado hacia 5.5
-    public float speedToEnd = 1f;        // velocidad lineal hacia 0.1
+    public float smoothTimeToMid = 0.8f; 
+    public float speedToEnd = 1f;        
 
     private bool startedSequence = false;
 
