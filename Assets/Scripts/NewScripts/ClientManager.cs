@@ -1518,23 +1518,44 @@ public class ClientManager : MonoBehaviour
             else if (currentDialogueClient.name == "Antonio")
                 speakerTextBox.text = "Anthony";
 
-            else if (currentDialogueClient.name == "Rústica")
-                speakerTextBox.text = "Rusty";
+            else if (currentDialogueClient.name == "Elidora")
+                speakerTextBox.text = "Elizabeth";
 
-            else if (currentDialogueClient.name == "Tapicio")
-                speakerTextBox.text = "Tapesjerry";
-
-            else if (currentDialogueClient.name == "Magmadora")
-                speakerTextBox.text = "Magmachine";
+            else if (currentDialogueClient.name == "Jissy")
+                speakerTextBox.text = "Chem Chem";
 
             else if (currentDialogueClient.name == "Lepión")
                 speakerTextBox.text = "Leepion";
 
+            else if (currentDialogueClient.name == "Magmadora")
+                speakerTextBox.text = "Magmachine";
+
+            else if (currentDialogueClient.name == "Manolo")
+                speakerTextBox.text = "Manny";
+
             else if (currentDialogueClient.name == "Manomo")
                 speakerTextBox.text = "Manny";
 
+            else if (currentDialogueClient.name == "Masermati")
+                speakerTextBox.text = "MaserMathew";
+
+            else if (currentDialogueClient.name == "Pijus Magnus")
+                speakerTextBox.text = "Bigus Dickus";
+
+            else if (currentDialogueClient.name == "Rústica")
+                speakerTextBox.text = "Rusty";           
+
             else if (currentDialogueClient.name == "Rocón")
                 speakerTextBox.text = "Rockon";
+
+            else if (currentDialogueClient.name == "Saltarálisis")
+                speakerTextBox.text = "Flopbun";
+
+            else if (currentDialogueClient.name == "Sergio")
+                speakerTextBox.text = "Sergei";
+
+            else if (currentDialogueClient.name == "Tapicio")
+                speakerTextBox.text = "Tapesjerry";
 
             else
                 speakerTextBox.text = currentDialogueClient.name.ToUpper();
