@@ -30050,7 +30050,7 @@ MonoBehaviour:
   languageButton: {fileID: 0}
   musicTextContainer: {fileID: 0}
   muteTextContainer: {fileID: 0}
-  currentDay: 01
+  currentDay: 04
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}

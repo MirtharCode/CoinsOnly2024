@@ -23,6 +23,12 @@ public class PilaManager : MonoBehaviour
 
     void Start()
     {
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+            tutorialPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "Para moverte \nusa las teclas";
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+            tutorialPanel.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = "To move \nuse the keys";
+
         pila1 = GameObject.FindGameObjectWithTag("Player");
 
         if (!tutorialPanel.activeInHierarchy) ActivarTemporizador();

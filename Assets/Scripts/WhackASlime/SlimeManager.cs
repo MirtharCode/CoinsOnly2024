@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,21 @@ public class SlimeManager : MonoBehaviour
 
     void Start()
     {
+        if (DialogueManager.Instance.currentLanguage == Language.ES)
+        {
+            canvas.transform.GetChild(5).GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Consigue\nal menos \n50 puntos";
+            scorePanel.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Puntuación:";
+            scorePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "SALIR";
+        }
+            
+
+        else if (DialogueManager.Instance.currentLanguage == Language.EN)
+        {
+            canvas.transform.GetChild(5).GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Get at least \n50 points \nto win!";
+            scorePanel.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Final Score:";
+            scorePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "EXIT";
+        }  
+
         GameObject newCursor = Instantiate(cursor, canvas.transform);
         currentScene = SceneManager.GetActiveScene();
         score = 0;

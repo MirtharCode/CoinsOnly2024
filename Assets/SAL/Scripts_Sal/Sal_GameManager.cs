@@ -24,6 +24,8 @@ public class Sal_GameManager : MonoBehaviour
 
     void Start()
     {
+        DialogueManager.Instance.postPro.gameObject.SetActive(false);
+
         totalGrassCells = GameObject.FindGameObjectsWithTag("Grass");   // Al iniciar, relleno el array con las que tengan tag Grass.
 
         totalMudCells = GameObject.FindGameObjectsWithTag("Mud");       // Al iniciar, relleno el array con las que tengan tag Mud.

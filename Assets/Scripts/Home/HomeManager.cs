@@ -156,6 +156,7 @@ public class HomeManager : MonoBehaviour
             videoplayer.SetActive(true);
             pantalla.SetActive(true);
         }
+        DialogueManager.Instance.postPro.gameObject.SetActive(true);
         DialogueManager.Instance.BackToTheDefaultSaturation();
     }
 

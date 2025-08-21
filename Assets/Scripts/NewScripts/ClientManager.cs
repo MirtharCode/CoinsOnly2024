@@ -127,6 +127,9 @@ public class ClientManager : MonoBehaviour
                 {
                     ShowCouponInfo("toother");
                     DialogueManager.Instance.gnomeFog2.SetActive(true);
+
+                    if (DialogueManager.Instance.theGnomeIsFree)
+                        GnomeOut("04");
                 }
 
                 else if (DialogueManager.Instance.currentDay == "05")

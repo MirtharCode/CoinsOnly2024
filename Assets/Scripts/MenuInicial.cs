@@ -22,6 +22,8 @@ public class MenuInicial : MonoBehaviour
             button1.SetActive(true);
             button2.SetActive(true);
         }
+        DialogueManager.Instance.postPro.gameObject.SetActive(true);
+        DialogueManager.Instance.BackToTheDefaultSaturation();
 
     }
     //public void Jugar()
