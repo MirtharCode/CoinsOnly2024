@@ -28,31 +28,19 @@ public class Outline : MonoBehaviour
     public Mode OutlineMode
     {
         get { return outlineMode; }
-        set
-        {
-            outlineMode = value;
-            needsUpdate = true;
-        }
+        set { outlineMode = value; needsUpdate = true; }
     }
 
     public Color OutlineColor
     {
         get { return outlineColor; }
-        set
-        {
-            outlineColor = value;
-            needsUpdate = true;
-        }
+        set { outlineColor = value; needsUpdate = true; }
     }
 
     public float OutlineWidth
     {
         get { return outlineWidth; }
-        set
-        {
-            outlineWidth = value;
-            needsUpdate = true;
-        }
+        set { outlineWidth = value; needsUpdate = true; }
     }
 
     [Serializable]
@@ -61,22 +49,29 @@ public class Outline : MonoBehaviour
         public List<Vector3> data;
     }
 
-    [SerializeField] private Mode outlineMode;
-    [SerializeField] private Color outlineColor = Color.white;
-    [SerializeField, Range(0f, 10f)] private float outlineWidth = 2f;
+    [SerializeField]
+    private Mode outlineMode;
+
+    [SerializeField]
+    private Color outlineColor = Color.white;
+
+    [SerializeField, Range(0f, 10f)]
+    private float outlineWidth = 2f;
 
     [Header("Optional")]
     [SerializeField, Tooltip("Precompute enabled: Per-vertex calculations are performed in the editor and serialized with the object. " +
-                             "Precompute disabled: Per-vertex calculations are performed at runtime in Awake(). This may cause a pause for large meshes.")]
+        "Precompute disabled: Per-vertex calculations are performed at runtime in Awake(). This may cause a pause for large meshes.")]
     private bool precomputeOutline;
 
-    [SerializeField, HideInInspector] private List<Mesh> bakeKeys = new List<Mesh>();
-    [SerializeField, HideInInspector] private List<ListVector3> bakeValues = new List<ListVector3>();
+    [SerializeField, HideInInspector]
+    private List<Mesh> bakeKeys = new List<Mesh>();
+
+    [SerializeField, HideInInspector]
+    private List<ListVector3> bakeValues = new List<ListVector3>();
 
     private Renderer[] renderers;
     private Material outlineMaskMaterial;
     private Material outlineFillMaterial;
-
     private bool needsUpdate;
 
     void Awake()
@@ -87,9 +82,13 @@ public class Outline : MonoBehaviour
         // Instantiate outline materials
         outlineMaskMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineMask"));
         outlineFillMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineFill"));
-
         outlineMaskMaterial.name = "OutlineMask (Instance)";
         outlineFillMaterial.name = "OutlineFill (Instance)";
+
+        // Asignar un StencilRef único por objeto
+        int stencilRef = gameObject.GetInstanceID() & 0xFF;
+        outlineMaskMaterial.SetInt("_StencilRef", stencilRef);
+        outlineFillMaterial.SetInt("_StencilRef", stencilRef);
 
         // Retrieve or generate smooth normals
         LoadSmoothNormals();
@@ -100,21 +99,14 @@ public class Outline : MonoBehaviour
 
     void OnEnable()
     {
-        // Generamos un ID único para cada objeto (1-255)
-        int stencilID = (gameObject.GetInstanceID() & 255);
-        if (stencilID == 0) stencilID = 1; // Evitamos 0 porque no escribe en stencil
-
         foreach (var renderer in renderers)
         {
+            // Append outline shaders
             var materials = renderer.sharedMaterials.ToList();
             materials.Add(outlineMaskMaterial);
             materials.Add(outlineFillMaterial);
             renderer.materials = materials.ToArray();
         }
-
-        // Asignamos StencilRef único
-        outlineMaskMaterial.SetFloat("_StencilRef", stencilID);
-        outlineFillMaterial.SetFloat("_StencilRef", stencilID);
     }
 
     void OnValidate()
@@ -239,7 +231,10 @@ public class Outline : MonoBehaviour
         foreach (var group in groups)
         {
             // Skip single vertices
-            if (group.Count() == 1) continue;
+            if (group.Count() == 1)
+            {
+                continue;
+            }
 
             // Calculate the average normal
             var smoothNormal = Vector3.zero;
@@ -255,16 +250,23 @@ public class Outline : MonoBehaviour
                 smoothNormals[pair.Value] = smoothNormal;
             }
         }
+
         return smoothNormals;
     }
 
     void CombineSubmeshes(Mesh mesh, Material[] materials)
     {
         // Skip meshes with a single submesh
-        if (mesh.subMeshCount == 1) return;
+        if (mesh.subMeshCount == 1)
+        {
+            return;
+        }
 
         // Skip if submesh count exceeds material count
-        if (mesh.subMeshCount > materials.Length) return;
+        if (mesh.subMeshCount > materials.Length)
+        {
+            return;
+        }
 
         // Append combined submesh
         mesh.subMeshCount++;

@@ -79622,6 +79622,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9dadeab2b0681414eadd8793bce67fb8, type: 2}
+  - {fileID: 2100000, guid: 9dadeab2b0681414eadd8793bce67fb8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81627,7 +81628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9170606800692854822}
   m_LocalRotation: {x: -0.70710677, y: -0.00000006181724, z: 2.7021173e-15, w: 0.7071068}
-  m_LocalPosition: {x: 5.408, y: -0.26296312, z: -0.701}
+  m_LocalPosition: {x: 5.324, y: -0.263, z: -0.701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86178,7 +86179,6 @@ GameObject:
   - component: {fileID: 892403617011143859}
   - component: {fileID: 9100999415719079098}
   - component: {fileID: 183292103406138121}
-  - component: {fileID: 9100999415719079099}
   m_Layer: 0
   m_Name: SM_Tarro 1
   m_TagString: Untagged
@@ -87829,11 +87829,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6435297402597083749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineMode: 1
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.05
+  outlineWidth: 1.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &6467255160106157083
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97258,20 +97262,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421446133747449682}
   m_Mesh: {fileID: -6697314489237839203, guid: 2c9a2a90a599dd04bb1f3099b575c191, type: 3}
---- !u!114 &9100999415719079099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5421446133747449682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!33 &9125704263629284081
 MeshFilter:
   m_ObjectHideFlags: 0
