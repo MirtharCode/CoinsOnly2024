@@ -1338,7 +1338,7 @@ public class ClientManager : MonoBehaviour
                 break;
 
             case "Híbridos":
-                textBox.fontSize = 120;
+                textBox.fontSize = 85;
                 break;
 
             case "Limbásticos":
