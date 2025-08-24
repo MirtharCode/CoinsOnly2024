@@ -101,8 +101,8 @@ public class ClientManager : MonoBehaviour
     {
         RegulationsActivate();
 
-        DialogueManager.Instance.LanguagePricesText();
-        DialogueManager.Instance.LanguageRegulationsText();
+        //DialogueManager.Instance.LanguagePricesText();
+        //DialogueManager.Instance.LanguageRegulationsText();
 
         if (DialogueManager.Instance.currentDay != "01")
         {
@@ -115,30 +115,33 @@ public class ClientManager : MonoBehaviour
             StartMusicSetup();
             Invoke(nameof(StartNextClient), timer);
 
-
-            if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
-                DialogueManager.Instance.gnomeFog1.SetActive(true);
-
-            if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
+            if(DialogueManager.Instance.currentDay != "CC")
             {
-                DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
+                if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
+                    DialogueManager.Instance.gnomeFog1.SetActive(true);
 
-                if (DialogueManager.Instance.currentDay == "04")
+                if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
                 {
-                    ShowCouponInfo("toother");
-                    DialogueManager.Instance.gnomeFog2.SetActive(true);
+                    DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
 
-                    if (DialogueManager.Instance.theGnomeIsFree)
-                        GnomeOut("04");
+                    if (DialogueManager.Instance.currentDay == "04")
+                    {
+                        ShowCouponInfo("toother");
+                        DialogueManager.Instance.gnomeFog2.SetActive(true);
+
+                        if (DialogueManager.Instance.theGnomeIsFree)
+                            GnomeOut("04");
+                    }
+
+                    else if (DialogueManager.Instance.currentDay == "05")
+                        ShowCouponInfo("geomery");
+                    else if (DialogueManager.Instance.currentDay == "06")
+                        ShowCouponInfo("drakerry");
+                    else if (DialogueManager.Instance.currentDay == "07")
+                        ShowCouponInfo("dogelle");
                 }
-
-                else if (DialogueManager.Instance.currentDay == "05")
-                    ShowCouponInfo("geomery");
-                else if (DialogueManager.Instance.currentDay == "06")
-                    ShowCouponInfo("drakerry");
-                else if (DialogueManager.Instance.currentDay == "07")
-                    ShowCouponInfo("dogelle");
-            }
+            }           
+            
         }
 
         else
@@ -839,48 +842,56 @@ public class ClientManager : MonoBehaviour
 
     public void GoingHome(string sceneName)
     {
-        if (DialogueManager.Instance.propinasNumber > 50)
-            Data.instance.tipsPoints++;
-
-        DialogueManager.Instance.propinasNumber = 50; // Seteo en 0 el número de propinas para el día siguiente
-
-        int diaActual;
-
-        if (!int.TryParse(sceneName, out diaActual))
+        if (sceneName != "CC") // Si no estoy en la Demo de la Comet-Con
         {
-            Debug.LogError($"Nombre de escena inválido: {sceneName}");
-            return;
+            if (DialogueManager.Instance.propinasNumber > 50)
+                Data.instance.tipsPoints++;
+
+            DialogueManager.Instance.propinasNumber = 50; // Seteo en 0 el número de propinas para el día siguiente
+
+            int diaActual;
+
+            if (!int.TryParse(sceneName, out diaActual))
+            {
+                Debug.LogError($"Nombre de escena inválido: {sceneName}");
+                return;
+            }
+
+            string diaPasado = (diaActual - 1).ToString("D2");
+
+            // Construir el nombre del bool según el nombre de la escena
+            string boolToActivate = $"day{sceneName}Checked";
+            string boolToDeactivate = $"day{diaPasado}Checked";
+
+            // Obtener el campo por reflexión
+            FieldInfo field01 = typeof(Data).GetField(boolToDeactivate, BindingFlags.Instance | BindingFlags.Public);
+            FieldInfo field02 = typeof(Data).GetField(boolToActivate, BindingFlags.Instance | BindingFlags.Public);
+
+            if (field01 != null && field01.FieldType == typeof(bool))
+            {
+                field01.SetValue(Data.instance, false);
+                Debug.Log($" Activado: {boolToDeactivate}");
+            }
+            else
+                Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+            if (field02 != null && field02.FieldType == typeof(bool))
+            {
+                field02.SetValue(Data.instance, true);
+                Debug.Log($" Activado: {boolToActivate}");
+            }
+            else
+                Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+            DialogueManager.Instance.currentDay = (diaActual + 1).ToString("D2");
+            // Cargar la escena Home
+            SceneManager.LoadScene("Home");
         }
 
-        string diaPasado = (diaActual - 1).ToString("D2");
-
-        // Construir el nombre del bool según el nombre de la escena
-        string boolToActivate = $"day{sceneName}Checked";
-        string boolToDeactivate = $"day{diaPasado}Checked";
-
-        // Obtener el campo por reflexión
-        FieldInfo field01 = typeof(Data).GetField(boolToDeactivate, BindingFlags.Instance | BindingFlags.Public);
-        FieldInfo field02 = typeof(Data).GetField(boolToActivate, BindingFlags.Instance | BindingFlags.Public);
-
-        if (field01 != null && field01.FieldType == typeof(bool))
-        {
-            field01.SetValue(Data.instance, false);
-            Debug.Log($" Activado: {boolToDeactivate}");
-        }
         else
-            Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
-
-        if (field02 != null && field02.FieldType == typeof(bool))
         {
-            field02.SetValue(Data.instance, true);
-            Debug.Log($" Activado: {boolToActivate}");
-        }
-        else
-            Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
-
-        DialogueManager.Instance.currentDay = (diaActual + 1).ToString("D2");
-        // Cargar la escena Home
-        SceneManager.LoadScene("Home");
+            SceneManager.LoadScene("FM");
+        }       
     }
 
     public void AltDialogues(string day)

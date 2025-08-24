@@ -78,6 +78,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NewDays/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d
   - enabled: 1
+    path: Assets/Scenes/NewDays/CC.unity
+    guid: 8103ccab744de884687d33d4f8d62061
+  - enabled: 1
     path: Assets/Scenes/NewDays/FM.unity
     guid: 6366e2b42d4e51a47b22b532b4343323
   - enabled: 1

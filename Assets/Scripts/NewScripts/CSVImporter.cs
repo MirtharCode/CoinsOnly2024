@@ -214,7 +214,7 @@ public class CSVImporter : MonoBehaviour
     #region Traducir de CSV a datos útiles
 
     DialogueDatabase ParseDialogueCSV(string csv)
-    {
+    {        
         DialogueDatabase db = new DialogueDatabase();
         db.entries = new List<DialogueEntry>();
 
