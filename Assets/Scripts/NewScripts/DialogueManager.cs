@@ -1212,8 +1212,35 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator ChangeSaturation()
     {
+        Debug.Log("Me llamo Detective");
         float startValue = 15f;
         float endValue = -100f;
+        float duration = 1.5f;
+
+        postPro.priority = 5;
+
+        if (postPro_Profile.TryGet(out ColorAdjustments color))
+        {
+            float elapsed = 0f;
+            float initial = startValue;
+            color.saturation.value = initial;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / duration;
+                color.saturation.value = Mathf.Lerp(initial, endValue, t);
+                yield return null;
+            }
+        }
+
+    }
+
+    public IEnumerator ReverseSaturation()
+    {
+        Debug.Log("Me llamo Minixefe");
+        float startValue = -100f;
+        float endValue = 15f;
         float duration = 1.5f;
 
         postPro.priority = 5;

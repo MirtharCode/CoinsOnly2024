@@ -115,7 +115,7 @@ public class ClientManager : MonoBehaviour
             StartMusicSetup();
             Invoke(nameof(StartNextClient), timer);
 
-            if(DialogueManager.Instance.currentDay != "CC")
+            if (DialogueManager.Instance.currentDay != "CC")
             {
                 if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
                     DialogueManager.Instance.gnomeFog1.SetActive(true);
@@ -140,8 +140,14 @@ public class ClientManager : MonoBehaviour
                     else if (DialogueManager.Instance.currentDay == "07")
                         ShowCouponInfo("dogelle");
                 }
-            }           
-            
+            }
+
+            else // Si estoy en la Demo de la CometCon
+            {
+                DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
+                ShowCouponInfo("drakerry");
+            }
+
         }
 
         else
@@ -247,18 +253,20 @@ public class ClientManager : MonoBehaviour
         currentDialogueClient = DialogueManager.Instance.dailyCustomers[0];
         clientDialogueLineIndex = 0;
 
-        if (currentDialogueClient.name == "Detective")
+        if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
         {
-            if (DialogueManager.Instance.postPro_Profile.TryGet(out ColorAdjustments color))
-                StartCoroutine(nameof(DialogueManager.Instance.ChangeSaturation));
+            if (currentDialogueClient.name == "Detective")
+                StartCoroutine(DialogueManager.Instance.ChangeSaturation());
+            else if (currentDialogueClient.name == "Minixefe")
+                StartCoroutine(DialogueManager.Instance.ReverseSaturation());
+
+            CharacterShowUp(DialogueManager.Instance.clientPrefab);
+            ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
+
+            showingDialogue = true;
+            MostrarDialogoActual();
+            ChangeTheMusic(currentDialogueClient.race, currentDialogueClient.name);
         }
-
-        CharacterShowUp(DialogueManager.Instance.clientPrefab);
-        ChangingSprite(currentDialogueClient.race, currentDialogueClient.name, currentDialogueClient.dialogueLines[0].mood);
-
-        showingDialogue = true;
-        MostrarDialogoActual();
-        ChangeTheMusic(currentDialogueClient.race, currentDialogueClient.name);
     }
 
     private IEnumerator ChangeSaturation()
@@ -357,14 +365,13 @@ public class ClientManager : MonoBehaviour
         }
         else
         {
-            // Esto solo pasa en la demo de MadridOtaku
-            //if (currentDialogueClient.name == "Mikujefe" && currentDialogueClient.clientID == "clientFINAL" && DialogueManager.Instance.currentDay == "DD")
-            //{
-            //    StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
-            //    StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
-            //    StartCoroutine(FadeFromGrayscale(grayscaleMaterial, 2f));
-            //}
-            if (currentDialogueClient.name == "Detective")
+            //Esto solo pasa en la demo de la COMETCON
+            if (currentDialogueClient.name == "Minixefe")
+            {
+                StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
+                StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
+            }
+            else if (currentDialogueClient.name == "Detective")
             {
                 StartCoroutine(FadeOut(musicBox.GetComponent<AudioSource>(), fadeDuration));
 
@@ -656,7 +663,7 @@ public class ClientManager : MonoBehaviour
         }
 
         DialogueManager.Instance.textoJefe.text = bossComplain;
-              
+
 
         var audioSource = DialogueManager.Instance.jefePanel.GetComponent<AudioSource>();
         audioSource.enabled = true;
@@ -891,7 +898,7 @@ public class ClientManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene("FM");
-        }       
+        }
     }
 
     public void AltDialogues(string day)
@@ -1554,7 +1561,7 @@ public class ClientManager : MonoBehaviour
                 speakerTextBox.text = "Bigus Dickus";
 
             else if (currentDialogueClient.name == "Rústica")
-                speakerTextBox.text = "Rusty";           
+                speakerTextBox.text = "Rusty";
 
             else if (currentDialogueClient.name == "Rocón")
                 speakerTextBox.text = "Rockon";
