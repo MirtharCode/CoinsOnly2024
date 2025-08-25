@@ -101,8 +101,8 @@ public class ClientManager : MonoBehaviour
     {
         RegulationsActivate();
 
-        //DialogueManager.Instance.LanguagePricesText();
-        //DialogueManager.Instance.LanguageRegulationsText();
+        DialogueManager.Instance.LanguagePricesText();
+        DialogueManager.Instance.LanguageRegulationsText();
 
         if (DialogueManager.Instance.currentDay != "01")
         {

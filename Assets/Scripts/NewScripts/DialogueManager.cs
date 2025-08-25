@@ -1365,7 +1365,7 @@ public class DialogueManager : MonoBehaviour
             elementalsTitleText = "ELEMENTALS";
             hybridsTitleText = "HYBRIDS";
             limbasticsTitleText = "LIMBASTICS";
-            tecnoP2TitleText = "TECNOP2";
+            tecnoP2TitleText = "TECHNOPEDES";
             noRegText = "There are no \nnew regulations";
             noBuyPotionText = "Potions are \nnot allowed to purchase";
             noBuyCaffeineText = "Caffeine products are\nnot allowed to purchase";
