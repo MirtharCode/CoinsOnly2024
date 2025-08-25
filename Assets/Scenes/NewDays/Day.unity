@@ -21958,8 +21958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!1 &527260635
 GameObject:
   m_ObjectHideFlags: 0
@@ -37019,7 +37017,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0813e03a8f6754a4b89294d104b9b0c1, type: 2}
+  - {fileID: 2100000, guid: ff5d9f82e94dbfc4c9a699f6c7f9df43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46665,7 +46663,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0813e03a8f6754a4b89294d104b9b0c1, type: 2}
+  - {fileID: 2100000, guid: ff5d9f82e94dbfc4c9a699f6c7f9df43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49507,8 +49505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 2
 --- !u!1 &1439536027
 GameObject:
   m_ObjectHideFlags: 0
@@ -57018,8 +57014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!1 &1564404115
 GameObject:
   m_ObjectHideFlags: 0
@@ -71047,7 +71041,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0813e03a8f6754a4b89294d104b9b0c1, type: 2}
+  - {fileID: 2100000, guid: ff5d9f82e94dbfc4c9a699f6c7f9df43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83756,8 +83750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.5
 --- !u!33 &3638738397560382137
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85629,8 +85621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!33 &4524485670965140245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85651,8 +85641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 0.3
 --- !u!33 &4545538818978133697
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86548,8 +86536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1.5
 --- !u!33 &5288190378238845071
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86654,8 +86640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 1
 --- !u!33 &5374051295009756680
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86994,8 +86978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!23 &5500436076685728210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87411,8 +87393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!4 &5773065827902713495
 Transform:
   m_ObjectHideFlags: 0
@@ -88315,8 +88295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.5
 --- !u!4 &6357547635563239469
 Transform:
   m_ObjectHideFlags: 0
@@ -88488,8 +88466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 2
 --- !u!33 &6467255160106157083
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88768,8 +88744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.3
 --- !u!23 &6690185666744929267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89289,8 +89263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!33 &6918779321944453402
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89421,8 +89393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.01
 --- !u!4 &7070350626577045222
 Transform:
   m_ObjectHideFlags: 0
@@ -94908,8 +94878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!4 &7488499349152626543
 Transform:
   m_ObjectHideFlags: 0
@@ -95267,8 +95235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!4 &7656280910920119595
 Transform:
   m_ObjectHideFlags: 0
@@ -95319,8 +95285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.04
 --- !u!33 &7695633808086289270
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95978,8 +95942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!33 &8035535226280014040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96233,8 +96195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 1
 --- !u!4 &8237568186263577305
 Transform:
   m_ObjectHideFlags: 0
@@ -96498,8 +96458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.5
 --- !u!23 &8461451564217777946
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96606,8 +96564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!23 &8515760047511793846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96762,8 +96718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 2
 --- !u!1 &8638958803887233957
 GameObject:
   m_ObjectHideFlags: 0
@@ -97259,8 +97213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!23 &8835409690043597139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97479,8 +97431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!4 &8951153774246867219
 Transform:
   m_ObjectHideFlags: 0
@@ -97722,8 +97672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.01
 --- !u!33 &8988823795548735928
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97883,8 +97831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!33 &9029476349232685701
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98000,8 +97946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6910069590124dbfb542f277e2c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.04
 --- !u!33 &9100999415719079098
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98022,8 +97966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 0.3
 --- !u!33 &9125704263629284081
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98071,8 +98013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 1
 --- !u!4 &9143792703040593435
 Transform:
   m_ObjectHideFlags: 0
@@ -98173,8 +98113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 1
 --- !u!23 &9185549888693609167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98289,8 +98227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.3
 --- !u!4 &9220857992313135682
 Transform:
   m_ObjectHideFlags: 0
