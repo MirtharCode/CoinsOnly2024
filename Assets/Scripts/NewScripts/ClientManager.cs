@@ -1357,7 +1357,7 @@ public class ClientManager : MonoBehaviour
                 break;
 
             case "Limbásticos":
-                textBox.fontSize = 100;
+                textBox.fontSize = 80;
                 break;
 
             case "Magos Oscuros":
@@ -1365,7 +1365,7 @@ public class ClientManager : MonoBehaviour
                 break;
 
             case "Tecnópedos":
-                textBox.fontSize = 70;
+                textBox.fontSize = 60;
                 break;
 
             case "Desconocida":

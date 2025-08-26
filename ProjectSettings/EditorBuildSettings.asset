@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NewDays/Day.unity
-    guid: d9f4d63c2f66c0347a04af7822bce24a
+    path: Assets/Scenes/NewDays/CC.unity
+    guid: d66db2c9391936447b3825dd0af94c56
   - enabled: 1
     path: Assets/Scenes/MenuInicial.unity
     guid: fe3fa36c44529494d85f4ecc0c338d50
+  - enabled: 1
+    path: Assets/Scenes/NewDays/Day.unity
+    guid: d9f4d63c2f66c0347a04af7822bce24a
   - enabled: 0
     path: Assets/Scenes/Creditos.unity
     guid: 914e01141cb6d66478749137f076ffde
@@ -77,9 +80,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewDays/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d
-  - enabled: 1
-    path: Assets/Scenes/NewDays/CC.unity
-    guid: 5eb1bd2f9f975b246bef3c622cf62a31
   - enabled: 1
     path: Assets/Scenes/NewDays/FM.unity
     guid: 6366e2b42d4e51a47b22b532b4343323

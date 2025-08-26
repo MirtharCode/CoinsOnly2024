@@ -15544,8 +15544,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bueno... \xBFNo fue tan dif\xEDcil no? Espero al menos formar de tu top25
     de formularios favoritos. Recoge tu chapita (por alg\xFAn motivo hay una de un
-    se\xF1or mayor semidesnudo) y sigue disfrutando de los dem\xE1s juegos de Madrid
-    Otaku :D"
+    se\xF1or mayor semidesnudo) y sigue disfrutando de los dem\xE1s juegos de la
+    Comet-Con :D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -18090,7 +18090,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -27495,7 +27495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1123853800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30881,7 +30881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d78f6490e9c1884fa21aeeeb95753a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f55dcf3b9a354d343b8800cdea1f4e38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31128,8 +31128,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Antes has podido ver que el Minijefe ha aparecido con cosplay de Miku.
-    O como el cursor cambiaba a un mazo.
+  m_text: "Antes el Minijefe ha venido vestido... diferente. Dudo que podamos incluirlo
+    en la versi\xF3n final pero.. por ejemplo Jack 'O' Boo podr\xEDa cambiar su cabeza
+    por una papay... \xA1QUI\xC9N HA ESCRITO ESTO!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -40666,7 +40667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d78f6490e9c1884fa21aeeeb95753a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f55dcf3b9a354d343b8800cdea1f4e38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

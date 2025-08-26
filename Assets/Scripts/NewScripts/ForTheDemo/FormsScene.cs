@@ -245,7 +245,7 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne++;
                     elegidoPIJUSMAGNUS = true;
-                    pregunta2.transform.GetChild(6).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
+                    pregunta2.transform.GetChild(6).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton3selected");
                 }
                 break;
 
@@ -293,7 +293,7 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne++;
                     elegidoMINIJEFE = true;
-                    pregunta2.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
+                    pregunta2.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton3selected");
                 }
                 break;
 
@@ -918,7 +918,7 @@ public class FormsScene : MonoBehaviour
     IEnumerator EnviarFormulario()
     {
         Debug.Log("Entro en EnviarFormulario");
-        string url = "https://docs.google.com/forms/d/e/1FAIpQLSfiQHDFc3szwLrw9dfEr1NtFP7S0dkmjdQGGd9-h7jTfhAgmQ/formResponse";
+        string url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf17J6o0j2xxlv-zzpzZ7QzcHNDdF9lLi0HvmITCDy6ivhWRA/formResponse";
         WWWForm form = new WWWForm();
 
         for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++) 
@@ -926,121 +926,121 @@ public class FormsScene : MonoBehaviour
             allClientChoices += " " + DialogueManager.Instance.chosenChecks[i];
         }
 
-        form.AddField("entry.1723272062", allClientChoices);
+        form.AddField("entry.1918651796", allClientChoices);
 
         // ¿Cuántas monedas obtuvieron?
-        form.AddField("entry.1683268102", DialogueManager.Instance.propinasNumber + " monedas.");
+        form.AddField("entry.137035787", DialogueManager.Instance.propinasNumber + " monedas.");
 
         //¿Cuántos puntos obtuvieron?
-        form.AddField("entry.1736884450", DialogueManager.Instance.puntosElidora + " puntos.");
+        form.AddField("entry.2124658995", DialogueManager.Instance.puntosElidora + " puntos.");
 
 
         // Pregunta 1 ¿QUÉ TE HA PARECIDO LA DEMO?
-        if (demoAburrida) form.AddField("entry.1094213056", "demoAburrida");
-        if (demoNormal) form.AddField("entry.1094213056", "demoNormal");
-        if (demoEntretenida) form.AddField("entry.1094213056", "demoEntretenida");
-        if (demoDivertida) form.AddField("entry.1094213056", "demoDivertida");
+        if (demoAburrida) form.AddField("entry.354518110", "demoAburrida");
+        if (demoNormal) form.AddField("entry.354518110", "demoNormal");
+        if (demoEntretenida) form.AddField("entry.354518110", "demoEntretenida");
+        if (demoDivertida) form.AddField("entry.354518110", "demoDivertida");
 
         // Pregunta 2 ¿Qué personaje te ha llamado más la atención?
-        if (elegidoGIOVANNI) form.AddField("entry.1438596813", "Antonio");
-        if (elegidoGEERAARD) form.AddField("entry.1438596813", "Elvog");
-        if (elegidoPETRA) form.AddField("entry.1438596813", "Elidora");
-        if (elegidoPIJUSMAGNUS) form.AddField("entry.1438596813", "PijusMagnus");
-        if (elegidoRAVEN) form.AddField("entry.1438596813", "Rave-N");
-        if (elegidoROCON) form.AddField("entry.1438596813", "Rocón");
-        if (elegidoMINIJEFE) form.AddField("entry.1438596813", "Minijefe");
-        if (elegidoDETECTIVE) form.AddField("entry.1438596813", "Detective");
+        if (elegidoGIOVANNI) form.AddField("entry.1917777529", "Giovanni");
+        if (elegidoGEERAARD) form.AddField("entry.1917777529", "Geeraard");
+        if (elegidoPETRA) form.AddField("entry.1917777529", "Petra");
+        if (elegidoPIJUSMAGNUS) form.AddField("entry.1917777529", "PijusMagnus");
+        if (elegidoRAVEN) form.AddField("entry.1917777529", "Rave-N");
+        if (elegidoROCON) form.AddField("entry.1917777529", "Rocón");
+        if (elegidoMINIJEFE) form.AddField("entry.1917777529", "Minijefe");
+        if (elegidoDETECTIVE) form.AddField("entry.1917777529", "Detective");
 
-        // Pregunta ¿Por qué te ha llamado la atención Antonio?
-        if(aspectoVisualGIOVANNI) form.AddField("entry.1952071816", "Aspecto Visual");
-        if(personalidadGuionGIOVANNI) form.AddField("entry.1952071816", "Personalidad - Guion");
-        if(ambasCosasGIOVANNI) form.AddField("entry.1952071816", "Ambas cosas");
+        // Pregunta ¿Por qué te ha llamado la atención Giovanni?
+        if(aspectoVisualGIOVANNI) form.AddField("entry.772434090", "Aspecto Visual");
+        if(personalidadGuionGIOVANNI) form.AddField("entry.772434090", "Personalidad - Guion");
+        if(ambasCosasGIOVANNI) form.AddField("entry.772434090", "Ambas cosas");
 
-        // Pregunta ¿Por qué te ha llamado la atención Elvog?
-        if (aspectoVisualGEERAARD) form.AddField("entry.1389972901", "Aspecto Visual");
-        if (personalidadGuionGEERAARD) form.AddField("entry.1389972901", "Personalidad - Guion");
-        if (ambasCosasGEERAARD) form.AddField("entry.1389972901", "Ambas cosas");
+        // Pregunta ¿Por qué te ha llamado la atención Geeraard?
+        if (aspectoVisualGEERAARD) form.AddField("entry.3350242", "Aspecto Visual");
+        if (personalidadGuionGEERAARD) form.AddField("entry.3350242", "Personalidad - Guion");
+        if (ambasCosasGEERAARD) form.AddField("entry.3350242", "Ambas cosas");
 
-        // Pregunta ¿Por qué te ha llamado la atención Elidora?
-        if (aspectoVisualPETRA) form.AddField("entry.1710944572", "Aspecto Visual");
-        if (personalidadGuionPETRA) form.AddField("entry.1710944572", "Personalidad - Guion");
-        if (ambasCosasPETRA) form.AddField("entry.1710944572", "Ambas cosas");
+        // Pregunta ¿Por qué te ha llamado la atención Petra?
+        if (aspectoVisualPETRA) form.AddField("entry.834567718", "Aspecto Visual");
+        if (personalidadGuionPETRA) form.AddField("entry.834567718", "Personalidad - Guion");
+        if (ambasCosasPETRA) form.AddField("entry.834567718", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Pijus Magnus?
-        if (aspectoVisualPIJUSMAGNUS) form.AddField("entry.651419588", "Aspecto Visual");
-        if (personalidadGuionPIJUSMAGNUS) form.AddField("entry.651419588", "Personalidad - Guion");
-        if (ambasCosasPIJUSMAGNUS) form.AddField("entry.651419588", "Ambas cosas");
+        if (aspectoVisualPIJUSMAGNUS) form.AddField("entry.687512836", "Aspecto Visual");
+        if (personalidadGuionPIJUSMAGNUS) form.AddField("entry.687512836", "Personalidad - Guion");
+        if (ambasCosasPIJUSMAGNUS) form.AddField("entry.687512836", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Rave-N?
-        if (aspectoVisualRAVEN) form.AddField("entry.1827119049", "Aspecto Visual");
-        if (personalidadGuionRAVEN) form.AddField("entry.1827119049", "Personalidad - Guion");
-        if (ambasCosasRAVEN) form.AddField("entry.1827119049", "Ambas cosas");
+        if (aspectoVisualRAVEN) form.AddField("entry.1385173975", "Aspecto Visual");
+        if (personalidadGuionRAVEN) form.AddField("entry.1385173975", "Personalidad - Guion");
+        if (ambasCosasRAVEN) form.AddField("entry.1385173975", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Rocón?
-        if (aspectoVisualROCON) form.AddField("entry.1007585413", "Aspecto Visual");
-        if (personalidadGuionROCON) form.AddField("entry.1007585413", "Personalidad - Guion");
-        if (ambasCosasROCON) form.AddField("entry.1007585413", "Ambas cosas");
+        if (aspectoVisualROCON) form.AddField("entry.697670965", "Aspecto Visual");
+        if (personalidadGuionROCON) form.AddField("entry.697670965", "Personalidad - Guion");
+        if (ambasCosasROCON) form.AddField("entry.697670965", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Minijefe?
-        if (aspectoVisualMINIJEFE) form.AddField("entry.790698444", "Aspecto Visual");
-        if (personalidadGuionMINIJEFE) form.AddField("entry.790698444", "Personalidad - Guion");
-        if (ambasCosasMINIJEFE) form.AddField("entry.790698444", "Ambas cosas");
+        if (aspectoVisualMINIJEFE) form.AddField("entry.496855538", "Aspecto Visual");
+        if (personalidadGuionMINIJEFE) form.AddField("entry.496855538", "Personalidad - Guion");
+        if (ambasCosasMINIJEFE) form.AddField("entry.496855538", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Detective?
-        if (aspectoVisualDETECTIVE) form.AddField("entry.2045557217", "Aspecto Visual");
-        if (personalidadGuionDETECTIVE) form.AddField("entry.2045557217", "Personalidad - Guion");
-        if (ambasCosasDETECTIVE) form.AddField("entry.2045557217", "Ambas cosas");
+        if (aspectoVisualDETECTIVE) form.AddField("entry.1662784693", "Aspecto Visual");
+        if (personalidadGuionDETECTIVE) form.AddField("entry.1662784693", "Personalidad - Guion");
+        if (ambasCosasDETECTIVE) form.AddField("entry.1662784693", "Ambas cosas");
 
         // PREGUNTA 4 ¿Te gustaría que en la versión final hubiera cosméticos desbloqueables con las propinas?
-        if (yesCosmetics) form.AddField("entry.377249181", "yesCosmetics");
-        if (noCosmetics) form.AddField("entry.377249181", "noCosmetics");
+        if (yesCosmetics) form.AddField("entry.1567236097", "yesCosmetics");
+        if (noCosmetics) form.AddField("entry.1567236097", "noCosmetics");
 
         // PREGUNTA 5 ¿Entendiste el sistema de Cobrar al cliente/ Echar al cliente?
-        if (entendiCobro) form.AddField("entry.395873814", "entendiCobro");
-        if (noEntendiCobro) form.AddField("entry.395873814", "noEntendiCobro");
+        if (entendiCobro) form.AddField("entry.324177120", "entendiCobro");
+        if (noEntendiCobro) form.AddField("entry.324177120", "noEntendiCobro");
 
         // PREGUNTA 6 ¿Entendiste el sistema de Normativas?
-        if (entendiNormativas) form.AddField("entry.543872395", "entendiNormativas");
-        if (noEntendiNormativas) form.AddField("entry.543872395", "noEntendiNormativas");
+        if (entendiNormativas) form.AddField("entry.1574958267", "entendiNormativas");
+        if (noEntendiNormativas) form.AddField("entry.1574958267", "noEntendiNormativas");
 
         // PREGUNTA 7 ¿Entendiste el sistema de Cupones?
-        if (entendiCupones) form.AddField("entry.376522869", "entendiCupones");
-        if (noEntendiCupones) form.AddField("entry.376522869", "noEntendiCupones");
+        if (entendiCupones) form.AddField("entry.389764879", "entendiCupones");
+        if (noEntendiCupones) form.AddField("entry.389764879", "noEntendiCupones");
 
         // PREGUNTA 8 ¿Qué opinas de sumar los precios de productos?
-        if (mejorarCobrar) form.AddField("entry.1665910031", "mejorarCobrar");
-        if (noTocarCobrar) form.AddField("entry.1665910031", "noMejorarCobrar");
+        if (mejorarCobrar) form.AddField("entry.601994626", "mejorarCobrar");
+        if (noTocarCobrar) form.AddField("entry.601994626", "noMejorarCobrar");
 
         // PREGUNTA 9 ¿Tienes alguna sugerencia respecto a todo lo referente a atender a los clientes? (Normativas, Cupones, Suma de productos, cobro)
-        form.AddField("entry.1417983291", sugerenciaCobro);
+        form.AddField("entry.842229560", sugerenciaCobro);
 
         // Pregunta 10 ¿Cuánto te ha gustado el estilo artístico del juego?
-        if (odioVictor) form.AddField("entry.560026815", "odioVictor");
-        if (mehVictor) form.AddField("entry.560026815", "mehVictor");
-        if (quieromasVictor) form.AddField("entry.560026815", "quieromasVictor");
-        if (fangirlVictor) form.AddField("entry.560026815", "fangirlVictor");
+        if (odioVictor) form.AddField("entry.400731527", "odioVictor");
+        if (mehVictor) form.AddField("entry.400731527", "mehVictor");
+        if (quieromasVictor) form.AddField("entry.400731527", "quieromasVictor");
+        if (fangirlVictor) form.AddField("entry.400731527", "fangirlVictor");
 
         // Pregunta 11 ¿Cuánto te ha gustado la música del juego?
-        if (odioMiguel) form.AddField("entry.282767731", "odioMiguel");
-        if (mehMiguel) form.AddField("entry.282767731", "mehMiguel");
-        if (quieromasMiguel) form.AddField("entry.282767731", "quieromasMiguel");
-        if (fangirlMiguel) form.AddField("entry.282767731", "fangirlMiguel");
+        if (odioMiguel) form.AddField("entry.1555667149", "odioMiguel");
+        if (mehMiguel) form.AddField("entry.1555667149", "mehMiguel");
+        if (quieromasMiguel) form.AddField("entry.1555667149", "quieromasMiguel");
+        if (fangirlMiguel) form.AddField("entry.1555667149", "fangirlMiguel");
 
         // Pregunta 12 ¿Cuánto te ha gustado el humor del juego?
-        if (odioHumor) form.AddField("entry.777237563", "odioHumor");
-        if (mehHumor) form.AddField("entry.777237563", "mehHumor");
-        if (quieromasHumor) form.AddField("entry.777237563", "quieromasHumor");
-        if (fangirlHumor) form.AddField("entry.777237563", "fangirlHumor");
+        if (odioHumor) form.AddField("entry.1256580090", "odioHumor");
+        if (mehHumor) form.AddField("entry.1256580090", "mehHumor");
+        if (quieromasHumor) form.AddField("entry.1256580090", "quieromasHumor");
+        if (fangirlHumor) form.AddField("entry.1256580090", "fangirlHumor");
 
         // PREGUNTA 13 ¿Te interesaría saber más del lore del mundo/personajes/tienda?
-        if (masLore) form.AddField("entry.1964521268", "masLore");
-        if (noMasLore) form.AddField("entry.1964521268", "noMasLore");
+        if (masLore) form.AddField("entry.70127260", "masLore");
+        if (noMasLore) form.AddField("entry.70127260", "noMasLore");
 
         // PREGUNTA 14 ¿Querrías merch de algún tipo de los personajes? Si es así escribe qué te gustaría
-        form.AddField("entry.1385663545", sugerenciaMerchan);
+        form.AddField("entry.526936336", sugerenciaMerchan);
 
         // PREGUNTA 15 ¿Alguna última sugerencia que tengas?
-        form.AddField("entry.1537365799", sugerenciaFinal);
+        form.AddField("entry.1887338739", sugerenciaFinal);
 
         UnityWebRequest www = UnityWebRequest.Post(url, form);
         yield return www.SendWebRequest();
