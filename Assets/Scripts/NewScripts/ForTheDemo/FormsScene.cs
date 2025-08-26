@@ -18,7 +18,7 @@ public class FormsScene : MonoBehaviour
     public GameObject intro1, intro2, intro3;
     public GameObject pregunta1;
     public GameObject pregunta2;
-    public GameObject pregunta3_ANTONIO, pregunta3_ELVOG, pregunta3_ELIDORA, pregunta3_PIJUSMAGNUS, pregunta3_RAVEN, pregunta3_ROCON, pregunta3_MINIJEFE, pregunta3_DETECTIVE;
+    public GameObject pregunta3_GIOVANNI, pregunta3_GEERAARD, pregunta3_PETRA, pregunta3_PIJUSMAGNUS, pregunta3_RAVEN, pregunta3_ROCON, pregunta3_MINIJEFE, pregunta3_DETECTIVE;
     public GameObject pregunta4;
     public GameObject pregunta5;
     public GameObject pregunta6;
@@ -39,12 +39,12 @@ public class FormsScene : MonoBehaviour
     public int atLeastOne = 0;
 
     // RESPUESTA PREGUNTA 2
-    public bool elegidoANTONIO, elegidoELVOG, elegidoELIDORA, elegidoPIJUSMAGNUS, elegidoRAVEN, elegidoROCON, elegidoMINIJEFE, elegidoDETECTIVE;
+    public bool elegidoGIOVANNI, elegidoGEERAARD, elegidoPETRA, elegidoPIJUSMAGNUS, elegidoRAVEN, elegidoROCON, elegidoMINIJEFE, elegidoDETECTIVE;
 
     // RESPUESTA PREGUNTA 3
-    public bool aspectoVisualANTONIO, personalidadGuionANTONIO, ambasCosasANTONIO;
-    public bool aspectoVisualELVOG, personalidadGuionELVOG, ambasCosasELVOG;
-    public bool aspectoVisualELIDORA, personalidadGuionELIDORA, ambasCosasELIDORA;
+    public bool aspectoVisualGIOVANNI, personalidadGuionGIOVANNI, ambasCosasGIOVANNI;
+    public bool aspectoVisualGEERAARD, personalidadGuionGEERAARD, ambasCosasGEERAARD;
+    public bool aspectoVisualPETRA, personalidadGuionPETRA, ambasCosasPETRA;
     public bool aspectoVisualPIJUSMAGNUS, personalidadGuionPIJUSMAGNUS, ambasCosasPIJUSMAGNUS;
     public bool aspectoVisualRAVEN, personalidadGuionRAVEN, ambasCosasRAVEN;
     public bool aspectoVisualROCON, personalidadGuionROCON, ambasCosasROCON;
@@ -185,51 +185,51 @@ public class FormsScene : MonoBehaviour
         switch (opcion)
         {
             case 0:
-                if (elegidoANTONIO)
+                if (elegidoGIOVANNI)
                 {
                     atLeastOne--;
-                    elegidoANTONIO = false;
-                    pregunta2.transform.GetChild(3).GetComponent<Image>().color = new Color(255, 255, 255);
+                    elegidoGIOVANNI = false;
+                    pregunta2.transform.GetChild(3).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1");
                 }
 
                 else
                 {
                     atLeastOne++;
-                    elegidoANTONIO = true;
-                    pregunta2.transform.GetChild(3).GetComponent<Image>().color = new Color(0, 255, 0);
+                    elegidoGIOVANNI = true;
+                    pregunta2.transform.GetChild(3).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1selected");
                 }
 
                 break;
 
             case 1:
-                if (elegidoELVOG)
+                if (elegidoGEERAARD)
                 {
                     atLeastOne--;
-                    elegidoELVOG = false;
-                    pregunta2.transform.GetChild(4).GetComponent<Image>().color = new Color(255, 255, 255);
+                    elegidoGEERAARD = false;
+                    pregunta2.transform.GetChild(4).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1");
                 }
 
                 else
                 {
                     atLeastOne++;
-                    elegidoELVOG = true;
-                    pregunta2.transform.GetChild(4).GetComponent<Image>().color = new Color(0, 255, 0);
+                    elegidoGEERAARD = true;
+                    pregunta2.transform.GetChild(4).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1selected");
                 }
                 break;
 
             case 2:
-                if (elegidoELIDORA)
+                if (elegidoPETRA)
                 {
                     atLeastOne--;
-                    elegidoELIDORA = false;
-                    pregunta2.transform.GetChild(5).GetComponent<Image>().color = new Color(255, 255, 255);
+                    elegidoPETRA = false;
+                    pregunta2.transform.GetChild(5).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2");
                 }
 
                 else
                 {
                     atLeastOne++;
-                    elegidoELIDORA = true;
-                    pregunta2.transform.GetChild(5).GetComponent<Image>().color = new Color(0, 255, 0);
+                    elegidoPETRA = true;
+                    pregunta2.transform.GetChild(5).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
                 }
                 break;
 
@@ -238,14 +238,14 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne--;
                     elegidoPIJUSMAGNUS = false;
-                    pregunta2.transform.GetChild(6).GetComponent<Image>().color = new Color(255, 255, 255);
+                    pregunta2.transform.GetChild(6).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton3");
                 }
 
                 else
                 {
                     atLeastOne++;
                     elegidoPIJUSMAGNUS = true;
-                    pregunta2.transform.GetChild(6).GetComponent<Image>().color = new Color(0, 255, 0);
+                    pregunta2.transform.GetChild(6).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
                 }
                 break;
 
@@ -254,14 +254,14 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne--;
                     elegidoRAVEN = false;
-                    pregunta2.transform.GetChild(7).GetComponent<Image>().color = new Color(255, 255, 255);
+                    pregunta2.transform.GetChild(7).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton4");
                 }
 
                 else
                 {
                     atLeastOne++;
                     elegidoRAVEN = true;
-                    pregunta2.transform.GetChild(7).GetComponent<Image>().color = new Color(0, 255, 0);
+                    pregunta2.transform.GetChild(7).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton4selected");
                 }
                 break;
 
@@ -270,14 +270,14 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne--;
                     elegidoROCON = false;
-                    pregunta2.transform.GetChild(8).GetComponent<Image>().color = new Color(255, 255, 255);
+                    pregunta2.transform.GetChild(8).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2");
                 }
 
                 else
                 {
                     atLeastOne++;
                     elegidoROCON = true;
-                    pregunta2.transform.GetChild(8).GetComponent<Image>().color = new Color(0, 255, 0);
+                    pregunta2.transform.GetChild(8).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
                 }
                 break;
 
@@ -286,14 +286,14 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne--;
                     elegidoMINIJEFE = false;
-                    pregunta2.transform.GetChild(9).GetComponent<Image>().color = new Color(255, 255, 255);
+                    pregunta2.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton3");
                 }
 
                 else
                 {
                     atLeastOne++;
                     elegidoMINIJEFE = true;
-                    pregunta2.transform.GetChild(9).GetComponent<Image>().color = new Color(0, 255, 0);
+                    pregunta2.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton2selected");
                 }
                 break;
 
@@ -302,14 +302,14 @@ public class FormsScene : MonoBehaviour
                 {
                     atLeastOne--;
                     elegidoDETECTIVE = false;
-                    pregunta2.transform.GetChild(10).GetComponent<Image>().color = new Color(255, 255, 255);
+                    pregunta2.transform.GetChild(10).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1");
                 }
 
                 else
                 {
                     atLeastOne++;
                     elegidoDETECTIVE = true;
-                    pregunta2.transform.GetChild(10).GetComponent<Image>().color = new Color(0, 255, 0);
+                    pregunta2.transform.GetChild(10).GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Buttons/boton1selected");
                 }
                 break; ;
         }
@@ -326,14 +326,14 @@ public class FormsScene : MonoBehaviour
 
     public void addingPersonajes()
     {
-        if (elegidoANTONIO)
-            charactersPanelsSelected.Add(pregunta3_ANTONIO);
+        if (elegidoGIOVANNI)
+            charactersPanelsSelected.Add(pregunta3_GIOVANNI);
 
-        if (elegidoELVOG)
-            charactersPanelsSelected.Add(pregunta3_ELVOG);
+        if (elegidoGEERAARD)
+            charactersPanelsSelected.Add(pregunta3_GEERAARD);
 
-        if (elegidoELIDORA)
-            charactersPanelsSelected.Add(pregunta3_ELIDORA);
+        if (elegidoPETRA)
+            charactersPanelsSelected.Add(pregunta3_PETRA);
 
         if (elegidoPIJUSMAGNUS)
             charactersPanelsSelected.Add(pregunta3_PIJUSMAGNUS);
@@ -364,27 +364,27 @@ public class FormsScene : MonoBehaviour
         switch (opcion)
         {
             case 0:
-                aspectoVisualANTONIO = true;
+                aspectoVisualGIOVANNI = true;
                 break;
             case 1:
-                personalidadGuionANTONIO = true;
+                personalidadGuionGIOVANNI = true;
                 break;
             case 2:
-                ambasCosasANTONIO = true;
+                ambasCosasGIOVANNI = true;
                 break;
         }
-        charactersPanelsSelected.Remove(pregunta3_ANTONIO);
+        charactersPanelsSelected.Remove(pregunta3_GIOVANNI);
 
         if (charactersPanelsSelected.Count == 0)
         {
-            pregunta3_ANTONIO.SetActive(false);
+            pregunta3_GIOVANNI.SetActive(false);
             pregunta4.SetActive(true);
             pregunta4.GetComponent<AudioSource>().Play();
         }
 
         else
         {
-            pregunta3_ANTONIO.SetActive(false);
+            pregunta3_GIOVANNI.SetActive(false);
             charactersPanelsSelected[0].SetActive(true);
             charactersPanelsSelected[0].GetComponent<AudioSource>().Play();
         }
@@ -395,26 +395,26 @@ public class FormsScene : MonoBehaviour
         switch (opcion)
         {
             case 0:
-                aspectoVisualELVOG = true;
+                aspectoVisualGEERAARD = true;
                 break;
             case 1:
-                personalidadGuionELVOG = true;
+                personalidadGuionGEERAARD = true;
                 break;
             case 2:
-                ambasCosasELVOG = true;
+                ambasCosasGEERAARD = true;
                 break;
         }
-        charactersPanelsSelected.Remove(pregunta3_ELVOG);
+        charactersPanelsSelected.Remove(pregunta3_GEERAARD);
 
         if (charactersPanelsSelected.Count == 0)
         {
-            pregunta3_ELVOG.SetActive(false);
+            pregunta3_GEERAARD.SetActive(false);
             pregunta4.SetActive(true);
             pregunta4.GetComponent<AudioSource>().Play();
         }
         else
         {
-            pregunta3_ELVOG.SetActive(false);
+            pregunta3_GEERAARD.SetActive(false);
             charactersPanelsSelected[0].SetActive(true);
             charactersPanelsSelected[0].GetComponent<AudioSource>().Play();
         }
@@ -425,26 +425,26 @@ public class FormsScene : MonoBehaviour
         switch (opcion)
         {
             case 0:
-                aspectoVisualELIDORA = true;
+                aspectoVisualPETRA = true;
                 break;
             case 1:
-                personalidadGuionELIDORA = true;
+                personalidadGuionPETRA = true;
                 break;
             case 2:
-                ambasCosasELIDORA = true;
+                ambasCosasPETRA = true;
                 break;
         }
-        charactersPanelsSelected.Remove(pregunta3_ELIDORA);
+        charactersPanelsSelected.Remove(pregunta3_PETRA);
 
         if (charactersPanelsSelected.Count == 0)
         {
-            pregunta3_ELIDORA.SetActive(false);
+            pregunta3_PETRA.SetActive(false);
             pregunta4.SetActive(true);
             pregunta4.GetComponent<AudioSource>().Play();
         }
         else
         {
-            pregunta3_ELIDORA.SetActive(false);
+            pregunta3_PETRA.SetActive(false);
             charactersPanelsSelected[0].SetActive(true);
             charactersPanelsSelected[0].GetComponent<AudioSource>().Play();
         }
@@ -942,9 +942,9 @@ public class FormsScene : MonoBehaviour
         if (demoDivertida) form.AddField("entry.1094213056", "demoDivertida");
 
         // Pregunta 2 ¿Qué personaje te ha llamado más la atención?
-        if (elegidoANTONIO) form.AddField("entry.1438596813", "Antonio");
-        if (elegidoELVOG) form.AddField("entry.1438596813", "Elvog");
-        if (elegidoELIDORA) form.AddField("entry.1438596813", "Elidora");
+        if (elegidoGIOVANNI) form.AddField("entry.1438596813", "Antonio");
+        if (elegidoGEERAARD) form.AddField("entry.1438596813", "Elvog");
+        if (elegidoPETRA) form.AddField("entry.1438596813", "Elidora");
         if (elegidoPIJUSMAGNUS) form.AddField("entry.1438596813", "PijusMagnus");
         if (elegidoRAVEN) form.AddField("entry.1438596813", "Rave-N");
         if (elegidoROCON) form.AddField("entry.1438596813", "Rocón");
@@ -952,19 +952,19 @@ public class FormsScene : MonoBehaviour
         if (elegidoDETECTIVE) form.AddField("entry.1438596813", "Detective");
 
         // Pregunta ¿Por qué te ha llamado la atención Antonio?
-        if(aspectoVisualANTONIO) form.AddField("entry.1952071816", "Aspecto Visual");
-        if(personalidadGuionANTONIO) form.AddField("entry.1952071816", "Personalidad - Guion");
-        if(ambasCosasANTONIO) form.AddField("entry.1952071816", "Ambas cosas");
+        if(aspectoVisualGIOVANNI) form.AddField("entry.1952071816", "Aspecto Visual");
+        if(personalidadGuionGIOVANNI) form.AddField("entry.1952071816", "Personalidad - Guion");
+        if(ambasCosasGIOVANNI) form.AddField("entry.1952071816", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Elvog?
-        if (aspectoVisualELVOG) form.AddField("entry.1389972901", "Aspecto Visual");
-        if (personalidadGuionELVOG) form.AddField("entry.1389972901", "Personalidad - Guion");
-        if (ambasCosasELVOG) form.AddField("entry.1389972901", "Ambas cosas");
+        if (aspectoVisualGEERAARD) form.AddField("entry.1389972901", "Aspecto Visual");
+        if (personalidadGuionGEERAARD) form.AddField("entry.1389972901", "Personalidad - Guion");
+        if (ambasCosasGEERAARD) form.AddField("entry.1389972901", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Elidora?
-        if (aspectoVisualELIDORA) form.AddField("entry.1710944572", "Aspecto Visual");
-        if (personalidadGuionELIDORA) form.AddField("entry.1710944572", "Personalidad - Guion");
-        if (ambasCosasELIDORA) form.AddField("entry.1710944572", "Ambas cosas");
+        if (aspectoVisualPETRA) form.AddField("entry.1710944572", "Aspecto Visual");
+        if (personalidadGuionPETRA) form.AddField("entry.1710944572", "Personalidad - Guion");
+        if (ambasCosasPETRA) form.AddField("entry.1710944572", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Pijus Magnus?
         if (aspectoVisualPIJUSMAGNUS) form.AddField("entry.651419588", "Aspecto Visual");

@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dccb5a98d1235274da8b2440059c4e9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e545132e461027449260b3fc5e90869, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5262,8 +5262,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xBFEn serio te ha gustado un sapop\xF3tamo con claros problemas con el
-    alcohol? Est\xE1 claro que cada uno tiene sus gustos."
+  m_text: "No s\xE9 qu\xE9 te habr\xE1 dicho, pero nada tiene que ver con un tal
+    Gerardo el Magias ni el buenorro de Enrique H\xE1bil."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -6603,7 +6603,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 1c953be429d186848a7c33a84805bc5c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -7784,7 +7784,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 7f64a32b06441ec48a44ddf10275e0b6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -9253,7 +9253,7 @@ GameObject:
   - component: {fileID: 392603701}
   - component: {fileID: 392603703}
   m_Layer: 5
-  m_Name: ELEGIDO_ELVOG
+  m_Name: ELEGIDO_GEERAARD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9614,8 +9614,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Si solo ha aparecido unos segundos! Adem\xE1s, seguro que le atizaste
-    con el martillo. \xBFFan de Bobob\xF3 no? Esperable..."
+  m_text: "Vienes con remordimientos de no haber hecho la ruta pacifista \xBFNo?
+    Pues que sepas que Petra no podr\xE1 suplantar a tu mam\xE1 bovina perdida \xA1ASUME
+    TUS ACTOS!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -13797,7 +13798,7 @@ GameObject:
   - component: {fileID: 522227050}
   - component: {fileID: 522227052}
   m_Layer: 5
-  m_Name: ELEGIDO_ELIDORA
+  m_Name: ELEGIDO_PETRA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14195,7 +14196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 59bf370259ad62348be063aa6bf78aba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: addf7a2b14614c84baf3da53593e6e1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18089,7 +18090,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -18101,7 +18102,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: cca2637e9f6203b43bfac265a12b3fd0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -18369,7 +18370,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 7f64a32b06441ec48a44ddf10275e0b6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -22551,7 +22552,7 @@ RectTransform:
   m_GameObject: {fileID: 918514658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 392603700}
@@ -22559,7 +22560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -226, y: 7}
+  m_AnchoredPosition: {x: -226, y: -10.4}
   m_SizeDelta: {x: 220.8894, y: 220.8894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918514660
@@ -22582,7 +22583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af69a811a6bc07f43b555871ff93bbca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb37159fe54b3fb4d933ec0f2c9fb08c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24819,7 +24820,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 1c953be429d186848a7c33a84805bc5c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -30526,7 +30527,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: cca2637e9f6203b43bfac265a12b3fd0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -31452,9 +31453,9 @@ MonoBehaviour:
   intro3: {fileID: 664190323}
   pregunta1: {fileID: 465105999}
   pregunta2: {fileID: 1114805706}
-  pregunta3_ANTONIO: {fileID: 2101496224}
-  pregunta3_ELVOG: {fileID: 392603699}
-  pregunta3_ELIDORA: {fileID: 522227048}
+  pregunta3_GIOVANNI: {fileID: 2101496224}
+  pregunta3_GEERAARD: {fileID: 392603699}
+  pregunta3_PETRA: {fileID: 522227048}
   pregunta3_PIJUSMAGNUS: {fileID: 158455805}
   pregunta3_RAVEN: {fileID: 652720415}
   pregunta3_ROCON: {fileID: 473343451}
@@ -31478,23 +31479,23 @@ MonoBehaviour:
   demoEntretenida: 0
   demoDivertida: 0
   atLeastOne: 0
-  elegidoANTONIO: 0
-  elegidoELVOG: 0
-  elegidoELIDORA: 0
+  elegidoGIOVANNI: 0
+  elegidoGEERAARD: 0
+  elegidoPETRA: 0
   elegidoPIJUSMAGNUS: 0
   elegidoRAVEN: 0
   elegidoROCON: 0
   elegidoMINIJEFE: 0
   elegidoDETECTIVE: 0
-  aspectoVisualANTONIO: 0
-  personalidadGuionANTONIO: 0
-  ambasCosasANTONIO: 0
-  aspectoVisualELVOG: 0
-  personalidadGuionELVOG: 0
-  ambasCosasELVOG: 0
-  aspectoVisualELIDORA: 0
-  personalidadGuionELIDORA: 0
-  ambasCosasELIDORA: 0
+  aspectoVisualGIOVANNI: 0
+  personalidadGuionGIOVANNI: 0
+  ambasCosasGIOVANNI: 0
+  aspectoVisualGEERAARD: 0
+  personalidadGuionGEERAARD: 0
+  ambasCosasGEERAARD: 0
+  aspectoVisualPETRA: 0
+  personalidadGuionPETRA: 0
+  ambasCosasPETRA: 0
   aspectoVisualPIJUSMAGNUS: 0
   personalidadGuionPIJUSMAGNUS: 0
   ambasCosasPIJUSMAGNUS: 0
@@ -31602,8 +31603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Me vas a tener que justificar muy bien la respuesta de que haya llamado
-    la atenci\xF3n un programador pelirrojo."
+  m_text: "As\xED que tenemos aqu\xED a un fan de TF2 \xBFEh?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -33636,7 +33636,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: cca2637e9f6203b43bfac265a12b3fd0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -34799,7 +34799,7 @@ RectTransform:
   m_GameObject: {fileID: 1396898609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2101496225}
@@ -34807,7 +34807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -226, y: 7}
+  m_AnchoredPosition: {x: -226, y: -25.1}
   m_SizeDelta: {x: 220.8894, y: 220.8894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396898611
@@ -34830,7 +34830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dccb5a98d1235274da8b2440059c4e9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cee40de6f70860e4a9df86736cba4fee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34957,7 +34957,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: cca2637e9f6203b43bfac265a12b3fd0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -36511,7 +36511,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 3ca8eceaf13a9264fb42c9f5106d5fc3, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -47757,7 +47757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af69a811a6bc07f43b555871ff93bbca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb37159fe54b3fb4d933ec0f2c9fb08c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -49957,7 +49957,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 59bf370259ad62348be063aa6bf78aba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: addf7a2b14614c84baf3da53593e6e1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -52527,7 +52527,7 @@ GameObject:
   - component: {fileID: 2101496226}
   - component: {fileID: 2101496228}
   m_Layer: 5
-  m_Name: ELEGIDO_ANTONIO
+  m_Name: ELEGIDO_GIOVANNI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

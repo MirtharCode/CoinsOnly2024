@@ -147,7 +147,6 @@ public class ClientManager : MonoBehaviour
                 DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
                 ShowCouponInfo("drakerry");
             }
-
         }
 
         else
@@ -157,7 +156,13 @@ public class ClientManager : MonoBehaviour
             DialogueManager.Instance.dialoguePanelOther.gameObject.SetActive(false);
             StartMusicSetup();
             StartNextClient();
-            DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
+
+            if (DialogueManager.Instance.currentLanguage == Language.ES)
+                DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
+            
+            else if (DialogueManager.Instance.currentLanguage == Language.EN)
+                DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "PICK ME UP!";
+
             DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().fontSize = 220;
         }
     }
@@ -169,20 +174,23 @@ public class ClientManager : MonoBehaviour
             Debug.Log("Diálogos listos.");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (DialogueManager.Instance.currentDay != "CC")
         {
-            if (canvasPausa.activeSelf)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                canvasPausa.SetActive(false);
-                Time.timeScale = 1;
-            }
+                if (canvasPausa.activeSelf)
+                {
+                    canvasPausa.SetActive(false);
+                    Time.timeScale = 1;
+                }
 
-            else
-            {
-                canvasPausa.SetActive(true);
-                Time.timeScale = 0;
+                else
+                {
+                    canvasPausa.SetActive(true);
+                    Time.timeScale = 0;
+                }
             }
-        }
+        }            
     }
 
     public void Speaking(string toneSound)
@@ -1516,10 +1524,10 @@ public class ClientManager : MonoBehaviour
                 speakerRaceTextBox.text = "Elementals";
 
             else if (currentDialogueClient.race == "Tecnópedos")
-                speakerRaceTextBox.text = "TecnoP2";
+                speakerRaceTextBox.text = "Technopedes";
 
             else if (currentDialogueClient.race == "Desconocida")
-                speakerRaceTextBox.text = "Unkwown";
+                speakerRaceTextBox.text = "Unknown";
         }
 
         else

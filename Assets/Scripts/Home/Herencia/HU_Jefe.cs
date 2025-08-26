@@ -17,7 +17,7 @@ public class HU_Jefe : HomeClient
 
         else if (DialogueManager.Instance.currentLanguage == Language.EN)
         {
-            raza = "Unkwown";
+            raza = "Unknown";
             nombre = "Miniboss";
         }
     }

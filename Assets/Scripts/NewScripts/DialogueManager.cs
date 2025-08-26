@@ -622,147 +622,6 @@ public class DialogueManager : MonoBehaviour
                 client.couponRace = matchingProduct.COUPONRACE;
                 client.couponType = matchingProduct.COUPONTYPE;
             }
-
-            #region PARTE DE LAS NORMATIVAS (AUNQUE AÚN NO SE CONTEMPLA QUE HAYA DOS POR RAZA ACTIVAS) ELIMINADO PARA LA DEMO PORQUE NO FUNCIONABA
-
-            //if (!regulationsAdded && currentRegulationsNumber ==0) // PARCHE HORRIBLE PARA QUE NO PETE LA DEMO
-            //{
-            //    regulationsAdded = true;
-
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_01);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_02);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_03);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_04);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_05);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_06);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_07);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_08);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_09);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_10);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_11);
-            //    currentRegulations.Add(matchingProduct.CURRENTREGULATION_12);
-
-            //    #region CREAR LISTA CURRENTREGULATIONS
-            //    // Añadir objetos RegulationInfo
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_01, matchingProduct.WHICHTYPE_01, matchingProduct.FORWHO_01)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_01,
-            //        newPrice = matchingProduct.NEWPRICE_01,
-            //        mix1Forbidden = matchingProduct.MIX1_01,
-            //        mix2Forbidden = matchingProduct.MIX2_01
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_02, matchingProduct.WHICHTYPE_02, matchingProduct.FORWHO_02)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_02,
-            //        newPrice = matchingProduct.NEWPRICE_02,
-            //        mix1Forbidden = matchingProduct.MIX1_02,
-            //        mix2Forbidden = matchingProduct.MIX2_02
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_03, matchingProduct.WHICHTYPE_03, matchingProduct.FORWHO_03)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_03,
-            //        newPrice = matchingProduct.NEWPRICE_03,
-            //        mix1Forbidden = matchingProduct.MIX1_03,
-            //        mix2Forbidden = matchingProduct.MIX2_03
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_04, matchingProduct.WHICHTYPE_04, matchingProduct.FORWHO_04)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_04,
-            //        newPrice = matchingProduct.NEWPRICE_04,
-            //        mix1Forbidden = matchingProduct.MIX1_04,
-            //        mix2Forbidden = matchingProduct.MIX2_04
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_05, matchingProduct.WHICHTYPE_05, matchingProduct.FORWHO_05)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_05,
-            //        newPrice = matchingProduct.NEWPRICE_05,
-            //        mix1Forbidden = matchingProduct.MIX1_05,
-            //        mix2Forbidden = matchingProduct.MIX2_05
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_06, matchingProduct.WHICHTYPE_06, matchingProduct.FORWHO_06)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_06,
-            //        newPrice = matchingProduct.NEWPRICE_06,
-            //        mix1Forbidden = matchingProduct.MIX1_06,
-            //        mix2Forbidden = matchingProduct.MIX2_06
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_07, matchingProduct.WHICHTYPE_07, matchingProduct.FORWHO_07)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_07,
-            //        newPrice = matchingProduct.NEWPRICE_07,
-            //        mix1Forbidden = matchingProduct.MIX1_07,
-            //        mix2Forbidden = matchingProduct.MIX2_07
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_08, matchingProduct.WHICHTYPE_08, matchingProduct.FORWHO_08)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_08,
-            //        newPrice = matchingProduct.NEWPRICE_08,
-            //        mix1Forbidden = matchingProduct.MIX1_08,
-            //        mix2Forbidden = matchingProduct.MIX2_08
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_09, matchingProduct.WHICHTYPE_09, matchingProduct.FORWHO_09)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_09,
-            //        newPrice = matchingProduct.NEWPRICE_09,
-            //        mix1Forbidden = matchingProduct.MIX1_09,
-            //        mix2Forbidden = matchingProduct.MIX2_09
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_10, matchingProduct.WHICHTYPE_10, matchingProduct.FORWHO_10)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_10,
-            //        newPrice = matchingProduct.NEWPRICE_10,
-            //        mix1Forbidden = matchingProduct.MIX1_10,
-            //        mix2Forbidden = matchingProduct.MIX2_10
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_11, matchingProduct.WHICHTYPE_11, matchingProduct.FORWHO_11)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_11,
-            //        newPrice = matchingProduct.NEWPRICE_11,
-            //        mix1Forbidden = matchingProduct.MIX1_11,
-            //        mix2Forbidden = matchingProduct.MIX2_11
-            //    });
-
-            //    regulationsData.Add(new RegulationInfo(matchingProduct.CURRENTREGULATION_12, matchingProduct.WHICHTYPE_12, matchingProduct.FORWHO_12)
-            //    {
-            //        discountedProduct = matchingProduct.WHICHPRODUCT_12,
-            //        newPrice = matchingProduct.NEWPRICE_12,
-            //        mix1Forbidden = matchingProduct.MIX1_12,
-            //        mix2Forbidden = matchingProduct.MIX2_12
-            //    });
-
-            //    #endregion
-
-            //    for (int i = 0; i < regulationsData.Count; i++)
-            //    {
-            //        if (regulationsData[i].regulationName != "")
-            //        {
-            //            currentRegulationsNumber++;
-
-            //            if (regulationsData[i].regulationName == "forbiddenType_For_")
-            //                ForbiddenType_For(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].regulationType);
-
-            //            else if (regulationsData[i].regulationName == "changingPriceTo_For_")
-            //                ChangingPriceTo_For_(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].newPrice, regulationsData[i].discountedProduct);
-
-            //            else if (regulationsData[i].regulationName == "forbiddenMixof_For_")
-            //                ForbiddenMixOf_For_(dropDownPanelNormativas.transform, regulationsData[i].raceAffected, regulationsData[i].mix1Forbidden, regulationsData[i].mix2Forbidden);
-
-            //        }
-
-            //    }
-            //}
-
-            #endregion
         }
     }
 
@@ -1367,13 +1226,13 @@ public class DialogueManager : MonoBehaviour
             limbasticsTitleText = "LIMBASTICS";
             tecnoP2TitleText = "TECHNOPEDES";
             noRegText = "There are no \nnew regulations";
-            noBuyPotionText = "Potions are \nnot allowed to purchase";
-            noBuyCaffeineText = "Caffeine products are\nnot allowed to purchase";
-            magicItems2coinsText = "Magic products \nnow cost 2 coins";
-            darkmagicItems10coinsText = "Dark Magic products \nnow cost 10 coins";
-            noBuyAtTheSameTimeText = "Mixing these products are\n not allowed";
-            noBuyAlcoholText = "Alcohol products are\nnot allowed to purchase";
-            noBuyDarkMagicText = "Dark Magic products are \n not allowed to purchase";
+            noBuyPotionText = "Are not allowed\n to purchase Potions";
+            noBuyCaffeineText = "Are not allowed\n to purchase Caffeine";
+            magicItems2coinsText = "Magic items \nnow cost 2 coins";
+            darkmagicItems10coinsText = "Dark Magic items \nnow cost 10 coins";
+            noBuyAtTheSameTimeText = "Purchasing both of these items at the same time \n is not allowed";
+            noBuyAlcoholText = "Are not allowed\n to purchase Alcohol";
+            noBuyDarkMagicText = "Are not allowed\n to purchase \nDark Magic items";
         }
 
         ChangingRegulationTexts(darkWizardsTitleText, darkWizardsTitles);
