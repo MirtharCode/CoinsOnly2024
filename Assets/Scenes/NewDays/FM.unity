@@ -17914,9 +17914,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ya sabes, figuras impresas en 3D, llaveritos, cuervos hiperrealistas,
-    mu\xF1ecos hinchables que bailan y saludan como idiotas, figuras t\xEDpicas en
-    contrachapado burdamente pintadas y sosas, un mini-Roc\xF3n..., lo t\xEDpico."
+  m_text: "Ya sabes, pegatinas como las que tienes a tu lado en venta (gui\xF1o gui\xF1o
+    cuervo cuervo), mu\xF1ecos hinchables que bailan y saludan como idiotas, figuras
+    t\xEDpicas en contrachapado burdamente pintadas y sosas, un mini-Roc\xF3n...,
+    lo t\xEDpico."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
   m_sharedMaterial: {fileID: 6037781501275497969, guid: 57d8d2af1126d4c45888bef7898a21b6, type: 2}
@@ -27495,7 +27496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1123853800
 RectTransform:
   m_ObjectHideFlags: 0

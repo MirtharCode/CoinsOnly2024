@@ -159,7 +159,7 @@ public class ClientManager : MonoBehaviour
 
             if (DialogueManager.Instance.currentLanguage == Language.ES)
                 DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "¡CÓGEME!";
-            
+
             else if (DialogueManager.Instance.currentLanguage == Language.EN)
                 DialogueManager.Instance.dialoguePanelFirstDialogueText.GetComponent<TextMeshProUGUI>().text = "PICK ME UP!";
 
@@ -190,7 +190,7 @@ public class ClientManager : MonoBehaviour
                     Time.timeScale = 0;
                 }
             }
-        }            
+        }
     }
 
     public void Speaking(string toneSound)
@@ -1309,7 +1309,9 @@ public class ClientManager : MonoBehaviour
         #endregion
 
         DialogueManager.Instance.uITrophies.GetComponent<Animator>().SetTrigger("TrophyShow");
-        Data.instance.GuardarDatos();
+
+        if (DialogueManager.Instance.currentDay != "CC")
+            Data.instance.GuardarDatos();
     }
 
     public void ActivateTabletFirstTime()
