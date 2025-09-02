@@ -36,6 +36,7 @@ public class CreditsComeBack : MonoBehaviour
 
     public void WelcomeAgain()
     {
+        DialogueManager.Instance.chosenChecks.Clear();
         fadeToBlackObject.GetComponent<Animator>().SetBool("ToBlack", true);
         Invoke(nameof(RepeatTheDemo), fadeToblackClipTime);
     }

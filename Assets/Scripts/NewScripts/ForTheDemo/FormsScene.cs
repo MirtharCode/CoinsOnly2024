@@ -807,6 +807,7 @@ public class FormsScene : MonoBehaviour
         //Debug.Log($"[CSV LOG] Datos guardados en: {csvPath}");
 
         EnviarRespuestas();
+        GuardarLineaCSV();
     }
 
     public void GoToTheEnd()
@@ -836,6 +837,7 @@ public class FormsScene : MonoBehaviour
 
         csv.Add(DialogueManager.Instance.propinasNumber + " monedas");
         csv.Add(DialogueManager.Instance.puntosElidora + " puntos");
+        csv.Add(allClientChoices);
 
         // PREGUNTA 1
         if (demoAburrida) csv.Add("demoAburrida");
@@ -844,7 +846,7 @@ public class FormsScene : MonoBehaviour
         if (demoDivertida) csv.Add("demoDivertida");
 
         // La pregunta 2 no es necesaria porque la tres hace alusión al personaje seleccionado
-        string[] nombres = { "ANTONIO", "ELVOG", "ELIDORA", "PIJUSMAGNUS", "RAVEN", "ROCON", "MINIJEFE", "DETECTIVE" };
+        string[] nombres = { "GIOVANNI", "GEERAARD", "PETRA", "PIJUSMAGNUS", "RAVEN", "ROCON", "MINIJEFE", "DETECTIVE" };
         foreach (string nombre in nombres)
         {
             if (GetBool($"aspectoVisual{nombre}")) csv.Add($"aspectoVisual{nombre}");
@@ -906,6 +908,28 @@ public class FormsScene : MonoBehaviour
         return string.Join(",", csv);
     }
 
+    public void GuardarLineaCSV()
+    {
+        // Crea la carpeta en el escritorio en caso de que no exista
+        string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+        string folderPath = Path.Combine(desktopPath, "DataCometCon");
+
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+            Debug.Log("Carpeta creada en: " + folderPath);
+        }
+        string filePath = Path.Combine(folderPath, "respuestas.csv");
+
+        string linea = GenerarLineaCSV();
+
+        // Añade la línea (o crea el archico si no existe)
+        File.AppendAllText(filePath, linea + "\n");
+
+        Debug.Log("Línea añadida al CSV en: " + filePath);
+    }
+
+
     #endregion
 
     #region Rellenar Formulario GoogleForms
@@ -921,7 +945,7 @@ public class FormsScene : MonoBehaviour
         string url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf17J6o0j2xxlv-zzpzZ7QzcHNDdF9lLi0HvmITCDy6ivhWRA/formResponse";
         WWWForm form = new WWWForm();
 
-        for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++) 
+        for (int i = 0; i < DialogueManager.Instance.chosenChecks.Count; i++)
         {
             allClientChoices += " " + DialogueManager.Instance.chosenChecks[i];
         }
@@ -952,9 +976,9 @@ public class FormsScene : MonoBehaviour
         if (elegidoDETECTIVE) form.AddField("entry.1917777529", "Detective");
 
         // Pregunta ¿Por qué te ha llamado la atención Giovanni?
-        if(aspectoVisualGIOVANNI) form.AddField("entry.772434090", "Aspecto Visual");
-        if(personalidadGuionGIOVANNI) form.AddField("entry.772434090", "Personalidad - Guion");
-        if(ambasCosasGIOVANNI) form.AddField("entry.772434090", "Ambas cosas");
+        if (aspectoVisualGIOVANNI) form.AddField("entry.772434090", "Aspecto Visual");
+        if (personalidadGuionGIOVANNI) form.AddField("entry.772434090", "Personalidad - Guion");
+        if (ambasCosasGIOVANNI) form.AddField("entry.772434090", "Ambas cosas");
 
         // Pregunta ¿Por qué te ha llamado la atención Geeraard?
         if (aspectoVisualGEERAARD) form.AddField("entry.3350242", "Aspecto Visual");
