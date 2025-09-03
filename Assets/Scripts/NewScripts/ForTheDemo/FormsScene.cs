@@ -1072,12 +1072,12 @@ public class FormsScene : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error al enviar: " + www.error);
+            finalButton.GetComponent<Button>().enabled = true;
         }
         else
         {
             Debug.Log("¡Formulario enviado!");
             finalButton.GetComponent<Button>().enabled = true;
-
         }
     }
 
