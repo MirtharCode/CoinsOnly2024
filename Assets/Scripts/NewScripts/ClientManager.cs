@@ -859,48 +859,64 @@ public class ClientManager : MonoBehaviour
     {
         if (sceneName != "CC") // Si no estoy en la Demo de la Comet-Con
         {
-            if (DialogueManager.Instance.propinasNumber > 50)
-                Data.instance.tipsPoints++;
-
-            DialogueManager.Instance.propinasNumber = 50; // Seteo en 0 el número de propinas para el día siguiente
-
-            int diaActual;
-
-            if (!int.TryParse(sceneName, out diaActual))
+            if (sceneName != "S1" && sceneName != "S2") // Si no estoy ni en el día 1 ni 2 de la Demo de Steam.
             {
-                Debug.LogError($"Nombre de escena inválido: {sceneName}");
-                return;
+                if (DialogueManager.Instance.propinasNumber > 50)
+                    Data.instance.tipsPoints++;
+
+                DialogueManager.Instance.propinasNumber = 50; // Seteo en 0 el número de propinas para el día siguiente
+
+                int diaActual;
+
+                if (!int.TryParse(sceneName, out diaActual))
+                {
+                    Debug.LogError($"Nombre de escena inválido: {sceneName}");
+                    return;
+                }
+
+                string diaPasado = (diaActual - 1).ToString("D2");
+
+                // Construir el nombre del bool según el nombre de la escena
+                string boolToActivate = $"day{sceneName}Checked";
+                string boolToDeactivate = $"day{diaPasado}Checked";
+
+                // Obtener el campo por reflexión
+                FieldInfo field01 = typeof(Data).GetField(boolToDeactivate, BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo field02 = typeof(Data).GetField(boolToActivate, BindingFlags.Instance | BindingFlags.Public);
+
+                if (field01 != null && field01.FieldType == typeof(bool))
+                {
+                    field01.SetValue(Data.instance, false);
+                    Debug.Log($" Activado: {boolToDeactivate}");
+                }
+                else
+                    Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+                if (field02 != null && field02.FieldType == typeof(bool))
+                {
+                    field02.SetValue(Data.instance, true);
+                    Debug.Log($" Activado: {boolToActivate}");
+                }
+                else
+                    Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
+
+                DialogueManager.Instance.currentDay = (diaActual + 1).ToString("D2");
+
+                SceneManager.LoadScene("Home");
             }
 
-            string diaPasado = (diaActual - 1).ToString("D2");
-
-            // Construir el nombre del bool según el nombre de la escena
-            string boolToActivate = $"day{sceneName}Checked";
-            string boolToDeactivate = $"day{diaPasado}Checked";
-
-            // Obtener el campo por reflexión
-            FieldInfo field01 = typeof(Data).GetField(boolToDeactivate, BindingFlags.Instance | BindingFlags.Public);
-            FieldInfo field02 = typeof(Data).GetField(boolToActivate, BindingFlags.Instance | BindingFlags.Public);
-
-            if (field01 != null && field01.FieldType == typeof(bool))
+            else if (sceneName == "S1")
             {
-                field01.SetValue(Data.instance, false);
-                Debug.Log($" Activado: {boolToDeactivate}");
+                Data.instance.demoSteamDay1Checked = true;
+                SceneManager.LoadScene("Home");
             }
-            else
-                Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
 
-            if (field02 != null && field02.FieldType == typeof(bool))
+            else if (sceneName == "S2")
             {
-                field02.SetValue(Data.instance, true);
-                Debug.Log($" Activado: {boolToActivate}");
+                Data.instance.demoSteamDay1Checked = true;
+                SceneManager.LoadScene("Home");
             }
-            else
-                Debug.LogWarning($" No se encontró el bool llamado '{boolToActivate}' en Data");
 
-            DialogueManager.Instance.currentDay = (diaActual + 1).ToString("D2");
-            // Cargar la escena Home
-            SceneManager.LoadScene("Home");
         }
 
         else

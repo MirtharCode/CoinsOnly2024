@@ -40,6 +40,8 @@ public class Data : MonoBehaviour
     [SerializeField] public bool day05Checked = false;
     [SerializeField] public bool day06Checked = false;
     [SerializeField] public bool day07Checked = false;
+    [SerializeField] public bool demoSteamDay1Checked = false;
+    [SerializeField] public bool demoSteamDay2Checked = false;
     [SerializeField] public bool videoActivo = false;
     [SerializeField] public bool videoVisto = false;
     [SerializeField] public bool initialCinematicDone = false;

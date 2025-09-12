@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NewDays/CC.unity
+    path: Assets/Scenes/NewDays/DEMOS/CC.unity
     guid: d66db2c9391936447b3825dd0af94c56
   - enabled: 1
     path: Assets/Scenes/MenuInicial.unity
@@ -78,28 +78,28 @@ EditorBuildSettings:
     path: Assets/Scenes/NewDays/InitialCinematic.unity
     guid: 4d3ba906b1f50a143b27819affb9de1d
   - enabled: 1
-    path: Assets/Scenes/NewDays/Elidora.unity
+    path: Assets/Scenes/NewDays/MinigamesDay/Elidora.unity
     guid: e89c055160cfe9e42bb3e6471cf0c10d
   - enabled: 1
-    path: Assets/Scenes/NewDays/FM.unity
+    path: Assets/Scenes/NewDays/DEMOS/FM.unity
     guid: 6366e2b42d4e51a47b22b532b4343323
   - enabled: 1
     path: Assets/Scenes/NewDays/Credits.unity
     guid: 39b3fe9a9dc069947a045de35de21ba1
   - enabled: 1
-    path: Assets/Scenes/NewDays/Denjirenji03.unity
+    path: Assets/Scenes/NewDays/MinigamesDay/Denjirenji03.unity
     guid: 049702dfb761cf546adaaeefcef13379
   - enabled: 1
-    path: Assets/Scenes/NewDays/Denjirenji05.unity
+    path: Assets/Scenes/NewDays/MinigamesDay/Denjirenji05.unity
     guid: 10de8da5e3ab16649b978ea299e1a6f7
   - enabled: 1
-    path: Assets/Scenes/NewDays/MinijuegosClon/ElidoraMinijuego.unity
+    path: Assets/Scenes/NewDays/MinijgamesMenu/ElidoraMinijuego.unity
     guid: 3b7639d4a887c6f4980bab3de8720e46
   - enabled: 1
-    path: Assets/Scenes/NewDays/MinijuegosClon/DenjirenjiMinijuego02.unity
+    path: Assets/Scenes/NewDays/MinijgamesMenu/DenjirenjiMinijuego02.unity
     guid: 7a6858828574b0841a638f8da1b49f81
   - enabled: 1
-    path: Assets/Scenes/NewDays/MinijuegosClon/DenjirenjiMinijuego01.unity
+    path: Assets/Scenes/NewDays/MinijgamesMenu/DenjirenjiMinijuego01.unity
     guid: 2b1a0482b37806b4491bf9c10e257ca3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5c844afceb8fd99449c6ea5bede7a507, type: 2}
