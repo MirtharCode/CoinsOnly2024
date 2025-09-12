@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody), typeof(SpringJoint), typeof(Collider))]
 public class CobrarCuerda : MonoBehaviour
@@ -19,6 +20,8 @@ public class CobrarCuerda : MonoBehaviour
     public GameObject Cameras;
     public GameObject ClientManager;
 
+    public GameObject flechaTutorial;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,6 +36,8 @@ public class CobrarCuerda : MonoBehaviour
         spring.spring = 400f;      
         spring.damper = 300f;       
         spring.massScale = 1f;
+
+        flechaTutorial.SetActive(false);
     }
 
     void OnMouseDown()
@@ -41,12 +46,20 @@ public class CobrarCuerda : MonoBehaviour
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         hasFiredEvent = false;
+
+        if (canTouch)
+        {
+            flechaTutorial.SetActive(true);
+        }
+
     }
 
     void OnMouseUp()
     {
         isDragging = false;
         rb.useGravity = true;
+
+        flechaTutorial.SetActive(false);
 
         float dist = Vector3.Distance(transform.position, anchorPoint.position);
         if (dist >= maxPullDistance * 0.95f && !hasFiredEvent)

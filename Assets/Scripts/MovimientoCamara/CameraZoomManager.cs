@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraZoomManager : MonoBehaviour
@@ -28,6 +28,8 @@ public class CameraZoomManager : MonoBehaviour
     private Collider zoomTargetCollider;
 
     private bool notZoom = true;
+
+    public float baseAlpha = 0.2f; //esto es el alpha base de la flechas
 
     private void Start()
     {
@@ -169,7 +171,7 @@ public class CameraZoomManager : MonoBehaviour
         } 
     }
 
-    // Para salir del modo Zoom acercando el rat�n a los bordes de la pantalla.
+    // Para salir del modo Zoom acercando el ratón a los bordes de la pantalla.
     void CheckExitByMouseEdge()
     {
         float mouseX = Input.mousePosition.x;
@@ -179,7 +181,7 @@ public class CameraZoomManager : MonoBehaviour
             float intensity = Mathf.InverseLerp(400f, 50f, mouseX);
             SetGradientAlpha(intensity);
 
-            if (mouseX <= 50f)
+            if (mouseX <= 200f)
             {
                 ExitZoomMode();
             }
@@ -189,7 +191,7 @@ public class CameraZoomManager : MonoBehaviour
             float intensity = Mathf.InverseLerp(Screen.width - 400f, Screen.width - 50f, mouseX);
             SetGradientAlpha(intensity);
 
-            if (mouseX >= Screen.width - 50f)
+            if (mouseX >= Screen.width - 200f)
             {
                 ExitZoomMode();
             }
@@ -200,14 +202,18 @@ public class CameraZoomManager : MonoBehaviour
         }
     }
 
-    void SetGradientAlpha(float alpha)
+    void SetGradientAlpha(float intensity)
     {
-        Image targetImage = currentZoomInfo.exitDirection == ZoomTargetInfo.ExitEdge.Left ? edgeGradientLeftImage : edgeGradientRightImage;
+        Image targetImage = currentZoomInfo.exitDirection == ZoomTargetInfo.ExitEdge.Left
+            ? edgeGradientLeftImage
+            : edgeGradientRightImage;
 
         if (targetImage != null)
         {
             Color color = targetImage.color;
-            color.a = Mathf.Clamp01(alpha);
+
+            color.a = Mathf.Lerp(baseAlpha, 1f, intensity);
+
             targetImage.color = color;
         }
     }

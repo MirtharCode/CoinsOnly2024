@@ -18,6 +18,8 @@ public class NoCobrarCuerda : MonoBehaviour
     public GameObject Cameras;
     public GameObject ClientManager;
 
+    public GameObject flechaTutorial;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,6 +34,8 @@ public class NoCobrarCuerda : MonoBehaviour
         spring.spring = 400f;      // fuerza del resorte
         spring.damper = 300f;       // amortiguación (para controlar rebote)
         spring.massScale = 1f;
+
+        flechaTutorial.SetActive(false);
     }
 
     void OnMouseDown()
@@ -40,12 +44,19 @@ public class NoCobrarCuerda : MonoBehaviour
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         hasFiredEvent = false;
+
+        if (canTouch)
+        {
+            flechaTutorial.SetActive(true);
+        }
     }
 
     void OnMouseUp()
     {
         isDragging = false;
         rb.useGravity = true;
+
+        flechaTutorial.SetActive(false);
 
         float dist = Vector3.Distance(transform.position, anchorPoint.position);
         if (dist >= maxPullDistance * 0.95f && !hasFiredEvent)
