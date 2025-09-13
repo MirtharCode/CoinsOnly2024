@@ -353,8 +353,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public GameObject lesPropinas;
     [SerializeField] public TMP_Text lePropinasText;
     [SerializeField] public float propinasNumber;
-
-
     [SerializeField] public float puntosElidora;
 
     [Header("BOSS' THINGS")]
@@ -362,6 +360,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject jefePanel;
     [SerializeField] public TMP_Text textoJefe;
     //public bool broncaFin = true;
+    public int holoJefeAppears = 0;
 
     // Creación del singleton del DialogueManager para que solo haya uno en escena
     private void Awake()
@@ -1141,14 +1140,19 @@ public class DialogueManager : MonoBehaviour
 
     public void ChangingTextsAndFlag(Language lang)
     {
-        LanguageActivations(playButton, lang.ToString());
-        LanguageActivations(minigamesButton, lang.ToString());
-        LanguageActivations(optionsButton, lang.ToString());
+        if(currentDay != "S1")
+        {
+            LanguageActivations(minigamesButton, lang.ToString());
+            LanguageActivations(optionsButton, lang.ToString());
+            LanguageActivations(musicTextContainer, lang.ToString());
+            LanguageActivations(muteTextContainer, lang.ToString());
+        }
+
+        LanguageActivations(playButton, lang.ToString());      
         LanguageActivations(creditsButton, lang.ToString());
         LanguageActivations(exitButton, lang.ToString());
-        languageButton.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Menu/Buttons/Languages/{lang}");
-        LanguageActivations(musicTextContainer, lang.ToString());
-        LanguageActivations(muteTextContainer, lang.ToString());
+
+        languageButton.GetComponent<Image>().sprite = Resources.Load<Sprite>($"Sprites/UI/Menu/Buttons/Languages/{lang}");        
     }
 
     public void LanguageActivations(GameObject parent, string childName)

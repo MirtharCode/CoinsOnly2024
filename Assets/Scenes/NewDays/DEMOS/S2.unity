@@ -21751,7 +21751,7 @@ MonoBehaviour:
   languageButton: {fileID: 0}
   musicTextContainer: {fileID: 0}
   muteTextContainer: {fileID: 0}
-  currentDay: S1
+  currentDay: S2
   lastSceneWithDialogues: 
   csvImporter: {fileID: 0}
   mainCam: {fileID: 0}
@@ -21919,7 +21919,6 @@ MonoBehaviour:
   phone: {fileID: 0}
   jefePanel: {fileID: 0}
   textoJefe: {fileID: 0}
-  holoJefeAppears: 0
 --- !u!4 &838496886
 Transform:
   m_ObjectHideFlags: 0
@@ -57085,7 +57084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &3914142514575905043
 GameObject:
   m_ObjectHideFlags: 0

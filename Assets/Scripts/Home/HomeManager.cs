@@ -219,30 +219,6 @@ public class HomeManager : MonoBehaviour
                 currentHomeClientReal = startingPoint.GetChild(0).gameObject;
                 dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
             }
-
-            else if (Data.instance.demoSteamDay1Checked)
-            {
-                data.GetComponent<Data>().sePueTocar = false;
-                doorSound.PlayOneShot(openDoorSound);
-                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-                clon.GetComponent<Image>().sprite = elJefe;
-                clon.AddComponent<HU_Jefe>();
-                miniClientImage = miniElJefe;
-                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
-            }
-
-            else if (Data.instance.demoSteamDay2Checked)
-            {
-                data.GetComponent<Data>().sePueTocar = false;
-                doorSound.PlayOneShot(openDoorSound);
-                GameObject clon = Instantiate(currentHomeClientPrefab, startingPoint);
-                clon.GetComponent<Image>().sprite = elJefe;
-                clon.AddComponent<HU_Jefe>();
-                miniClientImage = miniElJefe;
-                currentHomeClientReal = startingPoint.GetChild(0).gameObject;
-                dialogueSize = data.GetComponent<Data>().cCDialogue.Count;
-            }
         }
     }
 

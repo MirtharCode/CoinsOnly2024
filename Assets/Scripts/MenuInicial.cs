@@ -23,7 +23,9 @@ public class MenuInicial : MonoBehaviour
             button2.SetActive(true);
         }
         DialogueManager.Instance.postPro.gameObject.SetActive(true);
-        DialogueManager.Instance.BackToTheDefaultSaturation();
+
+        if (DialogueManager.Instance.currentDay != "S1")
+            DialogueManager.Instance.BackToTheDefaultSaturation();
 
     }
     //public void Jugar()

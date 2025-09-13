@@ -62,13 +62,20 @@ public class FadeToBlack : MonoBehaviour
 
     public void GoingToTheGame()
     {
-        DialogueManager.Instance.currentDay = GetCheckedDayNumber();
+        if(currentScene.name != "MenuDemo")
+        {
+            DialogueManager.Instance.currentDay = GetCheckedDayNumber();
 
-        if (Data.instance.initialCinematicDone)
-            SceneManager.LoadScene("Day");
+            if (Data.instance.initialCinematicDone)
+                SceneManager.LoadScene("Day");
+            else
+                SceneManager.LoadScene("InitialCinematic");
+        }
+
         else
-            SceneManager.LoadScene("InitialCinematic");
-        
+        {
+            SceneManager.LoadScene("S1");
+        }
     }
 
     public void ResetData()
