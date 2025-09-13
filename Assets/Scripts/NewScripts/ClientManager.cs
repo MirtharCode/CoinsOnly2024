@@ -101,8 +101,8 @@ public class ClientManager : MonoBehaviour
     {
         RegulationsActivate();
 
-        DialogueManager.Instance.LanguagePricesText();
-        DialogueManager.Instance.LanguageRegulationsText();
+        //DialogueManager.Instance.LanguagePricesText();
+        //DialogueManager.Instance.LanguageRegulationsText();
 
         if (DialogueManager.Instance.currentDay != "01")
         {
@@ -117,28 +117,31 @@ public class ClientManager : MonoBehaviour
 
             if (DialogueManager.Instance.currentDay != "CC")
             {
-                if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
-                    DialogueManager.Instance.gnomeFog1.SetActive(true);
-
-                if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
+                if (DialogueManager.Instance.currentDay != "S1" && DialogueManager.Instance.currentDay != "S2")
                 {
-                    DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
+                    if ((int.Parse(DialogueManager.Instance.currentDay) == 2))
+                        DialogueManager.Instance.gnomeFog1.SetActive(true);
 
-                    if (DialogueManager.Instance.currentDay == "04")
+                    if ((int.Parse(DialogueManager.Instance.currentDay) >= 4))
                     {
-                        ShowCouponInfo("toother");
-                        DialogueManager.Instance.gnomeFog2.SetActive(true);
+                        DialogueManager.Instance.zoomTargetCoupon.SetActive(true);
 
-                        if (DialogueManager.Instance.theGnomeIsFree)
-                            GnomeOut("04");
+                        if (DialogueManager.Instance.currentDay == "04")
+                        {
+                            ShowCouponInfo("toother");
+                            DialogueManager.Instance.gnomeFog2.SetActive(true);
+
+                            if (DialogueManager.Instance.theGnomeIsFree)
+                                GnomeOut("04");
+                        }
+
+                        else if (DialogueManager.Instance.currentDay == "05")
+                            ShowCouponInfo("geomery");
+                        else if (DialogueManager.Instance.currentDay == "06")
+                            ShowCouponInfo("drakerry");
+                        else if (DialogueManager.Instance.currentDay == "07")
+                            ShowCouponInfo("dogelle");
                     }
-
-                    else if (DialogueManager.Instance.currentDay == "05")
-                        ShowCouponInfo("geomery");
-                    else if (DialogueManager.Instance.currentDay == "06")
-                        ShowCouponInfo("drakerry");
-                    else if (DialogueManager.Instance.currentDay == "07")
-                        ShowCouponInfo("dogelle");
                 }
             }
 
@@ -174,7 +177,7 @@ public class ClientManager : MonoBehaviour
             Debug.Log("Diálogos listos.");
         }
 
-        if (DialogueManager.Instance.currentDay != "CC")
+        if (DialogueManager.Instance.currentDay != "CC" && DialogueManager.Instance.currentDay != "S1" && DialogueManager.Instance.currentDay != "S2")
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -265,6 +268,15 @@ public class ClientManager : MonoBehaviour
         {
             if (currentDialogueClient.name == "Detective")
                 StartCoroutine(DialogueManager.Instance.ChangeSaturation());
+
+            else if (currentDialogueClient.name == "Holojefe")
+            {
+                DialogueManager.Instance.holoJefeAppears++;
+
+                if (DialogueManager.Instance.holoJefeAppears >= 4)
+                    StartCoroutine(DialogueManager.Instance.ReverseSaturation());
+            }
+
             else if (currentDialogueClient.name == "Minixefe")
                 StartCoroutine(DialogueManager.Instance.ReverseSaturation());
 
@@ -373,8 +385,8 @@ public class ClientManager : MonoBehaviour
         }
         else
         {
-            //Esto solo pasa en la demo de la COMETCON
-            if (currentDialogueClient.name == "Minixefe")
+            //Esto solo pasa en la demo de la COMETCON y la de STEAM
+            if (currentDialogueClient.name == "Minixefe" || (currentDialogueClient.name == "Holojefe" && DialogueManager.Instance.holoJefeAppears >= 4))
             {
                 StartCoroutine(FadeIn(musicBox.GetComponent<AudioSource>(), fadeDuration));
                 StartCoroutine(FadeOut(musicBox.transform.GetChild(5).GetComponent<AudioSource>(), fadeDuration));
@@ -907,15 +919,13 @@ public class ClientManager : MonoBehaviour
 
             else if (sceneName == "S1")
             {
-                Data.instance.demoSteamDay1Checked = true;
-                SceneManager.LoadScene("Home");
+                SceneManager.LoadScene("S2");
+                DialogueManager.Instance.currentDay = "S2";
             }
 
+
             else if (sceneName == "S2")
-            {
-                Data.instance.demoSteamDay1Checked = true;
-                SceneManager.LoadScene("Home");
-            }
+                SceneManager.LoadScene("Credits");
 
         }
 

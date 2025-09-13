@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/NewDays/DEMOS/MenuDemo.unity
+    guid: 1919e8762bd4179479b4287cd748f2ee
+  - enabled: 1
     path: Assets/Scenes/NewDays/DEMOS/CC.unity
     guid: d66db2c9391936447b3825dd0af94c56
   - enabled: 1
@@ -84,7 +87,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NewDays/DEMOS/FM.unity
     guid: 6366e2b42d4e51a47b22b532b4343323
   - enabled: 1
-    path: Assets/Scenes/NewDays/Credits.unity
+    path: Assets/Scenes/NewDays/DEMOS/Credits.unity
     guid: 39b3fe9a9dc069947a045de35de21ba1
   - enabled: 1
     path: Assets/Scenes/NewDays/MinigamesDay/Denjirenji03.unity
@@ -101,6 +104,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewDays/MinijgamesMenu/DenjirenjiMinijuego01.unity
     guid: 2b1a0482b37806b4491bf9c10e257ca3
+  - enabled: 1
+    path: Assets/Scenes/NewDays/DEMOS/S1.unity
+    guid: 4cd6dce6f219ca041b5ff38597f15fbc
+  - enabled: 1
+    path: Assets/Scenes/NewDays/DEMOS/S2.unity
+    guid: 572752a539bbacd4e880c81030797058
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5c844afceb8fd99449c6ea5bede7a507, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: da96729395aa0e844ae1e516cb3fa645, type: 2}

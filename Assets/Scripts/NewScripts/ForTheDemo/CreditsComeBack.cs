@@ -8,6 +8,7 @@ public class CreditsComeBack : MonoBehaviour
 {
 
     public GameObject fadeToBlackObject;
+    public GameObject exitButton;
     [SerializeField] public AnimationClip fadeToblackClip;
     [SerializeField] public float fadeToblackClipTime;
 
@@ -17,10 +18,13 @@ public class CreditsComeBack : MonoBehaviour
         fadeToblackClipTime = fadeToblackClip.length;        
         
         // En caso de ser una demo de Expo
-        Invoke(nameof(ActivarButton), 20);
-        
+        //Invoke(nameof(ActivarButton), 20);
+
         // En caso de ser una demo para subir online
         //Invoke(nameof(EndTheDemo1), 10);
+
+        //En caso de ser la demo de STEAM
+        Invoke(nameof(EndDemoSteam), 5);
     }
 
     // Update is called once per frame
@@ -44,6 +48,11 @@ public class CreditsComeBack : MonoBehaviour
     public void RepeatTheDemo()
     {
         SceneManager.LoadScene("CC");
+    }
+
+    public void EndDemoSteam()
+    {
+        exitButton.SetActive(true);
     }
 
     public void EndTheDemo1()
